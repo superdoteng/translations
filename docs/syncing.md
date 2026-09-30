@@ -4,19 +4,19 @@ The public-facing repository owns accepted translations under `catalogs/` on `ma
 
 Use dedicated catalog commits and inspect every exported commit message before pushing. If an app merge introduces unrelated commit messages into the export, stop and re-establish the subtree boundary before exporting. Never publish app history or reconcile conflicting catalogs with a directory overwrite.
 
-## Prepare the generated catalog branch
+## Automatic catalog export
 
-After accepting changes on translations `main`, run in a checkout of this repository with a clean working tree:
+The Catalogs workflow validates each push to `main`, then regenerates and pushes the `catalogs` branch. Documentation-only changes produce an unchanged split. PR validation remains read-only; only the export job on `main` has write permission. Export jobs are serialized, skip superseded snapshots, and use ordinary fast-forward pushes so a stale job cannot overwrite a newer export.
+
+Wait for both validation and export to succeed before importing accepted translations into the app. If the generated branch diverges, investigate it rather than force-pushing.
+
+For recovery, select **Run workflow** on GitHub's Catalogs workflow with branch `main`, or trigger the same workflow from any terminal or desktop agent session:
 
 ```bash
-git fetch origin main catalogs
-git switch main
-git merge --ff-only origin/main
-catalog_commit=$(git subtree split --prefix=catalogs)
-git push origin "$catalog_commit":refs/heads/catalogs
+gh workflow run catalogs.yml --repo superdoteng/translations --ref main
 ```
 
-Keep the derived branch current before importing into the app. Use ordinary fast-forward pushes; investigate divergence rather than force-pushing.
+Manual runs use the same validation, serialization, and publishing checks. No separate desktop generation action is needed.
 
 ## Import into the app
 
@@ -56,7 +56,7 @@ git push -u origin translate-topic
 gh pr create --repo superdoteng/translations --base main --head translate-topic
 ```
 
-Review and merge the PR with a merge commit to preserve subtree ancestry. Then regenerate `catalogs`, import it into the app, and delete the temporary topic/export branches. Squash/rebase merges need separate workflow verification before adoption.
+Review and merge the PR with a merge commit to preserve subtree ancestry. Wait for the Catalogs workflow to update `catalogs`, then import it into the app and delete the temporary topic/export branches. Squash/rebase merges need separate workflow verification before adoption.
 
 ## Conflicts, boundaries, and rollback
 

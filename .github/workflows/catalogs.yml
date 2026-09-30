@@ -26,3 +26,26 @@ jobs:
           bash catalogs/scripts/check-catalogs.sh --base "$BASE_REF"
         env:
           BASE_REF: ${{ github.event.pull_request.base.sha || github.event.before || format('{0}^', github.sha) }}
+  export:
+    needs: validate
+    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: write
+    concurrency:
+      group: catalog-export
+      cancel-in-progress: false
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          fetch-depth: 0
+      - name: Publish validated catalog snapshot
+        run: |
+          main_commit=$(git ls-remote --exit-code origin refs/heads/main | cut -f1)
+          if [ "$main_commit" != "$GITHUB_SHA" ]; then
+            echo "Skipping superseded snapshot; the newer main run owns the export."
+            exit 0
+          fi
+          catalog_commit=$(git subtree split --prefix=catalogs)
+          git push origin "$catalog_commit":refs/heads/catalogs
