@@ -17,8 +17,6 @@
   <a href="https://github.com/sponsors/superdoteng"><img alt="Sponsor" src="https://img.shields.io/badge/-ea4aaa?style=flat&logo=githubsponsors&logoColor=white"></a>
 </p>
 
-**Translate the experience. Keep the meaning.**
-
 Interface translations for [super.engineering](https://super.engineering). Each language lives in `<locale>/main.ftl`, using [Fluent](https://projectfluent.org/).
 
 The desktop app is proprietary. You can contribute translations or report untranslated screens without access to its source. Maintainers test changes in the app and include accepted translations in a future release.
