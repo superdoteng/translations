@@ -18,8 +18,19 @@ body:
     attributes:
       label: Display language (optional)
       placeholder: French (fr-FR)
+  - type: input
+    id: app-version
+    attributes:
+      label: App version (optional)
+      description: Copy the version from the app's About or Updates screen if available.
+  - type: textarea
+    id: location
+    attributes:
+      label: Where does this appear? (optional)
+      description: Name the screen or describe how to reach it.
+      placeholder: Open Settings, select ..., then ...
   - type: textarea
     id: notes
     attributes:
       label: Notes (optional)
-      description: Add context, suggested wording, or your app version if useful.
+      description: Add the affected text, suggested wording, or any other context if useful.
