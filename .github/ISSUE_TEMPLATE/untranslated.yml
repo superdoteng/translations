@@ -1,0 +1,36 @@
+name: Untranslated or incorrect text
+description: Report a translation problem in the desktop app with a screenshot.
+title: "[Translation]: "
+body:
+  - type: markdown
+    attributes:
+      value: A screenshot is enough to report a problem. No app source or message ID needed.
+  - type: upload
+    id: screenshots
+    attributes:
+      label: Screenshot
+      description: Show the untranslated, incorrect, or clipped text. Blur private details.
+    validations:
+      required: true
+      accept: ".png,.jpg,.jpeg,.webp,.gif"
+  - type: input
+    id: language
+    attributes:
+      label: Display language (optional)
+      placeholder: French (fr-FR)
+  - type: input
+    id: app-version
+    attributes:
+      label: App version (optional)
+      description: Copy the version from the app's About or Updates screen if available.
+  - type: textarea
+    id: location
+    attributes:
+      label: Where does this appear? (optional)
+      description: Name the screen or describe how to reach it.
+      placeholder: Open Settings, select ..., then ...
+  - type: textarea
+    id: notes
+    attributes:
+      label: Notes (optional)
+      description: Add the affected text, suggested wording, or any other context if useful.
