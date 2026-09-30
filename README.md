@@ -29,7 +29,9 @@ The desktop app is proprietary. You can contribute translations or report untran
 
 ## Checks
 
-PRs run standalone catalog checks. [Local checks are optional](CONTRIBUTING.md#check-your-changes-optional) and need no app source. Existing missing translations can make CI fail; maintainers review your changes against that backlog. Missing messages fall back to English.
+PRs run standalone catalog checks against their target revision. CI fails for new ID or variable mismatches, removed catalogs, malformed Fluent, duplicates, and stale variable exceptions; existing ID/variable issues are reported as a backlog count. Pushes compare with the previous branch revision, and manual runs compare with the previous commit. Missing messages fall back to English.
+
+[Local checks are optional](CONTRIBUTING.md#check-your-changes-optional) and need no app source. The default check reports the complete backlog; use `bash scripts/check-catalogs.sh --base REF` to check for regressions against a Git revision.
 
 [App syncing instructions](docs/syncing.md) are for maintainers with access to the desktop source.
 
