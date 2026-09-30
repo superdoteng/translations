@@ -6,16 +6,43 @@ You can help using the released desktop app and this repository. The app source 
 
 Use the [translation report form](https://github.com/superdoteng/translations/issues/new?template=untranslated.yml) for untranslated, incorrect, or clipped text. A screenshot is enough. Add the display language, context, or suggested wording if useful. No message ID is needed; maintainers can locate the text from your screenshot.
 
-## Edit a translation
+## Edit a translation in your browser
 
-1. Fork this repository and create a branch from `main`, or edit a catalog through GitHub's web editor.
-2. Find the visible text in `en-US/main.ftl`, then find the same message ID in your language's `main.ftl`. If it is missing, add that message with your translation. If you cannot find the text, report it instead.
-3. Translate the value, keeping the ID and variables unchanged. Preserve meaning, keyboard shortcuts, product names, and technical terms where appropriate.
-4. Open a PR against `main`. State the language, affected IDs, and why the wording is better. Link a report or attach a screenshot from the released app when screen context matters.
+You need a signed-in GitHub account. You can use GitHub's web editor without cloning this repository or building the app:
+
+1. Find the visible English text in [en-US/main.ftl](en-US/main.ftl) and note its message ID.
+2. Open your language's `<locale>/main.ftl` in [the repository](https://github.com/superdoteng/translations). For example, French is [fr-FR/main.ftl](fr-FR/main.ftl). Find the same ID; if it is missing, add it with your translation. If you cannot find the English message, report it instead.
+3. Click the pencil icon to edit. If prompted, choose **Fork this repository**.
+4. Translate the value, keeping the ID and variables unchanged. Preserve meaning, keyboard shortcuts, product names, and technical terms where appropriate.
+5. Click **Commit changes…**, enter a short summary, then **Propose changes**. If you have write access, choose a new branch rather than committing to `main`.
+6. Review the proposed changes and choose **Create pull request**, targeting `superdoteng/translations` on `main`. State the language and affected IDs, and link your report or screenshot when helpful.
+
+See [GitHub's file-editing guide](https://docs.github.com/en/repositories/working-with-files/managing-files/editing-files#editing-files-in-another-users-repository) if the interface differs.
 
 `en-US` defines the message contract. `en-XA` is a development pseudo-locale, not a language to translate. Ask maintainers before changing source IDs or variables.
 
 Editing a `.ftl` file does not change the installed app: its catalogs are bundled with each release. You are not expected to build the app or provide an in-app preview of your proposed wording. Maintainers review the language and test formatting, layout, and app integration before shipping.
+
+## Ask an agent to help
+
+Attach your screenshot and replace the task and language placeholders before sending this prompt to your agent:
+
+```text
+Help with a translation problem in super.engineering.
+Repository: https://github.com/superdoteng/translations
+Task: [report an issue / propose a catalog fix]
+Target language: [language, or unknown]
+Screenshot: attached
+
+Read AGENTS.md and CONTRIBUTING.md in that repository. Use the screenshot
+and English catalog to identify the text. For a fix, edit only the relevant
+translation and preserve its message ID, variables, and Fluent syntax.
+If you cannot identify the message, report it rather than guessing.
+Run standalone checks if possible and distinguish new errors from the
+known backlog. App testing is handled by maintainers.
+Submit the issue or PR through GitHub if you have access. Otherwise,
+prepare the report or patch for me to submit. No desktop source is needed.
+```
 
 ## Fluent basics
 
