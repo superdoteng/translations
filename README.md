@@ -23,7 +23,7 @@ The desktop app is proprietary. You can contribute translations or report untran
 
 ## Help translate
 
-- **Found untranslated or incorrect text?** [Report it](https://github.com/superdoteng/translations/issues/new?template=untranslated.yml) with a screenshot, display language, and app version. You do not need to know the message ID.
+- **Found untranslated or incorrect text?** [Report it](https://github.com/superdoteng/translations/issues/new?template=untranslated.yml) with a screenshot. Language and other details are optional; no message ID needed.
 - **Want to improve a translation?** Read [CONTRIBUTING.md](CONTRIBUTING.md), edit your language's catalog, and open a PR against `main`.
 - **Want to add a language?** [Open an issue](https://github.com/superdoteng/translations/issues) first so maintainers can coordinate app support.
 

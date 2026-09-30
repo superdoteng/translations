@@ -4,7 +4,7 @@ You can help using the released desktop app and this repository. The app source 
 
 ## Report text in the app
 
-Use the [translation report form](https://github.com/superdoteng/translations/issues/new?template=untranslated.yml) for untranslated, incorrect, or clipped text. Include a screenshot, the display language, the app version, and steps to reach the screen. Copy the affected text and suggest a translation if you can. Message IDs are optional; maintainers can locate them from your report.
+Use the [translation report form](https://github.com/superdoteng/translations/issues/new?template=untranslated.yml) for untranslated, incorrect, or clipped text. A screenshot is enough. Add the display language, context, or suggested wording if useful. No message ID is needed; maintainers can locate the text from your screenshot.
 
 ## Edit a translation
 
