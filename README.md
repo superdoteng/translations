@@ -3,7 +3,7 @@
 <p align="center">Help engineers work in their own language.</p>
 
 <p align="center">
-  <a href="https://github.com/superdoteng/super-engineering-translations/actions/workflows/catalogs.yml"><img alt="Catalog checks" src="https://github.com/superdoteng/super-engineering-translations/actions/workflows/catalogs.yml/badge.svg"></a>
+  <a href="https://github.com/superdoteng/translations/actions/workflows/catalogs.yml"><img alt="Catalog checks" src="https://github.com/superdoteng/translations/actions/workflows/catalogs.yml/badge.svg"></a>
   <a href="LICENSE"><img alt="MIT license" src="https://img.shields.io/badge/license-MIT-2ea44f?style=flat&labelColor=313131"></a>
 </p>
 
@@ -69,14 +69,14 @@ The syntax parser is Mozilla's Apache-2.0 [fluent.syntax](https://github.com/pro
 
 ## Sync with the app
 
-Maintainers run these commands from the app repository. The prefix is `crates/i18n/locales`, upstream is `https://github.com/superdoteng/super-engineering-translations.git`, and upstream's accepted branch is `main`. Always use squashed imports. Start imports with a clean working tree; never reconcile by copying one directory over the other.
+Maintainers run these commands from the app repository. The prefix is `crates/i18n/locales`, upstream is `https://github.com/superdoteng/translations.git`, and upstream's accepted branch is `main`. Always use squashed imports. Start imports with a clean working tree; never reconcile by copying one directory over the other.
 
 The initial app import records Git's native `git-subtree-dir`, `git-subtree-mainline`, and `git-subtree-split` trailers on the import merge. This establishes the export boundary at the fresh upstream snapshot. A plain squashed add of a previously tracked directory can export older app commit messages on subsequent pushes, so preserve these trailers and inspect exported history before pushing. Initial export must never use `subtree split` on pre-extraction app history.
 
 Set up once per app checkout:
 
 ```bash
-git remote add translations https://github.com/superdoteng/super-engineering-translations.git
+git remote add translations https://github.com/superdoteng/translations.git
 ```
 
 Activate a Python environment with the subtree's pinned requirements before running app validation:
@@ -95,7 +95,7 @@ Commit catalog changes separately from app code, with commit messages suitable f
 ```bash
 just i18n-check
 git subtree push --prefix=crates/i18n/locales translations translate-topic
-gh pr create --repo superdoteng/super-engineering-translations --base main --head translate-topic
+gh pr create --repo superdoteng/translations --base main --head translate-topic
 ```
 
 Review the PR diff and exported commit messages before merging, including any validation failures from the documented backlog. Merge the upstream PR with a history-preserving merge commit, then import `main` to reconcile ancestry. Do not force-push. Squash/rebase PR merges need separate workflow verification before adoption.
