@@ -98,7 +98,7 @@ git subtree push --prefix=crates/i18n/locales translations translate-topic
 gh pr create --repo superdoteng/super-engineering-translations --base main --head translate-topic
 ```
 
-Merge the upstream PR with a history-preserving merge commit, then import `main` to reconcile ancestry. Do not force-push. Squash/rebase PR merges need separate workflow verification before adoption.
+Review the PR diff and exported commit messages before merging, including any validation failures from the documented backlog. Merge the upstream PR with a history-preserving merge commit, then import `main` to reconcile ancestry. Do not force-push. Squash/rebase PR merges need separate workflow verification before adoption.
 
 ### Upstream to app
 
