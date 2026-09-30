@@ -1,71 +1,109 @@
 # Syncing translations with the app
 
-The public-facing repository owns accepted translations under `catalogs/` on `main`. The `catalogs` branch is a generated subtree split of that directory; never edit it directly. The app vendors that branch at `crates/i18n/locales`. Repository images, GitHub configuration, and contributor documentation stay outside the app.
+The translations repository owns accepted catalogs under `catalogs/` on `main`.
+CI publishes that directory as the generated `catalogs` branch. Never edit the
+generated branch directly. The app vendors its contents at `crates/i18n/locales`;
+repository images, GitHub configuration, and contributor documentation stay out.
 
-Use dedicated catalog commits and inspect every exported commit message before pushing. If an app merge introduces unrelated commit messages into the export, stop and re-establish the subtree boundary before exporting. Never publish app history or reconcile conflicting catalogs with a directory overwrite.
+The app records the imported snapshot in `crates/i18n/catalogs-revision`.
+Its sync commands compare catalog files against that revision and use Git's
+three-way merge to preserve independent edits and flag conflicts. App ancestry
+and commit messages are never exported. Normal squash merges work in both repos;
+no subtree trailers or special merge parents are needed in the app.
 
 ## Automatic catalog export
 
-The Catalogs workflow validates each push to `main`, then regenerates and pushes the `catalogs` branch. Documentation-only changes produce an unchanged split. PR validation remains read-only; only the export job on `main` has write permission. Export jobs are serialized, skip superseded snapshots, and use ordinary fast-forward pushes so a stale job cannot overwrite a newer export.
+The Catalogs workflow validates each push to `main`, then regenerates and pushes
+the `catalogs` branch. Documentation-only changes leave the generated snapshot
+unchanged. PR checks are read-only; only the export job on `main` can write.
+Export jobs are serialized, skip superseded snapshots, and use fast-forward pushes.
 
-Wait for both validation and export to succeed before importing accepted translations into the app. If the generated branch diverges, investigate it rather than force-pushing.
-
-For recovery, select **Run workflow** on GitHub's Catalogs workflow with branch `main`, or trigger the same workflow from any terminal or desktop agent session:
+Wait for validation and export to succeed before importing accepted translations.
+Investigate a diverged generated branch rather than force-pushing it. For recovery,
+select **Run workflow** on the Catalogs workflow with branch `main`, or run:
 
 ```bash
 gh workflow run catalogs.yml --repo superdoteng/translations --ref main
 ```
 
-Manual runs use the same validation, serialization, and publishing checks. No separate desktop generation action is needed.
+The same command works from a terminal or desktop agent session. A separate
+desktop generation action is unnecessary.
 
 ## Import into the app
 
-Run from a clean app checkout with the `translations` remote pointing to `https://github.com/superdoteng/translations.git`:
+Syncing requires Git 2.43 or newer. Commit or stash app changes first, then run
+from the app checkout:
 
 ```bash
-git subtree pull --prefix=crates/i18n/locales --squash translations catalogs
-python3 -m venv crates/i18n/locales/.venv
-. crates/i18n/locales/.venv/bin/activate
-python -m pip install --require-hashes -r crates/i18n/locales/requirements.txt
-just i18n-check
+just i18n-pull
 ```
 
-App validation includes private Rust call-site checks and reports the full existing catalog backlog. Review newly introduced errors separately. Catalogs are embedded in each app release; imports do not update an installed app.
+The command fetches only the generated `catalogs` branch and stages its changes
+alongside the new revision. Existing committed app catalog edits are preserved.
+A repeated pull of the same revision does nothing. Review `git diff --cached`,
+run `just i18n-check`, and commit the catalogs and revision together. Use the
+app's normal squash PR workflow.
+
+App validation installs its pinned Python dependencies and includes private Rust
+call-site checks. The strict check reports the existing translation backlog;
+review newly introduced errors separately. Catalogs are embedded in app releases,
+so importing them does not update an installed app.
 
 ## Export app edits into a translations PR
 
-In the app checkout, validate the changes, commit catalog edits separately, and inspect the split before pushing:
+Keep catalog edits in dedicated app commits. Before publishing, import accepted
+upstream changes, review and validate them, and commit the import. Then prepare a
+branch in a separate clean clone of this public repository:
 
 ```bash
-catalog_commit=$(git subtree split --prefix=crates/i18n/locales)
-git fetch translations catalogs
-git log --oneline translations/catalogs.."$catalog_commit"
-git diff translations/catalogs "$catalog_commit"
-git push translations "$catalog_commit":refs/heads/catalog-update-topic
+# Run in the app checkout; adjust the checkout path and choose a new branch name.
+just i18n-export ../translations improve-french
 ```
 
-The exported branch contains a catalog tree at its root, so it is not a PR branch against translations `main`. Integrate it into `catalogs/` in a clean translations checkout:
+The command applies only catalog differences to current public `main` and creates
+a translation-only commit. It handles upstream changes that arrived after the
+app's last import, stopping on conflicts. It never copies app commits or pushes.
+If the generated branch has not caught up with `main`, wait for CI and retry.
+If these edits are already accepted upstream, no new commit is created.
+
+Review and validate in the translations checkout before publishing:
 
 ```bash
-git fetch origin main catalog-update-topic
-git switch -c translate-topic origin/main
-git subtree split --prefix=catalogs --rejoin --squash
-git subtree merge --prefix=catalogs --squash origin/catalog-update-topic
+cd ../translations
+git diff origin/main...HEAD
+# Set up local dependencies as described in CONTRIBUTING.md if needed.
 bash catalogs/scripts/check-catalogs.sh --base origin/main
-git push -u origin translate-topic
-gh pr create --repo superdoteng/translations --base main --head translate-topic
+git push -u origin improve-french
+gh pr create --repo superdoteng/translations --base main --head improve-french
 ```
 
-Review and merge the PR with a merge commit to preserve subtree ancestry. Wait for the Catalogs workflow to update `catalogs`, then import it into the app and delete the temporary topic/export branches. Squash/rebase merges need separate workflow verification before adoption.
+Merge the PR using any allowed method, including squash. Wait for CI to publish
+`catalogs`, then run `just i18n-pull` in the app and commit the accepted revision.
+No intermediate catalog-root branch or subtree rejoin is needed.
 
-## Conflicts, boundaries, and rollback
+## Conflicts and rollback
 
-Import accepted upstream changes before exporting local changes. Resolve overlapping edits against the current English keys and variables, validate, and finish the merge. Repeated imports should not duplicate changes.
+A failed import leaves its revision unchanged and may leave staged changes or
+conflicts. Resolve the catalogs, stage the resolutions, then write the exact
+revision printed by the command to `crates/i18n/catalogs-revision` and stage it.
+Validate before committing. To abandon an import started from a clean checkout:
 
-The app's boundary merge records native `git-subtree-dir`, `git-subtree-mainline`, and `git-subtree-split` trailers. Preserve both parents and these trailers when rewriting history. The split must refer to the catalog-only snapshot, never the full repository root.
+```bash
+git restore --source=HEAD --staged --worktree -- crates/i18n/locales crates/i18n/catalogs-revision
+```
 
-Revert a faulty app import with `git revert -m 1 <merge>` and validate against current app references. Fix upstream through a normal PR. A reverted import remains in ancestry; restoring it requires reverting the revert or a new upstream fix.
+A failed export leaves the prepared public branch for conflict resolution. Resolve
+and stage its catalog changes, validate, and commit before opening the PR. Never
+resolve conflicts by overwriting a whole catalog directory.
+
+Revert a faulty app import with `git revert <commit>`; revert its revision change
+as well as its catalogs. This lets a later pull retry the import. If the import was
+squashed with other work, revert only its catalog and revision changes together.
+Fix accepted upstream mistakes through a normal translations PR.
 
 ## Dependencies and licensing
 
-The app receives `catalogs/LICENSE`, the shared validator, its pinned Python requirements, and locale files. The repository root also contains the same license for repository tooling and documentation. Python validation dependencies are development-only and do not ship in the app; review sources, advisories, and hashes when updating them.
+The app receives `catalogs/LICENSE`, the shared validator, its pinned Python
+requirements, and locale files. The repository root has the same license for
+its tooling and documentation. Python validation dependencies are development-only
+and do not ship in the app; review sources, advisories, and hashes on updates.
