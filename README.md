@@ -1,3 +1,12 @@
+<p align="center">
+  <a href="https://super.engineering">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="assets/app-icon-dark.png">
+      <img src="assets/app-icon.png" alt="super.engineering" width="88" height="88">
+    </picture>
+  </a>
+</p>
+
 <h1 align="center">super.engineering translations</h1>
 
 <p align="center">Help engineers work in their own language.</p>
@@ -5,6 +14,7 @@
 <p align="center">
   <a href="https://github.com/superdoteng/translations/actions/workflows/catalogs.yml"><img alt="Catalog checks" src="https://github.com/superdoteng/translations/actions/workflows/catalogs.yml/badge.svg"></a>
   <a href="LICENSE"><img alt="MIT license" src="https://img.shields.io/badge/license-MIT-2ea44f?style=flat&labelColor=313131"></a>
+  <a href="https://github.com/sponsors/superdoteng"><img alt="Sponsor" src="https://img.shields.io/badge/-ea4aaa?style=flat&logo=githubsponsors&logoColor=white"></a>
 </p>
 
 **Translate the experience. Keep the meaning.**
