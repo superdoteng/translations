@@ -2615,6 +2615,7 @@ review-conversations-summary = 对话 · 共 { $total } 个 · 已解决 { $reso
 review-file-conversations-summary = { $file } · 共 { $total } 个 · 已解决 { $resolved } 个
 review-add-comment-line = 在第 { $line } 行添加评论
 review-add-comment-lines = 在第 { $start } 至 { $end } 行添加评论
+review-add-comment-extend-hint = 按住 Shift 点击某行以扩展范围
 chat-queued-waiting-for-answer = 正在等待你回答上方问题
 chat-show-full-plan = 显示完整计划
 

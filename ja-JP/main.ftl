@@ -2695,6 +2695,7 @@ review-conversations-summary = 会話 · 合計 { $total } 件 · 解決済み {
 review-file-conversations-summary = { $file } · 合計 { $total } 件 · 解決済み { $resolved } 件
 review-add-comment-line = { $line } 行目にコメントを追加
 review-add-comment-lines = { $start }～{ $end } 行目にコメントを追加
+review-add-comment-extend-hint = Shift キーを押しながら行をクリックして範囲を広げます
 chat-queued-waiting-for-answer = 上の質問への回答を待っています
 chat-show-full-plan = プラン全体を表示
 
