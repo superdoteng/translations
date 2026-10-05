@@ -2546,6 +2546,7 @@ review-conversations-summary = گفت‌وگوها · در مجموع { $total }
 review-file-conversations-summary = { $file } · در مجموع { $total } · { $resolved } حل‌شده
 review-add-comment-line = افزودن نظر در خط { $line }
 review-add-comment-lines = افزودن نظر در خطوط { $start } تا { $end }
+review-add-comment-extend-hint = برای گسترش، با نگه داشتن Shift روی یک خط کلیک کنید
 chat-queued-waiting-for-answer = در انتظار پاسخ شما در بالا
 chat-show-full-plan = نمایش طرح کامل
 

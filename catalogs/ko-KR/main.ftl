@@ -2547,6 +2547,7 @@ review-conversations-summary = 대화 · 총 { $total }개 · 해결됨 { $resol
 review-file-conversations-summary = { $file } · 총 { $total }개 · 해결됨 { $resolved }개
 review-add-comment-line = { $line }줄에 댓글 추가
 review-add-comment-lines = { $start }~{ $end }줄에 댓글 추가
+review-add-comment-extend-hint = Shift를 누른 채 줄을 클릭하여 범위 확장
 chat-queued-waiting-for-answer = 위의 답변을 기다리는 중
 chat-show-full-plan = 전체 계획 보기
 

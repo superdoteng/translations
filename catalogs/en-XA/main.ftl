@@ -2596,6 +2596,7 @@ review-conversations-summary = [!! Çôñṽëŕšàţïôñš · { $total } ţ�
 review-file-conversations-summary = [!! { $file } · { $total } ţôţàľ · { $resolved } ŕëšôľṽëđ !!]
 review-add-comment-line = [!! Àđđ à çôṁṁëñţ ôñ ľïñë { $line } !!]
 review-add-comment-lines = [!! Àđđ à çôṁṁëñţ ôñ ľïñëš { $start } ţô { $end } !!]
+review-add-comment-extend-hint = [!! Šħïƒţ-çľïçķ à ľïñë ţô ëẋţëñđ !!]
 chat-queued-waiting-for-answer = [!! ŵàïţïñĝ ƒôŕ ÿôüŕ àñšŵëŕ àþôṽë !!]
 chat-show-full-plan = [!! Šħôŵ ƒüľľ þľàñ !!]
 

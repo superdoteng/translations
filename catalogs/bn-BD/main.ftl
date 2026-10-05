@@ -2546,6 +2546,7 @@ review-conversations-summary = কথোপকথন · মোট { $total } · 
 review-file-conversations-summary = { $file } · মোট { $total } · সমাধান হয়েছে { $resolved }
 review-add-comment-line = { $line } নম্বর লাইনে মন্তব্য যোগ করুন
 review-add-comment-lines = { $start } থেকে { $end } নম্বর লাইনে মন্তব্য যোগ করুন
+review-add-comment-extend-hint = পরিসর বাড়াতে Shift চেপে একটি লাইনে ক্লিক করুন
 chat-queued-waiting-for-answer = উপরের আপনার উত্তরের জন্য অপেক্ষা করা হচ্ছে
 chat-show-full-plan = সম্পূর্ণ পরিকল্পনা দেখান
 

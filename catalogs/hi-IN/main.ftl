@@ -2557,6 +2557,7 @@ review-conversations-summary = वार्तालाप · कुल { $total
 review-file-conversations-summary = { $file } · कुल { $total } · { $resolved } हल किए गए
 review-add-comment-line = पंक्ति { $line } पर टिप्पणी जोड़ें
 review-add-comment-lines = पंक्ति { $start } से { $end } पर टिप्पणी जोड़ें
+review-add-comment-extend-hint = विस्तार करने के लिए Shift दबाकर किसी पंक्ति पर क्लिक करें
 chat-queued-waiting-for-answer = ऊपर आपके उत्तर की प्रतीक्षा है
 chat-show-full-plan = पूरी योजना दिखाएं
 

@@ -2545,6 +2545,7 @@ review-conversations-summary = Konuşmalar · toplam { $total } · { $resolved }
 review-file-conversations-summary = { $file } · toplam { $total } · { $resolved } çözüldü
 review-add-comment-line = { $line }. satıra yorum ekle
 review-add-comment-lines = { $start }–{ $end }. satırlara yorum ekle
+review-add-comment-extend-hint = Genişletmek için Shift ile bir satıra tıklayın
 chat-queued-waiting-for-answer = yukarıdaki yanıtınız bekleniyor
 chat-show-full-plan = Planın tamamını göster
 

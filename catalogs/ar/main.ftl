@@ -2663,6 +2663,7 @@ review-conversations-summary = المحادثات · { $total } إجمالاً �
 review-file-conversations-summary = { $file } · { $total } إجمالاً · { $resolved } محلولة
 review-add-comment-line = أضف تعليقًا على السطر { $line }
 review-add-comment-lines = أضف تعليقًا على الأسطر من { $start } إلى { $end }
+review-add-comment-extend-hint = انقر مع الضغط على Shift على سطر لتوسيع النطاق
 chat-queued-waiting-for-answer = في انتظار إجابتك أعلاه
 chat-show-full-plan = عرض الخطة كاملة
 
