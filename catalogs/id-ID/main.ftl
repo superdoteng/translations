@@ -2545,6 +2545,7 @@ review-conversations-summary = Percakapan · total { $total } · { $resolved } t
 review-file-conversations-summary = { $file } · total { $total } · { $resolved } terselesaikan
 review-add-comment-line = Tambahkan komentar pada baris { $line }
 review-add-comment-lines = Tambahkan komentar pada baris { $start } hingga { $end }
+review-add-comment-extend-hint = Shift-klik baris untuk memperluas
 chat-queued-waiting-for-answer = menunggu jawaban Anda di atas
 chat-show-full-plan = Tampilkan rencana lengkap
 

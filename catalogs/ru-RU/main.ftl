@@ -2597,6 +2597,7 @@ review-conversations-summary = Диалоги · всего { $total } · реш
 review-file-conversations-summary = { $file } · всего { $total } · решено { $resolved }
 review-add-comment-line = Добавить комментарий к строке { $line }
 review-add-comment-lines = Добавить комментарий к строкам с { $start } по { $end }
+review-add-comment-extend-hint = Щёлкните строку с Shift, чтобы расширить
 chat-queued-waiting-for-answer = ожидание вашего ответа выше
 chat-show-full-plan = Показать весь план
 

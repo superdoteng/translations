@@ -2582,6 +2582,7 @@ review-conversations-summary = Unterhaltungen · insgesamt { $total } · { $reso
 review-file-conversations-summary = { $file } · insgesamt { $total } · { $resolved } gelöst
 review-add-comment-line = Kommentar zu Zeile { $line } hinzufügen
 review-add-comment-lines = Kommentar zu den Zeilen { $start } bis { $end } hinzufügen
+review-add-comment-extend-hint = Mit Shift auf eine Zeile klicken, um zu erweitern
 chat-queued-waiting-for-answer = Oben wird auf deine Antwort gewartet
 chat-show-full-plan = Vollständigen Plan anzeigen
 

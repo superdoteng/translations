@@ -2577,6 +2577,7 @@ review-conversations-summary = گفتگوئیں · کل { $total } · { $resolve
 review-file-conversations-summary = { $file } · کل { $total } · { $resolved } حل شدہ
 review-add-comment-line = لائن { $line } پر تبصرہ شامل کریں
 review-add-comment-lines = لائن { $start } سے { $end } پر تبصرہ شامل کریں
+review-add-comment-extend-hint = توسیع کے لیے Shift دبا کر کسی لائن پر کلک کریں
 chat-queued-waiting-for-answer = اوپر آپ کے جواب کا انتظار ہے
 chat-show-full-plan = مکمل منصوبہ دکھائیں
 

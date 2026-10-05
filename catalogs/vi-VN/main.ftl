@@ -2545,6 +2545,7 @@ review-conversations-summary = Cuộc hội thoại · tổng cộng { $total } 
 review-file-conversations-summary = { $file } · tổng cộng { $total } · { $resolved } đã giải quyết
 review-add-comment-line = Thêm nhận xét vào dòng { $line }
 review-add-comment-lines = Thêm nhận xét vào các dòng { $start } đến { $end }
+review-add-comment-extend-hint = Shift-nhấp vào một dòng để mở rộng
 chat-queued-waiting-for-answer = đang chờ câu trả lời của bạn ở trên
 chat-show-full-plan = Hiển thị toàn bộ kế hoạch
 

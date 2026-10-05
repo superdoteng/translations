@@ -2581,6 +2581,7 @@ review-conversations-summary = שיחות · { $total } בסך הכול · { $re
 review-file-conversations-summary = { $file } · { $total } בסך הכול · { $resolved } נפתרו
 review-add-comment-line = הוספת תגובה בשורה { $line }
 review-add-comment-lines = הוספת תגובה בשורות { $start } עד { $end }
+review-add-comment-extend-hint = לחיצה עם Shift על שורה מרחיבה את הטווח
 chat-queued-waiting-for-answer = ממתין לתשובתך למעלה
 chat-show-full-plan = הצג את התוכנית המלאה
 
