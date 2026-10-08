@@ -236,6 +236,11 @@ clone-repository-url = Repositório URL
 close-tab-action = Fechar aba
 close-tab-description = Esta aba está em andamento. Fechar vai impedir o corretor.
 close-tab-title = Fechar "{ $tab_title }"?
+close-tab-keep-launched-agents = Mantê-los abertos como abas
+close-tab-launched-agents-description = { $count ->
+    [one] Um agente iniciado nesta aba ainda está trabalhando. Fechar a aba vai interrompê-lo.
+   *[other] { $count } agentes iniciados nesta aba ainda estão trabalhando. Fechar a aba vai interrompê-los.
+}
 common-back-arrow = ← De volta
 common-browse = Navegar
 common-browse-ellipsis = Navegue...
@@ -271,6 +276,9 @@ common-shortcuts = Atalhos
 common-skip = Pular
 common-welcome-to-app = Bem-vindo ao { $app_name }
 notification-dismiss = Notificação de demissão
+notification-dismiss-below = Dispensar tudo abaixo
+notification-dismiss-worktree = Dispensar as notificações desta worktree
+notification-empty-all = Nenhuma mensagem
 notification-empty-queue = Fila livre
 notification-agents-running =
     { $count ->
@@ -286,6 +294,8 @@ notification-older = Mais antigos
 notification-queue-title = Fila de Notificações
 notification-select-one-or-more = Selecione uma ou mais opções.
 notification-shortcut-dismiss = Descarte a notificação selecionada
+notification-shortcut-dismiss-worktree = Dispensar todas as notificações da worktree selecionada
+notification-shortcut-expand-worktree = Expandir ou recolher os chats da worktree selecionada
 notification-shortcut-mark-unread = Marque a notificação selecionada como não lida
 notification-shortcut-move = Navegar pelas notificações
 notification-shortcut-newest = Ir para a notificação mais recente
@@ -297,13 +307,16 @@ notification-shortcut-remove-chat = Remova o chat atual da fila
 notification-shortcut-send-advance = Envie sua mensagem e avance
 notification-shortcut-send-unread = Envie o chat atual para a fila como não lido
 notification-shortcut-source-chat = Vá para o chat de origem
-notification-shortcuts-cycle-hint = Segure ⌘⌥ e toque J ou K para ciclar · Lançar para abrir · Espaço para espiar
+notification-shortcut-toggle-preview = Mostrar ou ocultar a prévia da conversa
+notification-shortcut-undo-dismissal = Desfazer a última dispensa
 notification-shortcuts-from-anywhere = De qualquer lugar
 notification-shortcuts-in-queue = Na fila
+notification-shortcuts-switcher-hint = Segure ⌘⌥ e toque em J ou K para alternar · solte para abrir
 notification-shortcuts-while-peeking = Enquanto espiava
-notification-view-queue = Fila
+notification-undo-dismissal = Desfazer
+notification-view-earlier = Anteriores
+notification-view-ready = Pronto
 notification-view-running = Corrida
-notification-view-timeline = Linha do tempo
 onboarding-chat-ui = Interface de Chat
 onboarding-chat-ui-description = Mensagens renderizadas com diferenciais e markdown inline
 onboarding-chat-view-description = Ambos funcionam com qualquer AI — mudem a qualquer momento nas Configurações
@@ -501,13 +514,15 @@ settings-category-general-description = Comportamento principal do app e atalhos
 settings-category-agents-description = Roteamento de provedores, templates de prompts e regras de execução por ação do agente.
 settings-category-profiles-description = Perfis CLI locais e padrões globais/workspace/projetos.
 settings-category-commands-description = Comandos personalizados e modelos de prompt com escopo global/de espaço de trabalho/de projeto.
-settings-category-experimental-description = Recursos de visualização, incluindo espaços de trabalho contextuais compartilhados, projetos não Git, orquestração de agentes, despacho de revisão headless e Hapi resumo de aba móvel.
+settings-category-experimental-description = Recursos de visualização, incluindo espaços de trabalho contextuais compartilhados, projetos não Git, orquestração de agentes e despacho de revisão headless.
 settings-category-keyboard-shortcuts-description = Navegue, pesquise e personalize atalhos de teclado.
 settings-category-appearance-description = Preferências visuais e apresentação da interface.
 settings-category-notifications-description = Comportamento alerta e personalização de som.
 settings-category-command-palette-description = Escolha quais fontes aparecem na paleta de comandos.
 settings-category-privacy-description = Controle de telemetria de uso anônimo.
 settings-category-worktrees-description = Padrões para ações do ciclo de vida da árvore de trabalho.
+settings-mobile-push-desktop-idle-label = Notificar o celular após inatividade
+settings-mobile-push-desktop-idle-description = Minutos sem entrada de teclado ou mouse neste Mac antes que as notificações sejam enviadas ao seu celular. Itens que você resolver aqui primeiro nunca são enviados. 0 envia imediatamente.
 settings-branch-inherits-global = Herda o global
 settings-branch-use-default = Usar branch padrão
 settings-branch-clear-value = Valor claro
@@ -550,6 +565,9 @@ settings-workspace-type-individual = Individual
 settings-workspace-projects-label = Projetos
 settings-workspace-projects-description = Repositórios anexados a este espaço de trabalho.
 settings-workspace-project-count = { $count } Projetos
+settings-workspace-shared-context-section = Contexto compartilhado
+settings-workspace-feature-file-label = Criar FEATURE.md para grupos de branches
+settings-workspace-feature-file-description = Novos grupos de branches recebem um FEATURE.md, e os agentes são instruídos a mantê-lo atualizado. Desativar mantém os arquivos existentes.
 settings-workspace-danger-section = Zona de Perigo
 settings-workspace-delete-label = Excluir espaço de trabalho
 settings-workspace-delete-description = Abra a confirmação de exclusão do workspace.
@@ -857,6 +875,9 @@ settings-section-storage = Armazenamento
 settings-section-diagnostics = Diagnósticos
 settings-section-theme = Tema
 settings-section-layout = Layout
+settings-section-chat = Chat
+settings-section-files-diffs = Arquivos e diffs
+settings-section-usage-cost = Uso e custo
 settings-section-fonts = Fontes
 settings-section-delivery = Entrega
 settings-section-per-type-overrides = Sobreposições por tipo
@@ -1044,7 +1065,6 @@ review-ai-questions = AI perguntas
 review-no-comments = Ainda não houve comentários de avaliação
 review-select-lines-hint = Selecione linhas no diferencial para iniciar uma revisão.
 sidebar-ssh = SSH
-shared-context-title = AI CONTEXT
 shared-context-generate-ai-context = Gerar AI Contexto
 action-generate = Gerar
 shared-context-add-repositories = Adicionar Repositórios...
@@ -1052,6 +1072,13 @@ shared-context-repositories = Repositórios
 shared-context-add-missing-project = Adicionar projeto faltante
 common-running = Corrida
 shared-context-add-run-script = Adicionar script de execução...
+shared-parent-git-repo-count = { $count ->
+    [one] 1 repo
+   *[other] { $count } repos
+}
+shared-parent-git-all-repos = Todos · { $repos }
+shared-parent-git-menu-tooltip = Ações do Git para repos filhos
+shared-parent-git-unavailable-title = Não foi possível abrir estes repos
 shared-context-choose-projects-to-run = Escolha projetos para conduzir
 workspace-choose-what-to-launch = Escolha o que lançar...
 icon-picker-tab-symbols = Símbolos
@@ -1486,8 +1513,6 @@ settings-experimental-non-git-projects-label = Projetos não-Git
 settings-experimental-non-git-projects-description = Permita adicionar pastas sem Git metadados. Projetos existentes de pasta simples permanecem visíveis se isso for desativado.
 settings-experimental-agent-orchestration-label = Orquestração de agentes
 settings-experimental-agent-orchestration-description = Disponibilize os comandos de CLI de orquestração do super.engineering aos agentes. Cada uso ainda exige uma solicitação explícita e correspondente a ela.
-settings-experimental-hapi-label = Habilitar Hapi para sessões móveis
-settings-experimental-hapi-description = Continue as sessões de super.engineering compatíveis no celular com Hapi.
 settings-experimental-auto-compact-label = Autocompactação Claude Code no limite da janela de contexto
 settings-experimental-auto-compact-description = Quando um turno de Claude Code falhar porque a janela de contexto do modelo for excedida, execute automaticamente o /compact e envie novamente sua última mensagem. Útil para backends que não têm contexto de 1M (ex.: GLM5.1) onde o CLAUDE_CODE_AUTO_COMPACT_WINDOW de Claude Code não dispara sob o modo -p.
 settings-experimental-review-label = Análise
@@ -1556,6 +1581,9 @@ settings-search-section-diagnostics = Diagnósticos
 settings-search-section-theme = Tema
 settings-search-section-fonts = Fontes
 settings-search-section-layout = Layout
+settings-search-section-chat = Chat
+settings-search-section-files---diffs = Arquivos e diffs
+settings-search-section-usage---cost = Uso e custo
 settings-search-section-delivery = Entrega
 settings-search-section-per-type-overrides = Sobreposições por tipo
 settings-search-section-shortcuts = Atalhos
@@ -1714,6 +1742,8 @@ settings-search-entry-appearance-layout-keep-completed-tool-activity-expanded-la
 settings-search-entry-appearance-layout-keep-completed-tool-activity-expanded-description = Mantenha a atividade das ferramentas visível após o fim do turno, em vez de recolhê-la em um separador.
 settings-search-entry-appearance-layout-show-files-changed-summary-label = Mostrar resumo dos arquivos alterados
 settings-search-entry-appearance-layout-show-files-changed-summary-description = Mostre um resumo de “Arquivos alterados” após turnos que editam arquivos.
+settings-search-entry-appearance-layout-rich-markdown-composer-label = Editor de Markdown avançado
+settings-search-entry-appearance-layout-rich-markdown-composer-description = Formata o Markdown enquanto você digita no editor do chat. Desative para usar o editor de texto simples.
 settings-search-entry-notifications-delivery-system-notifications-label = Notificações do sistema
 settings-search-entry-notifications-delivery-system-notifications-description = Comportamento padrão para notificações de macOS em prompts de conclusão de tarefa e aprovação/entrada.
 settings-search-entry-notifications-delivery-persistent-alerts-label = Alertas persistentes
@@ -1722,6 +1752,11 @@ settings-search-entry-notifications-delivery-break-through-focus-label = Foco de
 settings-search-entry-notifications-delivery-break-through-focus-description = Envie notificações mesmo quando o modo Foco estiver ativo.
 settings-search-entry-notifications-delivery-clear-queue-items-on-tab-visit-label = Limpar itens da fila na visita de aba
 settings-search-entry-notifications-delivery-clear-queue-items-on-tab-visit-description = Quando ativado, selecionar um item na fila marca que ele leu e visitar a aba dele o remove.
+settings-search-entry-notifications-delivery-queue-opens-at-label = A fila abre em
+settings-search-entry-notifications-delivery-queue-opens-at-description = Escolha se, ao abrir a fila, será selecionado o item mais recente, o mais antigo ou o último item que você selecionou.
+settings-notification-queue-open-position-newest = Mais recente
+settings-notification-queue-open-position-oldest = Mais antigo
+settings-notification-queue-open-position-last-selected = Último selecionado
 settings-search-entry-notifications-delivery-timeline-notifications-label = Notificações da linha do tempo
 settings-search-entry-notifications-delivery-timeline-notifications-description = Escolha quantos eventos de notificação você quer manter. Valores mais altos consomem mais memória e espaço em disco.
 settings-search-entry-notifications-per-type-overrides-task-complete-delivery-label = Entrega completa da tarefa
@@ -1758,8 +1793,6 @@ settings-search-entry-experimental-feature-flags-non-git-projects-label = Projet
 settings-search-entry-experimental-feature-flags-non-git-projects-description = Permitir adicionar pastas sem Git metadados.
 settings-search-entry-experimental-feature-flags-agent-orchestration-label = Orquestração de agentes
 settings-search-entry-experimental-feature-flags-agent-orchestration-description = Disponibilize os comandos de orquestração aos agentes. Cada uso ainda exige uma solicitação explícita e correspondente a ela.
-settings-search-entry-experimental-feature-flags-enable-hapi-for-mobile-sessions-label = Ativer Hapi para sessões móveis
-settings-search-entry-experimental-feature-flags-enable-hapi-for-mobile-sessions-description = Continue com abas compatíveis no celular com Hapi.
 settings-search-entry-experimental-feature-flags-auto-compact-claude-code-on-context-window-limit-label = Autocompactação Claude Code no limite da janela de contexto
 settings-search-entry-experimental-feature-flags-auto-compact-claude-code-on-context-window-limit-description = Execute automaticamente o /compact e reenvie quando Claude Code ultrapassar a janela de contexto.
 settings-search-entry-experimental-feature-flags-review-label = Análise
@@ -1941,6 +1974,7 @@ settings-keybinding-action-notifications-show-queue = Notificações: Fila de Mo
 settings-keybinding-action-notifications-jump-latest = Notificações: Ir para o Último Não Lido
 settings-keybinding-action-notifications-add-chat = Notificações: Adicionar o Chat Atual à Fila
 settings-keybinding-action-notifications-toggle-unread = Notificações: Alternar Selecionado Não Lido
+settings-keybinding-action-notifications-toggle-preview = Notificações: Mostrar/ocultar prévia
 settings-keybinding-action-notifications-mark-oldest = Notificações: Mark Oldest Não Lido e Avançar
 settings-keybinding-action-notifications-select-older = Notificações: Selecionar Antigo
 settings-keybinding-action-notifications-select-newer = Notificações: Selecione Mais Recente
@@ -1972,6 +2006,23 @@ custom-actions-untitled = Sem título
 subagent-state-running = Corrida
 subagent-state-completed = Concluído
 subagent-state-failed = Fracassado
+launched-agent-needs-input = Precisa de resposta
+launched-agent-closed = Fechado
+launch-card-launched = { $count ->
+    [one] 1 agente iniciado
+   *[other] { $count } agentes iniciados
+}
+launch-card-ran = { $count ->
+    [one] 1 agente executado
+   *[other] { $count } agentes executados
+}
+launch-card-working = { $count } trabalhando
+launch-card-needs-input = { $count ->
+    [one] 1 precisa de resposta
+   *[other] { $count } precisam de resposta
+}
+launch-card-done = { $count } concluídos
+launch-card-all-done = Concluído
 subagent-earlier-rows-not-shown = … { $count } linhas anteriores não mostradas
 diff-comment-on-file = Comentário no arquivo
 workspace-review-request-detect-failed = Não consegui detectar { $kind }
@@ -2082,6 +2133,28 @@ run-open-preview = Prévia aberta
 run-stop-script = Script de parar e executar
 run-rerun-workspace = Reexecute o espaço de trabalho
 workspace-close-tab = Fechar aba
+workspace-launched-agents-header = Agentes iniciados
+workspace-launched-by = Iniciado por { $tab_title }
+workspace-open-launched-tab = Abrir como aba
+notification-launched-agent-title = { $title } · de { $parent }
+launched-agents-summary = { $state ->
+    [permission] { $count ->
+        [one] 1 agente iniciado · precisa de resposta
+       *[other] { $count } agentes iniciados · precisa de resposta
+    }
+    [review] { $count ->
+        [one] 1 agente iniciado · concluído
+       *[other] { $count } agentes iniciados · concluído
+    }
+    [working] { $count ->
+        [one] 1 agente iniciado · trabalhando
+       *[other] { $count } agentes iniciados · trabalhando
+    }
+   *[other] { $count ->
+        [one] 1 agente iniciado
+       *[other] { $count } agentes iniciados
+    }
+}
 workspace-toggle-terminal = Terminal de Alternância
 workspace-choose-open-app = Escolha abrir aplicativo
 workspace-new-tab-with-provider = Nova aba com o provedor
@@ -2233,6 +2306,14 @@ palette-footer-close = Fechar
 palette-footer-back = Voltar
 palette-action-restore = Restauração
 sidebar-rename-worktree-label = Renomear a etiqueta da árvore de trabalho...
+group-branch-rename-title = Renomear branch
+group-branch-rename-subtitle = { $count ->
+    [one] Renomeia o branch em 1 repositório
+   *[other] Renomeia o branch em todos os { $count } repositórios
+}
+group-branch-rename-subtitle-no-repos = Ainda não há repositórios com checkout
+group-branch-rename-blocked = Todo repositório precisa de uma worktree no mesmo branch. Corrija os repositórios destacados antes de renomear.
+group-branch-rename-repo-missing = Sem worktree
 sidebar-hide-worktree = Esconder árvore de trabalho
 sidebar-move-to-section = Mudança para a seção
 sidebar-remove-from-section = Remover da seção
@@ -2546,10 +2627,6 @@ shared-context-depth-thorough-summary = Faça a entrevista primeiro, depois anal
 shared-context-depth-thorough-tooltip = Faz perguntas esclarecedoras, confirma objetivos e depois faz uma passagem mais detalhada do código.
 right-panel-show-gitignored-files = Mostrar arquivos gitignorados
 right-panel-hide-gitignored-files = Ocultar arquivos ignorados no git
-workspace-agent-busy-tooltip = O agente está ocupado
-workspace-hapi-hub-required-tooltip = Execute `hapi hub` para habilitar a retomada da sessão móvel
-workspace-hapi-install-tooltip = Instalar Hapi para retomar sessões móveis
-workspace-hapi-checking-tooltip = Verificando Hapi status...
 workspace-hold-command-for-chat-ui = Segure ⌘ para a interface do chat
 workspace-hold-command-for-terminal = Segure ⌘ para o Terminal
 file-tree-symbolic-link = Elo simbólico
@@ -2683,4 +2760,4 @@ data-directory-notice-home = Após a atualização, a nova pasta aponta para seu
 data-directory-notice-home-title = Mantenha as duas pastas de dados
 data-directory-notice-summary = As configurações de repositório e os scripts existentes continuam funcionando.
 data-directory-notice-config = Configuração do repositório: use .super.engineering/config.json para novas configurações. O arquivo antigo .superconductor/config.json continua compatível quando o novo não existe. Versões antigas do app ainda usam o arquivo antigo; os dois arquivos não são sincronizados.
-data-directory-notice-scripts = Os arquivos de script permanecem onde estão. Se mover um script, atualize o comando que o executa. As variáveis de ambiente SUPERCONDUCTOR_* existentes continuam funcionando.
+data-directory-notice-scripts = Os arquivos de script permanecem onde estão. Se mover um script, atualize o comando que o executa. Os scripts deveriam ler as variáveis SUPER_ENGINEERING_*; os nomes SUPERCONDUCTOR_* ainda são exportados por enquanto e serão removidos em uma versão futura.
