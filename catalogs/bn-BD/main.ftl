@@ -172,6 +172,8 @@ project-menu-unhide-worktrees = কাজের গাছগুলিকে আ�
 project-menu-move-to-workspace = কর্মক্ষেত্রে যান
 project-menu-remove = প্রকল্প সরান
 action-rename = নাম পরিবর্তন করুন
+action-mark-unread = অপঠিত হিসেবে চিহ্নিত করুন
+action-mark-read = পঠিত হিসেবে চিহ্নিত করুন
 workspace-menu-change-icon = আইকন পরিবর্তন করুন...
 action-delete = মুছুন
 theme-customize-title = থিম কাস্টমাইজ করুন
@@ -373,6 +375,9 @@ scripts-add-stop-command = + স্টপ কমান্ড যোগ করু
 scripts-stop-command-description = super.engineering রান প্রক্রিয়া বন্ধ করার আগে এটি চালায়।
 run-stop-command-failed-title = স্টপ কমান্ড ব্যর্থ হয়েছে
 run-stop-command-failed-description = { $script }-এর স্টপ কমান্ড ব্যর্থ হয়েছে। রান প্রক্রিয়া বন্ধ করা হয়েছে।
+run-script-unavailable-title = রান স্ক্রিপ্ট শুরু হয়নি
+run-script-not-found-description = { $script } এই প্রকল্পের জন্য কনফিগার করা হয়নি।
+run-script-none-description = এই প্রকল্পের জন্য কোনও রান স্ক্রিপ্ট কনফিগার করা হয়নি।
 scripts-configure-title = স্ক্রিপ্ট কনফিগার করুন
 scripts-configure-description = { $project }-এর স্ক্রিপ্ট। সারিগুলো একই শেলে ক্রমানুসারে চলে এবং প্রথম ব্যর্থতায় থেমে যায়।
 worktree-new-for-project = { $project }-এর জন্য নতুন ওয়ার্কট্রি
@@ -2014,21 +2019,18 @@ subagent-state-completed = সম্পন্ন
 subagent-state-failed = ব্যর্থ হয়েছে
 launched-agent-needs-input = ইনপুট প্রয়োজন
 launched-agent-closed = বন্ধ
-launch-card-launched = { $count ->
-    [one] ১টি এজেন্ট চালু হয়েছে
-   *[other] { $count }টি এজেন্ট চালু হয়েছে
-}
-launch-card-ran = { $count ->
-    [one] ১টি এজেন্ট চলেছে
-   *[other] { $count }টি এজেন্ট চলেছে
+launched-agent-idle = নিষ্ক্রিয়
+launch-group-agents = { $count ->
+    [one] ১টি এজেন্ট
+   *[other] { $count }টি এজেন্ট
 }
 launch-card-working = { $count }টি কাজ করছে
 launch-card-needs-input = { $count ->
     [one] ১টির ইনপুট প্রয়োজন
    *[other] { $count }টির ইনপুট প্রয়োজন
 }
+launch-card-failed = { $count }টি ব্যর্থ
 launch-card-done = { $count }টি সম্পন্ন
-launch-card-all-done = সম্পন্ন
 subagent-earlier-rows-not-shown = … পূর্ববর্তী { $count } সারি দেখানো হয়নি
 diff-comment-on-file = ফাইলে মন্তব্য করুন
 workspace-review-request-detect-failed = { $kind } শনাক্ত করা যায়নি

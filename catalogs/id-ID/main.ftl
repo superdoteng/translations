@@ -179,6 +179,8 @@ project-menu-unhide-worktrees = Tampilkan pohon kerja...
 project-menu-move-to-workspace = Pindah ke ruang kerja
 project-menu-remove = Hapus Proyek
 action-rename = Mengganti nama
+action-mark-unread = Tandai belum dibaca
+action-mark-read = Tandai sudah dibaca
 workspace-menu-change-icon = Ikon Ubah...
 action-delete = Hapus
 theme-customize-title = Sesuaikan Tema
@@ -377,6 +379,9 @@ scripts-add-stop-command = + Tambahkan perintah penghentian
 scripts-stop-command-description = Dijalankan sebelum super.engineering menghentikan proses Run.
 run-stop-command-failed-title = Perintah penghentian gagal
 run-stop-command-failed-description = Perintah penghentian untuk { $script } gagal. Proses Run dihentikan.
+run-script-unavailable-title = Skrip jalankan tidak dimulai
+run-script-not-found-description = { $script } tidak dikonfigurasi untuk proyek ini.
+run-script-none-description = Tidak ada skrip jalankan yang dikonfigurasi untuk proyek ini.
 scripts-configure-title = Konfigurasikan Skrip
 scripts-configure-description = Skrip untuk { $project }. Baris dijalankan secara berurutan dalam shell yang sama dan berhenti pada kegagalan pertama.
 worktree-new-for-project = Worktree baru untuk { $project }
@@ -2010,21 +2015,18 @@ subagent-state-completed = Selesai
 subagent-state-failed = Gagal
 launched-agent-needs-input = Perlu masukan
 launched-agent-closed = Ditutup
-launch-card-launched = { $count ->
-    [one] 1 agen diluncurkan
-   *[other] { $count } agen diluncurkan
-}
-launch-card-ran = { $count ->
-    [one] 1 agen dijalankan
-   *[other] { $count } agen dijalankan
+launched-agent-idle = Diam
+launch-group-agents = { $count ->
+    [one] 1 agen
+   *[other] { $count } agen
 }
 launch-card-working = { $count } bekerja
 launch-card-needs-input = { $count ->
     [one] 1 perlu input
    *[other] { $count } perlu input
 }
+launch-card-failed = { $count } gagal
 launch-card-done = { $count } selesai
-launch-card-all-done = Selesai
 subagent-earlier-rows-not-shown = … { $count } baris sebelumnya tidak ditampilkan
 diff-comment-on-file = Komentar di file
 workspace-review-request-detect-failed = Tidak dapat mendeteksi { $kind }

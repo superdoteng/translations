@@ -188,6 +188,8 @@ project-menu-unhide-worktrees = 取消隐藏工作树…
 project-menu-move-to-workspace = 移动到工作区
 project-menu-remove = 移除项目
 action-rename = 重命名
+action-mark-unread = 标记为未读
+action-mark-read = 标记为已读
 workspace-menu-change-icon = 更改图标…
 action-delete = 删除
 theme-customize-title = 自定义主题
@@ -396,6 +398,9 @@ scripts-add-stop-command = + 添加停止命令
 scripts-stop-command-description = 在 super.engineering 终止运行进程前执行。
 run-stop-command-failed-title = 停止命令失败
 run-stop-command-failed-description = { $script } 的停止命令失败。运行进程已终止。
+run-script-unavailable-title = 运行脚本未启动
+run-script-not-found-description = 此项目未配置 { $script }。
+run-script-none-description = 此项目未配置运行脚本。
 scripts-configure-title = 配置脚本
 scripts-configure-description = { $project } 的脚本。各行在同一 shell 中按顺序运行，并在首次失败时停止。
 worktree-new-for-project = 为 { $project } 新建工作树
@@ -2040,21 +2045,18 @@ subagent-state-completed = 已完成
 subagent-state-failed = 失败
 launched-agent-needs-input = 需要输入
 launched-agent-closed = 已关闭
-launch-card-launched = { $count ->
-    [one] 已启动 1 个代理
-   *[other] 已启动 { $count } 个代理
-}
-launch-card-ran = { $count ->
-    [one] 已运行 1 个代理
-   *[other] 已运行 { $count } 个代理
+launched-agent-idle = 空闲
+launch-group-agents = { $count ->
+    [one] 1 个代理
+   *[other] { $count } 个代理
 }
 launch-card-working = { $count } 个进行中
 launch-card-needs-input = { $count ->
     [one] 1 个需要输入
    *[other] { $count } 个需要输入
 }
+launch-card-failed = { $count } 个失败
 launch-card-done = { $count } 个已完成
-launch-card-all-done = 已完成
 subagent-earlier-rows-not-shown = …前面还有 { $count } 行未显示
 diff-comment-on-file = 对文件发表评论
 workspace-review-request-detect-failed = 无法检测到{ $kind }
