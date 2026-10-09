@@ -172,6 +172,8 @@ project-menu-unhide-worktrees = Afficher les arbres de travail...
 project-menu-move-to-workspace = Déplacer vers l'espace de travail
 project-menu-remove = Supprimer le projet
 action-rename = Renommer
+action-mark-unread = Marquer comme non lu
+action-mark-read = Marquer comme lu
 workspace-menu-change-icon = Changer d'icône…
 action-delete = Supprimer
 theme-customize-title = Personnaliser le thème
@@ -377,6 +379,9 @@ scripts-add-stop-command = + Ajouter une commande d’arrêt
 scripts-stop-command-description = S’exécute avant que super.engineering n’arrête le processus d’exécution.
 run-stop-command-failed-title = Échec de la commande d’arrêt
 run-stop-command-failed-description = La commande d’arrêt du script { $script } a échoué. Le processus d’exécution a été arrêté.
+run-script-unavailable-title = Le script d’exécution n’a pas démarré
+run-script-not-found-description = { $script } n’est pas configuré pour ce projet.
+run-script-none-description = Aucun script d’exécution n’est configuré pour ce projet.
 scripts-configure-title = Configurer les scripts
 scripts-configure-description = Scripts pour { $project }. Les lignes s’exécutent dans l’ordre dans le même shell et s’arrêtent au premier échec.
 worktree-new-for-project = Nouveau worktree pour { $project }
@@ -2018,21 +2023,18 @@ subagent-state-completed = Achèvement
 subagent-state-failed = Échec
 launched-agent-needs-input = Saisie requise
 launched-agent-closed = Fermé
-launch-card-launched = { $count ->
-    [one] 1 agent lancé
-   *[other] { $count } agents lancés
-}
-launch-card-ran = { $count ->
-    [one] 1 agent exécuté
-   *[other] { $count } agents exécutés
+launched-agent-idle = Inactif
+launch-group-agents = { $count ->
+    [one] 1 agent
+   *[other] { $count } agents
 }
 launch-card-working = { $count } en cours
 launch-card-needs-input = { $count ->
     [one] 1 attend une réponse
    *[other] { $count } attendent une réponse
 }
+launch-card-failed = { $count } en échec
 launch-card-done = { $count } terminés
-launch-card-all-done = Terminé
 subagent-earlier-rows-not-shown = … { $count } lignes précédentes non affichées
 diff-comment-on-file = Commentaire dans le dossier
 workspace-review-request-detect-failed = Impossible de détecter { $kind }

@@ -172,6 +172,8 @@ project-menu-unhide-worktrees = آشکار کردن درختان کار...
 project-menu-move-to-workspace = به فضای کاری بروید
 project-menu-remove = حذف پروژه
 action-rename = تغییر نام دهید
+action-mark-unread = علامت‌گذاری به‌عنوان خوانده‌نشده
+action-mark-read = علامت‌گذاری به‌عنوان خوانده‌شده
 workspace-menu-change-icon = تغییر نماد…
 action-delete = حذف کنید
 theme-customize-title = سفارشی کردن تم
@@ -373,6 +375,9 @@ scripts-add-stop-command = + افزودن فرمان توقف
 scripts-stop-command-description = پیش از آن‌که super.engineering فرایند اجرا را خاتمه دهد، اجرا می‌شود.
 run-stop-command-failed-title = فرمان توقف ناموفق بود
 run-stop-command-failed-description = فرمان توقف برای { $script } ناموفق بود. فرایند اجرا خاتمه یافت.
+run-script-unavailable-title = اسکریپت اجرا شروع نشد
+run-script-not-found-description = { $script } برای این پروژه پیکربندی نشده است.
+run-script-none-description = هیچ اسکریپت اجرایی برای این پروژه پیکربندی نشده است.
 scripts-configure-title = پیکربندی اسکریپت ها
 scripts-configure-description = اسکریپت‌های { $project }. ردیف‌ها به‌ترتیب در همان پوسته اجرا می‌شوند و با نخستین خطا متوقف می‌شوند.
 worktree-new-for-project = درخت کاری جدید برای { $project }
@@ -2014,21 +2019,18 @@ subagent-state-completed = تکمیل شده
 subagent-state-failed = شکست خورد
 launched-agent-needs-input = نیاز به ورودی
 launched-agent-closed = بسته
-launch-card-launched = { $count ->
-    [one] ۱ عامل راه‌اندازی شد
-   *[other] { $count } عامل راه‌اندازی شد
-}
-launch-card-ran = { $count ->
-    [one] ۱ عامل اجرا شد
-   *[other] { $count } عامل اجرا شد
+launched-agent-idle = بیکار
+launch-group-agents = { $count ->
+    [one] ۱ عامل
+   *[other] { $count } عامل
 }
 launch-card-working = { $count } در حال کار
 launch-card-needs-input = { $count ->
     [one] ۱ نیازمند ورودی
    *[other] { $count } نیازمند ورودی
 }
+launch-card-failed = { $count } ناموفق
 launch-card-done = { $count } تمام‌شده
-launch-card-all-done = تمام شد
 subagent-earlier-rows-not-shown = … { $count } ردیف های قبلی که نمایش داده نشده اند
 diff-comment-on-file = نظر در پرونده
 workspace-review-request-detect-failed = نتوانستم تشخیص { $kind }

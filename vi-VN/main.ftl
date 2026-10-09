@@ -179,6 +179,8 @@ project-menu-unhide-worktrees = Lộ cây làm việc...
 project-menu-move-to-workspace = Di chuyển đến không gian làm việc
 project-menu-remove = Xóa Dự án
 action-rename = Đổi tên
+action-mark-unread = Đánh dấu là chưa đọc
+action-mark-read = Đánh dấu là đã đọc
 workspace-menu-change-icon = Biểu tượng thay đổi...
 action-delete = Xóa
 theme-customize-title = Tùy chỉnh Chủ đề
@@ -377,6 +379,9 @@ scripts-add-stop-command = + Thêm lệnh dừng
 scripts-stop-command-description = Chạy trước khi super.engineering kết thúc tiến trình Run.
 run-stop-command-failed-title = Lệnh dừng thất bại
 run-stop-command-failed-description = Lệnh dừng cho { $script } thất bại. Tiến trình Run đã bị kết thúc.
+run-script-unavailable-title = Script chạy chưa khởi động
+run-script-not-found-description = { $script } chưa được cấu hình cho dự án này.
+run-script-none-description = Chưa cấu hình script chạy nào cho dự án này.
 scripts-configure-title = Cấu hình Script
 scripts-configure-description = Script cho { $project }. Các dòng chạy theo thứ tự trong cùng một shell và dừng ở lỗi đầu tiên.
 worktree-new-for-project = Worktree mới cho { $project }
@@ -2010,21 +2015,18 @@ subagent-state-completed = Hoàn thành
 subagent-state-failed = Thất bại
 launched-agent-needs-input = Cần phản hồi
 launched-agent-closed = Đã đóng
-launch-card-launched = { $count ->
-    [one] Đã khởi chạy 1 tác tử
-   *[other] Đã khởi chạy { $count } tác tử
-}
-launch-card-ran = { $count ->
-    [one] Đã chạy 1 tác tử
-   *[other] Đã chạy { $count } tác tử
+launched-agent-idle = Rảnh
+launch-group-agents = { $count ->
+    [one] 1 tác tử
+   *[other] { $count } tác tử
 }
 launch-card-working = { $count } đang làm việc
 launch-card-needs-input = { $count ->
     [one] 1 cần nhập liệu
    *[other] { $count } cần nhập liệu
 }
+launch-card-failed = { $count } thất bại
 launch-card-done = { $count } đã xong
-launch-card-all-done = Đã xong
 subagent-earlier-rows-not-shown = … { $count } các dòng trước đó không hiển thị
 diff-comment-on-file = Bình luận trên hồ sơ
 workspace-review-request-detect-failed = Không thể phát hiện { $kind }

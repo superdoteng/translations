@@ -179,6 +179,8 @@ project-menu-unhide-worktrees = वर्कट्री को अनहाइ�
 project-menu-move-to-workspace = कार्यस्थान पर ले जाएँ
 project-menu-remove = प्रोजेक्ट निकालें
 action-rename = नाम बदलें
+action-mark-unread = अपठित के रूप में चिह्नित करें
+action-mark-read = पठित के रूप में चिह्नित करें
 workspace-menu-change-icon = आइकन बदलें...
 action-delete = मिटाना
 theme-customize-title = थीम को अनुकूलित करें
@@ -384,6 +386,9 @@ scripts-add-stop-command = + स्टॉप कमांड जोड़ें
 scripts-stop-command-description = super.engineering द्वारा रन प्रक्रिया समाप्त करने से पहले चलाया जाता है।
 run-stop-command-failed-title = स्टॉप कमांड विफल
 run-stop-command-failed-description = { $script } के लिए स्टॉप कमांड विफल रहा। रन प्रक्रिया समाप्त कर दी गई।
+run-script-unavailable-title = रन स्क्रिप्ट शुरू नहीं हुई
+run-script-not-found-description = { $script } इस प्रोजेक्ट के लिए कॉन्फ़िगर नहीं है।
+run-script-none-description = इस प्रोजेक्ट के लिए कोई रन स्क्रिप्ट कॉन्फ़िगर नहीं की गई है।
 scripts-configure-title = स्क्रिप्ट कॉन्फ़िगर करें
 scripts-configure-description = { $project } के लिए स्क्रिप्ट। पंक्तियां एक ही शेल में क्रम से चलती हैं और पहली विफलता पर रुक जाती हैं।
 worktree-new-for-project = { $project } के लिए नया वर्कट्री
@@ -2017,21 +2022,18 @@ subagent-state-completed = पूरा
 subagent-state-failed = असफल
 launched-agent-needs-input = इनपुट चाहिए
 launched-agent-closed = बंद
-launch-card-launched = { $count ->
-    [one] 1 एजेंट शुरू किया
-   *[other] { $count } एजेंट शुरू किए
-}
-launch-card-ran = { $count ->
-    [one] 1 एजेंट चलाया
-   *[other] { $count } एजेंट चलाए
+launched-agent-idle = निष्क्रिय
+launch-group-agents = { $count ->
+    [one] 1 एजेंट
+   *[other] { $count } एजेंट
 }
 launch-card-working = { $count } काम कर रहे हैं
 launch-card-needs-input = { $count ->
     [one] 1 को इनपुट चाहिए
    *[other] { $count } को इनपुट चाहिए
 }
+launch-card-failed = { $count } विफल
 launch-card-done = { $count } पूरे
-launch-card-all-done = पूरा हुआ
 subagent-earlier-rows-not-shown = … { $count } पिछली पंक्तियाँ नहीं दिखाई गईं
 diff-comment-on-file = फ़ाइल पर टिप्पणी करें
 workspace-review-request-detect-failed = { $kind } का पता नहीं लगाया जा सका

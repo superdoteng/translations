@@ -181,6 +181,8 @@ project-menu-unhide-worktrees = Освободить рабочие деревь
 project-menu-move-to-workspace = Переход в рабочее пространство
 project-menu-remove = Удалить проект
 action-rename = Переименование
+action-mark-unread = Отметить как непрочитанное
+action-mark-read = Отметить как прочитанное
 workspace-menu-change-icon = Иконка смены...
 action-delete = Удалить
 theme-customize-title = Настройка темы
@@ -389,6 +391,9 @@ scripts-add-stop-command = + Добавить команду остановки
 scripts-stop-command-description = Выполняется перед тем, как super.engineering завершит процесс запуска.
 run-stop-command-failed-title = Не удалось выполнить команду остановки
 run-stop-command-failed-description = Команда остановки для { $script } завершилась с ошибкой. Процесс запуска был завершён.
+run-script-unavailable-title = Скрипт запуска не запустился
+run-script-not-found-description = { $script } не настроен для этого проекта.
+run-script-none-description = Для этого проекта не настроен скрипт запуска.
 scripts-configure-title = Настройка скриптов
 scripts-configure-description = Скрипты для { $project }. Строки выполняются по порядку в одной оболочке и останавливаются при первой ошибке.
 worktree-new-for-project = Новый worktree для { $project }
@@ -2022,21 +2027,18 @@ subagent-state-completed = Завершено
 subagent-state-failed = Неудача
 launched-agent-needs-input = Нужен ответ
 launched-agent-closed = Закрыт
-launch-card-launched = { $count ->
-    [one] Запущен 1 агент
-   *[other] Запущено агентов: { $count }
-}
-launch-card-ran = { $count ->
-    [one] Выполнен 1 агент
-   *[other] Выполнено агентов: { $count }
+launched-agent-idle = Простаивает
+launch-group-agents = { $count ->
+    [one] 1 агент
+   *[other] агентов: { $count }
 }
 launch-card-working = работают: { $count }
 launch-card-needs-input = { $count ->
     [one] 1 ждёт ввода
    *[other] ждут ввода: { $count }
 }
+launch-card-failed = сбой: { $count }
 launch-card-done = готово: { $count }
-launch-card-all-done = Готово
 subagent-earlier-rows-not-shown = … { $count } предыдущие строки не показаны
 diff-comment-on-file = Комментарий в файле
 workspace-review-request-detect-failed = Не удалось обнаружить { $kind }
