@@ -234,6 +234,11 @@ clone-repository-url = रिपॉजिटरी URL
 close-tab-action = टैब बंद करें
 close-tab-description = इस टैब पर कार्य प्रगति पर है. इसे बंद करने से एजेंट रुक जाएगा।
 close-tab-title = "{ $tab_title }" बंद करें?
+close-tab-keep-launched-agents = इन्हें टैब के रूप में खुला रखें
+close-tab-launched-agents-description = { $count ->
+    [one] इस टैब से शुरू किया गया एक एजेंट अभी भी काम कर रहा है। टैब बंद करने से यह रुक जाएगा।
+   *[other] इस टैब से शुरू किए गए { $count } एजेंट अभी भी काम कर रहे हैं। टैब बंद करने से ये रुक जाएंगे।
+}
 common-back-arrow = ← वापस
 common-browse = ब्राउज़ करें
 common-browse-ellipsis = ब्राउज़ करें...
@@ -268,7 +273,11 @@ common-search = खोज
 common-shortcuts = शॉर्टकट
 common-skip = छोड़ें
 common-welcome-to-app = { $app_name } में आपका स्वागत है
+notification-close-chat-running = चैट का टैब बंद करने से पहले उसे रोकें
 notification-dismiss = अधिसूचना खारिज करें
+notification-dismiss-below = नीचे का सब कुछ खारिज करें
+notification-dismiss-worktree = इस वर्कट्री की सूचनाएं खारिज करें
+notification-empty-all = कोई संदेश नहीं
 notification-empty-queue = कतार स्पष्ट है
 notification-agents-running =
     { $count ->
@@ -283,7 +292,10 @@ notification-keyboard-shortcuts = कीबोर्ड शॉर्टकट
 notification-older = पुराना
 notification-queue-title = अधिसूचना कतार
 notification-select-one-or-more = एक या अधिक विकल्पों का चयन करें.
+notification-shortcut-close-chat = चयनित चैट का टैब बंद करें और उसे कतार से हटाएं
 notification-shortcut-dismiss = चयनित अधिसूचना को खारिज करें
+notification-shortcut-dismiss-worktree = चयनित वर्कट्री की सभी सूचनाएं खारिज करें
+notification-shortcut-expand-worktree = चयनित वर्कट्री की चैट को विस्तृत या संक्षिप्त करें
 notification-shortcut-mark-unread = चयनित अधिसूचना को अपठित चिह्नित करें
 notification-shortcut-move = सूचनाओं के माध्यम से आगे बढ़ें
 notification-shortcut-newest = नवीनतम अधिसूचना पर जाएं
@@ -295,13 +307,17 @@ notification-shortcut-remove-chat = मौजूदा चैट को कत�
 notification-shortcut-send-advance = अपना संदेश भेजें और अग्रिम करें
 notification-shortcut-send-unread = वर्तमान चैट को अपठित के रूप में कतार में भेजें
 notification-shortcut-source-chat = स्रोत चैट पर जाएँ
-notification-shortcuts-cycle-hint = ⌘⌥ पकड़ें और साइकिल चलाने के लिए J या K पर टैप करें · खोलने के लिए रिलीज · झांकने के लिए जगह
+notification-shortcut-toggle-all = इस पेज पर सब कुछ विस्तृत या संक्षिप्त करें
+notification-shortcut-toggle-preview = बातचीत का पूर्वावलोकन दिखाएं या छिपाएं
+notification-shortcut-undo-dismissal = पिछली बार खारिज करना पूर्ववत करें
 notification-shortcuts-from-anywhere = कहीं से भी
 notification-shortcuts-in-queue = कतार में
+notification-shortcuts-switcher-hint = ⌘⌥ दबाए रखें और बदलने के लिए J या K दबाएं · खोलने के लिए छोड़ें
 notification-shortcuts-while-peeking = झाँकते समय
-notification-view-queue = क्‍यू
+notification-undo-dismissal = पूर्ववत करें
+notification-view-earlier = पहले के
+notification-view-ready = तैयार
 notification-view-running = भागना
-notification-view-timeline = समयरेखा
 onboarding-chat-ui = चैट यूआई
 onboarding-chat-ui-description = इनलाइन अंतर और मार्कडाउन के साथ रेंडर किए गए संदेश
 onboarding-chat-view-description = दोनों किसी भी AI के साथ काम करते हैं - सेटिंग्स में कभी भी बदलें
@@ -499,13 +515,15 @@ settings-category-general-description = कोर ऐप व्यवहार �
 settings-category-agents-description = प्रदाता रूटिंग, प्रॉम्प्ट टेम्प्लेट, और प्रति एजेंट कार्रवाई निष्पादन नियम।
 settings-category-profiles-description = स्थानीय CLI प्रोफ़ाइल और वैश्विक/कार्यक्षेत्र/प्रोजेक्ट डिफ़ॉल्ट।
 settings-category-commands-description = वैश्विक/कार्यक्षेत्र/प्रोजेक्ट स्कोपिंग के साथ कस्टम कमांड और प्रॉम्प्ट टेम्पलेट।
-settings-category-experimental-description = पूर्वावलोकन सुविधाएँ, जिनमें साझा संदर्भ कार्यस्थान, गैर-Git प्रोजेक्ट, एजेंट ऑर्केस्ट्रेशन, हेडलेस समीक्षा प्रेषण और Hapi मोबाइल टैब फिर से शुरू शामिल हैं।
+settings-category-experimental-description = पूर्वावलोकन सुविधाएँ, जिनमें साझा संदर्भ कार्यस्थान, गैर-Git प्रोजेक्ट, एजेंट ऑर्केस्ट्रेशन और हेडलेस समीक्षा प्रेषण शामिल हैं।
 settings-category-keyboard-shortcuts-description = कीबोर्ड शॉर्टकट ब्राउज़ करें, खोजें और अनुकूलित करें।
 settings-category-appearance-description = दृश्य प्राथमिकताएं और यूआई प्रस्तुति।
 settings-category-notifications-description = सतर्क व्यवहार और ध्वनि अनुकूलन।
 settings-category-command-palette-description = चुनें कि कमांड पैलेट में कौन से स्रोत दिखाई देते हैं।
 settings-category-privacy-description = अनाम उपयोग टेलीमेट्री नियंत्रण।
 settings-category-worktrees-description = कार्यवृक्ष जीवनचक्र क्रियाओं के लिए डिफ़ॉल्ट.
+settings-mobile-push-desktop-idle-label = निष्क्रियता के बाद फ़ोन पर सूचित करें
+settings-mobile-push-desktop-idle-description = इस Mac पर कीबोर्ड या माउस इनपुट के बिना बीते मिनट, जिसके बाद सूचनाएं आपके फ़ोन पर जाती हैं। जिन आइटम को आप पहले यहां संभाल लेते हैं, वे कभी नहीं भेजे जाते। 0 तुरंत भेजता है।
 settings-branch-inherits-global = वैश्विक विरासत में मिलता है
 settings-branch-use-default = डिफ़ॉल्ट शाखा का उपयोग करें
 settings-branch-clear-value = स्पष्ट मूल्य
@@ -548,6 +566,9 @@ settings-workspace-type-individual = व्यक्तिगत
 settings-workspace-projects-label = परियोजनाओं
 settings-workspace-projects-description = इस कार्यस्थान से जुड़ी रिपॉजिटरी.
 settings-workspace-project-count = { $count } परियोजनाएं
+settings-workspace-shared-context-section = साझा संदर्भ
+settings-workspace-feature-file-label = ब्रांच समूहों के लिए FEATURE.md बनाएं
+settings-workspace-feature-file-description = नए ब्रांच समूहों को एक FEATURE.md मिलती है, और एजेंटों को इसे अपडेट रखने के लिए कहा जाता है। इसे बंद करने पर मौजूदा फ़ाइलें बनी रहती हैं।
 settings-workspace-danger-section = खतरे का क्षेत्र
 settings-workspace-delete-label = कार्यस्थान हटाना
 settings-workspace-delete-description = कार्यस्थान हटाने की पुष्टि खोलें.
@@ -855,8 +876,12 @@ settings-section-storage = भंडार
 settings-section-diagnostics = निदान
 settings-section-theme = थीम
 settings-section-layout = अभिन्यास
+settings-section-chat = चैट
+settings-section-files-diffs = फ़ाइलें और डिफ़
+settings-section-usage-cost = उपयोग और लागत
 settings-section-fonts = फ़ॉन्ट्स
 settings-section-delivery = वितरण
+settings-section-queue = कतार
 settings-section-per-type-overrides = प्रति-प्रकार ओवरराइड
 settings-section-defaults = चूक
 settings-section-routing = रूटिंग
@@ -1042,7 +1067,6 @@ review-ai-questions = AI प्रश्न
 review-no-comments = अभी तक कोई समीक्षा टिप्पणी नहीं
 review-select-lines-hint = समीक्षा शुरू करने के लिए अंतर में पंक्तियों का चयन करें.
 sidebar-ssh = SSH
-shared-context-title = AI CONTEXT
 shared-context-generate-ai-context = AI संदर्भ उत्पन्न करें
 action-generate = उत्पन्न करें
 shared-context-add-repositories = रिपॉजिटरी जोड़ें...
@@ -1050,6 +1074,13 @@ shared-context-repositories = रिपॉजिटरी
 shared-context-add-missing-project = अनुपलब्ध प्रोजेक्ट जोड़ें
 common-running = भागना
 shared-context-add-run-script = रन स्क्रिप्ट जोड़ें...
+shared-parent-git-repo-count = { $count ->
+    [one] 1 रिपो
+   *[other] { $count } रिपो
+}
+shared-parent-git-all-repos = सभी · { $repos }
+shared-parent-git-menu-tooltip = चाइल्ड रिपो के लिए Git कार्रवाइयां
+shared-parent-git-unavailable-title = ये रिपो नहीं खुल सके
 shared-context-choose-projects-to-run = चलाने के लिए प्रोजेक्ट चुनें
 workspace-choose-what-to-launch = चुनें कि क्या लॉन्च करना है...
 icon-picker-tab-symbols = प्रतीक
@@ -1484,8 +1515,6 @@ settings-experimental-non-git-projects-label = गैर-Git परियोज�
 settings-experimental-non-git-projects-description = Git मेटाडेटा के बिना फ़ोल्डर जोड़ने की अनुमति दें। यदि यह अक्षम है तो मौजूदा सादा-फ़ोल्डर प्रोजेक्ट दृश्यमान रहते हैं।
 settings-experimental-agent-orchestration-label = एजेंट ऑर्केस्ट्रेशन
 settings-experimental-agent-orchestration-description = एजेंटों के लिए super.engineering ऑर्केस्ट्रेशन CLI कमांड उपलब्ध कराएँ। हर उपयोग के लिए अभी भी आपसे एक स्पष्ट और संबंधित अनुरोध आवश्यक है।
-settings-experimental-hapi-label = मोबाइल सत्रों के लिए Hapi सक्षम करें
-settings-experimental-hapi-description = Hapi के साथ मोबाइल पर संगत super.engineering सत्र जारी रखें।
 settings-experimental-auto-compact-label = संदर्भ विंडो सीमा पर ऑटो-कॉम्पैक्ट Claude Code
 settings-experimental-auto-compact-description = जब मॉडल की संदर्भ विंडो पार होने के कारण Claude Code टर्न विफल हो जाता है, तो स्वचालित रूप से /कॉम्पैक्ट चलाएं और अपना अंतिम संदेश पुनः सबमिट करें। गैर-1M-संदर्भ बैकएंड (जैसे GLM5.1) के लिए उपयोगी जहां Claude Code का CLAUDE_CODE_AUTO_COMPACT_WINDOW -p मोड के तहत फायर नहीं करता है।
 settings-experimental-review-label = समीक्षा
@@ -1554,7 +1583,11 @@ settings-search-section-diagnostics = निदान
 settings-search-section-theme = थीम
 settings-search-section-fonts = फ़ॉन्ट्स
 settings-search-section-layout = अभिन्यास
+settings-search-section-chat = चैट
+settings-search-section-files---diffs = फ़ाइलें और डिफ़
+settings-search-section-usage---cost = उपयोग और लागत
 settings-search-section-delivery = वितरण
+settings-search-section-queue = कतार
 settings-search-section-per-type-overrides = प्रति-प्रकार ओवरराइड
 settings-search-section-shortcuts = शॉर्टकट
 settings-search-section-sources = स्रोत
@@ -1712,6 +1745,8 @@ settings-search-entry-appearance-layout-keep-completed-tool-activity-expanded-la
 settings-search-entry-appearance-layout-keep-completed-tool-activity-expanded-description = टर्न समाप्त होने के बाद टूल गतिविधि को विभाजक में संक्षिप्त करने के बजाय दृश्यमान रखें।
 settings-search-entry-appearance-layout-show-files-changed-summary-label = बदली गई फ़ाइलों का सारांश दिखाएँ
 settings-search-entry-appearance-layout-show-files-changed-summary-description = फ़ाइलें संपादित करने वाले टर्न के बाद “बदली गई फ़ाइलें” का सारांश दिखाएँ।
+settings-search-entry-appearance-layout-rich-markdown-composer-label = रिच Markdown कंपोज़र
+settings-search-entry-appearance-layout-rich-markdown-composer-description = चैट कंपोज़र में टाइप करते समय Markdown फ़ॉर्मैट करें। सादा-टेक्स्ट कंपोज़र इस्तेमाल करने के लिए बंद करें।
 settings-search-entry-notifications-delivery-system-notifications-label = सिस्टम सूचनाएं
 settings-search-entry-notifications-delivery-system-notifications-description = कार्य पूरा होने और अनुमोदन/इनपुट संकेतों में macOS सूचनाओं के लिए डिफ़ॉल्ट व्यवहार।
 settings-search-entry-notifications-delivery-persistent-alerts-label = लगातार अलर्ट
@@ -1720,6 +1755,15 @@ settings-search-entry-notifications-delivery-break-through-focus-label = फो�
 settings-search-entry-notifications-delivery-break-through-focus-description = फ़ोकस मोड सक्रिय होने पर भी सूचनाएँ वितरित करें।
 settings-search-entry-notifications-delivery-clear-queue-items-on-tab-visit-label = टैब विज़िट पर कतार आइटम साफ़ करें
 settings-search-entry-notifications-delivery-clear-queue-items-on-tab-visit-description = चालू होने पर, कतार में किसी आइटम को चुनने पर उसे पढ़ा जाता है और उसके टैब पर जाने से वह हट जाता है।
+settings-search-entry-notifications-delivery-queue-opens-at-label = कतार यहां खुलती है
+settings-search-entry-notifications-delivery-queue-opens-at-description = चुनें कि कतार खोलने पर सबसे नया आइटम, सबसे पुराना आइटम या आपका पिछला चुना हुआ आइटम चुना जाए।
+settings-search-entry-notifications-delivery-worktree-cards-on-open-label = खोलने पर वर्कट्री कार्ड
+settings-search-entry-notifications-delivery-worktree-cards-on-open-description = चुनें कि हर बार कतार खुलने पर वर्कट्री कार्ड अपनी डिफ़ॉल्ट विस्तार स्थिति पर लौटें, या वैसे ही रहें जैसे आपने उन्हें छोड़ा था।
+settings-notification-queue-cards-on-open-reset = रीसेट करें
+settings-notification-queue-cards-on-open-keep = बनाए रखें
+settings-notification-queue-open-position-newest = सबसे नया
+settings-notification-queue-open-position-oldest = सबसे पुराना
+settings-notification-queue-open-position-last-selected = पिछला चयनित
 settings-search-entry-notifications-delivery-timeline-notifications-label = समयरेखा सूचनाएं
 settings-search-entry-notifications-delivery-timeline-notifications-description = चुनें कि कितने सूचना ईवेंट बनाए रखने हैं. उच्च मान अधिक स्मृति और डिस्क स्थान का उपयोग करते हैं।
 settings-search-entry-notifications-per-type-overrides-task-complete-delivery-label = कार्य पूर्ण वितरण
@@ -1756,8 +1800,6 @@ settings-search-entry-experimental-feature-flags-non-git-projects-label = गै
 settings-search-entry-experimental-feature-flags-non-git-projects-description = Git मेटाडेटा के बिना फ़ोल्डर जोड़ने की अनुमति दें।
 settings-search-entry-experimental-feature-flags-agent-orchestration-label = एजेंट ऑर्केस्ट्रेशन
 settings-search-entry-experimental-feature-flags-agent-orchestration-description = एजेंटों के लिए ऑर्केस्ट्रेशन कमांड उपलब्ध कराएँ। हर उपयोग के लिए अभी भी आपसे एक स्पष्ट और संबंधित अनुरोध आवश्यक है।
-settings-search-entry-experimental-feature-flags-enable-hapi-for-mobile-sessions-label = मोबाइल सत्रों के लिए Hapi सक्षम करें
-settings-search-entry-experimental-feature-flags-enable-hapi-for-mobile-sessions-description = Hapi के साथ मोबाइल पर संगत टैब जारी रखें।
 settings-search-entry-experimental-feature-flags-auto-compact-claude-code-on-context-window-limit-label = संदर्भ विंडो सीमा पर ऑटो-कॉम्पैक्ट Claude Code
 settings-search-entry-experimental-feature-flags-auto-compact-claude-code-on-context-window-limit-description = स्वचालित रूप से चलाएं /कॉम्पैक्ट करें और संदर्भ विंडो से अधिक होने पर फिर से सबमिट Claude Code।
 settings-search-entry-experimental-feature-flags-review-label = समीक्षा
@@ -1939,6 +1981,9 @@ settings-keybinding-action-notifications-show-queue = सूचनाएं: क
 settings-keybinding-action-notifications-jump-latest = सूचनाएं: नवीनतम अपठित पर जाएं
 settings-keybinding-action-notifications-add-chat = सूचनाएं: कतार में वर्तमान चैट जोड़ें
 settings-keybinding-action-notifications-toggle-unread = सूचनाएं: चयनित अपठित टॉगल करें
+settings-keybinding-action-notifications-toggle-preview = सूचनाएं: पूर्वावलोकन दिखाएं/छिपाएं
+settings-keybinding-action-notifications-close-chat = सूचनाएं: चयनित चैट का टैब बंद करें
+settings-keybinding-action-notifications-toggle-all = सूचनाएं: सभी विस्तृत या संक्षिप्त करें
 settings-keybinding-action-notifications-mark-oldest = सूचनाएं: सबसे पुराने अपठित और अग्रिम को चिह्नित करें
 settings-keybinding-action-notifications-select-older = सूचनाएं: पुराने का चयन करें
 settings-keybinding-action-notifications-select-newer = सूचनाएं: नया चुनें
@@ -1970,6 +2015,23 @@ custom-actions-untitled = शीर्षकहीन
 subagent-state-running = भागना
 subagent-state-completed = पूरा
 subagent-state-failed = असफल
+launched-agent-needs-input = इनपुट चाहिए
+launched-agent-closed = बंद
+launch-card-launched = { $count ->
+    [one] 1 एजेंट शुरू किया
+   *[other] { $count } एजेंट शुरू किए
+}
+launch-card-ran = { $count ->
+    [one] 1 एजेंट चलाया
+   *[other] { $count } एजेंट चलाए
+}
+launch-card-working = { $count } काम कर रहे हैं
+launch-card-needs-input = { $count ->
+    [one] 1 को इनपुट चाहिए
+   *[other] { $count } को इनपुट चाहिए
+}
+launch-card-done = { $count } पूरे
+launch-card-all-done = पूरा हुआ
 subagent-earlier-rows-not-shown = … { $count } पिछली पंक्तियाँ नहीं दिखाई गईं
 diff-comment-on-file = फ़ाइल पर टिप्पणी करें
 workspace-review-request-detect-failed = { $kind } का पता नहीं लगाया जा सका
@@ -2080,6 +2142,28 @@ run-open-preview = पूर्वावलोकन खोलें
 run-stop-script = स्टॉप रन स्क्रिप्ट
 run-rerun-workspace = कार्यक्षेत्र को फिर से चलाएं
 workspace-close-tab = टैब बंद करें
+workspace-launched-agents-header = शुरू किए गए एजेंट
+workspace-launched-by = { $tab_title } द्वारा शुरू किया गया
+workspace-open-launched-tab = टैब के रूप में खोलें
+notification-launched-agent-title = { $title } · { $parent } से
+launched-agents-summary = { $state ->
+    [permission] { $count ->
+        [one] 1 शुरू किया गया एजेंट · इनपुट चाहिए
+       *[other] { $count } शुरू किए गए एजेंट · इनपुट चाहिए
+    }
+    [review] { $count ->
+        [one] 1 शुरू किया गया एजेंट · पूरा हुआ
+       *[other] { $count } शुरू किए गए एजेंट · पूरा हुआ
+    }
+    [working] { $count ->
+        [one] 1 शुरू किया गया एजेंट · काम चल रहा है
+       *[other] { $count } शुरू किए गए एजेंट · काम चल रहा है
+    }
+   *[other] { $count ->
+        [one] 1 शुरू किया गया एजेंट
+       *[other] { $count } शुरू किए गए एजेंट
+    }
+}
 workspace-toggle-terminal = टॉगल टर्मिनल
 workspace-choose-open-app = ऐप खोलें चुनें
 workspace-new-tab-with-provider = प्रदाता के साथ नया टैब
@@ -2215,6 +2299,14 @@ palette-footer-close = घुटनभरा
 palette-footer-back = शर्त लगाना
 palette-action-restore = पुनर्स्थापित करना
 sidebar-rename-worktree-label = वर्कट्री लेबल का नाम बदलें...
+group-branch-rename-title = ब्रांच का नाम बदलें
+group-branch-rename-subtitle = { $count ->
+    [one] 1 रिपॉजिटरी में ब्रांच का नाम बदलता है
+   *[other] सभी { $count } रिपॉजिटरी में ब्रांच का नाम बदलता है
+}
+group-branch-rename-subtitle-no-repos = अभी तक कोई रिपॉजिटरी चेक आउट नहीं हुई है
+group-branch-rename-blocked = हर रिपॉजिटरी को एक ही ब्रांच पर एक वर्कट्री चाहिए। नाम बदलने से पहले हाइलाइट की गई रिपॉजिटरी ठीक करें।
+group-branch-rename-repo-missing = कोई वर्कट्री नहीं
 sidebar-hide-worktree = वर्कट्री छुपाएं
 sidebar-move-to-section = अनुभाग में ले जाएँ
 sidebar-remove-from-section = अनुभाग से निकालें
@@ -2528,10 +2620,6 @@ shared-context-depth-thorough-summary = पहले साक्षात्क
 shared-context-depth-thorough-tooltip = स्पष्ट प्रश्न पूछता है, लक्ष्यों की पुष्टि करता है, फिर एक गहरा कोड पास करता है।
 right-panel-show-gitignored-files = gitignored फ़ाइलें दिखाएँ
 right-panel-hide-gitignored-files = gitignored फ़ाइलों को छुपाएं
-workspace-agent-busy-tooltip = एजेंट व्यस्त है
-workspace-hapi-hub-required-tooltip = मोबाइल सत्र फिर से शुरू करने के लिए `hapi hub` चलाएँ
-workspace-hapi-install-tooltip = मोबाइल सत्र फिर से शुरू करने के लिए Hapi स्थापित करें
-workspace-hapi-checking-tooltip = Hapi स्थिति की जाँच की जा रही है...
 workspace-hold-command-for-chat-ui = Chat UI के लिए ⌘ दबाए रखें
 workspace-hold-command-for-terminal = टर्मिनल के लिए ⌘ दबाए रखें
 file-tree-symbolic-link = प्रतीकात्मक लिंक
@@ -2557,6 +2645,7 @@ review-conversations-summary = वार्तालाप · कुल { $total
 review-file-conversations-summary = { $file } · कुल { $total } · { $resolved } हल किए गए
 review-add-comment-line = पंक्ति { $line } पर टिप्पणी जोड़ें
 review-add-comment-lines = पंक्ति { $start } से { $end } पर टिप्पणी जोड़ें
+review-add-comment-extend-hint = विस्तार करने के लिए Shift दबाकर किसी पंक्ति पर क्लिक करें
 chat-queued-waiting-for-answer = ऊपर आपके उत्तर की प्रतीक्षा है
 chat-show-full-plan = पूरी योजना दिखाएं
 
@@ -2656,4 +2745,4 @@ data-directory-notice-home = अपग्रेड के बाद नया �
 data-directory-notice-home-title = दोनों डेटा फ़ोल्डर बनाए रखें
 data-directory-notice-summary = मौजूदा रिपॉज़िटरी कॉन्फ़िगरेशन और स्क्रिप्ट काम करते रहेंगे।
 data-directory-notice-config = रिपॉज़िटरी कॉन्फ़िगरेशन: नए कॉन्फ़िगरेशन के लिए .super.engineering/config.json का उपयोग करें। नया फ़ाइल न होने पर पुराना .superconductor/config.json समर्थित रहता है। ऐप के पुराने संस्करण पुरानी फ़ाइल का उपयोग करते हैं; दोनों फ़ाइलें सिंक्रनाइज़ नहीं होतीं।
-data-directory-notice-scripts = स्क्रिप्ट फ़ाइलें अपनी जगह पर रहती हैं। यदि आप किसी स्क्रिप्ट को स्थानांतरित करते हैं, तो उसे चलाने वाला कमांड अपडेट करें। मौजूदा SUPERCONDUCTOR_* पर्यावरण चर काम करते रहेंगे।
+data-directory-notice-scripts = स्क्रिप्ट फ़ाइलें अपनी जगह पर रहती हैं। यदि आप किसी स्क्रिप्ट को स्थानांतरित करते हैं, तो उसे चलाने वाला कमांड अपडेट करें। स्क्रिप्ट को SUPER_ENGINEERING_* चर पढ़ने चाहिए; SUPERCONDUCTOR_* नाम फ़िलहाल एक्सपोर्ट किए जा रहे हैं और बाद की किसी रिलीज़ में हटा दिए जाएँगे।

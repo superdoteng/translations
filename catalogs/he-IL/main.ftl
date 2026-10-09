@@ -234,6 +234,11 @@ clone-repository-url = מאגר URL
 close-tab-action = סגירת טאב
 close-tab-description = לשונית זו כוללת עבודה בתהליך. סגירתו תעצור את הסוכן.
 close-tab-title = לסגור את "{ $tab_title }"?
+close-tab-keep-launched-agents = להשאיר אותם פתוחים כטאבים
+close-tab-launched-agents-description = { $count ->
+    [one] סוכן שהופעל מהטאב הזה עדיין עובד. סגירת הטאב תעצור אותו.
+   *[other] { $count } סוכנים שהופעלו מהטאב הזה עדיין עובדים. סגירת הטאב תעצור אותם.
+}
 common-back-arrow = ← חזרה
 common-browse = עיין
 common-browse-ellipsis = לגלוש...
@@ -268,7 +273,11 @@ common-search = חיפוש
 common-shortcuts = קיצורי דרך
 common-skip = דלג
 common-welcome-to-app = ברוכים הבאים ל-{ $app_name }
+notification-close-chat-running = עצור את הצ'אט לפני סגירת הכרטיסייה שלו
 notification-dismiss = הודעת פיטור
+notification-dismiss-below = התעלם מכל מה שמתחת
+notification-dismiss-worktree = התעלם מההתראות של עץ העבודה הזה
+notification-empty-all = אין הודעות
 notification-empty-queue = התור פנוי
 notification-agents-running =
     { $count ->
@@ -283,7 +292,10 @@ notification-keyboard-shortcuts = קיצורי מקלדת
 notification-older = ישן
 notification-queue-title = תור ההתראות
 notification-select-one-or-more = בחר אפשרות אחת או יותר.
+notification-shortcut-close-chat = סגור את הכרטיסייה של הצ'אט שנבחר והסר אותו מהתור
 notification-shortcut-dismiss = דחה את ההתראה שנבחרה
+notification-shortcut-dismiss-worktree = התעלם מכל ההתראות בעץ העבודה שנבחר
+notification-shortcut-expand-worktree = הרחב או כווץ את הצ'אטים של עץ העבודה שנבחר
 notification-shortcut-mark-unread = סמן את ההתראה שנבחרה לא נקראה
 notification-shortcut-move = העברת התראות
 notification-shortcut-newest = קפוץ להודעה החדשה ביותר
@@ -295,13 +307,17 @@ notification-shortcut-remove-chat = הסר את הצ'אט הנוכחי מהתו�
 notification-shortcut-send-advance = שלח את ההודעה שלך והתקדם
 notification-shortcut-send-unread = שלח את הצ'אט הנוכחי לתור כלא נקרא
 notification-shortcut-source-chat = גש לצ'אט המקור
-notification-shortcuts-cycle-hint = החזק ⌘⌥ והקש על J או K כדי לחזור · הוצאה לפתיחה · מקום להציץ
+notification-shortcut-toggle-all = הרחב או כווץ את כל מה שבדף הזה
+notification-shortcut-toggle-preview = הצג או הסתר את התצוגה המקדימה של השיחה
+notification-shortcut-undo-dismissal = בטל את ההתעלמות האחרונה
 notification-shortcuts-from-anywhere = מכל מקום
 notification-shortcuts-in-queue = בתור
+notification-shortcuts-switcher-hint = החזק ⌘⌥ והקש J או K כדי לעבור · שחרר כדי לפתוח
 notification-shortcuts-while-peeking = תוך כדי הצצה
-notification-view-queue = תור
+notification-undo-dismissal = בטל
+notification-view-earlier = קודם לכן
+notification-view-ready = מוכן
 notification-view-running = ריצה
-notification-view-timeline = ציר זמן
 onboarding-chat-ui = ממשק צ'אט
 onboarding-chat-ui-description = הודעות מעובדות עם הבדלים פנימיים ו-markdown
 onboarding-chat-view-description = שניהם עובדים עם כל AI — אפשר לשנות בכל זמן בהגדרות
@@ -499,13 +515,15 @@ settings-category-general-description = התנהגות הליבה של האפל�
 settings-category-agents-description = ניתוב ספקים, תבניות הנחיה וכללי ביצוע לכל פעולה של סוכן.
 settings-category-profiles-description = פרופילי CLI מקומיים והגדרות ברירת מחדל גלובליות/סביבת עבודה/פרויקטים.
 settings-category-commands-description = פקודות מותאמות אישית ותבניות פרומפטים עם טווח גלובלי/סביבת עבודה/פרויקט.
-settings-category-experimental-description = תכונות תצוגה מקדימה, כולל מרחבי עבודה משותפים, פרויקטים שאינם Git, תזמור סוכנים, שליחת ביקורות ללא ראש, וקורות חיים Hapi לשוניות ניידות.
+settings-category-experimental-description = תכונות תצוגה מקדימה, כולל מרחבי עבודה משותפים, פרויקטים שאינם Git, תזמור סוכנים ושליחת ביקורות ללא ראש.
 settings-category-keyboard-shortcuts-description = גלוש, חפש והתאמה אישית של קיצורי מקלדת.
 settings-category-appearance-description = העדפות ויזואליות והצגת ממשק משתמש.
 settings-category-notifications-description = התנהגות ערנית והתאמה אישית מדויקת.
 settings-category-command-palette-description = בחר אילו מקורות מופיעים בפלטת הפקודות.
 settings-category-privacy-description = שימוש אנונימי בבקרות טלמטריה.
 settings-category-worktrees-description = ברירת מחדל לפעולות מחזור חיים של Worktree.
+settings-mobile-push-desktop-idle-label = שלח התראה לטלפון אחרי חוסר פעילות
+settings-mobile-push-desktop-idle-description = מספר הדקות ללא קלט מהמקלדת או מהעכבר ב-Mac הזה לפני שההתראות נשלחות לטלפון שלך. פריטים שתטפל בהם כאן קודם לא יישלחו לעולם. 0 שולח מיד.
 settings-branch-inherits-global = יורש גלובלי
 settings-branch-use-default = השתמש בסניף ברירת מחדל
 settings-branch-clear-value = ערך ברור
@@ -548,6 +566,9 @@ settings-workspace-type-individual = יחיד
 settings-workspace-projects-label = פרויקטים
 settings-workspace-projects-description = מאגרים שמחוברים לסביבת העבודה הזו.
 settings-workspace-project-count = { $count } פרויקטים
+settings-workspace-shared-context-section = הקשר משותף
+settings-workspace-feature-file-label = צור FEATURE.md לקבוצות ענפים
+settings-workspace-feature-file-description = קבוצות ענפים חדשות מקבלות FEATURE.md, והסוכנים מתבקשים לעדכן אותו. כיבוי האפשרות משאיר את הקבצים הקיימים במקומם.
 settings-workspace-danger-section = אזור הסכנה
 settings-workspace-delete-label = מחק את סביבת העבודה
 settings-workspace-delete-description = פתח את אישור מחיקת ה-workspace.
@@ -855,8 +876,12 @@ settings-section-storage = אחסון
 settings-section-diagnostics = אבחון
 settings-section-theme = נושא
 settings-section-layout = פריסה
+settings-section-chat = צ'אט
+settings-section-files-diffs = קבצים והבדלים
+settings-section-usage-cost = שימוש ועלות
 settings-section-fonts = גופנים
 settings-section-delivery = משלוח
+settings-section-queue = תור
 settings-section-per-type-overrides = החלפות לפי סוג
 settings-section-defaults = ברירת מחדל
 settings-section-routing = ניתוב
@@ -1042,7 +1067,6 @@ review-ai-questions = AI שאלות
 review-no-comments = עדיין אין הערות ביקורת
 review-select-lines-hint = בחר שורות בהפרש כדי להתחיל ביקורת.
 sidebar-ssh = SSH
-shared-context-title = AI CONTEXT
 shared-context-generate-ai-context = יצירת הקשר AI
 action-generate = Generate
 shared-context-add-repositories = הוסף מאגרים...
@@ -1050,6 +1074,13 @@ shared-context-repositories = מאגרים
 shared-context-add-missing-project = הוסף פרויקט חסר
 common-running = ריצה
 shared-context-add-run-script = הוסף סקריפט ריצה...
+shared-parent-git-repo-count = { $count ->
+    [one] מאגר אחד
+   *[other] { $count } מאגרים
+}
+shared-parent-git-all-repos = הכול · { $repos }
+shared-parent-git-menu-tooltip = פעולות Git למאגרי משנה
+shared-parent-git-unavailable-title = לא ניתן לפתוח את המאגרים האלה
 shared-context-choose-projects-to-run = בחר פרויקטים לניהול
 workspace-choose-what-to-launch = בחר מה לשגר...
 icon-picker-tab-symbols = סמלים
@@ -1484,8 +1515,6 @@ settings-experimental-non-git-projects-label = פרויקטים שאינם Git
 settings-experimental-non-git-projects-description = אפשר להוסיף תיקיות בלי Git מטא-דאטה. פרויקטים קיימים בתיקיות רגילות נשארים גלויים אם זה מושבת.
 settings-experimental-agent-orchestration-label = תזמור סוכנים
 settings-experimental-agent-orchestration-description = הפוך את פקודות ה-CLI לתזמור של super.engineering לזמינות לסוכנים. כל שימוש עדיין דורש בקשה מפורשת ומתאימה ממך.
-settings-experimental-hapi-label = הפעל Hapi לסשנים ניידים
-settings-experimental-hapi-description = המשך מפגשי super.engineering תואמים במובייל עם Hapi.
 settings-experimental-auto-compact-label = Claude Code קומפקט אוטומטי על מגבלת חלון הקשר
 settings-experimental-auto-compact-description = כאשר סיבוב Claude Code נכשל כי חלון ההקשר של המודל חרג, הרץ /compact אוטומטית ושלח מחדש את ההודעה האחרונה שלך. שימושי לבקאנדים שאינם בהקשר של 1M (למשל GLM5.1) שבהם CLAUDE_CODE_AUTO_COMPACT_WINDOW של Claude Code לא פועל במצב -p.
 settings-experimental-review-label = סקירה
@@ -1554,7 +1583,11 @@ settings-search-section-diagnostics = אבחון
 settings-search-section-theme = נושא
 settings-search-section-fonts = גופנים
 settings-search-section-layout = פריסה
+settings-search-section-chat = צ'אט
+settings-search-section-files---diffs = קבצים והבדלים
+settings-search-section-usage---cost = שימוש ועלות
 settings-search-section-delivery = משלוח
+settings-search-section-queue = תור
 settings-search-section-per-type-overrides = החלפות לפי סוג
 settings-search-section-shortcuts = קיצורי דרך
 settings-search-section-sources = מקורות
@@ -1712,6 +1745,8 @@ settings-search-entry-appearance-layout-keep-completed-tool-activity-expanded-la
 settings-search-entry-appearance-layout-keep-completed-tool-activity-expanded-description = השאר את פעילות הכלים גלויה לאחר סיום התור, במקום לכווץ אותה למפריד.
 settings-search-entry-appearance-layout-show-files-changed-summary-label = הצג סיכום קבצים שהשתנו
 settings-search-entry-appearance-layout-show-files-changed-summary-description = הצג סיכום "קבצים שהשתנו" לאחר תורים שבהם נערכו קבצים.
+settings-search-entry-appearance-layout-rich-markdown-composer-label = עורך Markdown עשיר
+settings-search-entry-appearance-layout-rich-markdown-composer-description = עיצוב Markdown תוך כדי הקלדה בעורך הצ'אט. כבה כדי להשתמש בעורך טקסט פשוט.
 settings-search-entry-notifications-delivery-system-notifications-label = התראות מערכת
 settings-search-entry-notifications-delivery-system-notifications-description = התנהגות ברירת מחדל להתראות macOS במהלך השלמת משימה ופקודות אישור/קלט.
 settings-search-entry-notifications-delivery-persistent-alerts-label = התרעות מתמשכות
@@ -1720,6 +1755,15 @@ settings-search-entry-notifications-delivery-break-through-focus-label = פרו�
 settings-search-entry-notifications-delivery-break-through-focus-description = שלח התראות גם כשמצב פוקוס פעיל.
 settings-search-entry-notifications-delivery-clear-queue-items-on-tab-visit-label = ניקוי תור פריטים בביקור בלשונית
 settings-search-entry-notifications-delivery-clear-queue-items-on-tab-visit-description = כאשר הוא פועל, בחירת פריט בתור מסמנת שהוא קרא וביקור בלשונית שלו מסיר אותו.
+settings-search-entry-notifications-delivery-queue-opens-at-label = התור נפתח על
+settings-search-entry-notifications-delivery-queue-opens-at-description = בחר אם פתיחת התור בוחרת את הפריט החדש ביותר, את הישן ביותר או את הפריט שבחרת לאחרונה.
+settings-search-entry-notifications-delivery-worktree-cards-on-open-label = כרטיסי עצי עבודה בפתיחה
+settings-search-entry-notifications-delivery-worktree-cards-on-open-description = בחר אם כרטיסי עצי העבודה יחזרו למצב ההרחבה המוגדר כברירת מחדל בכל פתיחה של התור, או יישארו כפי שהשארת אותם.
+settings-notification-queue-cards-on-open-reset = איפוס
+settings-notification-queue-cards-on-open-keep = שמירה
+settings-notification-queue-open-position-newest = החדש ביותר
+settings-notification-queue-open-position-oldest = הישן ביותר
+settings-notification-queue-open-position-last-selected = האחרון שנבחר
 settings-search-entry-notifications-delivery-timeline-notifications-label = התראות בציר הזמן
 settings-search-entry-notifications-delivery-timeline-notifications-description = בחר כמה אירועי התראות לשמור. ערכים גבוהים יותר צורכים יותר זיכרון ושטח דיסק.
 settings-search-entry-notifications-per-type-overrides-task-complete-delivery-label = השלמת המשימה
@@ -1756,8 +1800,6 @@ settings-search-entry-experimental-feature-flags-non-git-projects-label = פרו
 settings-search-entry-experimental-feature-flags-non-git-projects-description = אפשר להוסיף תיקיות בלי Git מטא-דאטה.
 settings-search-entry-experimental-feature-flags-agent-orchestration-label = תזמור סוכנים
 settings-search-entry-experimental-feature-flags-agent-orchestration-description = הפוך את פקודות התזמור לזמינות לסוכנים. כל שימוש עדיין דורש בקשה מפורשת ומתאימה ממך.
-settings-search-entry-experimental-feature-flags-enable-hapi-for-mobile-sessions-label = הפעל Hapi למפגשים ניידים
-settings-search-entry-experimental-feature-flags-enable-hapi-for-mobile-sessions-description = המשך לטאבים תואמים במובייל עם Hapi.
 settings-search-entry-experimental-feature-flags-auto-compact-claude-code-on-context-window-limit-label = Claude Code קומפקט אוטומטי על מגבלת חלון הקשר
 settings-search-entry-experimental-feature-flags-auto-compact-claude-code-on-context-window-limit-description = להריץ /קומפקט אוטומטית ולהגיש מחדש כש Claude Code חורג מחלון ההקשר.
 settings-search-entry-experimental-feature-flags-review-label = סקירה
@@ -1939,6 +1981,9 @@ settings-keybinding-action-notifications-show-queue = התראות: הצג תו�
 settings-keybinding-action-notifications-jump-latest = התראות: קפוץ לגרסה האחרונה שלא נקראה
 settings-keybinding-action-notifications-add-chat = התראות: הוסף את הצ'אט הנוכחי לתור
 settings-keybinding-action-notifications-toggle-unread = התראות: החלפת 'נבחר לא נקרא'
+settings-keybinding-action-notifications-toggle-preview = התראות: הצג/הסתר תצוגה מקדימה
+settings-keybinding-action-notifications-close-chat = התראות: סגור את כרטיסיית הצ'אט שנבחר
+settings-keybinding-action-notifications-toggle-all = התראות: הרחב או כווץ הכול
 settings-keybinding-action-notifications-mark-oldest = התראות: סמן את המבוגר ביותר שלא נקרא ומתקדם
 settings-keybinding-action-notifications-select-older = התראות: בחר ישן יותר
 settings-keybinding-action-notifications-select-newer = התראות: בחר חדשות יותר
@@ -1970,6 +2015,23 @@ custom-actions-untitled = ללא כותרת
 subagent-state-running = ריצה
 subagent-state-completed = הושלם
 subagent-state-failed = נכשל
+launched-agent-needs-input = נדרש קלט
+launched-agent-closed = סגור
+launch-card-launched = { $count ->
+    [one] הופעל סוכן אחד
+   *[other] הופעלו { $count } סוכנים
+}
+launch-card-ran = { $count ->
+    [one] רץ סוכן אחד
+   *[other] רצו { $count } סוכנים
+}
+launch-card-working = { $count } עובדים
+launch-card-needs-input = { $count ->
+    [one] 1 ממתין לקלט
+   *[other] { $count } ממתינים לקלט
+}
+launch-card-done = { $count } הסתיימו
+launch-card-all-done = הסתיים
 subagent-earlier-rows-not-shown = … { $count } שורות מוקדמות שלא הוצגו
 diff-comment-on-file = תגובה בתיק
 workspace-review-request-detect-failed = לא הצלחתי לזהות { $kind }
@@ -2080,6 +2142,28 @@ run-open-preview = תצוגה מקדימה פתוחה
 run-stop-script = סקריפט עצירת ריצה
 run-rerun-workspace = הפעלה מחדש של מרחב העבודה
 workspace-close-tab = סגור את הטאב
+workspace-launched-agents-header = סוכנים שהופעלו
+workspace-launched-by = הופעל על ידי { $tab_title }
+workspace-open-launched-tab = פתיחה כטאב
+notification-launched-agent-title = { $title } · מתוך { $parent }
+launched-agents-summary = { $state ->
+    [permission] { $count ->
+        [one] סוכן אחד שהופעל · ממתין לקלט
+       *[other] { $count } סוכנים שהופעלו · ממתין לקלט
+    }
+    [review] { $count ->
+        [one] סוכן אחד שהופעל · הסתיים
+       *[other] { $count } סוכנים שהופעלו · הסתיים
+    }
+    [working] { $count ->
+        [one] סוכן אחד שהופעל · עובד
+       *[other] { $count } סוכנים שהופעלו · עובד
+    }
+   *[other] { $count ->
+        [one] סוכן אחד שהופעל
+       *[other] { $count } סוכנים שהופעלו
+    }
+}
 workspace-toggle-terminal = טרמינל החלפה
 workspace-choose-open-app = בחר באפליקציה פתוחה
 workspace-new-tab-with-provider = טאב חדש עם ספק
@@ -2227,6 +2311,14 @@ palette-footer-close = סגור
 palette-footer-back = חזרה
 palette-action-restore = שחזור
 sidebar-rename-worktree-label = שינוי שם לתווית עץ העבודה...
+group-branch-rename-title = שנה שם ענף
+group-branch-rename-subtitle = { $count ->
+    [one] משנה את שם הענף במאגר אחד
+   *[other] משנה את שם הענף בכל { $count } המאגרים
+}
+group-branch-rename-subtitle-no-repos = עדיין לא נשלפו מאגרים
+group-branch-rename-blocked = כל מאגר צריך עץ עבודה על אותו ענף. תקן את המאגרים המסומנים לפני שינוי השם.
+group-branch-rename-repo-missing = אין עץ עבודה
 sidebar-hide-worktree = עץ עבודה להסתיר
 sidebar-move-to-section = מעבר לקטע
 sidebar-remove-from-section = הסרה מהחלק
@@ -2541,10 +2633,6 @@ shared-context-depth-thorough-summary = ראיין קודם, ואז נתח את 
 shared-context-depth-thorough-tooltip = שואל שאלות הבהרה, מאשר מטרות, ואז עושה העברת קוד מעמיקה יותר.
 right-panel-show-gitignored-files = הצג קבצים עם gitignored
 right-panel-hide-gitignored-files = הסתר קבצים עם gitignored
-workspace-agent-busy-tooltip = הסוכן עסוק
-workspace-hapi-hub-required-tooltip = הרץ `hapi hub` כדי להפעיל את קורות החיים במושב נייד
-workspace-hapi-install-tooltip = התקנת Hapi למושב נייד בקורות חיים
-workspace-hapi-checking-tooltip = בודק את הסטטוס Hapi...
 workspace-hold-command-for-chat-ui = החזק ⌘ לממשק צ'אט
 workspace-hold-command-for-terminal = החזק ⌘ לטרמינל
 file-tree-symbolic-link = קישור סימבולי
@@ -2581,6 +2669,7 @@ review-conversations-summary = שיחות · { $total } בסך הכול · { $re
 review-file-conversations-summary = { $file } · { $total } בסך הכול · { $resolved } נפתרו
 review-add-comment-line = הוספת תגובה בשורה { $line }
 review-add-comment-lines = הוספת תגובה בשורות { $start } עד { $end }
+review-add-comment-extend-hint = לחיצה עם Shift על שורה מרחיבה את הטווח
 chat-queued-waiting-for-answer = ממתין לתשובתך למעלה
 chat-show-full-plan = הצג את התוכנית המלאה
 
@@ -2680,4 +2769,4 @@ data-directory-notice-home = לאחר השדרוג, התיקייה החדשה מ
 data-directory-notice-home-title = יש לשמור את שתי תיקיות הנתונים
 data-directory-notice-summary = הגדרות המאגר והסקריפטים הקיימים ממשיכים לפעול.
 data-directory-notice-config = הגדרות המאגר: להגדרות חדשות יש להשתמש ב־.super.engineering/config.json. הקובץ הישן .superconductor/config.json עדיין נתמך כשהקובץ החדש אינו קיים. גרסאות ישנות של היישום עדיין משתמשות בקובץ הישן; שני הקבצים אינם מסונכרנים.
-data-directory-notice-scripts = קובצי הסקריפטים נשארים במקומם. אם מעבירים סקריפט, יש לעדכן את הפקודה שמפעילה אותו. משתני הסביבה הקיימים SUPERCONDUCTOR_* ממשיכים לפעול.
+data-directory-notice-scripts = קובצי הסקריפטים נשארים במקומם. אם מעבירים סקריפט, יש לעדכן את הפקודה שמפעילה אותו. סקריפטים צריכים לקרוא את משתני SUPER_ENGINEERING_*; השמות SUPERCONDUCTOR_* עדיין מיוצאים בינתיים ויוסרו בגרסה עתידית.

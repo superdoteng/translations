@@ -227,6 +227,11 @@ clone-repository-url = URL المستودع
 close-tab-action = إغلاق علامة التبويب
 close-tab-description = علامة التبويب هذه قيد التقدم. سيؤدي إغلاقه إلى إيقاف الوكيل.
 close-tab-title = إغلاق "{ $tab_title }"؟
+close-tab-keep-launched-agents = إبقاؤها مفتوحة كعلامات تبويب
+close-tab-launched-agents-description = { $count ->
+    [one] لا يزال وكيل بدأ من علامة التبويب هذه يعمل. سيؤدي إغلاق علامة التبويب إلى إيقافه.
+   *[other] لا يزال { $count } من الوكلاء الذين بدأوا من علامة التبويب هذه يعملون. سيؤدي إغلاق علامة التبويب إلى إيقافهم.
+}
 common-back-arrow = ← العودة
 common-browse = تصفح
 common-browse-ellipsis = تصفح…
@@ -261,7 +266,11 @@ common-search = بحث
 common-shortcuts = الاختصارات
 common-skip = تخطي
 common-welcome-to-app = مرحبًا بك في { $app_name }
+notification-close-chat-running = أوقف الدردشة قبل إغلاق علامة تبويبها
 notification-dismiss = رفض الإخطار
+notification-dismiss-below = تجاهل كل ما بالأسفل
+notification-dismiss-worktree = تجاهل إشعارات شجرة العمل هذه
+notification-empty-all = لا توجد رسائل
 notification-empty-queue = قائمة الانتظار واضحة
 notification-agents-running =
     { $count ->
@@ -280,7 +289,10 @@ notification-keyboard-shortcuts = اختصارات لوحة المفاتيح
 notification-older = أقدم
 notification-queue-title = قائمة انتظار الإخطار
 notification-select-one-or-more = حدد خيارًا واحدًا أو أكثر.
+notification-shortcut-close-chat = إغلاق علامة تبويب الدردشة المحددة وإزالتها من قائمة الانتظار
 notification-shortcut-dismiss = تجاهل الإشعار المحدد
+notification-shortcut-dismiss-worktree = تجاهل كل الإشعارات في شجرة العمل المحددة
+notification-shortcut-expand-worktree = توسيع محادثات شجرة العمل المحددة أو طيها
 notification-shortcut-mark-unread = وضع علامة على الإشعار المحدد كغير مقروء
 notification-shortcut-move = التنقل من خلال الإخطارات
 notification-shortcut-newest = انتقل إلى أحدث الإخطار
@@ -292,13 +304,17 @@ notification-shortcut-remove-chat = قم بإزالة الدردشة الحال�
 notification-shortcut-send-advance = أرسل رسالتك وتقدم
 notification-shortcut-send-unread = إرسال الدردشة الحالية إلى قائمة الانتظار كغير مقروءة
 notification-shortcut-source-chat = انتقل إلى الدردشة المصدر
-notification-shortcuts-cycle-hint = اضغط مع الاستمرار على ⌘⌥ ثم اضغط على J أو K للدورة · حرر للفتح · مسافة لإلقاء نظرة خاطفة
+notification-shortcut-toggle-all = توسيع كل ما في هذه الصفحة أو طيه
+notification-shortcut-toggle-preview = إظهار معاينة المحادثة أو إخفاؤها
+notification-shortcut-undo-dismissal = التراجع عن آخر تجاهل
 notification-shortcuts-from-anywhere = من أي مكان
 notification-shortcuts-in-queue = في قائمة الانتظار
+notification-shortcuts-switcher-hint = اضغط مع الاستمرار على ⌘⌥ واضغط J أو K للتنقل · أفلت للفتح
 notification-shortcuts-while-peeking = بينما تطل
-notification-view-queue = قائمة الانتظار
+notification-undo-dismissal = تراجع
+notification-view-earlier = سابقًا
+notification-view-ready = جاهز
 notification-view-running = الجري
-notification-view-timeline = الجدول الزمني
 onboarding-chat-ui = واجهة المستخدم للدردشة
 onboarding-chat-ui-description = الرسائل المقدمة مع الاختلافات المضمنة وتخفيض السعر
 onboarding-chat-view-description = كلاهما يعمل مع أي AI — يمكنك التغيير في أي وقت في الإعدادات
@@ -496,13 +512,15 @@ settings-category-general-description = سلوك التطبيق الأساسي �
 settings-category-agents-description = توجيه الموفر، والقوالب السريعة، وقواعد التنفيذ لكل إجراء وكيل.
 settings-category-profiles-description = ملفات تعريف CLI المحلية وإعدادات افتراضية عالمية/مساحة عمل/مشاريع.
 settings-category-commands-description = أوامر مخصصة وقوالب مطالبات بنطاق عالمي/مساحة عمل/مشروع.
-settings-category-experimental-description = ميزات المعاينة، بما في ذلك مساحات العمل المشتركة في السياق، والمشاريع غير Git، وتنسيق الوكلاء، وإرسال المراجعة بدون رؤوس، وسيرة ذاتية Hapi تبويب على الجوال.
+settings-category-experimental-description = ميزات المعاينة، بما في ذلك مساحات العمل المشتركة في السياق، والمشاريع غير Git، وتنسيق الوكلاء، وإرسال المراجعة بدون رؤوس.
 settings-category-keyboard-shortcuts-description = تصفح، ابحث، وخصص اختصارات لوحة المفاتيح.
 settings-category-appearance-description = التفضيلات المرئية وعرض واجهة المستخدم.
 settings-category-notifications-description = سلوك التنبيه وتخصيص الصوت.
 settings-category-command-palette-description = اختر المصادر التي تظهر في لوحة الأوامر.
 settings-category-privacy-description = ضوابط القياس عن بعد للاستخدام المجهول.
 settings-category-worktrees-description = الإعدادات الافتراضية لإجراءات دورة حياة شجرة العمل.
+settings-mobile-push-desktop-idle-label = إشعار الهاتف بعد عدم النشاط
+settings-mobile-push-desktop-idle-description = عدد الدقائق دون إدخال من لوحة المفاتيح أو الماوس على جهاز Mac هذا قبل إرسال الإشعارات إلى هاتفك. لا تُرسل أبدًا العناصر التي تعالجها هنا أولًا. القيمة 0 ترسل فورًا.
 settings-branch-inherits-global = يرث العالمية
 settings-branch-use-default = استخدم الفرع الافتراضي
 settings-branch-clear-value = مسح القيمة
@@ -545,6 +563,9 @@ settings-workspace-type-individual = فردي
 settings-workspace-projects-label = المشاريع
 settings-workspace-projects-description = المستودعات المرفقة بمساحة العمل هذه.
 settings-workspace-project-count = مشاريع { $count }
+settings-workspace-shared-context-section = السياق المشترك
+settings-workspace-feature-file-label = إنشاء FEATURE.md لمجموعات الفروع
+settings-workspace-feature-file-description = تحصل مجموعات الفروع الجديدة على ملف FEATURE.md، ويُطلب من الوكلاء إبقاؤه محدّثًا. إيقاف هذا الخيار يُبقي الملفات الموجودة كما هي.
 settings-workspace-danger-section = منطقة الخطر
 settings-workspace-delete-label = حذف مساحة العمل
 settings-workspace-delete-description = افتح تأكيد حذف مساحة العمل.
@@ -860,8 +881,12 @@ settings-section-storage = التخزين
 settings-section-diagnostics = التشخيصات
 settings-section-theme = الموضوع
 settings-section-layout = التصميم
+settings-section-chat = الدردشة
+settings-section-files-diffs = الملفات والفروقات
+settings-section-usage-cost = الاستخدام والتكلفة
 settings-section-fonts = الخطوط
 settings-section-delivery = التسليم
+settings-section-queue = قائمة الانتظار
 settings-section-per-type-overrides = تجاوزات لكل نوع
 settings-section-defaults = التعثر عن السداد
 settings-section-routing = التوجيه
@@ -1047,7 +1072,6 @@ review-ai-questions = AI الأسئلة
 review-no-comments = لا توجد تعليقات على المراجعة حتى الآن
 review-select-lines-hint = اختر أسطرا في الفرق لبدء المراجعة.
 sidebar-ssh = SSH
-shared-context-title = AI CONTEXT
 shared-context-generate-ai-context = توليد AI السياق
 action-generate = توليد
 shared-context-add-repositories = أضف المستودعات...
@@ -1055,6 +1079,13 @@ shared-context-repositories = المستودعات
 shared-context-add-missing-project = أضف المشروع المفقود
 common-running = الجري
 shared-context-add-run-script = أضف سكريبت الجري...
+shared-parent-git-repo-count = { $count ->
+    [one] مستودع واحد
+   *[other] { $count } مستودعات
+}
+shared-parent-git-all-repos = الكل · { $repos }
+shared-parent-git-menu-tooltip = إجراءات Git للمستودعات الفرعية
+shared-parent-git-unavailable-title = تعذر فتح هذه المستودعات
 shared-context-choose-projects-to-run = اختر المشاريع المراد تشغيلها
 workspace-choose-what-to-launch = اختر ما ستطلقه...
 icon-picker-tab-symbols = الرموز
@@ -1489,8 +1520,6 @@ settings-experimental-non-git-projects-label = مشاريع غير Git
 settings-experimental-non-git-projects-description = السماح بإضافة مجلدات بدون Git بيانات وصفية. تبقى المشاريع الموجودة في المجلدات العادية مرئية إذا تم تعطيل ذلك.
 settings-experimental-agent-orchestration-label = توزيع الوكلاء
 settings-experimental-agent-orchestration-description = اجعل أوامر CLI الخاصة بالتنسيق في super.engineering متاحة للوكلاء. لا يزال كل استخدام يتطلب طلبًا صريحًا ومطابقًا منك.
-settings-experimental-hapi-label = تمكين Hapi للجلسات المحمولة
-settings-experimental-hapi-description = استمر في جلسات super.engineering المتوافقة على الجوال مع Hapi.
 settings-experimental-auto-compact-label = Claude Code الدمج التلقائي على حد نافذة السياق
 settings-experimental-auto-compact-description = عندما يفشل دور Claude Code لأن نافذة سياق النموذج قد تجاوزت، قم تلقائيا بتشغيل /compact وإعادة إرسال رسالتك الأخيرة. مفيد للخلفيات غير ذات السياق 1M (مثل GLM5.1) حيث لا يعمل CLAUDE_CODE_AUTO_COMPACT_WINDOW Claude Code في وضع -p.
 settings-experimental-review-label = مراجعة
@@ -1559,7 +1588,11 @@ settings-search-section-diagnostics = التشخيصات
 settings-search-section-theme = الموضوع
 settings-search-section-fonts = الخطوط
 settings-search-section-layout = التصميم
+settings-search-section-chat = الدردشة
+settings-search-section-files---diffs = الملفات والفروقات
+settings-search-section-usage---cost = الاستخدام والتكلفة
 settings-search-section-delivery = التسليم
+settings-search-section-queue = قائمة الانتظار
 settings-search-section-per-type-overrides = تجاوزات لكل نوع
 settings-search-section-shortcuts = اختصارات
 settings-search-section-sources = المصادر
@@ -1717,6 +1750,8 @@ settings-search-entry-appearance-layout-keep-completed-tool-activity-expanded-la
 settings-search-entry-appearance-layout-keep-completed-tool-activity-expanded-description = أبقِ نشاط الأدوات مرئيًا بعد انتهاء الدور بدلًا من طيه في فاصل.
 settings-search-entry-appearance-layout-show-files-changed-summary-label = إظهار ملخص الملفات المتغيرة
 settings-search-entry-appearance-layout-show-files-changed-summary-description = اعرض ملخص «الملفات المتغيرة» بعد الأدوار التي تُعدّل الملفات.
+settings-search-entry-appearance-layout-rich-markdown-composer-label = محرر Markdown المنسّق
+settings-search-entry-appearance-layout-rich-markdown-composer-description = تنسيق Markdown أثناء الكتابة في محرر الدردشة. أوقفه لاستخدام محرر النص العادي.
 settings-search-entry-notifications-delivery-system-notifications-label = إشعارات النظام
 settings-search-entry-notifications-delivery-system-notifications-description = السلوك الافتراضي لإشعارات macOS عبر إتمام المهام وإشعارات الموافقة/الإدخال.
 settings-search-entry-notifications-delivery-persistent-alerts-label = تنبيهات مستمرة
@@ -1725,6 +1760,15 @@ settings-search-entry-notifications-delivery-break-through-focus-label = اخت�
 settings-search-entry-notifications-delivery-break-through-focus-description = توصيل الإشعارات حتى عندما يكون وضع التركيز نشطا.
 settings-search-entry-notifications-delivery-clear-queue-items-on-tab-visit-label = امسح عناصر الطابور عند زيارة التبويب
 settings-search-entry-notifications-delivery-clear-queue-items-on-tab-visit-description = عند التشغيل، اختيار عنصر في قائمة الانتظار يحدد أنه قرأ، وزيارة تبويبه تزيل العنصر.
+settings-search-entry-notifications-delivery-queue-opens-at-label = تفتح قائمة الانتظار على
+settings-search-entry-notifications-delivery-queue-opens-at-description = اختر ما إذا كان فتح قائمة الانتظار يحدد أحدث عنصر أو أقدم عنصر أو آخر عنصر حددته.
+settings-search-entry-notifications-delivery-worktree-cards-on-open-label = بطاقات أشجار العمل عند الفتح
+settings-search-entry-notifications-delivery-worktree-cards-on-open-description = اختر ما إذا كانت بطاقات أشجار العمل تعود إلى حالة التوسيع الافتراضية في كل مرة تُفتح فيها قائمة الانتظار، أو تبقى كما تركتها.
+settings-notification-queue-cards-on-open-reset = إعادة تعيين
+settings-notification-queue-cards-on-open-keep = إبقاء
+settings-notification-queue-open-position-newest = الأحدث
+settings-notification-queue-open-position-oldest = الأقدم
+settings-notification-queue-open-position-last-selected = آخر عنصر محدد
 settings-search-entry-notifications-delivery-timeline-notifications-label = إشعارات الجدول الزمني
 settings-search-entry-notifications-delivery-timeline-notifications-description = اختر عدد أحداث الإشعارات التي تحتفظ بها. القيم الأعلى تستهلك مساحة أكبر للذاكرة والقرص.
 settings-search-entry-notifications-per-type-overrides-task-complete-delivery-label = تسليم المهمة بعد إكمال المهمة
@@ -1761,8 +1805,6 @@ settings-search-entry-experimental-feature-flags-non-git-projects-label = مشا
 settings-search-entry-experimental-feature-flags-non-git-projects-description = السماح بإضافة مجلدات بدون Git بيانات وصفية.
 settings-search-entry-experimental-feature-flags-agent-orchestration-label = توزيع الوكلاء
 settings-search-entry-experimental-feature-flags-agent-orchestration-description = اجعل أوامر التنسيق متاحة للوكلاء. لا يزال كل استخدام يتطلب طلبًا صريحًا ومطابقًا منك.
-settings-search-entry-experimental-feature-flags-enable-hapi-for-mobile-sessions-label = تفعيل Hapi للجلسات المحمولة
-settings-search-entry-experimental-feature-flags-enable-hapi-for-mobile-sessions-description = استمر في التبويبات المتوافقة على الجوال مع Hapi.
 settings-search-entry-experimental-feature-flags-auto-compact-claude-code-on-context-window-limit-label = Claude Code الدمج التلقائي على حد نافذة السياق
 settings-search-entry-experimental-feature-flags-auto-compact-claude-code-on-context-window-limit-description = قم بتشغيل /compest تلقائيا وإعادة التقديم عندما يتجاوز Claude Code نافذة السياق.
 settings-search-entry-experimental-feature-flags-review-label = مراجعة
@@ -1944,6 +1986,9 @@ settings-keybinding-action-notifications-show-queue = الإشعارات: عرض
 settings-keybinding-action-notifications-jump-latest = الإشعارات: الانتقال إلى أحدث عنصر غير مقروء
 settings-keybinding-action-notifications-add-chat = الإشعارات: إضافة الدردشة الحالية إلى قائمة الانتظار
 settings-keybinding-action-notifications-toggle-unread = الإشعارات: تبديل حالة العنصر المحدد كغير مقروء
+settings-keybinding-action-notifications-toggle-preview = الإشعارات: إظهار المعاينة أو إخفاؤها
+settings-keybinding-action-notifications-close-chat = الإشعارات: إغلاق علامة تبويب الدردشة المحددة
+settings-keybinding-action-notifications-toggle-all = الإشعارات: توسيع الكل أو طيه
 settings-keybinding-action-notifications-mark-oldest = الإشعارات: تعليم أقدم عنصر كمقروء والانتقال
 settings-keybinding-action-notifications-select-older = الإشعارات: تحديد الأقدم
 settings-keybinding-action-notifications-select-newer = الإشعارات: تحديد الأحدث
@@ -1975,6 +2020,23 @@ custom-actions-untitled = بدون عنوان
 subagent-state-running = الجري
 subagent-state-completed = اكتمل
 subagent-state-failed = فشل
+launched-agent-needs-input = بحاجة إلى إدخال
+launched-agent-closed = مغلق
+launch-card-launched = { $count ->
+    [one] تم تشغيل وكيل واحد
+   *[other] تم تشغيل { $count } وكلاء
+}
+launch-card-ran = { $count ->
+    [one] شُغّل وكيل واحد
+   *[other] شُغّل { $count } وكلاء
+}
+launch-card-working = { $count } قيد العمل
+launch-card-needs-input = { $count ->
+    [one] 1 بحاجة إلى إدخال
+   *[other] { $count } بحاجة إلى إدخال
+}
+launch-card-done = { $count } مكتمل
+launch-card-all-done = مكتمل
 subagent-earlier-rows-not-shown = … { $count } الصفوف السابقة غير المعروضة
 diff-comment-on-file = تعليق في الملف
 workspace-review-request-detect-failed = لم نتمكن من اكتشاف { $kind }
@@ -2085,6 +2147,28 @@ run-open-preview = فتح المعاينة
 run-stop-script = إيقاف البرنامج النصي
 run-rerun-workspace = إعادة تشغيل مساحة العمل
 workspace-close-tab = إغلاق التبويب
+workspace-launched-agents-header = الوكلاء الذين تم تشغيلهم
+workspace-launched-by = بدأه { $tab_title }
+workspace-open-launched-tab = فتح كعلامة تبويب
+notification-launched-agent-title = { $title } · من { $parent }
+launched-agents-summary = { $state ->
+    [permission] { $count ->
+        [one] وكيل واحد تم تشغيله · يحتاج إلى إدخال
+       *[other] { $count } من الوكلاء تم تشغيلهم · يحتاج إلى إدخال
+    }
+    [review] { $count ->
+        [one] وكيل واحد تم تشغيله · انتهى
+       *[other] { $count } من الوكلاء تم تشغيلهم · انتهى
+    }
+    [working] { $count ->
+        [one] وكيل واحد تم تشغيله · قيد العمل
+       *[other] { $count } من الوكلاء تم تشغيلهم · قيد العمل
+    }
+   *[other] { $count ->
+        [one] وكيل واحد تم تشغيله
+       *[other] { $count } من الوكلاء تم تشغيلهم
+    }
+}
 workspace-toggle-terminal = إظهار أو إخفاء الطرفية
 workspace-choose-open-app = اختر تطبيقًا للفتح
 workspace-new-tab-with-provider = تبويب جديد مع مزوّد
@@ -2265,6 +2349,14 @@ palette-footer-close = إغلاق
 palette-footer-back = رجوع
 palette-action-restore = الاستعادة
 sidebar-rename-worktree-label = أعد تسمية تسمية شجرة العمل...
+group-branch-rename-title = إعادة تسمية الفرع
+group-branch-rename-subtitle = { $count ->
+    [one] يعيد تسمية الفرع في مستودع واحد
+   *[other] يعيد تسمية الفرع في جميع المستودعات ({ $count })
+}
+group-branch-rename-subtitle-no-repos = لم يتم سحب أي مستودعات بعد
+group-branch-rename-blocked = يحتاج كل مستودع إلى شجرة عمل على الفرع نفسه. أصلح المستودعات المميزة قبل إعادة التسمية.
+group-branch-rename-repo-missing = لا توجد شجرة عمل
 sidebar-hide-worktree = إخفاء شجرة العمل
 sidebar-move-to-section = الانتقال إلى القسم
 sidebar-remove-from-section = إزالة من القسم
@@ -2331,10 +2423,6 @@ shared-context-depth-thorough-summary = اطرح أسئلة أولًا، ثم ح
 shared-context-depth-thorough-tooltip = يطرح أسئلة توضيحية، ويؤكد الأهداف، ثم يجري فحصًا أعمق للشيفرة.
 right-panel-show-gitignored-files = إظهار الملفات التي يتجاهلها Git
 right-panel-hide-gitignored-files = إخفاء الملفات التي يتجاهلها Git
-workspace-agent-busy-tooltip = الوكيل مشغول
-workspace-hapi-hub-required-tooltip = شغّل `hapi hub` لتفعيل استئناف الجلسات على الهاتف
-workspace-hapi-install-tooltip = ثبّت Hapi لاستئناف الجلسات على الهاتف
-workspace-hapi-checking-tooltip = جارٍ التحقق من حالة Hapi…
 workspace-hold-command-for-chat-ui = اضغط مطولًا على ⌘ لفتح واجهة الدردشة
 workspace-hold-command-for-terminal = اضغط مطولًا على ⌘ لفتح الطرفية
 pr-checks-failed = فشلت الفحوصات
@@ -2663,6 +2751,7 @@ review-conversations-summary = المحادثات · { $total } إجمالاً �
 review-file-conversations-summary = { $file } · { $total } إجمالاً · { $resolved } محلولة
 review-add-comment-line = أضف تعليقًا على السطر { $line }
 review-add-comment-lines = أضف تعليقًا على الأسطر من { $start } إلى { $end }
+review-add-comment-extend-hint = انقر مع الضغط على Shift على سطر لتوسيع النطاق
 chat-queued-waiting-for-answer = في انتظار إجابتك أعلاه
 chat-show-full-plan = عرض الخطة كاملة
 
@@ -2762,4 +2851,4 @@ data-directory-notice-home = بعد الترقية، يرتبط المجلد ا�
 data-directory-notice-home-title = احتفظ بكلا مجلدي البيانات
 data-directory-notice-summary = تستمر إعدادات المستودعات والبرامج النصية الحالية في العمل.
 data-directory-notice-config = إعداد المستودع: استخدم .super.engineering/config.json للإعدادات الجديدة. يظل الملف القديم .superconductor/config.json مدعوماً عند غياب الملف الجديد. تستخدم إصدارات التطبيق القديمة الملف القديم؛ ولا تتم مزامنة الملفين.
-data-directory-notice-scripts = تبقى ملفات البرامج النصية في مكانها. إذا نقلت برنامجاً نصياً، فحدّث الأمر الذي يشغّله. تستمر متغيرات البيئة SUPERCONDUCTOR_* الحالية في العمل.
+data-directory-notice-scripts = تبقى ملفات البرامج النصية في مكانها. إذا نقلت برنامجاً نصياً، فحدّث الأمر الذي يشغّله. ينبغي أن تقرأ البرامج النصية متغيرات SUPER_ENGINEERING_*؛ ما زالت أسماء SUPERCONDUCTOR_* تُصدَّر حالياً وستُزال في إصدار لاحق.

@@ -870,6 +870,11 @@ clone-repository-url = Repository URL
 close-tab-action = Close Tab
 close-tab-description = This tab has work in progress. Closing it will stop the agent.
 close-tab-title = Close “{ $tab_title }”?
+close-tab-keep-launched-agents = Keep them open as tabs
+close-tab-launched-agents-description = { $count ->
+    [one] An agent launched from this tab is still working. Closing the tab stops it.
+   *[other] { $count } agents launched from this tab are still working. Closing the tab stops them.
+}
 common-back-arrow = ← Back
 common-browse = Browse
 common-browse-ellipsis = Browse…
@@ -905,7 +910,11 @@ common-search = Search
 common-shortcuts = Shortcuts
 common-skip = Skip
 common-welcome-to-app = Welcome to { $app_name }
+notification-close-chat-running = Stop the chat before closing its tab
 notification-dismiss = Dismiss notification
+notification-dismiss-below = Dismiss everything below
+notification-dismiss-worktree = Dismiss this worktree's notifications
+notification-empty-all = No messages
 notification-empty-queue = Queue is clear
 notification-agents-running =
     { $count ->
@@ -920,7 +929,10 @@ notification-keyboard-shortcuts = Keyboard shortcuts
 notification-older = Older
 notification-queue-title = Notification Queue
 notification-select-one-or-more = Select one or more options.
+notification-shortcut-close-chat = Close the selected chat's tab and remove it from the queue
 notification-shortcut-dismiss = Dismiss the selected notification
+notification-shortcut-dismiss-worktree = Dismiss every notification in the selected worktree
+notification-shortcut-expand-worktree = Expand or collapse the selected worktree's chats
 notification-shortcut-mark-unread = Mark the selected notification unread
 notification-shortcut-move = Move through notifications
 notification-shortcut-newest = Jump to the newest notification
@@ -932,13 +944,17 @@ notification-shortcut-remove-chat = Remove the current chat from the queue
 notification-shortcut-send-advance = Send your message and advance
 notification-shortcut-send-unread = Send the current chat to the queue as unread
 notification-shortcut-source-chat = Go to the source chat
-notification-shortcuts-cycle-hint = Hold ⌘⌥ and tap J or K to cycle · release to open · Space to peek
+notification-shortcut-toggle-all = Expand or collapse everything on this page
+notification-shortcut-toggle-preview = Show or hide the conversation preview
+notification-shortcut-undo-dismissal = Undo the last dismissal
 notification-shortcuts-from-anywhere = From anywhere
 notification-shortcuts-in-queue = In the queue
+notification-shortcuts-switcher-hint = Hold ⌘⌥ and tap J or K to cycle · release to open
 notification-shortcuts-while-peeking = While peeking
-notification-view-queue = Queue
+notification-undo-dismissal = Undo
+notification-view-earlier = Earlier
+notification-view-ready = Ready
 notification-view-running = Running
-notification-view-timeline = Timeline
 onboarding-chat-ui = Chat UI
 onboarding-chat-ui-description = Rendered messages with inline diffs and markdown
 onboarding-chat-view-description = Both work with any AI — change anytime in Settings
@@ -1158,7 +1174,7 @@ settings-category-agents-description = Provider availability, approvals, and ses
 settings-category-routing-description = Choose the provider, profile, model, effort, and launch behavior for agent actions.
 settings-category-profiles-description = Create and edit reusable local CLI profiles.
 settings-category-commands-description = Custom commands and prompt templates with global/workspace/project scoping.
-settings-category-experimental-description = Preview unfinished features, including shared context workspaces, non-Git projects, agent orchestration, automations, headless Review dispatch, and Hapi mobile tab resume.
+settings-category-experimental-description = Preview unfinished features, including shared context workspaces, non-Git projects, agent orchestration, automations, and headless Review dispatch.
 settings-category-keyboard-shortcuts-description = Browse, search, and customize keyboard shortcuts.
 settings-category-appearance-description = Visual preferences and UI presentation.
 settings-category-terminal-description = Terminal appearance, streaming, and scrollback behavior.
@@ -1178,13 +1194,13 @@ settings-mobile-retry-action = Retry
 settings-mobile-host-name-label = Computer name
 settings-mobile-host-name-description = How this Mac appears on your paired phones. Leave blank to use its macOS name.
 settings-mobile-host-name-placeholder = This Mac's name
+settings-mobile-push-desktop-idle-label = Notify phone after inactivity
+settings-mobile-push-desktop-idle-description = Minutes without keyboard or mouse input on this Mac before notifications go to your phone. Items you handle here first are never sent. 0 sends right away.
 settings-mobile-rename-action = Rename
 settings-mobile-save-name-action = Save
 settings-mobile-device-name-placeholder = Use the phone's name
 settings-mobile-testflight-label = Get the mobile app
-settings-mobile-testflight-description = Install the TestFlight build on your phone before pairing.
-settings-mobile-testflight-action = Open TestFlight
-settings-mobile-testflight-unpublished = TestFlight invite not published yet
+settings-mobile-testflight-description = Scan with your iPhone camera to install the TestFlight build before pairing.
 settings-mobile-local-network-label = Local network
 settings-mobile-local-network-unavailable = No usable local address detected. Connect both devices to the same Wi-Fi and retry.
 settings-mobile-away-label = Away from home
@@ -1278,6 +1294,9 @@ settings-workspace-project-count = { $count } projects
 settings-workspace-automation-section = Browser Automation
 settings-workspace-browser-automation-label = Allow agents to control the browser
 settings-workspace-browser-automation-description = Agents can click, type, and run scripts in this workspace's browser tab.
+settings-workspace-shared-context-section = Shared Context
+settings-workspace-feature-file-label = Create FEATURE.md for branch groups
+settings-workspace-feature-file-description = New branch groups get a FEATURE.md, and agents are told to keep it updated. Turning this off leaves existing files in place.
 settings-workspace-danger-section = Danger Zone
 settings-workspace-delete-label = Delete workspace
 settings-workspace-delete-description = Open the workspace deletion confirmation.
@@ -1637,8 +1656,6 @@ settings-search-no-results = No settings match “{ $query }”. Press esc to cl
 settings-search-results-summary = Results: { $result_count } · Categories: { $category_count }
 settings-search-hidden-results = Additional matches: { $count } — keep typing to narrow your search.
 settings-experimental-heading = Experimental
-settings-experimental-chat-markdown-wysiwyg-label = Redesigned chat composer
-settings-experimental-chat-markdown-wysiwyg-description = Use the redesigned controls and rich Markdown editor in all open chats.
 settings-experimental-shared-context-label = Shared context workspaces
 settings-experimental-shared-context-description = Allow selecting parent folders that expand into child repositories for shared context workspaces.
 settings-experimental-remote-workspaces-label = Remote workspaces
@@ -1651,8 +1668,6 @@ settings-experimental-automations-label = Automations
 settings-experimental-automations-description = Create scheduled and event-driven automations. Early preview, not fully tested yet.
 settings-experimental-browser-automation-label = Browser automation
 settings-experimental-browser-automation-description = Allow agents to use browser control commands. Browser actions still require workspace permission.
-settings-experimental-hapi-label = Enable Hapi for mobile sessions
-settings-experimental-hapi-description = Continue compatible super.engineering sessions on mobile with Hapi.
 settings-experimental-auto-compact-label = Auto-compact Claude Code on context window limit
 settings-experimental-auto-compact-description = When a Claude Code turn fails because the model's context window is exceeded, automatically run /compact and resubmit your last message. Useful for non-1M-context backends (e.g. GLM5.1) where Claude Code's CLAUDE_CODE_AUTO_COMPACT_WINDOW does not fire under -p mode.
 settings-experimental-review-label = Review
@@ -1731,10 +1746,14 @@ settings-search-section-storage = Storage
 settings-search-section-diagnostics = Diagnostics
 settings-search-section-theme = Theme
 settings-search-section-layout = Layout
+settings-search-section-chat = Chat
+settings-search-section-files---diffs = Files & diffs
+settings-search-section-usage---cost = Usage & cost
 settings-search-section-appearance = Appearance
 settings-search-section-typography = Typography
 settings-search-section-terminal = Terminal
 settings-search-section-delivery = Delivery
+settings-search-section-queue = Queue
 settings-search-section-per-type-overrides = Per-type overrides
 settings-search-section-shortcuts = Shortcuts
 settings-search-section-sources = Sources
@@ -1911,6 +1930,8 @@ settings-search-entry-appearance-layout-show-files-changed-summary-label = Show 
 settings-search-entry-appearance-layout-show-files-changed-summary-description = Show a “Files changed” summary after turns that edit files.
 settings-search-entry-appearance-layout-full-width-chat-text-label = Full-width chat text
 settings-search-entry-appearance-layout-full-width-chat-text-description = Use the full chat pane width for messages and the composer. A small side gutter stays clear of the history rail on wide panes.
+settings-search-entry-appearance-layout-rich-markdown-composer-label = Rich Markdown composer
+settings-search-entry-appearance-layout-rich-markdown-composer-description = Format Markdown as you type in the chat composer. Turn off to use the plain-text composer.
 settings-search-entry-appearance-layout-usage-meter-extended-label = Show usage percentages
 settings-search-entry-appearance-layout-usage-meter-extended-description = Show the remaining percentage instead of the provider usage gauge.
 settings-search-entry-appearance-layout-usage-meter-window-label = Usage meter window
@@ -1947,6 +1968,15 @@ settings-search-entry-notifications-delivery-break-through-focus-label = Break t
 settings-search-entry-notifications-delivery-break-through-focus-description = Deliver notifications even when a Focus mode is active.
 settings-search-entry-notifications-delivery-clear-queue-items-on-tab-visit-label = Clear queue items on tab visit
 settings-search-entry-notifications-delivery-clear-queue-items-on-tab-visit-description = When on, selecting an item in the queue marks it read and visiting its tab removes it.
+settings-search-entry-notifications-delivery-queue-opens-at-label = Queue opens at
+settings-search-entry-notifications-delivery-queue-opens-at-description = Choose whether opening the queue selects its newest item, its oldest item, or the item you last selected.
+settings-search-entry-notifications-delivery-worktree-cards-on-open-label = Worktree cards on open
+settings-search-entry-notifications-delivery-worktree-cards-on-open-description = Choose whether worktree cards return to their default expansion each time the queue opens, or keep how you left them.
+settings-notification-queue-cards-on-open-reset = Reset
+settings-notification-queue-cards-on-open-keep = Keep
+settings-notification-queue-open-position-newest = Newest
+settings-notification-queue-open-position-oldest = Oldest
+settings-notification-queue-open-position-last-selected = Last selected
 settings-search-entry-notifications-delivery-timeline-notifications-label = Timeline notifications
 settings-search-entry-notifications-delivery-timeline-notifications-description = Choose how many notification events to retain. Higher values use more memory and disk space.
 settings-search-entry-notifications-per-type-overrides-task-complete-delivery-label = Task complete delivery
@@ -1977,8 +2007,6 @@ settings-search-entry-privacy-telemetry-share-anonymous-usage-data-label = Share
 settings-search-entry-privacy-telemetry-share-anonymous-usage-data-description = Helps us understand how super.engineering is used and prioritize improvements.
 settings-search-entry-experimental-feature-flags-shared-context-workspaces-label = Shared context workspaces
 settings-search-entry-experimental-feature-flags-shared-context-workspaces-description = Allow selecting parent folders that expand into child repositories for shared context workspaces.
-settings-search-entry-experimental-feature-flags-wysiwyg-chat-composer-label = Redesigned chat composer
-settings-search-entry-experimental-feature-flags-wysiwyg-chat-composer-description = Use the redesigned controls and rich Markdown editor in all open chats.
 settings-search-entry-experimental-feature-flags-remote-workspaces-label = Remote workspaces
 settings-search-entry-experimental-feature-flags-remote-workspaces-description = Create workspaces that live on a remote machine over SSH. Existing remote workspaces keep working when disabled.
 settings-search-entry-experimental-feature-flags-non-git-projects-label = Non-Git projects
@@ -1991,8 +2019,6 @@ settings-search-entry-experimental-feature-flags-browser-automation-label = Brow
 settings-search-entry-experimental-feature-flags-browser-automation-description = Allow agents to use browser control commands. Browser actions still require workspace permission.
 settings-search-entry-agents-session-context-session-context-for-agents-label = Session context for agents
 settings-search-entry-agents-session-context-session-context-for-agents-description = Add super.engineering context to new agent sessions, or turn ambient injection off.
-settings-search-entry-experimental-feature-flags-enable-hapi-for-mobile-sessions-label = Enable Hapi for mobile sessions
-settings-search-entry-experimental-feature-flags-enable-hapi-for-mobile-sessions-description = Continue compatible tabs on mobile with Hapi.
 settings-search-entry-experimental-feature-flags-auto-compact-claude-code-on-context-window-limit-label = Auto-compact Claude Code on context window limit
 settings-search-entry-experimental-feature-flags-auto-compact-claude-code-on-context-window-limit-description = Automatically run /compact and resubmit when Claude Code exceeds the context window.
 settings-search-entry-experimental-feature-flags-review-label = Review
@@ -2196,10 +2222,14 @@ settings-section-storage = Storage
 settings-section-diagnostics = Diagnostics
 settings-section-theme = Theme
 settings-section-layout = Layout
+settings-section-chat = Chat
+settings-section-files-diffs = Files & diffs
+settings-section-usage-cost = Usage & cost
 settings-section-appearance = Appearance
 settings-section-typography = Typography
 settings-section-terminal = Terminal
 settings-section-delivery = Delivery
+settings-section-queue = Queue
 settings-section-per-type-overrides = Per-type overrides
 settings-section-defaults = Defaults
 settings-section-routing = Routing
@@ -2560,6 +2590,9 @@ settings-keybinding-action-notifications-show-queue = Notifications: Show Queue
 settings-keybinding-action-notifications-jump-latest = Notifications: Jump to Latest Unread
 settings-keybinding-action-notifications-add-chat = Notifications: Add Current Chat to Queue
 settings-keybinding-action-notifications-toggle-unread = Notifications: Toggle Selected Unread
+settings-keybinding-action-notifications-toggle-preview = Notifications: Toggle Preview
+settings-keybinding-action-notifications-close-chat = Notifications: Close Selected Chat Tab
+settings-keybinding-action-notifications-toggle-all = Notifications: Expand or Collapse All
 settings-keybinding-action-notifications-mark-oldest = Notifications: Mark Oldest Unread and Advance
 settings-keybinding-action-notifications-select-older = Notifications: Select Older
 settings-keybinding-action-notifications-select-newer = Notifications: Select Newer
@@ -2721,7 +2754,6 @@ review-ai-questions = AI questions
 review-no-comments = No review comments yet
 review-select-lines-hint = Select lines in the diff to start a review.
 sidebar-ssh = SSH
-shared-context-title = AI CONTEXT
 shared-context-generate-ai-context = Generate AI Context
 action-generate = Generate
 shared-context-add-repositories = Add Repositories…
@@ -2729,6 +2761,13 @@ shared-context-repositories = Repositories
 shared-context-add-missing-project = Add missing project
 common-running = Running
 shared-context-add-run-script = Add run script...
+shared-parent-git-repo-count = { $count ->
+[one] 1 repo
+*[other] { $count } repos
+}
+shared-parent-git-all-repos = All · { $repos }
+shared-parent-git-menu-tooltip = Git actions for child repos
+shared-parent-git-unavailable-title = Couldn't open these repos
 shared-context-choose-projects-to-run = Choose projects to run
 workspace-choose-what-to-launch = Choose what to launch…
 icon-picker-tab-symbols = Symbols
@@ -2773,6 +2812,23 @@ custom-actions-untitled = Untitled
 subagent-state-running = Running
 subagent-state-completed = Completed
 subagent-state-failed = Failed
+launched-agent-needs-input = Needs input
+launched-agent-closed = Closed
+launch-card-launched = { $count ->
+    [one] Launched 1 agent
+   *[other] Launched { $count } agents
+}
+launch-card-ran = { $count ->
+    [one] Ran 1 agent
+   *[other] Ran { $count } agents
+}
+launch-card-working = { $count } working
+launch-card-needs-input = { $count ->
+    [one] 1 needs input
+   *[other] { $count } need input
+}
+launch-card-done = { $count } done
+launch-card-all-done = Done
 subagent-earlier-rows-not-shown = … { $count } earlier rows not shown
 model-picker-type-to-search = Type to search models
 model-picker-type-to-search-hint = type to search
@@ -3293,6 +3349,28 @@ run-open-preview = Open preview
 run-stop-script = Stop run script
 run-rerun-workspace = Re-run workspace
 workspace-close-tab = Close tab
+workspace-launched-agents-header = Launched agents
+workspace-launched-by = Launched by { $tab_title }
+workspace-open-launched-tab = Open as tab
+notification-launched-agent-title = { $title } · from { $parent }
+launched-agents-summary = { $state ->
+    [permission] { $count ->
+        [one] 1 launched agent · needs input
+       *[other] { $count } launched agents · needs input
+    }
+    [review] { $count ->
+        [one] 1 launched agent · finished
+       *[other] { $count } launched agents · finished
+    }
+    [working] { $count ->
+        [one] 1 launched agent · working
+       *[other] { $count } launched agents · working
+    }
+   *[other] { $count ->
+        [one] 1 launched agent
+       *[other] { $count } launched agents
+    }
+}
 workspace-toggle-terminal = Toggle Terminal
 workspace-choose-open-app = Choose open app
 workspace-new-tab-with-provider = New tab with provider
@@ -3457,6 +3535,14 @@ palette-action-restore = Restore
 sidebar-rename-worktree-label = Rename feature label…
 sidebar-rename-feature-label = Rename feature label…
 sidebar-rename-branch = Rename branch…
+group-branch-rename-title = Rename branch
+group-branch-rename-subtitle = { $count ->
+    [one] Renames the branch in 1 repository
+   *[other] Renames the branch in all { $count } repositories
+}
+group-branch-rename-subtitle-no-repos = No repositories are checked out yet
+group-branch-rename-blocked = Every repository needs a worktree on the same branch. Fix the highlighted repositories before renaming.
+group-branch-rename-repo-missing = No worktree
 sidebar-hide-worktree = Hide worktree
 sidebar-move-to-section = Move to section
 sidebar-remove-from-section = Remove from section
@@ -3533,10 +3619,6 @@ shared-context-depth-thorough-summary = Interview first, then analyze the codeba
 shared-context-depth-thorough-tooltip = Asks clarifying questions, confirms goals, then does a deeper code pass.
 right-panel-show-gitignored-files = Show gitignored files
 right-panel-hide-gitignored-files = Hide gitignored files
-workspace-agent-busy-tooltip = Agent is busy
-workspace-hapi-hub-required-tooltip = Run `hapi hub` to enable mobile session resume
-workspace-hapi-install-tooltip = Install Hapi for mobile session resume
-workspace-hapi-checking-tooltip = Checking Hapi status…
 workspace-hold-command-for-chat-ui = Hold ⌘ for Chat UI
 workspace-hold-command-for-terminal = Hold ⌘ for Terminal
 pr-checks-failed = Checks failed
@@ -3608,6 +3690,7 @@ review-conversations-summary = Conversations · { $total } total · { $resolved 
 review-file-conversations-summary = { $file } · { $total } total · { $resolved } resolved
 review-add-comment-line = Add a comment on line { $line }
 review-add-comment-lines = Add a comment on lines { $start } to { $end }
+review-add-comment-extend-hint = Shift-click a line to extend
 chat-queued-waiting-for-answer = waiting for your answer above
 chat-show-full-plan = Show full plan
 
