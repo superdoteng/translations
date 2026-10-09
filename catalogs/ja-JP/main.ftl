@@ -186,6 +186,8 @@ project-menu-unhide-worktrees = ワークツリーの非表示を解除…
 project-menu-move-to-workspace = ワークスペースに移動
 project-menu-remove = プロジェクトをアプリから削除
 action-rename = 名前を変更
+action-mark-unread = 未読にする
+action-mark-read = 既読にする
 workspace-menu-change-icon = アイコンを変更…
 action-delete = 削除
 theme-customize-title = テーマのカスタマイズ
@@ -399,6 +401,9 @@ scripts-add-stop-command = + 停止コマンドを追加
 scripts-stop-command-description = super.engineering が実行プロセスを終了する前に実行されます。
 run-stop-command-failed-title = 停止コマンドの実行に失敗しました
 run-stop-command-failed-description = { $script } の停止コマンド実行に失敗しました。実行プロセスは終了しました。
+run-script-unavailable-title = 実行スクリプトが開始されませんでした
+run-script-not-found-description = { $script } はこのプロジェクトに構成されていません。
+run-script-none-description = このプロジェクトには実行スクリプトが構成されていません。
 scripts-configure-title = スクリプトを設定
 scripts-configure-description = { $project } のスクリプトです。各行は同じシェル内で上から順に実行され、最初のエラーで停止します。
 worktree-new-for-project = { $project } の新しいワークツリー
@@ -1976,21 +1981,18 @@ subagent-state-completed = 完了
 subagent-state-failed = 失敗
 launched-agent-needs-input = 入力待ち
 launched-agent-closed = 閉じました
-launch-card-launched = { $count ->
-    [one] 1 個のエージェントを起動
-   *[other] { $count } 個のエージェントを起動
-}
-launch-card-ran = { $count ->
-    [one] 1 個のエージェントを実行
-   *[other] { $count } 個のエージェントを実行
+launched-agent-idle = アイドル
+launch-group-agents = { $count ->
+    [one] 1 個のエージェント
+   *[other] { $count } 個のエージェント
 }
 launch-card-working = { $count } 個が作業中
 launch-card-needs-input = { $count ->
     [one] 1 個が入力待ち
    *[other] { $count } 個が入力待ち
 }
+launch-card-failed = { $count } 個が失敗
 launch-card-done = { $count } 個が完了
-launch-card-all-done = 完了
 subagent-earlier-rows-not-shown = …それ以前の { $count } 行は表示されていません
 model-picker-type-to-search = 入力してモデルを検索
 model-picker-refresh-model-caches = モデルキャッシュを更新

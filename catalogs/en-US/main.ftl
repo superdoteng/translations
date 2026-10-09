@@ -805,6 +805,8 @@ project-menu-unhide-worktrees = Unhide worktrees...
 project-menu-move-to-workspace = Move to workspace
 project-menu-remove = Remove Project
 action-rename = Rename
+action-mark-unread = Mark as unread
+action-mark-read = Mark as read
 workspace-menu-change-icon = Change Icon…
 action-delete = Delete
 theme-customize-title = Customize Theme
@@ -1025,6 +1027,9 @@ scripts-add-stop-command = + Add stop command
 scripts-stop-command-description = Runs before super.engineering terminates the Run process.
 run-stop-command-failed-title = Stop command failed
 run-stop-command-failed-description = The Stop command for { $script } failed. The Run process was terminated.
+run-script-unavailable-title = Run script didn't start
+run-script-not-found-description = { $script } isn't configured for this checkout's project.
+run-script-none-description = No run script is configured for this checkout's project.
 scripts-configure-title = Configure Scripts
 scripts-configure-description = Scripts for { $project }. Rows run in order in the same shell and stop at the first failure.
 worktree-new-for-project = New worktree for { $project }
@@ -2814,21 +2819,18 @@ subagent-state-completed = Completed
 subagent-state-failed = Failed
 launched-agent-needs-input = Needs input
 launched-agent-closed = Closed
-launch-card-launched = { $count ->
-    [one] Launched 1 agent
-   *[other] Launched { $count } agents
+launched-agent-idle = Idle
+launch-group-agents = { $count ->
+    [one] 1 agent
+   *[other] { $count } agents
 }
-launch-card-ran = { $count ->
-    [one] Ran 1 agent
-   *[other] Ran { $count } agents
-}
-launch-card-working = { $count } working
+launch-card-working = { $count } running
 launch-card-needs-input = { $count ->
     [one] 1 needs input
    *[other] { $count } need input
 }
+launch-card-failed = { $count } failed
 launch-card-done = { $count } done
-launch-card-all-done = Done
 subagent-earlier-rows-not-shown = … { $count } earlier rows not shown
 model-picker-type-to-search = Type to search models
 model-picker-type-to-search-hint = type to search

@@ -188,6 +188,8 @@ project-menu-unhide-worktrees = 取消隱藏工作樹…
 project-menu-move-to-workspace = 移至工作區
 project-menu-remove = 移除專案
 action-rename = 更名
+action-mark-unread = 標示為未讀
+action-mark-read = 標示為已讀
 workspace-menu-change-icon = 更換圖示…
 action-delete = 刪除
 theme-customize-title = 自訂主題
@@ -396,6 +398,9 @@ scripts-add-stop-command = + 新增停止指令
 scripts-stop-command-description = 在 super.engineering 終止「執行」處理序前執行。
 run-stop-command-failed-title = 停止指令失敗
 run-stop-command-failed-description = { $script } 的停止指令失敗。「執行」處理序已終止。
+run-script-unavailable-title = 執行指令碼未啟動
+run-script-not-found-description = 此專案未設定 { $script }。
+run-script-none-description = 此專案尚未設定執行指令碼。
 scripts-configure-title = 設定指令碼
 scripts-configure-description = { $project } 的指令碼。每一列會在同一個 shell 中依序執行，並在首次失敗時停止。
 worktree-new-for-project = 為 { $project } 新增工作樹
@@ -2040,21 +2045,18 @@ subagent-state-completed = 已完成
 subagent-state-failed = 失敗
 launched-agent-needs-input = 需要輸入
 launched-agent-closed = 已關閉
-launch-card-launched = { $count ->
-    [one] 已啟動 1 個代理
-   *[other] 已啟動 { $count } 個代理
-}
-launch-card-ran = { $count ->
-    [one] 已執行 1 個代理
-   *[other] 已執行 { $count } 個代理
+launched-agent-idle = 閒置
+launch-group-agents = { $count ->
+    [one] 1 個代理
+   *[other] { $count } 個代理
 }
 launch-card-working = { $count } 個進行中
 launch-card-needs-input = { $count ->
     [one] 1 個需要輸入
    *[other] { $count } 個需要輸入
 }
+launch-card-failed = { $count } 個失敗
 launch-card-done = { $count } 個已完成
-launch-card-all-done = 已完成
 subagent-earlier-rows-not-shown = …前面還有 { $count } 列未顯示
 diff-comment-on-file = 對檔案留言
 workspace-review-request-detect-failed = 無法偵測到 { $kind }

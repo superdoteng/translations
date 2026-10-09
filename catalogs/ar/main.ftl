@@ -172,6 +172,8 @@ project-menu-unhide-worktrees = إظهار أشجار العمل...
 project-menu-move-to-workspace = الانتقال إلى مساحة العمل
 project-menu-remove = إزالة المشروع
 action-rename = إعادة تسمية
+action-mark-unread = وضع علامة كغير مقروء
+action-mark-read = وضع علامة كمقروء
 workspace-menu-change-icon = تغيير الرمز…
 action-delete = حذف
 theme-customize-title = تخصيص السمة
@@ -381,6 +383,9 @@ scripts-add-stop-command = + إضافة أمر إيقاف
 scripts-stop-command-description = يُنفَّذ قبل أن تنهي super.engineering عملية التشغيل.
 run-stop-command-failed-title = فشل أمر الإيقاف
 run-stop-command-failed-description = فشل أمر الإيقاف للبرنامج النصي { $script }. تم إنهاء عملية التشغيل.
+run-script-unavailable-title = لم يبدأ سكربت التشغيل
+run-script-not-found-description = { $script } غير مهيأ لهذا المشروع.
+run-script-none-description = لا يوجد سكربت تشغيل مهيأ لهذا المشروع.
 scripts-configure-title = تكوين البرامج النصية
 scripts-configure-description = البرامج النصية لـ { $project }. تُنفَّذ الصفوف بالترتيب ضمن بيئة شل واحدة، ويتوقف التنفيذ عند أول خطأ.
 worktree-new-for-project = شجرة عمل جديدة لـ { $project }
@@ -2022,21 +2027,18 @@ subagent-state-completed = اكتمل
 subagent-state-failed = فشل
 launched-agent-needs-input = بحاجة إلى إدخال
 launched-agent-closed = مغلق
-launch-card-launched = { $count ->
-    [one] تم تشغيل وكيل واحد
-   *[other] تم تشغيل { $count } وكلاء
-}
-launch-card-ran = { $count ->
-    [one] شُغّل وكيل واحد
-   *[other] شُغّل { $count } وكلاء
+launched-agent-idle = خامل
+launch-group-agents = { $count ->
+    [one] وكيل واحد
+   *[other] { $count } وكلاء
 }
 launch-card-working = { $count } قيد العمل
 launch-card-needs-input = { $count ->
     [one] 1 بحاجة إلى إدخال
    *[other] { $count } بحاجة إلى إدخال
 }
+launch-card-failed = { $count } فشل
 launch-card-done = { $count } مكتمل
-launch-card-all-done = مكتمل
 subagent-earlier-rows-not-shown = … { $count } الصفوف السابقة غير المعروضة
 diff-comment-on-file = تعليق في الملف
 workspace-review-request-detect-failed = لم نتمكن من اكتشاف { $kind }

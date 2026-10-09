@@ -179,6 +179,8 @@ project-menu-unhide-worktrees = Çalışma ağaçlarını aç...
 project-menu-move-to-workspace = İş Mekanına Taşıma
 project-menu-remove = Projeyi Kaldır
 action-rename = Yeniden Adlandırma
+action-mark-unread = Okunmadı olarak işaretle
+action-mark-read = Okundu olarak işaretle
 workspace-menu-change-icon = İkonu Değiştir...
 action-delete = Sil
 theme-customize-title = Temayı Özelleştir
@@ -380,6 +382,9 @@ scripts-add-stop-command = + Durdurma komutu ekle
 scripts-stop-command-description = super.engineering Çalıştırma işlemini sonlandırmadan önce çalışır.
 run-stop-command-failed-title = Durdurma komutu başarısız oldu
 run-stop-command-failed-description = { $script } için durdurma komutu başarısız oldu. Çalıştırma işlemi sonlandırıldı.
+run-script-unavailable-title = Çalıştırma betiği başlamadı
+run-script-not-found-description = { $script } bu proje için yapılandırılmamış.
+run-script-none-description = Bu proje için yapılandırılmış çalıştırma betiği yok.
 scripts-configure-title = Scriptleri Konfigürasyon
 scripts-configure-description = { $project } için betikler. Satırlar aynı kabukta sırayla çalıştırılır ve ilk hatada durur.
 worktree-new-for-project = { $project } için yeni çalışma ağacı
@@ -2013,21 +2018,18 @@ subagent-state-completed = Tamamlandı
 subagent-state-failed = Başarısız
 launched-agent-needs-input = Girdi gerekiyor
 launched-agent-closed = Kapalı
-launch-card-launched = { $count ->
-    [one] 1 ajan başlatıldı
-   *[other] { $count } ajan başlatıldı
-}
-launch-card-ran = { $count ->
-    [one] 1 ajan çalıştı
-   *[other] { $count } ajan çalıştı
+launched-agent-idle = Boşta
+launch-group-agents = { $count ->
+    [one] 1 ajan
+   *[other] { $count } ajan
 }
 launch-card-working = { $count } çalışıyor
 launch-card-needs-input = { $count ->
     [one] 1 girdi bekliyor
    *[other] { $count } girdi bekliyor
 }
+launch-card-failed = { $count } başarısız
 launch-card-done = { $count } tamamlandı
-launch-card-all-done = Tamamlandı
 subagent-earlier-rows-not-shown = … { $count } önceki satırlar gösterilmedi
 diff-comment-on-file = Dosyada yorum yapın
 workspace-review-request-detect-failed = Tespit edemedim { $kind }

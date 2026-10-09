@@ -181,6 +181,8 @@ project-menu-unhide-worktrees = 작업 트리를 숨기기 해제하세요...
 project-menu-move-to-workspace = 작업 공간으로 이동하기
 project-menu-remove = 프로젝트 제거
 action-rename = 이름 변경
+action-mark-unread = 읽지 않음으로 표시
+action-mark-read = 읽음으로 표시
 workspace-menu-change-icon = 아이콘 변경...
 action-delete = 삭제
 theme-customize-title = 테마 맞춤
@@ -379,6 +381,9 @@ scripts-add-stop-command = + 중지 명령 추가
 scripts-stop-command-description = super.engineering이 실행 프로세스를 종료하기 전에 실행됩니다.
 run-stop-command-failed-title = 중지 명령 실패
 run-stop-command-failed-description = { $script }의 중지 명령이 실패했습니다. 실행 프로세스가 종료되었습니다.
+run-script-unavailable-title = 실행 스크립트가 시작되지 않았습니다
+run-script-not-found-description = { $script }은(는) 이 프로젝트에 설정되어 있지 않습니다.
+run-script-none-description = 이 프로젝트에 설정된 실행 스크립트가 없습니다.
 scripts-configure-title = 스크립트 구성
 scripts-configure-description = { $project }용 스크립트입니다. 각 행은 동일한 셸에서 순서대로 실행되며 첫 번째 실패 시 중지됩니다.
 worktree-new-for-project = { $project }의 새 워크트리
@@ -2012,21 +2017,18 @@ subagent-state-completed = 완성됨
 subagent-state-failed = 실패
 launched-agent-needs-input = 입력 필요
 launched-agent-closed = 닫힘
-launch-card-launched = { $count ->
-    [one] 에이전트 1개 실행됨
-   *[other] 에이전트 { $count }개 실행됨
-}
-launch-card-ran = { $count ->
-    [one] 에이전트 1개 실행 완료
-   *[other] 에이전트 { $count }개 실행 완료
+launched-agent-idle = 유휴
+launch-group-agents = { $count ->
+    [one] 에이전트 1개
+   *[other] 에이전트 { $count }개
 }
 launch-card-working = { $count }개 작업 중
 launch-card-needs-input = { $count ->
     [one] 1개 입력 필요
    *[other] { $count }개 입력 필요
 }
+launch-card-failed = { $count }개 실패
 launch-card-done = { $count }개 완료
-launch-card-all-done = 완료
 subagent-earlier-rows-not-shown = … { $count } 이전 행들은 표시되지 않음
 diff-comment-on-file = 파일에 댓글 남기세요
 workspace-review-request-detect-failed = 감지할 수 없었{ $kind }

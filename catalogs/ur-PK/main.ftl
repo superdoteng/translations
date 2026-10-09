@@ -179,6 +179,8 @@ project-menu-unhide-worktrees = ورک ٹریز کو بے نقاب کرو...
 project-menu-move-to-workspace = ورک اسپیس پر منتقل ہونا
 project-menu-remove = پروجیکٹ کو ہٹا دیں
 action-rename = نام تبدیل کرنا
+action-mark-unread = بطور غیر پڑھا نشان زد کریں
+action-mark-read = بطور پڑھا ہوا نشان زد کریں
 workspace-menu-change-icon = چینج آئیکن...
 action-delete = حذف کریں
 theme-customize-title = کسٹمائز تھیم بنائیں
@@ -384,6 +386,9 @@ scripts-add-stop-command = + روکنے کی کمانڈ شامل کریں
 scripts-stop-command-description = super.engineering کے رَن عمل کو ختم کرنے سے پہلے چلتی ہے۔
 run-stop-command-failed-title = روکنے کی کمانڈ ناکام ہوگئی
 run-stop-command-failed-description = { $script } کے لیے روکنے کی کمانڈ ناکام ہوگئی۔ رَن عمل ختم کر دیا گیا۔
+run-script-unavailable-title = رن اسکرپٹ شروع نہیں ہوا
+run-script-not-found-description = { $script } اس پروجیکٹ کے لیے کنفیگر نہیں ہے۔
+run-script-none-description = اس پروجیکٹ کے لیے کوئی رن اسکرپٹ کنفیگر نہیں کیا گیا۔
 scripts-configure-title = اسکرپٹس کو ترتیب دیں
 scripts-configure-description = { $project } کے لیے اسکرپٹس۔ سطریں ایک ہی شیل میں ترتیب سے چلتی ہیں اور پہلی ناکامی پر رک جاتی ہیں۔
 worktree-new-for-project = { $project } کے لیے نیا ورک ٹری
@@ -2017,21 +2022,18 @@ subagent-state-completed = مکمل
 subagent-state-failed = ناکام
 launched-agent-needs-input = ان پٹ درکار
 launched-agent-closed = بند
-launch-card-launched = { $count ->
-    [one] 1 ایجنٹ شروع کیا
-   *[other] { $count } ایجنٹ شروع کیے
-}
-launch-card-ran = { $count ->
-    [one] 1 ایجنٹ چلایا
-   *[other] { $count } ایجنٹ چلائے
+launched-agent-idle = غیر فعال
+launch-group-agents = { $count ->
+    [one] 1 ایجنٹ
+   *[other] { $count } ایجنٹ
 }
 launch-card-working = { $count } کام کر رہے ہیں
 launch-card-needs-input = { $count ->
     [one] 1 کو ان پٹ درکار
    *[other] { $count } کو ان پٹ درکار
 }
+launch-card-failed = { $count } ناکام
 launch-card-done = { $count } مکمل
-launch-card-all-done = مکمل
 subagent-earlier-rows-not-shown = … { $count } پہلے کی قطاریں نہیں دکھائی گئیں
 diff-comment-on-file = فائل پر تبصرہ
 workspace-review-request-detect-failed = پتہ نہیں { $kind }

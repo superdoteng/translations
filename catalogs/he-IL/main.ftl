@@ -179,6 +179,8 @@ project-menu-unhide-worktrees = חשוף עצי עבודה...
 project-menu-move-to-workspace = מעבר ל-workspace
 project-menu-remove = הסרת פרויקט
 action-rename = שינוי שם
+action-mark-unread = סמן כלא נקרא
+action-mark-read = סמן כנקרא
 workspace-menu-change-icon = אייקון שינוי...
 action-delete = מחק
 theme-customize-title = התאמת נושא
@@ -384,6 +386,9 @@ scripts-add-stop-command = + הוספת פקודת עצירה
 scripts-stop-command-description = מופעלת לפני ש-super.engineering מסיימת את תהליך ההרצה.
 run-stop-command-failed-title = פקודת העצירה נכשלה
 run-stop-command-failed-description = פקודת העצירה עבור { $script } נכשלה. תהליך ההרצה הופסק.
+run-script-unavailable-title = סקריפט הריצה לא התחיל
+run-script-not-found-description = { $script } אינו מוגדר עבור פרויקט זה.
+run-script-none-description = לא הוגדר סקריפט ריצה עבור פרויקט זה.
 scripts-configure-title = הגדרת סקריפטים
 scripts-configure-description = סקריפטים עבור { $project }. השורות מופעלות לפי הסדר באותה מעטפת ונעצרות בכשל הראשון.
 worktree-new-for-project = עץ עבודה חדש עבור { $project }
@@ -2017,21 +2022,18 @@ subagent-state-completed = הושלם
 subagent-state-failed = נכשל
 launched-agent-needs-input = נדרש קלט
 launched-agent-closed = סגור
-launch-card-launched = { $count ->
-    [one] הופעל סוכן אחד
-   *[other] הופעלו { $count } סוכנים
-}
-launch-card-ran = { $count ->
-    [one] רץ סוכן אחד
-   *[other] רצו { $count } סוכנים
+launched-agent-idle = לא פעיל
+launch-group-agents = { $count ->
+    [one] סוכן אחד
+   *[other] { $count } סוכנים
 }
 launch-card-working = { $count } עובדים
 launch-card-needs-input = { $count ->
     [one] 1 ממתין לקלט
    *[other] { $count } ממתינים לקלט
 }
+launch-card-failed = { $count } נכשלו
 launch-card-done = { $count } הסתיימו
-launch-card-all-done = הסתיים
 subagent-earlier-rows-not-shown = … { $count } שורות מוקדמות שלא הוצגו
 diff-comment-on-file = תגובה בתיק
 workspace-review-request-detect-failed = לא הצלחתי לזהות { $kind }
