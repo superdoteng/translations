@@ -80,8 +80,6 @@ setup-loading-always-run-in-background = قم دائمًا بتشغيل برنا
 chat-timeline-jump-to-bottom = ↓ اذهب إلى الأسفل
 chat-agent-message-label = من وكيل
 chat-team-message-label = رسالة الفريق
-chat-agent-message-from = من
-chat-team-message-from = رسالة الفريق من
 terminal-starting = جارٍ بدء تشغيل الطرفية…
 terminal-show-output = إظهار الإخراج
 terminal-start-failed = تعذّر بدء تشغيل الطرفية
@@ -1026,21 +1024,18 @@ plan-executing-plan = تنفيذ الخطة
 chat-fast-mode-with-rate = الوضع السريع: أسرع بمقدار 1.5 مرة، يستخدم { $rate } اعتمادات.
 chat-fast-mode = الوضع السريع
 chat-fast = سريع
-chat-argument-hint = تلميح للحجة: { $hint }
 chat-queued-until-setup-finishes = ينتظر حتى ينتهي الإعداد
 chat-queued-position = طابور { $position }
 chat-pasted-text = نص ملصق
 chat-code-review-count = مراجعة الكود ({ $count })
 chat-system-instructions = تعليمات النظام
 action-review = مراجعة
-subagent-tool-result-unavailable = نتيجة الأداة غير متاحة
 subagent-preparing-transcript = إعداد النص المكتوب...
 common-read-only = قراءة فقط
 subagent-loading-transcript = يتم تحميل نص الوكيل الفرعي...
 subagent-transcript-unavailable = النص غير متوفر
 action-back = رجوع
 subagent-no-transcript = لم يتم تسجيل النص حتى الآن.
-subagent-jump-to-latest = انتقل إلى الأحدث
 action-confirm = تأكيد
 changes-no-changes = لا تغييرات
 changes-commits = الالتزامات
@@ -1194,7 +1189,6 @@ plan-proposed = الخطة المقترحة
 plan-changes-requested = التغييرات المطلوبة في الخطة
 plan-ready = الخطة جاهزة
 approval-approve-action = هل توافق على الإجراء؟
-subagent-view-single = عرض الوكيل الفرعي
 tool-action-read = اقرأ
 tool-action-wrote = كتب
 tool-action-ran = ركضت
@@ -1474,7 +1468,6 @@ chat-reply-count = { $count } الردود
 chat-files-changed-count = { $count } الملفات المعدَّلة
 chat-files-expand-all = توسيع كل الملفات
 chat-files-collapse-all = طي كل الملفات
-subagent-view-count = عرض الوكلاء الفرعيين ({ $count })
 git-uncommitted-change-count = تغييرات غير ملتزمة: { $count }
 git-unpushed-commit-count = الالتزامات غير المدفوعة: { $count }
 settings-ai-action-model-pins-set = مجموعة دبابيس النماذج الخاصة بالحركة: { $count }
@@ -2027,24 +2020,15 @@ settings-keybinding-action-toggle-terminal = إظهار أو إخفاء الطر
 action-forward = تقدّم
 custom-actions-show-more = + { $count } أكثر
 custom-actions-untitled = بدون عنوان
-subagent-state-running = الجري
 subagent-state-completed = اكتمل
 subagent-state-failed = فشل
 launched-agent-needs-input = بحاجة إلى إدخال
-launched-agent-closed = مغلق
-launched-agent-idle = خامل
-launch-group-agents = { $count ->
-    [one] وكيل واحد
-   *[other] { $count } وكلاء
-}
 launch-card-working = { $count } قيد العمل
 launch-card-needs-input = { $count ->
     [one] 1 بحاجة إلى إدخال
    *[other] { $count } بحاجة إلى إدخال
 }
 launch-card-failed = { $count } فشل
-launch-card-done = { $count } مكتمل
-subagent-earlier-rows-not-shown = … { $count } الصفوف السابقة غير المعروضة
 diff-comment-on-file = تعليق في الملف
 workspace-review-request-detect-failed = لم نتمكن من اكتشاف { $kind }
 workspace-review-request-state-changed = { $kind } تغيرت الدولة؛ لم يعد هناك إجراء متاح
@@ -2859,3 +2843,194 @@ data-directory-notice-home-title = احتفظ بكلا مجلدي البيانا
 data-directory-notice-summary = تستمر إعدادات المستودعات والبرامج النصية الحالية في العمل.
 data-directory-notice-config = إعداد المستودع: استخدم .super.engineering/config.json للإعدادات الجديدة. يظل الملف القديم .superconductor/config.json مدعوماً عند غياب الملف الجديد. تستخدم إصدارات التطبيق القديمة الملف القديم؛ ولا تتم مزامنة الملفين.
 data-directory-notice-scripts = تبقى ملفات البرامج النصية في مكانها. إذا نقلت برنامجاً نصياً، فحدّث الأمر الذي يشغّله. ينبغي أن تقرأ البرامج النصية متغيرات SUPER_ENGINEERING_*؛ ما زالت أسماء SUPERCONDUCTOR_* تُصدَّر حالياً وستُزال في إصدار لاحق.
+
+chat-agent-steered = غيّر { $name } توجيه الوكيل
+chat-agent-steered-after = غيّر { $name } توجيه الوكيل بعد { $duration }
+chat-agent-stopped = أوقفه { $name }
+chat-agent-stopped-after = أوقف { $name } الوكيل بعد { $duration }
+chat-context-compacted = تم ضغط السياق
+chat-context-compacted-of-window = من { $window }
+chat-context-compacted-tokens = { $before } → { $after } رمزًا
+chat-context-compacted-tooltip-body = تم تلخيص السياق السابق لإفساح المجال. تبقى الرسائل هنا لتطّلع عليها؛ ويقرأ الوكيل ملخصها بدلًا منها.
+chat-context-compacted-tooltip-title = يعمل الوكيل الآن اعتمادًا على ملخص
+chat-pill-card-agent = وكيل
+chat-pill-card-command = القيادة
+chat-pill-card-file = ملف
+chat-pill-card-folder = مجلد
+chat-pill-card-github = GitHub
+chat-pill-card-image = صورة
+chat-pill-card-items = { $count ->
+    [zero] لا عناصر
+    [one] عنصر واحد
+    [two] عنصران
+    [few] { $count } عناصر
+    [many] { $count } عنصرًا
+   *[other] { $count } عنصر
+}
+chat-pill-card-lines = { $count ->
+    [zero] لا أسطر
+    [one] سطر واحد
+    [two] سطران
+    [few] { $count } أسطر
+    [many] { $count } سطرًا
+   *[other] { $count } سطر
+}
+chat-pill-card-modified = تم التعديل { $time }
+chat-pill-card-open-agent = فتح الوكيل
+chat-pill-card-open-in = فتح باستخدام…
+chat-pill-card-open-link = فتح الرابط
+chat-pill-card-open-preview = فتح المعاينة
+chat-pill-card-open-skill = فتح SKILL.md
+chat-pill-card-quick-look = Quick Look
+chat-pill-card-show-in-files = إظهار في الملفات
+chat-pill-card-skill = مهارة
+chat-pill-card-video = فيديو
+chat-pill-card-website = موقع ويب
+chat-steer-waiting = بانتظار أن يقرأه { $agent }
+chat-turn-group-agents-count = { $count ->
+    [zero] لا وكلاء
+    [one] وكيل واحد
+    [two] وكيلان
+    [few] { $count } وكلاء
+    [many] { $count } وكيلًا
+   *[other] { $count } وكيل
+}
+chat-turn-group-deleted = تم حذف { $count }
+chat-turn-group-new = الجديد: { $count }
+chat-turn-group-recreated = تمت إعادة إنشاء { $count }
+chat-turn-group-subagents-count = { $count ->
+    [zero] لا وكلاء فرعيون
+    [one] وكيل فرعي واحد
+    [two] وكيلان فرعيان
+    [few] { $count } وكلاء فرعيين
+    [many] { $count } وكيلًا فرعيًا
+   *[other] { $count } وكيل فرعي
+}
+chat-turn-group-worktrees-count = { $count ->
+    [zero] لا أشجار عمل
+    [one] شجرة عمل واحدة
+    [two] شجرتا عمل
+    [few] { $count } أشجار عمل
+    [many] { $count } شجرة عمل
+   *[other] { $count } شجرة عمل
+}
+chat-waiting-for-answer = بانتظار إجابتك
+chat-waiting-for-approval = بانتظار الموافقة
+chat-worktree-card-creating = جارٍ إنشاء شجرة العمل…
+chat-worktree-card-deleted = تم الحذف
+chat-worktree-card-deleting = جارٍ الحذف...
+chat-worktree-card-recreated = تمت إعادة الإنشاء
+chat-worktree-card-recreating = جارٍ إعادة الإنشاء…
+chat-worktree-card-working = الوكيل قيد التشغيل
+chat-you-steered = غيّرتَ توجيه الوكيل
+chat-you-steered-after = غيّرتَ توجيه الوكيل بعد { $duration }
+chat-you-stopped = أوقفتَ الوكيل
+chat-you-stopped-after = أوقفتَ الوكيل بعد { $duration }
+created-worktrees-summary = { $count ->
+    [zero] لم تُنشأ أشجار عمل
+    [one] تم إنشاء شجرة عمل واحدة
+    [two] تم إنشاء شجرتَي عمل
+    [few] تم إنشاء { $count } أشجار عمل
+    [many] تم إنشاء { $count } شجرة عمل
+   *[other] تم إنشاء { $count } شجرة عمل
+}
+input-answer-hidden = الإجابة مخفية
+input-asked = { $count ->
+    [zero] لم يطرح أسئلة
+    [one] طرح سؤالًا
+    [two] طرح سؤالين
+    [few] طرح { $count } أسئلة
+    [many] طرح { $count } سؤالًا
+   *[other] طرح { $count } سؤال
+}
+input-asked-you = { $count ->
+    [zero] لم يطرح عليك أسئلة
+    [one] طرح عليك سؤالًا
+    [two] طرح عليك سؤالين
+    [few] طرح عليك { $count } أسئلة
+    [many] طرح عليك { $count } سؤالًا
+   *[other] طرح عليك { $count } سؤال
+}
+input-auto-resolves = يُحَل تلقائيًا خلال { $seconds } ث
+input-question-position = { $current } من { $total }
+input-recommended = موصى به
+input-review-title = إرسال إجاباتك؟
+input-send = إرسال
+input-skip = تخطي
+input-skipped = تم التخطي
+input-something-else = شيء آخر…
+input-type-answer = اكتب إجابتك…
+input-type-own-answer = أو اكتب إجابة من عندك…
+launch-card-finished = اكتمل: { $count }
+launch-card-not-started = لم يبدأ: { $count }
+launch-card-stopped = تم إيقاف { $count }
+launched-agent-activity-browsing = جارٍ التصفح
+launched-agent-activity-command = جارٍ تشغيل أمر
+launched-agent-activity-editing = التحرير
+launched-agent-activity-reading = جارٍ قراءة الملفات
+launched-agent-activity-searching = جارٍ البحث
+launched-agent-activity-web-search = جارٍ البحث في الويب
+launched-agent-activity-writing = جارٍ كتابة ملف
+launched-agent-answer = إجابة
+launched-agent-not-started = لم يبدأ
+settings-orchestrated-worktrees-auto = أوتو
+settings-orchestrated-worktrees-auto-description = تُفتح عندما يعمل وكيل بداخلها أو يحتاج إليك.
+settings-orchestrated-worktrees-collapsed = مطوية
+settings-orchestrated-worktrees-collapsed-description = تبقى مطوية حتى تفتحها.
+settings-orchestrated-worktrees-expanded = موسعة
+settings-orchestrated-worktrees-expanded-description = مفتوحة دائمًا.
+settings-search-entry-appearance-layout-orchestrated-worktrees-description = اختر كيفية فتح أشجار العمل التي فوّضت إليها المحادثة مهامًا، أسفل المحادثة في الشريط الجانبي.
+settings-search-entry-appearance-layout-orchestrated-worktrees-label = أشجار العمل المنسَّقة
+settings-search-entry-general-behavior-link-previews-description = جلب عنوان الموقع وملخصه وصورته عند تمرير المؤشر فوق رابط. سيرى الموقع عنوان IP الخاص بك.
+settings-search-entry-general-behavior-link-previews-label = إظهار معاينات الروابط
+shared-parent-git-pill-label = { $action } في { $targets }
+status-card-branch = فرع
+status-card-checks-passed = اجتاز: { $count }
+status-card-clean = بلا تغييرات
+status-card-commit-count = { $count ->
+    [zero] لا إيداعات
+    [one] إيداع واحد
+    [two] إيداعان
+    [few] { $count } إيداعات
+    [many] { $count } إيداعًا
+   *[other] { $count } إيداع
+}
+status-card-conflicts-explainer = غيّر { $target } أسطرًا يغيّرها هذا الفرع أيضًا.
+status-card-delete-discards = يؤدي حذف شجرة العمل إلى تجاهل هذه التغييرات معها.
+status-card-file-count = { $count ->
+    [zero] لا ملفات
+    [one] ملف واحد
+    [two] ملفان
+    [few] { $count } ملفات
+    [many] { $count } ملفًا
+   *[other] { $count } ملف
+}
+status-card-merged-into = تم الدمج في { $target }
+status-card-review-not-requested = لم يُطلب
+status-card-unpushed = لم يُدفع
+status-card-up-to-date = محدّث مع { $target }
+status-card-worktree = شجرة عمل
+subagent-back-tooltip = العودة إلى { $parent }
+subagent-dock-back = العودة إلى المحادثة
+subagent-dock-detail = للقراءة فقط. يرسل تقريرًا إلى { $parent } عند الانتهاء.
+subagent-dock-detail-done = للقراءة فقط. أرسل تقريره إلى { $parent }.
+subagent-dock-detail-interrupted = للقراءة فقط. توقف مع { $parent }.
+subagent-dock-title = الوكيل الفرعي
+subagent-dock-title-typed = وكيل فرعي من نوع { $type }
+subagent-header-of = وكيل فرعي تابع لـ
+subagent-state-interrupted = توقف
+subagent-status-done = اكتمل خلال { $time }
+subagent-status-failed = فشل بعد { $time }
+subagent-status-interrupted = توقف بعد { $time }
+subagent-type-awaiter = منتظر
+subagent-type-explore = استكشاف
+subagent-type-explorer = مستكشف
+subagent-type-fork = تفريع
+subagent-type-general = عام
+subagent-type-guide = دليل
+subagent-type-plan = الخطة
+subagent-type-status-line = سطر الحالة
+workspace-attached-back = العودة إلى { $tab_title }
+workspace-created-worktrees-header = أشجار العمل المُنشأة
+workspace-view-html = عرض
+workspace-view-in-browser = عرض في المتصفح

@@ -87,8 +87,6 @@ setup-loading-always-run-in-background = Esegui sempre la configurazione in back
 chat-timeline-jump-to-bottom = ↓ Salta in fondo
 chat-agent-message-label = Da un agente
 chat-team-message-label = Messaggio del team
-chat-agent-message-from = Da
-chat-team-message-from = Messaggio del team da
 terminal-starting = Avvio terminale...
 terminal-show-output = Mostra output
 terminal-start-failed = Non è riuscito ad avviare il terminale
@@ -1021,21 +1019,18 @@ plan-executing-plan = Esecuzione del piano
 chat-fast-mode-with-rate = Modalità veloce: 1,5 volte più veloce, usa { $rate } crediti.
 chat-fast-mode = Modalità veloce
 chat-fast = Veloce
-chat-argument-hint = Suggerimento per l'argomento: { $hint }
 chat-queued-until-setup-finishes = In coda fino al termine della configurazione
 chat-queued-position = In coda { $position }
 chat-pasted-text = Testo incollato
 chat-code-review-count = Revisione del codice ({ $count })
 chat-system-instructions = Istruzioni di sistema
 action-review = Recensione
-subagent-tool-result-unavailable = Risultato dello strumento non disponibile
 subagent-preparing-transcript = Preparazione della trascrizione...
 common-read-only = Solo lettura
 subagent-loading-transcript = Caricamento trascrizione del sottoagente...
 subagent-transcript-unavailable = Trascrizione non disponibile
 action-back = Indietro
 subagent-no-transcript = Nessuna trascrizione ancora registrata.
-subagent-jump-to-latest = Salta all'ultimo
 action-confirm = Conferma
 changes-no-changes = Nessun cambiamento
 changes-commits = Commits
@@ -1189,7 +1184,6 @@ plan-proposed = PIANO PROPOSTO
 plan-changes-requested = RICHIESTE MODIFICHE AL PIANO
 plan-ready = PIANO PRONTO
 approval-approve-action = Approvare un'azione?
-subagent-view-single = Visualizza sottoagente
 tool-action-read = Leggi
 tool-action-wrote = Ha scritto
 tool-action-ran = Ran
@@ -1469,7 +1463,6 @@ chat-reply-count = { $count } risposte
 chat-files-changed-count = { $count } file modificati
 chat-files-expand-all = Espandi tutti i file
 chat-files-collapse-all = Comprimi tutti i file
-subagent-view-count = Visualizza sottoagenti ({ $count })
 git-uncommitted-change-count = Cambiamenti non compromessi: { $count }
 git-unpushed-commit-count = Commit non promossi: { $count }
 settings-ai-action-model-pins-set = Set di perni modello specifici per azione: { $count }
@@ -2022,24 +2015,15 @@ settings-keybinding-action-toggle-terminal = Terminale a Toggle
 action-forward = Avanti
 custom-actions-show-more = + { $count } altro
 custom-actions-untitled = Senza titolo
-subagent-state-running = Corso
 subagent-state-completed = Completato
 subagent-state-failed = Fallito
 launched-agent-needs-input = Richiede input
-launched-agent-closed = Chiuso
-launched-agent-idle = Inattivo
-launch-group-agents = { $count ->
-    [one] 1 agente
-   *[other] { $count } agenti
-}
 launch-card-working = { $count } al lavoro
 launch-card-needs-input = { $count ->
     [one] 1 richiede input
    *[other] { $count } richiedono input
 }
 launch-card-failed = { $count } non riusciti
-launch-card-done = { $count } completati
-subagent-earlier-rows-not-shown = … { $count } righe precedenti non mostrate
 diff-comment-on-file = Commento nel fascicolo
 workspace-review-request-detect-failed = Non sono riuscito a rilevare { $kind }
 workspace-review-request-state-changed = { $kind } stato cambiò; L'azione non è più disponibile
@@ -2777,3 +2761,175 @@ data-directory-notice-home-title = Conserva entrambe le cartelle dei dati
 data-directory-notice-summary = Le configurazioni dei repository e gli script esistenti continuano a funzionare.
 data-directory-notice-config = Configurazione del repository: usa .super.engineering/config.json per le nuove configurazioni. Il precedente .superconductor/config.json resta supportato se il nuovo file è assente. Le vecchie versioni dell’app usano ancora il file precedente; i due file non sono sincronizzati.
 data-directory-notice-scripts = I file degli script restano dove sono. Se sposti uno script, aggiorna il comando che lo esegue. Gli script dovrebbero leggere le variabili SUPER_ENGINEERING_*; i nomi SUPERCONDUCTOR_* vengono ancora esportati per ora e saranno rimossi in una versione successiva.
+
+chat-agent-steered = { $name } ha reindirizzato l’agente
+chat-agent-steered-after = { $name } ha reindirizzato l’agente dopo { $duration }
+chat-agent-stopped = { $name } lo ha fermato
+chat-agent-stopped-after = { $name } ha fermato l’agente dopo { $duration }
+chat-context-compacted = Contesto compattato
+chat-context-compacted-of-window = su { $window }
+chat-context-compacted-tokens = { $before } → { $after } token
+chat-context-compacted-tooltip-body = Il contesto precedente è stato riassunto per liberare spazio. I messaggi restano qui per te; l’agente legge invece il suo riepilogo.
+chat-context-compacted-tooltip-title = L’agente ora lavora da un riepilogo
+chat-pill-card-agent = Agente
+chat-pill-card-command = Comando
+chat-pill-card-file = File
+chat-pill-card-folder = Cartella
+chat-pill-card-github = GitHub
+chat-pill-card-image = Immagine
+chat-pill-card-items = { $count ->
+    [one] 1 elemento
+   *[other] { $count } elementi
+}
+chat-pill-card-lines = { $count ->
+    [one] { $count } riga
+   *[other] { $count } righe
+}
+chat-pill-card-modified = modificato { $time }
+chat-pill-card-open-agent = Apri agente
+chat-pill-card-open-in = Apri in…
+chat-pill-card-open-link = Apri link
+chat-pill-card-open-preview = Apri anteprima
+chat-pill-card-open-skill = Apri SKILL.md
+chat-pill-card-quick-look = Quick Look
+chat-pill-card-show-in-files = Mostra in File
+chat-pill-card-skill = Competenza
+chat-pill-card-video = Video
+chat-pill-card-website = Sito web
+chat-steer-waiting = In attesa che { $agent } legga
+chat-turn-group-agents-count = { $count ->
+    [one] { $count } agente
+   *[other] { $count } agenti
+}
+chat-turn-group-deleted = { $count ->
+    [one] { $count } eliminato
+   *[other] { $count } eliminati
+}
+chat-turn-group-new = { $count ->
+    [one] { $count } nuovo
+   *[other] { $count } nuovi
+}
+chat-turn-group-recreated = { $count ->
+    [one] { $count } ricreato
+   *[other] { $count } ricreati
+}
+chat-turn-group-subagents-count = { $count ->
+    [one] 1 sottoagente
+   *[other] { $count } sottoagenti
+}
+chat-turn-group-worktrees-count = { $count ->
+    [one] 1 albero di lavoro
+   *[other] { $count } alberi di lavoro
+}
+chat-waiting-for-answer = In attesa della tua risposta
+chat-waiting-for-approval = In attesa di approvazione
+chat-worktree-card-creating = Creazione dell’albero di lavoro…
+chat-worktree-card-deleted = Eliminato
+chat-worktree-card-deleting = Cancellazione...
+chat-worktree-card-recreated = Ricreato
+chat-worktree-card-recreating = Ricreazione…
+chat-worktree-card-working = Agente in esecuzione
+chat-you-steered = Hai reindirizzato l’agente
+chat-you-steered-after = Hai reindirizzato l’agente dopo { $duration }
+chat-you-stopped = Hai fermato l’agente
+chat-you-stopped-after = Hai fermato l’agente dopo { $duration }
+created-worktrees-summary = { $count ->
+    [one] 1 albero di lavoro creato
+   *[other] { $count } alberi di lavoro creati
+}
+input-answer-hidden = Risposta nascosta
+input-asked = { $count ->
+    [one] Ha posto una domanda
+   *[other] Ha posto { $count } domande
+}
+input-asked-you = { $count ->
+    [one] Ti ha posto una domanda
+   *[other] Ti ha posto { $count } domande
+}
+input-auto-resolves = si risolve automaticamente tra { $seconds } s
+input-question-position = { $current } di { $total }
+input-recommended = Consigliato
+input-review-title = Inviare le tue risposte?
+input-send = Invia
+input-skip = Salta
+input-skipped = Saltato
+input-something-else = Altro…
+input-type-answer = Scrivi la tua risposta…
+input-type-own-answer = Oppure scrivi una risposta personalizzata…
+launch-card-finished = { $count ->
+    [one] { $count } completato
+   *[other] { $count } completati
+}
+launch-card-not-started = { $count ->
+    [one] { $count } non avviato
+   *[other] { $count } non avviati
+}
+launch-card-stopped = { $count ->
+    [one] { $count } fermato
+   *[other] { $count } fermati
+}
+launched-agent-activity-browsing = Navigazione
+launched-agent-activity-command = Esecuzione di un comando
+launched-agent-activity-editing = Modifica in corso
+launched-agent-activity-reading = Lettura dei file
+launched-agent-activity-searching = Ricerca in corso
+launched-agent-activity-web-search = Ricerca sul web
+launched-agent-activity-writing = Scrittura di un file
+launched-agent-answer = Rispondi
+launched-agent-not-started = Non avviato
+settings-orchestrated-worktrees-auto = Auto
+settings-orchestrated-worktrees-auto-description = Aperto mentre un agente vi lavora o ha bisogno di te.
+settings-orchestrated-worktrees-collapsed = Compresso
+settings-orchestrated-worktrees-collapsed-description = Sempre compresso finché non lo apri.
+settings-orchestrated-worktrees-expanded = Espanso
+settings-orchestrated-worktrees-expanded-description = Sempre aperto.
+settings-search-entry-appearance-layout-orchestrated-worktrees-description = Scegli come gli alberi di lavoro a cui una chat ha delegato attività si aprono sotto di essa nella barra laterale.
+settings-search-entry-appearance-layout-orchestrated-worktrees-label = Alberi di lavoro orchestrati
+settings-search-entry-general-behavior-link-previews-description = Recupera titolo, riepilogo e immagine di un sito quando passi il puntatore su un link. Il sito vede il tuo indirizzo IP.
+settings-search-entry-general-behavior-link-previews-label = Mostra anteprime dei link
+shared-parent-git-pill-label = { $action } in { $targets }
+status-card-branch = Branch
+status-card-checks-passed = { $count ->
+    [one] { $count } superato
+   *[other] { $count } superati
+}
+status-card-clean = Nessuna modifica
+status-card-commit-count = { $count ->
+    [one] { $count } commit
+   *[other] { $count } commit
+}
+status-card-conflicts-explainer = { $target } ha modificato righe modificate anche da questo branch.
+status-card-delete-discards = L’eliminazione dell’albero di lavoro scarta anche queste modifiche.
+status-card-file-count = { $count ->
+    [one] { $count } file
+   *[other] { $count } file
+}
+status-card-merged-into = Unito in { $target }
+status-card-review-not-requested = Non richiesto
+status-card-unpushed = Non inviato
+status-card-up-to-date = Aggiornato con { $target }
+status-card-worktree = Albero di lavoro
+subagent-back-tooltip = Torna a { $parent }
+subagent-dock-back = Torna alla chat
+subagent-dock-detail = Sola lettura. Riferisce a { $parent } al termine.
+subagent-dock-detail-done = Sola lettura. Ha riferito a { $parent }.
+subagent-dock-detail-interrupted = Sola lettura. Fermato insieme a { $parent }.
+subagent-dock-title = Sottoagente
+subagent-dock-title-typed = Sottoagente di tipo { $type }
+subagent-header-of = Sottoagente di
+subagent-state-interrupted = Fermato
+subagent-status-done = Completato in { $time }
+subagent-status-failed = Non riuscito dopo { $time }
+subagent-status-interrupted = Fermato dopo { $time }
+subagent-type-awaiter = Attesa
+subagent-type-explore = Esplora
+subagent-type-explorer = Esploratore
+subagent-type-fork = Diramazione
+subagent-type-general = Generale
+subagent-type-guide = Guida
+subagent-type-plan = Piano
+subagent-type-status-line = Riga di stato
+workspace-attached-back = Torna a { $tab_title }
+workspace-created-worktrees-header = Alberi di lavoro creati
+workspace-view-html = Visualizza
+workspace-view-in-browser = Visualizza nel browser
