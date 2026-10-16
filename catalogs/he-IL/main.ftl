@@ -87,8 +87,6 @@ setup-loading-always-run-in-background = תמיד להריץ את ההגדרות
 chat-timeline-jump-to-bottom = ↓ קפיצה לתחתית
 chat-agent-message-label = מסוכן
 chat-team-message-label = הודעת צוות
-chat-agent-message-from = מאת
-chat-team-message-from = הודעת צוות מאת
 terminal-starting = מתחיל טרמינל...
 terminal-show-output = הצג פלט
 terminal-start-failed = נכשל בהפעלת הטרמינל
@@ -1018,25 +1016,21 @@ settings-ai-refreshing-models = מרענן...
 settings-ai-refresh-model-caches = רענון מטמוני מודלים
 plan-executing = הוצאה להורג
 plan-executing-plan = ביצוע התוכנית
-chat-steered = מנווט
 chat-fast-mode-with-rate = מצב מהיר: פי 1.5 מהיר יותר, צורך { $rate } קרדיטים.
 chat-fast-mode = מצב מהיר
 chat-fast = מהיר
-chat-argument-hint = רמז לטיעון: { $hint }
 chat-queued-until-setup-finishes = עמדו בתור עד לסיום ההתקנה
 chat-queued-position = בתור { $position }
 chat-pasted-text = טקסט מודבק
 chat-code-review-count = סקירת קוד ({ $count })
 chat-system-instructions = הוראות מערכת
 action-review = סקירה
-subagent-tool-result-unavailable = תוצאת הכלי אינה זמינה
 subagent-preparing-transcript = מכין תמלול...
 common-read-only = קריאה בלבד
 subagent-loading-transcript = טוען תמלול תת-סוכן...
 subagent-transcript-unavailable = תמלול לא זמין
 action-back = חזרה
 subagent-no-transcript = עדיין לא הוקלט תמלול.
-subagent-jump-to-latest = קפיצה לעדכון האחרון
 action-confirm = אישור
 changes-no-changes = אין שינויים
 changes-commits = קומטים
@@ -1102,16 +1096,12 @@ chat-plan = תוכנית
 approval-allow = לאפשר
 approval-allow-for-session = אפשר סשן
 approval-deny = הכחשה
-approval-needed = נדרש אישור
 approval-needs-access = נדרשת גישה אל
 approval-show-input = הצג קלט מלא
 approval-hide-input = הסתר קלט מלא
 input-requested = מבוקשת קלט
 action-submit = שלח
 action-next = הבא
-input-needed = נדרש קלט
-input-progress = { $current }/{ $total }
-input-progress-auto-resolve = { $current }/{ $total } · יכול להתמודד אוטומטית ב-{ $seconds }
 input-sensitive-answer = תשובה רגישה · הושמט מסיכום התמלול
 plan-run-in-new-chat = הרץ בצ'אט חדש
 auth-open-terminal-to-sign-in = טרמינל פתוח לכניסה
@@ -1133,7 +1123,6 @@ context-cache-write = כתיבת מטמון
 context-output = פלט
 context-total-io = קלט/פלט כולל
 context-input-effective = קלט אפקטיבי
-input-submitted = הגשת משוב
 profile-cli-default = ברירת מחדל CLI
 review-no-active-comments = אין תגובות פעילות לביקורת.
 permission-tools = כלים
@@ -1194,9 +1183,7 @@ chat-worked = עבד
 plan-proposed = תוכנית מוצעת
 plan-changes-requested = שינויים בתכנית מבוקשים
 plan-ready = תוכנית מוכנה
-input-permission-response = תגובת הרשאה
 approval-approve-action = לאשר פעולה?
-subagent-view-single = הצג תת-סוכן
 tool-action-read = קרא
 tool-action-wrote = כתב
 tool-action-ran = רץ
@@ -1476,7 +1463,6 @@ chat-reply-count = { $count } תגובות
 chat-files-changed-count = { $count } קבצים ששונו
 chat-files-expand-all = הרחב את כל הקבצים
 chat-files-collapse-all = כווץ את כל הקבצים
-subagent-view-count = הצג תת-סוכנים ({ $count })
 git-uncommitted-change-count = שינויים לא מחויבים: { $count }
 git-unpushed-commit-count = התחייבות לא נדחפות: { $count }
 settings-ai-action-model-pins-set = סט פיני דגם ספציפיים לפעולה: { $count }
@@ -2029,24 +2015,15 @@ settings-keybinding-action-toggle-terminal = הצגה או הסתרה של המ�
 action-forward = קדימה
 custom-actions-show-more = + { $count } עוד
 custom-actions-untitled = ללא כותרת
-subagent-state-running = ריצה
 subagent-state-completed = הושלם
 subagent-state-failed = נכשל
 launched-agent-needs-input = נדרש קלט
-launched-agent-closed = סגור
-launched-agent-idle = לא פעיל
-launch-group-agents = { $count ->
-    [one] סוכן אחד
-   *[other] { $count } סוכנים
-}
 launch-card-working = { $count } עובדים
 launch-card-needs-input = { $count ->
     [one] 1 ממתין לקלט
    *[other] { $count } ממתינים לקלט
 }
 launch-card-failed = { $count } נכשלו
-launch-card-done = { $count } הסתיימו
-subagent-earlier-rows-not-shown = … { $count } שורות מוקדמות שלא הוצגו
 diff-comment-on-file = תגובה בתיק
 workspace-review-request-detect-failed = לא הצלחתי לזהות { $kind }
 workspace-review-request-state-changed = { $kind } המדינה השתנתה; הפעולה כבר אינה זמינה
@@ -2784,3 +2761,164 @@ data-directory-notice-home-title = יש לשמור את שתי תיקיות הנ
 data-directory-notice-summary = הגדרות המאגר והסקריפטים הקיימים ממשיכים לפעול.
 data-directory-notice-config = הגדרות המאגר: להגדרות חדשות יש להשתמש ב־.super.engineering/config.json. הקובץ הישן .superconductor/config.json עדיין נתמך כשהקובץ החדש אינו קיים. גרסאות ישנות של היישום עדיין משתמשות בקובץ הישן; שני הקבצים אינם מסונכרנים.
 data-directory-notice-scripts = קובצי הסקריפטים נשארים במקומם. אם מעבירים סקריפט, יש לעדכן את הפקודה שמפעילה אותו. סקריפטים צריכים לקרוא את משתני SUPER_ENGINEERING_*; השמות SUPERCONDUCTOR_* עדיין מיוצאים בינתיים ויוסרו בגרסה עתידית.
+
+chat-agent-steered = { $name } שינה את ההכוונה
+chat-agent-steered-after = { $name } שינה את ההכוונה לאחר { $duration }
+chat-agent-stopped = { $name } עצר את הפעולה
+chat-agent-stopped-after = { $name } עצר לאחר { $duration }
+chat-context-compacted = ההקשר נדחס
+chat-context-compacted-of-window = מתוך { $window }
+chat-context-compacted-tokens = { $before } → { $after } טוקנים
+chat-context-compacted-tooltip-body = ההקשר הקודם סוכם כדי לפנות מקום. ההודעות נשארות כאן לעיונך; הסוכן קורא כעת את הסיכום שלהן.
+chat-context-compacted-tooltip-title = הסוכן עובד כעת על בסיס סיכום
+chat-pill-card-agent = סוכן
+chat-pill-card-command = פיקוד
+chat-pill-card-file = קובץ
+chat-pill-card-folder = תיקייה
+chat-pill-card-github = GitHub
+chat-pill-card-image = תמונה
+chat-pill-card-items = { $count ->
+    [one] פריט אחד
+    [two] שני פריטים
+   *[other] { $count } פריטים
+}
+chat-pill-card-lines = { $count ->
+    [one] שורה אחת
+    [two] שתי שורות
+   *[other] { $count } שורות
+}
+chat-pill-card-modified = שונה { $time }
+chat-pill-card-open-agent = פתיחת סוכן
+chat-pill-card-open-in = פתיחה באמצעות…
+chat-pill-card-open-link = פתיחת קישור
+chat-pill-card-open-preview = פתיחת תצוגה מקדימה
+chat-pill-card-open-skill = פתיחת SKILL.md
+chat-pill-card-quick-look = Quick Look
+chat-pill-card-show-in-files = הצגה בקבצים
+chat-pill-card-skill = מיומנות
+chat-pill-card-video = סרטון
+chat-pill-card-website = אתר אינטרנט
+chat-steer-waiting = בהמתנה לקריאה על ידי { $agent }
+chat-turn-group-agents-count = { $count ->
+    [one] סוכן אחד
+    [two] שני סוכנים
+   *[other] { $count } סוכנים
+}
+chat-turn-group-deleted = נמחקו: { $count }
+chat-turn-group-new = חדשים: { $count }
+chat-turn-group-recreated = נוצרו מחדש: { $count }
+chat-turn-group-subagents-count = { $count ->
+    [one] סוכן משנה אחד
+    [two] שני סוכני משנה
+   *[other] { $count } סוכני משנה
+}
+chat-turn-group-worktrees-count = { $count ->
+    [one] עץ עבודה אחד
+    [two] שני עצי עבודה
+   *[other] { $count } עצי עבודה
+}
+chat-waiting-for-answer = בהמתנה לתשובתך
+chat-waiting-for-approval = בהמתנה לאישור
+chat-worktree-card-creating = יצירת עץ עבודה…
+chat-worktree-card-deleted = נמחק
+chat-worktree-card-deleting = מחיקה...
+chat-worktree-card-recreated = נוצר מחדש
+chat-worktree-card-recreating = יצירה מחדש…
+chat-worktree-card-working = הסוכן פועל
+chat-you-steered = שינית את ההכוונה
+chat-you-steered-after = שינית את ההכוונה לאחר { $duration }
+chat-you-stopped = עצרת את הפעולה
+chat-you-stopped-after = עצרת לאחר { $duration }
+created-worktrees-summary = { $count ->
+    [one] נוצר עץ עבודה אחד
+    [two] נוצרו שני עצי עבודה
+   *[other] נוצרו { $count } עצי עבודה
+}
+input-answer-hidden = התשובה מוסתרת
+input-asked = { $count ->
+    [one] שאל שאלה
+    [two] שאל שתי שאלות
+   *[other] שאל { $count } שאלות
+}
+input-asked-you = { $count ->
+    [one] שאל אותך שאלה
+    [two] שאל אותך שתי שאלות
+   *[other] שאל אותך { $count } שאלות
+}
+input-auto-resolves = ייפתר אוטומטית בעוד { $seconds } שנ׳
+input-question-position = { $current } מתוך { $total }
+input-recommended = מומלץ
+input-review-title = לשלוח את תשובותיך?
+input-send = שלח
+input-skip = דילוג
+input-skipped = דולג
+input-something-else = משהו אחר…
+input-type-answer = הקלדת תשובה…
+input-type-own-answer = או הקלדת תשובה משלך…
+launch-card-finished = הושלמו: { $count }
+launch-card-not-started = לא התחילו: { $count }
+launch-card-stopped = נעצרו: { $count }
+launched-agent-activity-browsing = גלישה
+launched-agent-activity-command = הרצת פקודה
+launched-agent-activity-editing = עריכה
+launched-agent-activity-reading = קריאת קבצים
+launched-agent-activity-searching = חיפוש
+launched-agent-activity-web-search = חיפוש באינטרנט
+launched-agent-activity-writing = כתיבת קובץ
+launched-agent-answer = מענה
+launched-agent-not-started = טרם התחיל
+settings-orchestrated-worktrees-auto = אוטו
+settings-orchestrated-worktrees-auto-description = פתוח בזמן שסוכן עובד בו או זקוק לך.
+settings-orchestrated-worktrees-collapsed = מכווץ
+settings-orchestrated-worktrees-collapsed-description = מכווץ תמיד עד לפתיחה ידנית.
+settings-orchestrated-worktrees-expanded = מורחב
+settings-orchestrated-worktrees-expanded-description = פתוח תמיד.
+settings-search-entry-appearance-layout-orchestrated-worktrees-description = בחירת אופן הפתיחה בסרגל הצד של עצי עבודה שהצ׳אט העביר אליהם משימות, מתחת לצ׳אט עצמו.
+settings-search-entry-appearance-layout-orchestrated-worktrees-label = עצי עבודה מתוזמרים
+settings-search-entry-general-behavior-link-previews-description = שליפת כותרת, תקציר ותמונה של אתר בריחוף מעל קישור. האתר יראה את כתובת ה־IP שלך.
+settings-search-entry-general-behavior-link-previews-label = הצגת תצוגות מקדימות לקישורים
+shared-parent-git-pill-label = { $action } ב־{ $targets }
+status-card-branch = ענף
+status-card-checks-passed = עברו: { $count }
+status-card-clean = ללא שינויים
+status-card-commit-count = { $count ->
+    [one] קומיט אחד
+    [two] שני קומיטים
+   *[other] { $count } קומיטים
+}
+status-card-conflicts-explainer = ב־{ $target } שונו שורות שגם הענף הזה משנה.
+status-card-delete-discards = מחיקת עץ העבודה תשליך גם את השינויים האלה.
+status-card-file-count = { $count ->
+    [one] קובץ אחד
+    [two] שני קבצים
+   *[other] { $count } קבצים
+}
+status-card-merged-into = מוזג לתוך { $target }
+status-card-review-not-requested = לא התבקש
+status-card-unpushed = טרם נדחף
+status-card-up-to-date = מעודכן ביחס ל־{ $target }
+status-card-worktree = עץ עבודה
+subagent-back-tooltip = חזרה אל { $parent }
+subagent-dock-back = חזרה לצ׳אט
+subagent-dock-detail = לקריאה בלבד. מדווח בחזרה ל־{ $parent } בסיום.
+subagent-dock-detail-done = לקריאה בלבד. דיווח בחזרה ל־{ $parent }.
+subagent-dock-detail-interrupted = לקריאה בלבד. נעצר יחד עם { $parent }.
+subagent-dock-title = תת-סוכן
+subagent-dock-title-typed = סוכן משנה מסוג { $type }
+subagent-header-of = סוכן משנה של
+subagent-state-interrupted = נעצר
+subagent-status-done = הושלם תוך { $time }
+subagent-status-failed = נכשל לאחר { $time }
+subagent-status-interrupted = נעצר לאחר { $time }
+subagent-type-awaiter = ממתין
+subagent-type-explore = חקירה
+subagent-type-explorer = חוקר
+subagent-type-fork = פיצול
+subagent-type-general = כללי
+subagent-type-guide = מדריך
+subagent-type-plan = תוכנית
+subagent-type-status-line = שורת מצב
+workspace-attached-back = חזרה אל { $tab_title }
+workspace-created-worktrees-header = עצי עבודה שנוצרו
+workspace-view-html = הצגה
+workspace-view-in-browser = הצגה בדפדפן
