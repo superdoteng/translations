@@ -80,8 +80,6 @@ setup-loading-always-run-in-background = Always run setup in background for this
 chat-timeline-jump-to-bottom = ↓ Jump to bottom
 chat-agent-message-label = From an agent
 chat-team-message-label = Team message
-chat-agent-message-from = From
-chat-team-message-from = Team message from
 terminal-starting = Starting terminal...
 terminal-show-output = Show output
 terminal-start-failed = Failed to start terminal
@@ -845,6 +843,8 @@ workspace-all-branches = All branches
 workspace-loading-branches = Loading branches…
 workspace-no-local-branches = No local branches
 workspace-open-diff = Open diff
+workspace-view-html = View
+workspace-view-in-browser = View in browser
 workspace-open-file = Open file
 workspace-no-custom-commands = No custom commands configured.
 workspace-no-commands-match = No commands match your search.
@@ -1825,6 +1825,8 @@ settings-search-entry-general-behavior-keyboard-shortcuts-label = Keyboard short
 settings-search-entry-general-behavior-keyboard-shortcuts-description = Open and customize keybindings.
 settings-search-entry-general-behavior-enhance-prompt-label = Enhance prompt
 settings-search-entry-general-behavior-enhance-prompt-description = Show the Enhance prompt action in the chat composer and command palette.
+settings-search-entry-general-behavior-link-previews-label = Show link previews
+settings-search-entry-general-behavior-link-previews-description = Fetch a website's title, summary and image when you hover a link. The site sees your IP address.
 settings-search-entry-general-behavior-show-cmd-number-hints-on-cmd-hold-label = Show Cmd+number hints on Cmd hold
 settings-search-entry-general-behavior-show-cmd-number-hints-on-cmd-hold-description = Hold Command for 0.5 seconds to show numbered shortcuts for worktrees or tabs.
 settings-search-entry-general-behavior-use-cmd-number-to-switch-tabs-label = Use Cmd+number to switch tabs
@@ -1905,6 +1907,8 @@ settings-search-entry-appearance-layout-visible-worktrees-per-project-label = Vi
 settings-search-entry-appearance-layout-visible-worktrees-per-project-description = Limit long project lists in the left sidebar.
 settings-search-entry-appearance-layout-sidebar-commit-status-label = Sidebar commit status
 settings-search-entry-appearance-layout-sidebar-commit-status-description = Show local commit and push status before review request and update status in sidebar rows.
+settings-search-entry-appearance-layout-orchestrated-worktrees-label = Orchestrated worktrees
+settings-search-entry-appearance-layout-orchestrated-worktrees-description = Choose how worktrees a chat sent work to open under it in the sidebar.
 settings-search-entry-appearance-layout-default-right-panel-layout-label = Default right panel layout
 settings-search-entry-appearance-layout-default-right-panel-layout-description = Choose the default layout for new workspaces: stacked panes or scrollable.
 settings-search-entry-appearance-layout-auto-hide-sidebars-label = Auto-hide sidebars
@@ -2355,6 +2359,12 @@ settings-sidebar-label-description = Description
 settings-sidebar-label-branch-name = Branch name
 settings-sidebar-label-description-description = Use generated or renamed feature descriptions.
 settings-sidebar-label-branch-description = Show the git branch name in this layout.
+settings-orchestrated-worktrees-auto = Auto
+settings-orchestrated-worktrees-auto-description = Open while an agent there is working or needs you.
+settings-orchestrated-worktrees-expanded = Expanded
+settings-orchestrated-worktrees-expanded-description = Always open.
+settings-orchestrated-worktrees-collapsed = Collapsed
+settings-orchestrated-worktrees-collapsed-description = Always folded until you open one.
 settings-right-panel-stacked-panes = Stacked panes
 settings-right-panel-scrollable = Scrollable
 settings-notification-delivery-always = Always
@@ -2684,11 +2694,9 @@ settings-keybinding-action-rename-feature-label = Rename Feature Label
 
 plan-executing = Executing
 plan-executing-plan = Executing Plan
-chat-steered = Steered
 chat-fast-mode-with-rate = Fast mode: 1.5x faster, uses { $rate } credits.
 chat-fast-mode = Fast mode
 chat-fast = Fast
-chat-argument-hint = Argument hint: { $hint }
 chat-queued-until-setup-finishes = Queued until setup finishes
 worktree-preparing = Preparing worktree…
 chat-queued-until-worktree-ready = Starting when worktree is ready
@@ -2700,7 +2708,6 @@ chat-pasted-text = Pasted text
 chat-code-review-count = Code review ({ $count })
 chat-system-instructions = System instructions
 action-review = Review
-subagent-tool-result-unavailable = Tool result unavailable
 subagent-preparing-transcript = Preparing transcript…
 common-read-only = Read-only
 subagent-loading-transcript = Loading subagent transcript…
@@ -2708,7 +2715,6 @@ subagent-transcript-unavailable = Transcript unavailable
 action-back = Back
 action-forward = Forward
 subagent-no-transcript = No transcript recorded yet.
-subagent-jump-to-latest = Jump to latest
 action-confirm = Confirm
 changes-no-changes = No changes
 changes-commits = Commits
@@ -2746,6 +2752,7 @@ shared-parent-git-repo-count = { $count ->
 *[other] { $count } repos
 }
 shared-parent-git-all-repos = All · { $repos }
+shared-parent-git-pill-label = { $action } in { $targets }
 shared-parent-git-menu-tooltip = Git actions for child repos
 shared-parent-git-unavailable-title = Couldn't open these repos
 shared-context-choose-projects-to-run = Choose projects to run
@@ -2774,17 +2781,32 @@ chat-plan = Plan
 approval-allow = Allow
 approval-allow-for-session = Allow for Session
 approval-deny = Deny
-approval-needed = Approval needed
 approval-needs-access = Needs access to
 approval-show-input = Show full input
 approval-hide-input = Hide full input
 input-requested = Input requested
 action-submit = Submit
 action-next = Next
-input-needed = Input needed
-input-progress = { $current }/{ $total }
-input-progress-auto-resolve = { $current }/{ $total } · may auto-resolve in { $seconds }s
 input-sensitive-answer = Sensitive answer · omitted from the transcript summary
+input-question-position = { $current } of { $total }
+input-auto-resolves = resolves on its own in { $seconds }s
+input-skip = Skip
+input-send = Submit
+input-answer-hidden = Answer hidden
+input-skipped = Skipped
+input-asked = { $count ->
+    [one] Asked a question
+   *[other] Asked { $count } questions
+}
+input-asked-you = { $count ->
+    [one] Asked you a question
+   *[other] Asked you { $count } questions
+}
+input-review-title = Send your answers?
+input-type-own-answer = Or type your own answer…
+input-type-answer = Type your answer…
+input-something-else = Something else…
+input-recommended = Recommended
 plan-run-in-new-chat = Run in new chat
 auth-open-terminal-to-sign-in = Open terminal to sign in
 custom-actions-empty = Your custom actions will appear here.
@@ -2792,24 +2814,68 @@ custom-actions-configure = Configure actions in Settings
 custom-actions-show-more = + { $count } more
 custom-actions-customize = Customize actions
 custom-actions-untitled = Untitled
-subagent-state-running = Running
 subagent-state-completed = Completed
 subagent-state-failed = Failed
+subagent-state-interrupted = Stopped
+subagent-type-general = General
+subagent-type-explore = Explore
+subagent-type-plan = Plan
+subagent-type-explorer = Explorer
+subagent-type-awaiter = Awaiter
+subagent-type-status-line = Status line
+subagent-type-guide = Guide
+subagent-type-fork = Fork
 launched-agent-needs-input = Needs input
-launched-agent-closed = Closed
-launched-agent-idle = Idle
-launch-group-agents = { $count ->
+launched-agent-not-started = Not started
+launched-agent-answer = Answer
+launched-agent-activity-command = Running a command
+launched-agent-activity-reading = Reading files
+launched-agent-activity-editing = Editing
+launched-agent-activity-writing = Writing a file
+launched-agent-activity-searching = Searching
+launched-agent-activity-browsing = Browsing
+launched-agent-activity-web-search = Searching the web
+subagent-dock-title = Subagent
+subagent-dock-title-typed = { $type } subagent
+subagent-dock-detail = Read-only. Reports back to { $parent } when it finishes.
+subagent-dock-back = Back to chat
+subagent-dock-detail-done = Read-only. Reported back to { $parent }.
+subagent-dock-detail-interrupted = Read-only. Stopped with { $parent }.
+subagent-header-of = Subagent of
+subagent-status-done = Done in { $time }
+subagent-status-failed = Failed after { $time }
+subagent-status-interrupted = Stopped after { $time }
+subagent-back-tooltip = Back to { $parent }
+chat-worktree-card-creating = Creating worktree…
+chat-worktree-card-working = Agent running
+chat-worktree-card-deleted = Deleted
+chat-worktree-card-deleting = Deleting…
+chat-worktree-card-recreating = Recreating…
+chat-worktree-card-recreated = Recreated
+chat-turn-group-agents-count = { $count ->
     [one] 1 agent
    *[other] { $count } agents
 }
+chat-turn-group-subagents-count = { $count ->
+    [one] 1 subagent
+   *[other] { $count } subagents
+}
+chat-turn-group-worktrees-count = { $count ->
+    [one] 1 worktree
+   *[other] { $count } worktrees
+}
+chat-turn-group-new = { $count } new
+chat-turn-group-deleted = { $count } deleted
+chat-turn-group-recreated = { $count } recreated
 launch-card-working = { $count } running
 launch-card-needs-input = { $count ->
     [one] 1 needs input
    *[other] { $count } need input
 }
 launch-card-failed = { $count } failed
-launch-card-done = { $count } done
-subagent-earlier-rows-not-shown = … { $count } earlier rows not shown
+launch-card-stopped = { $count } stopped
+launch-card-not-started = { $count } not started
+launch-card-finished = { $count } finished
 model-picker-type-to-search = Type to search models
 model-picker-type-to-search-hint = type to search
 model-picker-providers-heading = Provider
@@ -2836,7 +2902,6 @@ chat-message-output-tokens = Output tokens
 chat-message-tokens-not-reported = Not reported
 context-total-io = Total I/O
 context-input-effective = Input effective
-input-submitted = Input submitted
 profile-cli-default = CLI default
 review-no-active-comments = No active review comments.
 permission-tools = Tools
@@ -2889,22 +2954,34 @@ chat-changes = Changes
 common-working = Working…
 chat-thinking = Thinking
 chat-thinking-in-progress = Thinking…
+chat-waiting-for-answer = Waiting for your answer
+chat-waiting-for-approval = Waiting for approval
 chat-thinking-count = Thinking ({ $count })
 chat-thinking-summary = Thinking · { $summary }
 # Live duration is a separate RunTimerView entity, so this prefix cannot take a Fluent placeable.
 chat-working-for = Working for
 chat-worked-for = Worked for { $duration }
 chat-worked = Worked
-chat-interrupted = Interrupted
-chat-interrupted-after = Interrupted after { $duration }
+chat-you-stopped = You stopped
+chat-you-stopped-after = You stopped after { $duration }
+chat-agent-stopped = { $name } stopped it
+chat-agent-stopped-after = { $name } stopped after { $duration }
+chat-you-steered = You steered
+chat-you-steered-after = You steered after { $duration }
+chat-agent-steered = { $name } steered
+chat-agent-steered-after = { $name } steered after { $duration }
+chat-steer-waiting = Waiting for { $agent } to read it
+chat-context-compacted = Context compacted
+chat-context-compacted-tokens = { $before } → { $after } tokens
+chat-context-compacted-tooltip-title = The agent now works from a summary
+chat-context-compacted-tooltip-body = Its earlier context was summarized to make room. The messages stay here for you; the agent reads its summary instead.
+chat-context-compacted-of-window = of { $window }
 chat-send-failed = Can’t send to this chat. Try sending again.
 chat-send-failed-draft-restored = Can’t send to this chat. Your message is still in the composer.
 plan-proposed = PLAN PROPOSED
 plan-changes-requested = PLAN CHANGES REQUESTED
 plan-ready = PLAN READY
-input-permission-response = Permission response
 approval-approve-action = Approve action?
-subagent-view-single = View subagent
 tool-action-read = Read
 tool-action-wrote = Wrote
 tool-action-ran = Ran
@@ -3026,7 +3103,6 @@ chat-files-changed-count = { $count ->
 }
 chat-files-expand-all = Expand all files
 chat-files-collapse-all = Collapse all files
-subagent-view-count = View subagents ({ $count })
 git-uncommitted-change-count = Uncommitted changes: { $count }
 git-unpushed-commit-count = Unpushed commits: { $count }
 settings-ai-action-model-pins-set = Action-specific model pins set: { $count }
@@ -3364,8 +3440,14 @@ run-stop-script = Stop run script
 run-rerun-workspace = Re-run workspace
 workspace-close-tab = Close tab
 workspace-launched-agents-header = Launched agents
+workspace-created-worktrees-header = Created worktrees
+created-worktrees-summary = { $count ->
+    [one] 1 created worktree
+   *[other] { $count } created worktrees
+}
 workspace-launched-by = Launched by { $tab_title }
 workspace-open-launched-tab = Open as tab
+workspace-attached-back = Back to { $tab_title }
 notification-launched-agent-title = { $title } · from { $parent }
 launched-agents-summary = { $state ->
     [permission] { $count ->
@@ -3508,6 +3590,26 @@ git-status-no-review-open = No { $kind } open
 git-status-unpushed-count = Unpushed: { $count }
 git-status-behind-target = Behind { $target }: { $count }
 git-status-working-tree-clean = Working tree clean
+status-card-checks-passed = { $count } passed
+status-card-branch = Branch
+status-card-up-to-date = Up to date with { $target }
+status-card-review-not-requested = Not requested
+status-card-conflicts-explainer = { $target } changed lines this branch also changes.
+status-card-merged-into = Merged into { $target }
+status-card-worktree = Worktree
+status-card-clean = Clean
+status-card-unpushed = Unpushed
+status-card-delete-discards = Delete discards these with the worktree.
+status-card-commit-count =
+    { $count ->
+        [one] { $count } commit
+       *[other] { $count } commits
+    }
+status-card-file-count =
+    { $count ->
+        [one] { $count } file
+       *[other] { $count } files
+    }
 
 git-merge-strategy-squash = Squash and merge
 git-merge-strategy-merge = Create a merge commit
@@ -3700,6 +3802,31 @@ file-tree-symlink-target = Symlink → { $target }
 
 common-collapse = Collapse
 chat-show-more-lines = Show { $count } more lines
+chat-pill-card-skill = Skill
+chat-pill-card-agent = Agent
+chat-pill-card-command = Command
+chat-pill-card-file = File
+chat-pill-card-folder = Folder
+chat-pill-card-image = Image
+chat-pill-card-video = Video
+chat-pill-card-lines = { $count ->
+    [one] 1 line
+   *[other] { $count } lines
+}
+chat-pill-card-items = { $count ->
+    [one] 1 item
+   *[other] { $count } items
+}
+chat-pill-card-modified = modified { $time }
+chat-pill-card-open-preview = Open preview
+chat-pill-card-show-in-files = Show in Files
+chat-pill-card-quick-look = Quick Look
+chat-pill-card-open-skill = Open SKILL.md
+chat-pill-card-open-agent = Open agent
+chat-pill-card-open-in = Open in…
+chat-pill-card-open-link = Open link
+chat-pill-card-website = Website
+chat-pill-card-github = GitHub
 review-conversations-summary = Conversations · { $total } total · { $resolved } resolved
 review-file-conversations-summary = { $file } · { $total } total · { $resolved } resolved
 review-add-comment-line = Add a comment on line { $line }

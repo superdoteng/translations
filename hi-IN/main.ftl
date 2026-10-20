@@ -87,8 +87,6 @@ setup-loading-always-run-in-background = इस प्रोजेक्ट क�
 chat-timeline-jump-to-bottom = ↓ नीचे जाने के लिए कूद
 chat-agent-message-label = एक एजेंट से
 chat-team-message-label = टीम संदेश
-chat-agent-message-from = प्रेषक:
-chat-team-message-from = टीम संदेश, प्रेषक:
 terminal-starting = टर्मिनल शुरू कर रहा है...
 terminal-show-output = आउटपुट दिखाएँ
 terminal-start-failed = टर्मिनल प्रारंभ करने में विफल रहा
@@ -1018,25 +1016,21 @@ settings-ai-refreshing-models = स्‍फूर्तिदायक।।।
 settings-ai-refresh-model-caches = मॉडल कैश ताज़ा करें
 plan-executing = निष्पादन
 plan-executing-plan = योजना को निष्पादित करना
-chat-steered = स्टीयर्ड
 chat-fast-mode-with-rate = फास्ट मोड: 1.5x तेज, { $rate } क्रेडिट का उपयोग करता है।
 chat-fast-mode = फास्ट मोड
 chat-fast = फास्ट
-chat-argument-hint = तर्क संकेत: { $hint }
 chat-queued-until-setup-finishes = सेटअप समाप्त होने तक कतारबद्ध
 chat-queued-position = कतारबद्ध { $position }
 chat-pasted-text = चिपकाया गया पाठ
 chat-code-review-count = कोड समीक्षा ({ $count })
 chat-system-instructions = सिस्टम निर्देश
 action-review = समीक्षा
-subagent-tool-result-unavailable = उपकरण परिणाम अनुपलब्ध
 subagent-preparing-transcript = प्रतिलेख तैयार करना...
 common-read-only = केवल-पढ़ने के लिए
 subagent-loading-transcript = सबएजेंट ट्रांसक्रिप्ट लोड हो रहा है ...
 subagent-transcript-unavailable = प्रतिलेख अनुपलब्ध
 action-back = शर्त लगाना
 subagent-no-transcript = अभी तक कोई प्रतिलेख दर्ज नहीं किया गया है।
-subagent-jump-to-latest = नवीनतम पर जाएं
 action-confirm = सुदृढ़ करना
 changes-no-changes = कोई बदलाव नहीं
 changes-commits = प्रतिबद्ध करता है
@@ -1102,16 +1096,12 @@ chat-plan = योजना
 approval-allow = अनुमति दें
 approval-allow-for-session = सत्र के लिए अनुमति दें
 approval-deny = इनकार
-approval-needed = अनुमोदन की आवश्यकता है
 approval-needs-access = इसकी पहुँच चाहिए
 approval-show-input = पूरा इनपुट दिखाएँ
 approval-hide-input = पूरा इनपुट छिपाएँ
 input-requested = इनपुट का अनुरोध किया गया
 action-submit = जमा करें
 action-next = अगला
-input-needed = इनपुट की जरूरत है
-input-progress = { $current }/{ $total }
-input-progress-auto-resolve = { $current }/{ $total } · { $seconds } में स्वतः हल हो सकता है
 input-sensitive-answer = संवेदनशील उत्तर · प्रतिलेख सारांश से हटा दिया गया
 plan-run-in-new-chat = नई चैट में चलाएँ
 auth-open-terminal-to-sign-in = साइन इन करने के लिए टर्मिनल खोलें
@@ -1133,7 +1123,6 @@ context-cache-write = कैश लिखें
 context-output = उत्पादन
 context-total-io = कुल I/O
 context-input-effective = इनपुट प्रभावी
-input-submitted = इनपुट सबमिट किया गया
 profile-cli-default = CLI डिफ़ॉल्ट
 review-no-active-comments = कोई सक्रिय समीक्षा टिप्पणी नहीं।
 permission-tools = उपकरण
@@ -1194,9 +1183,7 @@ chat-worked = काम किया
 plan-proposed = प्रस्तावित योजना
 plan-changes-requested = योजना परिवर्तन का अनुरोध किया गया
 plan-ready = योजना तैयार
-input-permission-response = अनुमति प्रतिक्रिया
 approval-approve-action = कार्रवाई को मंजूरी दें?
-subagent-view-single = उप-एजेंट देखें
 tool-action-read = पढ़ना
 tool-action-wrote = रूप
 tool-action-ran = भाग गया
@@ -1476,7 +1463,6 @@ chat-reply-count = { $count } जवाब
 chat-files-changed-count = { $count } बदली गई फ़ाइलें
 chat-files-expand-all = सभी फ़ाइलें विस्तृत करें
 chat-files-collapse-all = सभी फ़ाइलें संक्षिप्त करें
-subagent-view-count = उप-एजेंट देखें ({ $count })
 git-uncommitted-change-count = अप्रतिबद्ध परिवर्तन: { $count }
 git-unpushed-commit-count = अप्रकाशित प्रतिबद्धता: { $count }
 settings-ai-action-model-pins-set = क्रिया-विशिष्ट मॉडल पिन सेट: { $count }
@@ -2029,24 +2015,15 @@ settings-keybinding-action-toggle-terminal = टॉगल टर्मिनल
 action-forward = आगे
 custom-actions-show-more = + { $count } अधिक
 custom-actions-untitled = शीर्षकहीन
-subagent-state-running = भागना
 subagent-state-completed = पूरा
 subagent-state-failed = असफल
 launched-agent-needs-input = इनपुट चाहिए
-launched-agent-closed = बंद
-launched-agent-idle = निष्क्रिय
-launch-group-agents = { $count ->
-    [one] 1 एजेंट
-   *[other] { $count } एजेंट
-}
 launch-card-working = { $count } काम कर रहे हैं
 launch-card-needs-input = { $count ->
     [one] 1 को इनपुट चाहिए
    *[other] { $count } को इनपुट चाहिए
 }
 launch-card-failed = { $count } विफल
-launch-card-done = { $count } पूरे
-subagent-earlier-rows-not-shown = … { $count } पिछली पंक्तियाँ नहीं दिखाई गईं
 diff-comment-on-file = फ़ाइल पर टिप्पणी करें
 workspace-review-request-detect-failed = { $kind } का पता नहीं लगाया जा सका
 workspace-review-request-state-changed = { $kind } राज्य बदल गया; कार्रवाई अब उपलब्ध नहीं है
@@ -2760,3 +2737,153 @@ data-directory-notice-home-title = दोनों डेटा फ़ोल्�
 data-directory-notice-summary = मौजूदा रिपॉज़िटरी कॉन्फ़िगरेशन और स्क्रिप्ट काम करते रहेंगे।
 data-directory-notice-config = रिपॉज़िटरी कॉन्फ़िगरेशन: नए कॉन्फ़िगरेशन के लिए .super.engineering/config.json का उपयोग करें। नया फ़ाइल न होने पर पुराना .superconductor/config.json समर्थित रहता है। ऐप के पुराने संस्करण पुरानी फ़ाइल का उपयोग करते हैं; दोनों फ़ाइलें सिंक्रनाइज़ नहीं होतीं।
 data-directory-notice-scripts = स्क्रिप्ट फ़ाइलें अपनी जगह पर रहती हैं। यदि आप किसी स्क्रिप्ट को स्थानांतरित करते हैं, तो उसे चलाने वाला कमांड अपडेट करें। स्क्रिप्ट को SUPER_ENGINEERING_* चर पढ़ने चाहिए; SUPERCONDUCTOR_* नाम फ़िलहाल एक्सपोर्ट किए जा रहे हैं और बाद की किसी रिलीज़ में हटा दिए जाएँगे।
+
+chat-agent-steered = { $name } ने एजेंट को नई दिशा दी
+chat-agent-steered-after = { $name } ने { $duration } बाद एजेंट को नई दिशा दी
+chat-agent-stopped = { $name } ने इसे रोक दिया
+chat-agent-stopped-after = { $name } ने { $duration } बाद एजेंट को रोक दिया
+chat-context-compacted = संदर्भ संक्षिप्त किया गया
+chat-context-compacted-of-window = कुल { $window } में से
+chat-context-compacted-tokens = { $before } → { $after } टोकन
+chat-context-compacted-tooltip-body = जगह बनाने के लिए पुराने संदर्भ का सारांश बनाया गया। संदेश आपके लिए यहाँ बने रहते हैं; एजेंट अब उनकी जगह सारांश पढ़ता है।
+chat-context-compacted-tooltip-title = एजेंट अब सारांश के आधार पर काम करता है
+chat-pill-card-agent = एजेंट
+chat-pill-card-command = आदेश
+chat-pill-card-file = फ़ाइल
+chat-pill-card-folder = फ़ोल्डर
+chat-pill-card-github = GitHub
+chat-pill-card-image = चित्र
+chat-pill-card-items = { $count ->
+    [one] { $count } आइटम
+   *[other] { $count } आइटम
+}
+chat-pill-card-lines = { $count ->
+    [one] { $count } पंक्ति
+   *[other] { $count } पंक्तियाँ
+}
+chat-pill-card-modified = संशोधित: { $time }
+chat-pill-card-open-agent = एजेंट खोलें
+chat-pill-card-open-in = इसमें खोलें…
+chat-pill-card-open-link = लिंक खोलें
+chat-pill-card-open-preview = पूर्वावलोकन खोलें
+chat-pill-card-open-skill = SKILL.md खोलें
+chat-pill-card-quick-look = Quick Look
+chat-pill-card-show-in-files = फ़ाइलों में दिखाएँ
+chat-pill-card-skill = कौशल
+chat-pill-card-video = वीडियो
+chat-pill-card-website = वेबसाइट
+chat-steer-waiting = { $agent } के पढ़ने की प्रतीक्षा है
+chat-turn-group-agents-count = { $count } एजेंट
+chat-turn-group-deleted = { $count } हटाए गए
+chat-turn-group-new = { $count } नए
+chat-turn-group-recreated = { $count } दोबारा बनाए गए
+chat-turn-group-subagents-count = { $count ->
+    [one] { $count } उप-एजेंट
+   *[other] { $count } उप-एजेंट
+}
+chat-turn-group-worktrees-count = { $count ->
+    [one] { $count } वर्कट्री
+   *[other] { $count } वर्कट्री
+}
+chat-waiting-for-answer = आपके जवाब की प्रतीक्षा है
+chat-waiting-for-approval = अनुमोदन की प्रतीक्षा है
+chat-worktree-card-creating = वर्कट्री बनाई जा रही है…
+chat-worktree-card-deleted = हटाई गई
+chat-worktree-card-deleting = हटाना...
+chat-worktree-card-recreated = दोबारा बनाई गई
+chat-worktree-card-recreating = दोबारा बनाई जा रही है…
+chat-worktree-card-working = एजेंट चल रहा है
+chat-you-steered = आपने एजेंट को नई दिशा दी
+chat-you-steered-after = आपने { $duration } बाद एजेंट को नई दिशा दी
+chat-you-stopped = आपने एजेंट को रोका
+chat-you-stopped-after = आपने { $duration } बाद एजेंट को रोका
+created-worktrees-summary = { $count ->
+    [one] { $count } वर्कट्री बनाई गई
+   *[other] { $count } वर्कट्री बनाई गईं
+}
+input-answer-hidden = जवाब छिपा हुआ है
+input-asked = { $count ->
+    [0] कोई सवाल नहीं पूछा
+    [one] एक सवाल पूछा
+   *[other] { $count } सवाल पूछे
+}
+input-asked-you = { $count ->
+    [0] आपसे कोई सवाल नहीं पूछा
+    [one] आपसे एक सवाल पूछा
+   *[other] आपसे { $count } सवाल पूछे
+}
+input-auto-resolves = { $seconds } सेकंड में अपने आप हल हो जाएगा
+input-question-position = { $total } में से { $current }
+input-recommended = अधिक:
+input-review-title = अपने जवाब भेजें?
+input-send = जमा करें
+input-skip = छोड़ें
+input-skipped = छोड़ा गया
+input-something-else = कुछ और…
+input-type-answer = अपना जवाब लिखें…
+input-type-own-answer = या अपना खुद का जवाब लिखें…
+launch-card-finished = { $count } पूरे हुए
+launch-card-not-started = { $count } शुरू नहीं हुए
+launch-card-stopped = { $count } रोके गए
+launched-agent-activity-browsing = ब्राउज़ किया जा रहा है
+launched-agent-activity-command = कमांड चलाई जा रही है
+launched-agent-activity-editing = संपादन
+launched-agent-activity-reading = फ़ाइलें पढ़ी जा रही हैं
+launched-agent-activity-searching = खोज की जा रही है
+launched-agent-activity-web-search = वेब पर खोज की जा रही है
+launched-agent-activity-writing = फ़ाइल लिखी जा रही है
+launched-agent-answer = जवाब दें
+launched-agent-not-started = शुरू नहीं हुआ
+settings-orchestrated-worktrees-auto = स्‍वचालित
+settings-orchestrated-worktrees-auto-description = जब इसमें कोई एजेंट काम कर रहा हो या उसे आपकी ज़रूरत हो, तब खुली रहेगी।
+settings-orchestrated-worktrees-collapsed = संकुचित
+settings-orchestrated-worktrees-collapsed-description = आपके खोलने तक हमेशा संकुचित रहेगी।
+settings-orchestrated-worktrees-expanded = विस्तृत
+settings-orchestrated-worktrees-expanded-description = हमेशा खुली रहेगी।
+settings-search-entry-appearance-layout-orchestrated-worktrees-description = चुनें कि चैट द्वारा काम सौंपी गई वर्कट्री साइडबार में उसी चैट के नीचे कैसे खुलें।
+settings-search-entry-appearance-layout-orchestrated-worktrees-label = समन्वित वर्कट्री
+settings-search-entry-general-behavior-link-previews-description = लिंक पर पॉइंटर ले जाने पर साइट का शीर्षक, सारांश और चित्र प्राप्त करें। साइट को आपका IP पता दिखेगा।
+settings-search-entry-general-behavior-link-previews-label = लिंक पूर्वावलोकन दिखाएँ
+shared-parent-git-pill-label = { $targets } में { $action }
+status-card-branch = ब्रांच
+status-card-checks-passed = { $count } सफल
+status-card-clean = कोई बदलाव नहीं
+status-card-commit-count = { $count ->
+    [one] { $count } कमिट
+   *[other] { $count } कमिट
+}
+status-card-conflicts-explainer = { $target } ने उन पंक्तियों को बदला है जिन्हें यह ब्रांच भी बदलती है।
+status-card-delete-discards = वर्कट्री हटाने पर ये बदलाव भी छोड़ दिए जाएँगे।
+status-card-file-count = { $count ->
+    [one] { $count } फ़ाइल
+   *[other] { $count } फ़ाइलें
+}
+status-card-merged-into = { $target } में मर्ज किया गया
+status-card-review-not-requested = अनुरोध नहीं किया गया
+status-card-unpushed = पुश नहीं किया गया
+status-card-up-to-date = { $target } के साथ अप टू डेट
+status-card-worktree = वर्कट्री
+subagent-back-tooltip = { $parent } पर वापस जाएँ
+subagent-dock-back = चैट पर वापस जाएँ
+subagent-dock-detail = केवल पढ़ने के लिए। पूरा होने पर { $parent } को रिपोर्ट करता है।
+subagent-dock-detail-done = केवल पढ़ने के लिए। { $parent } को रिपोर्ट कर चुका है।
+subagent-dock-detail-interrupted = केवल पढ़ने के लिए। { $parent } के साथ रुक गया।
+subagent-dock-title = सबएजेंट
+subagent-dock-title-typed = { $type } उप-एजेंट
+subagent-header-of = इसका उप-एजेंट:
+subagent-state-interrupted = रोका गया
+subagent-status-done = { $time } में पूरा हुआ
+subagent-status-failed = { $time } बाद विफल हुआ
+subagent-status-interrupted = { $time } बाद रुक गया
+subagent-type-awaiter = प्रतीक्षाकर्ता
+subagent-type-explore = खोजें
+subagent-type-explorer = अन्वेषक
+subagent-type-fork = फ़ोर्क
+subagent-type-general = सामान्य
+subagent-type-guide = मार्गदर्शक
+subagent-type-plan = योजना
+subagent-type-status-line = स्थिति पंक्ति
+workspace-attached-back = { $tab_title } पर वापस जाएँ
+workspace-created-worktrees-header = बनाई गई वर्कट्री
+workspace-view-html = देखें
+workspace-view-in-browser = ब्राउज़र में देखें
