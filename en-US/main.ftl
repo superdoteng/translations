@@ -820,15 +820,61 @@ action-reset = Reset
 project-pinned = Pinned
 project-no-worktrees-found = No worktrees found
 project-loading-merge-options = Loading merge options
-update-whats-new = What's in this update
-update-cli-pill = { $count ->
-    [one] 1 CLI update
-   *[other] { $count } CLI updates
+update-ready-title = Update ready
+update-ready-restart = Restart
+update-restart-eyebrow = Version { $version }
+update-restart-title = Restart to update?
+update-restart-body-agents = { $count ->
+    [one] Restart when the agent finishes, or now to stop it. Your tabs reopen either way.
+   *[other] Restart when the agents finish, or now to stop them. Your tabs reopen either way.
 }
-update-cli-popover-title = Provider CLI updates
-update-cli-popover-note = Running sessions won't be interrupted.
+update-restart-body-commands = { $count ->
+    [one] This command stops when the app restarts. Its terminal reopens after.
+   *[other] These commands stop when the app restarts. Their terminals reopen after.
+}
+update-restart-body-done = Everything finished. Your tabs reopen after the restart.
+update-restart-now = Restart Now
+update-restart-not-now = Not Now
+update-restart-when-done = Restart When Done
+update-restart-restart = Restart
+update-restart-row-running = running for { $elapsed }
+update-restart-row-running-now = running
+update-restart-row-needs-input = waiting for your answer
+update-restart-open = Open
+update-restart-answer = Answer
+update-wait-pill = { $count ->
+    [one] After 1 agent
+   *[other] After { $count } agents
+}
+update-wait-restarting = Restarting
+update-wait-title = { $count ->
+    [one] Restarting after 1 agent
+   *[other] Restarting after { $count } agents
+}
+update-wait-dont-wait = Don't wait
+chat-stopped-for-update = Stopped for the update to { $version }
+chat-continue-after-update = Continue
+release-notes-section-new = New
+release-notes-section-fixes = Fixed
+release-notes-section-faster = Faster
+release-notes-section-improved = Improved
+update-cli-title = Updates
+update-cli-note = Running sessions aren't interrupted. New sessions use the new version.
+update-cli-failed-count = { $count } didn't finish
 update-cli-action-update = Update
-update-cli-state-failed = Update failed
+update-cli-action-update-all = Update all
+update-cli-action-retry = Retry
+update-cli-action-skip = Skip
+update-cli-action-skip-all = Skip all
+update-cli-action-retry-all = Retry all
+update-cli-action-fix-in-chat = Fix in chat
+update-cli-action-run-in-terminal = Run in Terminal
+update-cli-terminal-local-only = Select a local worktree to update this CLI in a terminal.
+update-cli-action-details = Details
+update-cli-action-copy-output = Copy output
+update-cli-failed-permission = Needs admin permission
+update-cli-failed-timeout = Timed out after 5 min
+update-cli-failed-outdated = Still { $version } after updating
 update-cli-manual-hint = Manual update
 sidebar-add-project-to-start = Add a project to get started
 sidebar-search-project-worktrees-placeholder = Search worktrees in { $project }
@@ -874,12 +920,17 @@ clone-location-dialog-title = Clone Location
 clone-repository-action = Clone repository
 clone-repository-url = Repository URL
 close-tab-action = Close Tab
-close-tab-description = This tab has work in progress. Closing it will stop the agent.
-close-tab-title = Close “{ $tab_title }”?
-close-tab-keep-launched-agents = Keep them open as tabs
-close-tab-launched-agents-description = { $count ->
-    [one] An agent launched from this tab is still working. Closing the tab stops it.
-   *[other] { $count } agents launched from this tab are still working. Closing the tab stops them.
+close-tab-and-stop-action = Close and Stop
+close-tab-confirm-title = Close this tab?
+close-tab-more-children = +{ $count } more
+close-tab-stop-launched-agents = { $count ->
+    [one] Stop the launched agent
+   *[other] Stop all launched agents
+}
+close-tab-running-description = Its agent is still working and will stop.
+close-tab-working-children = { $count ->
+    [one] An agent it launched is still working.
+   *[other] { $count } agents it launched are still working.
 }
 common-back-arrow = ← Back
 common-browse = Browse
@@ -997,6 +1048,7 @@ project-risk-create-anyway = Create Anyway
 project-risk-enable-and-continue = Enable and Continue
 project-risk-enable-non-git-description = This folder is not a Git repository. Non-Git projects are experimental; file trees load lazily, and you can disable this later in Experimental settings. Existing plain-folder projects remain visible if you disable it.
 project-risk-enable-non-git-title = Enable Experimental Non-Git Projects?
+project-risk-creates-git = creates .git
 project-welcome-configure-project = Configure your project
 project-welcome-configure-project-description = Open project settings from the … menu or the Settings page.
 project-welcome-create-worktrees = Create worktrees
@@ -1111,7 +1163,6 @@ welcome-open-project = Open project
 welcome-open-project-description = Add an existing repo
 welcome-quick-start = Quick start
 welcome-quick-start-description = New project from template
-whats-new-release-count = { $count } releases
 whats-new-title = What's New
 workspace-add-repositories-ellipsis = Add Repositories…
 workspace-ai-quick = Quick
@@ -1120,8 +1171,6 @@ workspace-ai-setup = AI Setup
 workspace-ai-thorough = Thorough
 workspace-ai-thorough-description = Launches an AI agent to analyze repos and write context files.
 workspace-choose-icon = Choose icon
-workspace-delete-title = Delete Workspace
-workspace-delete-exclusive-projects = It will also remove these projects from the app: { $projects }.
 workspace-individual-projects = Individual Projects
 workspace-individual-projects-description = Work in separate repositories with independent worktrees.
 workspace-individual-projects-detail = Best for single-repo changes, maintenance work, and unrelated tasks.
@@ -1149,7 +1198,6 @@ worktree-create-in-background = Create in background
 worktree-create-refresh-branches = Fetch remote branches
 worktree-create-refresh-failed = Fetch failed: { $error }
 worktree-create-return = Create ↵
-worktree-delete-title = Delete Worktree
 worktree-in-workspace = In workspace
 worktree-no-matching-branches = No matching branches
 worktree-not-installed = Not installed
@@ -1624,12 +1672,6 @@ settings-remote-probe-home = Home
 settings-remote-probe-shell = Shell
 settings-remote-probe-temp = Temp
 settings-remote-probe-git = Git
-settings-remote-key-install-confirm-title = Install a dedicated SSH key on { $host }?
-settings-remote-key-install-confirm-body = { $app_name } will: generate a new key at { $key_path } (no passphrase), add its public key to ~/.ssh/authorized_keys on { $host } (you may be asked for your password once), and add one Include line to ~/.ssh/config pointing at an app-managed file. You can remove all of this later with “Remove SSH key.”
-settings-remote-key-install-confirm-action = Install key
-settings-remote-key-remove-confirm-title = Remove dedicated SSH key from { $host }?
-settings-remote-key-remove-confirm-body = { $app_name } will first remove this key from ~/.ssh/authorized_keys on { $host }, then delete the local keypair at { $key_path } and its block in ~/.ssh/super.engineering_config. If remote cleanup cannot authenticate, the local credential will be preserved so you can retry safely.
-settings-remote-key-remove-confirm-action = Remove SSH key
 settings-remote-removing-ssh-key = Removing…
 settings-remote-remove-ssh-key = Remove SSH key
 settings-remote-invalid-target-config-preview = Enter a valid SSH target to preview its configuration.
@@ -1645,6 +1687,19 @@ settings-remote-gitlab-cli-label = GitLab CLI on host
 settings-remote-gitlab-cli-description = For GitLab merge requests, an authenticated `glab` on the host enables the agent-driven flow; otherwise the composer and this Mac's `glab` are used.
 settings-remote-bitbucket-cli-label = Bitbucket CLI on host
 settings-remote-bitbucket-cli-description = For Bitbucket pull requests, an authenticated `bkt` with a usable Cloud context on the host enables the agent-driven flow; otherwise the composer and this Mac's `bkt` are used.
+settings-remote-key-install-action = Install Key
+settings-remote-key-install-authorize = Authorize it on { $host }
+settings-remote-key-install-body = { $app_name } will make a dedicated SSH key for this workspace.
+settings-remote-key-install-create = Create a key, no passphrase
+settings-remote-key-install-include = Add one Include line
+settings-remote-key-install-title = Install a key on { $host }?
+settings-remote-key-install-undo-note = Remove SSH key undoes all three.
+settings-remote-key-remove-action = Remove Key
+settings-remote-key-remove-body = The workspace connects with your other SSH keys afterwards.
+settings-remote-key-remove-delete = Delete the local key
+settings-remote-key-remove-include = Remove the Include line
+settings-remote-key-remove-revoke = Revoke it on { $host }
+settings-remote-key-remove-title = Remove the key from { $host }?
 settings-cancel = Cancel
 settings-refresh = Refresh
 settings-fun = Fun
@@ -2005,6 +2060,8 @@ settings-search-entry-palette-sources-show-breadcrumbs-label = Show breadcrumbs
 settings-search-entry-palette-sources-show-breadcrumbs-description = Render the workspace/project breadcrumb under tab and worktree rows.
 settings-search-entry-privacy-telemetry-share-anonymous-usage-data-label = Share anonymous usage data
 settings-search-entry-privacy-telemetry-share-anonymous-usage-data-description = Helps us understand how super.engineering is used and prioritize improvements.
+settings-search-entry-experimental-feature-flags-workspace-mentions-label = Workspace mentions
+settings-search-entry-experimental-feature-flags-workspace-mentions-description = Mention scripts, terminals, worktrees, chats, and agents with @ in chat.
 settings-search-entry-experimental-feature-flags-shared-context-workspaces-label = Shared context workspaces
 settings-search-entry-experimental-feature-flags-shared-context-workspaces-description = Allow selecting parent folders that expand into child repositories for shared context workspaces.
 settings-search-entry-experimental-feature-flags-remote-workspaces-label = Remote workspaces
@@ -2779,7 +2836,6 @@ review-findings-triage-hint = Mark each finding Should fix or Dismiss
 chat-assignment = Assignment
 chat-plan = Plan
 approval-allow = Allow
-approval-allow-for-session = Allow for Session
 approval-deny = Deny
 approval-needs-access = Needs access to
 approval-show-input = Show full input
@@ -2802,11 +2858,17 @@ input-asked-you = { $count ->
     [one] Asked you a question
    *[other] Asked you { $count } questions
 }
-input-review-title = Send your answers?
-input-type-own-answer = Or type your own answer…
 input-type-answer = Type your answer…
 input-something-else = Something else…
 input-recommended = Recommended
+input-recommended-by = Recommended by { $agent }
+input-drawer-waiting = { $agent } is waiting for you
+input-drawer-asks-working = { $agent } asks while it works
+input-drawer-wants-command = { $agent } wants to run a command
+input-drawer-wants-tool = { $agent } wants to use { $tool }
+input-drawer-blocked = { $agent } was blocked
+input-drawer-review = Review
+input-choose-any = Choose any
 plan-run-in-new-chat = Run in new chat
 auth-open-terminal-to-sign-in = Open terminal to sign in
 custom-actions-empty = Your custom actions will appear here.
@@ -2817,6 +2879,8 @@ custom-actions-untitled = Untitled
 subagent-state-completed = Completed
 subagent-state-failed = Failed
 subagent-state-interrupted = Stopped
+# A closed agent whose run the app quitting cut off.
+launched-agent-stopped-app-closed = Stopped when the app closed
 subagent-type-general = General
 subagent-type-explore = Explore
 subagent-type-plan = Plan
@@ -2897,8 +2961,6 @@ context-input = Input
 context-cache-read = Cache read
 context-cache-write = Cache write
 context-output = Output
-chat-message-input-tokens = Input tokens
-chat-message-output-tokens = Output tokens
 chat-message-tokens-not-reported = Not reported
 context-total-io = Total I/O
 context-input-effective = Input effective
@@ -2961,16 +3023,29 @@ chat-thinking-summary = Thinking · { $summary }
 # Live duration is a separate RunTimerView entity, so this prefix cannot take a Fluent placeable.
 chat-working-for = Working for
 chat-worked-for = Worked for { $duration }
+# A centred timestamp where a conversation picks up after a gap.
+chat-time-today = Today { $time }
+chat-time-yesterday = Yesterday { $time }
+# A provider started in another permission mode than requested, e.g. "Auto isn't available for Haiku 4.5 on this account."
+chat-permission-fallback = { $mode } isn't available for { $model } on this account.
+chat-permission-fallback-asks = { $provider } will ask before it acts.
+chat-permission-fallback-uses = { $provider } is using { $mode } instead.
+chat-steer-hold-waiting = { $provider } can't take a steer yet.
+chat-steer-hold-waiting-detail = Your message will steer once it can, or send after this turn.
+chat-steer-refused = Couldn't steer.
+chat-steer-refused-detail = { $provider } returned an error. Check the conversation before you retry.
 chat-worked = Worked
 chat-you-stopped = You stopped
 chat-you-stopped-after = You stopped after { $duration }
 chat-agent-stopped = { $name } stopped it
 chat-agent-stopped-after = { $name } stopped after { $duration }
-chat-you-steered = You steered
-chat-you-steered-after = You steered after { $duration }
 chat-agent-steered = { $name } steered
-chat-agent-steered-after = { $name } steered after { $duration }
-chat-steer-waiting = Waiting for { $agent } to read it
+chat-steered = Steered
+chat-steer-waiting = Waiting to be read
+# A steer whose turn ended before the agent read it.
+chat-steer-not-read = Not read
+# Sends a never-read steer again, as a new message.
+chat-steer-send-again = Send
 chat-context-compacted = Context compacted
 chat-context-compacted-tokens = { $before } → { $after } tokens
 chat-context-compacted-tooltip-title = The agent now works from a summary
@@ -3007,14 +3082,15 @@ chat-open-in-new-chat = Open in new chat
 chat-open-in-new-tab = Open in new tab
 chat-open-in-split-tab = Open in split tab
 chat-open-in-split-view = Open in split view
-chat-fork-new-session = Fork to new chat session
-chat-fork-new-worktree = Fork to new worktree
-chat-fork-from-here = Fork from here
+chat-fork-new-session = Branch in new chat
+chat-fork-new-worktree = Branch in new worktree
+chat-fork-from-here = Branch in new chat
 chat-fork-unavailable = /fork is not available for this provider.
 chat-fork-no-session = /fork needs an active provider session. Send a message first, then try again.
 chat-fork-worktree-unsupported = /fork worktree is not available for this provider.
 chat-fork-worktree-cut-unavailable = Forking to a new worktree from this message isn't available for this conversation. Fork from the latest message, or fork to a new chat session instead.
 chat-fork-failed = Could not fork this conversation.
+chat-fork-cut-unavailable = Branching from this reply isn't available for this conversation. Branch from the latest reply instead.
 chat-fork-missing-conversation = /fork needs a saved conversation. Send a message first, then try again.
 chat-recovery-context-available = Recent context from the previous conversation is available in this chat.
 review-stage-in-chat = Stage in chat
@@ -3191,6 +3267,43 @@ worktree-bitbucket-auth-required = Could not load pull requests: Bitbucket CLI (
 worktree-bitbucket-no-context = Could not load pull requests: { $error }
 worktree-bitbucket-load-error = Could not load pull requests: { $error }
 worktree-review-request-load-error = Could not load review requests: { $error }
+worktree-delete-agent-working = An agent is still working here
+worktree-delete-all-action = Delete All
+worktree-delete-body = Its folder is removed from disk.
+worktree-delete-body-loses-work = Its folder is removed from disk, along with work that exists nowhere else.
+worktree-delete-branch-too = Delete branch too
+worktree-delete-branches-too = Delete branches too
+worktree-delete-child-count = { $count ->
+    [one] 1 worktree
+   *[other] { $count } worktrees
+}
+worktree-delete-child-no-upstream = { $name } has no upstream, so unpushed commits may be lost
+worktree-delete-child-uncommitted = { $name } has uncommitted changes
+worktree-delete-child-uninspectable = { $name } could not be checked: { $error }
+worktree-delete-child-unpushed = { $count ->
+    [one] { $name } has 1 commit not pushed
+   *[other] { $name } has { $count } commits not pushed
+}
+worktree-delete-confirm-title = Delete this worktree?
+worktree-delete-has-uncommitted = Uncommitted changes
+worktree-delete-no-upstream = No upstream, so unpushed commits may be lost
+worktree-delete-open-sessions = { $count ->
+    [one] Closes 1 open session
+   *[other] Closes { $count } open sessions
+}
+worktree-delete-parent-body = The parent and every worktree inside it are removed from disk.
+worktree-delete-parent-confirm-title = Delete this worktree and its children?
+worktree-delete-parent-uninspectable = The folder could not be checked: { $error }
+worktree-delete-uncommitted = { $count ->
+    [one] 1 uncommitted change
+   *[other] { $count } uncommitted changes
+}
+worktree-delete-uninspectable = Could not be checked: { $error }
+worktree-delete-unpushed = { $count ->
+    [one] 1 commit not pushed
+   *[other] { $count } commits not pushed
+}
+worktree-delete-unrecognized-entries = The folder also holds items the app didn't create: { $items }
 right-panel-switch-stacked = Switch to stacked terminal
 right-panel-switch-bottom = Switch to bottom terminal
 right-panel-switch-side-by-side = Switch to side by side terminal
@@ -3737,6 +3850,15 @@ right-panel-show-gitignored-files = Show gitignored files
 right-panel-hide-gitignored-files = Hide gitignored files
 workspace-hold-command-for-chat-ui = Hold ⌘ for Chat UI
 workspace-hold-command-for-terminal = Hold ⌘ for Terminal
+workspace-delete-confirm-title = Delete “{ $name }”?
+workspace-delete-description = Its tabs, terminal sessions and saved layout are removed. Projects and their files stay.
+workspace-delete-description-with-contents = Its tabs, terminal sessions and saved layout are removed, and so is everything below.
+workspace-delete-project-leaves-app = leaves the app
+workspace-delete-shared-worktrees = { $count ->
+    [one] { $count } shared worktree is deleted
+   *[other] { $count } shared worktrees are deleted
+}
+workspace-delete-shared-worktrees-unknown = Its shared worktrees are deleted too
 pr-checks-failed = Checks failed
 pr-checks-failing-count =
     { $count ->
@@ -3823,10 +3945,22 @@ chat-pill-card-show-in-files = Show in Files
 chat-pill-card-quick-look = Quick Look
 chat-pill-card-open-skill = Open SKILL.md
 chat-pill-card-open-agent = Open agent
+chat-pill-card-open-worktree = Open worktree
 chat-pill-card-open-in = Open in…
 chat-pill-card-open-link = Open link
 chat-pill-card-website = Website
 chat-pill-card-github = GitHub
+chat-pill-card-setup-script = Setup script
+chat-pill-card-run-script = Run script
+chat-pill-card-teardown-script = Teardown script
+chat-pill-card-worktree = Worktree
+chat-pill-card-running = Running
+chat-pill-card-running-for = Running { $time }
+chat-pill-card-not-running = Not running
+chat-mention-section-sessions = Agents
+chat-mention-section-worktrees = Worktrees
+chat-mention-section-scripts-terminals = Scripts & terminals
+chat-mention-section-files = Files
 review-conversations-summary = Conversations · { $total } total · { $resolved } resolved
 review-file-conversations-summary = { $file } · { $total } total · { $resolved } resolved
 review-add-comment-line = Add a comment on line { $line }
@@ -3835,7 +3969,6 @@ review-add-comment-extend-hint = Shift-click a line to extend
 chat-queued-waiting-for-answer = waiting for your answer above
 chat-show-full-plan = Show full plan
 
-usage-meter-tooltip = { $provider } · { $percent } left this { $window } window
 usage-meter-unavailable = Usage not available for { $provider }
 usage-meter-signed-out = Not signed in
 usage-meter-stale = Refresh failed — showing cached data
