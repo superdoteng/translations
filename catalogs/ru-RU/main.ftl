@@ -196,7 +196,6 @@ action-reset = Сброс
 project-pinned = Удержано
 project-no-worktrees-found = Рабочих деревьев не найдено
 project-loading-merge-options = Загрузка опций слияния
-update-whats-new = Что в этом обновлении
 sidebar-add-project-to-start = Добавьте проект, чтобы начать
 sidebar-search-project-worktrees-placeholder = Искать рабочие деревья в { $project }
 sidebar-search-hidden-worktrees-placeholder = Искать скрытые рабочие деревья в { $project }
@@ -238,14 +237,6 @@ clone-location-dialog-title = Местоположение клона
 clone-repository-action = Репозиторий клонов
 clone-repository-url = Репозиторий URL
 close-tab-action = Закрыть вкладку
-close-tab-description = Эта вкладка находится в разработке. Закрытие остановит агента.
-close-tab-title = Закрыть «{ $tab_title }»?
-close-tab-keep-launched-agents = Оставить их открытыми во вкладках
-close-tab-launched-agents-description = { $count ->
-    [one] { $count } агент, запущенный из этой вкладки, ещё работает. Закрытие вкладки остановит его.
-    [few] { $count } агента, запущенных из этой вкладки, ещё работают. Закрытие вкладки остановит их.
-   *[other] { $count } агентов, запущенных из этой вкладки, ещё работают. Закрытие вкладки остановит их.
-}
 common-back-arrow = ← Назад
 common-browse = Просмотр
 common-browse-ellipsis = Просмотр...
@@ -356,7 +347,6 @@ onboarding-terminal = Терминал
 onboarding-terminal-description = Запустите CLI агента в терминальной панели
 project-modal-display-name = Отобразное имя
 project-modal-rename-title = Проект переименования
-project-modal-rename-worktree-label = Переименовать метку рабочего дерева
 project-modal-worktree-label = Метка Worktree
 project-risk-add-anyway = Добавить всё равно
 project-risk-create-anyway = Всё равно создавай
@@ -418,7 +408,6 @@ section-editor-name-conflict = Раздел с таким названием у�
 section-editor-new-title = Новый участок
 section-editor-pinned-description = Закреплённая секция всегда ручная.
 section-editor-priority = Приоритет
-section-editor-priority-description = Фильтры с более высоким приоритетом заявляют о совпадении рабочих деревьев в первую очередь. Приоритет не меняет расположение секций. Ручные секции всегда побеждают.
 section-editor-type = Тип секции
 section-priority-highest = { $rank } · Высшая
 section-priority-highest-only = Высшая
@@ -464,7 +453,6 @@ welcome-open-project = Открытый проект
 welcome-open-project-description = Добавьте существующий репозиторий
 welcome-quick-start = Быстрый старт
 welcome-quick-start-description = Новый проект по шаблону
-whats-new-release-count = { $count } релизы
 whats-new-title = Что нового
 workspace-add-repositories-ellipsis = Добавить репозитории...
 workspace-ai-quick = Быстро
@@ -473,7 +461,6 @@ workspace-ai-setup = AI Настройка
 workspace-ai-thorough = Тщательно
 workspace-ai-thorough-description = Запускает агент AI для анализа репозиторий и записи контекстных файлов.
 workspace-choose-icon = Выберите иконку
-workspace-delete-title = Удалить рабочее пространство
 workspace-individual-projects = Индивидуальные проекты
 workspace-individual-projects-description = Работайте в отдельных репозиториях с независимыми деревьями работы.
 workspace-individual-projects-detail = Лучше всего подходит для изменений в одном репозитории, технического обслуживания и не связанных с этим задач.
@@ -499,7 +486,6 @@ worktree-create-in-background = Создавайте на фоне
 worktree-create-refresh-branches = Получить удалённые ветки
 worktree-create-refresh-failed = Не удалось получить: { $error }
 worktree-create-return = Создать ↵
-worktree-delete-title = Удалить рабочее дерево
 worktree-in-workspace = В рабочем пространстве
 worktree-no-matching-branches = Нет соответствующих ветвей
 worktree-not-installed = Не установлен
@@ -880,7 +866,6 @@ settings-section-layout = Планировка
 settings-section-chat = Чат
 settings-section-files-diffs = Файлы и диффы
 settings-section-usage-cost = Использование и стоимость
-settings-section-fonts = Шрифты
 settings-section-delivery = Доставка
 settings-section-queue = Очередь
 settings-section-per-type-overrides = Перенастройки по типам
@@ -1099,7 +1084,6 @@ review-findings-triage-hint = Отметьте каждое замечание �
 chat-assignment = Назначение
 chat-plan = План
 approval-allow = Разрешить
-approval-allow-for-session = Разрешить сессию
 approval-deny = Отрицать
 approval-needs-access = Требуется доступ к
 approval-show-input = Показать весь ввод
@@ -1257,7 +1241,6 @@ clone-status-canceled = Клон отменён: { $repository }
 file-dialog-select-profile-folder = Выберите папку профиля
 notification-app-up-to-date = { $app_name } обновлено
 notification-pasting-image = Вставляю изображение...
-notification-restarting-for-update = Перезапускаю обновление для применения...
 notification-status-running = Бег
 notification-status-working = Работа
 notification-status-task-complete = Задача выполнена
@@ -1344,7 +1327,6 @@ toast-notification = Уведомление
 toast-cannot-create-worktree = Не могу создать рабочее дерево
 toast-create-worktree-failed = Создание рабочего дерева не удалось
 toast-delete-worktree-failed = Не удалось удалить рабочее дерево
-toast-delete-branch-group-failed = Не удалось удалить группу веток
 toast-delete-child-worktree-failed = Не удалось удалить дочернее рабочее дерево
 toast-add-child-failed = Не удалось добавить ребёнка
 toast-pull-failed = Pull не удалось
@@ -1355,7 +1337,6 @@ toast-post-cleanup-hook-failed = Крюк после очистки не сра�
 toast-child-repository-not-found = Детское репозитория '{ $name }' не найдено
 toast-branch-switch-main-only = Переключение ветвей поддерживается только в основном дереве работы
 toast-shared-no-child-repositories = В этом общем рабочем пространстве нет дочерних репозиториев.
-toast-shared-branch-group-not-found = Общая группа филиалов не найдена.
 toast-selected-worktree-not-found = Выбранное рабочее дерево не найдено.
 toast-project-not-found = Проект не найден.
 toast-worktree-not-found = Рабочее дерево не найдено.
@@ -1604,7 +1585,6 @@ settings-search-section-open-in-apps = Открытые приложения
 settings-search-section-storage = Хранение
 settings-search-section-diagnostics = Диагностика
 settings-search-section-theme = Тема
-settings-search-section-fonts = Шрифты
 settings-search-section-layout = Планировка
 settings-search-section-chat = Чат
 settings-search-section-files---diffs = Файлы и диффы
@@ -2427,12 +2407,6 @@ settings-remote-probe-home = Дом
 settings-remote-probe-shell = Shell
 settings-remote-probe-temp = Температура
 settings-remote-probe-git = Git
-settings-remote-key-install-confirm-title = Установить отдельную клавишу SSH на { $host }?
-settings-remote-key-install-confirm-body = { $app_name } будет: сгенерировать новый ключ в { $key_path } (без пароля), добавить его публичный ключ в ~/.ssh/authorized_keys на { $host } (возможно, один раз попросят пароль), и добавить одну строку Включить в ~/.ssh/config, указывающую на файл, управляемый приложением. Всё это можно удалить позже с помощью «Remove SSH key».
-settings-remote-key-install-confirm-action = Ключ установки
-settings-remote-key-remove-confirm-title = Удалить отдельный SSH ключ из { $host }?
-settings-remote-key-remove-confirm-body = { $app_name } сначала удалю этот ключ из ~/.ssh/authorized_keys на { $host }, затем удалю локальную пару ключей в { $key_path } и её блок в ~/.ssh/super.engineering_config. Если удаленная очистка не сможет аутентифицироваться, локальные учетные данные будут сохранены, чтобы вы могли безопасно попробовать снова.
-settings-remote-key-remove-confirm-action = Удалите SSH ключ
 settings-remote-removing-ssh-key = Удаляю...
 settings-remote-remove-ssh-key = Удалите SSH ключ
 settings-remote-invalid-target-config-preview = Введите валидную цель SSH для предварительного просмотра её конфигурации.
@@ -2692,7 +2666,6 @@ settings-search-entry-appearance-layout-usage-meter-window-description = Выб�
 settings-usage-meter-window-smart = Умный выбор
 settings-usage-meter-window-session = Предпочитать сессию
 settings-usage-meter-window-weekly = Предпочитать неделю
-usage-meter-tooltip = { $provider } · осталось { $percent }% в этом окне «{ $window }»
 usage-meter-unavailable = Данные об использовании { $provider } недоступны
 usage-meter-signed-out = Вход не выполнен
 usage-meter-stale = Не удалось обновить — показаны кэшированные данные
@@ -2784,7 +2757,6 @@ data-directory-notice-config = Настройки репозитория: для
 data-directory-notice-scripts = Файлы скриптов остаются на месте. Если вы перемещаете скрипт, обновите команду его запуска. Скриптам следует читать переменные SUPER_ENGINEERING_*; имена SUPERCONDUCTOR_* пока ещё экспортируются и будут удалены в одном из следующих выпусков.
 
 chat-agent-steered = { $name } изменил направление работы
-chat-agent-steered-after = { $name } изменил направление работы через { $duration }
 chat-agent-stopped = { $name } остановил выполнение
 chat-agent-stopped-after = { $name } остановил выполнение через { $duration }
 chat-context-compacted = Контекст сжат
@@ -2821,7 +2793,7 @@ chat-pill-card-show-in-files = Показать в файлах
 chat-pill-card-skill = Навык
 chat-pill-card-video = Видео
 chat-pill-card-website = Веб-сайт
-chat-steer-waiting = Ожидание прочтения агентом { $agent }
+chat-steer-waiting = Ожидает прочтения
 chat-turn-group-agents-count = { $count ->
     [one] { $count } агент
     [few] { $count } агента
@@ -2851,8 +2823,6 @@ chat-worktree-card-deleting = Удаляю...
 chat-worktree-card-recreated = Создано заново
 chat-worktree-card-recreating = Повторное создание…
 chat-worktree-card-working = Агент работает
-chat-you-steered = Вы изменили направление работы
-chat-you-steered-after = Вы изменили направление работы через { $duration }
 chat-you-stopped = Вы остановили выполнение
 chat-you-stopped-after = Вы остановили выполнение через { $duration }
 created-worktrees-summary = { $count ->
@@ -2877,13 +2847,11 @@ input-asked-you = { $count ->
 input-auto-resolves = разрешится автоматически через { $seconds } с
 input-question-position = { $current } из { $total }
 input-recommended = Рекомендуем
-input-review-title = Отправить ваши ответы?
 input-send = Отправить
 input-skip = Пропустить
 input-skipped = Пропущено
 input-something-else = Другое…
 input-type-answer = Введите ответ…
-input-type-own-answer = Или введите свой вариант ответа…
 launch-card-finished = Завершено: { $count }
 launch-card-not-started = Не запущено: { $count }
 launch-card-stopped = Остановлено: { $count }
@@ -2953,3 +2921,528 @@ workspace-attached-back = Назад к { $tab_title }
 workspace-created-worktrees-header = Созданные рабочие деревья
 workspace-view-html = Просмотреть
 workspace-view-in-browser = Открыть в браузере
+
+action-discard = Отбросить
+chat-reloading-pi-resources = Перезагрузка ресурсов Pi...
+file-menu-rename = Переименовать
+browser-annotation-destination-unavailable = Этот адресат аннотаций больше недоступен
+browser-annotation-composer-blocked = Нельзя добавлять аннотации, пока выбрана стенограмма субагента
+browser-consent-title = Разрешить агентам управлять браузером в «{ $workspace_name }»?
+browser-consent-asked-by-agent = Агент
+browser-consent-asked-by-worktree = Агент, работающий в «{ $caller_label }»
+browser-consent-description = { $asked_by } запросил запуск sc browser { $spelling } во вкладке браузера этого рабочего пространства. Разрешение даст всем агентам пространства постоянное право — для этой и всех будущих команд act — нажимать, вводить текст, переходить по страницам и выполнять скрипты на любой открытой странице, включая сеансы с выполненным входом. Большинство команд только для чтения не требуют одобрения, но чтение значений cookie требует. Разрешение сохраняется для рабочего пространства; его можно отозвать в Настройках в любое время.
+palette-no-matching-files-index-incomplete = Нет подходящих файлов (индекс неполон: рабочее дерево превышает лимит сканирования файлов)
+update-ready-title = Обновление готово
+update-ready-restart = Перезапустить
+update-restart-eyebrow = Версия { $version }
+update-restart-title = Перезапустить для обновления?
+update-restart-body-agents = { $count ->
+    [one] Перезапустите после завершения агента или сейчас, чтобы остановить его. В обоих случаях вкладки откроются снова.
+    [few] Перезапустите после завершения агентов или сейчас, чтобы остановить их. В обоих случаях вкладки откроются снова.
+    [many] Перезапустите после завершения агентов или сейчас, чтобы остановить их. В обоих случаях вкладки откроются снова.
+   *[other] Перезапустите после завершения агентов или сейчас, чтобы остановить их. В обоих случаях вкладки откроются снова.
+}
+update-restart-body-commands = { $count ->
+    [one] Эта команда остановится при перезапуске приложения. Затем её терминал откроется снова.
+    [few] Эти команды остановятся при перезапуске приложения. Затем их терминалы откроются снова.
+    [many] Эти команды остановятся при перезапуске приложения. Затем их терминалы откроются снова.
+   *[other] Эти команды остановятся при перезапуске приложения. Затем их терминалы откроются снова.
+}
+update-restart-body-done = Всё завершено. Вкладки откроются снова после перезапуска.
+update-restart-now = Перезапустить сейчас
+update-restart-not-now = Не сейчас
+update-restart-when-done = Перезапустить по завершении
+update-restart-restart = Перезапустить
+update-restart-row-running = работает { $elapsed }
+update-restart-row-running-now = работает
+update-restart-row-needs-input = ждёт вашего ответа
+update-restart-open = Открыть
+update-restart-answer = Ответить
+update-wait-pill = { $count ->
+    [one] После { $count } агента
+    [few] После { $count } агентов
+    [many] После { $count } агентов
+   *[other] После { $count } агента
+}
+update-wait-restarting = Перезапуск
+update-wait-title = { $count ->
+    [one] Перезапуск после { $count } агента
+    [few] Перезапуск после { $count } агентов
+    [many] Перезапуск после { $count } агентов
+   *[other] Перезапуск после { $count } агента
+}
+update-wait-dont-wait = Не ждать
+chat-stopped-for-update = Остановлено для обновления до { $version }
+chat-continue-after-update = Продолжить
+release-notes-section-new = Новое
+release-notes-section-fixes = Исправлено
+release-notes-section-faster = Быстрее
+release-notes-section-improved = Улучшено
+update-cli-title = Обновления
+update-cli-note = Текущие сеансы не прерываются. Новые сеансы используют новую версию.
+update-cli-failed-count = Не завершено: { $count }
+update-cli-action-update = Обновить
+update-cli-action-update-all = Обновить всё
+update-cli-action-retry = Повторить
+update-cli-action-skip = Пропустить
+update-cli-action-skip-all = Пропустить всё
+update-cli-action-retry-all = Повторить всё
+update-cli-action-fix-in-chat = Исправить в чате
+update-cli-action-run-in-terminal = Запустить в терминале
+update-cli-terminal-local-only = Выберите локальное рабочее дерево, чтобы обновить этот CLI в терминале.
+update-cli-action-details = Подробности
+update-cli-action-copy-output = Копировать вывод
+update-cli-failed-permission = Нужны права администратора
+update-cli-failed-timeout = Время ожидания истекло через 5 мин
+update-cli-failed-outdated = После обновления всё ещё { $version }
+update-cli-manual-hint = Обновить вручную
+close-tab-and-stop-action = Закрыть и остановить
+close-tab-confirm-title = Закрыть эту вкладку?
+close-tab-more-children = Ещё { $count }
+close-tab-stop-launched-agents = { $count ->
+    [one] Остановить запущенного агента
+    [few] Остановить всех запущенных агентов
+    [many] Остановить всех запущенных агентов
+   *[other] Остановить всех запущенных агентов
+}
+close-tab-running-description = Её агент ещё работает и будет остановлен.
+close-tab-working-children = { $count ->
+    [one] Запущенный из неё агент ещё работает.
+    [few] Запущенные из неё агенты ещё работают: { $count }.
+    [many] Запущенные из неё агенты ещё работают: { $count }.
+   *[other] Запущенные из неё агенты ещё работают: { $count }.
+}
+common-dont-ask-again = Больше не спрашивать
+project-modal-rename-feature-label = Переименовать метку функции
+project-risk-creates-git = создаёт .git
+section-editor-behavior = Поведение
+section-editor-focus = Фокус
+section-editor-focus-description = Временно перемещает сюда подходящие рабочие деревья — перед закреплёнными, размещёнными вручную и разделами «Организация». Когда соответствие исчезнет, они вернутся автоматически.
+section-editor-focus-priority-description = Разделы «Фокус» первыми получают подходящие рабочие деревья. Если подходят несколько разделов, побеждает раздел с более высоким приоритетом.
+section-editor-organize = Организация
+section-editor-organize-description = Группирует подходящие рабочие деревья с обычным размещением. Разделы «Фокус» и ручное размещение имеют приоритет.
+section-editor-organize-priority-description = Если подходят несколько разделов «Организация», побеждает раздел с более высоким приоритетом. «Фокус» и ручное размещение по-прежнему имеют преимущество.
+workspace-update-agents-description = Проекты рабочего пространства изменились. Проанализируйте репозитории для обновления AGENTS.md или пропустите, чтобы сохранить текущий файл.
+workspace-update-agents-title = Обновить инструкции рабочего пространства?
+settings-sidebar-group-mobile = Мобильное приложение
+settings-category-routing = Маршрутизация
+settings-category-terminal = Терминал
+settings-category-mobile = Мобильное приложение
+settings-category-routing-description = Выберите поставщика, профиль, модель, усилие и поведение запуска для действий агента.
+settings-category-terminal-description = Внешний вид терминала, потоковый вывод и история прокрутки.
+settings-category-mobile-description = Свяжите этот Mac с мобильным приложением super.engineering.
+settings-mobile-access-label = Мобильный доступ
+settings-mobile-access-detail-off = Мобильный доступ выключен. Mac не принимает подключения телефонов.
+settings-mobile-access-detail-starting = Запуск мобильного доступа…
+settings-mobile-access-detail-ready = Мобильный доступ готов на порту { $port }.
+settings-mobile-access-detail-stopping = Выключение мобильного доступа…
+settings-mobile-setup-action = Настроить мобильный доступ
+settings-mobile-disable-action = Выключить мобильный доступ
+settings-mobile-retry-action = Повторить
+settings-mobile-host-name-label = Имя компьютера
+settings-mobile-host-name-description = Как этот Mac называется на связанных телефонах. Оставьте пустым для использования имени macOS.
+settings-mobile-host-name-placeholder = Имя этого Mac
+settings-mobile-rename-action = Переименовать
+settings-mobile-save-name-action = Сохранить
+settings-mobile-device-name-placeholder = Использовать имя телефона
+settings-mobile-testflight-label = Получить мобильное приложение
+settings-mobile-testflight-description = Перед связыванием отсканируйте камерой iPhone, чтобы установить сборку TestFlight.
+settings-mobile-local-network-label = Локальная сеть
+settings-mobile-local-network-unavailable = Не найден подходящий локальный адрес. Подключите оба устройства к одной сети Wi-Fi и повторите попытку.
+settings-mobile-away-label = Вне дома
+settings-mobile-tailscale-ready-detail = { $address } · Используйте одну сеть Tailscale tailnet на Mac и телефоне.
+settings-mobile-tailscale-optional-detail = Tailscale необязателен и не обнаружен. Для доступа вне дома войдите в одну сеть tailnet на Mac и телефоне.
+settings-mobile-tailscale-help-action = Скачать Tailscale
+settings-mobile-failure-persist = Не удалось сохранить настройки мобильного доступа. Проверьте доступ к диску и повторите попытку.
+settings-mobile-failure-port-in-use = Порт { $port } уже занят. Закройте приложение, использующее порт { $port }, и повторите попытку.
+settings-mobile-failure-start = Не удалось запустить мобильный доступ. Проверьте сеть и повторите попытку.
+settings-mobile-failure-stop = Не удалось корректно выключить мобильный доступ. Он может оставаться доступным; повторите попытку.
+settings-mobile-failure-not-ready = Мобильный доступ ещё не готов. Дождитесь завершения настройки и повторите попытку.
+settings-mobile-failure-no-reachable-endpoint = Нет адреса, доступного телефону. Подключитесь к одной сети Wi-Fi или войдите в одну сеть Tailscale tailnet на обоих устройствах и повторите попытку.
+settings-mobile-failure-device-not-found = Этот телефон больше не связан. Список устройств обновится автоматически.
+settings-mobile-status-off = Выключено
+settings-mobile-status-starting = Запуск…
+settings-mobile-status-ready = Готово
+settings-mobile-status-stopping = Остановка…
+settings-mobile-status-failed = Требует внимания
+settings-mobile-status-optional = Необязательно
+settings-mobile-status-unavailable = Недоступно
+settings-mobile-pair-label = Связать телефон
+settings-mobile-pair-description = Создайте безопасный одноразовый код связывания с текущими адресами локальной сети и Tailscale, если он доступен.
+settings-mobile-pair-action = Создать код связывания
+settings-mobile-pairing-action = Создание…
+settings-mobile-regenerate-action = Создать новый код
+settings-mobile-scan-instruction = Откройте super.engineering на телефоне и отсканируйте этот код
+settings-mobile-copy-link = Копировать ссылку связывания
+settings-mobile-expires = Код действует до { $time }.
+settings-mobile-pairing-expired = Срок действия кода истёк. Создайте новый код и повторите попытку.
+settings-mobile-pairing-qr-error = Не удалось подготовить код связывания: { $error }. Повторите попытку.
+settings-mobile-devices-label = Связанные телефоны
+settings-mobile-device-count = { $count ->
+    [one] Связан { $count } телефон.
+    [few] Связано { $count } телефона.
+    [many] Связано { $count } телефонов.
+   *[other] Связано { $count } телефона.
+}
+settings-mobile-no-devices = С этим Mac ещё не связан ни один телефон.
+settings-mobile-devices-observed = Новые связанные телефоны появляются здесь автоматически.
+settings-mobile-device-trust-paired = Связан
+settings-mobile-device-detail = { $status } · Связан { $paired } · Последний доступ { $last_seen }
+settings-mobile-revoke-action = Отозвать доступ
+settings-mobile-revoking-action = Отзыв доступа…
+settings-mobile-confirm-revoke-action = Подтвердить отзыв
+settings-project-icon-paste-clipboard = Вставить изображение из буфера обмена
+settings-project-icon-paste-empty = В буфере обмена нет изображения
+settings-workspace-automation-section = Автоматизация браузера
+settings-workspace-browser-automation-label = Разрешить агентам управлять браузером
+settings-workspace-browser-automation-description = Агенты могут нажимать, вводить текст и выполнять скрипты во вкладке браузера этого рабочего пространства.
+settings-repository-config-source-title = Конфигурация репозитория
+settings-repository-config-source-description = Автоматизация и серверы MCP, загруженные из репозитория, доступны только для чтения. Личные настройки ниже остаются редактируемыми.
+settings-repository-config-status-missing = Конфигурация репозитория не найдена
+settings-repository-config-status-loaded = Загружено
+settings-repository-config-status-invalid = Не удалось загрузить конфигурацию репозитория
+settings-repository-config-path = Путь
+settings-repository-config-open = Открыть конфигурацию
+settings-repository-config-refresh = Обновить
+settings-repository-config-setup = Настройка
+settings-repository-config-run = Запуск
+settings-repository-config-teardown = Завершение
+settings-repository-config-commands = Общие команды
+settings-repository-config-mcp-servers = Серверы MCP
+settings-repository-config-id = ID
+settings-repository-config-start-command = Команда запуска
+settings-repository-config-stop-command = Команда остановки
+settings-repository-config-not-default = Не по умолчанию
+settings-repository-config-empty = В этом файле не заданы команды или серверы MCP.
+settings-repository-config-cleanup-ignored = Команды репозитория до и после очистки игнорируются; очистка остаётся в личных настройках приложения.
+settings-repository-config-precedence = Заданные в репозитории настройка, запуск и завершение заменяют личные значения. Общие команды добавляются к личным.
+settings-ai-search-providers-placeholder = Поиск поставщиков...
+settings-ai-search-profiles-placeholder = Поиск профилей...
+settings-ai-changes-apply-immediately = Изменения применяются сразу.
+settings-ai-back-to-models = Назад к моделям
+settings-ai-customized-here = Настроено здесь
+settings-ai-use-inherited-settings = Использовать унаследованные настройки
+settings-ai-use-global-settings = Использовать глобальные настройки
+settings-ai-use-workspace-settings = Использовать настройки пространства
+settings-ai-use-session-settings = Использовать настройки сеанса по умолчанию
+settings-ai-use-fast-settings = Использовать настройки «Быстро»
+settings-ai-use-thorough-settings = Использовать настройки «Тщательно»
+settings-ai-undo-routing = Отменить последнее изменение маршрутизации
+settings-ai-default-profiles = Профили по умолчанию
+settings-ai-apply-profile-to-routes = Применить ко всем маршрутам
+settings-ai-provider-default-profile = Профиль { $provider } по умолчанию
+settings-ai-provider-default-profile-description = Используется для новых чатов и терминалов. Действие «Применить ко всем маршрутам» заменяет переопределения профиля этого поставщика в выбранной области.
+settings-ai-routing-start-here = Начните с настроек сеанса по умолчанию. «Быстро» и «Тщательно» следуют им, пока вы не выберете другие настройки. Настраивайте отдельные действия ниже только при необходимости.
+settings-ai-default-impact = Следуют этому значению по умолчанию: { $following } · С переопределениями: { $customized }. Переопределения сохраняются.
+settings-ai-search-thinking-placeholder = Поиск уровней мышления...
+settings-ai-no-model-matches = Нет подходящих моделей. Попробуйте более короткое имя или смените поставщика.
+settings-ai-no-provider-matches = Нет подходящих поставщиков. Попробуйте другое имя или включите поставщика в разделе «Агенты».
+settings-ai-no-profile-matches = Нет подходящих профилей. Попробуйте другое имя или настройте профили в разделе «Профили».
+settings-ai-routing-no-models = Моделей пока нет. Можно использовать настройки поставщика по умолчанию или обновить модели в разделе «Агенты».
+settings-ai-hidden-models-hint = Некоторые модели могут быть скрыты настройками видимости моделей.
+settings-ai-provider-hidden-hint = Поставщик не включён в этой области. Сохранённый маршрут не изменён.
+settings-ai-cli-default-explanation = Настройки CLI по умолчанию используют учётную запись и конфигурацию поставщика без именованного профиля.
+settings-ai-open-provider-settings = Открыть настройки поставщика
+settings-ai-edit-followed-default = Изменить используемое значение по умолчанию
+settings-ai-inherited-from-name = Унаследовано от { $name }
+settings-ai-follows-fast = Следует настройкам «Быстро»
+settings-ai-follows-thorough = Следует настройкам «Тщательно»
+settings-ai-automatic-naming-route = Следует настройкам «Быстро»
+settings-ai-use-automatic-naming = Использовать модель «Быстро»
+settings-ai-profile-used-by = Используется в
+settings-ai-profile-shared-changes = Изменения профиля применяются к маршрутам ниже и действиям, которые их наследуют.
+settings-ai-profile-no-route-uses = Нет прямых назначений в глобальных настройках, настройках пространства или проекта.
+settings-ai-profile-in-use = Профиль используется в маршрутизации. Перед удалением выберите ему замену в разделе «Маршрутизация».
+settings-ai-run-with-column = Запускать с
+settings-ai-branch-naming-rule = Правило именования
+settings-ai-session-context-section = Контекст сеанса
+settings-ai-agent-session-context-label = Контекст сеанса для агентов
+settings-ai-agent-session-context-description = super.engineering может добавлять контекст в сеансы агентов, чтобы они могли найти и безопасно использовать CLI sc приложения.
+settings-ai-agent-session-context-standard-label = Стандартный
+settings-ai-agent-session-context-standard-description = Агенты получают стандартные инструкции CLI super.engineering и маршрутизации оркестрации.
+settings-ai-agent-session-context-off-label = Выключено
+settings-ai-agent-session-context-off-description = При выключении фоновый контекст сеанса не добавляется. Явные действия, например проверки и передача задач рабочим деревьям, не затрагиваются; ограничения команд sc остаются в силе.
+settings-remote-key-install-action = Установить ключ
+settings-remote-key-install-authorize = Авторизовать на { $host }
+settings-remote-key-install-body = { $app_name } создаст отдельный SSH-ключ для этого рабочего пространства.
+settings-remote-key-install-create = Создать ключ без парольной фразы
+settings-remote-key-install-include = Добавить одну строку Include
+settings-remote-key-install-title = Установить ключ на { $host }?
+settings-remote-key-install-undo-note = Удаление SSH-ключа отменяет все три действия.
+settings-remote-key-remove-action = Удалить ключ
+settings-remote-key-remove-body = Затем пространство будет подключаться с другими вашими SSH-ключами.
+settings-remote-key-remove-delete = Удалить локальный ключ
+settings-remote-key-remove-include = Удалить строку Include
+settings-remote-key-remove-revoke = Отозвать доступ на { $host }
+settings-remote-key-remove-title = Удалить ключ с { $host }?
+settings-experimental-automations-label = Автоматизации
+settings-experimental-automations-description = Создавайте автоматизации по расписанию и событиям. Ранняя версия, ещё не полностью проверена.
+settings-experimental-browser-automation-label = Автоматизация браузера
+settings-experimental-browser-automation-description = Разрешить агентам использовать команды управления браузером. Действия в браузере по-прежнему требуют разрешения рабочего пространства.
+settings-search-section-typography = Типографика
+settings-search-section-terminal = Терминал
+settings-search-section-session-context = Контекст сеанса
+settings-search-entry-general-updates-automatic-network-update-checks-label = Автоматические проверки обновлений по сети
+settings-search-entry-general-updates-automatic-network-update-checks-description = Проверяет версии CLI поставщиков каждый час и каталог цен разговоров ежедневно. Выключите для использования встроенного автономного каталога.
+settings-search-entry-general-behavior-inactive-browser-timeout-label = Тайм-аут неактивного браузера
+settings-search-entry-general-behavior-inactive-browser-timeout-description = Выгружать неактивные удалённые вкладки браузера через указанное число минут. 0 отключает выгрузку. Вкладки локальной разработки и вкладки с аннотациями остаются активными.
+settings-search-entry-appearance-theme-default-theme-label = Тема по умолчанию
+settings-search-entry-appearance-theme-default-theme-description = Тема для новых рабочих пространств и после сброса темы пространства.
+settings-search-entry-appearance-fonts-terminal-streaming-label = Потоковый вывод терминала
+settings-search-entry-appearance-fonts-terminal-streaming-description = Выберите адаптивное использование ресурсов или плавный вывод вблизи частоты обновления экрана. Плавный режим расходует больше CPU и заряда, но снижает нагрузку при дорогой отрисовке.
+settings-terminal-repaint-adaptive = Адаптивный (рекомендуется)
+settings-terminal-repaint-smooth = Плавный
+settings-search-entry-terminal-behavior-scrollback-lines-label = Строки истории прокрутки
+settings-search-entry-terminal-behavior-scrollback-lines-description = Максимум строк вывода, сохраняемых новыми терминалами. 0 отключает историю прокрутки.
+settings-search-entry-appearance-layout-markdown-files-label = Файлы Markdown
+settings-search-entry-appearance-layout-markdown-files-description = Выберите, открывать ли файлы Markdown в редакторе с форматированием или в редакторе исходного текста.
+settings-markdown-file-open-mode-rich = Форматирование
+settings-markdown-file-open-mode-source = Исходный текст
+settings-search-entry-appearance-layout-full-width-chat-text-label = Текст чата на всю ширину
+settings-search-entry-appearance-layout-full-width-chat-text-description = Использовать всю ширину панели чата для сообщений и поля ввода. На широких панелях небольшой боковой отступ оставляет место для полосы истории.
+settings-search-entry-appearance-layout-show-conversation-cost-label = Показывать стоимость разговора
+settings-search-entry-appearance-layout-show-conversation-cost-description = Показывать выбранную область стоимости разговора в заголовке рабочего пространства.
+settings-search-entry-appearance-layout-conversation-cost-scope-label = Область стоимости разговора
+settings-search-entry-appearance-layout-conversation-cost-scope-description = Выберите, какую общую стоимость выделять в заголовке рабочего пространства. Всплывающее окно всегда показывает все области и каждую вкладку.
+settings-conversation-cost-scope-active = Текущий разговор
+settings-conversation-cost-scope-workspace = Текущее рабочее пространство
+conversation-cost-current-worktree = Текущее рабочее дерево
+settings-conversation-cost-scope-all-open = Все открытые окна
+settings-conversation-cost-scope-lifetime = Вся история
+conversation-cost-title = Стоимость разговора
+conversation-cost-tooltip = Стоимость: { $scope }
+conversation-cost-all-conversations = Все разговоры
+conversation-cost-last-seven-days = Последние 7 дней
+conversation-cost-last-thirty-days = Последние 30 дней
+conversation-cost-last-ninety-days = Последние 90 дней
+conversation-cost-workspace-tabs = Вкладки этого рабочего пространства
+conversation-cost-unpriced-summary = Токены без цены: { $tokens } ({ $models })
+conversation-cost-unknown-model = неизвестная модель
+conversation-cost-rates-source = Тарифы: models.dev, обновлено { $date }
+conversation-cost-estimate-note = Оценка стоимости по тарифам API, не счёт. Используются данные агентов и оценки по стандартным тарифам; использование по подписке оценивается по тем же тарифам. Показанное выше использование без цены не включено в итог.
+conversation-cost-remote-note = Удалённые пространства показывают только текущий разговор. Стоимость терминальных сеансов недоступна до появления поддержки удалённой истории. Стоимости приблизительные, это не платёжные данные.
+settings-search-entry-experimental-feature-flags-workspace-mentions-label = Упоминания в рабочем пространстве
+settings-search-entry-experimental-feature-flags-workspace-mentions-description = Упоминайте скрипты, терминалы, рабочие деревья, чаты и агентов через @ в чате.
+settings-search-entry-experimental-feature-flags-automations-label = Автоматизации
+settings-search-entry-experimental-feature-flags-automations-description = Создавайте автоматизации по расписанию и событиям. Ранняя версия, ещё не полностью проверена.
+settings-search-entry-experimental-feature-flags-browser-automation-label = Автоматизация браузера
+settings-search-entry-experimental-feature-flags-browser-automation-description = Разрешить агентам использовать команды управления браузером. Действия в браузере по-прежнему требуют разрешения рабочего пространства.
+settings-search-entry-agents-session-context-session-context-for-agents-label = Контекст сеанса для агентов
+settings-search-entry-agents-session-context-session-context-for-agents-description = Добавляйте контекст super.engineering в новые сеансы агентов или отключите фоновое добавление.
+settings-section-typography = Типографика
+settings-section-terminal = Терминал
+settings-section-routes = Маршруты
+settings-section-git-buttons = Кнопки Git
+settings-section-other-actions = Другие действия
+settings-section-session-context = Контекст сеанса
+settings-account-add = Добавить аккаунт
+settings-account-more = Ещё…
+settings-account-subscription = Подписка
+settings-account-saving-key = Сохранение API-ключа…
+settings-account-use-api-key = Добавить профиль с API-ключом…
+settings-account-existing-profile = Использовать существующий профиль…
+settings-account-refresh = Обновить
+settings-account-system-default = По умолчанию в системе
+settings-account-advanced = Дополнительно
+settings-account-reauthenticate = Повторная аутентификация
+settings-account-description = Используйте текущий вход в CLI или добавьте аккаунт для входа с подпиской. Также поддерживаются API-ключи и пользовательские профили.
+settings-account-routing = Где используются профили
+settings-account-routing-description = В разделе «Маршрутизация» выберите глобальные настройки, пространство или проект, затем профиль для настроек сеанса по умолчанию или отдельных действий. Выбранный там профиль заменяет глобальный профиль по умолчанию, заданный здесь.
+settings-account-loading = Чтение аккаунта…
+settings-account-email-unavailable = Электронная почта аккаунта недоступна
+settings-account-api-key-label = API-ключ · отдельная оплата
+settings-account-no-saved-login = Нет сохранённых данных аккаунта
+settings-account-signing-in = Завершите вход в браузере…
+settings-account-api-key-placeholder = Вставьте API-ключ { $provider }
+settings-account-api-key-description = Создайте профиль со своим API-ключом { $provider }. Использование API оплачивается отдельно от подписки. Ключ хранится локально; сохранение не проверяет его работоспособность.
+settings-account-save-key = Добавить профиль
+settings-account-unsupported = Этот поставщик не поддерживает профили аккаунтов.
+settings-account-storage-error = Не удалось сохранить локальную конфигурацию аккаунта.
+settings-account-cli-unavailable = Не удалось запустить CLI поставщика. Убедитесь, что он установлен и доступен в PATH.
+settings-account-login-failed = Вход не завершён. Повторите попытку или используйте существующий профиль.
+settings-account-timeout = Вход занял слишком много времени. Повторите попытку.
+settings-account-cancelled = Вход отменён.
+settings-account-identity-unavailable = Вход завершён, но сохранённый аккаунт не удалось прочитать. Повторите попытку или используйте существующий профиль.
+settings-account-invalid-key = Введите непустой API-ключ без переносов строк.
+settings-section-mobile-access = Мобильный доступ
+settings-section-connection-status = Состояние подключения
+settings-section-pairing = Связывание
+settings-ai-default-routes = Маршруты по умолчанию
+settings-ai-default-routes-description = Действия наследуют этот выбор поставщика и модели, если маршрут не настроен отдельно ниже.
+settings-ai-fast-model-route = Модель «Быстро»
+settings-ai-fast-model-route-description = Для быстрых задач, например коммитов и улучшения запросов.
+settings-ai-thorough-model-route = Модель «Тщательно»
+settings-ai-thorough-model-route-description = Для исследования, исправлений и проверок.
+settings-ai-git-button-routes = Кнопки Git
+settings-ai-git-button-routes-description = Настройте все кнопки Git с ИИ. «Отправить», «Обновить ветку», «Готово к проверке», «Готово к слиянию» и «Удалить рабочее дерево» выполняются напрямую, без маршрута агента.
+settings-ai-other-routes = Другие маршруты
+settings-ai-other-routes-description = Настройте именование, встроенные сообщения коммитов, улучшение запросов и ответы на рецензии. Маршруты пользовательских команд остаются при каждой команде в разделе «Команды».
+settings-ai-follows-session-default = Следует настройкам сеанса по умолчанию
+settings-ai-advanced-setup = Расширенная настройка
+settings-ai-advanced-setup-description = Исполняемый файл и общие флаги запуска этого поставщика.
+settings-ai-model-routing = Маршрутизация моделей
+settings-ai-model-routing-description = Выберите модели, профили и уровни мышления по умолчанию или настройте их для отдельных действий.
+settings-ai-manage-routing = Открыть маршрутизацию
+settings-ai-provider-fx-description = Включить поддержку чата и терминала fx (требуется установленный CLI fx `fx`).
+workspace-fx-remote-history-unsupported = Удалённые терминалы FX пока не поддерживают историю и возобновление сеансов.
+settings-keybinding-action-rename-selected-entry = Переименовать выбранный элемент
+settings-keybinding-action-chat-effort-backward = Переключить усилие чата назад
+worktree-preparing = Подготовка рабочего дерева…
+chat-queued-until-worktree-ready = Запуск, когда рабочее дерево будет готово
+chat-delivery-unconfirmed = Доставка не подтверждена
+chat-delivery-unconfirmed-retry = Перед повтором проверьте разговор: возможно, сообщение уже доставлено.
+chat-answer-pending-delivery = Ожидает доставки
+input-recommended-by = Рекомендовано агентом { $agent }
+input-drawer-waiting = { $agent } ждёт вас
+input-drawer-asks-working = { $agent } задаёт вопрос во время работы
+input-drawer-wants-command = { $agent } хочет выполнить команду
+input-drawer-wants-tool = { $agent } хочет использовать { $tool }
+input-drawer-blocked = { $agent } заблокирован
+input-drawer-review = Проверка
+input-choose-any = Выберите любые варианты
+launched-agent-stopped-app-closed = Остановлен при закрытии приложения
+model-picker-type-to-search-hint = введите для поиска
+model-picker-providers-heading = Поставщик
+composer-model = Модель
+composer-effort = Усилие
+composer-effort-lower = Уменьшить усилие
+composer-effort-raise = Увеличить усилие
+reasoning-effort-unspecified = Не задано
+settings-ai-thinking-unavailable = Эта модель не предоставляет настраиваемые уровни мышления.
+chat-message-tokens-not-reported = Не сообщено
+chat-time-today = Сегодня { $time }
+chat-time-yesterday = Вчера { $time }
+chat-permission-fallback = Режим { $mode } недоступен для { $model } на этом аккаунте.
+chat-permission-fallback-asks = { $provider } будет спрашивать перед действиями.
+chat-permission-fallback-uses = { $provider } вместо этого использует { $mode }.
+chat-steer-hold-waiting = { $provider } пока не может принять указание во время работы.
+chat-steer-hold-waiting-detail = Сообщение скорректирует работу, как только это станет возможно, или отправится после этого хода.
+chat-steer-refused = Не удалось скорректировать работу.
+chat-steer-refused-detail = { $provider } вернул ошибку. Перед повтором проверьте разговор.
+chat-steered = Работа скорректирована
+chat-steer-not-read = Не прочитано
+chat-steer-send-again = Отправить
+chat-send-failed = Не удалось отправить в этот чат. Попробуйте отправить снова.
+chat-send-failed-draft-restored = Не удалось отправить в этот чат. Сообщение осталось в поле ввода.
+chat-open-in-new-tab = Открыть в новой вкладке
+chat-open-in-split-tab = Открыть в разделённой вкладке
+chat-open-in-split-view = Открыть в разделённом представлении
+chat-fork-new-session = Ответвить в новый чат
+chat-fork-new-worktree = Ответвить в новое рабочее дерево
+chat-fork-from-here = Ответвить в новый чат
+chat-fork-unavailable = /fork недоступен для этого поставщика.
+chat-fork-no-session = /fork требует активного сеанса поставщика. Сначала отправьте сообщение и повторите попытку.
+chat-fork-worktree-unsupported = /fork worktree недоступен для этого поставщика.
+chat-fork-worktree-cut-unavailable = В этом разговоре нельзя ответвить новое рабочее дерево от данного сообщения. Ответвите от последнего сообщения или в новый сеанс чата.
+chat-fork-failed = Не удалось ответвить разговор.
+chat-fork-cut-unavailable = В этом разговоре нельзя создать ответвление от данного ответа. Ответвите от последнего ответа.
+chat-fork-missing-conversation = /fork требует сохранённого разговора. Сначала отправьте сообщение и повторите попытку.
+file-preview-edit-unavailable-long-line = Редактирование недоступно для строк длиннее 128 КиБ
+notification-codex-thread-archive-started = Архивация обсуждений Codex из удалённых рабочих деревьев…
+notification-codex-thread-archive-done = { $count ->
+    [one] Архивировано { $count } обсуждение Codex из удалённых рабочих деревьев
+    [few] Архивировано { $count } обсуждения Codex из удалённых рабочих деревьев
+    [many] Архивировано { $count } обсуждений Codex из удалённых рабочих деревьев
+   *[other] Архивировано { $count } обсуждения Codex из удалённых рабочих деревьев
+}
+notification-codex-thread-archive-failed = Некоторые обсуждения Codex не заархивированы
+notification-installing-update = Установка обновления. После завершения приложение перезапустится.
+worktree-delete-agent-working = Здесь ещё работает агент
+worktree-delete-all-action = Удалить всё
+worktree-delete-body = Его папка будет удалена с диска.
+worktree-delete-body-loses-work = Его папка будет удалена с диска вместе с работой, которой больше нигде нет.
+worktree-delete-branch-too = Также удалить ветку
+worktree-delete-branches-too = Также удалить ветки
+worktree-delete-child-count = { $count ->
+    [one] { $count } рабочее дерево
+    [few] { $count } рабочих дерева
+    [many] { $count } рабочих деревьев
+   *[other] { $count } рабочего дерева
+}
+worktree-delete-child-no-upstream = У { $name } нет upstream; неотправленные коммиты могут быть потеряны
+worktree-delete-child-uncommitted = В { $name } есть незакоммиченные изменения
+worktree-delete-child-uninspectable = Не удалось проверить { $name }: { $error }
+worktree-delete-child-unpushed = { $count ->
+    [one] В { $name } не отправлен { $count } коммит
+    [few] В { $name } не отправлены { $count } коммита
+    [many] В { $name } не отправлено { $count } коммитов
+   *[other] В { $name } не отправлено { $count } коммита
+}
+worktree-delete-confirm-title = Удалить это рабочее дерево?
+worktree-delete-has-uncommitted = Незакоммиченные изменения
+worktree-delete-no-upstream = Нет upstream; неотправленные коммиты могут быть потеряны
+worktree-delete-open-sessions = { $count ->
+    [one] Закроется { $count } открытый сеанс
+    [few] Закроются { $count } открытых сеанса
+    [many] Закроются { $count } открытых сеансов
+   *[other] Закроется { $count } открытого сеанса
+}
+worktree-delete-parent-body = Родительское дерево и все рабочие деревья внутри будут удалены с диска.
+worktree-delete-parent-confirm-title = Удалить это рабочее дерево и его дочерние деревья?
+worktree-delete-parent-uninspectable = Не удалось проверить папку: { $error }
+worktree-delete-uncommitted = { $count ->
+    [one] { $count } незакоммиченное изменение
+    [few] { $count } незакоммиченных изменения
+    [many] { $count } незакоммиченных изменений
+   *[other] { $count } незакоммиченного изменения
+}
+worktree-delete-uninspectable = Не удалось проверить: { $error }
+worktree-delete-unpushed = { $count ->
+    [one] { $count } неотправленный коммит
+    [few] { $count } неотправленных коммита
+    [many] { $count } неотправленных коммитов
+   *[other] { $count } неотправленного коммита
+}
+worktree-delete-unrecognized-entries = В папке также есть элементы, которые приложение не создавало: { $items }
+toast-retired-codex-models-title = Удалены выведенные из эксплуатации модели Codex
+toast-retired-codex-models-message = GPT-5.3 Codex, GPT-5.3 Codex Spark, GPT-5.4 и GPT-5.4 Mini больше недоступны. Сохранённый выбор этих моделей теперь использует унаследованную маршрутизацию или настройки поставщика по умолчанию. Выберите замену в настройках маршрутизации, автоматизаций и ИИ рабочего пространства.
+toast-delete-shared-worktree-failed = Не удалось удалить рабочее дерево
+toast-shared-worktree-not-found = Общее рабочее дерево не найдено.
+toast-file-picker-failed = Не удалось открыть диалог выбора файла: { $error }
+reasoning-effort-auto-short = Авто
+reasoning-effort-minimal-short = Мин
+reasoning-effort-low-short = Низкий
+reasoning-effort-medium-short = Сред
+reasoning-effort-high-short = Высокий
+reasoning-effort-extra-high-short = Оч. выс
+reasoning-effort-max-short = Макс
+reasoning-effort-ultra-short = Ультра
+theme-set-as-default-tooltip = Сделать темой по умолчанию
+theme-restore-builtin-default = Восстановить встроенную
+sidebar-rename-feature-label = Переименовать метку функции…
+sidebar-rename-branch = Переименовать ветку…
+palette-command-archive-codex-threads-for-deleted-worktrees = Архивировать обсуждения Codex для удалённых рабочих деревьев
+workspace-delete-confirm-title = Удалить «{ $name }»?
+workspace-delete-description = Его вкладки, терминальные сеансы и сохранённая компоновка будут удалены. Проекты и их файлы останутся.
+workspace-delete-description-with-contents = Его вкладки, терминальные сеансы, сохранённая компоновка и всё перечисленное ниже будут удалены.
+workspace-delete-project-leaves-app = будет удалён из приложения
+workspace-delete-shared-worktrees = { $count ->
+    [one] Будет удалено { $count } общее рабочее дерево
+    [few] Будут удалены { $count } общих рабочих дерева
+    [many] Будут удалены { $count } общих рабочих деревьев
+   *[other] Будет удалено { $count } общего рабочего дерева
+}
+workspace-delete-shared-worktrees-unknown = Его общие рабочие деревья тоже будут удалены
+chat-pill-card-open-worktree = Открыть рабочее дерево
+chat-pill-card-setup-script = Скрипт настройки
+chat-pill-card-run-script = Скрипт запуска
+chat-pill-card-teardown-script = Скрипт завершения
+chat-pill-card-worktree = Рабочее дерево
+chat-pill-card-running = Выполняется
+chat-pill-card-running-for = Выполняется { $time }
+chat-pill-card-not-running = Не выполняется
+chat-mention-section-sessions = Агенты
+chat-mention-section-worktrees = Рабочие деревья
+chat-mention-section-scripts-terminals = Скрипты и терминалы
+chat-mention-section-files = Файлы
+chat-lock-checking = Поиск процесса, удерживающего это обсуждение…
+chat-lock-owner = Удерживает
+chat-lock-unknown = Не удалось однозначно определить локальный процесс Codex, удерживающий это обсуждение.
+chat-lock-release = Остановить процесс и освободить
+chat-lock-confirm-warning = Остановка процесса прервёт все принадлежащие ему разговоры, включая работу в другом приложении.
+chat-lock-confirm = Остановить процесс
+chat-lock-cancel = Отмена
+chat-lock-releasing = Остановка процесса и проверка блокировки…
+chat-lock-released = Процесс освободил это обсуждение. Можно повторно отправить сообщение.
+chat-lock-release-failed = Не удалось освободить обсуждение. Владелец мог смениться или всё ещё работает.
+chat-lock-recheck = Проверить владельца снова

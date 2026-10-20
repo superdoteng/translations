@@ -187,7 +187,6 @@ action-reset = إعادة ضبط
 project-pinned = مثبّت
 project-no-worktrees-found = لم يتم العثور على أشجار عمل
 project-loading-merge-options = جارٍ تحميل خيارات الدمج
-update-whats-new = ماذا يوجد في هذا التحديث
 sidebar-add-project-to-start = أضف مشروعًا للبدء
 sidebar-search-project-worktrees-placeholder = البحث في أشجار العمل في { $project }
 sidebar-search-hidden-worktrees-placeholder = البحث في أشجار العمل المخفية في { $project }
@@ -229,13 +228,6 @@ clone-location-dialog-title = موقع الاستنساخ
 clone-repository-action = مستودع النسخ
 clone-repository-url = URL المستودع
 close-tab-action = إغلاق علامة التبويب
-close-tab-description = علامة التبويب هذه قيد التقدم. سيؤدي إغلاقه إلى إيقاف الوكيل.
-close-tab-title = إغلاق "{ $tab_title }"؟
-close-tab-keep-launched-agents = إبقاؤها مفتوحة كعلامات تبويب
-close-tab-launched-agents-description = { $count ->
-    [one] لا يزال وكيل بدأ من علامة التبويب هذه يعمل. سيؤدي إغلاق علامة التبويب إلى إيقافه.
-   *[other] لا يزال { $count } من الوكلاء الذين بدأوا من علامة التبويب هذه يعملون. سيؤدي إغلاق علامة التبويب إلى إيقافهم.
-}
 common-back-arrow = ← العودة
 common-browse = تصفح
 common-browse-ellipsis = تصفح…
@@ -348,7 +340,6 @@ onboarding-terminal = المحطة
 onboarding-terminal-description = شغل CLI العميل في لوحة طرفية
 project-modal-display-name = اسم العرض
 project-modal-rename-title = إعادة تسمية المشروع
-project-modal-rename-worktree-label = إعادة تسمية تسمية شجرة العمل
 project-modal-worktree-label = تسمية شجرة العمل
 project-risk-add-anyway = أضف على أي حال
 project-risk-create-anyway = إنشاء على أي حال
@@ -410,7 +401,6 @@ section-editor-name-conflict = يوجد قسم بهذا الاسم بالفعل
 section-editor-new-title = قسم جديد
 section-editor-pinned-description = القسم المثبت يكون يدويا دائما.
 section-editor-priority = الأولوية
-section-editor-priority-description = تطالب المرشحات ذات الأولوية العليا بأشجار العمل المطابقة أولاً. الأولوية لا تغير موضع القسم. الأقسام اليدوية تفوز دائمًا.
 section-editor-type = نوع القسم
 section-priority-highest = { $rank } · الأعلى
 section-priority-highest-only = الأعلى
@@ -456,7 +446,6 @@ welcome-open-project = مشروع مفتوح
 welcome-open-project-description = أضف الريبو الموجود
 welcome-quick-start = بداية سريعة
 welcome-quick-start-description = مشروع جديد من القالب
-whats-new-release-count = إصدارات { $count }
 whats-new-title = ما هو الجديد
 workspace-add-repositories-ellipsis = إضافة مستودعات...
 workspace-ai-quick = سريع
@@ -465,7 +454,6 @@ workspace-ai-setup = إعداد AI
 workspace-ai-thorough = شامل
 workspace-ai-thorough-description = يشغل وكيل AI لتحليل المستودعات وكتابة ملفات السياق.
 workspace-choose-icon = اختر أيقونة
-workspace-delete-title = حذف مساحة العمل
 workspace-individual-projects = المشاريع الفردية
 workspace-individual-projects-description = العمل في مستودعات منفصلة مع أشجار عمل مستقلة.
 workspace-individual-projects-detail = الأفضل لتغييرات الريبو الفردي وأعمال الصيانة والمهام غير ذات الصلة.
@@ -491,7 +479,6 @@ worktree-create-in-background = إنشاء في الخلفية
 worktree-create-refresh-branches = جلب الفروع البعيدة
 worktree-create-refresh-failed = فشل الجلب: { $error }
 worktree-create-return = إنشاء ↵
-worktree-delete-title = حذف شجرة العمل
 worktree-in-workspace = في مساحة العمل
 worktree-no-matching-branches = لا توجد فروع مطابقة
 worktree-not-installed = غير مثبت
@@ -880,7 +867,6 @@ settings-section-layout = التصميم
 settings-section-chat = الدردشة
 settings-section-files-diffs = الملفات والفروقات
 settings-section-usage-cost = الاستخدام والتكلفة
-settings-section-fonts = الخطوط
 settings-section-delivery = التسليم
 settings-section-queue = قائمة الانتظار
 settings-section-per-type-overrides = تجاوزات لكل نوع
@@ -1099,7 +1085,6 @@ review-findings-triage-hint = صنّف كل ملاحظة إما يجب إصلا�
 chat-assignment = التعيين
 chat-plan = الخطة
 approval-allow = السماح
-approval-allow-for-session = السماح بالجلسة
 approval-deny = إنكار
 approval-needs-access = يحتاج إلى الوصول إلى
 approval-show-input = إظهار الإدخال الكامل
@@ -1257,7 +1242,6 @@ clone-status-canceled = تم إلغاء نسخة مستنسخة: { $repository }
 file-dialog-select-profile-folder = اختر مجلد ملف تعريف
 notification-app-up-to-date = { $app_name } محدث
 notification-pasting-image = ألصق الصورة...
-notification-restarting-for-update = إعادة التشغيل لتطبيق التحديث...
 notification-status-running = الجري
 notification-status-working = العمل
 notification-status-task-complete = المهمة مكتملة
@@ -1344,7 +1328,6 @@ toast-notification = إشعار
 toast-cannot-create-worktree = لا يمكن إنشاء شجرة العمل
 toast-create-worktree-failed = فشل إنشاء شجرة العمل
 toast-delete-worktree-failed = فشل في حذف شجرة العمل
-toast-delete-branch-group-failed = فشل في حذف مجموعة الفروع
 toast-delete-child-worktree-failed = فشل حذف شجرة العمل الفرعية
 toast-add-child-failed = فشل في إضافة طفل
 toast-pull-failed = فشل السحب
@@ -1355,7 +1338,6 @@ toast-post-cleanup-hook-failed = فشل الخطاف بعد التنظيف
 toast-child-repository-not-found = لم يتم العثور على مستودع الأطفال '{ $name }'
 toast-branch-switch-main-only = يدعم تبديل الفروع فقط في شجرة العمل الرئيسية
 toast-shared-no-child-repositories = هذه مساحة العمل المشتركة لا تحتوي على مستودعات فرعية.
-toast-shared-branch-group-not-found = لم يتم العثور على مجموعة فرع مشترك.
 toast-selected-worktree-not-found = لم يتم العثور على شجرة عمل محددة.
 toast-project-not-found = المشروع لم يعثر عليه.
 toast-worktree-not-found = شجرة العمل غير موجودة.
@@ -1604,7 +1586,6 @@ settings-search-section-open-in-apps = تطبيقات Open In
 settings-search-section-storage = التخزين
 settings-search-section-diagnostics = التشخيصات
 settings-search-section-theme = الموضوع
-settings-search-section-fonts = الخطوط
 settings-search-section-layout = التصميم
 settings-search-section-chat = الدردشة
 settings-search-section-files---diffs = الملفات والفروقات
@@ -2533,12 +2514,6 @@ settings-remote-probe-home = المنزل
 settings-remote-probe-shell = شل
 settings-remote-probe-temp = مؤقت
 settings-remote-probe-git = Git
-settings-remote-key-install-confirm-title = هل يمكن تركيب مفتاح SSH مخصص على { $host }؟
-settings-remote-key-install-confirm-body = { $app_name } سيقوم ب: توليد مفتاح جديد عند { $key_path } (بدون عبارة مرور)، إضافة مفتاحه العام إلى ~/.ssh/authorized_keys على { $host } (قد يطلب منك كلمة المرور مرة واحدة)، وإضافة سطر تضمين واحد إلى ~/.ssh/config يشير إلى ملف مدار من قبل التطبيق. يمكنك إزالة كل هذا لاحقا باستخدام "إزالة مفتاح SSH".
-settings-remote-key-install-confirm-action = مفتاح التثبيت
-settings-remote-key-remove-confirm-title = هل أزيل مفتاح SSH المخصص من { $host }؟
-settings-remote-key-remove-confirm-body = سيقوم { $app_name } أولا بإزالة هذا المفتاح من ~/.ssh/authorized_keys على { $host }، ثم حذف زوج المفاتيح المحلي عند { $key_path } وحجبه في ~/.ssh/super.engineering_config. إذا لم يتمكن التنظيف عن بعد من التحقق من المصادقة، سيتم الحفاظ على بيانات الاعتماد المحلية حتى تتمكن من إعادة المحاولة بأمان.
-settings-remote-key-remove-confirm-action = إزالة SSH المفتاح
 settings-remote-removing-ssh-key = إزالة...
 settings-remote-remove-ssh-key = إزالة المفتاح SSH
 settings-remote-invalid-target-config-preview = أدخل SSH الهدف الصحيح لمعاينة تكوينه.
@@ -2753,7 +2728,6 @@ settings-search-entry-appearance-layout-usage-meter-window-description = اخت�
 settings-usage-meter-window-smart = ذكي
 settings-usage-meter-window-session = تفضيل الجلسة
 settings-usage-meter-window-weekly = تفضيل الأسبوع
-usage-meter-tooltip = { $provider } · متبقٍ { $percent }% في نافذة { $window } هذه
 usage-meter-unavailable = الاستخدام غير متاح لـ { $provider }
 usage-meter-signed-out = لم يتم تسجيل الدخول
 usage-meter-stale = فشل التحديث — يتم عرض البيانات المخزنة مؤقتًا
@@ -2845,7 +2819,6 @@ data-directory-notice-config = إعداد المستودع: استخدم .super.
 data-directory-notice-scripts = تبقى ملفات البرامج النصية في مكانها. إذا نقلت برنامجاً نصياً، فحدّث الأمر الذي يشغّله. ينبغي أن تقرأ البرامج النصية متغيرات SUPER_ENGINEERING_*؛ ما زالت أسماء SUPERCONDUCTOR_* تُصدَّر حالياً وستُزال في إصدار لاحق.
 
 chat-agent-steered = غيّر { $name } توجيه الوكيل
-chat-agent-steered-after = غيّر { $name } توجيه الوكيل بعد { $duration }
 chat-agent-stopped = أوقفه { $name }
 chat-agent-stopped-after = أوقف { $name } الوكيل بعد { $duration }
 chat-context-compacted = تم ضغط السياق
@@ -2886,7 +2859,7 @@ chat-pill-card-show-in-files = إظهار في الملفات
 chat-pill-card-skill = مهارة
 chat-pill-card-video = فيديو
 chat-pill-card-website = موقع ويب
-chat-steer-waiting = بانتظار أن يقرأه { $agent }
+chat-steer-waiting = بانتظار القراءة
 chat-turn-group-agents-count = { $count ->
     [zero] لا وكلاء
     [one] وكيل واحد
@@ -2922,8 +2895,6 @@ chat-worktree-card-deleting = جارٍ الحذف...
 chat-worktree-card-recreated = تمت إعادة الإنشاء
 chat-worktree-card-recreating = جارٍ إعادة الإنشاء…
 chat-worktree-card-working = الوكيل قيد التشغيل
-chat-you-steered = غيّرتَ توجيه الوكيل
-chat-you-steered-after = غيّرتَ توجيه الوكيل بعد { $duration }
 chat-you-stopped = أوقفتَ الوكيل
 chat-you-stopped-after = أوقفتَ الوكيل بعد { $duration }
 created-worktrees-summary = { $count ->
@@ -2954,13 +2925,11 @@ input-asked-you = { $count ->
 input-auto-resolves = يُحَل تلقائيًا خلال { $seconds } ث
 input-question-position = { $current } من { $total }
 input-recommended = موصى به
-input-review-title = إرسال إجاباتك؟
 input-send = إرسال
 input-skip = تخطي
 input-skipped = تم التخطي
 input-something-else = شيء آخر…
 input-type-answer = اكتب إجابتك…
-input-type-own-answer = أو اكتب إجابة من عندك…
 launch-card-finished = اكتمل: { $count }
 launch-card-not-started = لم يبدأ: { $count }
 launch-card-stopped = تم إيقاف { $count }
@@ -3034,3 +3003,558 @@ workspace-attached-back = العودة إلى { $tab_title }
 workspace-created-worktrees-header = أشجار العمل المُنشأة
 workspace-view-html = عرض
 workspace-view-in-browser = عرض في المتصفح
+
+action-discard = تجاهل
+chat-reloading-pi-resources = جارٍ إعادة تحميل موارد Pi...
+file-menu-rename = إعادة تسمية
+browser-send-annotations-to-new-chat = إرسال التعليقات التوضيحية إلى محادثة جديدة مع { $provider }
+browser-annotation-destination-unavailable = وجهة التعليقات التوضيحية هذه لم تعد متاحة
+browser-annotation-composer-blocked = لا يمكن إضافة تعليقات توضيحية أثناء التركيز على سجل وكيل فرعي
+browser-consent-title = السماح للوكلاء بالتحكم في المتصفح في «{ $workspace_name }»؟
+browser-consent-asked-by-agent = وكيل
+browser-consent-asked-by-worktree = وكيل يعمل في «{ $caller_label }»
+browser-consent-description = طلب { $asked_by } تشغيل ⁨sc browser { $spelling }⁩ في علامة تبويب المتصفح لمساحة العمل هذه. تمنح الموافقة جميع وكلاء مساحة العمل إذنًا دائمًا — لهذا الأمر وكل أوامر act المستقبلية، وليس لهذا الأمر وحده — للنقر والكتابة والتنقل وتشغيل النصوص البرمجية على أي صفحة مفتوحة، بما فيها الجلسات المسجّل دخولها. لا تحتاج معظم أوامر القراءة فقط إلى موافقة، لكن قراءة قيم ملفات تعريف الارتباط تحتاج إليها. يبقى الإذن محفوظًا لمساحة العمل ويمكن سحبه في أي وقت من الإعدادات.
+browser-new-chats = محادثة جديدة
+palette-no-matching-files-index-incomplete = لا توجد ملفات مطابقة (الفهرس غير مكتمل: تتجاوز شجرة العمل حد فحص الملفات)
+update-ready-title = التحديث جاهز
+update-ready-restart = إعادة التشغيل
+update-restart-eyebrow = الإصدار { $version }
+update-restart-title = إعادة التشغيل للتحديث؟
+update-restart-body-agents = { $count ->
+        [zero] أعد التشغيل عند انتهاء الوكلاء، أو الآن لإيقافهم. ستُفتح علامات التبويب مجددًا في الحالتين.
+        [one] أعد التشغيل عند انتهاء الوكيل، أو الآن لإيقافه. ستُفتح علامات التبويب مجددًا في الحالتين.
+        [two] أعد التشغيل عند انتهاء الوكيلين، أو الآن لإيقافهما. ستُفتح علامات التبويب مجددًا في الحالتين.
+        [few] أعد التشغيل عند انتهاء الوكلاء، أو الآن لإيقافهم. ستُفتح علامات التبويب مجددًا في الحالتين.
+        [many] أعد التشغيل عند انتهاء الوكلاء، أو الآن لإيقافهم. ستُفتح علامات التبويب مجددًا في الحالتين.
+       *[other] أعد التشغيل عند انتهاء الوكلاء، أو الآن لإيقافهم. ستُفتح علامات التبويب مجددًا في الحالتين.
+    }
+update-restart-body-commands = { $count ->
+        [zero] تتوقف هذه الأوامر عند إعادة تشغيل التطبيق. تُفتح طرفياتها مجددًا بعد ذلك.
+        [one] يتوقف هذا الأمر عند إعادة تشغيل التطبيق. تُفتح طرفيته مجددًا بعد ذلك.
+        [two] تتوقف هذه الأوامر عند إعادة تشغيل التطبيق. تُفتح طرفياتها مجددًا بعد ذلك.
+        [few] تتوقف هذه الأوامر عند إعادة تشغيل التطبيق. تُفتح طرفياتها مجددًا بعد ذلك.
+        [many] تتوقف هذه الأوامر عند إعادة تشغيل التطبيق. تُفتح طرفياتها مجددًا بعد ذلك.
+       *[other] تتوقف هذه الأوامر عند إعادة تشغيل التطبيق. تُفتح طرفياتها مجددًا بعد ذلك.
+    }
+update-restart-body-done = انتهى كل شيء. ستُفتح علامات التبويب مجددًا بعد إعادة التشغيل.
+update-restart-now = إعادة التشغيل الآن
+update-restart-not-now = ليس الآن
+update-restart-when-done = إعادة التشغيل عند الانتهاء
+update-restart-restart = إعادة التشغيل
+update-restart-row-running = يعمل منذ { $elapsed }
+update-restart-row-running-now = قيد التشغيل
+update-restart-row-needs-input = بانتظار إجابتك
+update-restart-open = فتح
+update-restart-answer = إجابة
+update-wait-pill = { $count ->
+        [zero] بعد { $count } وكيل
+        [one] بعد وكيل واحد
+        [two] بعد وكيلين
+        [few] بعد { $count } وكلاء
+        [many] بعد { $count } وكيلًا
+       *[other] بعد { $count } وكيل
+    }
+update-wait-restarting = جارٍ إعادة التشغيل
+update-wait-title = { $count ->
+        [zero] إعادة التشغيل بعد { $count } وكيل
+        [one] إعادة التشغيل بعد وكيل واحد
+        [two] إعادة التشغيل بعد وكيلين
+        [few] إعادة التشغيل بعد { $count } وكلاء
+        [many] إعادة التشغيل بعد { $count } وكيلًا
+       *[other] إعادة التشغيل بعد { $count } وكيل
+    }
+update-wait-dont-wait = عدم الانتظار
+chat-stopped-for-update = توقف للتحديث إلى { $version }
+chat-continue-after-update = متابعة
+release-notes-section-new = جديد
+release-notes-section-fixes = إصلاحات
+release-notes-section-faster = أسرع
+release-notes-section-improved = تحسينات
+update-cli-title = التحديثات
+update-cli-note = لا تنقطع الجلسات الجارية. تستخدم الجلسات الجديدة الإصدار الجديد.
+update-cli-failed-count = لم تكتمل { $count } من التحديثات
+update-cli-action-update = تحديث
+update-cli-action-update-all = تحديث الكل
+update-cli-action-retry = أعد المحاولة
+update-cli-action-skip = تخطي
+update-cli-action-skip-all = تخطي الكل
+update-cli-action-retry-all = إعادة محاولة الكل
+update-cli-action-fix-in-chat = إصلاح في المحادثة
+update-cli-action-run-in-terminal = تشغيل في الطرفية
+update-cli-terminal-local-only = اختر شجرة عمل محلية لتحديث واجهة CLI هذه في طرفية.
+update-cli-action-details = التفاصيل
+update-cli-action-copy-output = نسخ المخرجات
+update-cli-failed-permission = يتطلب إذن المسؤول
+update-cli-failed-timeout = انتهت المهلة بعد 5 دقائق
+update-cli-failed-outdated = لا يزال الإصدار { $version } بعد التحديث
+update-cli-manual-hint = تحديث يدوي
+close-tab-and-stop-action = إغلاق وإيقاف
+close-tab-confirm-title = إغلاق علامة التبويب هذه؟
+close-tab-more-children = +{ $count } المزيد
+close-tab-stop-launched-agents = { $count ->
+        [zero] إيقاف جميع الوكلاء الذين تم إطلاقهم
+        [one] إيقاف الوكيل الذي تم إطلاقه
+        [two] إيقاف جميع الوكلاء الذين تم إطلاقهم
+        [few] إيقاف جميع الوكلاء الذين تم إطلاقهم
+        [many] إيقاف جميع الوكلاء الذين تم إطلاقهم
+       *[other] إيقاف جميع الوكلاء الذين تم إطلاقهم
+    }
+close-tab-running-description = لا يزال وكيلها يعمل وسيتوقف.
+close-tab-working-children = { $count ->
+        [zero] لا يزال { $count } من الوكلاء الذين أطلقتهم يعملون.
+        [one] لا يزال وكيل أطلقته يعمل.
+        [two] لا يزال وكيلان أطلقتهما يعملان.
+        [few] لا يزال { $count } وكلاء أطلقتهم يعملون.
+        [many] لا يزال { $count } من الوكلاء الذين أطلقتهم يعملون.
+       *[other] لا يزال { $count } من الوكلاء الذين أطلقتهم يعملون.
+    }
+common-dont-ask-again = عدم السؤال مجددًا
+project-modal-rename-feature-label = إعادة تسمية وسم الميزة
+project-risk-creates-git = يُنشئ ⁨.git⁩
+section-editor-behavior = السلوك
+section-editor-focus = تركيز
+section-editor-focus-description = ينقل أشجار العمل المطابقة مؤقتًا إلى هنا، قبل الأقسام المثبتة واليدوية وأقسام التنظيم. تعود تلقائيًا عندما لا تعود مطابقة.
+section-editor-focus-priority-description = تأخذ أقسام التركيز أشجار العمل المطابقة أولًا. عند تطابق عدة أقسام تركيز، يفوز القسم الأعلى أولوية.
+section-editor-organize = تنظيم
+section-editor-organize-description = يجمع أشجار العمل المطابقة باستخدام مواضعها العادية. لأقسام التركيز والمواضع اليدوية الأسبقية.
+section-editor-organize-priority-description = عند تطابق عدة أقسام تنظيم، يفوز القسم الأعلى أولوية. تبقى الأسبقية للتركيز والمواضع اليدوية.
+workspace-update-agents-description = تغيرت مشاريع مساحة العمل. حلّل المستودعات لتحديث ⁨AGENTS.md⁩، أو تخطّ ذلك للاحتفاظ بالملف الحالي.
+workspace-update-agents-title = تحديث إرشادات مساحة العمل؟
+settings-sidebar-group-mobile = الهاتف
+settings-category-routing = التوجيه
+settings-category-terminal = الطرفية
+settings-category-mobile = الهاتف
+settings-category-routing-description = اختر الموفر والملف الشخصي والنموذج والجهد وسلوك التشغيل لإجراءات الوكيل.
+settings-category-terminal-description = مظهر الطرفية وبثها وسلوك سجل التمرير.
+settings-category-mobile-description = أقرن جهاز Mac هذا بتطبيق super.engineering للهاتف.
+settings-mobile-access-label = الوصول عبر الهاتف
+settings-mobile-access-detail-off = الوصول عبر الهاتف معطّل. لا يقبل جهاز Mac اتصالات الهواتف.
+settings-mobile-access-detail-starting = جارٍ بدء الوصول عبر الهاتف…
+settings-mobile-access-detail-ready = الوصول عبر الهاتف جاهز على المنفذ { $port }.
+settings-mobile-access-detail-stopping = جارٍ تعطيل الوصول عبر الهاتف…
+settings-mobile-setup-action = إعداد الهاتف
+settings-mobile-disable-action = تعطيل الوصول عبر الهاتف
+settings-mobile-retry-action = إعادة المحاولة
+settings-mobile-host-name-label = اسم الكمبيوتر
+settings-mobile-host-name-description = الاسم الذي يظهر به جهاز Mac هذا على هواتفك المقترنة. اتركه فارغًا لاستخدام اسمه في macOS.
+settings-mobile-host-name-placeholder = اسم جهاز Mac هذا
+settings-mobile-rename-action = إعادة تسمية
+settings-mobile-save-name-action = حفظ
+settings-mobile-device-name-placeholder = استخدام اسم الهاتف
+settings-mobile-testflight-label = الحصول على تطبيق الهاتف
+settings-mobile-testflight-description = امسح بكاميرا iPhone لتثبيت إصدار TestFlight قبل الإقران.
+settings-mobile-local-network-label = الشبكة المحلية
+settings-mobile-local-network-unavailable = لم يُكتشف عنوان محلي صالح للاستخدام. صِل الجهازين بشبكة Wi-Fi نفسها وأعد المحاولة.
+settings-mobile-away-label = خارج المنزل
+settings-mobile-tailscale-ready-detail = ⁨{ $address }⁩ · استخدم شبكة Tailscale نفسها على جهاز Mac والهاتف.
+settings-mobile-tailscale-optional-detail = Tailscale اختياري ولم يُكتشف. سجّل الدخول إلى شبكة tailnet نفسها على جهاز Mac والهاتف للوصول من خارج المنزل.
+settings-mobile-tailscale-help-action = تنزيل Tailscale
+settings-mobile-failure-persist = تعذر حفظ إعدادات الوصول عبر الهاتف. تحقق من إمكانية الوصول إلى القرص وأعد المحاولة.
+settings-mobile-failure-port-in-use = المنفذ { $port } مستخدم بالفعل. أغلق التطبيق الذي يستخدم المنفذ { $port } ثم أعد المحاولة.
+settings-mobile-failure-start = تعذر بدء الوصول عبر الهاتف. تحقق من الشبكة ثم أعد المحاولة.
+settings-mobile-failure-stop = تعذر تعطيل الوصول عبر الهاتف بالكامل. قد يظل متاحًا؛ أعد المحاولة.
+settings-mobile-failure-not-ready = الوصول عبر الهاتف غير جاهز بعد. انتظر اكتمال الإعداد ثم أعد المحاولة.
+settings-mobile-failure-no-reachable-endpoint = لا يتوفر عنوان يمكن للهاتف الوصول إليه. استخدم شبكة Wi-Fi نفسها، أو سجّل اختياريًا الدخول إلى شبكة Tailscale نفسها على الجهازين، ثم أعد المحاولة.
+settings-mobile-failure-device-not-found = لم يعد هذا الهاتف مقترنًا. ستُحدّث قائمة الأجهزة تلقائيًا.
+settings-mobile-status-off = معطّل
+settings-mobile-status-starting = جارٍ البدء…
+settings-mobile-status-ready = جاهز
+settings-mobile-status-stopping = جارٍ الإيقاف…
+settings-mobile-status-failed = يتطلب الانتباه
+settings-mobile-status-optional = اختياري
+settings-mobile-status-unavailable = غير متوفر
+settings-mobile-pair-label = إقران هاتف
+settings-mobile-pair-description = أنشئ رمز إقران آمنًا للاستخدام مرة واحدة باستخدام عناوين الشبكة المحلية الحالية وعناوين Tailscale الاختيارية.
+settings-mobile-pair-action = إنشاء رمز إقران
+settings-mobile-pairing-action = جارٍ الإنشاء…
+settings-mobile-regenerate-action = إنشاء رمز جديد
+settings-mobile-scan-instruction = افتح super.engineering على هاتفك وامسح هذا الرمز
+settings-mobile-copy-link = نسخ رابط الإقران
+settings-mobile-expires = تنتهي صلاحية هذا الرمز في { $time }.
+settings-mobile-pairing-expired = انتهت صلاحية رمز الإقران هذا. أنشئ رمزًا جديدًا وأعد المحاولة.
+settings-mobile-pairing-qr-error = تعذر تجهيز رمز الإقران: { $error }. أعد المحاولة.
+settings-mobile-devices-label = الهواتف المقترنة
+settings-mobile-device-count = { $count ->
+        [zero] لا توجد هواتف مقترنة.
+        [one] هاتف واحد مقترن.
+        [two] هاتفان مقترنان.
+        [few] { $count } هواتف مقترنة.
+        [many] { $count } هاتفًا مقترنًا.
+       *[other] { $count } هاتف مقترن.
+    }
+settings-mobile-no-devices = لم تقترن أي هواتف بجهاز Mac هذا بعد.
+settings-mobile-devices-observed = تظهر الهواتف المقترنة حديثًا هنا تلقائيًا.
+settings-mobile-device-trust-paired = مقترن
+settings-mobile-device-detail = { $status } · تاريخ الإقران { $paired } · آخر ظهور { $last_seen }
+settings-mobile-revoke-action = سحب الإذن
+settings-mobile-revoking-action = جارٍ سحب الإذن…
+settings-mobile-confirm-revoke-action = تأكيد سحب الإذن
+settings-project-icon-paste-clipboard = لصق صورة من الحافظة
+settings-project-icon-paste-empty = لا تحتوي الحافظة على صورة
+settings-workspace-automation-section = أتمتة المتصفح
+settings-workspace-browser-automation-label = السماح للوكلاء بالتحكم في المتصفح
+settings-workspace-browser-automation-description = يمكن للوكلاء النقر والكتابة وتشغيل النصوص البرمجية في علامة تبويب المتصفح لمساحة العمل هذه.
+settings-repository-config-source-title = إعدادات المستودع
+settings-repository-config-source-description = أتمتة وخوادم MCP للقراءة فقط، محمّلة من هذا المستودع. تظل الإعدادات الشخصية قابلة للتحرير أدناه.
+settings-repository-config-status-missing = لم يُعثر على إعدادات للمستودع
+settings-repository-config-status-loaded = تم التحميل
+settings-repository-config-status-invalid = تعذر تحميل إعدادات المستودع
+settings-repository-config-path = المسار
+settings-repository-config-open = فتح الإعدادات
+settings-repository-config-refresh = تحديث
+settings-repository-config-setup = التحضير
+settings-repository-config-run = تشغيل
+settings-repository-config-teardown = التفكيك
+settings-repository-config-commands = أوامر مشتركة
+settings-repository-config-mcp-servers = خوادم MCP
+settings-repository-config-id = المعرّف
+settings-repository-config-start-command = أمر البدء
+settings-repository-config-stop-command = أمر الإيقاف
+settings-repository-config-not-default = غير افتراضي
+settings-repository-config-empty = لا توجد أوامر أو خوادم MCP معرّفة في هذا الملف.
+settings-repository-config-cleanup-ignored = تُتجاهل أوامر المستودع قبل التنظيف وبعده؛ تبقى إعدادات التنظيف ضمن إعدادات التطبيق الشخصية.
+settings-repository-config-precedence = تتجاوز إعدادات التحضير والتشغيل والتفكيك في المستودع القيم الشخصية عند وجودها. تُضاف الأوامر المشتركة إلى الأوامر الشخصية.
+settings-ai-search-providers-placeholder = البحث عن موفرين...
+settings-ai-search-profiles-placeholder = البحث عن ملفات شخصية...
+settings-ai-changes-apply-immediately = تُطبّق التغييرات فورًا.
+settings-ai-back-to-models = العودة إلى النماذج
+settings-ai-customized-here = مخصّص هنا
+settings-ai-use-inherited-settings = استخدام الإعدادات الموروثة
+settings-ai-use-global-settings = استخدام الإعدادات العامة
+settings-ai-use-workspace-settings = استخدام إعدادات مساحة العمل
+settings-ai-use-session-settings = استخدام إعدادات الجلسة الافتراضية
+settings-ai-use-fast-settings = استخدام إعدادات السريع
+settings-ai-use-thorough-settings = استخدام إعدادات الدقيق
+settings-ai-undo-routing = التراجع عن آخر تغيير في التوجيه
+settings-ai-default-profiles = الملفات الشخصية الافتراضية
+settings-ai-apply-profile-to-routes = تطبيق على جميع المسارات
+settings-ai-provider-default-profile = الملف الشخصي الافتراضي لـ{ $provider }
+settings-ai-provider-default-profile-description = يُستخدم للمحادثات والطرفيات الجديدة. يستبدل «تطبيق على جميع المسارات» تخصيصات الملف الشخصي لهذا الموفر في النطاق المحدد.
+settings-ai-routing-start-here = ابدأ بالإعداد الافتراضي للجلسة. يتبعه السريع والدقيق حتى تختار إعدادات مختلفة. خصّص الإجراءات الفردية أدناه عند الحاجة فقط.
+settings-ai-default-impact = يتبع { $following } من الإجراءات هذا الإعداد الافتراضي · ولدى { $customized } تخصيصات. تبقى التخصيصات كما هي.
+settings-ai-search-thinking-placeholder = البحث عن مستويات التفكير...
+settings-ai-no-model-matches = لا توجد نماذج مطابقة. جرّب اسمًا أقصر أو غيّر الموفر.
+settings-ai-no-provider-matches = لا يوجد موفرون مطابقون. جرّب اسمًا آخر أو فعّل موفرًا في «الوكلاء».
+settings-ai-no-profile-matches = لا توجد ملفات شخصية مطابقة. جرّب اسمًا آخر أو أدر ملفاتك في «الملفات الشخصية».
+settings-ai-routing-no-models = لا توجد نماذج مدرجة بعد. يمكنك استخدام الإعداد الافتراضي للموفر أو تحديث النماذج في «الوكلاء».
+settings-ai-hidden-models-hint = قد تكون بعض النماذج مخفية وفق إعدادات ظهور النماذج.
+settings-ai-provider-hidden-hint = هذا الموفر غير مفعّل في هذا النطاق. لم يتغير المسار المحفوظ.
+settings-ai-cli-default-explanation = يستخدم الإعداد الافتراضي لـCLI حساب الموفر وإعداداته الخاصة، دون ملف شخصي مسمّى.
+settings-ai-open-provider-settings = فتح إعدادات الموفر
+settings-ai-edit-followed-default = تحرير الإعداد الافتراضي المتّبع
+settings-ai-inherited-from-name = موروث من { $name }
+settings-ai-follows-fast = يتبع السريع
+settings-ai-follows-thorough = يتبع الدقيق
+settings-ai-automatic-naming-route = يتبع السريع
+settings-ai-use-automatic-naming = استخدام النموذج السريع
+settings-ai-profile-used-by = تستخدمه
+settings-ai-profile-shared-changes = تُطبّق تغييرات هذا الملف الشخصي على المسارات أدناه والإجراءات التي ترثها.
+settings-ai-profile-no-route-uses = لا توجد تعيينات مباشرة في الإعدادات العامة أو إعدادات مساحة العمل أو المشروع.
+settings-ai-profile-in-use = يُستخدم هذا الملف الشخصي في «التوجيه». اختر بديلًا في «التوجيه» قبل إزالته.
+settings-ai-run-with-column = التشغيل باستخدام
+settings-ai-branch-naming-rule = قاعدة التسمية
+settings-ai-session-context-section = سياق الجلسة
+settings-ai-agent-session-context-label = سياق الجلسة للوكلاء
+settings-ai-agent-session-context-description = يمكن لـsuper.engineering إضافة سياق إلى جلسات الوكلاء ليساعدهم على العثور على واجهة sc CLI للتطبيق واستخدامها بأمان.
+settings-ai-agent-session-context-standard-label = قياسي
+settings-ai-agent-session-context-standard-description = يتلقى الوكلاء تعليمات super.engineering القياسية لواجهة CLI وتوجيه التنسيق.
+settings-ai-agent-session-context-off-label = معطّل
+settings-ai-agent-session-context-off-description = لا يُضاف سياق جلسة ضمني أثناء التعطيل. لا تتأثر الإجراءات الصريحة مثل المراجعات وتسليم مهام أشجار العمل، وتظل ضوابط أوامر sc سارية.
+settings-remote-key-install-action = تثبيت المفتاح
+settings-remote-key-install-authorize = التصريح به على ⁨{ $host }⁩
+settings-remote-key-install-body = سينشئ { $app_name } مفتاح SSH مخصصًا لمساحة العمل هذه.
+settings-remote-key-install-create = إنشاء مفتاح دون عبارة مرور
+settings-remote-key-install-include = إضافة سطر Include واحد
+settings-remote-key-install-title = تثبيت مفتاح على ⁨{ $host }⁩؟
+settings-remote-key-install-undo-note = يتراجع «إزالة مفتاح SSH» عن الخطوات الثلاث.
+settings-remote-key-remove-action = إزالة المفتاح
+settings-remote-key-remove-body = تتصل مساحة العمل باستخدام مفاتيح SSH الأخرى بعد ذلك.
+settings-remote-key-remove-delete = حذف المفتاح المحلي
+settings-remote-key-remove-include = إزالة سطر Include
+settings-remote-key-remove-revoke = سحب التصريح به على ⁨{ $host }⁩
+settings-remote-key-remove-title = إزالة المفتاح من ⁨{ $host }⁩؟
+settings-experimental-automations-label = الأتمتة
+settings-experimental-automations-description = إنشاء عمليات أتمتة مجدولة أو قائمة على الأحداث. معاينة مبكرة لم تُختبر بالكامل بعد.
+settings-experimental-browser-automation-label = أتمتة المتصفح
+settings-experimental-browser-automation-description = السماح للوكلاء باستخدام أوامر التحكم بالمتصفح. تظل إجراءات المتصفح بحاجة إلى إذن مساحة العمل.
+settings-search-section-typography = تنسيق الخطوط
+settings-search-section-terminal = الطرفية
+settings-search-section-session-context = سياق الجلسة
+settings-search-entry-general-updates-automatic-network-update-checks-label = فحص التحديثات تلقائيًا عبر الشبكة
+settings-search-entry-general-updates-automatic-network-update-checks-description = يفحص إصدارات CLI للموفرين كل ساعة وكتالوج تسعير المحادثات يوميًا. عطّله لاستخدام الكتالوج المضمّن دون اتصال.
+settings-search-entry-general-behavior-inactive-browser-timeout-label = مهلة خمول المتصفح
+settings-search-entry-general-behavior-inactive-browser-timeout-description = إلغاء تحميل علامات تبويب المتصفح البعيدة الخاملة بعد هذا العدد من الدقائق. اضبطه على 0 للتعطيل. تظل علامات التطوير المحلي وعلامات التعليقات التوضيحية نشطة.
+settings-search-entry-appearance-theme-default-theme-label = السمة الافتراضية
+settings-search-entry-appearance-theme-default-theme-description = السمة التي تستخدمها مساحات العمل الجديدة والتي يعيدها خيار إعادة الضبط لمساحة العمل.
+settings-search-entry-appearance-fonts-terminal-streaming-label = بث الطرفية
+settings-search-entry-appearance-fonts-terminal-streaming-description = اختر استخدامًا متكيفًا للموارد أو بثًا أكثر سلاسة قريبًا من معدل تحديث الشاشة. يستهلك الوضع السلس مزيدًا من المعالج والبطارية، لكنه يخفف الحمل عندما يصبح العرض مكلفًا.
+settings-terminal-repaint-adaptive = متكيف (موصى به)
+settings-terminal-repaint-smooth = سلس
+settings-search-entry-terminal-behavior-scrollback-lines-label = أسطر سجل التمرير
+settings-search-entry-terminal-behavior-scrollback-lines-description = أقصى عدد لأسطر المخرجات المحتفظ بها في الطرفيات المفتوحة حديثًا. اضبطه على 0 لتعطيل سجل التمرير.
+settings-search-entry-appearance-layout-markdown-files-label = ملفات Markdown
+settings-search-entry-appearance-layout-markdown-files-description = اختر فتح ملفات Markdown في المحرر المنسق أو محرر المصدر.
+settings-markdown-file-open-mode-rich = منسق
+settings-markdown-file-open-mode-source = المصدر
+settings-search-entry-appearance-layout-full-width-chat-text-label = نص المحادثة بعرض كامل
+settings-search-entry-appearance-layout-full-width-chat-text-description = استخدام عرض لوحة المحادثة بالكامل للرسائل ومحرر الرسائل. يبقى هامش جانبي صغير خاليًا من شريط السجل في اللوحات العريضة.
+settings-search-entry-appearance-layout-show-conversation-cost-label = إظهار تكلفة المحادثة
+settings-search-entry-appearance-layout-show-conversation-cost-description = إظهار نطاق تكلفة المحادثة المحدد في شريط عنوان مساحة العمل.
+settings-search-entry-appearance-layout-conversation-cost-scope-label = نطاق تكلفة المحادثة
+settings-search-entry-appearance-layout-conversation-cost-scope-description = اختر إجمالي التكلفة المُبرَز في شريط عنوان مساحة العمل. تعرض النافذة المنبثقة دائمًا جميع النطاقات وكل علامة تبويب.
+settings-conversation-cost-scope-active = المحادثة النشطة
+settings-conversation-cost-scope-workspace = مساحة العمل الحالية
+conversation-cost-current-worktree = شجرة العمل الحالية
+settings-conversation-cost-scope-all-open = جميع النوافذ المفتوحة
+settings-conversation-cost-scope-lifetime = السجل الكامل
+conversation-cost-title = تكلفة المحادثة
+conversation-cost-tooltip = تكلفة { $scope }
+conversation-cost-all-conversations = جميع المحادثات
+conversation-cost-last-seven-days = آخر 7 أيام
+conversation-cost-last-thirty-days = آخر 30 يومًا
+conversation-cost-last-ninety-days = آخر 90 يومًا
+conversation-cost-workspace-tabs = علامات التبويب في مساحة العمل هذه
+conversation-cost-unpriced-summary = { $tokens } رمزًا دون تسعير ({ $models })
+conversation-cost-unknown-model = نموذج غير معروف
+conversation-cost-rates-source = الأسعار: models.dev، حُدّثت في { $date }
+conversation-cost-estimate-note = قيمة تقديرية مكافئة لاستخدام API، وليست فاتورة. أرقام يبلّغ عنها الوكلاء وتقديرات بالأسعار القياسية؛ يُقيّم استخدام الاشتراكات بالأسعار نفسها. يُستثنى من الإجمالي أي استخدام دون تسعير يظهر أعلاه.
+conversation-cost-remote-note = تعرض مساحات العمل البعيدة المحادثة الحالية فقط. لا تتوفر تكلفة جلسات الطرفية حتى يُدعم السجل البعيد. التكاليف تقديرات وليست بيانات فوترة.
+settings-search-entry-experimental-feature-flags-workspace-mentions-label = الإشارات في مساحة العمل
+settings-search-entry-experimental-feature-flags-workspace-mentions-description = أشر إلى النصوص البرمجية والطرفيات وأشجار العمل والمحادثات والوكلاء باستخدام @ في المحادثة.
+settings-search-entry-experimental-feature-flags-automations-label = الأتمتة
+settings-search-entry-experimental-feature-flags-automations-description = إنشاء عمليات أتمتة مجدولة أو قائمة على الأحداث. معاينة مبكرة لم تُختبر بالكامل بعد.
+settings-search-entry-experimental-feature-flags-browser-automation-label = أتمتة المتصفح
+settings-search-entry-experimental-feature-flags-browser-automation-description = السماح للوكلاء باستخدام أوامر التحكم بالمتصفح. تظل إجراءات المتصفح بحاجة إلى إذن مساحة العمل.
+settings-search-entry-agents-session-context-session-context-for-agents-label = سياق الجلسة للوكلاء
+settings-search-entry-agents-session-context-session-context-for-agents-description = إضافة سياق super.engineering إلى جلسات الوكلاء الجديدة أو تعطيل الحقن الضمني للسياق.
+settings-section-typography = تنسيق الخطوط
+settings-section-terminal = الطرفية
+settings-section-routes = المسارات
+settings-section-git-buttons = أزرار Git
+settings-section-other-actions = إجراءات أخرى
+settings-section-session-context = سياق الجلسة
+settings-account-add = إضافة حساب
+settings-account-more = المزيد…
+settings-account-subscription = اشتراك
+settings-account-saving-key = جارٍ حفظ مفتاح API…
+settings-account-use-api-key = إضافة ملف شخصي بمفتاح API…
+settings-account-existing-profile = استخدام ملف شخصي موجود…
+settings-account-refresh = تحديث
+settings-account-system-default = الإعداد الافتراضي للنظام
+settings-account-advanced = متقدم
+settings-account-reauthenticate = إعادة المصادقة
+settings-account-description = استخدم تسجيل دخول CLI الحالي أو أضف حسابًا لتسجيل الدخول باشتراكك. تُدعم أيضًا مفاتيح API والملفات الشخصية المخصصة.
+settings-account-routing = مواضع استخدام الملفات الشخصية
+settings-account-routing-description = في «التوجيه»، اختر «عام» أو «مساحة العمل» أو «المشروع»، ثم حدد ملفًا شخصيًا للإعداد الافتراضي للجلسة أو للإجراءات الفردية. يتجاوز الملف المحدد في «التوجيه» الإعداد العام الافتراضي المحدد هنا.
+settings-account-loading = جارٍ قراءة الحساب…
+settings-account-email-unavailable = البريد الإلكتروني للحساب غير متاح
+settings-account-api-key-label = مفتاح API · تُحتسب تكلفته بشكل منفصل
+settings-account-no-saved-login = لا توجد هوية حساب محفوظة
+settings-account-signing-in = أكمل تسجيل الدخول في المتصفح…
+settings-account-api-key-placeholder = ألصق مفتاح API الخاص بك لـ{ $provider }
+settings-account-api-key-description = أنشئ ملفًا شخصيًا باستخدام مفتاح API الخاص بك لـ{ $provider }. تُحتسب تكلفة استخدام API بشكل منفصل عن الاشتراكات. يُخزن المفتاح محليًا؛ ولا يتحقق حفظه من صلاحيته.
+settings-account-save-key = إضافة الملف الشخصي
+settings-account-unsupported = لا يدعم هذا الموفر الملفات الشخصية للحسابات.
+settings-account-storage-error = تعذر حفظ الإعدادات المحلية للحساب.
+settings-account-cli-unavailable = تعذر بدء CLI للموفر. تحقق من تثبيته وتوفره في ⁨PATH⁩.
+settings-account-login-failed = لم يكتمل تسجيل الدخول. أعد المحاولة أو استخدم ملفًا شخصيًا موجودًا.
+settings-account-timeout = استغرق تسجيل الدخول وقتًا طويلًا. أعد المحاولة.
+settings-account-cancelled = أُلغي تسجيل الدخول.
+settings-account-identity-unavailable = اكتمل تسجيل الدخول، لكن تعذرت قراءة الحساب المحفوظ. أعد المحاولة أو استخدم ملفًا شخصيًا موجودًا.
+settings-account-invalid-key = أدخل مفتاح API غير فارغ ودون فواصل أسطر.
+settings-section-mobile-access = الوصول عبر الهاتف
+settings-section-connection-status = حالة الاتصال
+settings-section-pairing = الإقران
+settings-ai-default-routes = المسارات الافتراضية
+settings-ai-default-routes-description = ترث الإجراءات خيارات الموفر والنموذج هذه ما لم تخصّص مسارًا أدناه.
+settings-ai-fast-model-route = النموذج السريع
+settings-ai-fast-model-route-description = للمهام السريعة، مثل عمليات الالتزام وتحسين المطالبات.
+settings-ai-thorough-model-route = النموذج الدقيق
+settings-ai-thorough-model-route-description = للتحقيق والإصلاح والمراجعات.
+settings-ai-git-button-routes = أزرار Git
+settings-ai-git-button-routes-description = اضبط كل زر Git مدعوم بالذكاء الاصطناعي. تعمل إجراءات الدفع وتحديث الفرع وجاهز للمراجعة وجاهز للدمج وحذف شجرة العمل مباشرة دون مسار وكيل.
+settings-ai-other-routes = مسارات أخرى
+settings-ai-other-routes-description = اضبط التسمية ورسائل الالتزام المضمنة وتحسين المطالبات وردود المراجعة. تبقى مسارات الأوامر المخصصة مع كل أمر في «الأوامر».
+settings-ai-follows-session-default = يتبع الإعداد الافتراضي للجلسة
+settings-ai-advanced-setup = إعداد متقدم
+settings-ai-advanced-setup-description = الملف التنفيذي وخيارات التشغيل المشتركة لهذا الموفر.
+settings-ai-model-routing = توجيه النماذج
+settings-ai-model-routing-description = اختر النماذج والملفات الشخصية ومستويات التفكير الافتراضية، أو خصّصها لإجراءات محددة.
+settings-ai-manage-routing = فتح التوجيه
+settings-ai-provider-fx-description = تفعيل دعم محادثات fx والطرفية (يتطلب تثبيت واجهة fx CLI المسماة ⁨`fx`⁩).
+workspace-fx-remote-history-unsupported = لا تدعم طرفيات FX البعيدة سجل الجلسات أو استئنافها بعد.
+settings-keybinding-action-rename-selected-entry = إعادة تسمية العنصر المحدد
+settings-keybinding-action-chat-effort-backward = التنقل للخلف بين مستويات جهد المحادثة
+worktree-preparing = جارٍ تجهيز شجرة العمل…
+chat-queued-until-worktree-ready = سيبدأ عندما تصبح شجرة العمل جاهزة
+chat-delivery-unconfirmed = التسليم غير مؤكد
+chat-delivery-unconfirmed-retry = تحقق من المحادثة قبل إعادة المحاولة؛ ربما سُلّمت هذه الرسالة بالفعل.
+chat-answer-pending-delivery = بانتظار التسليم
+input-recommended-by = موصى به من { $agent }
+input-drawer-waiting = { $agent } بانتظارك
+input-drawer-asks-working = يسأل { $agent } أثناء عمله
+input-drawer-wants-command = يريد { $agent } تشغيل أمر
+input-drawer-wants-tool = يريد { $agent } استخدام { $tool }
+input-drawer-blocked = حُظر { $agent }
+input-drawer-review = مراجعة
+input-choose-any = اختر ما تشاء
+launched-agent-stopped-app-closed = توقف عند إغلاق التطبيق
+model-picker-type-to-search-hint = اكتب للبحث
+model-picker-providers-heading = الموفر
+composer-model = نموذج
+composer-effort = الجهد
+composer-effort-lower = تقليل الجهد
+composer-effort-raise = زيادة الجهد
+reasoning-effort-unspecified = غير محدد
+settings-ai-thinking-unavailable = لا يتيح هذا النموذج ضبط مستويات التفكير.
+chat-message-tokens-not-reported = لم يُبلّغ عنه
+chat-time-today = اليوم { $time }
+chat-time-yesterday = أمس { $time }
+chat-permission-fallback = لا يتوفر { $mode } لـ{ $model } على هذا الحساب.
+chat-permission-fallback-asks = سيطلب { $provider } الإذن قبل التصرف.
+chat-permission-fallback-uses = يستخدم { $provider } الوضع { $mode } بدلًا منه.
+chat-steer-hold-waiting = لا يستطيع { $provider } قبول توجيه بعد.
+chat-steer-hold-waiting-detail = ستوجّه رسالتك العمل بمجرد أن يصبح ذلك ممكنًا، أو تُرسل بعد هذا الدور.
+chat-steer-refused = تعذر التوجيه.
+chat-steer-refused-detail = أعاد { $provider } خطأً. تحقق من المحادثة قبل إعادة المحاولة.
+chat-steered = تم التوجيه
+chat-steer-not-read = لم تُقرأ
+chat-steer-send-again = إرسال
+chat-send-failed = تعذر الإرسال إلى هذه المحادثة. حاول الإرسال مجددًا.
+chat-send-failed-draft-restored = تعذر الإرسال إلى هذه المحادثة. لا تزال رسالتك في محرر الرسائل.
+chat-open-in-new-tab = فتح في علامة تبويب جديدة
+chat-open-in-split-tab = فتح في علامة تبويب منقسمة
+chat-open-in-split-view = فتح في عرض منقسم
+chat-fork-new-session = تفريع في محادثة جديدة
+chat-fork-new-worktree = تفريع في شجرة عمل جديدة
+chat-fork-from-here = تفريع في محادثة جديدة
+chat-fork-unavailable = الأمر ⁨/fork⁩ غير متاح لهذا الموفر.
+chat-fork-no-session = يتطلب ⁨/fork⁩ جلسة موفر نشطة. أرسل رسالة أولًا ثم أعد المحاولة.
+chat-fork-worktree-unsupported = الأمر ⁨/fork worktree⁩ غير متاح لهذا الموفر.
+chat-fork-worktree-cut-unavailable = لا يتوفر تفريع هذه المحادثة إلى شجرة عمل جديدة من هذه الرسالة. فرّع من أحدث رسالة أو إلى جلسة محادثة جديدة بدلًا من ذلك.
+chat-fork-failed = تعذر تفريع هذه المحادثة.
+chat-fork-cut-unavailable = لا يتوفر تفريع هذه المحادثة من هذا الرد. فرّع من أحدث رد بدلًا من ذلك.
+chat-fork-missing-conversation = يتطلب ⁨/fork⁩ محادثة محفوظة. أرسل رسالة أولًا ثم أعد المحاولة.
+file-preview-edit-unavailable-long-line = التحرير غير متاح للأسطر التي تتجاوز 128 KiB
+notification-codex-thread-archive-started = جارٍ أرشفة سلاسل محادثات Codex من أشجار العمل المحذوفة…
+notification-codex-thread-archive-done = { $count ->
+        [zero] أُرشفت { $count } من سلاسل محادثات Codex من أشجار العمل المحذوفة
+        [one] أُرشفت سلسلة محادثات Codex واحدة من أشجار العمل المحذوفة
+        [two] أُرشفت سلسلتا محادثات Codex من أشجار العمل المحذوفة
+        [few] أُرشفت { $count } من سلاسل محادثات Codex من أشجار العمل المحذوفة
+        [many] أُرشفت { $count } من سلاسل محادثات Codex من أشجار العمل المحذوفة
+       *[other] أُرشفت { $count } من سلاسل محادثات Codex من أشجار العمل المحذوفة
+    }
+notification-codex-thread-archive-failed = لم تُؤرشف بعض سلاسل محادثات Codex
+notification-installing-update = جارٍ تثبيت التحديث. سيُعاد تشغيل التطبيق عند الانتهاء.
+worktree-delete-agent-working = لا يزال وكيل يعمل هنا
+worktree-delete-all-action = حذف الكل
+worktree-delete-body = يُحذف مجلدها من القرص.
+worktree-delete-body-loses-work = يُحذف مجلدها من القرص، بما فيه العمل الذي لا توجد منه نسخة أخرى.
+worktree-delete-branch-too = حذف الفرع أيضًا
+worktree-delete-branches-too = حذف الفروع أيضًا
+worktree-delete-child-count = { $count ->
+        [zero] لا أشجار عمل
+        [one] شجرة عمل واحدة
+        [two] شجرتا عمل
+        [few] { $count } أشجار عمل
+        [many] { $count } شجرة عمل
+       *[other] { $count } شجرة عمل
+    }
+worktree-delete-child-no-upstream = لا يوجد فرع تتبّع لـ{ $name }، لذا قد تُفقد الالتزامات غير المدفوعة
+worktree-delete-child-uncommitted = لدى { $name } تغييرات غير ملتزم بها
+worktree-delete-child-uninspectable = تعذر فحص { $name }: { $error }
+worktree-delete-child-unpushed = { $count ->
+        [zero] لدى { $name } عدد { $count } من الالتزامات غير المدفوعة
+        [one] لدى { $name } التزام واحد غير مدفوع
+        [two] لدى { $name } التزامان غير مدفوعين
+        [few] لدى { $name } عدد { $count } من الالتزامات غير المدفوعة
+        [many] لدى { $name } عدد { $count } من الالتزامات غير المدفوعة
+       *[other] لدى { $name } عدد { $count } من الالتزامات غير المدفوعة
+    }
+worktree-delete-confirm-title = حذف شجرة العمل هذه؟
+worktree-delete-has-uncommitted = تغييرات غير ملتزم بها
+worktree-delete-no-upstream = لا يوجد فرع تتبّع، لذا قد تُفقد الالتزامات غير المدفوعة
+worktree-delete-open-sessions = { $count ->
+        [zero] يغلق { $count } من الجلسات المفتوحة
+        [one] يغلق جلسة واحدة مفتوحة
+        [two] يغلق جلستين مفتوحتين
+        [few] يغلق { $count } جلسات مفتوحة
+        [many] يغلق { $count } من الجلسات المفتوحة
+       *[other] يغلق { $count } من الجلسات المفتوحة
+    }
+worktree-delete-parent-body = تُحذف الشجرة الأم وكل أشجار العمل داخلها من القرص.
+worktree-delete-parent-confirm-title = حذف شجرة العمل هذه وأشجارها الفرعية؟
+worktree-delete-parent-uninspectable = تعذر فحص المجلد: { $error }
+worktree-delete-uncommitted = { $count ->
+        [zero] { $count } من التغييرات غير الملتزم بها
+        [one] تغيير واحد غير ملتزم به
+        [two] تغييران غير ملتزم بهما
+        [few] { $count } تغييرات غير ملتزم بها
+        [many] { $count } من التغييرات غير الملتزم بها
+       *[other] { $count } من التغييرات غير الملتزم بها
+    }
+worktree-delete-uninspectable = تعذر الفحص: { $error }
+worktree-delete-unpushed = { $count ->
+        [zero] { $count } من الالتزامات غير المدفوعة
+        [one] التزام واحد غير مدفوع
+        [two] التزامان غير مدفوعين
+        [few] { $count } التزامات غير مدفوعة
+        [many] { $count } من الالتزامات غير المدفوعة
+       *[other] { $count } من الالتزامات غير المدفوعة
+    }
+worktree-delete-unrecognized-entries = يحتوي المجلد أيضًا على عناصر لم يُنشئها التطبيق: { $items }
+toast-retired-codex-models-title = أُزيلت نماذج Codex المتقاعدة
+toast-retired-codex-models-message = لم تعد GPT-5.3 Codex وGPT-5.3 Codex Spark وGPT-5.4 وGPT-5.4 Mini متاحة. تستخدم اختياراتك المحفوظة لهذه النماذج الآن التوجيه الموروث أو الإعدادات الافتراضية للموفر. راجع إعدادات التوجيه والأتمتة وإعداد الذكاء الاصطناعي لمساحة العمل لاختيار بدائل.
+toast-delete-shared-worktree-failed = فشل في حذف شجرة العمل
+toast-shared-worktree-not-found = لم يُعثر على شجرة العمل المشتركة.
+toast-file-picker-failed = تعذر فتح منتقي الملفات: { $error }
+reasoning-effort-auto-short = تلقائي
+reasoning-effort-minimal-short = أدنى
+reasoning-effort-low-short = منخفض
+reasoning-effort-medium-short = متوسط
+reasoning-effort-high-short = عالٍ
+reasoning-effort-extra-high-short = عالٍ جدًا
+reasoning-effort-max-short = أقصى
+reasoning-effort-ultra-short = فائق
+theme-set-as-default-tooltip = تعيين كسمة افتراضية
+theme-restore-builtin-default = استعادة المدمجة
+sidebar-rename-feature-label = إعادة تسمية وسم الميزة…
+sidebar-rename-branch = إعادة تسمية الفرع…
+palette-command-archive-codex-threads-for-deleted-worktrees = أرشفة سلاسل محادثات Codex لأشجار العمل المحذوفة
+workspace-delete-confirm-title = حذف «{ $name }»؟
+workspace-delete-description = تُحذف علامات تبويبها وجلسات الطرفية والتخطيط المحفوظ. تبقى المشاريع وملفاتها.
+workspace-delete-description-with-contents = تُحذف علامات تبويبها وجلسات الطرفية والتخطيط المحفوظ، وكل ما يلي أيضًا.
+workspace-delete-project-leaves-app = يغادر التطبيق
+workspace-delete-shared-worktrees = { $count ->
+        [zero] تُحذف { $count } من أشجار العمل المشتركة
+        [one] تُحذف شجرة عمل مشتركة واحدة
+        [two] تُحذف شجرتا عمل مشتركتان
+        [few] تُحذف { $count } من أشجار العمل المشتركة
+        [many] تُحذف { $count } من أشجار العمل المشتركة
+       *[other] تُحذف { $count } من أشجار العمل المشتركة
+    }
+workspace-delete-shared-worktrees-unknown = تُحذف أشجار عملها المشتركة أيضًا
+chat-pill-card-open-worktree = فتح شجرة العمل
+chat-pill-card-setup-script = نص التحضير
+chat-pill-card-run-script = نص التشغيل
+chat-pill-card-teardown-script = نص التفكيك
+chat-pill-card-worktree = شجرة عمل
+chat-pill-card-running = قيد التشغيل
+chat-pill-card-running-for = قيد التشغيل منذ { $time }
+chat-pill-card-not-running = غير مشغّل
+chat-mention-section-sessions = الوكلاء
+chat-mention-section-worktrees = أشجار العمل
+chat-mention-section-scripts-terminals = النصوص البرمجية والطرفيات
+chat-mention-section-files = ملفات
+chat-lock-checking = جارٍ البحث عن العملية التي تحتجز سلسلة المحادثات هذه…
+chat-lock-owner = تحتجزها
+chat-lock-unknown = تعذر تحديد عملية Codex محلية وحيدة تحتجز سلسلة المحادثات هذه.
+chat-lock-release = إيقاف العملية والتحرير
+chat-lock-confirm-warning = يؤدي إيقاف هذه العملية إلى قطع كل المحادثات التي تديرها، بما فيها العمل في تطبيق آخر.
+chat-lock-confirm = إيقاف العملية
+chat-lock-cancel = إلغاء
+chat-lock-releasing = جارٍ إيقاف العملية وفحص القفل…
+chat-lock-released = حررت العملية سلسلة المحادثات هذه. يمكنك إعادة محاولة إرسال رسالتك.
+chat-lock-release-failed = تعذر تحرير سلسلة المحادثات. ربما تغيرت العملية المالكة أو لا تزال قيد التشغيل.
+chat-lock-recheck = فحص المالك مجددًا
