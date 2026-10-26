@@ -777,7 +777,14 @@ browser-open-external = Open External
 browser-inspect = Inspect
 browser-emulation-dark = Dark
 browser-emulation-light = Light
-browser-reset-emulation = Reset viewport and color scheme
+browser-emulation-user-agent = Custom user agent
+browser-emulation-print = Print
+browser-emulation-reduced-motion = Reduced motion
+browser-emulation-routes = { $count ->
+    [one] { $count } mocked request
+   *[other] { $count } mocked requests
+}
+browser-reset-emulation = Clear the agent's page overrides
 picker-no-results = No results
 palette-search-files = Search files in this worktree...
 palette-no-matching-files = No matching files
