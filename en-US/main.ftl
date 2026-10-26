@@ -775,6 +775,16 @@ browser-clear-annotations = Clear annotations
 browser-copy-url = Copy URL
 browser-open-external = Open External
 browser-inspect = Inspect
+browser-emulation-dark = Dark
+browser-emulation-light = Light
+browser-emulation-user-agent = Custom user agent
+browser-emulation-print = Print
+browser-emulation-reduced-motion = Reduced motion
+browser-emulation-routes = { $count ->
+    [one] { $count } mocked request
+   *[other] { $count } mocked requests
+}
+browser-reset-emulation = Clear the agent's page overrides
 picker-no-results = No results
 palette-search-files = Search files in this worktree...
 palette-no-matching-files = No matching files
@@ -1148,6 +1158,9 @@ section-value-running = Running
 section-value-stopped = Stopped
 section-value-working = Working
 toast-remove-from-app = Remove from { $app_name }
+toast-browser-automation-disabled-title = An agent tried to use the browser
+toast-browser-automation-disabled = Browser automation is off, so the agent's command was refused. Turn it on in Settings › Experimental to let agents read and control your browser tabs.
+toast-open-experimental-settings = Open Settings
 validation-name-required = Name is required
 welcome-clone-from-url = Clone from URL
 welcome-clone-from-url-description = Clone a remote repo
