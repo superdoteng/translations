@@ -144,6 +144,80 @@ browser-open-chat-or-enable-provider = Откройте вкладку чата 
 browser-back = Назад
 browser-forward = Вперёд
 browser-reload = Перезарядка
+browser-stop = Остановить
+browser-home = Домой
+browser-start-tab-title = Начальная страница
+browser-address-placeholder = Найдите сервер или введите адрес
+browser-start-running = Запущены
+browser-start-server-count = { $count ->
+    [one] { $count } сервер
+    [few] { $count } сервера
+    [many] { $count } серверов
+   *[other] { $count } сервера
+}
+browser-start-show-all = Показать все { $count }
+browser-start-show-less = Показать меньше
+browser-start-more-projects = { $count ->
+    [1] Показать ещё 1 проект
+    [one] Показать ещё { $count } проект
+    [few] Показать ещё { $count } проекта
+    [many] Показать ещё { $count } проектов
+   *[other] Показать ещё { $count } проекта
+}
+browser-start-recent = Недавно посещённые
+browser-start-clear = Очистить
+browser-start-none-body = Здесь появляются серверы, запущенные в любом рабочем дереве.
+browser-start-run = Начать запуск
+browser-start-stop-run = Остановить запуск
+browser-start-this-worktree = Это рабочее дерево
+browser-start-pull-request = Pull request
+browser-start-merge-request = Запрос на слияние
+browser-start-checks = Проверки
+browser-start-checks-passing = Пройдены
+browser-start-checks-failing = { $count ->
+    [one] { $count } не пройдена
+    [few] { $count } не пройдены
+    [many] { $count } не пройдено
+   *[other] { $count } не пройдено
+}
+browser-start-checks-running = { $count ->
+    [one] { $count } выполняется
+    [few] { $count } выполняются
+    [many] { $count } выполняются
+   *[other] { $count } выполняется
+}
+browser-start-repository = Репозиторий
+browser-nothing-title = { $host } не запущен
+browser-nothing-lede = Страница откроется здесь, когда сервер запустится.
+browser-nothing-starting = Страница откроется, когда будет готова.
+browser-starting-title = Запуск { $host }
+browser-stage-starting = Запуск
+browser-stage-up = Сервер работает
+browser-stage-ready = Страница готова
+browser-nothing-retried = { $count ->
+    [1] Проверили ещё раз. Ответа пока нет.
+    [one] Проверено { $count } раз. Ответа пока нет.
+    [few] Проверено { $count } раза. Ответа пока нет.
+    [many] Проверено { $count } раз. Ответа пока нет.
+   *[other] Проверено { $count } раза. Ответа пока нет.
+}
+browser-loading-title = Загрузка { $host }
+browser-loading-lede = Сервер работает и собирает страницу.
+browser-failed-title = { $host } не загрузился
+browser-failed-lede = Сервер слушает порт, но эта страница не загрузилась.
+browser-open-over-http = Открыть по http
+browser-unreachable-title = Не удаётся подключиться к { $host }
+browser-unreachable-lede = Проверьте адрес или подключение.
+browser-try-again = Повторить
+browser-tip-running-lead = Сервер разработки запущен?
+browser-tip-running-body = Порт { $port } не ответил после нескольких попыток. Поищите ошибку в скрипте запуска или терминале.
+browser-tip-moved-lead = Возможно, он сменил порт.
+browser-tip-moved-body = Если порт { $port } занят, серверы разработки часто берут следующий свободный. Всё, что запущено в ваших рабочих деревьях, показано ниже.
+browser-tip-ipv4-lead = Попробуйте 127.0.0.1.
+browser-tip-ipv4-body = Некоторые серверы слушают только IPv4, а localhost сначала разрешается в IPv6.
+browser-tip-ipv4-open = Открыть { $address }
+browser-tip-knocking-lead = По-прежнему ничего.
+browser-tip-knocking-body = Порт { $port } не ответил. Поищите ошибку в терминале сервера.
 browser-annotate-element = Элемент аннотации
 browser-choose-annotation-destination = Выберите пункт назначения аннотации
 browser-current-chats = Текущие чаты
@@ -159,6 +233,54 @@ browser-emulation-print = Печать
 browser-emulation-reduced-motion = Уменьшение движения
 browser-emulation-routes = Подменённые запросы: { $count }
 browser-reset-emulation = Сбросить изменения страницы, сделанные агентом
+browser-color-scheme-view-light = Показать страницу в светлой теме
+browser-color-scheme-view-dark = Показать страницу в тёмной теме
+browser-color-scheme-showing-light = Страница показана в светлой теме. Нажмите, чтобы следовать теме приложения
+browser-color-scheme-showing-dark = Страница показана в тёмной теме. Нажмите, чтобы следовать теме приложения
+browser-picking-hint = Выберите элемент, чтобы отправить его в чат
+browser-served-stopped = остановлен
+browser-served-starting = запускается
+browser-served-branch = Ветка
+browser-served-process = Процесс
+browser-served-port = Порт
+browser-served-restart = Перезапустить сервер
+browser-served-start = Запустить сервер
+browser-served-terminal = Показать терминал
+browser-app-debugger = Отладчик
+browser-app-open = Открыть
+browser-app-split = Открыть рядом
+browser-app-copy = Копировать URL
+browser-app-restart = Перезапустить сервер
+browser-app-terminal = Показать терминал
+browser-app-origin-run-server = Запущен через { $run } с { $server }
+browser-app-origin-run = Запущен через { $run }
+browser-app-origin-server-folder = { $server } в { $folder }
+browser-app-also-on = Также в
+browser-app-moved = { $port } — порт ветки { $branch }. Порт этого рабочего дерева — { $own }.
+browser-recent-moved = теперь :{ $port }
+browser-errors-heading = { $count ->
+    [one] { $count } ошибка на этой странице
+    [few] { $count } ошибки на этой странице
+    [many] { $count } ошибок на этой странице
+   *[other] { $count } ошибки на этой странице
+}
+browser-errors-more = и ещё { $count }
+browser-errors-send = Отправить в чат
+browser-errors-copy = Копировать
+browser-errors-sent-to = Отправлено в
+browser-errors-new-chat-with = Новый чат { $provider }
+browser-more-actions = Ещё
+browser-agent-unknown = Агент
+browser-agent-reading = читает страницу
+browser-agent-navigating = переходит по страницам
+browser-agent-clicking = нажимает
+browser-agent-typing = вводит текст
+browser-agent-scrolling = прокручивает
+browser-agent-capturing = делает снимок экрана
+browser-agent-running-script = выполняет скрипт
+browser-agent-switching-color-scheme = переключает цветовую схему
+browser-agent-working = работает
+browser-agent-back-to-chat = Назад в чат
 picker-no-results = Результатов нет
 palette-search-files = Поиск файлов в этом рабочем дереве...
 palette-no-matching-files = Нет совпадающих файлов
@@ -213,6 +335,7 @@ workspace-no-matching-branches = Нет соответствующих ветв�
 workspace-rename-current-branch = Переименование нынешнего ответвления
 common-recently-used = Недавно использовались
 workspace-all-branches = Все ветви
+workspace-branch-picker-search-placeholder = Поиск веток
 workspace-loading-branches = Загрузка ветвей...
 workspace-no-local-branches = Местных филиалов нет
 workspace-open-diff = Open diff
@@ -220,6 +343,12 @@ workspace-open-file = Открыть файл
 workspace-no-custom-commands = Никаких кастомных команд не настроено.
 workspace-no-commands-match = Ни одна команда не совпадает с вашим поиском.
 workspace-new-command = Новое командование
+command-picker-runs-in-chat = Выполняется в этом чате
+command-picker-runs-in-new-tab = Выполняется в новой вкладке
+command-picker-always-new-tab = Всегда открывает новую вкладку
+command-picker-alt-new-tab = ⌘ новая вкладка
+command-picker-alt-this-chat = ⌘ этот чат
+command-picker-edit = Изменить в настройках
 workspace-new-tab = Новая вкладка
 workspace-empty-view-heading = Выберите инструмент, чтобы начать
 workspace-your-default = Ваш выбор по умолчанию
@@ -242,9 +371,8 @@ add-project-quick-start = Быстрый старт нового проекта
 add-project-tooltip = Добавить проект
 clone-location-dialog-title = Местоположение клона
 clone-repository-action = Репозиторий клонов
-clone-repository-url = Репозиторий URL
+clone-description = Вставьте адрес репозитория.
 close-tab-action = Закрыть вкладку
-common-back-arrow = ← Назад
 common-browse = Просмотр
 common-browse-ellipsis = Просмотр...
 common-cancel = Отмена
@@ -253,7 +381,6 @@ common-close = Закрыть
 common-completed = Завершено
 common-confirm-save = Подтвердить сохранение
 common-continue = Продолжайте
-common-continue-arrow = Продолжайте →
 common-copy = Принято
 common-create = Создайте
 common-delete = Удалить
@@ -264,7 +391,6 @@ common-dont-show-again = Не показывай это больше
 common-experimental = Экспериментальные
 common-fix = Исправление
 common-less = Меньше
-common-location = Расположение
 common-name = Название
 common-ok = Хорошо
 common-okay = Ладно
@@ -328,30 +454,50 @@ notification-undo-dismissal = Отменить
 notification-view-open = Открыто
 notification-view-ready = Готово
 notification-view-running = Бег
-onboarding-chat-ui = Чат-интерфейс
-onboarding-chat-ui-description = Рендеринг сообщений с встроенными дифференциалами и markdown
-onboarding-chat-view-description = Оба подходят с любыми AI — меняются в любое время в настройках
-onboarding-choose-permissions = Выберите, как агенты запрашивают одобрение
-onboarding-permissions-description = Применяется ко всем поддерживаемым провайдерам — можно изменить в любое время в настройках
-onboarding-provider-defaults = Настройки провайдера по умолчанию
-onboarding-provider-defaults-description = Запускать каждого агента в режиме, который его CLI использует по умолчанию
-onboarding-bypass-full-access-description = Пропускать запросы одобрения в доверенных репозиториях; агенты запускают инструменты без спроса, а Codex работает без своей песочницы
-onboarding-choose-chat-view = Выберите просмотр чата
-onboarding-choose-default-harness = Выберите стандартный жгут — меняйте в любое время в настройках
-onboarding-choose-left-sidebar = Выберите левую боковую панель
-onboarding-compact-sidebar-description = Ярлыки для фичеров; Детали git на hover.
-onboarding-detailed-sidebar-description = Ряды ветвей; Статистика на первый взгляд.
-onboarding-get-started-arrow = Начните →
-onboarding-install-harness = Установите жгут, чтобы начать
 onboarding-install-link = Установка ↗
-onboarding-looking-for-harnesses = Ищу установленные жгуты
-onboarding-more-harnesses = + { $count } ещё шлейки
-onboarding-new-default = Новый стандарт
-onboarding-no-matching-models = Моделей без совпадения
-onboarding-search-models = Модели поиска...
-onboarding-sidebar-description = Меняйте раскладку в любое время в настройках → внешнем виде.
+common-back = Назад
+common-hide = Скрыть
+onboarding-bypass-codex-note = Codex также работает без своей песочницы.
+onboarding-bypass-trusted-note = Используйте только в репозиториях, которым доверяете.
+onboarding-chat = Чат
+onboarding-sidebar-title = Выберите боковую панель
+onboarding-compact-description = Названия задач. Детали Git при наведении.
+onboarding-detailed-description = Строки веток со статистикой.
+onboarding-get-started = Начать
+onboarding-splash-welcome = Добро пожаловать, { $name }
+onboarding-permissions-title = Разрешения агентов
+onboarding-permissions-subtitle = Что агенты могут делать, не спрашивая.
+onboarding-supervised = Под контролем
+onboarding-supervised-summary = Агенты следуют запросам подтверждения своего CLI.
+onboarding-full-access-summary = Агенты выполняют команды и правят файлы, не спрашивая.
+onboarding-surface-title = Чат или терминал?
+onboarding-surface-subtitle = Как открываются новые разговоры.
+onboarding-chat-summary = Подробные ответы со встроенными диффами.
+onboarding-terminal-summary = Собственная командная строка агента.
+onboarding-sidebar-subtitle = Как отображаются ваши worktree.
+onboarding-finish = Готово
+onboarding-set-up-later = Настроить позже
+onboarding-skip-for-now = Пропустить пока
+onboarding-agent-title = Выберите агента
+onboarding-agents-on-device =
+    { $count ->
+        [one] Один готов на этом устройстве.
+       *[other] Готово на этом устройстве: { $count }.
+    }
+onboarding-looking-on-device = Ищем агентов на этом устройстве
+onboarding-install-agent = Установите агента
+onboarding-agent-ready = { $name } готов
+onboarding-more-agents = Ещё
+onboarding-fewer-agents = Меньше
+onboarding-watching-for-agents = Ждём появления агентов
+onboarding-already-installed = Агент уже установлен?
+onboarding-already-installed-tip = Мы ищем агентов в PATH вашей оболочки. Если ваш находится в другом месте, добавьте его папку в PATH. Нажмите, чтобы поискать снова.
+onboarding-preview-prompt = Исправь нестабильный тест входа
+onboarding-preview-reply = Готово. Тест теперь ждёт кнопку.
+welcome-add-project-subtitle = Добавьте проект, чтобы запустить первого агента.
+welcome-setup-summary = Новые чаты используют { $harness } с { $model }.
+welcome-change-in-settings = Изменить в настройках
 onboarding-terminal = Терминал
-onboarding-terminal-description = Запустите CLI агента в терминальной панели
 project-modal-display-name = Отобразное имя
 project-modal-rename-title = Проект переименования
 project-modal-worktree-label = Метка Worktree
@@ -371,7 +517,6 @@ project-welcome-lets-build = Давайте строим
 project-welcome-tips-intro = Несколько советов, чтобы начать:
 quick-start-description = { $app_name } создам для вас новую папку и git-репозиторий.
 quick-start-location-dialog-title = Местоположение проекта
-quick-start-template = Шаблон
 quick-start-template-empty = Пусто
 quick-start-template-node = Узел
 quick-start-template-python = Python
@@ -462,7 +607,7 @@ welcome-bitbucket-cli-description = Pull requests и проверки в Bitbuck
 welcome-open-project = Открытый проект
 welcome-open-project-description = Добавьте существующий репозиторий
 welcome-quick-start = Быстрый старт
-welcome-quick-start-description = Новый проект по шаблону
+welcome-quick-start-from-template = Начать с шаблона
 whats-new-title = Что нового
 workspace-add-repositories-ellipsis = Добавить репозитории...
 workspace-ai-quick = Быстро
@@ -533,6 +678,7 @@ settings-category-notifications-description = Поведение предупр�
 settings-category-command-palette-description = Выберите источники, которые появляются в палитре команд.
 settings-category-privacy-description = Анонимное управление телеметрией использования.
 settings-category-worktrees-description = По умолчанию для действий жизненного цикла рабочего дерева.
+settings-category-devices = Устройства
 settings-mobile-push-desktop-idle-label = Уведомлять телефон после бездействия
 settings-mobile-push-desktop-idle-description = Сколько минут без ввода с клавиатуры или мыши на этом Mac должно пройти, прежде чем уведомления начнут отправляться на телефон. То, что вы обработаете здесь раньше, никогда не отправляется. 0 — отправлять сразу.
 settings-branch-inherits-global = Наследует глобальный
@@ -802,66 +948,6 @@ scripts-setup = Настройка
 scripts-setup-description = Запускается, когда создаётся новое рабочее дерево.
 scripts-teardown = Снос
 scripts-teardown-description = Запускается, когда рабочее дерево удаляется.
-welcome-phrase-frictionless-engineering = Бесфрикционная агентная инженерия
-welcome-phrase-future = Добро пожаловать в будущее
-welcome-phrase-zero-resistance = Нулевое сопротивление, бесконечный потенциал
-welcome-phrase-room-temperature = Сверхпроводник комнатной температуры
-welcome-phrase-electrons = Где электроны течут без трения
-welcome-phrase-cooper-pairs = Купер танцует в парах на 300K
-welcome-phrase-meissner-effect = Эффект Мейснера прекрасен
-welcome-phrase-flux-quantization = Квантование потока в процессе
-welcome-phrase-resistance-futile = Сопротивление бесполезно (буквально)
-welcome-phrase-bcs-theory = Теория BCS была лишь началом
-welcome-phrase-critical-temperature = Критическая температура: комнатная температура
-welcome-phrase-first-neural-net = Первая нейронная сеть была построена в 1958 году
-welcome-phrase-gpt = GPT расшифровывается как Generative Pre-trained Transformer (Генеративный предобученный трансформатор)
-welcome-phrase-attention = Внимание — всё, что нужно (2017)
-welcome-phrase-alphago = AlphaGo обыграла Lee Sedol со счётом 4-1 в 2016 году
-welcome-phrase-eliza = ELIZA (1966) был первым чат-ботом
-welcome-phrase-ai-dartmouth = Термин AI был введён в Дартмуте в 1956 году
-welcome-phrase-perceptron = Перцептрон имеет ровно один слой
-welcome-phrase-backpropagation = Обратная пропаганда стала популяризирована в 1986 году
-welcome-phrase-imagenet = ImageNet содержит 14 миллионов разметированных изображений
-welcome-phrase-deep-blue = Deep Blue победили Каспарова в 1997 году
-welcome-phrase-gpt2 = GPT-2 был признан слишком опасным для выпуска
-welcome-phrase-transformers = Трансформаторы почти мгновенно заменили RNN
-welcome-phrase-bitter-lesson = Горький урок: вычисления побеждают
-welcome-phrase-mnist = MNIST — это приветственный мир машинного обучения
-welcome-phrase-dropout = Дроп-аут был изобретён для предотвращения перенасадки
-welcome-phrase-batch-norm = Пакетная норма делала глубокие сети обучаемыми
-welcome-phrase-resnets = Пропуск соединений в ResNet изменил всё
-welcome-phrase-gans = GANs: две сети в плаще
-welcome-phrase-chinese-room = The Chinese Room утверждает, что синтаксис — это не семантика
-welcome-phrase-moores-law = Закон Мурса продолжал AI масштабировании на правильном уровне
-welcome-phrase-reinforcement-learning = Обучение с подкреплением само себя научилось ходить
-welcome-phrase-word2vec = Word2Vec: король минус мужчина плюс женщина — ферзь
-welcome-phrase-lstm = Элементы LSTM решили нулевой градиент
-welcome-phrase-turing-test = Тест Тьюринга был предложен в 1950 году
-welcome-phrase-alphafold = AlphaFold решила сворачивание белков в 2020 году
-welcome-phrase-self-attention = Самовнимание происходит за O(n в квадрате) времени
-welcome-phrase-lora = LoRA тонко настраивает параметры с 0,1% параметров
-welcome-phrase-chinchilla = Шиншилла показала, что мы недостаточно обучены
-welcome-phrase-mixture-experts = Смесь экспертов: не каждый нейрон активируется
-welcome-phrase-tokenizers = Токенайзеры превращают слова в числа
-welcome-phrase-temperature = Температура контролирует случайность при выборке
-welcome-phrase-softmax = Функция softmax суммируется к единице
-welcome-phrase-convnets = Конвнеты были вдохновлены визуальной корой
-welcome-phrase-ai-winters = AI зимы случались дважды: в 1974 и 1987 годах
-welcome-phrase-gradient-descent = Спуск по градиенту: просто следуйте по склону вниз
-welcome-phrase-relu = ReLU: если отрицательный — ноль. Вот и всё.
-welcome-phrase-embeddings = Вложения придают геометрии смысл
-welcome-phrase-rlhf = RLHF научил модели быть полезными
-welcome-phrase-diffusion = Диффузионные модели учатся дешумить
-welcome-phrase-alexnet = Один GPU обучал AlexNet в 2012 году
-welcome-phrase-context-windows = Окна контекста становятся всё длиннее
-welcome-phrase-weights = Веса — это очень организованные числа
-welcome-phrase-loss-function = Функция потерь — единственная истина
-welcome-phrase-synthetic-data = Синтетические данные обучают следующее поколение
-welcome-phrase-scaling-laws = Законы масштабирования предсказывают производительность на основе вычислений
-welcome-phrase-sparse-attention = Редкое внимание делает возможными длинные контексты
-welcome-phrase-kv-cache = Кэш KV обменивает память на скорость
-welcome-phrase-speculative-decoding = Спекулятивное декодирование: угадайте, а потом проверяйте
-welcome-phrase-quantization = Квантование: меньше точности, та же атмосфера
 markdown-collapse = Крах
 markdown-show-more = Показать больше
 chat-markdown-nested-truncated = [… Вложенный Markdown усечен]
@@ -1063,6 +1149,8 @@ shared-context-repositories = Хранилища
 shared-context-add-missing-project = Добавить пропущенный проект
 common-running = Бег
 shared-context-add-run-script = Добавить скрипт запуска...
+run-picker-running = Выполняется
+run-picker-running-for = Выполняется { $elapsed }
 shared-parent-git-repo-count = { $count ->
     [one] 1 репо
    *[other] { $count } репо
@@ -1177,6 +1265,12 @@ chat-thinking-in-progress = Думает…
 chat-thinking-count = Думает ({ $count })
 chat-thinking-summary = Думает · { $summary }
 chat-working-for = Работает
+chat-agent-wait-caption = { $count ->
+    [1] { $model } продолжит, когда агент отчитается
+    [few] { $model } продолжит, когда агенты отчитаются
+    [many] { $model } продолжит, когда агенты отчитаются
+   *[other] { $model } продолжит, когда агенты отчитаются
+}
 chat-worked-for = Работал { $duration }
 chat-worked = Работал
 plan-proposed = ПРЕДЛОЖЕННЫЙ ПЛАН
@@ -1192,6 +1286,10 @@ tool-action-dispatched = Отправлен
 tool-action-updated = Обновлено
 tool-action-asked = Спросил
 tool-action-called = Позвонили
+tool-action-messaged = Сообщение для
+tool-action-waited-for = Ждал
+tool-action-resumed = Возобновил
+tool-action-closed = Закрыл
 tool-result-lines = { $count ->
     [one] 1 строка
    *[other] { $count } строк
@@ -1236,6 +1334,10 @@ git-updating = Обновление...
 git-updated = Обновлено
 git-update-failed = Обновление не прошло
 git-update-branch = Ветка обновления
+git-update-branch-from-target = { $count ->
+    [one] Подтянуть { $count } коммит из { $target }
+   *[other] Подтянуть коммиты из { $target }: { $count }
+}
 shared-context-select-runnable-projects = Избранные проекты, пригодные для запуска
 shared-context-run-selected-projects = Проведение выбранных проектов
 shared-context-stop-selected-projects = Остановите выбранные проекты
@@ -1386,6 +1488,8 @@ toast-initialize-git-first = Сначала инициализируйте Git
 toast-plain-folders-no-worktrees = Обычные папки не поддерживают рабочие деревья.
 toast-git-unavailable = Git недоступен
 toast-git-unavailable-project = Git недоступна для этого проекта.
+toast-inotify-watch-limit = Достигнут лимит отслеживания файлов
+toast-inotify-watch-limit-message = В Linux закончился лимит отслеживания файлов (fs.inotify.max_user_watches), поэтому некоторые изменения могут появляться с задержкой или не появляться вовсе, пока вы не увеличите лимит: sudo sysctl fs.inotify.max_user_watches=524288
 toast-project-loading = Загрузка проекта
 toast-try-again-moment = Попробуйте ещё раз через минуту.
 toast-app-cli-required = { $app_name } CLI требуется
@@ -1441,6 +1545,12 @@ tool-run-part-git = { $count ->
 tool-run-part-dispatched = { $count ->
     [one] Запущена 1 задача агента
    *[other] Запущено { $count } задач агента
+}
+tool-run-part-messaged = { $count ->
+    [one] Написал { $count } агенту
+    [few] Написал { $count } агентам
+    [many] Написал { $count } агентам
+   *[other] Написал { $count } агентам
 }
 tool-run-part-updated = { $count ->
     [one] Задачи обновлены
@@ -1527,8 +1637,6 @@ settings-experimental-remote-workspaces-label = Удалённые рабочи�
 settings-experimental-remote-workspaces-description = Создайте рабочие пространства, которые будут работать на удалённом компьютере SSH. Существующие удалённые рабочие пространства продолжают работать, когда они отключаются.
 settings-experimental-non-git-projects-label = Проекты вне Git
 settings-experimental-non-git-projects-description = Разрешить добавлять папки без Git метаданных. Существующие проекты с простой папкой остаются видимыми, если эта функция отключена.
-settings-experimental-agent-orchestration-label = Оркестровка агентов
-settings-experimental-agent-orchestration-description = Сделать команды CLI оркестрации super.engineering доступными агентам. Для каждого использования по-прежнему требуется ваш явный соответствующий запрос.
 settings-experimental-auto-compact-label = Автоматическое сжатие Claude Code на ограничении контекстного окна
 settings-experimental-auto-compact-description = Если ход Claude Code не удаётся из-за превышения контекстного окна модели, автоматически запустите /compact и повторно отправьте последнее сообщение. Полезно для бэкендов без 1M-контекста (например, GLM5.1), где Claude Code CLAUDE_CODE_AUTO_COMPACT_WINDOW не срабатывает в режиме -p.
 settings-experimental-review-label = Обзор
@@ -1775,8 +1883,6 @@ settings-notification-queue-on-open-keep = Сохранять
 settings-notification-queue-on-open-reset = Сбрасывать
 settings-notification-queue-next-item-newer = Новее
 settings-notification-queue-next-item-older = Старше
-settings-search-entry-notifications-delivery-timeline-notifications-label = Уведомления о хронологии
-settings-search-entry-notifications-delivery-timeline-notifications-description = Выбирайте, сколько событий уведомлений сохранять. Более высокие значения требуют больше памяти и места на диске.
 settings-search-entry-notifications-per-type-overrides-task-complete-delivery-label = Выполнение задачи
 settings-search-entry-notifications-per-type-overrides-task-complete-delivery-description = Контролирует появление macOS уведомлений о завершённых или ошибочных запусках.
 settings-search-entry-notifications-per-type-overrides-task-complete-sound-label = Звук выполнения задачи
@@ -1809,8 +1915,8 @@ settings-search-entry-experimental-feature-flags-remote-workspaces-label = Уд�
 settings-search-entry-experimental-feature-flags-remote-workspaces-description = Создавайте рабочие пространства, которые будут работать на удалённом компьютере SSH. Существующие удалённые рабочие пространства продолжают работать, когда они отключаются.
 settings-search-entry-experimental-feature-flags-non-git-projects-label = Проекты вне Git
 settings-search-entry-experimental-feature-flags-non-git-projects-description = Разрешить добавлять папки без Git метаданных.
-settings-search-entry-experimental-feature-flags-agent-orchestration-label = Оркестровка агентов
-settings-search-entry-experimental-feature-flags-agent-orchestration-description = Сделать команды оркестрации доступными агентам. Для каждого использования по-прежнему требуется ваш явный соответствующий запрос.
+settings-search-entry-general-behavior-agent-orchestration-label = Оркестровка агентов
+settings-search-entry-general-behavior-agent-orchestration-description = Сделать команды оркестрации доступными агентам. Для каждого использования по-прежнему требуется ваш явный соответствующий запрос.
 settings-search-entry-experimental-feature-flags-auto-compact-claude-code-on-context-window-limit-label = Автоматическое сжатие Claude Code по ограничению контекстного окна
 settings-search-entry-experimental-feature-flags-auto-compact-claude-code-on-context-window-limit-description = Автоматически запускайте /compact и повторно отправляйте, когда Claude Code превышает окно контекста.
 settings-search-entry-experimental-feature-flags-review-label = Обзор
@@ -2157,6 +2263,8 @@ launched-agents-summary = { $state ->
 workspace-toggle-terminal = Переключательный терминал
 workspace-choose-open-app = Выберите открытое приложение
 workspace-new-tab-with-provider = Новая вкладка с провайдером
+workspace-add-split-pane = Разделить панель
+workspace-add-split-view = Разделить вид
 workspace-choose-app = Выбрать приложение
 theme-copy-from-dark = Копия из Dark
 theme-copy-from-light = Копия от Light
@@ -2196,6 +2304,7 @@ git-action-checks = Проверки
 git-action-commit-and-push = Обязательство и продвижение
 git-action-commit = Коммит
 git-action-push = Толкай
+git-action-pull-and-push = Получить и отправить
 git-action-pull = Тяни
 git-action-resolve = Resolve
 git-action-fix = Исправление
@@ -2219,6 +2328,7 @@ git-action-creating = Создание
 git-action-committing-and-pushing = Обязательство и давление
 git-action-committing = Обязательство
 git-action-pushing = Толкание
+git-action-pulling-and-pushing = Получение и отправка
 git-action-resolving = Разрешение
 git-action-fixing = Исправление
 git-action-investigating = Расследование
@@ -2506,10 +2616,10 @@ settings-left-sidebar-layout-compact = Компакт
 settings-left-sidebar-layout-detailed = Подробно
 settings-preview-sidebar-cards = Показывайте карты предпросмотра в настройках
 settings-preview-hover-position = Фиксация положения поповера для зависания
-settings-preview-two-hours-ago = 2 часа назад
-settings-preview-one-day-ago = 1 день назад
-settings-preview-two-hours = 2 часа
-settings-preview-one-day = 1d
+settings-preview-flaky-login = Исправить нестабильный тест входа
+settings-preview-billing-tables = Переименовать таблицы биллинга
+settings-preview-dark-mode = Добавить переключатель тёмной темы
+settings-preview-search-index = Ускорить индексацию поиска
 settings-notifications-system-customized-description = Поведение по умолчанию для macOS уведомлений. Ниже приведены пользовательские перенастройки по типу.
 settings-notifications-task-complete-overrides-label = Задача выполнена
 settings-notifications-task-complete-overrides-description = Контролирует подачу и звук для завершённых или ошибочных забегов.
@@ -2628,6 +2738,11 @@ right-panel-show-gitignored-files = Показать gitignored файлы
 right-panel-hide-gitignored-files = Скрыть gitignored файлы
 workspace-hold-command-for-chat-ui = Удерживайте ⌘ для интерфейса чата
 workspace-hold-command-for-terminal = Удерживайте ⌘ для терминала
+tool-picker-no-matches = Нет совпадений
+tool-picker-as-terminal = Терминал
+tool-picker-as-chat = Чат
+tool-picker-open-as-terminal = Открыть как терминал
+tool-picker-open-as-chat = Открыть в чате
 file-tree-symbolic-link = Символическая связь
 file-tree-symlink-target = Символическая ссылка → { $target }
 pr-checks-failed = Проверки завершились с ошибкой
@@ -2678,6 +2793,7 @@ settings-usage-meter-window-session = Предпочитать сессию
 settings-usage-meter-window-weekly = Предпочитать неделю
 usage-meter-unavailable = Данные об использовании { $provider } недоступны
 usage-meter-signed-out = Вход не выполнен
+usage-meter-api-key = Ваш API-ключ работает как обычно. Могут действовать ограничения провайдера.
 usage-meter-stale = Не удалось обновить — показаны кэшированные данные
 usage-meter-error = Не удалось загрузить данные об использовании
 usage-meter-loading = Загрузка данных об использовании…
@@ -2689,15 +2805,49 @@ usage-meter-window-daily = День
 usage-meter-window-weekly = Неделя
 usage-meter-window-monthly = Месяц
 usage-meter-window-other = Другое
-usage-meter-other-accounts = Другие аккаунты
 usage-meter-all-providers = Все провайдеры
-usage-meter-refresh = Обновить
 usage-meter-percent-left = Осталось { $percent }%
 usage-meter-no-account = Аккаунт не выбран
 usage-meter-now = сейчас
 usage-meter-default-account = По умолчанию
+usage-popover-runs-out = Закончится { $time }, сброс { $reset }
+usage-popover-runs-out-then-credits = Закончится { $time }, затем кредиты
+usage-popover-using-credits = Используются кредиты
+usage-api-key = API-ключ
+usage-api-key-week = оценка за эту неделю
+usage-api-key-today = { $amount } сегодня
+usage-api-key-counting-since = Учёт с { $day }
+usage-api-key-note = По сеансам на этом Mac. Могут действовать ограничения провайдера.
+usage-api-key-partial-note = Более ранние дни не учтены: этот Mac записывает, какой аккаунт использовался в каждом сеансе, только с { $day }.
+usage-api-key-unavailable = Расходы для { $provider } пока недоступны
+usage-api-key-unavailable-note = Ваш API-ключ работает как обычно. Могут действовать ограничения провайдера.
+usage-api-key-billing = Счета провайдера
+usage-popover-resets-at = Сброс { $time }
+usage-popover-window-left = { $window }: осталось
+usage-popover-updating = Обновление…
+usage-popover-retry = Повторить
+usage-popover-accounts = Аккаунты
+usage-popover-in-use = Используется
+usage-popover-unused = Не используются: { $count }
+usage-graph-on-pace = По графику
+usage-graph-in-reserve = { $percent }% в запасе
+usage-graph-behind = { $percent }% сверх темпа
+usage-graph-runs-out = Закончится { $time }
+usage-graph-lasts = Хватит до сброса
+usage-graph-collecting = График заполняется по мере поступления данных
+usage-instrument-gauge = Шкала
+usage-instrument-graph = График
+usage-popover-no-other-limits = Других лимитов нет
+usage-popover-no-data = Пока нет данных об использовании от { $providers }
+usage-popover-more = Ещё
+usage-popover-less = Меньше
 tool-verb-ran = Выполнил
 tool-verb-running = Выполняет
+tool-verb-messaging = Пишет сообщение для
+tool-verb-dispatching = Отправляет
+tool-verb-waiting-for = Ждёт
+tool-verb-resuming = Возобновляет
+tool-verb-closing = Закрывает
 tool-verb-read = Прочитал
 tool-verb-reading = Читает
 tool-verb-searched = Искал
@@ -2776,10 +2926,6 @@ chat-context-compacted-tooltip-body = Предыдущий контекст бы
 chat-context-compacted-tooltip-title = Теперь агент работает на основе краткого содержания
 chat-pill-card-agent = Агент
 chat-pill-card-command = Командование
-chat-pill-card-file = Файл
-chat-pill-card-folder = Папка
-chat-pill-card-github = GitHub
-chat-pill-card-image = Изображение
 chat-pill-card-items = { $count ->
     [one] { $count } элемент
     [few] { $count } элемента
@@ -2794,15 +2940,7 @@ chat-pill-card-lines = { $count ->
 }
 chat-pill-card-modified = изменено: { $time }
 chat-pill-card-open-agent = Открыть агента
-chat-pill-card-open-in = Открыть в…
-chat-pill-card-open-link = Открыть ссылку
-chat-pill-card-open-preview = Открыть предпросмотр
-chat-pill-card-open-skill = Открыть SKILL.md
-chat-pill-card-quick-look = Quick Look
-chat-pill-card-show-in-files = Показать в файлах
 chat-pill-card-skill = Навык
-chat-pill-card-video = Видео
-chat-pill-card-website = Веб-сайт
 chat-steer-waiting = Ожидает прочтения
 chat-turn-group-agents-count = { $count ->
     [one] { $count } агент
@@ -2916,6 +3054,17 @@ subagent-dock-title = Субагент
 subagent-dock-title-typed = Субагент типа { $type }
 subagent-header-of = Субагент для
 subagent-state-interrupted = Остановка
+subagent-state-working = В работе
+agent-row-unknown = субагента
+agent-row-count = { $count ->
+    [one] { $count } агент
+    [few] { $count } агента
+    [many] { $count } агентов
+   *[other] { $count } агента
+}
+agent-row-id-tooltip = ID агента { $id }
+agent-row-show-all = Показать все
+agent-row-unnamed-wait = своих агентов
 subagent-status-done = Завершено за { $time }
 subagent-status-failed = Сбой через { $time }
 subagent-status-interrupted = Остановлено через { $time }
@@ -3037,7 +3186,6 @@ workspace-update-agents-title = Обновить инструкции рабоч
 settings-sidebar-group-mobile = Мобильное приложение
 settings-category-routing = Маршрутизация
 settings-category-terminal = Терминал
-settings-category-mobile = Мобильное приложение
 settings-category-routing-description = Выберите поставщика, профиль, модель, усилие и поведение запуска для действий агента.
 settings-category-terminal-description = Внешний вид терминала, потоковый вывод и история прокрутки.
 settings-category-mobile-description = Свяжите этот Mac с мобильным приложением super.engineering.
@@ -3077,6 +3225,8 @@ settings-mobile-status-stopping = Остановка…
 settings-mobile-status-failed = Требует внимания
 settings-mobile-status-optional = Необязательно
 settings-mobile-status-unavailable = Недоступно
+settings-mobile-status-not-checked = Не проверено
+settings-mobile-connection-not-checked = Проверяется, когда мобильный доступ запущен.
 settings-mobile-pair-label = Связать телефон
 settings-mobile-pair-description = Создайте безопасный одноразовый код связывания с текущими адресами локальной сети и Tailscale, если он доступен.
 settings-mobile-pair-action = Создать код связывания
@@ -3223,16 +3373,33 @@ settings-conversation-cost-scope-all-open = Все открытые окна
 settings-conversation-cost-scope-lifetime = Вся история
 conversation-cost-title = Стоимость разговора
 conversation-cost-tooltip = Стоимость: { $scope }
-conversation-cost-all-conversations = Все разговоры
 conversation-cost-last-seven-days = Последние 7 дней
 conversation-cost-last-thirty-days = Последние 30 дней
 conversation-cost-last-ninety-days = Последние 90 дней
-conversation-cost-workspace-tabs = Вкладки этого рабочего пространства
 conversation-cost-unpriced-summary = Токены без цены: { $tokens } ({ $models })
 conversation-cost-unknown-model = неизвестная модель
-conversation-cost-rates-source = Тарифы: models.dev, обновлено { $date }
 conversation-cost-estimate-note = Оценка стоимости по тарифам API, не счёт. Используются данные агентов и оценки по стандартным тарифам; использование по подписке оценивается по тем же тарифам. Показанное выше использование без цены не включено в итог.
 conversation-cost-remote-note = Удалённые пространства показывают только текущий разговор. Стоимость терминальных сеансов недоступна до появления поддержки удалённой истории. Стоимости приблизительные, это не платёжные данные.
+cost-popover-this-conversation = Этот разговор
+cost-popover-this-worktree = Это рабочее дерево
+cost-popover-this-workspace = Это рабочее пространство
+cost-popover-tab-count = { $count ->
+    [one] { $count } вкладка
+    [few] { $count } вкладки
+    [many] { $count } вкладок
+   *[other] { $count } вкладки
+}
+cost-popover-range-week = 7 дн
+cost-popover-range-month = 30 дн
+cost-popover-range-quarter = 90 дн
+cost-popover-range-all = Все
+cost-popover-all-time = За всё время
+cost-popover-daily-average = В среднем за день
+cost-popover-monthly-average = В среднем за месяц
+cost-popover-today = Сегодня
+cost-popover-all-time-undated = За всё время, включая использование без даты
+cost-popover-estimate = Оценка по тарифам API
+cost-popover-rates-source = Тарифы с models.dev, обновлено { $date }.
 settings-search-entry-experimental-feature-flags-workspace-mentions-label = Упоминания в рабочем пространстве
 settings-search-entry-experimental-feature-flags-workspace-mentions-description = Упоминайте скрипты, терминалы, рабочие деревья, чаты и агентов через @ в чате.
 settings-search-entry-experimental-feature-flags-automations-label = Автоматизации
@@ -3334,6 +3501,15 @@ chat-steer-refused-detail = { $provider } вернул ошибку. Перед 
 chat-steered = Работа скорректирована
 chat-steer-not-read = Не прочитано
 chat-steer-send-again = Отправить
+chat-notice-details = Подробности
+chat-notice-copy-details = Копировать подробности
+chat-notice-show-more = Показать больше
+chat-notice-show-less = Показать меньше
+chat-notice-level-progress = Выполняется
+chat-notice-level-success = Готово
+chat-notice-level-warning = Предупреждение
+chat-notice-level-error = Ошибка
+chat-notice-jobs-finished = Фоновых задач завершено: { $count }
 chat-send-failed = Не удалось отправить в этот чат. Попробуйте отправить снова.
 chat-send-failed-draft-restored = Не удалось отправить в этот чат. Сообщение осталось в поле ввода.
 chat-open-in-new-tab = Открыть в новой вкладке
@@ -3443,6 +3619,36 @@ chat-pill-card-worktree = Рабочее дерево
 chat-pill-card-running = Выполняется
 chat-pill-card-running-for = Выполняется { $time }
 chat-pill-card-not-running = Не выполняется
+chat-pill-card-skill-from = Навык { $source }
+chat-pill-card-click-preview = Нажмите для предпросмотра
+chat-pill-card-click-show-in-files = Нажмите, чтобы показать в файлах
+chat-pill-card-click-open-skill = Нажмите, чтобы открыть SKILL.md
+chat-pill-card-click-open-agent = Нажмите, чтобы открыть его чат
+chat-pill-card-click-open = Нажмите, чтобы открыть
+chat-pill-card-cmd-click-open-in = ⌘-клик, чтобы выбрать приложение
+chat-pill-card-cmd-click-browser = ⌘-клик, чтобы открыть в браузере
+chat-pill-card-copy-path = Копировать путь
+chat-pill-card-copy-link = Копировать ссылку
+chat-pill-card-edited = Изменено в этом чате
+chat-pill-card-changed-inside = { $count ->
+    [one] Изменено в этом чате: { $count }
+   *[other] Изменено в этом чате: { $count }
+}
+chat-pill-card-missing = Нет в этом рабочем дереве
+chat-pill-card-more-sections = { $count ->
+    [one] Ещё { $count } раздел
+   *[other] Ещё разделов: { $count }
+}
+chat-pill-card-expects = Ожидает { $argument }
+chat-pill-card-agent-done = Готово за { $time }
+chat-pill-card-agent-failed = Сбой через { $time }
+chat-pill-card-waiting-answer = Ожидание вашего ответа
+chat-pill-card-exited = Завершено с кодом { $code }, { $time }
+chat-pill-card-uncommitted = Незафиксировано: { $count }
+chat-pill-card-failing-checks = { $count ->
+    [one] В #{ $number } { $count } проверка не проходит: { $names }
+   *[other] В #{ $number } не проходят проверки ({ $count }): { $names }
+}
 chat-mention-section-sessions = Агенты
 chat-mention-section-worktrees = Рабочие деревья
 chat-mention-section-scripts-terminals = Скрипты и терминалы
@@ -3474,3 +3680,50 @@ chat-artifact-open-in-browser-detail = Там его код выполняетс
 chat-artifact-open-link = Открыть эту ссылку в браузере?
 chat-artifact-open-link-open = Открыть
 chat-artifact-open-link-cancel = Отмена
+usage-reset-count = { $count ->
+    [one] сброс лимита
+    [few] сброса лимита
+    [many] сбросов лимита
+   *[other] сброса лимита
+}
+usage-reset-next-expires = Следующий истекает через { $duration }
+usage-reset-slide = Сдвиньте для сброса: { $window }
+usage-reset-working = Сброс…
+usage-reset-done = Лимиты сброшены
+usage-reset-nothing = Сейчас нечего сбрасывать
+usage-reset-already = Этот сброс уже использован
+usage-reset-failed = Не удалось сбросить. Повторите попытку позже
+usage-reset-busy = Ещё обновляется. Сдвиньте снова через мгновение
+usage-reset-unavailable = Нет доступных сбросов
+usage-credits = Кредиты
+usage-credits-unlimited = Без ограничений
+usage-account-resets = { $count ->
+    [one] { $count } сброс
+    [few] { $count } сброса
+    [many] { $count } сбросов
+   *[other] { $count } сброса
+}
+usage-account-credits = Кредиты: { $amount }
+usage-account-ring-window = { $account } { $window }
+usage-account-window-left = { $window } { $percent }%
+usage-graph-account-left = { $account }, { $window }: осталось
+usage-graph-now = Сейчас
+usage-accounts-on-gauge = На шкале
+usage-accounts-sign-in = Войти
+usage-accounts-signing-in = Вход…
+usage-accounts-single = { $count ->
+    [one] У { $providers } один аккаунт.
+    [few] У { $providers } по одному аккаунту.
+    [many] У { $providers } по одному аккаунту.
+   *[other] У { $providers } по одному аккаунту.
+}
+usage-account-empty-title = У { $account } пока нет данных об использовании
+usage-account-empty-body = Данные появятся после первого сеанса этого профиля.
+usage-account-signed-out-title = Вход в { $account } не выполнен
+usage-account-signed-out-body = Войдите из новой вкладки { $provider }, использующей этот профиль.
+usage-account-back = Назад к { $account }
+usage-graph-legend-you = Вы
+usage-graph-legend-even = Равномерный темп
+usage-graph-legend-projection = Прогноз
+usage-graph-legend-estimated = Оценка
+usage-graph-estimated = Оценка по активности на этом Mac
