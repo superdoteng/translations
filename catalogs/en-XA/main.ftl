@@ -3384,6 +3384,8 @@ settings-experimental-automations-description = [!! Çŕëàţë šçħëđüľ�
 settings-experimental-browser-automation-label = [!! Bŕôŵšëŕ àüţôṁàţïôñ !!]
 
 settings-experimental-browser-automation-description = [!! Àľľôŵ àĝëñţš ţô üšë þŕôŵšëŕ çôñţŕôľ çôṁṁàñđš. Bŕôŵšëŕ àçţïôñš šţïľľ ŕëʠüïŕë ŵôŕķšþàçë þëŕṁïššïôñ. !!]
+settings-experimental-chat-artifacts-label = [!! Çħàţ àŕţïƒàçţš !!]
+settings-experimental-chat-artifacts-description = [!! Ŀëţ àĝëñţš þüþľïšħ HŢṀĿ þàĝëš ţħàţ ŕëñđëŕ ľïṽë ïñ ţħë çħàţ. Þàĝëš ŕüñ ôƒƒľïñë ïñ à šàñđþôẋ. !!]
 
 settings-search-section-session-context = [!! Šëššïôñ çôñţëẋţ !!]
 
@@ -3856,3 +3858,19 @@ chat-lock-released = [!! Ţħë þŕôçëšš ŕëľëàšëđ ţħïš ţħŕ�
 chat-lock-release-failed = [!! Çôüľđ ñôţ ŕëľëàšë ţħë ţħŕëàđ. Ţħë ôŵñëŕ ṁàÿ ħàṽë çħàñĝëđ ôŕ ṁàÿ šţïľľ þë ŕüññïñĝ. !!]
 
 chat-lock-recheck = [!! Çħëçķ ôŵñëŕ àĝàïñ !!]
+chat-artifact-loading = [!! Ŀôàđïñĝ àŕţïƒàçţ… !!]
+chat-artifact-unavailable = [!! Ţħïš àŕţïƒàçţ ïš ñôţ àṽàïľàþľë ïñ ţħïš çôñṽëŕšàţïôñ. !!]
+chat-artifact-sandboxed = [!! Šàñđþôẋëđ þàĝë !!]
+chat-artifact-stopped = [!! Šţôþþëđ · Ŕëľôàđ ţô ŕüñ ïţ àĝàïñ !!]
+chat-artifact-release-hint = [!! Ïñţëŕàçţïñĝ · Ëšç ţô ŕëľëàšë !!]
+chat-artifact-copy-source = [!! Çôþÿ šôüŕçë !!]
+chat-artifact-reload = [!! Ŕëľôàđ !!]
+chat-artifact-expand = [!! Ëẋþàñđ !!]
+chat-artifact-collapse = [!! Çľôšë (Ëšç) !!]
+chat-artifact-save-html = [!! Šàṽë àš HŢṀĿ ƒïľë !!]
+chat-artifact-open-in-browser = [!! Ôþëñ ïñ þŕôŵšëŕ !!]
+chat-artifact-open-in-browser-confirm = [!! Ôþëñ ţħïš àŕţïƒàçţ ïñ ÿôüŕ þŕôŵšëŕ? !!]
+chat-artifact-open-in-browser-detail = [!! Ïţš çôđë ŕüñš ôüţšïđë ţħë àþþ'š šàñđþôẋ ţħëŕë, ŵħëŕë ïţ çàñ ŕëàçħ ţħë ïñţëŕñëţ. Ôþëñ ïţ ôñľÿ ïƒ ÿôü ţŕüšţ ŵħàţ ṁàđë ïţ. !!]
+chat-artifact-open-link = [!! Ôþëñ ţħïš ľïñķ ïñ ÿôüŕ þŕôŵšëŕ? !!]
+chat-artifact-open-link-open = [!! Ôþëñ !!]
+chat-artifact-open-link-cancel = [!! Çàñçëľ !!]
