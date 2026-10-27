@@ -136,6 +136,77 @@ browser-open-chat-or-enable-provider = افتح تبويب محادثة أو ف�
 browser-back = العودة
 browser-forward = إلى الأمام
 browser-reload = إعادة تحميل
+browser-stop = إيقاف
+browser-home = الرئيسية
+browser-start-tab-title = صفحة البداية
+browser-address-placeholder = ابحث في الخوادم أو أدخل عنوانًا
+browser-start-running = قيد التشغيل
+browser-start-server-count = { $count ->
+    [zero] { $count } خادم
+    [one] خادم واحد
+    [two] خادمان
+    [few] { $count } خوادم
+    [many] { $count } خادمًا
+   *[other] { $count } خادم
+}
+browser-start-show-all = عرض الكل ({ $count })
+browser-start-show-less = عرض أقل
+browser-start-more-projects = { $count ->
+    [1] عرض مشروع آخر
+    [two] عرض مشروعين آخرين
+    [few] عرض { $count } مشاريع أخرى
+    [many] عرض { $count } مشروعًا آخر
+   *[other] عرض { $count } مشروع آخر
+}
+browser-start-recent = تمت زيارتها مؤخرًا
+browser-start-clear = مسح
+browser-start-none-body = تظهر هنا الخوادم التي تبدأ في أي شجرة عمل.
+browser-start-run = بدء التشغيل
+browser-start-stop-run = إيقاف التشغيل
+browser-start-this-worktree = شجرة العمل هذه
+browser-start-pull-request = طلب سحب
+browser-start-merge-request = طلب دمج
+browser-start-checks = عمليات التحقق
+browser-start-checks-passing = ناجحة
+browser-start-checks-failing = { $count ->
+    [one] { $count } فاشلة
+   *[other] { $count } فاشلة
+}
+browser-start-checks-running = { $count ->
+    [one] { $count } قيد التشغيل
+   *[other] { $count } قيد التشغيل
+}
+browser-start-repository = المستودع
+browser-nothing-title = { $host } لا يعمل
+browser-nothing-lede = تُفتح هذه الصفحة هنا عند بدء الخادم.
+browser-nothing-starting = تُفتح هذه الصفحة عندما تصبح جاهزة.
+browser-starting-title = جارٍ بدء { $host }
+browser-stage-starting = البدء
+browser-stage-up = الخادم يعمل
+browser-stage-ready = الصفحة جاهزة
+browser-nothing-retried = { $count ->
+    [1] تم التحقق مجددًا. لا رد بعد.
+    [two] تم التحقق مرتين. لا رد بعد.
+    [few] تم التحقق { $count } مرات. لا رد بعد.
+   *[other] تم التحقق { $count } مرة. لا رد بعد.
+}
+browser-loading-title = جارٍ تحميل { $host }
+browser-loading-lede = الخادم يعمل ويُنشئ الصفحة.
+browser-failed-title = تعذّر تحميل { $host }
+browser-failed-lede = خادمه يستمع، لكن هذه الصفحة لم تُحمَّل.
+browser-open-over-http = فتح عبر http
+browser-unreachable-title = تعذّر الوصول إلى { $host }
+browser-unreachable-lede = تحقق من العنوان أو من اتصالك.
+browser-try-again = إعادة المحاولة
+browser-tip-running-lead = هل خادم التطوير قيد التشغيل؟
+browser-tip-running-body = لم يرد أي شيء على المنفذ { $port } بعد عدة محاولات. تحقق من سكربت التشغيل أو الطرفية بحثًا عن خطأ.
+browser-tip-moved-lead = ربما انتقل.
+browser-tip-moved-body = غالبًا ما تأخذ خوادم التطوير المنفذ الحر التالي عندما يكون { $port } مشغولًا. يظهر أدناه كل ما بدأ في أشجار العمل لديك.
+browser-tip-ipv4-lead = جرّب 127.0.0.1.
+browser-tip-ipv4-body = تستمع بعض الخوادم على IPv4 فقط بينما يُحَل localhost إلى IPv6 أولًا.
+browser-tip-ipv4-open = فتح { $address }
+browser-tip-knocking-lead = لا شيء بعد.
+browser-tip-knocking-body = لم يرد المنفذ { $port }. تحقق من طرفية الخادم بحثًا عن خطأ.
 browser-annotate-element = عنصر التعليق التوضيحي
 browser-choose-annotation-destination = اختر وجهة التعليق التوضيحي
 browser-current-chats = الدردشات الحالية
@@ -150,6 +221,56 @@ browser-emulation-print = طباعة
 browser-emulation-reduced-motion = حركة مخفّضة
 browser-emulation-routes = طلبات وهمية: { $count }
 browser-reset-emulation = مسح تجاوزات الوكيل للصفحة
+browser-color-scheme-view-light = عرض هذه الصفحة في الوضع الفاتح
+browser-color-scheme-view-dark = عرض هذه الصفحة في الوضع الداكن
+browser-color-scheme-showing-light = تُعرض هذه الصفحة في الوضع الفاتح. انقر لاتباع التطبيق
+browser-color-scheme-showing-dark = تُعرض هذه الصفحة في الوضع الداكن. انقر لاتباع التطبيق
+browser-picking-hint = اختر عنصرًا لإرساله إلى محادثة
+browser-served-stopped = متوقف
+browser-served-starting = قيد البدء
+browser-served-branch = الفرع
+browser-served-process = العملية
+browser-served-port = المنفذ
+browser-served-restart = إعادة تشغيل الخادم
+browser-served-start = بدء الخادم
+browser-served-terminal = إظهار الطرفية
+browser-app-debugger = مصحح الأخطاء
+browser-app-open = فتح
+browser-app-split = فتح في عرض مقسّم
+browser-app-copy = نسخ عنوان URL
+browser-app-restart = إعادة تشغيل الخادم
+browser-app-terminal = إظهار الطرفية
+browser-app-origin-run-server = بدأه { $run } باستخدام { $server }
+browser-app-origin-run = بدأه { $run }
+browser-app-origin-server-folder = { $server } في { $folder }
+browser-app-also-on = أيضًا في أشجار عمل أخرى
+browser-app-moved = { $port } يخص { $branch }. منفذ شجرة العمل هذه هو { $own }.
+browser-recent-moved = الآن :{ $port }
+browser-errors-heading = { $count ->
+    [zero] { $count } خطأ في هذه الصفحة
+    [one] خطأ واحد في هذه الصفحة
+    [two] خطآن في هذه الصفحة
+    [few] { $count } أخطاء في هذه الصفحة
+    [many] { $count } خطأً في هذه الصفحة
+   *[other] { $count } خطأ في هذه الصفحة
+}
+browser-errors-more = و{ $count } أخرى
+browser-errors-send = إرسال إلى محادثة
+browser-errors-copy = نسخ
+browser-errors-sent-to = أُرسل إلى
+browser-errors-new-chat-with = محادثة جديدة مع { $provider }
+browser-more-actions = المزيد
+browser-agent-unknown = وكيل
+browser-agent-reading = يقرأ الصفحة
+browser-agent-navigating = يتنقّل
+browser-agent-clicking = ينقر
+browser-agent-typing = يكتب
+browser-agent-scrolling = يمرّر
+browser-agent-capturing = يلتقط لقطة شاشة
+browser-agent-running-script = يشغّل نصًا برمجيًا
+browser-agent-switching-color-scheme = يبدّل نظام الألوان
+browser-agent-working = يعمل
+browser-agent-back-to-chat = العودة إلى المحادثة
 picker-no-results = لا توجد نتائج
 palette-search-files = البحث عن الملفات في شجرة العمل هذه...
 palette-no-matching-files = لا توجد ملفات مطابقة
@@ -204,6 +325,7 @@ workspace-no-matching-branches = لا توجد فروع مطابقة
 workspace-rename-current-branch = إعادة تسمية الفرع الحالي
 common-recently-used = استخدمت مؤخرا
 workspace-all-branches = جميع الفروع
+workspace-branch-picker-search-placeholder = البحث في الفروع
 workspace-loading-branches = جارٍ تحميل الفروع…
 workspace-no-local-branches = لا توجد فروع محلية
 workspace-open-diff = فرق مفتوح
@@ -211,6 +333,12 @@ workspace-open-file = افتح الملف
 workspace-no-custom-commands = لم يتم تكوين أي أوامر مخصصة.
 workspace-no-commands-match = لا توجد أوامر تطابق بحثك.
 workspace-new-command = أمر جديد
+command-picker-runs-in-chat = يعمل في هذه المحادثة
+command-picker-runs-in-new-tab = يعمل في تبويب جديد
+command-picker-always-new-tab = يفتح دائمًا تبويبًا جديدًا
+command-picker-alt-new-tab = ⌘ تبويب جديد
+command-picker-alt-this-chat = ⌘ هذه المحادثة
+command-picker-edit = تعديل في الإعدادات
 workspace-new-tab = تبويب جديد
 workspace-empty-view-heading = اختر أداة للبدء
 workspace-your-default = إعدادك الافتراضي
@@ -233,9 +361,8 @@ add-project-quick-start = بداية سريعة لمشروع جديد
 add-project-tooltip = إضافة مشروع
 clone-location-dialog-title = موقع الاستنساخ
 clone-repository-action = مستودع النسخ
-clone-repository-url = URL المستودع
+clone-description = الصق عنوان المستودع.
 close-tab-action = إغلاق علامة التبويب
-common-back-arrow = ← العودة
 common-browse = تصفح
 common-browse-ellipsis = تصفح…
 common-cancel = إلغاء
@@ -244,7 +371,6 @@ common-close = إغلاق
 common-completed = مكتمل
 common-confirm-save = تأكيد الحفظ
 common-continue = متابعة
-common-continue-arrow = متابعة →
 common-copy = نسخ
 common-create = إنشاء
 common-delete = حذف
@@ -255,7 +381,6 @@ common-dont-show-again = لا تظهر هذا مرة أخرى
 common-experimental = تجريبي
 common-fix = إصلاح
 common-less = أقل
-common-location = الموقع
 common-name = الاسم
 common-ok = حسنًا
 common-okay = حسنا
@@ -321,30 +446,50 @@ notification-undo-dismissal = تراجع
 notification-view-open = مفتوحة
 notification-view-ready = جاهز
 notification-view-running = الجري
-onboarding-chat-ui = واجهة المستخدم للدردشة
-onboarding-chat-ui-description = الرسائل المقدمة مع الاختلافات المضمنة وتخفيض السعر
-onboarding-chat-view-description = كلاهما يعمل مع أي AI — يمكنك التغيير في أي وقت في الإعدادات
-onboarding-choose-permissions = اختر كيف يطلب الوكلاء الموافقة
-onboarding-permissions-description = ينطبق على كل مزود مدعوم — يمكنك التغيير في أي وقت في الإعدادات
-onboarding-provider-defaults = الإعدادات الافتراضية للمزوّد
-onboarding-provider-defaults-description = ابدأ كل وكيل بالوضع الافتراضي لواجهة CLI الخاصة به
-onboarding-bypass-full-access-description = تخطَّ مطالبات الموافقة في المستودعات الموثوقة؛ يشغّل الوكلاء الأدوات دون سؤال، ويعمل Codex أيضًا دون بيئة العزل الخاصة به
-onboarding-choose-chat-view = اختر طريقة عرض الدردشة الخاصة بك
-onboarding-choose-default-harness = اختر الحزام الافتراضي الخاص بك - قم بالتغيير في أي وقت في الإعدادات
-onboarding-choose-left-sidebar = اختر الشريط الجانبي الأيسر
-onboarding-compact-sidebar-description = تسميات الميزة؛ تفاصيل git عند التمرير.
-onboarding-detailed-sidebar-description = صفوف الفروع احصائيات في لمحة.
-onboarding-get-started-arrow = ابدأ →
-onboarding-install-harness = قم بتثبيت الحزام للبدء
 onboarding-install-link = تثبيت ↗
-onboarding-looking-for-harnesses = البحث عن الأحزمة المثبتة
-onboarding-more-harnesses = + { $count } المزيد من الأحزمة
-onboarding-new-default = افتراضي جديد
-onboarding-no-matching-models = لا توجد نماذج مطابقة
-onboarding-search-models = نماذج البحث...
-onboarding-sidebar-description = قم بتبديل التخطيطات في أي وقت من خلال الإعدادات → المظهر.
+common-back = رجوع
+common-hide = إخفاء
+onboarding-bypass-codex-note = يعمل Codex أيضًا دون بيئة العزل الخاصة به.
+onboarding-bypass-trusted-note = استخدمه فقط في المستودعات التي تثق بها.
+onboarding-chat = المحادثة
+onboarding-sidebar-title = اختر الشريط الجانبي
+onboarding-compact-description = أسماء الميزات. تفاصيل Git عند التمرير.
+onboarding-detailed-description = صفوف الفروع مع الإحصاءات بنظرة واحدة.
+onboarding-get-started = ابدأ
+onboarding-splash-welcome = مرحبًا، { $name }
+onboarding-permissions-title = أذونات الوكلاء
+onboarding-permissions-subtitle = ما يمكن للوكلاء فعله دون أن يسألوا.
+onboarding-supervised = تحت الإشراف
+onboarding-supervised-summary = يتبع الوكلاء مطالبات الموافقة في واجهة الأوامر الخاصة بهم.
+onboarding-full-access-summary = يشغّل الوكلاء الأوامر ويعدّلون الملفات دون سؤال.
+onboarding-surface-title = دردشة أم طرفية؟
+onboarding-surface-subtitle = طريقة فتح المحادثات الجديدة.
+onboarding-chat-summary = ردود غنية مع الفروقات ضمن السطر.
+onboarding-terminal-summary = سطر الأوامر الخاص بالوكيل.
+onboarding-sidebar-subtitle = طريقة عرض worktrees الخاصة بك.
+onboarding-finish = إنهاء
+onboarding-set-up-later = الإعداد لاحقًا
+onboarding-skip-for-now = تخطَّ الآن
+onboarding-agent-title = اختر وكيلك
+onboarding-agents-on-device =
+    { $count ->
+        [one] وكيل واحد جاهز على هذا الجهاز.
+       *[other] { $count } جاهزة على هذا الجهاز.
+    }
+onboarding-looking-on-device = جارٍ البحث عن وكلاء على هذا الجهاز
+onboarding-install-agent = ثبّت وكيلًا
+onboarding-agent-ready = { $name } جاهز
+onboarding-more-agents = المزيد
+onboarding-fewer-agents = أقل
+onboarding-watching-for-agents = بانتظار الوكلاء
+onboarding-already-installed = هل ثبّتّ واحدًا بالفعل؟
+onboarding-already-installed-tip = نبحث عن الوكلاء في PATH الخاص بالصدفة. إذا كان وكيلك في مكان آخر، فأضف مجلده إلى PATH. انقر للبحث مجددًا الآن.
+onboarding-preview-prompt = أصلح اختبار تسجيل الدخول غير المستقر
+onboarding-preview-reply = تم الإصلاح. ينتظر الاختبار الزر الآن.
+welcome-add-project-subtitle = أضف مشروعًا لبدء أول وكيل لك.
+welcome-setup-summary = تستخدم المحادثات الجديدة { $harness } مع { $model }.
+welcome-change-in-settings = التغيير من الإعدادات
 onboarding-terminal = المحطة
-onboarding-terminal-description = شغل CLI العميل في لوحة طرفية
 project-modal-display-name = اسم العرض
 project-modal-rename-title = إعادة تسمية المشروع
 project-modal-worktree-label = تسمية شجرة العمل
@@ -364,7 +509,6 @@ project-welcome-lets-build = دعونا نبني
 project-welcome-tips-intro = بعض النصائح للبدء:
 quick-start-description = سيقوم { $app_name } بإنشاء مجلد جديد وgit repo لك.
 quick-start-location-dialog-title = موقع المشروع
-quick-start-template = القالب
 quick-start-template-empty = فارغ
 quick-start-template-node = عقدة
 quick-start-template-python = بايثون
@@ -455,7 +599,7 @@ welcome-bitbucket-cli-description = طلبات السحب والفحوصات ع�
 welcome-open-project = مشروع مفتوح
 welcome-open-project-description = أضف الريبو الموجود
 welcome-quick-start = بداية سريعة
-welcome-quick-start-description = مشروع جديد من القالب
+welcome-quick-start-from-template = ابدأ من قالب
 whats-new-title = ما هو الجديد
 workspace-add-repositories-ellipsis = إضافة مستودعات...
 workspace-ai-quick = سريع
@@ -526,6 +670,7 @@ settings-category-notifications-description = سلوك التنبيه وتخصي
 settings-category-command-palette-description = اختر المصادر التي تظهر في لوحة الأوامر.
 settings-category-privacy-description = ضوابط القياس عن بعد للاستخدام المجهول.
 settings-category-worktrees-description = الإعدادات الافتراضية لإجراءات دورة حياة شجرة العمل.
+settings-category-devices = الأجهزة
 settings-mobile-push-desktop-idle-label = إشعار الهاتف بعد عدم النشاط
 settings-mobile-push-desktop-idle-description = عدد الدقائق دون إدخال من لوحة المفاتيح أو الماوس على جهاز Mac هذا قبل إرسال الإشعارات إلى هاتفك. لا تُرسل أبدًا العناصر التي تعالجها هنا أولًا. القيمة 0 ترسل فورًا.
 settings-branch-inherits-global = يرث العالمية
@@ -795,66 +940,6 @@ scripts-setup = الإعداد
 scripts-setup-description = يتم تشغيله عند إنشاء شجرة عمل جديدة.
 scripts-teardown = هدم
 scripts-teardown-description = يتم تشغيله عند حذف شجرة العمل.
-welcome-phrase-frictionless-engineering = هندسة عاملة خالية من الاحتكاك
-welcome-phrase-future = مرحبا بكم في المستقبل
-welcome-phrase-zero-resistance = مقاومة صفر، إمكانات لا حصر لها
-welcome-phrase-room-temperature = موصل فائق في درجة حرارة الغرفة
-welcome-phrase-electrons = حيث تتدفق الإلكترونات دون احتكاك
-welcome-phrase-cooper-pairs = أزواج كوبر يرقصون بسرعة 300 ألف
-welcome-phrase-meissner-effect = تأثير مايسنر جميل
-welcome-phrase-flux-quantization = التدفق الكمي في التقدم
-welcome-phrase-resistance-futile = المقاومة غير مجدية (حرفيا)
-welcome-phrase-bcs-theory = كانت نظرية BCS مجرد البداية
-welcome-phrase-critical-temperature = درجة الحرارة الحرجة: درجة حرارة الغرفة
-welcome-phrase-first-neural-net = تم إنشاء أول شبكة عصبية في عام 1958
-welcome-phrase-gpt = يعنيGPT المحولات التوليدية المدربة مسبقًا
-welcome-phrase-attention = الاهتمام هو كل ما تحتاجه (2017)
-welcome-phrase-alphago = فاز AlphaGo على Lee Sedol 4-1 في عام 2016
-welcome-phrase-eliza = إليزا (1966) كان أول برنامج دردشة آلي
-welcome-phrase-ai-dartmouth = تم صياغة مصطلح AI في دارتموث عام 1956
-welcome-phrase-perceptron = يحتوي الإدراك الحسي على طبقة واحدة بالضبط
-welcome-phrase-backpropagation = تم نشر الانتشار العكسي في عام 1986
-welcome-phrase-imagenet = لدى ImageNet 14 مليون صورة مصنفة
-welcome-phrase-deep-blue = فاز ديب بلو على كاسباروف في عام 1997
-welcome-phrase-gpt2 = تم اعتبار GPT-2 خطيرًا جدًا بحيث لا يمكن إطلاقه
-welcome-phrase-transformers = استبدلت المحولات شبكات RNN بين عشية وضحاها تقريبًا
-welcome-phrase-bitter-lesson = الدرس المرير: حساب الانتصارات
-welcome-phrase-mnist = MNIST هو عالم الترحيب لتعلم الآلة
-welcome-phrase-dropout = تم اختراع التسرب لمنع التجهيز الزائد
-welcome-phrase-batch-norm = معيار الدفعة جعل الشبكات العميقة قابلة للتدريب
-welcome-phrase-resnets = لقد غيرت ResNets تخطي الاتصالات كل شيء
-welcome-phrase-gans = شبكات GAN: شبكتان في معطف الخندق
-welcome-phrase-chinese-room = تجادل الغرفة الصينية بأن بناء الجملة ليس دلالات
-welcome-phrase-moores-law = واصل قانون مورز AI التوسع على المسار
-welcome-phrase-reinforcement-learning = التعلم المعزز علم نفسه المشي
-welcome-phrase-word2vec = Word2Vec: الملك ناقص الرجل زائد المرأة يساوي الملكة
-welcome-phrase-lstm = قامت بوابات LSTM بحل مشكلة التدرج المتلاشي
-welcome-phrase-turing-test = تم اقتراح اختبار تورينج في عام 1950
-welcome-phrase-alphafold = حل AlphaFold طي البروتين في عام 2020
-welcome-phrase-self-attention = يعمل الاهتمام الذاتي في زمن O(n²).
-welcome-phrase-lora = يقوم LoRA بضبط 0.1% من المعلمات
-welcome-phrase-chinchilla = أظهرت شينشيلا أننا كنا غير مدربين
-welcome-phrase-mixture-experts = مزيج من الخبراء: لا تنشط كل الخلايا العصبية
-welcome-phrase-tokenizers = تعمل الرموز المميزة على تحويل الكلمات إلى أرقام
-welcome-phrase-temperature = تتحكم درجة الحرارة في العشوائية في أخذ العينات
-welcome-phrase-softmax = الدالة softmax مجموعها إلى واحد
-welcome-phrase-convnets = كانت Convnets مستوحاة من القشرة البصرية
-welcome-phrase-ai-winters = حدث الشتاء AI مرتين: 1974 و1987
-welcome-phrase-gradient-descent = نزول متدرج: ما عليك سوى اتباع المنحدر لأسفل
-welcome-phrase-relu = ReLU: إذا كانت سلبية، صفر. هذا كل شيء.
-welcome-phrase-embeddings = تضع التضمينات المعنى في الهندسة
-welcome-phrase-rlhf = قامت RLHF بتعليم النماذج لتكون مفيدة
-welcome-phrase-diffusion = تتعلم نماذج الانتشار تقليل الضوضاء
-welcome-phrase-alexnet = قامت إحدى وحدات معالجة الرسومات بتدريب AlexNet في عام 2012
-welcome-phrase-context-windows = تستمر نوافذ السياق في الطول
-welcome-phrase-weights = الأوزان هي مجرد أرقام منظمة للغاية
-welcome-phrase-loss-function = وظيفة الخسارة هي الحقيقة الوحيدة
-welcome-phrase-synthetic-data = البيانات الاصطناعية تدرب الجيل القادم
-welcome-phrase-scaling-laws = تتنبأ قوانين القياس بالأداء من الحوسبة
-welcome-phrase-sparse-attention = الاهتمام المتناثر يجعل السياقات الطويلة ممكنة
-welcome-phrase-kv-cache = تقوم ذاكرة التخزين المؤقت KV بتداول الذاكرة من أجل السرعة
-welcome-phrase-speculative-decoding = فك التشفير التخميني: التخمين ثم التحقق
-welcome-phrase-quantization = التكميم: دقة أقل، نفس المشاعر
 
 quit-active-workspaces = { $count ->
     [one] توجد مساحة عمل واحدة بها عمل قيد التقدم. سيؤدي الإنهاء إلى إيقافها.
@@ -1064,6 +1149,8 @@ shared-context-repositories = المستودعات
 shared-context-add-missing-project = أضف المشروع المفقود
 common-running = الجري
 shared-context-add-run-script = أضف سكريبت الجري...
+run-picker-running = قيد التشغيل
+run-picker-running-for = قيد التشغيل منذ { $elapsed }
 shared-parent-git-repo-count = { $count ->
     [one] مستودع واحد
    *[other] { $count } مستودعات
@@ -1178,6 +1265,14 @@ chat-thinking-in-progress = يفكر…
 chat-thinking-count = يفكر ({ $count })
 chat-thinking-summary = يفكر · { $summary }
 chat-working-for = يعمل لمدة
+chat-agent-wait-caption = { $count ->
+    [zero] يتابع { $model } عندما يعود الوكلاء بتقاريرهم
+    [one] يتابع { $model } عندما يعود الوكيل بتقريره
+    [two] يتابع { $model } عندما يعود الوكيلان بتقريرهما
+    [few] يتابع { $model } عندما يعود الوكلاء بتقاريرهم
+    [many] يتابع { $model } عندما يعود الوكلاء بتقاريرهم
+   *[other] يتابع { $model } عندما يعود الوكلاء بتقاريرهم
+}
 chat-worked-for = عمل لمدة { $duration }
 chat-worked = عمل
 plan-proposed = الخطة المقترحة
@@ -1193,6 +1288,10 @@ tool-action-dispatched = تم الإرسال
 tool-action-updated = تحديث
 tool-action-asked = سأل
 tool-action-called = الدعوى
+tool-action-messaged = راسل
+tool-action-waited-for = انتظر
+tool-action-resumed = استأنف
+tool-action-closed = أغلق
 tool-result-lines = { $count ->
     [one] سطر واحد
    *[other] { $count } أسطر
@@ -1237,6 +1336,10 @@ git-updating = جارٍ التحديث…
 git-updated = تم التحديث
 git-update-failed = فشل التحديث
 git-update-branch = تحديث الفرع
+git-update-branch-from-target = { $count ->
+    [one] جلب التزام واحد من { $target }
+   *[other] جلب { $count } من الالتزامات من { $target }
+}
 shared-context-select-runnable-projects = اختر مشاريع قابلة للتشغيل
 shared-context-run-selected-projects = تشغيل المشاريع المحددة
 shared-context-stop-selected-projects = إيقاف المشاريع المحددة
@@ -1387,6 +1490,8 @@ toast-initialize-git-first = قم بتهيئة Git أولا
 toast-plain-folders-no-worktrees = المجلدات العادية لا تدعم Worktrees.
 toast-git-unavailable = Git غير متاح
 toast-git-unavailable-project = Git غير متاح لهذا المشروع.
+toast-inotify-watch-limit = تم بلوغ حد مراقبة الملفات
+toast-inotify-watch-limit-message = نفدت مراقبات الملفات في Linux (fs.inotify.max_user_watches)، لذا قد تظهر بعض التغييرات متأخرة أو لا تظهر إطلاقًا حتى ترفع الحد: sudo sysctl fs.inotify.max_user_watches=524288
 toast-project-loading = تحميل المشروع
 toast-try-again-moment = حاول مرة أخرى بعد قليل.
 toast-app-cli-required = { $app_name } CLI مطلوب
@@ -1442,6 +1547,14 @@ tool-run-part-git = { $count ->
 tool-run-part-dispatched = { $count ->
     [one] تم تشغيل مهمة وكيل واحدة
    *[other] تم تشغيل { $count } مهام وكيل
+}
+tool-run-part-messaged = { $count ->
+    [zero] لم تتم مراسلة أي وكيل
+    [one] تمت مراسلة وكيل واحد
+    [two] تمت مراسلة وكيلين
+    [few] تمت مراسلة { $count } وكلاء
+    [many] تمت مراسلة { $count } وكيلًا
+   *[other] تمت مراسلة { $count } وكيل
 }
 tool-run-part-updated = { $count ->
     [one] تم تحديث المهام
@@ -1528,8 +1641,6 @@ settings-experimental-remote-workspaces-label = مساحات العمل البع
 settings-experimental-remote-workspaces-description = أنشئ مساحات عمل تعيش على جهاز عن بعد عبر SSH. تستمر مساحات العمل البعيدة الحالية في العمل عند تعطيلها.
 settings-experimental-non-git-projects-label = مشاريع غير Git
 settings-experimental-non-git-projects-description = السماح بإضافة مجلدات بدون Git بيانات وصفية. تبقى المشاريع الموجودة في المجلدات العادية مرئية إذا تم تعطيل ذلك.
-settings-experimental-agent-orchestration-label = توزيع الوكلاء
-settings-experimental-agent-orchestration-description = اجعل أوامر CLI الخاصة بالتنسيق في super.engineering متاحة للوكلاء. لا يزال كل استخدام يتطلب طلبًا صريحًا ومطابقًا منك.
 settings-experimental-auto-compact-label = Claude Code الدمج التلقائي على حد نافذة السياق
 settings-experimental-auto-compact-description = عندما يفشل دور Claude Code لأن نافذة سياق النموذج قد تجاوزت، قم تلقائيا بتشغيل /compact وإعادة إرسال رسالتك الأخيرة. مفيد للخلفيات غير ذات السياق 1M (مثل GLM5.1) حيث لا يعمل CLAUDE_CODE_AUTO_COMPACT_WINDOW Claude Code في وضع -p.
 settings-experimental-review-label = مراجعة
@@ -1776,8 +1887,6 @@ settings-notification-queue-on-open-keep = إبقاء
 settings-notification-queue-on-open-reset = إعادة تعيين
 settings-notification-queue-next-item-newer = أحدث
 settings-notification-queue-next-item-older = أقدم
-settings-search-entry-notifications-delivery-timeline-notifications-label = إشعارات الجدول الزمني
-settings-search-entry-notifications-delivery-timeline-notifications-description = اختر عدد أحداث الإشعارات التي تحتفظ بها. القيم الأعلى تستهلك مساحة أكبر للذاكرة والقرص.
 settings-search-entry-notifications-per-type-overrides-task-complete-delivery-label = تسليم المهمة بعد إكمال المهمة
 settings-search-entry-notifications-per-type-overrides-task-complete-delivery-description = يتحكم في ظهور إشعارات macOS للجولات المكتملة أو الخاطئة.
 settings-search-entry-notifications-per-type-overrides-task-complete-sound-label = صوت المهمة مكتمل
@@ -1810,8 +1919,8 @@ settings-search-entry-experimental-feature-flags-remote-workspaces-label = مس�
 settings-search-entry-experimental-feature-flags-remote-workspaces-description = أنشئ مساحات عمل تعمل على جهاز بعيد عبر SSH. تستمر مساحات العمل البعيدة الحالية في العمل عند تعطيلها.
 settings-search-entry-experimental-feature-flags-non-git-projects-label = مشاريع غير Git
 settings-search-entry-experimental-feature-flags-non-git-projects-description = السماح بإضافة مجلدات بدون Git بيانات وصفية.
-settings-search-entry-experimental-feature-flags-agent-orchestration-label = توزيع الوكلاء
-settings-search-entry-experimental-feature-flags-agent-orchestration-description = اجعل أوامر التنسيق متاحة للوكلاء. لا يزال كل استخدام يتطلب طلبًا صريحًا ومطابقًا منك.
+settings-search-entry-general-behavior-agent-orchestration-label = توزيع الوكلاء
+settings-search-entry-general-behavior-agent-orchestration-description = اجعل أوامر التنسيق متاحة للوكلاء. لا يزال كل استخدام يتطلب طلبًا صريحًا ومطابقًا منك.
 settings-search-entry-experimental-feature-flags-auto-compact-claude-code-on-context-window-limit-label = Claude Code الدمج التلقائي على حد نافذة السياق
 settings-search-entry-experimental-feature-flags-auto-compact-claude-code-on-context-window-limit-description = قم بتشغيل /compest تلقائيا وإعادة التقديم عندما يتجاوز Claude Code نافذة السياق.
 settings-search-entry-experimental-feature-flags-review-label = مراجعة
@@ -2154,6 +2263,8 @@ launched-agents-summary = { $state ->
 workspace-toggle-terminal = إظهار أو إخفاء الطرفية
 workspace-choose-open-app = اختر تطبيقًا للفتح
 workspace-new-tab-with-provider = تبويب جديد مع مزوّد
+workspace-add-split-pane = تقسيم الجزء
+workspace-add-split-view = تقسيم العرض
 workspace-choose-app = اختر التطبيق
 theme-copy-from-dark = نسخ من السمة الداكنة
 theme-copy-from-light = نسخ من السمة الفاتحة
@@ -2193,6 +2304,7 @@ git-action-checks = الشيكات
 git-action-commit-and-push = الالتزام والدفع
 git-action-commit = الالتزام
 git-action-push = ادفع
+git-action-pull-and-push = سحب ودفع
 git-action-pull = اسحب
 git-action-resolve = العزم
 git-action-fix = الإصلاح
@@ -2216,6 +2328,7 @@ git-action-creating = الإبداع
 git-action-committing-and-pushing = الالتزام والدفع
 git-action-committing = الالتزام
 git-action-pushing = الدفع
+git-action-pulling-and-pushing = جارٍ السحب والدفع
 git-action-resolving = التسوية
 git-action-fixing = التثبيت
 git-action-investigating = التحقيق
@@ -2407,6 +2520,11 @@ right-panel-show-gitignored-files = إظهار الملفات التي يتجا�
 right-panel-hide-gitignored-files = إخفاء الملفات التي يتجاهلها Git
 workspace-hold-command-for-chat-ui = اضغط مطولًا على ⌘ لفتح واجهة الدردشة
 workspace-hold-command-for-terminal = اضغط مطولًا على ⌘ لفتح الطرفية
+tool-picker-no-matches = لا توجد نتائج مطابقة
+tool-picker-as-terminal = طرفية
+tool-picker-as-chat = دردشة
+tool-picker-open-as-terminal = فتح كطرفية
+tool-picker-open-as-chat = فتح في الدردشة
 pr-checks-failed = فشلت الفحوصات
 pr-checks-failing-count =
     { $count ->
@@ -2613,10 +2731,10 @@ settings-left-sidebar-layout-compact = المضغوط
 settings-left-sidebar-layout-detailed = تفصيل
 settings-preview-sidebar-cards = عرض بطاقات المعاينة في الإعدادات
 settings-preview-hover-position = إصلاح وضع القفز المتحرك
-settings-preview-two-hours-ago = قبل ساعتين
-settings-preview-one-day-ago = قبل يوم واحد
-settings-preview-two-hours = ساعتان
-settings-preview-one-day = 1d
+settings-preview-flaky-login = إصلاح اختبار تسجيل الدخول غير المستقر
+settings-preview-billing-tables = إعادة تسمية جداول الفوترة
+settings-preview-dark-mode = إضافة مفتاح الوضع الداكن
+settings-preview-search-index = تسريع فهرسة البحث
 settings-notifications-system-customized-description = السلوك الافتراضي لإشعارات macOS. تجاوزات مخصصة لكل نوع أدناه.
 settings-notifications-task-complete-overrides-label = المهمة مكتملة
 settings-notifications-task-complete-overrides-description = يتحكم في التوصيل والصوت في حال إكمال أو أخطاء في الجولات.
@@ -2740,6 +2858,7 @@ settings-usage-meter-window-session = تفضيل الجلسة
 settings-usage-meter-window-weekly = تفضيل الأسبوع
 usage-meter-unavailable = الاستخدام غير متاح لـ { $provider }
 usage-meter-signed-out = لم يتم تسجيل الدخول
+usage-meter-api-key = يعمل مفتاح API الخاص بك كالمعتاد. قد تُطبَّق حدود المزوّد.
 usage-meter-stale = فشل التحديث — يتم عرض البيانات المخزنة مؤقتًا
 usage-meter-error = تعذّر تحميل الاستخدام
 usage-meter-loading = جارٍ تحميل الاستخدام…
@@ -2751,15 +2870,49 @@ usage-meter-window-daily = يومي
 usage-meter-window-weekly = أسبوعي
 usage-meter-window-monthly = شهري
 usage-meter-window-other = أخرى
-usage-meter-other-accounts = حسابات أخرى
 usage-meter-all-providers = جميع المزوّدين
-usage-meter-refresh = تحديث
 usage-meter-percent-left = متبقٍ { $percent }%
 usage-meter-no-account = لم يتم تحديد حساب
 usage-meter-now = الآن
 usage-meter-default-account = افتراضي
+usage-popover-runs-out = ينفد { $time }، ويُعاد التعيين { $reset }
+usage-popover-runs-out-then-credits = ينفد { $time }، ثم تُستخدم الاعتمادات
+usage-popover-using-credits = يستخدم الاعتمادات
+usage-api-key = مفتاح API
+usage-api-key-week = تقديريًا هذا الأسبوع
+usage-api-key-today = { $amount } اليوم
+usage-api-key-counting-since = يُحتسب منذ { $day }
+usage-api-key-note = من الجلسات على جهاز Mac هذا. قد تُطبَّق حدود المزوّد.
+usage-api-key-partial-note = الأيام السابقة غير مشمولة: بدأ جهاز Mac هذا في { $day } بتسجيل حساب تسجيل الدخول الذي استخدمته كل جلسة.
+usage-api-key-unavailable = الإنفاق غير متاح لـ { $provider } بعد
+usage-api-key-unavailable-note = يعمل مفتاح API الخاص بك كالمعتاد. قد تُطبَّق حدود المزوّد.
+usage-api-key-billing = عرض فوترة المزوّد
+usage-popover-resets-at = يُعاد التعيين { $time }
+usage-popover-window-left = المتبقي من { $window }
+usage-popover-updating = جارٍ التحديث…
+usage-popover-retry = أعد المحاولة
+usage-popover-accounts = الحسابات
+usage-popover-in-use = قيد الاستخدام
+usage-popover-unused = { $count } غير مستخدم
+usage-graph-on-pace = ضمن الوتيرة
+usage-graph-in-reserve = { $percent }% في الاحتياط
+usage-graph-behind = متأخر { $percent }% عن الوتيرة
+usage-graph-runs-out = ينفد { $time }
+usage-graph-lasts = يكفي حتى إعادة التعيين
+usage-graph-collecting = يمتلئ الرسم البياني مع وصول القراءات
+usage-instrument-gauge = مقياس
+usage-instrument-graph = رسم بياني
+usage-popover-no-other-limits = لا حدود أخرى
+usage-popover-no-data = لا استخدام بعد من { $providers }
+usage-popover-more = المزيد
+usage-popover-less = أقل
 tool-verb-ran = شغّل
 tool-verb-running = يشغّل
+tool-verb-messaging = يراسل
+tool-verb-dispatching = يُطلق
+tool-verb-waiting-for = ينتظر
+tool-verb-resuming = يستأنف
+tool-verb-closing = يُغلق
 tool-verb-read = قرأ
 tool-verb-reading = يقرأ
 tool-verb-searched = بحث
@@ -2838,10 +2991,6 @@ chat-context-compacted-tooltip-body = تم تلخيص السياق السابق 
 chat-context-compacted-tooltip-title = يعمل الوكيل الآن اعتمادًا على ملخص
 chat-pill-card-agent = وكيل
 chat-pill-card-command = القيادة
-chat-pill-card-file = ملف
-chat-pill-card-folder = مجلد
-chat-pill-card-github = GitHub
-chat-pill-card-image = صورة
 chat-pill-card-items = { $count ->
     [zero] لا عناصر
     [one] عنصر واحد
@@ -2860,15 +3009,7 @@ chat-pill-card-lines = { $count ->
 }
 chat-pill-card-modified = تم التعديل { $time }
 chat-pill-card-open-agent = فتح الوكيل
-chat-pill-card-open-in = فتح باستخدام…
-chat-pill-card-open-link = فتح الرابط
-chat-pill-card-open-preview = فتح المعاينة
-chat-pill-card-open-skill = فتح SKILL.md
-chat-pill-card-quick-look = Quick Look
-chat-pill-card-show-in-files = إظهار في الملفات
 chat-pill-card-skill = مهارة
-chat-pill-card-video = فيديو
-chat-pill-card-website = موقع ويب
 chat-steer-waiting = بانتظار القراءة
 chat-turn-group-agents-count = { $count ->
     [zero] لا وكلاء
@@ -2998,6 +3139,19 @@ subagent-dock-title = الوكيل الفرعي
 subagent-dock-title-typed = وكيل فرعي من نوع { $type }
 subagent-header-of = وكيل فرعي تابع لـ
 subagent-state-interrupted = توقف
+subagent-state-working = يعمل
+agent-row-unknown = وكيلًا فرعيًا
+agent-row-count = { $count ->
+    [zero] لا وكلاء
+    [one] وكيل واحد
+    [two] وكيلان
+    [few] { $count } وكلاء
+    [many] { $count } وكيلًا
+   *[other] { $count } وكيل
+}
+agent-row-id-tooltip = معرّف الوكيل { $id }
+agent-row-show-all = عرض الكل
+agent-row-unnamed-wait = وكلاءه
 subagent-status-done = اكتمل خلال { $time }
 subagent-status-failed = فشل بعد { $time }
 subagent-status-interrupted = توقف بعد { $time }
@@ -3133,7 +3287,6 @@ workspace-update-agents-title = تحديث إرشادات مساحة العمل�
 settings-sidebar-group-mobile = الهاتف
 settings-category-routing = التوجيه
 settings-category-terminal = الطرفية
-settings-category-mobile = الهاتف
 settings-category-routing-description = اختر الموفر والملف الشخصي والنموذج والجهد وسلوك التشغيل لإجراءات الوكيل.
 settings-category-terminal-description = مظهر الطرفية وبثها وسلوك سجل التمرير.
 settings-category-mobile-description = أقرن جهاز Mac هذا بتطبيق super.engineering للهاتف.
@@ -3173,6 +3326,8 @@ settings-mobile-status-stopping = جارٍ الإيقاف…
 settings-mobile-status-failed = يتطلب الانتباه
 settings-mobile-status-optional = اختياري
 settings-mobile-status-unavailable = غير متوفر
+settings-mobile-status-not-checked = لم يُفحص
+settings-mobile-connection-not-checked = يُفحص بعد تشغيل الوصول عبر الهاتف.
 settings-mobile-pair-label = إقران هاتف
 settings-mobile-pair-description = أنشئ رمز إقران آمنًا للاستخدام مرة واحدة باستخدام عناوين الشبكة المحلية الحالية وعناوين Tailscale الاختيارية.
 settings-mobile-pair-action = إنشاء رمز إقران
@@ -3321,16 +3476,35 @@ settings-conversation-cost-scope-all-open = جميع النوافذ المفتو
 settings-conversation-cost-scope-lifetime = السجل الكامل
 conversation-cost-title = تكلفة المحادثة
 conversation-cost-tooltip = تكلفة { $scope }
-conversation-cost-all-conversations = جميع المحادثات
 conversation-cost-last-seven-days = آخر 7 أيام
 conversation-cost-last-thirty-days = آخر 30 يومًا
 conversation-cost-last-ninety-days = آخر 90 يومًا
-conversation-cost-workspace-tabs = علامات التبويب في مساحة العمل هذه
 conversation-cost-unpriced-summary = { $tokens } رمزًا دون تسعير ({ $models })
 conversation-cost-unknown-model = نموذج غير معروف
-conversation-cost-rates-source = الأسعار: models.dev، حُدّثت في { $date }
 conversation-cost-estimate-note = قيمة تقديرية مكافئة لاستخدام API، وليست فاتورة. أرقام يبلّغ عنها الوكلاء وتقديرات بالأسعار القياسية؛ يُقيّم استخدام الاشتراكات بالأسعار نفسها. يُستثنى من الإجمالي أي استخدام دون تسعير يظهر أعلاه.
 conversation-cost-remote-note = تعرض مساحات العمل البعيدة المحادثة الحالية فقط. لا تتوفر تكلفة جلسات الطرفية حتى يُدعم السجل البعيد. التكاليف تقديرات وليست بيانات فوترة.
+cost-popover-this-conversation = هذه المحادثة
+cost-popover-this-worktree = شجرة العمل هذه
+cost-popover-this-workspace = مساحة العمل هذه
+cost-popover-tab-count = { $count ->
+    [zero] لا تبويبات
+    [one] تبويب واحد
+    [two] تبويبان
+    [few] { $count } تبويبات
+    [many] { $count } تبويبًا
+   *[other] { $count } تبويب
+}
+cost-popover-range-week = 7 أيام
+cost-popover-range-month = 30 يومًا
+cost-popover-range-quarter = 90 يومًا
+cost-popover-range-all = الكل
+cost-popover-all-time = كل الأوقات
+cost-popover-daily-average = المتوسط اليومي
+cost-popover-monthly-average = المتوسط الشهري
+cost-popover-today = اليوم
+cost-popover-all-time-undated = كل الأوقات، بما في ذلك الاستخدام غير المؤرخ
+cost-popover-estimate = تقدير بأسعار API
+cost-popover-rates-source = الأسعار من models.dev، آخر تحديث { $date }.
 settings-search-entry-experimental-feature-flags-workspace-mentions-label = الإشارات في مساحة العمل
 settings-search-entry-experimental-feature-flags-workspace-mentions-description = أشر إلى النصوص البرمجية والطرفيات وأشجار العمل والمحادثات والوكلاء باستخدام @ في المحادثة.
 settings-search-entry-experimental-feature-flags-automations-label = الأتمتة
@@ -3432,6 +3606,15 @@ chat-steer-refused-detail = أعاد { $provider } خطأً. تحقق من ال�
 chat-steered = تم التوجيه
 chat-steer-not-read = لم تُقرأ
 chat-steer-send-again = إرسال
+chat-notice-details = التفاصيل
+chat-notice-copy-details = نسخ التفاصيل
+chat-notice-show-more = عرض المزيد
+chat-notice-show-less = عرض أقل
+chat-notice-level-progress = قيد التنفيذ
+chat-notice-level-success = تم
+chat-notice-level-warning = تحذير
+chat-notice-level-error = خطأ
+chat-notice-jobs-finished = اكتملت { $count } من المهام في الخلفية
 chat-send-failed = تعذر الإرسال إلى هذه المحادثة. حاول الإرسال مجددًا.
 chat-send-failed-draft-restored = تعذر الإرسال إلى هذه المحادثة. لا تزال رسالتك في محرر الرسائل.
 chat-open-in-new-tab = فتح في علامة تبويب جديدة
@@ -3555,6 +3738,36 @@ chat-pill-card-worktree = شجرة عمل
 chat-pill-card-running = قيد التشغيل
 chat-pill-card-running-for = قيد التشغيل منذ { $time }
 chat-pill-card-not-running = غير مشغّل
+chat-pill-card-skill-from = مهارة { $source }
+chat-pill-card-click-preview = انقر للمعاينة
+chat-pill-card-click-show-in-files = انقر للإظهار في الملفات
+chat-pill-card-click-open-skill = انقر لفتح SKILL.md
+chat-pill-card-click-open-agent = انقر لفتح دردشته
+chat-pill-card-click-open = انقر للفتح
+chat-pill-card-cmd-click-open-in = انقر مع ⌘ لاختيار تطبيق
+chat-pill-card-cmd-click-browser = انقر مع ⌘ للفتح في متصفحك
+chat-pill-card-copy-path = نسخ المسار
+chat-pill-card-copy-link = نسخ الرابط
+chat-pill-card-edited = عُدِّل في هذه الدردشة
+chat-pill-card-changed-inside = { $count ->
+    [one] تغيّر ملف واحد في هذه الدردشة
+   *[other] تغيّر { $count } من الملفات في هذه الدردشة
+}
+chat-pill-card-missing = غير موجود في شجرة العمل هذه
+chat-pill-card-more-sections = { $count ->
+    [one] قسم إضافي واحد
+   *[other] { $count } من الأقسام الإضافية
+}
+chat-pill-card-expects = يتوقع { $argument }
+chat-pill-card-agent-done = انتهى خلال { $time }
+chat-pill-card-agent-failed = فشل بعد { $time }
+chat-pill-card-waiting-answer = بانتظار إجابتك
+chat-pill-card-exited = خرج بالرمز { $code }، { $time }
+chat-pill-card-uncommitted = { $count } غير ملتزمة
+chat-pill-card-failing-checks = { $count ->
+    [one] لدى #{ $number } فحص واحد فاشل: { $names }
+   *[other] لدى #{ $number } { $count } من الفحوصات الفاشلة: { $names }
+}
 chat-mention-section-sessions = الوكلاء
 chat-mention-section-worktrees = أشجار العمل
 chat-mention-section-scripts-terminals = النصوص البرمجية والطرفيات
@@ -3586,3 +3799,56 @@ chat-artifact-open-in-browser-detail = تعمل شيفرته هناك خارج �
 chat-artifact-open-link = هل تريد فتح هذا الرابط في متصفحك؟
 chat-artifact-open-link-open = فتح
 chat-artifact-open-link-cancel = إلغاء
+usage-reset-count = { $count ->
+    [zero] إعادة تعيين للحد
+    [one] إعادة تعيين للحد
+    [two] إعادتا تعيين للحد
+    [few] إعادات تعيين للحد
+    [many] إعادة تعيين للحد
+   *[other] إعادة تعيين للحد
+}
+usage-reset-next-expires = تنتهي صلاحية التالية خلال { $duration }
+usage-reset-slide = اسحب لإعادة تعيين { $window }
+usage-reset-working = جارٍ إعادة التعيين…
+usage-reset-done = أُعيد تعيين الحدود
+usage-reset-nothing = لا شيء لإعادة تعيينه الآن
+usage-reset-already = استُخدمت إعادة التعيين هذه بالفعل
+usage-reset-failed = تعذّرت إعادة التعيين. حاول مرة أخرى لاحقًا
+usage-reset-busy = لا يزال التحديث جاريًا. اسحب مرة أخرى بعد قليل
+usage-reset-unavailable = لا تتوفر إعادة تعيين
+usage-credits = الاعتمادات
+usage-credits-unlimited = غير محدود
+usage-account-resets = { $count ->
+    [zero] لا إعادات تعيين
+    [one] إعادة تعيين واحدة
+    [two] إعادتا تعيين
+    [few] { $count } إعادات تعيين
+    [many] { $count } إعادة تعيين
+   *[other] { $count } إعادة تعيين
+}
+usage-account-credits = { $amount } من الاعتمادات
+usage-account-ring-window = { $account } { $window }
+usage-account-window-left = { $window } { $percent }%
+usage-graph-account-left = المتبقي من { $window } لـ { $account }
+usage-graph-now = الآن
+usage-accounts-on-gauge = على المقياس
+usage-accounts-sign-in = تسجيل الدخول
+usage-accounts-signing-in = جارٍ تسجيل الدخول…
+usage-accounts-single = { $count ->
+    [zero] لدى كلٍّ من { $providers } حساب واحد.
+    [one] لدى { $providers } حساب واحد.
+    [two] لدى كلٍّ من { $providers } حساب واحد.
+    [few] لدى كلٍّ من { $providers } حساب واحد.
+    [many] لدى كلٍّ من { $providers } حساب واحد.
+   *[other] لدى كلٍّ من { $providers } حساب واحد.
+}
+usage-account-empty-title = لا استخدام على { $account } بعد
+usage-account-empty-body = تظهر القراءات بعد أول جلسة لهذا الملف الشخصي.
+usage-account-signed-out-title = لم يتم تسجيل الدخول إلى { $account }
+usage-account-signed-out-body = سجّل الدخول من تبويب { $provider } جديد يستخدم هذا الملف الشخصي.
+usage-account-back = العودة إلى { $account }
+usage-graph-legend-you = أنت
+usage-graph-legend-even = وتيرة متساوية
+usage-graph-legend-projection = التوقع
+usage-graph-legend-estimated = تقديري
+usage-graph-estimated = تقدير من النشاط على جهاز Mac هذا
