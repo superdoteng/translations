@@ -152,30 +152,21 @@ browser-home = 홈
 browser-start-tab-title = 시작 페이지
 browser-address-placeholder = 서버 검색 또는 주소 입력
 browser-start-running = 실행 중
-browser-start-server-count = { $count ->
-   *[other] 서버 { $count }개
-}
-browser-start-show-all = { $count }개 모두 보기
 browser-start-show-less = 간략히
-browser-start-more-projects = { $count ->
-   *[other] 프로젝트 { $count }개 더 보기
-}
 browser-start-recent = 최근 방문
+browser-start-also-running = 그 밖에 실행 중
+browser-start-more = 외 { $count }개
+browser-start-stopped = 중지됨
+browser-start-starting = 시작 중
+browser-start-clock = { $elapsed }
+browser-start-run-script = 스크립트 실행
+browser-start-run-script-named = { $script } 실행
+browser-start-stop-script = { $script } 중지
 browser-start-clear = 지우기
-browser-start-none-body = 워크트리에서 시작한 서버가 여기에 표시됩니다.
 browser-start-run = 실행 시작
-browser-start-stop-run = 실행 중지
 browser-start-this-worktree = 이 워크트리
 browser-start-pull-request = 풀 리퀘스트
 browser-start-merge-request = 머지 리퀘스트
-browser-start-checks = 체크
-browser-start-checks-passing = 통과
-browser-start-checks-failing = { $count ->
-   *[other] { $count }개 실패
-}
-browser-start-checks-running = { $count ->
-   *[other] { $count }개 실행 중
-}
 browser-start-repository = 저장소
 browser-nothing-title = { $host }이(가) 실행되고 있지 않습니다
 browser-nothing-lede = 서버가 시작되면 이 페이지가 여기에서 열립니다.
@@ -932,6 +923,10 @@ settings-updates-ready = 업데이트 준비 완료: { $version }
 settings-updates-check-failed = 업데이트 확인 실패: { $error }
 toast-update-apply-failed-title = 업데이트를 적용하지 못했습니다
 toast-update-apply-failed = 업데이트를 적용하지 못했습니다: { $error }
+toast-update-previous-launch-failed-title = Update did not finish starting
+toast-update-previous-launch-failed = The last launch of this update closed before its window appeared. If problems continue, see { $url }
+toast-update-rolled-back-title = Update rolled back
+toast-update-rolled-back = The update to { $version } closed before it finished starting, so super.engineering went back to the previous version. The next nightly will be offered automatically.
 settings-updates-downloading-version = 업데이트 { $version } 다운로드 중…
 settings-updates-installing-version = 업데이트 { $version } 설치 중…
 settings-updates-description = 새 super.engineering 릴리스를 확인합니다. 다운로드한 업데이트는 재시작할 때까지 대기합니다.
@@ -940,6 +935,7 @@ settings-updates-channel-description = 현재는 Nightly가 유일한 릴리스 
 settings-updates-current-version-label = 현재 버전
 settings-updates-installed = 설치됨
 settings-updates-status-label = 업데이트 상태
+settings-updates-package-managed = Updates are managed by your package manager
 settings-ai-inherited = 상속됨
 settings-ai-search-models-placeholder = 모델 검색…
 settings-ai-search-providers-placeholder = 제공자 검색…
@@ -1199,10 +1195,10 @@ settings-diagnostics-status-label = 진단 상태
 settings-privacy-telemetry-heading = 사용 통계
 settings-privacy-share-label = 익명 사용 데이터 공유
 settings-privacy-share-description = super.engineering의 사용 방식을 이해하고 개선 우선순위를 정하는 데 도움이 됩니다. 개인 데이터, 프로젝트 데이터, 파일 내용은 절대 컴퓨터 밖으로 전송되지 않습니다.
-settings-privacy-what-we-send-description = 설치별 무작위 ID, 무작위 앱 세션 ID, 앱 버전, 업데이트 채널, macOS 버전, 세션 시작/종료 시각과 지속 시간, 그리고 UTC 기준 하루에 한 번 앱 실행 시 또는 그날 처음 앱에 포커스하거나 입력할 때 보내는 일일 활성 이벤트입니다. 이 기능을 끄면 별도의 옵트아웃 이벤트 없이 통계 전송이 중지됩니다. 설치 ID는 기기에 남아 있다가 다시 켜면 재사용되며, 세션 상태는 삭제됩니다.
+settings-privacy-what-we-send-description = 설치별 무작위 ID, 무작위 앱 세션 ID, 앱 버전, 업데이트 채널, 운영 체제 이름과 버전, CPU 아키텍처, 세션 시작/종료 시각과 지속 시간, 그리고 UTC 기준 하루에 한 번 앱 실행 시 또는 그날 처음 앱에 포커스하거나 입력할 때 보내는 일일 활성 이벤트입니다. 이 기능을 끄면 별도의 옵트아웃 이벤트 없이 통계 전송이 중지됩니다. 설치 ID는 기기에 남아 있다가 다시 켜면 재사용되며, 세션 상태는 삭제됩니다.
 settings-privacy-what-we-never-send-description = 이름, 이메일, 호스트 이름, 작업 디렉터리, 프로젝트 이름, 파일 경로, 브랜치 이름, 명령 입력, 클립보드 내용, 그리고 어떤 코드도 전송하지 않습니다. 모든 이벤트에서 GeoIP 정보 보강이 비활성화되어 있습니다.
 settings-privacy-ip-data-capture-description = 모든 이벤트에 $geoip_disable: true를 설정하여 PostHog가 국가/도시 정보 보강을 건너뛰게 합니다. 또한 PostHog 프로젝트는 저장 전에 클라이언트 IP 주소를 폐기하도록 구성되어 있습니다. PostHog 측 동작 방식은 문서를 참고하세요.
-settings-privacy-update-checks-description = 사용 통계와 별개로, 릴리스 빌드는 매시간 releases.super.engineering에서 업데이트를 확인합니다. UTC 기준 하루의 첫 번째 확인 요청에는 전체 활성 설치 수를 집계하기 위한 익명 표시가 포함됩니다. 여기에는 식별자가 없으며 서버에 설치별 정보도 저장되지 않습니다. 앱은 하루에 한 번만 표시를 보내기 위해 로컬 날짜 표시(~/.super.engineering/update_ping_day)만 보관합니다. 위 토글의 영향을 받지 않습니다.
+settings-privacy-update-checks-description = 사용 통계와 별개로, 릴리스 빌드는 매시간 releases.super.engineering에서 업데이트를 확인합니다. UTC 기준 하루의 첫 번째 성공한 확인 요청에는 전체 활성 설치 수를 집계하기 위한 익명 표시가 포함됩니다. 여기에는 식별자가 없으며 서버에 설치별 정보도 저장되지 않습니다. 앱은 하루에 한 번만 표시를 보내기 위해 로컬 날짜 표시(~/.super.engineering/update_ping_day)만 보관합니다. 또한 아키텍처별로 집계할 수 있도록 모든 확인 요청에 앱의 CPU 아키텍처(ARM 또는 Intel)를 함께 보냅니다. 위 토글의 영향을 받지 않습니다.
 settings-privacy-install-id-location = 설치 ID는 ~/.super.engineering/install_id에 저장되며, 언제든 삭제하면 초기화됩니다.
 settings-privacy-install-id-disclosure = 설치 ID가 생성되는 방법
 settings-privacy-events-disclosure = 이벤트 전송 방식
@@ -1915,15 +1911,12 @@ settings-ai-fast = 빠른 작업
 settings-ai-thorough = 정밀 작업
 settings-ai-session = 세션
 settings-font-size-example = 예: { $size }
-settings-ai-provider-disabled = 비활성화됨 — 제공자 섹션에서 켜세요.
 settings-ai-all-buckets-cli-default = 모든 버킷은 CLI 기본 모델을 사용합니다.
 settings-ai-inheriting-parent-scope = 상위 범위에서 상속합니다.
 settings-ai-customized = 사용자 지정됨
 settings-ai-cli-default-models = CLI 기본 모델
 settings-ai-configuration = 구성
 settings-ai-configuration-description = 모델, 표시 여부, 고급 고정, 실행 플래그.
-settings-ai-advanced-setup = 고급 설정
-settings-ai-advanced-setup-description = 이 제공자의 실행 파일과 공유 실행 플래그.
 settings-ai-model-routing = 모델 라우팅
 settings-ai-model-routing-description = 기본 모델, 프로필, 사고 수준을 선택하거나 특정 동작별로 사용자 지정합니다.
 settings-ai-manage-routing = 라우팅 열기
@@ -1960,6 +1953,15 @@ settings-ai-mixed = 혼합
 settings-ai-current-chat = 현재 채팅
 settings-ai-provider-toggle-description = 새 탭 메뉴와 채팅 UI에 이 제공자를 표시합니다.
 settings-ai-provider-last-enabled-description = { $description } 제공자를 하나 이상 켜 두어야 합니다.
+settings-ai-provider-status-chat-terminal = 채팅 및 터미널
+settings-ai-provider-status-terminal = 터미널
+settings-ai-provider-status-disabled = 비활성화됨
+settings-ai-provider-disabled-detail = 모델과 실행 옵션을 구성하려면 { $provider }을(를) 켜세요.
+settings-ai-provider-section-models = 모델
+settings-ai-provider-section-chat = 채팅
+settings-ai-provider-section-runtime = 런타임
+settings-ai-provider-profiles-description = 이 제공자의 계정과 구성 홈 디렉터리입니다.
+settings-ai-provider-manage-profiles = 프로필 관리
 settings-ai-provider-antigravity-description = Antigravity를 터미널 제공자로 사용합니다(Antigravity CLI `agy` 설치 필요).
 settings-ai-provider-hermes-description = Hermes를 터미널 제공자로 사용합니다(Hermes Agent `hermes` 설치 필요).
 settings-ai-provider-qwen-description = Qwen Code를 터미널 제공자로 사용합니다(Qwen Code CLI `qwen` 설치 필요).
@@ -2174,6 +2176,8 @@ shared-parent-git-all-repos = 전체 · { $repos }
 shared-parent-git-menu-tooltip = 하위 저장소용 Git 작업
 shared-parent-git-unavailable-title = 이 저장소들을 열 수 없습니다
 shared-context-choose-projects-to-run = 실행할 프로젝트 선택
+shared-context-run-count = { $total }개 중 { $selected }개 실행
+shared-context-run-none = 없음
 workspace-choose-what-to-launch = 실행할 항목 선택…
 icon-picker-tab-symbols = 기호
 icon-picker-tab-icons = 아이콘
@@ -2446,6 +2450,8 @@ notification-codex-thread-archive-done = 삭제된 워크트리의 Codex 스레�
 notification-codex-thread-archive-failed = 일부 Codex 스레드를 보관하지 못했습니다
 notification-pasting-image = 이미지 붙여넣는 중…
 notification-installing-update = 업데이트를 설치하는 중입니다. 완료되면 앱이 다시 시작됩니다.
+notification-update-installed = 업데이트를 설치했습니다. 다시 시작하는 중입니다
+notification-update-installed-after-typing = 업데이트를 설치했습니다. 입력을 멈추면 다시 시작합니다
 notification-status-running = 실행 중
 notification-status-working = 작업 중
 notification-status-task-complete = 작업 완료
@@ -2460,7 +2466,7 @@ workspace-review-request-state-changed = { $kind } 상태가 바뀌어 이 동�
 workspace-remote-forge-cli-not-authenticated-hint = 팁: 호스트의 { $cli }이(가) 인증되지 않았습니다. 호스트에서 `{ $cli } auth login`을 실행하면 에이전트로 { $kind }을(를) 만들 수 있습니다.
 workspace-remote-forge-cli-missing-hint = 팁: 호스트에 { $cli }을(를) 설치하고 `{ $cli } auth login`을 실행하면 에이전트로 { $kind }을(를) 만들 수 있습니다.
 workspace-review-request-url-copied = { $kind } URL 복사됨
-workspace-review-request-url-unavailable = 리뷰 요청 URL을 사용할 수 없습니다
+workspace-review-request-none-yet = 이 브랜치에는 아직 { $kind }이(가) 없습니다
 worktree-context-placeholder = 에이전트에게 맡길 작업을 설명하세요…
 worktree-filter-branches-placeholder = 브랜치 필터…
 worktree-label-placeholder = 기능 라벨
@@ -2997,6 +3003,38 @@ pr-checks-failing-count = 체크 { $count }개 실패
 pr-actions-required-count = 조치 필요 { $count }개
 pr-checks-pending = 체크 대기 중
 pr-checks-pending-count = 체크 { $count }개 대기 중
+hover-card-needs-answer = 답변 필요
+hover-card-no-review-request =
+    { $forge ->
+        [gitlab] 머지 리퀘스트 없음
+       *[other] 풀 리퀘스트 없음
+    }
+hover-card-checks-running = 체크 실행 중, { $total }개 중 { $passed }개
+hover-card-more-running = 외 { $count }개 실행 중
+hover-card-stopping = 중지 중
+hover-card-main-checkout = 메인 체크아웃
+hover-card-main-checkouts = 메인 체크아웃
+hover-card-add-repo = 저장소 추가
+hover-card-add-repo-count = +{ $count }
+hover-card-find-repo = 저장소 찾기
+hover-card-checking-repos = 저장소 확인 중
+hover-card-all-merged = 모두 병합됨
+hover-card-repos-merged = { $count }개 병합됨
+hover-card-more-repos = 외 { $count }개
+hover-card-run-repos = { $count ->
+    [0] 실행
+   *[other] { $count }개 실행
+}
+hover-card-stop-repos = { $count ->
+    [0] 중지
+   *[other] { $count }개 중지
+}
+hover-card-run-select-repos = 실행할 저장소 선택
+hover-card-run-selected-repos = 선택한 저장소 실행
+hover-card-stop-selected-repos = 선택한 저장소 중지
+hover-card-checking-status = 상태 확인 중
+hover-card-nothing-to-commit = 커밋하거나 푸시할 항목 없음
+hover-card-unpushed-commits = { $count }개 푸시 안 됨
 icon-picker-emoji-tooltip = 이모지: { $glyph }
 icon-picker-named-icon-tooltip =
     { $name ->
@@ -3447,6 +3485,12 @@ chat-steer-hold-waiting = { $provider }에서 아직 방향 전환을 받을 수
 chat-steer-hold-waiting-detail = 가능해지면 이 메시지로 방향을 전환하거나, 이번 턴이 끝난 후 전송합니다.
 chat-steer-refused = 방향을 전환하지 못했습니다.
 chat-steer-refused-detail = { $provider }에서 오류를 반환했습니다. 다시 시도하기 전에 대화를 확인하세요.
+chat-reconnecting = { $provider }에 다시 연결하는 중입니다.
+chat-reconnecting-held = 연결이 복구되면 메시지가 전송됩니다.
+chat-reconnecting-retry = 잠시 후 다시 시도하세요.
+chat-reconnecting-slow = 평소보다 오래 걸려 새 연결을 시작하는 중입니다.
+chat-reconnect-failed = { $provider }에 다시 연결하지 못했습니다.
+chat-reconnect-try-again = 다시 시도
 chat-steered = 방향 전환됨
 chat-steer-not-read = 읽지 않음
 chat-steer-send-again = 보내기

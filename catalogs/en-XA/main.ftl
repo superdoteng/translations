@@ -149,34 +149,21 @@ browser-home = [!! Ħôṁë !!]
 browser-start-tab-title = [!! Šţàŕţ Þàĝë !!]
 browser-address-placeholder = [!! Šëàŕçħ šëŕṽëŕš ôŕ ëñţëŕ àñ àđđŕëšš !!]
 browser-start-running = [!! Ŕüññïñĝ !!]
-browser-start-server-count = { $count ->
-    [one] [!! 1 šëŕṽëŕ !!]
-   *[other] [!! { $count } šëŕṽëŕš !!]
-}
-browser-start-show-all = [!! Šħôŵ àľľ { $count } !!]
 browser-start-show-less = [!! Šħôŵ ľëšš !!]
-browser-start-more-projects = { $count ->
-    [one] [!! Šħôŵ 1 ṁôŕë þŕôĵëçţ !!]
-   *[other] [!! Šħôŵ { $count } ṁôŕë þŕôĵëçţš !!]
-}
 browser-start-recent = [!! Ŕëçëñţľÿ ṽïšïţëđ !!]
+browser-start-also-running = [!! Àľšô ŕüññïñĝ !!]
+browser-start-more = [!! { $count } ṁôŕë !!]
+browser-start-stopped = [!! Šţôþþëđ !!]
+browser-start-starting = [!! Šţàŕţïñĝ !!]
+browser-start-clock = { $elapsed }
+browser-start-run-script = [!! Ŕüñ šçŕïþţ !!]
+browser-start-run-script-named = [!! Ŕüñ { $script } !!]
+browser-start-stop-script = [!! Šţôþ { $script } !!]
 browser-start-clear = [!! Çľëàŕ !!]
-browser-start-none-body = [!! Šëŕṽëŕš šţàŕţëđ ïñ àñÿ ŵôŕķţŕëë àþþëàŕ ħëŕë. !!]
 browser-start-run = [!! Šţàŕţ Ŕüñ !!]
-browser-start-stop-run = [!! Šţôþ Ŕüñ !!]
 browser-start-this-worktree = [!! Ţħïš ŵôŕķţŕëë !!]
 browser-start-pull-request = [!! Þüľľ ŕëǫüëšţ !!]
 browser-start-merge-request = [!! Ṁëŕĝë ŕëǫüëšţ !!]
-browser-start-checks = [!! Çħëçķš !!]
-browser-start-checks-passing = [!! Þàššïñĝ !!]
-browser-start-checks-failing = { $count ->
-    [one] [!! 1 ƒàïľïñĝ !!]
-   *[other] [!! { $count } ƒàïľïñĝ !!]
-}
-browser-start-checks-running = { $count ->
-    [one] [!! 1 ŕüññïñĝ !!]
-   *[other] [!! { $count } ŕüññïñĝ !!]
-}
 browser-start-repository = [!! Ŕëþôšïţôŕÿ !!]
 browser-nothing-title = [!! { $host } ïšñ’ţ ŕüññïñĝ !!]
 browser-nothing-lede = [!! Ţħïš þàĝë ôþëñš ħëŕë ŵħëñ ţħë šëŕṽëŕ šţàŕţš. !!]
@@ -822,6 +809,10 @@ settings-updates-ready = [!! Üþđàţë ŕëàđÿ: { $version } !!]
 settings-updates-check-failed = [!! Üþđàţë çħëçķ ƒàïľëđ: { $error } !!]
 toast-update-apply-failed-title = [!! Çôüľđ ñôţ àþþľÿ üþđàţë !!]
 toast-update-apply-failed = [!! Çôüľđ ñôţ àþþľÿ ţħë üþđàţë: { $error } !!]
+toast-update-previous-launch-failed-title = [!! Üþđàţë đïđ ñôţ ƒïñïšħ šţàŕţïñĝ !!]
+toast-update-previous-launch-failed = [!! Ţħë ľàšţ ľàüñçħ ôƒ ţħïš üþđàţë çľôšëđ þëƒôŕë ïţš ŵïñđôŵ àþþëàŕëđ. Ïƒ þŕôþľëṁš çôñţïñüë, šëë { $url } !!]
+toast-update-rolled-back-title = [!! Üþđàţë ŕôľľëđ þàçķ !!]
+toast-update-rolled-back = [!! Ţħë üþđàţë ţô { $version } çľôšëđ þëƒôŕë ïţ ƒïñïšħëđ šţàŕţïñĝ, šô super.engineering ŵëñţ þàçķ ţô ţħë þŕëṽïôüš ṽëŕšïôñ. Ţħë ñëẋţ ñïĝħţľÿ ŵïľľ þë ôƒƒëŕëđ àüţôṁàţïçàľľÿ. !!]
 settings-updates-downloading-version = [!! Đôŵñľôàđïñĝ üþđàţë { $version }... !!]
 settings-updates-installing-version = [!! Ïñšţàľľïñĝ üþđàţë { $version }... !!]
 settings-updates-description = [!! Çħëçķ ƒôŕ ñëŵ super.engineering ŕëľëàšëš. Đôŵñľôàđš šţàÿ šţàĝëđ üñţïľ ÿôü ŕëšţàŕţ. !!]
@@ -830,6 +821,7 @@ settings-updates-channel-description = [!! Ñïĝħţľÿ ïš çüŕŕëñţľ�
 settings-updates-current-version-label = [!! Çüŕŕëñţ ṽëŕšïôñ !!]
 settings-updates-installed = [!! Ïñšţàľľëđ !!]
 settings-updates-status-label = [!! Üþđàţë šţàţüš !!]
+settings-updates-package-managed = [!! Üþđàţëš àŕë ṁàñàĝëđ þÿ ÿôüŕ þàçķàĝë ṁàñàĝëŕ !!]
 settings-ai-inherited = [!! Ïñħëŕïţëđ !!]
 settings-ai-search-models-placeholder = [!! Šëàŕçħ ṁôđëľš... !!]
 settings-ai-action-column = [!! Àçţïôñ !!]
@@ -1075,7 +1067,6 @@ settings-ai-fast-model-description = [!! Ṁôđëľ üšëđ ƒôŕ ľïĝħţ�
 settings-ai-thorough-model-description = [!! Ṁôđëľ üšëđ ƒôŕ ŕëṽïëŵ àñđ ŕëþàïŕ àçţïôñš. !!]
 settings-ai-fast = [!! Ƒàšţ !!]
 settings-ai-thorough = [!! Ţħôŕôüĝħ !!]
-settings-ai-provider-disabled = [!! Đïšàþľëđ — ëñàþľë ôñ ţħë Þŕôṽïđëŕš šëçţïôñ. !!]
 settings-ai-all-buckets-cli-default = [!! Àľľ þüçķëţš üšë ţħë CLI đëƒàüľţ ṁôđëľ. !!]
 settings-ai-inheriting-parent-scope = [!! Ïñħëŕïţïñĝ ƒŕôṁ þàŕëñţ šçôþë. !!]
 settings-ai-customized = [!! Çüšţôṁïžëđ !!]
@@ -1147,6 +1138,8 @@ shared-parent-git-pill-label = [!! { $action } ïñ { $targets } !!]
 shared-parent-git-menu-tooltip = [!! Gïţ àçţïôñš ƒôŕ çħïľđ ŕëþôš !!]
 shared-parent-git-unavailable-title = [!! Çôüľđñ'ţ ôþëñ ţħëšë ŕëþôš !!]
 shared-context-choose-projects-to-run = [!! Çħôôšë þŕôĵëçţš ţô ŕüñ !!]
+shared-context-run-count = [!! Ŕüñš { $selected } ôƒ { $total } !!]
+shared-context-run-none = [!! Ñôñë !!]
 workspace-choose-what-to-launch = [!! Çħôôšë ŵħàţ ţô ľàüñçħ… !!]
 icon-picker-tab-symbols = [!! Šÿṁþôľš !!]
 icon-picker-tab-icons = [!! Ïçôñš !!]
@@ -1696,10 +1689,10 @@ settings-diagnostics-status-label = [!! Đïàĝñôšţïçš šţàţüš !!]
 settings-privacy-telemetry-heading = [!! Ţëľëṁëţŕÿ !!]
 settings-privacy-share-label = [!! Šħàŕë àñôñÿṁôüš üšàĝë đàţà !!]
 settings-privacy-share-description = [!! Ħëľþš üš üñđëŕšţàñđ ħôŵ super.engineering ïš üšëđ àñđ þŕïôŕïţïžë ïṁþŕôṽëṁëñţš. Ñô þëŕšôñàľ đàţà, þŕôĵëçţ đàţà, ôŕ ƒïľë çôñţëñţš ëṽëŕ ľëàṽë ÿôüŕ ṁàçħïñë. !!]
-settings-privacy-what-we-send-description = [!! À ŕàñđôṁ þëŕ-ïñšţàľľ ÏĐ, ŕàñđôṁ àþþ-šëššïôñ ÏĐ, àþþ ṽëŕšïôñ, üþđàţë çħàññëľ, macOS ṽëŕšïôñ, šëššïôñ šţàŕţ/ëñđ ţïṁëšţàṁþš àñđ đüŕàţïôñ, àñđ à đàïľÿ-àçţïṽë ëṽëñţ ôñ ľàüñçħ ôŕ ţħë ƒïŕšţ ľàţëŕ àþþ ƒôçüš/ïñþüţ þëŕ UTC đàÿ. Ţüŕñïñĝ ţħïš ôƒƒ šţôþš ţëľëṁëţŕÿ ŵïţħôüţ à ƒïñàľ ôþţ-ôüţ ëṽëñţ. Ţħë ïñšţàľľ ÏĐ šţàÿš ôñ ÿôüŕ dëṽïçë àñđ ïš ŕëüšëđ ïƒ ÿôü ţüŕñ ţëľëṁëţŕÿ bàçķ ôñ; šëššïôñ šţàţë ïš đëľëţëđ. !!]
+settings-privacy-what-we-send-description = [!! À ŕàñđôṁ þëŕ-ïñšţàľľ ÏĐ, ŕàñđôṁ àþþ-šëššïôñ ÏĐ, àþþ ṽëŕšïôñ, üþđàţë çħàññëľ, ôþëŕàţïñĝ šÿšţëṁ ñàṁë àñđ ṽëŕšïôñ, ÇÞÜ àŕçħïţëçţüŕë, šëššïôñ šţàŕţ/ëñđ ţïṁëšţàṁþš àñđ đüŕàţïôñ, àñđ à đàïľÿ-àçţïṽë ëṽëñţ ôñ ľàüñçħ ôŕ ţħë ƒïŕšţ ľàţëŕ àþþ ƒôçüš/ïñþüţ þëŕ ÜŢÇ đàÿ. Ţüŕñïñĝ ţħïš ôƒƒ šţôþš ţëľëṁëţŕÿ ŵïţħôüţ à ƒïñàľ ôþţ-ôüţ ëṽëñţ. Ţħë ïñšţàľľ ÏĐ šţàÿš ôñ ÿôüŕ đëṽïçë àñđ ïš ŕëüšëđ ïƒ ÿôü ţüŕñ ţëľëṁëţŕÿ þàçķ ôñ; šëššïôñ šţàţë ïš đëľëţëđ. !!]
 settings-privacy-what-we-never-send-description = [!! Ÿôüŕ ñàṁë, ëṁàïľ, ħôšţñàṁë, ŵôŕķïñĝ đïŕëçţôŕïëš, þŕôĵëçţ ñàṁëš, ƒïľë þàţħš, þŕàñçħ ñàṁëš, çôṁṁàñđ ïñþüţš, çľïþþôàŕđ çôñţëñţš, ôŕ àñÿ çôđë. ĜëôÏÞ ëñŕïçħṁëñţ ïš đïšàþľëđ ôñ ëṽëŕÿ ëṽëñţ. !!]
 settings-privacy-ip-data-capture-description = [!! Ŵë šëţ $geoip_disable: ţŕüë ôñ ëṽëŕÿ ëṽëñţ šô PostHog šķïþš çôüñţŕÿ/çïţÿ ëñŕïçħṁëñţ. Ôüŕ PostHog þŕôĵëçţ ïš àľšô çôñƒïĝüŕëđ ţô đïšçàŕđ çľïëñţ ÏÞ àđđŕëššëš þëƒôŕë šţôŕàĝë — šëë Đôçš ƒôŕ ħôŵ ţħàţ ŵôŕķš ôñ ţħëïŕ šïđë. !!]
-settings-privacy-update-checks-description = [!! Šëþàŕàţë ƒŕôṁ ţëľëṁëţŕÿ, ŕëľëàšë þüïľđš çħëçķ ŕëľëàšëš.šüþëŕçôñđüçţôŕ.šô ħôüŕľÿ ƒôŕ üþđàţëš. Ţħë ƒïŕšţ šüççëššƒüľ çħëçķ ôƒ ëàçħ UTC đàÿ çàŕŕïëš àñ àñôñÿṁôüš ṁàŕķëŕ üšëđ ţô çôüñţ àçţïṽë ïñšţàľľš ïñ àĝĝŕëĝàţë. Ïţ çôñţàïñš ñô ïđëñţïƒïëŕ àñđ ñôţħïñĝ þëŕ-ïñšţàľľ ïš šţôŕëđ ôñ ôüŕ šëŕṽëŕš; ţħë àþþ ķëëþš ôñľÿ à ľôçàľ đàÿ ṁàŕķëŕ (~/.šüþëŕçôñđüçţôŕ/üþđàţë_þïñĝ_đàÿ) šô ïţ šëñđš ţħë ṁàŕķëŕ ôñçë þëŕ đàÿ. Ñôţ àƒƒëçţëđ þÿ ţħë ţôĝĝľë àþôṽë. !!]
+settings-privacy-update-checks-description = [!! Šëþàŕàţë ƒŕôṁ ţëľëṁëţŕÿ, ŕëľëàšë þüïľđš çħëçķ ŕëľëàšëš.šüþëŕ.ëñĝïñëëŕïñĝ ħôüŕľÿ ƒôŕ üþđàţëš. Ţħë ƒïŕšţ šüççëššƒüľ çħëçķ ôƒ ëàçħ ÜŢÇ đàÿ çàŕŕïëš àñ àñôñÿṁôüš ṁàŕķëŕ üšëđ ţô çôüñţ àçţïṽë ïñšţàľľš ïñ àĝĝŕëĝàţë. Ïţ çôñţàïñš ñô ïđëñţïƒïëŕ àñđ ñôţħïñĝ þëŕ-ïñšţàľľ ïš šţôŕëđ ôñ ôüŕ šëŕṽëŕš; ţħë àþþ ķëëþš ôñľÿ à ľôçàľ đàÿ ṁàŕķëŕ (~/.šüþëŕ.ëñĝïñëëŕïñĝ/üþđàţë_þïñĝ_đàÿ) šô ïţ šëñđš ţħë ṁàŕķëŕ ôñçë þëŕ đàÿ. Ëṽëŕÿ çħëçķ àľšô šëñđš ţħë àþþ'š ÇÞÜ àŕçħïţëçţüŕë (ÀŔṀ ôŕ Ïñţëľ), šô ţħë çôüñţ çàñ þë šþľïţ þÿ àŕçħïţëçţüŕë. Ñôţ àƒƒëçţëđ þÿ ţħë ţôĝĝľë àþôṽë. !!]
 settings-privacy-install-id-location = [!! Ÿôüŕ ïñšţàľľ ÏĐ ľïṽëš àţ ~/.šüþëŕçôñđüçţôŕ/ïñšţàľľ_ïđ — đëľëţë ïţ àñÿ ţïṁë ţô ŕëšëţ. !!]
 settings-privacy-install-id-disclosure = [!! Ħôŵ ÿôüŕ ïñšţàľľ ÏĐ ïš ĝëñëŕàţëđ !!]
 settings-privacy-events-disclosure = [!! Ħôŵ ëṽëñţš àŕë šëñţ !!]
@@ -2069,6 +2062,15 @@ settings-ai-mixed = [!! Ṁïẋëđ !!]
 settings-ai-current-chat = [!! Çüŕŕëñţ çħàţ !!]
 settings-ai-provider-toggle-description = [!! Šħôŵ ţħïš þŕôṽïđëŕ ïñ ţħë Ñëŵ Ţàþ ṁëñü àñđ Çħàţ ÜÏ. !!]
 settings-ai-provider-last-enabled-description = [!! { $description } Àţ ľëàšţ ôñë þŕôṽïđëŕ ṁüšţ ŕëṁàïñ ëñàþľëđ. !!]
+settings-ai-provider-status-chat-terminal = [!! Çħàţ àñđ ţëŕṁïñàľ !!]
+settings-ai-provider-status-terminal = [!! Ţëŕṁïñàľ !!]
+settings-ai-provider-status-disabled = [!! Đïšàþľëđ !!]
+settings-ai-provider-disabled-detail = [!! Ţüŕñ ôñ { $provider } ţô çôñƒïĝüŕë ïţš ṁôđëľš àñđ ľàüñçħ ôþţïôñš. !!]
+settings-ai-provider-section-models = [!! Ṁôđëľš !!]
+settings-ai-provider-section-chat = [!! Çħàţ !!]
+settings-ai-provider-section-runtime = [!! Ŕüñţïṁë !!]
+settings-ai-provider-profiles-description = [!! Àççôüñţš àñđ çôñƒïĝ ħôṁëš ƒôŕ ţħïš þŕôṽïđëŕ. !!]
+settings-ai-provider-manage-profiles = [!! Ṁàñàĝë þŕôƒïľëš !!]
 settings-ai-provider-antigravity-description = [!! Ëñàþľë Àñţïĝŕàṽïţÿ àš à ţëŕṁïñàľ þŕôṽïđëŕ (ŕëqüïŕëš Àñţïĝŕàṽïţÿ CLI `agy` ïñšţàľľëđ). !!]
 settings-ai-provider-hermes-description = [!! Ëñàþľë Ħëŕṁëš àš à ţëŕṁïñàľ þŕôṽïđëŕ (ŕëqüïŕëš Ħëŕṁëš Àĝëñţ `hermes` ïñšţàľľëđ). !!]
 settings-ai-provider-qwen-description = [!! Ëñàþľë Qŵëñ Çôđë àš à ţëŕṁïñàľ þŕôṽïđëŕ (ŕëqüïŕëš Qŵëñ Çôđë CLI `qwen` ïñšţàľľëđ). !!]
@@ -2207,7 +2209,7 @@ workspace-review-request-state-changed = [!! { $kind } šţàţë çħàñĝëđ
 workspace-remote-forge-cli-not-authenticated-hint = [!! Ţïþ: { $cli } ôñ ţħë ħôšţ ïšñ'ţ àüţħëñţïçàţëđ — ŕüñ `{ $cli } auth login` ţħëŕë ţô çŕëàţë à { $kind } ŵïţħ ţħë àĝëñţ. !!]
 workspace-remote-forge-cli-missing-hint = [!! Ţïþ: ïñšţàľľ { $cli } ôñ ţħë ħôšţ àñđ ŕüñ `{ $cli } auth login` ţô çŕëàţë à { $kind } ŵïţħ ţħë àĝëñţ. !!]
 workspace-review-request-url-copied = [!! Çôþïëđ { $kind } URL !!]
-workspace-review-request-url-unavailable = [!! Ñô ŕëṽïëŵ ŕëqüëšţ URL àṽàïľàþľë !!]
+workspace-review-request-none-yet = [!! Ţĥïš þŕàñçĥ ĥàš ñô { $kind } ýëţ !!]
 worktree-prompt = [!! Þŕôṁþţ !!]
 worktree-branches = [!! Ɓŕàñçħëš !!]
 worktree-merge-requests = [!! Ṁëŕĝë ŕëqüëšţš !!]
@@ -2834,6 +2836,38 @@ pr-checks-pending-count =
         [one] [!! { $count } ƈħḗƈķ ƥḗƞḓīƞɠ !!]
        *[other] [!! { $count } ƈħḗƈķş ƥḗƞḓīƞɠ !!]
     }
+hover-card-needs-answer = [!! Ñëëđš ÿôüŕ àñšŵëŕ !!]
+hover-card-no-review-request =
+    { $forge ->
+        [gitlab] [!! Ñô ṁëŕĝë ŕëǫüëšţ !!]
+       *[other] [!! Ñô þüľľ ŕëǫüëšţ !!]
+    }
+hover-card-checks-running = [!! Çħëçķš ŕüññïñĝ, { $passed } ôƒ { $total } !!]
+hover-card-more-running = [!! { $count } ṁôŕë ŕüññïñĝ !!]
+hover-card-stopping = [!! Šţôþþïñĝ !!]
+hover-card-main-checkout = [!! Ṁàïñ çħëçķôüţ !!]
+hover-card-main-checkouts = [!! Ṁàïñ çħëçķôüţš !!]
+hover-card-add-repo = [!! Àđđ ŕëþô !!]
+hover-card-add-repo-count = +{ $count }
+hover-card-find-repo = [!! Ƒïñđ à ŕëþô !!]
+hover-card-checking-repos = [!! Çħëçķïñĝ ŕëþôš !!]
+hover-card-all-merged = [!! Àľľ ṁëŕĝëđ !!]
+hover-card-repos-merged = [!! { $count } ṁëŕĝëđ !!]
+hover-card-more-repos = [!! { $count } ṁôŕë !!]
+hover-card-run-repos = { $count ->
+    [0] [!! Ŕüñ !!]
+   *[other] [!! Ŕüñ { $count } !!]
+}
+hover-card-stop-repos = { $count ->
+    [0] [!! Šţôþ !!]
+   *[other] [!! Šţôþ { $count } !!]
+}
+hover-card-run-select-repos = [!! Šëľëçţ ŕëþôš ţô ŕüñ !!]
+hover-card-run-selected-repos = [!! Ŕüñ ţħë šëľëçţëđ ŕëþôš !!]
+hover-card-stop-selected-repos = [!! Šţôþ ţħë šëľëçţëđ ŕëþôš !!]
+hover-card-checking-status = [!! Çħëçķïñĝ šţàţüš !!]
+hover-card-nothing-to-commit = [!! Ñôţħïñĝ ţô çôṁṁïţ ôŕ þüšħ !!]
+hover-card-unpushed-commits = [!! { $count } üñþüšħëđ !!]
 icon-picker-emoji-tooltip = [Ḗḿǿĵī: { $glyph }]
 icon-picker-named-icon-tooltip =
     { $name ->
@@ -3711,9 +3745,7 @@ settings-ai-other-routes-description = [!! Çôñƒïĝüŕë ñàṁïñĝ, ï�
 
 settings-ai-follows-session-default = [!! Fôľľôŵïñĝ Šëššïôñ đëƒàüľţ !!]
 
-settings-ai-advanced-setup = [!! Àđṽàñçëđ šëţüþ !!]
 
-settings-ai-advanced-setup-description = [!! Ëẋëçüţàþľë àñđ šħàŕëđ ľàüñçħ ƒľàĝš ƒôŕ ţħïš þŕôṽïđëŕ. !!]
 
 settings-ai-model-routing = [!! Ṁôđëľ ŕôüţïñĝ !!]
 
@@ -3792,6 +3824,12 @@ chat-steer-hold-waiting-detail = [!! Ÿôüŕ ṁëššàĝë ŵïľľ šţëë�
 chat-steer-refused = [!! Çôüľđñ'ţ šţëëŕ. !!]
 
 chat-steer-refused-detail = [!! { $provider } ŕëţüŕñëđ àñ ëŕŕôŕ. Çħëçķ ţħë çôñṽëŕšàţïôñ þëƒôŕë ÿôü ŕëţŕÿ. !!]
+chat-reconnecting = [!! Ŕëçôññëçţïñĝ ţô { $provider }. !!]
+chat-reconnecting-held = [!! Ÿôüŕ ṁëššàĝë ŵïľľ šëñđ ŵħëñ ïţ'š þàçķ. !!]
+chat-reconnecting-retry = [!! Ţŕÿ àĝàïñ ïñ à ṁôṁëñţ. !!]
+chat-reconnecting-slow = [!! Ţàķïñĝ ľôñĝëŕ ţħàñ üšüàľ, šţàŕţïñĝ à ƒŕëšħ çôññëçţïôñ. !!]
+chat-reconnect-failed = [!! Çôüľđñ'ţ ŕëçôññëçţ ţô { $provider }. !!]
+chat-reconnect-try-again = [!! Ţŕÿ àĝàïñ !!]
 
 chat-steered = [!! Šţëëŕëđ !!]
 
@@ -3851,6 +3889,8 @@ notification-codex-thread-archive-done =
 notification-codex-thread-archive-failed = [!! Šôṁë Codex ţħŕëàđš ŵëŕë ñôţ àŕçħïṽëđ !!]
 
 notification-installing-update = [!! Ïñšţàľľïñĝ üþđàţë. Ţħë àþþ ŵïľľ ŕëšţàŕţ ôñçë çôṁþľëţëđ. !!]
+notification-update-installed = [!! Üþđàţë ïñšţàľľëđ. Ŕëšţàŕţïñĝ !!]
+notification-update-installed-after-typing = [!! Üþđàţë ïñšţàľľëđ. Ŕëšţàŕţïñĝ ŵħëñ ýôü šţôþ ţýþïñĝ !!]
 
 worktree-delete-agent-working = [!! Àñ àĝëñţ ïš šţïľľ ŵôŕķïñĝ ħëŕë !!]
 

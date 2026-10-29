@@ -141,34 +141,21 @@ browser-home = হোম
 browser-start-tab-title = শুরুর পৃষ্ঠা
 browser-address-placeholder = সার্ভার খুঁজুন বা ঠিকানা লিখুন
 browser-start-running = চলছে
-browser-start-server-count = { $count ->
-    [one] { $count }টি সার্ভার
-   *[other] { $count }টি সার্ভার
-}
-browser-start-show-all = সব { $count }টি দেখান
 browser-start-show-less = কম দেখান
-browser-start-more-projects = { $count ->
-    [1] আরও একটি প্রকল্প দেখান
-   *[other] আরও { $count }টি প্রকল্প দেখান
-}
 browser-start-recent = সম্প্রতি দেখা
+browser-start-also-running = এগুলোও চলছে
+browser-start-more = আরও { $count }টি
+browser-start-stopped = বন্ধ
+browser-start-starting = চালু হচ্ছে
+browser-start-clock = { $elapsed }
+browser-start-run-script = স্ক্রিপ্ট চালান
+browser-start-run-script-named = { $script } চালান
+browser-start-stop-script = { $script } বন্ধ করুন
 browser-start-clear = মুছুন
-browser-start-none-body = যেকোনো ওয়ার্কট্রিতে চালু হওয়া সার্ভার এখানে দেখা যায়।
 browser-start-run = রান শুরু করুন
-browser-start-stop-run = রান বন্ধ করুন
 browser-start-this-worktree = এই ওয়ার্কট্রি
 browser-start-pull-request = পুল অনুরোধ
 browser-start-merge-request = মার্জ অনুরোধ
-browser-start-checks = চেক
-browser-start-checks-passing = পাস করছে
-browser-start-checks-failing = { $count ->
-    [one] { $count }টি ব্যর্থ
-   *[other] { $count }টি ব্যর্থ
-}
-browser-start-checks-running = { $count ->
-    [one] { $count }টি চলছে
-   *[other] { $count }টি চলছে
-}
 browser-start-repository = রিপোজিটরি
 browser-nothing-title = { $host } চলছে না
 browser-nothing-lede = সার্ভার চালু হলে এই পৃষ্ঠাটি এখানেই খুলবে।
@@ -808,6 +795,10 @@ settings-updates-ready = আপডেট প্রস্তুত: { $version }
 settings-updates-check-failed = আপডেট চেক ব্যর্থ হয়েছে: { $error }
 toast-update-apply-failed-title = আপডেট প্রয়োগ করা যায়নি
 toast-update-apply-failed = আপডেট প্রয়োগ করা যায়নি: { $error }
+toast-update-previous-launch-failed-title = Update did not finish starting
+toast-update-previous-launch-failed = The last launch of this update closed before its window appeared. If problems continue, see { $url }
+toast-update-rolled-back-title = Update rolled back
+toast-update-rolled-back = The update to { $version } closed before it finished starting, so super.engineering went back to the previous version. The next nightly will be offered automatically.
 settings-updates-downloading-version = { $version } আপডেট ডাউনলোড হচ্ছে...
 settings-updates-installing-version = { $version } আপডেট ইনস্টল করা হচ্ছে...
 settings-updates-description = নতুন super.engineering রিলিজগুলি পরীক্ষা করুন এবং ইনস্টল করুন।
@@ -816,6 +807,7 @@ settings-updates-channel-description = নাইটলি বর্তমান�
 settings-updates-current-version-label = বর্তমান সংস্করণ
 settings-updates-installed = ইনস্টল করা হয়েছে
 settings-updates-status-label = স্থিতি আপডেট করুন
+settings-updates-package-managed = Updates are managed by your package manager
 settings-ai-inherited = উত্তরাধিকারসূত্রে প্রাপ্ত
 settings-ai-search-models-placeholder = মডেল অনুসন্ধান করুন...
 settings-ai-action-column = অ্যাকশন
@@ -1067,7 +1059,6 @@ settings-ai-fast-model-description = হালকা ওজনের ক্র�
 settings-ai-thorough-model-description = পর্যালোচনা এবং মেরামত ক্রিয়াকলাপের জন্য ব্যবহৃত মডেল।
 settings-ai-fast = দ্রুত
 settings-ai-thorough = পুঙ্খানুপুঙ্খ
-settings-ai-provider-disabled = অক্ষম — সরবরাহকারী বিভাগে সক্ষম করুন।
 settings-ai-all-buckets-cli-default = সমস্ত বাকেট CLI ডিফল্ট মডেল ব্যবহার করে।
 settings-ai-inheriting-parent-scope = পিতামাতার সুযোগ থেকে উত্তরাধিকার সূত্রে প্রাপ্ত।
 settings-ai-customized = কাস্টমাইজ করা হয়েছে
@@ -1138,6 +1129,8 @@ shared-parent-git-all-repos = সব · { $repos }
 shared-parent-git-menu-tooltip = চাইল্ড রিপোর জন্য Git অ্যাকশন
 shared-parent-git-unavailable-title = এই রিপোগুলো খোলা যায়নি
 shared-context-choose-projects-to-run = চালানোর জন্য প্রকল্পগুলি চয়ন করুন
+shared-context-run-count = { $total }টির মধ্যে { $selected }টি চালায়
+shared-context-run-none = কোনোটি নয়
 workspace-choose-what-to-launch = কী চালু করবেন তা চয়ন করুন...
 icon-picker-tab-symbols = প্রতীক
 icon-picker-tab-icons = আইকন
@@ -1653,10 +1646,10 @@ settings-diagnostics-status-label = ডায়াগনস্টিকস স�
 settings-privacy-telemetry-heading = টেলিমেট্রি
 settings-privacy-share-label = বেনামী ব্যবহারের তথ্য শেয়ার করুন
 settings-privacy-share-description = super.engineering কীভাবে ব্যবহার করা হয় তা বুঝতে এবং উন্নতিকে অগ্রাধিকার দিতে আমাদের সহায়তা করে। কোনও ব্যক্তিগত তথ্য, প্রকল্প তথ্য বা ফাইলের বিষয়বস্তু কখনও আপনার মেশিন ছেড়ে যায় না।
-settings-privacy-what-we-send-description = একটি এলোমেলো প্রতি-ইনস্টল আইডি, এলোমেলো অ্যাপ-সেশন আইডি, অ্যাপ্লিকেশন সংস্করণ, আপডেট চ্যানেল, macOS সংস্করণ, সেশন শুরু/শেষ টাইমস্ট্যাম্প এবং সময়কাল এবং লঞ্চের একটি দৈনিক-সক্রিয় ইভেন্ট বা UTC দিনে প্রথম পরে অ্যাপ ফোকাস / ইনপুট। এটি বন্ধ করলে কোনো চূড়ান্ত অপ্ট-আউট ইভেন্ট ছাড়াই টেলিমেট্রি বন্ধ হয়। ইনস্টল আইডি আপনার ডিভাইসে থাকে এবং টেলিমেট্রি আবার চালু করলে সেটিই ব্যবহার করা হয়; সেশনের অবস্থা মুছে ফেলা হয়।
+settings-privacy-what-we-send-description = একটি এলোমেলো প্রতি-ইনস্টল আইডি, এলোমেলো অ্যাপ-সেশন আইডি, অ্যাপ সংস্করণ, আপডেট চ্যানেল, অপারেটিং সিস্টেমের নাম ও সংস্করণ, CPU আর্কিটেকচার, সেশন শুরু/শেষের টাইমস্ট্যাম্প ও সময়কাল, এবং লঞ্চের সময় অথবা প্রতি UTC দিনে পরবর্তী প্রথম অ্যাপ ফোকাস/ইনপুটে একটি দৈনিক-সক্রিয় ইভেন্ট। এটি বন্ধ করলে কোনো চূড়ান্ত অপ্ট-আউট ইভেন্ট ছাড়াই টেলিমেট্রি বন্ধ হয়। ইনস্টল আইডি আপনার ডিভাইসে থাকে এবং টেলিমেট্রি আবার চালু করলে সেটিই ব্যবহার করা হয়; সেশনের অবস্থা মুছে ফেলা হয়।
 settings-privacy-what-we-never-send-description = আপনার নাম, ইমেল, হোস্টনেম, ওয়ার্কিং ডিরেক্টরি, প্রজেক্টের নাম, ফাইল পাথ, শাখার নাম, কমান্ড ইনপুট, ক্লিপবোর্ড সামগ্রী বা কোনও কোড। প্রতিটি ইভেন্টে জিওআইপি সমৃদ্ধকরণ অক্ষম করা হয়।
 settings-privacy-ip-data-capture-description = আমরা সেট করেছি $geoip_disable: প্রতিটি ইভেন্টে সত্য যাতে পোস্টহগ দেশ / শহর সমৃদ্ধকরণ এড়িয়ে যায়। আমাদের পোস্টহগ প্রকল্পটি স্টোরেজের আগে ক্লায়েন্ট আইপি ঠিকানাগুলি বাতিল করার জন্য কনফিগার করা হয়েছে - এটি কীভাবে তাদের পক্ষে কাজ করে তার জন্য ডক্স দেখুন।
-settings-privacy-update-checks-description = টেলিমেট্রি থেকে পৃথক, রিলিজ আপডেটের জন্য ঘন্টা releases.super.engineering ঘন্টা চেক তৈরি করে। প্রতিটি UTC দিনের প্রথম সফল চেকটি একটি বেনামী চিহ্নিতকারী বহন করে যা সামগ্রিকভাবে সক্রিয় ইনস্টলগুলি গণনা করতে ব্যবহৃত হয়। এটিতে কোনও সনাক্তকারী নেই এবং আমাদের সার্ভারগুলিতে কোনও ইনস্টলেশন নেই; অ্যাপ্লিকেশনটি কেবল একটি স্থানীয় দিনের চিহ্নিতকারী (~/.super.engineering/update_ping_day) রাখে তাই এটি প্রতিদিন একবার মার্কার প্রেরণ করে। উপরের টগল দ্বারা প্রভাবিত নয়।
+settings-privacy-update-checks-description = টেলিমেট্রি থেকে আলাদা, রিলিজ বিল্ডগুলো আপডেটের জন্য প্রতি ঘণ্টায় releases.super.engineering চেক করে। প্রতিটি UTC দিনের প্রথম সফল চেকে একটি বেনামী চিহ্নিতকারী থাকে, যা সামগ্রিকভাবে সক্রিয় ইনস্টল গণনা করতে ব্যবহৃত হয়। এতে কোনো সনাক্তকারী নেই এবং আমাদের সার্ভারে প্রতি-ইনস্টল কিছুই সংরক্ষিত হয় না; অ্যাপটি কেবল একটি স্থানীয় দিনের চিহ্নিতকারী (~/.super.engineering/update_ping_day) রাখে, যাতে এটি দিনে একবার চিহ্নিতকারী পাঠায়। প্রতিটি চেক অ্যাপের CPU আর্কিটেকচারও (ARM বা Intel) পাঠায়, যাতে গণনাটি আর্কিটেকচার অনুযায়ী ভাগ করা যায়। উপরের টগল দ্বারা প্রভাবিত নয়।
 settings-privacy-install-id-location = আপনার ইনস্টল আইডি ~/.super.engineering/install_id এ থাকে - রিসেট করার জন্য যে কোনও সময় এটি মুছুন।
 settings-privacy-install-id-disclosure = আপনার ইনস্টল আইডি কীভাবে উত্পন্ন হয়
 settings-privacy-events-disclosure = ইভেন্টগুলি কীভাবে প্রেরণ করা হয়
@@ -2020,6 +2013,15 @@ settings-ai-mixed = মিশ্র
 settings-ai-current-chat = বর্তমান চ্যাট
 settings-ai-provider-toggle-description = নতুন ট্যাব মেনু এবং চ্যাট UI-তে এই সরবরাহকারীকে দেখান।
 settings-ai-provider-last-enabled-description = { $description } কমপক্ষে একটি সরবরাহকারীকে অবশ্যই সক্ষম থাকতে হবে।
+settings-ai-provider-status-chat-terminal = চ্যাট ও টার্মিনাল
+settings-ai-provider-status-terminal = টার্মিনাল
+settings-ai-provider-status-disabled = অক্ষম
+settings-ai-provider-disabled-detail = { $provider }-এর মডেল ও লঞ্চ বিকল্প কনফিগার করতে এটি চালু করুন।
+settings-ai-provider-section-models = মডেল
+settings-ai-provider-section-chat = চ্যাট
+settings-ai-provider-section-runtime = রানটাইম
+settings-ai-provider-profiles-description = এই প্রদানকারীর অ্যাকাউন্ট ও কনফিগ হোম ডিরেক্টরি।
+settings-ai-provider-manage-profiles = প্রোফাইল পরিচালনা করুন
 settings-ai-provider-antigravity-description = টার্মিনাল সরবরাহকারী হিসাবে অ্যান্টিগ্র্যাভিটি সক্ষম করুন (অ্যান্টিগ্র্যাভিটি ইনস্টল CLI `agy` প্রয়োজন)।
 settings-ai-provider-hermes-description = টার্মিনাল সরবরাহকারী হিসাবে হার্মিসকে সক্ষম করুন (হার্মিস এজেন্ট ইনস্টল `hermes` প্রয়োজন)।
 settings-ai-provider-qwen-description = টার্মিনাল সরবরাহকারী হিসাবে Qwen কোড সক্ষম করুন (Qwen কোড ইনস্টল CLI `qwen` প্রয়োজন)।
@@ -2106,7 +2108,7 @@ workspace-review-request-state-changed = { $kind } অবস্থা বদল�
 workspace-remote-forge-cli-not-authenticated-hint = টিপ: হোস্টে { $cli } প্রমাণিত নয় - এজেন্টের সাথে একটি { $kind } তৈরি করতে সেখানে `{ $cli } auth login` দৌড়ান।
 workspace-remote-forge-cli-missing-hint = টিপ: হোস্টে { $cli } ইনস্টল করুন এবং এজেন্টের সাথে একটি { $kind } তৈরি করতে `{ $cli } auth login` চালান।
 workspace-review-request-url-copied = অনুলিপি করা { $kind } URL
-workspace-review-request-url-unavailable = কোনও পর্যালোচনার অনুরোধ সুলভ URL
+workspace-review-request-none-yet = এই ব্রাঞ্চে এখনও কোনো { $kind } নেই
 worktree-prompt = প্রম্পট করুন
 worktree-branches = শাখা
 worktree-merge-requests = মার্জ অনুরোধ
@@ -2683,6 +2685,38 @@ pr-checks-failing-count = { $count }টি যাচাই ব্যর্থ
 pr-actions-required-count = { $count }টি পদক্ষেপ প্রয়োজন
 pr-checks-pending = যাচাই অপেক্ষমাণ
 pr-checks-pending-count = { $count }টি যাচাই অপেক্ষমাণ
+hover-card-needs-answer = আপনার উত্তর প্রয়োজন
+hover-card-no-review-request =
+    { $forge ->
+        [gitlab] কোনো মার্জ অনুরোধ নেই
+       *[other] কোনো পুল অনুরোধ নেই
+    }
+hover-card-checks-running = চেক চলছে, { $total }টির মধ্যে { $passed }টি
+hover-card-more-running = আরও { $count }টি চলছে
+hover-card-stopping = থামছে
+hover-card-main-checkout = মূল চেকআউট
+hover-card-main-checkouts = মূল চেকআউটগুলো
+hover-card-add-repo = রিপো যোগ করুন
+hover-card-add-repo-count = +{ $count }
+hover-card-find-repo = রিপো খুঁজুন
+hover-card-checking-repos = রিপো যাচাই করা হচ্ছে
+hover-card-all-merged = সবগুলো একীভূত
+hover-card-repos-merged = { $count }টি একীভূত
+hover-card-more-repos = আরও { $count }টি
+hover-card-run-repos = { $count ->
+    [0] চালান
+   *[other] { $count }টি চালান
+}
+hover-card-stop-repos = { $count ->
+    [0] বন্ধ করুন
+   *[other] { $count }টি বন্ধ করুন
+}
+hover-card-run-select-repos = চালানোর জন্য রিপো নির্বাচন করুন
+hover-card-run-selected-repos = নির্বাচিত রিপো চালান
+hover-card-stop-selected-repos = নির্বাচিত রিপো বন্ধ করুন
+hover-card-checking-status = অবস্থা যাচাই করা হচ্ছে
+hover-card-nothing-to-commit = কমিট বা পুশ করার কিছু নেই
+hover-card-unpushed-commits = { $count }টি আনপুশড
 icon-picker-emoji-tooltip = ইমোজি: { $glyph }
 icon-picker-named-icon-tooltip =
     { $name ->
@@ -3306,8 +3340,6 @@ settings-ai-git-button-routes-description = প্রতিটি AI-চাল�
 settings-ai-other-routes = অন্যান্য রুট
 settings-ai-other-routes-description = নামকরণ, ইনলাইন কমিট বার্তা, প্রম্পট উন্নতি ও পর্যালোচনার জবাব কনফিগার করুন। কাস্টম কমান্ডের রুট কমান্ড বিভাগে প্রতিটি কমান্ডের সঙ্গেই থাকে।
 settings-ai-follows-session-default = সেশনের ডিফল্ট অনুসরণ করছে
-settings-ai-advanced-setup = উন্নত সেটআপ
-settings-ai-advanced-setup-description = এই প্রদানকারীর এক্সিকিউটেবল ও ভাগ করা লঞ্চ ফ্ল্যাগ।
 settings-ai-model-routing = মডেল রাউটিং
 settings-ai-model-routing-description = ডিফল্ট মডেল, প্রোফাইল ও চিন্তার স্তর বেছে নিন, অথবা নির্দিষ্ট কাজের জন্য কাস্টমাইজ করুন।
 settings-ai-manage-routing = রাউটিং খুলুন
@@ -3347,6 +3379,12 @@ chat-steer-hold-waiting = { $provider } এখনও কাজের মাঝ�
 chat-steer-hold-waiting-detail = সম্ভব হলেই আপনার বার্তা কাজের দিক বদলাবে, অথবা এই পালার পরে পাঠানো হবে।
 chat-steer-refused = কাজের দিক বদলানো যায়নি।
 chat-steer-refused-detail = { $provider } ত্রুটি ফিরিয়েছে। আবার চেষ্টার আগে কথোপকথন দেখুন।
+chat-reconnecting = { $provider }-এর সাথে আবার সংযোগ করা হচ্ছে।
+chat-reconnecting-held = সংযোগ ফিরলে আপনার বার্তা পাঠানো হবে।
+chat-reconnecting-retry = একটু পরে আবার চেষ্টা করুন।
+chat-reconnecting-slow = স্বাভাবিকের চেয়ে বেশি সময় লাগছে, নতুন সংযোগ শুরু করা হচ্ছে।
+chat-reconnect-failed = { $provider }-এর সাথে আবার সংযোগ করা যায়নি।
+chat-reconnect-try-again = আবার চেষ্টা করুন
 chat-steered = কাজের দিক বদলানো হয়েছে
 chat-steer-not-read = পড়া হয়নি
 chat-steer-send-again = পাঠান
@@ -3382,6 +3420,8 @@ notification-codex-thread-archive-done = { $count ->
     }
 notification-codex-thread-archive-failed = কিছু Codex থ্রেড আর্কাইভ হয়নি
 notification-installing-update = আপডেট ইনস্টল হচ্ছে। শেষ হলে অ্যাপ পুনরায় চালু হবে।
+notification-update-installed = আপডেট ইনস্টল হয়েছে। পুনরায় চালু হচ্ছে
+notification-update-installed-after-typing = আপডেট ইনস্টল হয়েছে। লেখা থামালে পুনরায় চালু হবে
 worktree-delete-agent-working = একজন এজেন্ট এখনও এখানে কাজ করছে
 worktree-delete-all-action = সব মুছুন
 worktree-delete-body = এর ফোল্ডার ডিস্ক থেকে সরানো হয়।

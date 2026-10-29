@@ -148,31 +148,21 @@ browser-home = Trang chủ
 browser-start-tab-title = Trang bắt đầu
 browser-address-placeholder = Tìm máy chủ hoặc nhập địa chỉ
 browser-start-running = Đang chạy
-browser-start-server-count = { $count ->
-   *[other] { $count } máy chủ
-}
-browser-start-show-all = Hiển thị tất cả { $count }
 browser-start-show-less = Hiển thị ít hơn
-browser-start-more-projects = { $count ->
-    [1] Hiển thị thêm 1 dự án
-   *[other] Hiển thị thêm { $count } dự án
-}
 browser-start-recent = Đã truy cập gần đây
+browser-start-also-running = Cũng đang chạy
+browser-start-more = Thêm { $count }
+browser-start-stopped = Đã dừng
+browser-start-starting = Đang khởi động
+browser-start-clock = { $elapsed }
+browser-start-run-script = Chạy script
+browser-start-run-script-named = Chạy { $script }
+browser-start-stop-script = Dừng { $script }
 browser-start-clear = Xóa
-browser-start-none-body = Máy chủ được khởi động trong bất kỳ cây làm việc nào sẽ hiển thị ở đây.
 browser-start-run = Bắt đầu Chạy
-browser-start-stop-run = Dừng Chạy
 browser-start-this-worktree = Cây làm việc này
 browser-start-pull-request = Yêu cầu kéo
 browser-start-merge-request = Yêu cầu hợp nhất
-browser-start-checks = Kiểm tra
-browser-start-checks-passing = Đạt
-browser-start-checks-failing = { $count ->
-   *[other] { $count } không đạt
-}
-browser-start-checks-running = { $count ->
-   *[other] { $count } đang chạy
-}
 browser-start-repository = Kho mã
 browser-nothing-title = { $host } chưa chạy
 browser-nothing-lede = Trang này sẽ mở ở đây khi máy chủ khởi động.
@@ -811,6 +801,10 @@ settings-updates-ready = Cập nhật sẵn sàng: { $version }
 settings-updates-check-failed = Kiểm tra cập nhật thất bại: { $error }
 toast-update-apply-failed-title = Không thể áp dụng bản cập nhật
 toast-update-apply-failed = Không thể áp dụng bản cập nhật: { $error }
+toast-update-previous-launch-failed-title = Update did not finish starting
+toast-update-previous-launch-failed = The last launch of this update closed before its window appeared. If problems continue, see { $url }
+toast-update-rolled-back-title = Update rolled back
+toast-update-rolled-back = The update to { $version } closed before it finished starting, so super.engineering went back to the previous version. The next nightly will be offered automatically.
 settings-updates-downloading-version = Đang tải { $version } cập nhật...
 settings-updates-installing-version = Đang cài đặt { $version } cập nhật...
 settings-updates-description = Kiểm tra và cài đặt các bản phát hành super.engineering mới.
@@ -819,6 +813,7 @@ settings-updates-channel-description = Hiện tại, Nightly là bản phát hà
 settings-updates-current-version-label = Phiên bản hiện tại
 settings-updates-installed = Đã cài đặt
 settings-updates-status-label = Cập nhật trạng thái
+settings-updates-package-managed = Updates are managed by your package manager
 settings-ai-inherited = được thừa kế
 settings-ai-search-models-placeholder = Tìm kiếm mô hình...
 settings-ai-action-column = Hành động
@@ -1062,7 +1057,6 @@ settings-ai-fast-model-description = Mô hình dùng cho các bộ phận hoạt
 settings-ai-thorough-model-description = Mô hình dùng cho các hành động xem xét và sửa chữa.
 settings-ai-fast = Nhanh
 settings-ai-thorough = kỹ lưỡng
-settings-ai-provider-disabled = Vô hiệu hóa — bật trên phần Nhà cung cấp.
 settings-ai-all-buckets-cli-default = Tất cả các bucket đều sử dụng mô hình mặc định CLI.
 settings-ai-inheriting-parent-scope = Kế thừa từ phạm vi cha.
 settings-ai-customized = Tùy chỉnh
@@ -1133,6 +1127,8 @@ shared-parent-git-all-repos = Tất cả · { $repos }
 shared-parent-git-menu-tooltip = Thao tác Git cho các repo con
 shared-parent-git-unavailable-title = Không thể mở các repo này
 shared-context-choose-projects-to-run = Chọn dự án để chạy
+shared-context-run-count = Chạy { $selected } trên { $total }
+shared-context-run-none = Không có
 workspace-choose-what-to-launch = Chọn cái gì muốn khởi chạy...
 icon-picker-tab-symbols = Biểu tượng
 icon-picker-tab-icons = Biểu tượng
@@ -1648,10 +1644,10 @@ settings-diagnostics-status-label = Tình trạng chẩn đoán
 settings-privacy-telemetry-heading = truyền dữ liệu từ xa
 settings-privacy-share-label = Chia sẻ dữ liệu sử dụng ẩn danh
 settings-privacy-share-description = Giúp chúng tôi hiểu cách super.engineering được sử dụng và ưu tiên cải tiến. Không có dữ liệu cá nhân, dữ liệu dự án hay nội dung tệp nào rời khỏi máy của bạn.
-settings-privacy-what-we-send-description = Một ID ngẫu nhiên cho mỗi cài đặt, ID phiên ứng dụng ngẫu nhiên, phiên bản ứng dụng, kênh cập nhật, phiên bản macOS, dấu thời gian bắt đầu/kết thúc phiên và thời lượng, cùng một sự kiện hoạt động hàng ngày khi khởi động hoặc lần tập trung/nhập liệu ứng dụng muộn nhất mỗi UTC ngày. Tắt tính năng này sẽ dừng đo từ xa mà không gửi sự kiện từ chối cuối cùng. ID cài đặt vẫn được giữ trên thiết bị và được sử dụng lại nếu bạn bật lại tính năng đo từ xa; trạng thái phiên sẽ bị xóa.
+settings-privacy-what-we-send-description = Một ID ngẫu nhiên cho mỗi bản cài đặt, ID phiên ứng dụng ngẫu nhiên, phiên bản ứng dụng, kênh cập nhật, tên và phiên bản hệ điều hành, kiến trúc CPU, dấu thời gian bắt đầu/kết thúc phiên và thời lượng, cùng một sự kiện hoạt động hàng ngày khi khởi động hoặc lần đầu tiên ứng dụng được focus/nhập liệu sau đó trong mỗi ngày UTC. Tắt tính năng này sẽ dừng đo từ xa mà không gửi sự kiện từ chối cuối cùng. ID cài đặt vẫn được giữ trên thiết bị và được sử dụng lại nếu bạn bật lại tính năng đo từ xa; trạng thái phiên sẽ bị xóa.
 settings-privacy-what-we-never-send-description = Tên của bạn, email, tên máy chủ, thư mục làm việc, tên dự án, đường dẫn tệp, tên nhánh, đầu vào lệnh, nội dung clipboard hoặc bất kỳ mã nào. Tăng cường GeoIP bị vô hiệu hóa ở mọi sự kiện.
 settings-privacy-ip-data-capture-description = Chúng tôi đặt $geoip_disable: true cho mọi sự kiện để PostHog bỏ qua phần làm giàu quốc gia/thành phố. Dự án PostHog của chúng tôi cũng được cấu hình để loại bỏ địa chỉ IP của khách hàng trước khi lưu trữ — xem tài liệu để biết cách hoạt động ở phía đó.
-settings-privacy-update-checks-description = Tách biệt với telemetry, các bản phát hành kiểm tra releases.super.engineering giờ để cập nhật. Kiểm tra thành công đầu tiên của mỗi UTC ngày sẽ mang theo một dấu hiệu ẩn danh dùng để đếm tổng hợp các cài đặt đang hoạt động. Nó không chứa định danh và không có gì được lưu trữ trên máy chủ của chúng tôi cho mỗi cài đặt; Ứng dụng chỉ lưu một dấu hiệu ngày địa phương (~/.super.engineering/update_ping_day) nên nó gửi dấu hiệu một lần mỗi ngày. Không bị ảnh hưởng bởi công tắc ở trên.
+settings-privacy-update-checks-description = Tách biệt với đo từ xa, các bản phát hành kiểm tra cập nhật tại releases.super.engineering mỗi giờ. Lần kiểm tra thành công đầu tiên của mỗi ngày UTC sẽ mang theo một dấu hiệu ẩn danh dùng để đếm tổng số bản cài đặt đang hoạt động. Dấu hiệu này không chứa định danh và máy chủ của chúng tôi không lưu gì theo từng bản cài đặt; ứng dụng chỉ giữ một dấu hiệu ngày cục bộ (~/.super.engineering/update_ping_day) để gửi dấu hiệu một lần mỗi ngày. Mỗi lần kiểm tra cũng gửi kiến trúc CPU của ứng dụng (ARM hoặc Intel) để có thể thống kê theo kiến trúc. Không bị ảnh hưởng bởi công tắc ở trên.
 settings-privacy-install-id-location = ID cài đặt của bạn vẫn ở ~/.siêu dẫn/install_id — xóa nó bất cứ lúc nào để đặt lại.
 settings-privacy-install-id-disclosure = Cách ID cài đặt của bạn được tạo ra
 settings-privacy-events-disclosure = Cách các sự kiện được gửi
@@ -2015,6 +2011,15 @@ settings-ai-mixed = Hỗn hợp
 settings-ai-current-chat = Trò chuyện hiện tại
 settings-ai-provider-toggle-description = Hiển thị nhà cung cấp này trong menu Tab Mới và Giao diện trò chuyện.
 settings-ai-provider-last-enabled-description = { $description } Ít nhất một nhà cung cấp phải được kích hoạt.
+settings-ai-provider-status-chat-terminal = Chat và terminal
+settings-ai-provider-status-terminal = Terminal
+settings-ai-provider-status-disabled = Đã tắt
+settings-ai-provider-disabled-detail = Bật { $provider } để cấu hình mô hình và tùy chọn khởi chạy.
+settings-ai-provider-section-models = Mô hình
+settings-ai-provider-section-chat = Chat
+settings-ai-provider-section-runtime = Môi trường chạy
+settings-ai-provider-profiles-description = Tài khoản và thư mục cấu hình của nhà cung cấp này.
+settings-ai-provider-manage-profiles = Quản lý hồ sơ
 settings-ai-provider-antigravity-description = Kích hoạt Antigravity làm nhà cung cấp terminal (yêu cầu CLI `agy` cài đặt Antigravity).
 settings-ai-provider-hermes-description = Kích hoạt Hermes như một nhà cung cấp terminal (yêu cầu cài đặt Hermes Agent `hermes`).
 settings-ai-provider-qwen-description = Kích hoạt Qwen Code như một nhà cung cấp terminal (yêu cầu cài đặt Qwen Code CLI `qwen` cài đặt).
@@ -2101,7 +2106,7 @@ workspace-review-request-state-changed = { $kind } trạng thái thay đổi; H�
 workspace-remote-forge-cli-not-authenticated-hint = Mẹo: { $cli } trên máy chủ chưa được xác thực — hãy chạy `{ $cli } auth login` đó để tạo { $kind } với agent.
 workspace-remote-forge-cli-missing-hint = Mẹo: cài đặt { $cli } trên máy chủ và chạy `{ $cli } auth login` để tạo { $kind } với agent.
 workspace-review-request-url-copied = Đã sao chép { $kind } URL
-workspace-review-request-url-unavailable = Không có yêu cầu đánh giá URL khả dụng
+workspace-review-request-none-yet = Nhánh này chưa có { $kind }
 worktree-prompt = Đề bài
 worktree-branches = Các chi nhánh
 worktree-merge-requests = Yêu cầu hợp nhất
@@ -2678,6 +2683,38 @@ pr-checks-failing-count = { $count } kiểm tra thất bại
 pr-actions-required-count = { $count } hành động cần thiết
 pr-checks-pending = Kiểm tra đang chờ
 pr-checks-pending-count = { $count } kiểm tra đang chờ
+hover-card-needs-answer = Cần bạn trả lời
+hover-card-no-review-request =
+    { $forge ->
+        [gitlab] Không có yêu cầu hợp nhất
+       *[other] Không có yêu cầu kéo
+    }
+hover-card-checks-running = Đang chạy kiểm tra, { $passed }/{ $total }
+hover-card-more-running = Thêm { $count } đang chạy
+hover-card-stopping = Đang dừng
+hover-card-main-checkout = Bản checkout chính
+hover-card-main-checkouts = Các bản checkout chính
+hover-card-add-repo = Thêm kho mã
+hover-card-add-repo-count = +{ $count }
+hover-card-find-repo = Tìm kho mã
+hover-card-checking-repos = Đang kiểm tra kho mã
+hover-card-all-merged = Đã hợp nhất tất cả
+hover-card-repos-merged = { $count } đã hợp nhất
+hover-card-more-repos = Thêm { $count }
+hover-card-run-repos = { $count ->
+    [0] Chạy
+   *[other] Chạy { $count }
+}
+hover-card-stop-repos = { $count ->
+    [0] Dừng
+   *[other] Dừng { $count }
+}
+hover-card-run-select-repos = Chọn kho mã để chạy
+hover-card-run-selected-repos = Chạy các kho mã đã chọn
+hover-card-stop-selected-repos = Dừng các kho mã đã chọn
+hover-card-checking-status = Đang kiểm tra trạng thái
+hover-card-nothing-to-commit = Không có gì để commit hoặc đẩy
+hover-card-unpushed-commits = { $count } chưa đẩy
 icon-picker-emoji-tooltip = Biểu tượng cảm xúc: { $glyph }
 icon-picker-named-icon-tooltip =
     { $name ->
@@ -3294,8 +3331,6 @@ settings-ai-git-button-routes-description = Cấu hình mọi nút Git dùng AI.
 settings-ai-other-routes = Tuyến khác
 settings-ai-other-routes-description = Cấu hình đặt tên, thông điệp commit nội tuyến, cải thiện lời nhắc và phản hồi đánh giá. Tuyến lệnh tùy chỉnh vẫn nằm cùng từng lệnh trong Lệnh.
 settings-ai-follows-session-default = Theo Mặc định phiên
-settings-ai-advanced-setup = Thiết lập nâng cao
-settings-ai-advanced-setup-description = Tệp thực thi và cờ khởi chạy dùng chung cho nhà cung cấp này.
 settings-ai-model-routing = Định tuyến mô hình
 settings-ai-model-routing-description = Chọn mô hình, hồ sơ và mức suy nghĩ mặc định, hoặc tùy chỉnh cho hành động cụ thể.
 settings-ai-manage-routing = Mở định tuyến
@@ -3335,6 +3370,12 @@ chat-steer-hold-waiting = { $provider } chưa thể nhận chỉ dẫn điều c
 chat-steer-hold-waiting-detail = Tin nhắn sẽ điều chỉnh hướng làm việc khi có thể, hoặc được gửi sau lượt này.
 chat-steer-refused = Không thể điều chỉnh hướng.
 chat-steer-refused-detail = { $provider } trả về lỗi. Kiểm tra cuộc trò chuyện trước khi thử lại.
+chat-reconnecting = Đang kết nối lại với { $provider }.
+chat-reconnecting-held = Tin nhắn của bạn sẽ được gửi khi kết nối trở lại.
+chat-reconnecting-retry = Hãy thử lại sau giây lát.
+chat-reconnecting-slow = Mất nhiều thời gian hơn bình thường, đang tạo kết nối mới.
+chat-reconnect-failed = Không thể kết nối lại với { $provider }.
+chat-reconnect-try-again = Thử lại
 chat-steered = Đã điều chỉnh hướng
 chat-steer-not-read = Chưa đọc
 chat-steer-send-again = Gửi
@@ -3369,6 +3410,8 @@ notification-codex-thread-archive-done = { $count ->
 }
 notification-codex-thread-archive-failed = Một số luồng Codex chưa được lưu trữ
 notification-installing-update = Đang cài bản cập nhật. Ứng dụng sẽ khởi động lại khi hoàn tất.
+notification-update-installed = Đã cài bản cập nhật. Đang khởi động lại
+notification-update-installed-after-typing = Đã cài bản cập nhật. Sẽ khởi động lại khi bạn ngừng gõ
 worktree-delete-agent-working = Một tác nhân vẫn đang làm việc tại đây
 worktree-delete-all-action = Xóa tất cả
 worktree-delete-body = Thư mục của nó bị xóa khỏi ổ đĩa.

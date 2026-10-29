@@ -772,34 +772,21 @@ browser-home = Home
 browser-start-tab-title = Start Page
 browser-address-placeholder = Search servers or enter an address
 browser-start-running = Running
-browser-start-server-count = { $count ->
-    [one] 1 server
-   *[other] { $count } servers
-}
-browser-start-show-all = Show all { $count }
 browser-start-show-less = Show less
-browser-start-more-projects = { $count ->
-    [one] Show 1 more project
-   *[other] Show { $count } more projects
-}
 browser-start-recent = Recently visited
+browser-start-also-running = Also running
+browser-start-more = { $count } more
+browser-start-stopped = Stopped
+browser-start-starting = Starting
+browser-start-clock = { $elapsed }
+browser-start-run-script = Run script
+browser-start-run-script-named = Run { $script }
+browser-start-stop-script = Stop { $script }
 browser-start-clear = Clear
-browser-start-none-body = Servers started in any worktree appear here.
 browser-start-run = Start Run
-browser-start-stop-run = Stop Run
 browser-start-this-worktree = This worktree
 browser-start-pull-request = Pull request
 browser-start-merge-request = Merge request
-browser-start-checks = Checks
-browser-start-checks-passing = Passing
-browser-start-checks-failing = { $count ->
-    [one] 1 failing
-   *[other] { $count } failing
-}
-browser-start-checks-running = { $count ->
-    [one] 1 running
-   *[other] { $count } running
-}
 browser-start-repository = Repository
 browser-nothing-title = { $host } isn’t running
 browser-nothing-lede = This page opens here when the server starts.
@@ -1639,6 +1626,10 @@ settings-updates-ready = Update ready: { $version }
 settings-updates-check-failed = Update check failed: { $error }
 toast-update-apply-failed-title = Could not apply update
 toast-update-apply-failed = Could not apply the update: { $error }
+toast-update-previous-launch-failed-title = Update did not finish starting
+toast-update-previous-launch-failed = The last launch of this update closed before its window appeared. If problems continue, see { $url }
+toast-update-rolled-back-title = Update rolled back
+toast-update-rolled-back = The update to { $version } closed before it finished starting, so super.engineering went back to the previous version. The next nightly will be offered automatically.
 settings-updates-downloading-version = Downloading update { $version }...
 settings-updates-installing-version = Installing update { $version }...
 settings-updates-description = Check for new super.engineering releases. Downloads stay staged until you restart.
@@ -1647,6 +1638,7 @@ settings-updates-channel-description = Nightly is currently the only release tra
 settings-updates-current-version-label = Current version
 settings-updates-installed = Installed
 settings-updates-status-label = Update status
+settings-updates-package-managed = Updates are managed by your package manager
 settings-ai-inherited = Inherited
 settings-ai-search-models-placeholder = Search models...
 settings-ai-search-providers-placeholder = Search providers...
@@ -1919,10 +1911,10 @@ settings-diagnostics-status-label = Diagnostics status
 settings-privacy-telemetry-heading = Telemetry
 settings-privacy-share-label = Share anonymous usage data
 settings-privacy-share-description = Helps us understand how super.engineering is used and prioritize improvements. No personal data, project data, or file contents ever leave your machine.
-settings-privacy-what-we-send-description = A random per-install ID, random app-session ID, app version, update channel, macOS version, session start/end timestamps and duration, and a daily-active event on launch or the first later app focus/input per UTC day. Turning this off stops telemetry without a final opt-out event. The install ID stays on your device and is reused if you turn telemetry back on; session state is deleted.
+settings-privacy-what-we-send-description = A random per-install ID, random app-session ID, app version, update channel, operating system name and version, CPU architecture, session start/end timestamps and duration, and a daily-active event on launch or the first later app focus/input per UTC day. Turning this off stops telemetry without a final opt-out event. The install ID stays on your device and is reused if you turn telemetry back on; session state is deleted.
 settings-privacy-what-we-never-send-description = Your name, email, hostname, working directories, project names, file paths, branch names, command inputs, clipboard contents, or any code. GeoIP enrichment is disabled on every event.
 settings-privacy-ip-data-capture-description = We set $geoip_disable: true on every event so PostHog skips country/city enrichment. Our PostHog project is also configured to discard client IP addresses before storage — see Docs for how that works on their side.
-settings-privacy-update-checks-description = Separate from telemetry, release builds check releases.super.engineering hourly for updates. The first successful check of each UTC day carries an anonymous marker used to count active installs in aggregate. It contains no identifier and nothing per-install is stored on our servers; the app keeps only a local day marker (~/.super.engineering/update_ping_day) so it sends the marker once per day. Not affected by the toggle above.
+settings-privacy-update-checks-description = Separate from telemetry, release builds check releases.super.engineering hourly for updates. The first successful check of each UTC day carries an anonymous marker used to count active installs in aggregate. It contains no identifier and nothing per-install is stored on our servers; the app keeps only a local day marker (~/.super.engineering/update_ping_day) so it sends the marker once per day. Every check also sends the app's CPU architecture (ARM or Intel), so the count can be split by architecture. Not affected by the toggle above.
 settings-privacy-install-id-location = Your install ID lives at ~/.super.engineering/install_id — delete it any time to reset.
 settings-privacy-install-id-disclosure = How your install ID is generated
 settings-privacy-events-disclosure = How events are sent
@@ -2648,15 +2640,12 @@ settings-ai-fast = Fast
 settings-ai-thorough = Thorough
 settings-ai-session = Session
 settings-font-size-example = e.g. { $size }
-settings-ai-provider-disabled = Disabled — enable on the Providers section.
 settings-ai-all-buckets-cli-default = All buckets use the CLI default model.
 settings-ai-inheriting-parent-scope = Inheriting from parent scope.
 settings-ai-customized = Customized
 settings-ai-cli-default-models = CLI default models
 settings-ai-configuration = Configuration
 settings-ai-configuration-description = Models, visibility, advanced pins, and launch flags.
-settings-ai-advanced-setup = Advanced setup
-settings-ai-advanced-setup-description = Executable and shared launch flags for this provider.
 settings-ai-model-routing = Model routing
 settings-ai-model-routing-description = Choose default models, profiles, and thinking levels, or customize them for specific actions.
 settings-ai-manage-routing = Open routing
@@ -2693,6 +2682,15 @@ settings-ai-mixed = Mixed
 settings-ai-current-chat = Current chat
 settings-ai-provider-toggle-description = Show this provider in the New Tab menu and Chat UI.
 settings-ai-provider-last-enabled-description = { $description } At least one provider must remain enabled.
+settings-ai-provider-status-chat-terminal = Chat and terminal
+settings-ai-provider-status-terminal = Terminal
+settings-ai-provider-status-disabled = Disabled
+settings-ai-provider-disabled-detail = Turn on { $provider } to configure its models and launch options.
+settings-ai-provider-section-models = Models
+settings-ai-provider-section-chat = Chat
+settings-ai-provider-section-runtime = Runtime
+settings-ai-provider-profiles-description = Accounts and config homes for this provider.
+settings-ai-provider-manage-profiles = Manage profiles
 settings-ai-provider-antigravity-description = Enable Antigravity as a terminal provider (requires Antigravity CLI `agy` installed).
 settings-ai-provider-hermes-description = Enable Hermes as a terminal provider (requires Hermes Agent `hermes` installed).
 settings-ai-provider-qwen-description = Enable Qwen Code as a terminal provider (requires Qwen Code CLI `qwen` installed).
@@ -2914,6 +2912,8 @@ shared-parent-git-pill-label = { $action } in { $targets }
 shared-parent-git-menu-tooltip = Git actions for child repos
 shared-parent-git-unavailable-title = Couldn't open these repos
 shared-context-choose-projects-to-run = Choose projects to run
+shared-context-run-count = Runs { $selected } of { $total }
+shared-context-run-none = None
 workspace-choose-what-to-launch = Choose what to launch…
 icon-picker-tab-symbols = Symbols
 icon-picker-tab-icons = Icons
@@ -3149,6 +3149,13 @@ chat-steer-hold-waiting = { $provider } can't take a steer yet.
 chat-steer-hold-waiting-detail = Your message will steer once it can, or send after this turn.
 chat-steer-refused = Couldn't steer.
 chat-steer-refused-detail = { $provider } returned an error. Check the conversation before you retry.
+# A note above the composer while the chat's provider connection is replaced, e.g. "Reconnecting to Claude."
+chat-reconnecting = Reconnecting to { $provider }.
+chat-reconnecting-held = Your message will send when it's back.
+chat-reconnecting-retry = Try again in a moment.
+chat-reconnecting-slow = Taking longer than usual, starting a fresh connection.
+chat-reconnect-failed = Couldn't reconnect to { $provider }.
+chat-reconnect-try-again = Try again
 chat-worked = Worked
 chat-you-stopped = You stopped
 chat-you-stopped-after = You stopped after { $duration }
@@ -3357,6 +3364,8 @@ notification-codex-thread-archive-done =
 notification-codex-thread-archive-failed = Some Codex threads were not archived
 notification-pasting-image = Pasting image…
 notification-installing-update = Installing update. The app will restart once completed.
+notification-update-installed = Update installed. Restarting
+notification-update-installed-after-typing = Update installed. Restarting when you stop typing
 notification-status-running = Running
 notification-status-working = Working
 notification-status-task-complete = Task complete
@@ -3371,7 +3380,7 @@ workspace-review-request-state-changed = { $kind } state changed; action is no l
 workspace-remote-forge-cli-not-authenticated-hint = Tip: { $cli } on the host isn't authenticated — run `{ $cli } auth login` there to create a { $kind } with the agent.
 workspace-remote-forge-cli-missing-hint = Tip: install { $cli } on the host and run `{ $cli } auth login` to create a { $kind } with the agent.
 workspace-review-request-url-copied = Copied { $kind } URL
-workspace-review-request-url-unavailable = No review request URL available
+workspace-review-request-none-yet = This branch has no { $kind } yet
 worktree-context-placeholder = Describe what you want the agent to work on…
 worktree-filter-branches-placeholder = Filter branches…
 worktree-label-placeholder = Feature label
@@ -4023,6 +4032,38 @@ pr-checks-pending-count =
         [one] { $count } check pending
        *[other] { $count } checks pending
     }
+hover-card-needs-answer = Needs your answer
+hover-card-no-review-request =
+    { $forge ->
+        [gitlab] No merge request
+       *[other] No pull request
+    }
+hover-card-checks-running = Checks running, { $passed } of { $total }
+hover-card-more-running = { $count } more running
+hover-card-stopping = Stopping
+hover-card-main-checkout = Main checkout
+hover-card-main-checkouts = Main checkouts
+hover-card-add-repo = Add repo
+hover-card-add-repo-count = +{ $count }
+hover-card-find-repo = Find a repo
+hover-card-checking-repos = Checking repos
+hover-card-all-merged = All merged
+hover-card-repos-merged = { $count } merged
+hover-card-more-repos = { $count } more
+hover-card-run-repos = { $count ->
+    [0] Run
+   *[other] Run { $count }
+}
+hover-card-stop-repos = { $count ->
+    [0] Stop
+   *[other] Stop { $count }
+}
+hover-card-run-select-repos = Select repos to run
+hover-card-run-selected-repos = Run the selected repos
+hover-card-stop-selected-repos = Stop the selected repos
+hover-card-checking-status = Checking status
+hover-card-nothing-to-commit = Nothing to commit or push
+hover-card-unpushed-commits = { $count } unpushed
 icon-picker-emoji-tooltip = Emoji: { $glyph }
 icon-picker-named-icon-tooltip =
     { $name ->

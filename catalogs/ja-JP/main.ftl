@@ -154,30 +154,21 @@ browser-home = ホーム
 browser-start-tab-title = スタートページ
 browser-address-placeholder = サーバーを検索、またはアドレスを入力
 browser-start-running = 実行中
-browser-start-server-count = { $count ->
-   *[other] { $count } 台のサーバー
-}
-browser-start-show-all = { $count } 件すべて表示
 browser-start-show-less = 折りたたむ
-browser-start-more-projects = { $count ->
-   *[other] ほか { $count } 件のプロジェクトを表示
-}
 browser-start-recent = 最近のアクセス
+browser-start-also-running = ほかに実行中
+browser-start-more = ほか { $count } 件
+browser-start-stopped = 停止
+browser-start-starting = 起動中
+browser-start-clock = { $elapsed }
+browser-start-run-script = スクリプトを実行
+browser-start-run-script-named = { $script } を実行
+browser-start-stop-script = { $script } を停止
 browser-start-clear = クリア
-browser-start-none-body = いずれかのワークツリーで起動したサーバーがここに表示されます。
 browser-start-run = 実行を開始
-browser-start-stop-run = 実行を停止
 browser-start-this-worktree = このワークツリー
 browser-start-pull-request = プルリクエスト
 browser-start-merge-request = マージリクエスト
-browser-start-checks = チェック
-browser-start-checks-passing = 成功
-browser-start-checks-failing = { $count ->
-   *[other] { $count } 件失敗
-}
-browser-start-checks-running = { $count ->
-   *[other] { $count } 件実行中
-}
 browser-start-repository = リポジトリ
 browser-nothing-title = { $host } は実行されていません
 browser-nothing-lede = サーバーが起動すると、このページがここで開きます。
@@ -836,6 +827,10 @@ settings-updates-ready = アップデートの準備完了：{ $version }
 settings-updates-check-failed = アップデートの確認に失敗しました：{ $error }
 toast-update-apply-failed-title = アップデートを適用できませんでした
 toast-update-apply-failed = アップデートを適用できませんでした：{ $error }
+toast-update-previous-launch-failed-title = Update did not finish starting
+toast-update-previous-launch-failed = The last launch of this update closed before its window appeared. If problems continue, see { $url }
+toast-update-rolled-back-title = Update rolled back
+toast-update-rolled-back = The update to { $version } closed before it finished starting, so super.engineering went back to the previous version. The next nightly will be offered automatically.
 settings-updates-downloading-version = アップデート { $version } をダウンロード中…
 settings-updates-installing-version = アップデート { $version } をインストール中…
 settings-updates-description = super.engineering の新しいリリースを確認します。ダウンロードしたアップデートは再起動するまで適用されません。
@@ -844,6 +839,7 @@ settings-updates-channel-description = 現在利用できるリリースチャ�
 settings-updates-current-version-label = 現在のバージョン
 settings-updates-installed = インストール済み
 settings-updates-status-label = 更新状況
+settings-updates-package-managed = Updates are managed by your package manager
 settings-ai-inherited = 継承
 settings-ai-search-models-placeholder = モデルを検索…
 settings-ai-action-column = アクション
@@ -1192,7 +1188,6 @@ settings-ai-fast = 高速
 settings-ai-thorough = 詳細
 settings-ai-session = セッション
 settings-font-size-example = 例：{ $size }
-settings-ai-provider-disabled = 無効 — 「プロバイダー」セクションで有効にしてください。
 settings-ai-all-buckets-cli-default = すべての用途で CLI のデフォルトモデルを使用します。
 settings-ai-inheriting-parent-scope = 親スコープから継承しています。
 settings-ai-customized = カスタマイズ済み
@@ -1337,10 +1332,10 @@ settings-diagnostics-status-label = 診断状況
 settings-privacy-telemetry-heading = テレメトリー
 settings-privacy-share-label = 匿名使用データを共有
 settings-privacy-share-description = super.engineering の利用状況を把握し、改善の優先順位を決めるために役立ちます。個人データ、プロジェクトデータ、ファイルの内容がこの Mac から送信されることはありません。
-settings-privacy-what-we-send-description = インストールごとのランダム ID、ランダムなアプリセッション ID、アプリのバージョン、更新チャネル、macOS のバージョン、セッションの開始・終了時刻と継続時間、および起動時か、その UTC 日で初めてアプリにフォーカスまたは入力したときの日次アクティブイベントを送信します。オフにすると、最後のオプトアウトイベントを送信せずにテレメトリが停止します。インストール ID はデバイスに保持され、テレメトリを再度オンにすると再利用されます。セッション状態は削除されます。
+settings-privacy-what-we-send-description = インストールごとのランダム ID、ランダムなアプリセッション ID、アプリのバージョン、更新チャネル、OS の名前とバージョン、CPU アーキテクチャ、セッションの開始・終了時刻と継続時間、および起動時か、その UTC 日で初めてアプリにフォーカスまたは入力したときの日次アクティブイベントを送信します。オフにすると、最後のオプトアウトイベントを送信せずにテレメトリが停止します。インストール ID はデバイスに保持され、テレメトリを再度オンにすると再利用されます。セッション状態は削除されます。
 settings-privacy-what-we-never-send-description = 氏名、メールアドレス、ホスト名、作業ディレクトリ、プロジェクト名、ファイルパス、ブランチ名、コマンド入力、クリップボードの内容、コードは送信しません。すべてのイベントで GeoIP 情報の付加を無効にしています。
 settings-privacy-ip-data-capture-description = すべてのイベントに $geoip_disable: true を設定し、PostHog による国や都市の情報付加を無効にしています。また、PostHog プロジェクトでは、保存前にクライアント IP アドレスを破棄するよう設定しています。PostHog 側での処理についてはドキュメントを参照してください。
-settings-privacy-update-checks-description = テレメトリとは別に、リリースビルドは releases.super.engineering で 1 時間ごとに更新を確認します。UTC の各日で最初に成功した確認には、アクティブなインストール数を集計するための匿名マーカーが含まれます。識別子は含まれず、インストールごとの情報がサーバーに保存されることもありません。アプリはローカルの日付マーカー（~/.super.engineering/update_ping_day）のみを保持し、マーカーを 1 日 1 回送信します。上の切り替え設定の影響は受けません。
+settings-privacy-update-checks-description = テレメトリとは別に、リリースビルドは releases.super.engineering で 1 時間ごとに更新を確認します。UTC の各日で最初に成功した確認には、アクティブなインストール数を集計するための匿名マーカーが含まれます。識別子は含まれず、インストールごとの情報がサーバーに保存されることもありません。アプリはローカルの日付マーカー（~/.super.engineering/update_ping_day）のみを保持し、マーカーを 1 日 1 回送信します。また、アーキテクチャ別に集計できるよう、すべての確認でアプリの CPU アーキテクチャ（ARM または Intel）も送信します。上の切り替え設定の影響は受けません。
 settings-privacy-install-id-location = インストール ID は ~/.super.engineering/install_id に保存されています。いつでも削除してリセットできます。
 settings-privacy-install-id-disclosure = インストール ID の生成方法
 settings-privacy-events-disclosure = イベントの送信方法
@@ -1759,6 +1754,15 @@ settings-ai-mixed = 混在
 settings-ai-current-chat = 現在のチャット
 settings-ai-provider-toggle-description = このプロバイダーを「新しいタブ」メニューとチャット UI に表示します。
 settings-ai-provider-last-enabled-description = { $description } 少なくとも 1 つのプロバイダーを有効にしておく必要があります。
+settings-ai-provider-status-chat-terminal = チャットとターミナル
+settings-ai-provider-status-terminal = ターミナル
+settings-ai-provider-status-disabled = 無効
+settings-ai-provider-disabled-detail = モデルと起動オプションを設定するには、{ $provider } をオンにしてください。
+settings-ai-provider-section-models = モデル
+settings-ai-provider-section-chat = チャット
+settings-ai-provider-section-runtime = ランタイム
+settings-ai-provider-profiles-description = このプロバイダーのアカウントと設定ホームディレクトリ。
+settings-ai-provider-manage-profiles = プロファイルを管理
 settings-ai-provider-antigravity-description = Antigravity をターミナルプロバイダーとして有効にします（Antigravity CLI の `agy` がインストールされている必要があります）。
 settings-ai-provider-hermes-description = Hermes をターミナルプロバイダーとして有効にします（Hermes Agent の `hermes` がインストールされている必要があります）。
 settings-ai-provider-qwen-description = Qwen Code をターミナルプロバイダーとして有効にします（Qwen Code CLI の `qwen` がインストールされている必要があります）。
@@ -1969,6 +1973,8 @@ shared-parent-git-all-repos = すべて · { $repos }
 shared-parent-git-menu-tooltip = 子リポジトリの Git 操作
 shared-parent-git-unavailable-title = これらのリポジトリを開けませんでした
 shared-context-choose-projects-to-run = 実行するプロジェクトを選択
+shared-context-run-count = { $total } 件中 { $selected } 件を実行
+shared-context-run-none = なし
 workspace-choose-what-to-launch = 起動する項目を選択…
 icon-picker-tab-symbols = 記号
 icon-picker-tab-icons = アイコン
@@ -2238,7 +2244,7 @@ workspace-review-request-state-changed = { $kind } の状態が変更された�
 workspace-remote-forge-cli-not-authenticated-hint = ヒント：ホスト上の { $cli } は認証されていません。エージェントで { $kind } を作成するには、ホスト上で `{ $cli } auth login` を実行してください。
 workspace-remote-forge-cli-missing-hint = ヒント：エージェントで { $kind } を作成するには、ホストに { $cli } をインストールして `{ $cli } auth login` を実行してください。
 workspace-review-request-url-copied = { $kind } の URL をコピーしました
-workspace-review-request-url-unavailable = 利用可能なレビューリクエストの URL がありません
+workspace-review-request-none-yet = このブランチにはまだ { $kind } がありません
 worktree-context-placeholder = エージェントに依頼する作業を入力…
 worktree-filter-branches-placeholder = ブランチを絞り込み…
 worktree-label-placeholder = ワークツリーのラベル
@@ -2792,6 +2798,38 @@ pr-checks-pending-count =
         [one] 保留中のチェック { $count } 件
        *[other] 保留中のチェック { $count } 件
     }
+hover-card-needs-answer = 回答が必要です
+hover-card-no-review-request =
+    { $forge ->
+        [gitlab] マージリクエストなし
+       *[other] プルリクエストなし
+    }
+hover-card-checks-running = チェック実行中（{ $passed }/{ $total }）
+hover-card-more-running = ほか { $count } 件が実行中
+hover-card-stopping = 停止中
+hover-card-main-checkout = メインチェックアウト
+hover-card-main-checkouts = メインチェックアウト
+hover-card-add-repo = リポジトリを追加
+hover-card-add-repo-count = +{ $count }
+hover-card-find-repo = リポジトリを検索
+hover-card-checking-repos = リポジトリを確認中
+hover-card-all-merged = すべてマージ済み
+hover-card-repos-merged = { $count } 件マージ済み
+hover-card-more-repos = ほか { $count } 件
+hover-card-run-repos = { $count ->
+    [0] 実行
+   *[other] { $count } 件を実行
+}
+hover-card-stop-repos = { $count ->
+    [0] 停止
+   *[other] { $count } 件を停止
+}
+hover-card-run-select-repos = 実行するリポジトリを選択
+hover-card-run-selected-repos = 選択したリポジトリを実行
+hover-card-stop-selected-repos = 選択したリポジトリを停止
+hover-card-checking-status = ステータスを確認中
+hover-card-nothing-to-commit = コミットまたはプッシュするものはありません
+hover-card-unpushed-commits = 未プッシュ { $count } 件
 icon-picker-emoji-tooltip = 絵文字：{ $glyph }
 icon-picker-named-icon-tooltip =
     { $name ->
@@ -3360,8 +3398,6 @@ settings-ai-git-button-routes-description = AI を使う各 Git ボタンを設�
 settings-ai-other-routes = その他のルート
 settings-ai-other-routes-description = 命名、インラインコミットメッセージ、プロンプト改善、レビューへの返信を設定します。カスタムコマンドのルートは「コマンド」の各コマンドで設定します。
 settings-ai-follows-session-default = セッションのデフォルトに従う
-settings-ai-advanced-setup = 詳細設定
-settings-ai-advanced-setup-description = このプロバイダーの実行ファイルと共通の起動フラグです。
 settings-ai-model-routing = モデルのルーティング
 settings-ai-model-routing-description = デフォルトのモデル、プロファイル、推論レベルを選択するか、アクションごとに設定できます。
 settings-ai-manage-routing = ルーティングを開く
@@ -3401,6 +3437,12 @@ chat-steer-hold-waiting = { $provider } はまだ方針変更を受け付けら�
 chat-steer-hold-waiting-detail = 可能になり次第このメッセージで方針を変更するか、このターンの終了後に送信します。
 chat-steer-refused = 方針を変更できませんでした。
 chat-steer-refused-detail = { $provider } がエラーを返しました。再試行する前に会話を確認してください。
+chat-reconnecting = { $provider } に再接続しています。
+chat-reconnecting-held = 接続が戻るとメッセージが送信されます。
+chat-reconnecting-retry = しばらくしてから再試行してください。
+chat-reconnecting-slow = 通常より時間がかかっているため、新しい接続を開始しています。
+chat-reconnect-failed = { $provider } に再接続できませんでした。
+chat-reconnect-try-again = 再試行
 chat-steered = 方針変更済み
 chat-steer-not-read = 未読
 chat-steer-send-again = 送信
@@ -3426,6 +3468,8 @@ notification-codex-thread-archive-done = { $count ->
     }
 notification-codex-thread-archive-failed = 一部の Codex スレッドをアーカイブできませんでした
 notification-installing-update = アップデートをインストール中です。完了後にアプリが再起動します。
+notification-update-installed = アップデートをインストールしました。再起動しています
+notification-update-installed-after-typing = アップデートをインストールしました。入力が終わると再起動します
 worktree-delete-agent-working = ここではまだエージェントが作業中です
 worktree-delete-all-action = すべて削除
 worktree-delete-body = フォルダがディスクから削除されます。
