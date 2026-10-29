@@ -141,34 +141,21 @@ browser-home = Accueil
 browser-start-tab-title = Page d’accueil
 browser-address-placeholder = Rechercher des serveurs ou saisir une adresse
 browser-start-running = En cours
-browser-start-server-count = { $count ->
-    [one] { $count } serveur
-   *[other] { $count } serveurs
-}
-browser-start-show-all = Afficher les { $count }
 browser-start-show-less = Afficher moins
-browser-start-more-projects = { $count ->
-    [1] Afficher 1 autre projet
-   *[other] Afficher { $count } autres projets
-}
 browser-start-recent = Visités récemment
+browser-start-also-running = Également en cours
+browser-start-more = { $count } de plus
+browser-start-stopped = Arrêté
+browser-start-starting = Démarrage
+browser-start-clock = { $elapsed }
+browser-start-run-script = Exécuter un script
+browser-start-run-script-named = Exécuter { $script }
+browser-start-stop-script = Arrêter { $script }
 browser-start-clear = Effacer
-browser-start-none-body = Les serveurs démarrés dans n’importe quel arbre de travail apparaissent ici.
 browser-start-run = Lancer l’exécution
-browser-start-stop-run = Arrêter l’exécution
 browser-start-this-worktree = Cet arbre de travail
 browser-start-pull-request = Pull request
 browser-start-merge-request = Merge request
-browser-start-checks = Vérifications
-browser-start-checks-passing = Réussies
-browser-start-checks-failing = { $count ->
-    [one] { $count } en échec
-   *[other] { $count } en échec
-}
-browser-start-checks-running = { $count ->
-    [one] { $count } en cours
-   *[other] { $count } en cours
-}
 browser-start-repository = Dépôt
 browser-nothing-title = { $host } n’est pas en cours d’exécution
 browser-nothing-lede = Cette page s’ouvre ici quand le serveur démarre.
@@ -812,6 +799,10 @@ settings-updates-ready = Mise à jour prête : { $version }
 settings-updates-check-failed = Échec de la vérification de la mise à jour : { $error }
 toast-update-apply-failed-title = Impossible d'appliquer la mise à jour
 toast-update-apply-failed = Impossible d'appliquer la mise à jour : { $error }
+toast-update-previous-launch-failed-title = Update did not finish starting
+toast-update-previous-launch-failed = The last launch of this update closed before its window appeared. If problems continue, see { $url }
+toast-update-rolled-back-title = Update rolled back
+toast-update-rolled-back = The update to { $version } closed before it finished starting, so super.engineering went back to the previous version. The next nightly will be offered automatically.
 settings-updates-downloading-version = Téléchargement de la mise à jour { $version }...
 settings-updates-installing-version = Installation de la mise à jour { $version }...
 settings-updates-description = Vérifiez et installez les nouvelles versions super.engineering.
@@ -820,6 +811,7 @@ settings-updates-channel-description = Nightly est actuellement le seul morceau 
 settings-updates-current-version-label = Version actuelle
 settings-updates-installed = Installé
 settings-updates-status-label = Statut de la mise à jour
+settings-updates-package-managed = Updates are managed by your package manager
 settings-ai-inherited = Hérité
 settings-ai-search-models-placeholder = Rechercher des modèles...
 settings-ai-action-column = Action
@@ -1071,7 +1063,6 @@ settings-ai-fast-model-description = Modèle utilisé pour des actions légères
 settings-ai-thorough-model-description = Le modèle est utilisé pour les actions de révision et de réparation.
 settings-ai-fast = Vite
 settings-ai-thorough = Complet
-settings-ai-provider-disabled = Désactivé — activer dans la section Fournisseurs.
 settings-ai-all-buckets-cli-default = Tous les buckets utilisent le modèle CLI par défaut.
 settings-ai-inheriting-parent-scope = Héritage du prospectoire parental.
 settings-ai-customized = Personnalisé
@@ -1142,6 +1133,8 @@ shared-parent-git-all-repos = Tous · { $repos }
 shared-parent-git-menu-tooltip = Actions Git pour les dépôts enfants
 shared-parent-git-unavailable-title = Impossible d'ouvrir ces dépôts
 shared-context-choose-projects-to-run = Choisissez des projets à gérer
+shared-context-run-count = Exécute { $selected } sur { $total }
+shared-context-run-none = Aucun
 workspace-choose-what-to-launch = Choisissez quoi lancer...
 icon-picker-tab-symbols = Symboles
 icon-picker-tab-icons = Icônes
@@ -1657,10 +1650,10 @@ settings-diagnostics-status-label = État du diagnostic
 settings-privacy-telemetry-heading = Télémétrie
 settings-privacy-share-label = Partagez des données d’utilisation anonymes
 settings-privacy-share-description = Cela nous aide à comprendre comment super.engineering est utilisé et à prioriser les améliorations. Aucune donnée personnelle, donnée de projet ou contenu de fichier ne quitte jamais votre machine.
-settings-privacy-what-we-send-description = Un identifiant aléatoire par installation, un identifiant de session d’application aléatoire, une version de l’application, un canal de mise à jour, macOS version, des horodatages et durées de début/fin de session, ainsi qu’un événement actif quotidien au lancement ou le premier focus/entrée ultérieur de l’application par UTC jour. La désactivation arrête la télémétrie sans envoyer d’événement final de désactivation. L’identifiant d’installation reste sur votre appareil et est réutilisé si vous réactivez la télémétrie ; l’état de la session est supprimé.
+settings-privacy-what-we-send-description = Un identifiant aléatoire par installation, un identifiant aléatoire de session de l’application, la version de l’application, le canal de mise à jour, le nom et la version du système d’exploitation, l’architecture CPU, les horodatages de début et de fin de session et sa durée, ainsi qu’un événement d’activité quotidienne au lancement ou à la première mise au premier plan ou saisie ultérieure de l’application par jour UTC. La désactivation arrête la télémétrie sans envoyer d’événement final de désactivation. L’identifiant d’installation reste sur votre appareil et est réutilisé si vous réactivez la télémétrie ; l’état de la session est supprimé.
 settings-privacy-what-we-never-send-description = Votre nom, email, nom d’hôte, répertoires de travail, noms de projets, chemins de fichiers, noms de branches, entrées de commandes, contenu du presse-papiers ou tout autre code. L’enrichissement GeoIP est désactivé à chaque événement.
 settings-privacy-ip-data-capture-description = Nous avons réglé $geoip_disable : true à chaque événement pour que PostHog évite l’enrichissement pays/ville. Notre projet PostHog est également configuré pour supprimer les adresses IP des clients avant le stockage — voir Docs pour savoir comment cela fonctionne de leur côté.
-settings-privacy-update-checks-description = À part la télémétrie, les builds de lancement vérifient releases.super.engineering toutes les heures pour les mises à jour. La première vérification réussie de chaque UTC jour porte un marqueur anonyme utilisé pour compter les installations actives dans l’ensemble. Il ne contient aucun identifiant et rien de contenu par installation n’est stocké sur nos serveurs ; L’application ne conserve qu’un marqueur local (~/.super.engineering/update_ping_day), donc elle envoie le marqueur une fois par jour. Pas affecté par le bouton de bascule ci-dessus.
+settings-privacy-update-checks-description = Indépendamment de la télémétrie, les versions publiées vérifient toutes les heures les mises à jour sur releases.super.engineering. La première vérification réussie de chaque jour UTC transporte un marqueur anonyme servant à compter les installations actives de façon agrégée. Il ne contient aucun identifiant et rien n’est stocké par installation sur nos serveurs ; l’application conserve seulement un marqueur de jour local (~/.super.engineering/update_ping_day) afin de n’envoyer le marqueur qu’une fois par jour. Chaque vérification envoie aussi l’architecture CPU de l’application (ARM ou Intel), afin de pouvoir répartir le décompte par architecture. Non concerné par le bouton ci-dessus.
 settings-privacy-install-id-location = Votre identifiant d’installation est situé à ~/.super.engineering/install_id — supprimez-le à tout moment pour le réinitialiser.
 settings-privacy-install-id-disclosure = Comment votre ID d’installation est généré
 settings-privacy-events-disclosure = Comment les événements sont envoyés
@@ -2024,6 +2017,15 @@ settings-ai-mixed = Mixte
 settings-ai-current-chat = Discussion actuelle
 settings-ai-provider-toggle-description = Affichez ce fournisseur dans le menu Nouvel onglet et l’interface de chat.
 settings-ai-provider-last-enabled-description = { $description } Au moins un fournisseur doit rester activé.
+settings-ai-provider-status-chat-terminal = Chat et terminal
+settings-ai-provider-status-terminal = Terminal
+settings-ai-provider-status-disabled = Désactivé
+settings-ai-provider-disabled-detail = Activez { $provider } pour configurer ses modèles et ses options de lancement.
+settings-ai-provider-section-models = Modèles
+settings-ai-provider-section-chat = Chat
+settings-ai-provider-section-runtime = Exécution
+settings-ai-provider-profiles-description = Comptes et répertoires de configuration de ce fournisseur.
+settings-ai-provider-manage-profiles = Gérer les profils
 settings-ai-provider-antigravity-description = Activez l’Antigravité en tant que fournisseur terminal (nécessite l’installation de CLI `agy` Antigravité).
 settings-ai-provider-hermes-description = Activez Hermes comme fournisseur de terminaux (nécessite l’installation d’un agent Hermes `hermes`).
 settings-ai-provider-qwen-description = Activez Qwen Code en tant que fournisseur terminal (nécessite que Qwen Code CLI `qwen` installé).
@@ -2110,7 +2112,7 @@ workspace-review-request-state-changed = { $kind } État a changé ; L’action 
 workspace-remote-forge-cli-not-authenticated-hint = Astuce : { $cli } sur l’hôte n’est pas authentifié — `{ $cli } auth login` y faire pour créer un { $kind } avec l’agent.
 workspace-remote-forge-cli-missing-hint = Astuce : installez { $cli } sur l’hôte et exécutez-le `{ $cli } auth login` pour créer un { $kind } avec l’agent.
 workspace-review-request-url-copied = Copié { $kind } URL
-workspace-review-request-url-unavailable = Aucune demande de revue URL disponible
+workspace-review-request-none-yet = Cette branche n’a pas encore de { $kind }
 worktree-prompt = Prompt
 worktree-branches = Branches
 worktree-merge-requests = Requêtes de fusion
@@ -2731,6 +2733,44 @@ pr-checks-pending-count =
         [one] { $count } vérification en attente
        *[other] { $count } vérifications en attente
     }
+hover-card-needs-answer = Attend votre réponse
+hover-card-no-review-request =
+    { $forge ->
+        [gitlab] Aucune merge request
+       *[other] Aucune pull request
+    }
+hover-card-checks-running = Vérifications en cours, { $passed } sur { $total }
+hover-card-more-running = { $count } autres en cours
+hover-card-stopping = Arrêt en cours
+hover-card-main-checkout = Checkout principal
+hover-card-main-checkouts = Checkouts principaux
+hover-card-add-repo = Ajouter un dépôt
+hover-card-add-repo-count = +{ $count }
+hover-card-find-repo = Rechercher un dépôt
+hover-card-checking-repos = Vérification des dépôts
+hover-card-all-merged = Tout est fusionné
+hover-card-repos-merged = { $count ->
+    [one] { $count } fusionné
+   *[other] { $count } fusionnés
+}
+hover-card-more-repos = { $count } de plus
+hover-card-run-repos = { $count ->
+    [0] Exécuter
+   *[other] Exécuter { $count }
+}
+hover-card-stop-repos = { $count ->
+    [0] Arrêter
+   *[other] Arrêter { $count }
+}
+hover-card-run-select-repos = Sélectionnez les dépôts à exécuter
+hover-card-run-selected-repos = Exécuter les dépôts sélectionnés
+hover-card-stop-selected-repos = Arrêter les dépôts sélectionnés
+hover-card-checking-status = Vérification de l’état
+hover-card-nothing-to-commit = Rien à commiter ni à pousser
+hover-card-unpushed-commits = { $count ->
+    [one] { $count } non poussé
+   *[other] { $count } non poussés
+}
 icon-picker-emoji-tooltip = Emoji : { $glyph }
 icon-picker-named-icon-tooltip =
     { $name ->
@@ -3435,8 +3475,6 @@ settings-ai-git-button-routes-description = Configurez chaque bouton Git avec IA
 settings-ai-other-routes = Autres routes
 settings-ai-other-routes-description = Configurez le nommage, les messages de commit intégrés, l’amélioration des prompts et les réponses aux revues. Les routes des commandes personnalisées restent avec chaque commande dans Commandes.
 settings-ai-follows-session-default = Suit la session par défaut
-settings-ai-advanced-setup = Configuration avancée
-settings-ai-advanced-setup-description = Exécutable et options de lancement partagées de ce fournisseur.
 settings-ai-model-routing = Routage des modèles
 settings-ai-model-routing-description = Choisissez les modèles, profils et niveaux de réflexion par défaut, ou personnalisez-les par action.
 settings-ai-manage-routing = Ouvrir le routage
@@ -3473,6 +3511,12 @@ chat-steer-hold-waiting = { $provider } ne peut pas encore accepter de réorient
 chat-steer-hold-waiting-detail = Votre message réorientera l’agent dès que possible ou sera envoyé après ce tour.
 chat-steer-refused = Impossible de réorienter.
 chat-steer-refused-detail = { $provider } a renvoyé une erreur. Vérifiez la conversation avant de réessayer.
+chat-reconnecting = Reconnexion à { $provider }.
+chat-reconnecting-held = Votre message sera envoyé dès le retour de la connexion.
+chat-reconnecting-retry = Réessayez dans un instant.
+chat-reconnecting-slow = Plus long que d’habitude, ouverture d’une nouvelle connexion.
+chat-reconnect-failed = Impossible de se reconnecter à { $provider }.
+chat-reconnect-try-again = Réessayer
 chat-steered = Réorienté
 chat-steer-not-read = Non lu
 chat-send-failed = Impossible d’envoyer à cette discussion. Réessayez.
@@ -3498,6 +3542,8 @@ notification-codex-thread-archive-done = { $count ->
     }
 notification-codex-thread-archive-failed = Certains fils Codex n’ont pas été archivés
 notification-installing-update = Installation de la mise à jour. L’application redémarrera ensuite.
+notification-update-installed = Mise à jour installée. Redémarrage
+notification-update-installed-after-typing = Mise à jour installée. Redémarrage à la fin de la saisie
 worktree-delete-agent-working = Un agent travaille encore ici
 worktree-delete-all-action = Tout supprimer
 worktree-delete-body = Son dossier sera supprimé du disque.

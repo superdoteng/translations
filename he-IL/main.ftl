@@ -148,34 +148,21 @@ browser-home = בית
 browser-start-tab-title = דף פתיחה
 browser-address-placeholder = חפש שרתים או הזן כתובת
 browser-start-running = פועלים
-browser-start-server-count = { $count ->
-    [one] שרת אחד
-   *[other] { $count } שרתים
-}
-browser-start-show-all = הצג הכל ({ $count })
 browser-start-show-less = הצג פחות
-browser-start-more-projects = { $count ->
-    [1] הצג עוד פרויקט אחד
-   *[other] הצג עוד { $count } פרויקטים
-}
 browser-start-recent = ביקורים אחרונים
+browser-start-also-running = פועלים גם
+browser-start-more = עוד { $count }
+browser-start-stopped = נעצר
+browser-start-starting = מתחיל
+browser-start-clock = { $elapsed }
+browser-start-run-script = הרץ סקריפט
+browser-start-run-script-named = הרץ את { $script }
+browser-start-stop-script = עצור את { $script }
 browser-start-clear = נקה
-browser-start-none-body = שרתים שהופעלו בכל עץ עבודה יופיעו כאן.
 browser-start-run = התחל הרצה
-browser-start-stop-run = עצור הרצה
 browser-start-this-worktree = עץ העבודה הזה
 browser-start-pull-request = בקשת משיכה
 browser-start-merge-request = בקשת מיזוג
-browser-start-checks = בדיקות
-browser-start-checks-passing = עוברות
-browser-start-checks-failing = { $count ->
-    [one] { $count } נכשלה
-   *[other] { $count } נכשלו
-}
-browser-start-checks-running = { $count ->
-    [one] { $count } פועלת
-   *[other] { $count } פועלות
-}
 browser-start-repository = מאגר
 browser-nothing-title = { $host } לא פועל
 browser-nothing-lede = הדף ייפתח כאן כשהשרת יתחיל לפעול.
@@ -819,6 +806,10 @@ settings-updates-ready = עדכון מוכן: { $version }
 settings-updates-check-failed = בדיקת העדכון נכשלה: { $error }
 toast-update-apply-failed-title = לא ניתן להחיל את העדכון
 toast-update-apply-failed = לא ניתן להחיל את העדכון: { $error }
+toast-update-previous-launch-failed-title = Update did not finish starting
+toast-update-previous-launch-failed = The last launch of this update closed before its window appeared. If problems continue, see { $url }
+toast-update-rolled-back-title = Update rolled back
+toast-update-rolled-back = The update to { $version } closed before it finished starting, so super.engineering went back to the previous version. The next nightly will be offered automatically.
 settings-updates-downloading-version = מוריד עדכון { $version }...
 settings-updates-installing-version = מתקין עדכון { $version }...
 settings-updates-description = בדוק והתקן שחרורים חדשים של super.engineering.
@@ -827,6 +818,7 @@ settings-updates-channel-description = Nightly הוא כרגע השיר היחי
 settings-updates-current-version-label = גרסה נוכחית
 settings-updates-installed = הותקן
 settings-updates-status-label = מצב עדכון
+settings-updates-package-managed = Updates are managed by your package manager
 settings-ai-inherited = בירושה
 settings-ai-search-models-placeholder = דגמי חיפוש...
 settings-ai-action-column = פעולה
@@ -1070,7 +1062,6 @@ settings-ai-fast-model-description = דגם המשמש לפעולות קלות.
 settings-ai-thorough-model-description = הדגם המשמש לפעולות בדיקה ותיקון.
 settings-ai-fast = מהיר
 settings-ai-thorough = יסודי
-settings-ai-provider-disabled = כבוי — הפעל בחלק הספקים.
 settings-ai-all-buckets-cli-default = כל הדליים משתמשים במודל ברירת המחדל CLI.
 settings-ai-inheriting-parent-scope = יורש מ-Parent Scope.
 settings-ai-customized = מותאם אישית
@@ -1141,6 +1132,8 @@ shared-parent-git-all-repos = הכול · { $repos }
 shared-parent-git-menu-tooltip = פעולות Git למאגרי משנה
 shared-parent-git-unavailable-title = לא ניתן לפתוח את המאגרים האלה
 shared-context-choose-projects-to-run = בחר פרויקטים לניהול
+shared-context-run-count = מריץ { $selected } מתוך { $total }
+shared-context-run-none = ללא
 workspace-choose-what-to-launch = בחר מה לשגר...
 icon-picker-tab-symbols = סמלים
 icon-picker-tab-icons = אייקונים
@@ -1657,10 +1650,10 @@ settings-diagnostics-status-label = סטטוס אבחוני
 settings-privacy-telemetry-heading = טלמטריה
 settings-privacy-share-label = שתפו נתוני שימוש אנונימיים
 settings-privacy-share-description = עוזר לנו להבין כיצד משתמשים ב super.engineering ולתעדף שיפורים. אין נתונים אישיים, נתוני פרויקט או תוכן קבצים שלעולם לא יוצאים מהמחשב שלך.
-settings-privacy-what-we-send-description = מזהה אקראי לכל התקנה, מזהה אפליקציה-סשן אקראי, גרסת אפליקציה, ערוץ עדכון, גרסת macOS, חותמות זמן של התחלה/סיום סשן ומשך הזמן, ואירוע יומי פעיל בהשקה או בפוקוס/קלט האפליקציה המאוחר הראשון בכל יום UTC. כיבוי האפשרות מפסיק את הטלמטריה ללא אירוע ביטול סופי. מזהה ההתקנה נשאר במכשיר שלך ומשמש שוב אם הטלמטריה מופעלת מחדש; מצב הסשן נמחק.
+settings-privacy-what-we-send-description = מזהה אקראי לכל התקנה, מזהה סשן אפליקציה אקראי, גרסת האפליקציה, ערוץ העדכון, שם מערכת ההפעלה והגרסה שלה, ארכיטקטורת ה-CPU, חותמות זמן של התחלה/סיום סשן ומשך הזמן, ואירוע פעילות יומי בהפעלה או בפוקוס/קלט הראשון שאחריה באפליקציה בכל יום UTC. כיבוי האפשרות מפסיק את הטלמטריה ללא אירוע ביטול סופי. מזהה ההתקנה נשאר במכשיר שלך ומשמש שוב אם הטלמטריה מופעלת מחדש; מצב הסשן נמחק.
 settings-privacy-what-we-never-send-description = השם שלך, האימייל, שם המארח, תיקיות עובדות, שמות פרויקטים, מסלולי קבצים, שמות סניפים, קלטי פקודות, תוכן לוח הכתיבה, או כל קוד אחר. העשרת GeoIP מושבתת בכל אירוע.
 settings-privacy-ip-data-capture-description = הגדרנו $geoip_disable: תקין בכל אירוע כך ש-PostHog מדלג על העשרה של מדינה/ער. הפרויקט שלנו של PostHog מוגדר גם כך שישליכו כתובות IP של לקוחות לפני אחסון — ראו Docs לאיך זה עובד אצלם.
-settings-privacy-update-checks-description = בנפרד מטלמטריה, גרסאות שחרור בודקות releases.super.engineering כל שעה לעדכונים. הבדיקה המוצלחת הראשונה בכל יום UTC נושאת סימון אנונימי המשמש לספירת התקנות פעילות במצטבר. אין בו מזהה ואין שום דבר שנשמר על השרתים שלנו בכל התקנה; האפליקציה שומרת רק סמן יום מקומי (~/.super.engineering/update_ping_day) ולכן היא שולחת את הסמן פעם ביום. זה לא מושפע מהמתג למעלה.
+settings-privacy-update-checks-description = בנפרד מטלמטריה, גרסאות שחרור בודקות את releases.super.engineering כל שעה לעדכונים. הבדיקה המוצלחת הראשונה בכל יום UTC נושאת סימון אנונימי המשמש לספירת התקנות פעילות במצטבר. אין בו מזהה ושום דבר ברמת התקנה בודדת אינו נשמר בשרתים שלנו; האפליקציה שומרת רק סמן יום מקומי (~/.super.engineering/update_ping_day) ולכן היא שולחת את הסמן פעם ביום. כל בדיקה שולחת גם את ארכיטקטורת ה-CPU של האפליקציה (ARM או Intel), כדי שאפשר יהיה לפלח את הספירה לפי ארכיטקטורה. זה לא מושפע מהמתג למעלה.
 settings-privacy-install-id-location = מזהה ההתקנה שלך נמצא ב-~/.super.engineering/install_id — מחק אותו בכל פעם שתרצה כדי לאפס.
 settings-privacy-install-id-disclosure = איך נוצר מזהה ההתקנה שלך
 settings-privacy-events-disclosure = איך נשלחים אירועים
@@ -2024,6 +2017,15 @@ settings-ai-mixed = מעורב
 settings-ai-current-chat = שיחה נוכחית
 settings-ai-provider-toggle-description = הצג את הספק הזה בתפריט הטאב החדש ובממשק הצ'אט.
 settings-ai-provider-last-enabled-description = { $description } לפחות ספק אחד חייב להישאר פעיל.
+settings-ai-provider-status-chat-terminal = צ׳אט וטרמינל
+settings-ai-provider-status-terminal = טרמינל
+settings-ai-provider-status-disabled = מושבת
+settings-ai-provider-disabled-detail = הפעל את { $provider } כדי להגדיר את המודלים ואפשרויות ההפעלה שלו.
+settings-ai-provider-section-models = מודלים
+settings-ai-provider-section-chat = צ׳אט
+settings-ai-provider-section-runtime = סביבת הרצה
+settings-ai-provider-profiles-description = חשבונות ותיקיות הגדרות עבור ספק זה.
+settings-ai-provider-manage-profiles = נהל פרופילים
 settings-ai-provider-antigravity-description = הפעל את Antigravity כספק טרמינל (דורש התקנת Antigravity CLI `agy`).
 settings-ai-provider-hermes-description = הפעל את Hermes כספק טרמינל (דורש התקנת `hermes` של Hermes Agent).
 settings-ai-provider-qwen-description = הפעל את קוד Qwen כספק טרמינל (דורש התקנת קוד Qwen CLI `qwen`).
@@ -2110,7 +2112,7 @@ workspace-review-request-state-changed = { $kind } המדינה השתנתה; ה
 workspace-remote-forge-cli-not-authenticated-hint = טיפ: { $cli } על המארח לא מאומת — הרץ `{ $cli } auth login` שם כדי ליצור { $kind } עם הסוכן.
 workspace-remote-forge-cli-missing-hint = טיפ: התקן { $cli } על המארח והריץ `{ $cli } auth login` כדי ליצור { $kind } עם הסוכן.
 workspace-review-request-url-copied = העתקתי { $kind } URL
-workspace-review-request-url-unavailable = אין URL בקשת סקירה זמינה
+workspace-review-request-none-yet = לענף הזה עדיין אין { $kind }
 worktree-prompt = הנחיה
 worktree-branches = סניפים
 worktree-merge-requests = בקשות מיזוג
@@ -2731,6 +2733,38 @@ pr-checks-pending-count =
         [two] שתי בדיקות ממתינות
        *[other] { $count } בדיקות ממתינות
     }
+hover-card-needs-answer = ממתין לתשובתך
+hover-card-no-review-request =
+    { $forge ->
+        [gitlab] אין בקשת מיזוג
+       *[other] אין בקשת משיכה
+    }
+hover-card-checks-running = בדיקות רצות, { $passed } מתוך { $total }
+hover-card-more-running = עוד { $count } פועלים
+hover-card-stopping = עוצר
+hover-card-main-checkout = עותק ראשי
+hover-card-main-checkouts = עותקים ראשיים
+hover-card-add-repo = הוסף מאגר
+hover-card-add-repo-count = +{ $count }
+hover-card-find-repo = חפש מאגר
+hover-card-checking-repos = בודק מאגרים
+hover-card-all-merged = הכול מוזג
+hover-card-repos-merged = { $count } מוזגו
+hover-card-more-repos = עוד { $count }
+hover-card-run-repos = { $count ->
+    [0] הרץ
+   *[other] הרץ { $count }
+}
+hover-card-stop-repos = { $count ->
+    [0] עצור
+   *[other] עצור { $count }
+}
+hover-card-run-select-repos = בחר מאגרים להרצה
+hover-card-run-selected-repos = הרץ את המאגרים שנבחרו
+hover-card-stop-selected-repos = עצור את המאגרים שנבחרו
+hover-card-checking-status = בודק סטטוס
+hover-card-nothing-to-commit = אין מה לבצע commit או push
+hover-card-unpushed-commits = { $count } לא נדחפו
 icon-picker-emoji-tooltip = אימוג׳י: { $glyph }
 icon-picker-named-icon-tooltip =
     { $name ->
@@ -3403,8 +3437,6 @@ settings-ai-git-button-routes-description = הגדר כל כפתור Git מבו�
 settings-ai-other-routes = נתיבים אחרים
 settings-ai-other-routes-description = הגדר מתן שמות, הודעות קומיט מוטבעות, שיפור הנחיות ותגובות לסקירות. נתיבי פקודות מותאמות נשארים עם כל פקודה ב״פקודות״.
 settings-ai-follows-session-default = עוקב אחרי ברירת המחדל לסשן
-settings-ai-advanced-setup = הגדרה מתקדמת
-settings-ai-advanced-setup-description = קובץ ההפעלה ודגלי ההפעלה המשותפים של הספק הזה.
 settings-ai-model-routing = ניתוב מודלים
 settings-ai-model-routing-description = בחר מודלים, פרופילים ורמות חשיבה כברירת מחדל, או התאם אותם לפעולות מסוימות.
 settings-ai-manage-routing = פתח ניתוב
@@ -3444,6 +3476,12 @@ chat-steer-hold-waiting = { $provider } עדיין אינו יכול לקבל ה
 chat-steer-hold-waiting-detail = ההודעה שלך תכוון את העבודה כשיהיה אפשר, או תישלח לאחר התור הזה.
 chat-steer-refused = לא ניתן לכוון.
 chat-steer-refused-detail = { $provider } החזיר שגיאה. בדוק את השיחה לפני שתנסה שוב.
+chat-reconnecting = מתחבר מחדש אל { $provider }.
+chat-reconnecting-held = ההודעה שלך תישלח כשהחיבור יחזור.
+chat-reconnecting-retry = נסה שוב בעוד רגע.
+chat-reconnecting-slow = זה לוקח יותר זמן מהרגיל, פותח חיבור חדש.
+chat-reconnect-failed = לא ניתן היה להתחבר מחדש אל { $provider }.
+chat-reconnect-try-again = נסה שוב
 chat-steered = בוצעה הכוונה
 chat-steer-not-read = לא נקרא
 chat-steer-send-again = שלח
@@ -3480,6 +3518,8 @@ notification-codex-thread-archive-done = { $count ->
     }
 notification-codex-thread-archive-failed = חלק משרשורי Codex לא הועברו לארכיון
 notification-installing-update = מתקין עדכון. היישום יופעל מחדש בסיום.
+notification-update-installed = העדכון הותקן. מופעל מחדש
+notification-update-installed-after-typing = העדכון הותקן. יופעל מחדש בסיום ההקלדה
 worktree-delete-agent-working = סוכן עדיין עובד כאן
 worktree-delete-all-action = מחק הכול
 worktree-delete-body = התיקייה שלו מוסרת מהדיסק.

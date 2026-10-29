@@ -148,34 +148,21 @@ browser-home = Ana sayfa
 browser-start-tab-title = Başlangıç Sayfası
 browser-address-placeholder = Sunucu arayın veya adres girin
 browser-start-running = Çalışıyor
-browser-start-server-count = { $count ->
-    [one] { $count } sunucu
-   *[other] { $count } sunucu
-}
-browser-start-show-all = Tümünü göster ({ $count })
 browser-start-show-less = Daha az göster
-browser-start-more-projects = { $count ->
-    [1] 1 proje daha göster
-   *[other] { $count } proje daha göster
-}
 browser-start-recent = Son ziyaret edilenler
+browser-start-also-running = Ayrıca çalışanlar
+browser-start-more = { $count } tane daha
+browser-start-stopped = Durduruldu
+browser-start-starting = Başlatılıyor
+browser-start-clock = { $elapsed }
+browser-start-run-script = Betik çalıştır
+browser-start-run-script-named = { $script } çalıştır
+browser-start-stop-script = { $script } durdur
 browser-start-clear = Temizle
-browser-start-none-body = Herhangi bir çalışma ağacında başlatılan sunucular burada görünür.
 browser-start-run = Çalıştırmayı başlat
-browser-start-stop-run = Çalıştırmayı durdur
 browser-start-this-worktree = Bu çalışma ağacı
 browser-start-pull-request = Pull request
 browser-start-merge-request = Birleştirme talebi
-browser-start-checks = Kontroller
-browser-start-checks-passing = Geçiyor
-browser-start-checks-failing = { $count ->
-    [one] { $count } başarısız
-   *[other] { $count } başarısız
-}
-browser-start-checks-running = { $count ->
-    [one] { $count } çalışıyor
-   *[other] { $count } çalışıyor
-}
 browser-start-repository = Depo
 browser-nothing-title = { $host } çalışmıyor
 browser-nothing-lede = Sunucu başladığında bu sayfa burada açılır.
@@ -815,6 +802,10 @@ settings-updates-ready = Güncellemeye hazır: { $version }
 settings-updates-check-failed = Güncelleme kontrolü başarısız oldu: { $error }
 toast-update-apply-failed-title = Güncelleme uygulanamadı
 toast-update-apply-failed = Güncelleme uygulanamadı: { $error }
+toast-update-previous-launch-failed-title = Update did not finish starting
+toast-update-previous-launch-failed = The last launch of this update closed before its window appeared. If problems continue, see { $url }
+toast-update-rolled-back-title = Update rolled back
+toast-update-rolled-back = The update to { $version } closed before it finished starting, so super.engineering went back to the previous version. The next nightly will be offered automatically.
 settings-updates-downloading-version = Güncelleme indiriliyor { $version }...
 settings-updates-installing-version = Güncelleme { $version } yükleniyor...
 settings-updates-description = Yeni super.engineering sürümlerini kontrol edin ve kurun.
@@ -823,6 +814,7 @@ settings-updates-channel-description = Nightly şu anda mevcut olan tek yayın p
 settings-updates-current-version-label = Güncel sürüm
 settings-updates-installed = Kuruldu
 settings-updates-status-label = Güncelleme durumu
+settings-updates-package-managed = Updates are managed by your package manager
 settings-ai-inherited = Miras Bırakıldı
 settings-ai-search-models-placeholder = Arama modelleri...
 settings-ai-action-column = Aksiyon
@@ -1066,7 +1058,6 @@ settings-ai-fast-model-description = Hafif aksiyonlar için kullanılan model.
 settings-ai-thorough-model-description = İnceleme ve onarım işlemleri için kullanılan model.
 settings-ai-fast = Hızlı
 settings-ai-thorough = Detaylı
-settings-ai-provider-disabled = Devre dışı bırakıldı — Sağlayıcılar bölümünde etkinleştirin.
 settings-ai-all-buckets-cli-default = Tüm kovalar CLI varsayılan modelini kullanır.
 settings-ai-inheriting-parent-scope = Ebeveyn kapsamından miras almak.
 settings-ai-customized = Özelleştirilmiş
@@ -1137,6 +1128,8 @@ shared-parent-git-all-repos = Tümü · { $repos }
 shared-parent-git-menu-tooltip = Alt depolar için Git eylemleri
 shared-parent-git-unavailable-title = Bu depolar açılamadı
 shared-context-choose-projects-to-run = Yürütecek projeleri seçin
+shared-context-run-count = { $total } depodan { $selected } tanesini çalıştırır
+shared-context-run-none = Hiçbiri
 workspace-choose-what-to-launch = Ne fırlatacağını seç...
 icon-picker-tab-symbols = Semboller
 icon-picker-tab-icons = İkonlar
@@ -1652,10 +1645,10 @@ settings-diagnostics-status-label = Tanı durumu
 settings-privacy-telemetry-heading = Telemetri
 settings-privacy-share-label = Anonim kullanım verilerini paylaş
 settings-privacy-share-description = super.engineering nasıl kullanıldığını anlamamıza ve iyileştirmeleri önceliklendirmemize yardımcı olur. Hiçbir kişisel veri, proje veri veya dosya içeriği asla makinenizden ayrılmaz.
-settings-privacy-what-we-send-description = Rastgele kurulum başına bir ID, rastgele uygulama oturumu kimliği, uygulama sürümü, güncelleme kanalı, macOS sürümü, oturum başlangıç/bitiş zaman damgaları ve süresi, ve UTC gün başına lansmanda veya ilk sonraki uygulama odak/girişinde günlük aktif bir olay. Bu seçenek kapatıldığında telemetri, son bir devre dışı bırakma olayı gönderilmeden durur. Kurulum kimliği cihazınızda kalır ve telemetriyi yeniden açarsanız tekrar kullanılır; oturum durumu silinir.
+settings-privacy-what-we-send-description = Rastgele bir kurulum kimliği, rastgele uygulama oturumu kimliği, uygulama sürümü, güncelleme kanalı, işletim sistemi adı ve sürümü, CPU mimarisi, oturum başlangıç/bitiş zaman damgaları ve süresi, ve her UTC gününde açılışta veya uygulamaya ilk sonraki odaklanma/girişte gönderilen günlük aktiflik olayı. Bu seçenek kapatıldığında telemetri, son bir devre dışı bırakma olayı gönderilmeden durur. Kurulum kimliği cihazınızda kalır ve telemetriyi yeniden açarsanız tekrar kullanılır; oturum durumu silinir.
 settings-privacy-what-we-never-send-description = Adınız, e-postanız, host adı, çalışma dizinleri, proje adları, dosya yolları, dal adları, komut girişleri, pano içeriği veya herhangi bir kod. GeoIP zenginleştirme her olayda devre dışı bırakılır.
 settings-privacy-ip-data-capture-description = Her etkinlikte $geoip_disable: true'u ayarladık, böylece PostHog ülke/şehir zenginleştirmesini atlıyor. PostHog projemiz ayrıca depolamadan önce istemci IP adreslerini atacak şekilde yapılandırılmıştır — onların tarafında bunun nasıl çalıştığını görmek için Docs'a bakınız.
-settings-privacy-update-checks-description = Telemetriden ayrı, sürüm sürümleri güncellemeler releases.super.engineering saat başı kontrol edilir. Her UTC günün ilk başarılı kontrolü, aktif kurulumları toplamda saymak için kullanılan anonim bir işaret taşır. Hiçbir tanımlayıcı içermiyor ve sunucularımızda kurulum başına hiçbir şey saklanmıyor; Uygulama sadece yerel bir gün işaretçisi (~/.super.engineering/update_ping_day) tutar, bu yüzden işaretleyiciyi günde bir gönderir. Yukarıdaki anahtardan etkilenmedim.
+settings-privacy-update-checks-description = Telemetriden ayrı olarak, sürüm derlemeleri güncellemeler için releases.super.engineering adresini saat başı kontrol eder. Her UTC gününün ilk başarılı kontrolü, aktif kurulumları toplu olarak saymak için kullanılan anonim bir işaret taşır. Hiçbir tanımlayıcı içermez ve sunucularımızda kurulum başına hiçbir şey saklanmaz; uygulama yalnızca yerel bir gün işaretçisi (~/.super.engineering/update_ping_day) tutar, böylece işareti günde bir kez gönderir. Her kontrol ayrıca uygulamanın CPU mimarisini (ARM veya Intel) gönderir, böylece sayım mimariye göre ayrılabilir. Yukarıdaki anahtardan etkilenmez.
 settings-privacy-install-id-location = Kurulum kimliğiniz ~/.super.engineering/install_id olarak kalıyor — sıfırlamak için istediğiniz zaman silebilirsiniz.
 settings-privacy-install-id-disclosure = Kurulum ID'niz nasıl oluşturulur?
 settings-privacy-events-disclosure = Etkinlikler nasıl gönderilir
@@ -2019,6 +2012,15 @@ settings-ai-mixed = Karışık
 settings-ai-current-chat = Güncel sohbet
 settings-ai-provider-toggle-description = Bu sağlayıcıyı Yeni Sekme menüsünde ve Sohbet arayüzünde gösterin.
 settings-ai-provider-last-enabled-description = { $description } En az bir sağlayıcı etkin kalmalıdır.
+settings-ai-provider-status-chat-terminal = Sohbet ve terminal
+settings-ai-provider-status-terminal = Terminal
+settings-ai-provider-status-disabled = Devre dışı
+settings-ai-provider-disabled-detail = Modellerini ve başlatma seçeneklerini yapılandırmak için { $provider } sağlayıcısını açın.
+settings-ai-provider-section-models = Modeller
+settings-ai-provider-section-chat = Sohbet
+settings-ai-provider-section-runtime = Çalışma zamanı
+settings-ai-provider-profiles-description = Bu sağlayıcının hesapları ve yapılandırma ana dizinleri.
+settings-ai-provider-manage-profiles = Profilleri yönet
 settings-ai-provider-antigravity-description = Antigravity'yi terminal sağlayıcı olarak etkinleştirin (Antigravity CLI `agy` kurulmasını gerektirir).
 settings-ai-provider-hermes-description = Hermes'i terminal sağlayıcısı olarak etkinleştirin (Hermes Agent `hermes` kurulu gerektirir).
 settings-ai-provider-qwen-description = Qwen Kodunu terminal sağlayıcı olarak etkinleştirin (Qwen Kodu'nun yüklü CLI `qwen` gereklidir).
@@ -2105,7 +2107,7 @@ workspace-review-request-state-changed = { $kind } durum değişti; Aksiyon art�
 workspace-remote-forge-cli-not-authenticated-hint = İpucu: { $cli } sunucuda kimlik doğrulaması yapılmamış — oraya `{ $cli } auth login` çalıştırıp ajanla { $kind } oluşturun.
 workspace-remote-forge-cli-missing-hint = İpucu: { $cli }'yi sunucuya yükleyip `{ $cli } auth login` çalıştırarak ajanla { $kind } oluşturun.
 workspace-review-request-url-copied = Kopya { $kind } URL
-workspace-review-request-url-unavailable = İnceleme talebi URL mevcut değil
+workspace-review-request-none-yet = Bu dalın henüz bir { $kind } yok
 worktree-prompt = Prompt
 worktree-branches = Şubeler
 worktree-merge-requests = Birleştirme talepleri
@@ -2682,6 +2684,38 @@ pr-checks-failing-count = { $count } başarısız denetim
 pr-actions-required-count = { $count } gerekli işlem
 pr-checks-pending = Denetimler bekliyor
 pr-checks-pending-count = { $count } bekleyen denetim
+hover-card-needs-answer = Yanıtınızı bekliyor
+hover-card-no-review-request =
+    { $forge ->
+        [gitlab] Birleştirme talebi yok
+       *[other] Pull request yok
+    }
+hover-card-checks-running = Denetimler çalışıyor, { $passed } / { $total }
+hover-card-more-running = { $count } tane daha çalışıyor
+hover-card-stopping = Durduruluyor
+hover-card-main-checkout = Ana çalışma kopyası
+hover-card-main-checkouts = Ana çalışma kopyaları
+hover-card-add-repo = Depo ekle
+hover-card-add-repo-count = +{ $count }
+hover-card-find-repo = Depo bul
+hover-card-checking-repos = Depolar kontrol ediliyor
+hover-card-all-merged = Tümü birleştirildi
+hover-card-repos-merged = { $count } birleştirildi
+hover-card-more-repos = { $count } tane daha
+hover-card-run-repos = { $count ->
+    [0] Çalıştır
+   *[other] { $count } çalıştır
+}
+hover-card-stop-repos = { $count ->
+    [0] Durdur
+   *[other] { $count } durdur
+}
+hover-card-run-select-repos = Çalıştırılacak depoları seçin
+hover-card-run-selected-repos = Seçili depoları çalıştır
+hover-card-stop-selected-repos = Seçili depoları durdur
+hover-card-checking-status = Durum kontrol ediliyor
+hover-card-nothing-to-commit = Commit veya push edilecek bir şey yok
+hover-card-unpushed-commits = { $count } gönderilmemiş
 icon-picker-emoji-tooltip = Emoji: { $glyph }
 icon-picker-named-icon-tooltip =
     { $name ->
@@ -3305,8 +3339,6 @@ settings-ai-git-button-routes-description = Yapay zekâ destekli tüm Git düğm
 settings-ai-other-routes = Diğer yollar
 settings-ai-other-routes-description = Adlandırma, satır içi commit iletileri, istem iyileştirme ve inceleme yanıtlarını yapılandırın. Özel komut yolları Komutlar'da ilgili komutla kalır.
 settings-ai-follows-session-default = Oturum varsayılanı izleniyor
-settings-ai-advanced-setup = Gelişmiş kurulum
-settings-ai-advanced-setup-description = Bu sağlayıcının çalıştırılabilir dosyası ve paylaşılan başlatma bayrakları.
 settings-ai-model-routing = Model yönlendirme
 settings-ai-model-routing-description = Varsayılan modelleri, profilleri ve düşünme düzeylerini seçin veya belirli eylemler için özelleştirin.
 settings-ai-manage-routing = Yönlendirmeyi aç
@@ -3346,6 +3378,12 @@ chat-steer-hold-waiting = { $provider } henüz yönlendirme alamıyor.
 chat-steer-hold-waiting-detail = İletiniz mümkün olduğunda ajanı yönlendirecek veya bu turun ardından gönderilecek.
 chat-steer-refused = Yönlendirme yapılamadı.
 chat-steer-refused-detail = { $provider } hata döndürdü. Yeniden denemeden önce konuşmayı kontrol edin.
+chat-reconnecting = { $provider } ile yeniden bağlanılıyor.
+chat-reconnecting-held = Bağlantı geri geldiğinde mesajınız gönderilecek.
+chat-reconnecting-retry = Birazdan tekrar deneyin.
+chat-reconnecting-slow = Her zamankinden uzun sürüyor, yeni bir bağlantı başlatılıyor.
+chat-reconnect-failed = { $provider } ile yeniden bağlantı kurulamadı.
+chat-reconnect-try-again = Tekrar dene
 chat-steered = Yönlendirildi
 chat-steer-not-read = Okunmadı
 chat-steer-send-again = Gönder
@@ -3381,6 +3419,8 @@ notification-codex-thread-archive-done = { $count ->
 }
 notification-codex-thread-archive-failed = Bazı Codex konuşmaları arşivlenemedi
 notification-installing-update = Güncelleme yükleniyor. Tamamlandığında uygulama yeniden başlayacak.
+notification-update-installed = Güncelleme yüklendi. Yeniden başlatılıyor
+notification-update-installed-after-typing = Güncelleme yüklendi. Yazmayı bitirince yeniden başlayacak
 worktree-delete-agent-working = Burada bir ajan hâlâ çalışıyor
 worktree-delete-all-action = Tümünü sil
 worktree-delete-body = Klasörü diskten silinir.

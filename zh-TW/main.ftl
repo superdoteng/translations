@@ -156,30 +156,21 @@ browser-home = 首頁
 browser-start-tab-title = 起始頁
 browser-address-placeholder = 搜尋伺服器或輸入網址
 browser-start-running = 執行中
-browser-start-server-count = { $count ->
-   *[other] { $count } 個伺服器
-}
-browser-start-show-all = 顯示全部 { $count } 個
 browser-start-show-less = 顯示較少
-browser-start-more-projects = { $count ->
-   *[other] 再顯示 { $count } 個專案
-}
 browser-start-recent = 最近造訪
+browser-start-also-running = 其他執行中
+browser-start-more = 另外 { $count } 個
+browser-start-stopped = 已停止
+browser-start-starting = 正在啟動
+browser-start-clock = { $elapsed }
+browser-start-run-script = 執行指令碼
+browser-start-run-script-named = 執行 { $script }
+browser-start-stop-script = 停止 { $script }
 browser-start-clear = 清除
-browser-start-none-body = 在任一工作樹中啟動的伺服器都會顯示在這裡。
 browser-start-run = 開始執行
-browser-start-stop-run = 停止執行
 browser-start-this-worktree = 此工作樹
 browser-start-pull-request = 提取要求
 browser-start-merge-request = 合併請求
-browser-start-checks = 檢查
-browser-start-checks-passing = 通過
-browser-start-checks-failing = { $count ->
-   *[other] { $count } 個未通過
-}
-browser-start-checks-running = { $count ->
-   *[other] { $count } 個執行中
-}
 browser-start-repository = 儲存庫
 browser-nothing-title = { $host } 未執行
 browser-nothing-lede = 伺服器啟動後，此頁面會在這裡開啟。
@@ -829,6 +820,10 @@ settings-updates-ready = 更新已就緒：{ $version }
 settings-updates-check-failed = 更新檢查失敗：{ $error }
 toast-update-apply-failed-title = 無法套用更新
 toast-update-apply-failed = 無法套用更新：{ $error }
+toast-update-previous-launch-failed-title = Update did not finish starting
+toast-update-previous-launch-failed = The last launch of this update closed before its window appeared. If problems continue, see { $url }
+toast-update-rolled-back-title = Update rolled back
+toast-update-rolled-back = The update to { $version } closed before it finished starting, so super.engineering went back to the previous version. The next nightly will be offered automatically.
 settings-updates-downloading-version = 正在下載更新 { $version }…
 settings-updates-installing-version = 正在安裝更新 { $version }…
 settings-updates-description = 檢查新的 super.engineering 版本。下載的更新會先暫存，重新啟動後才套用。
@@ -837,6 +832,7 @@ settings-updates-channel-description = Nightly 目前是唯一可用的發行通
 settings-updates-current-version-label = 現行版本
 settings-updates-installed = 已安裝
 settings-updates-status-label = 更新狀態
+settings-updates-package-managed = Updates are managed by your package manager
 settings-ai-inherited = 繼承
 settings-ai-search-models-placeholder = 搜尋模型…
 settings-ai-action-column = 操作
@@ -1088,7 +1084,6 @@ settings-ai-fast-model-description = 用於輕量操作的模型。
 settings-ai-thorough-model-description = 用於審查和修復操作的模型。
 settings-ai-fast = 快速
 settings-ai-thorough = 深入
-settings-ai-provider-disabled = 已停用 — 請在「服務供應商」區段啟用。
 settings-ai-all-buckets-cli-default = 所有群組均使用 CLI 預設模型。
 settings-ai-inheriting-parent-scope = 從上層範圍繼承。
 settings-ai-customized = 客製化
@@ -1159,6 +1154,8 @@ shared-parent-git-all-repos = 全部 · { $repos }
 shared-parent-git-menu-tooltip = 子儲存庫的 Git 動作
 shared-parent-git-unavailable-title = 無法開啟這些儲存庫
 shared-context-choose-projects-to-run = 選擇要執行的專案
+shared-context-run-count = 執行 { $total } 個中的 { $selected } 個
+shared-context-run-none = 無
 workspace-choose-what-to-launch = 選擇要啟動的內容…
 icon-picker-tab-symbols = 符號
 icon-picker-tab-icons = 圖示
@@ -1656,10 +1653,10 @@ settings-diagnostics-status-label = 診斷狀態
 settings-privacy-telemetry-heading = 遙測
 settings-privacy-share-label = 分享匿名使用資料
 settings-privacy-share-description = 協助我們瞭解 super.engineering 的使用方式，並排定改進項目的優先順序。任何個人資料、專案資料或檔案內容都不會離開你的電腦。
-settings-privacy-what-we-send-description = 每次安裝隨機產生的 ID、隨機的應用程式工作階段 ID、應用程式版本、更新通道、macOS 版本、工作階段開始與結束的時間戳記和持續時間，以及在啟動時或每個 UTC 日期中首次重新聚焦／輸入時傳送的每日活躍事件。關閉此功能會停止遙測，不會傳送最後的停用事件。安裝 ID 會保留在您的裝置上，並在重新啟用遙測時重複使用；工作階段狀態會被刪除。
+settings-privacy-what-we-send-description = 每次安裝隨機產生的 ID、隨機的應用程式工作階段 ID、應用程式版本、更新通道、作業系統名稱和版本、CPU 架構、工作階段開始與結束的時間戳記和持續時間，以及在啟動時或每個 UTC 日期中首次重新聚焦／輸入時傳送的每日活躍事件。關閉此功能會停止遙測，不會傳送最後的停用事件。安裝 ID 會保留在您的裝置上，並在重新啟用遙測時重複使用；工作階段狀態會被刪除。
 settings-privacy-what-we-never-send-description = 你的姓名、電子郵件、主機名稱、工作目錄、專案名稱、檔案路徑、分支名稱、指令輸入、剪貼簿內容或任何程式碼。每個事件都會停用 GeoIP 地理位置補充。
 settings-privacy-ip-data-capture-description = 每個事件都會設定 $geoip_disable: true，讓 PostHog 略過國家／城市的地理位置補充。我們也已將 PostHog 專案設定為在儲存前捨棄用戶端 IP 位址；其處理方式請參閱文件。
-settings-privacy-update-checks-description = 除了遙測之外，發行版本每小時會向 releases.super.engineering 檢查更新。每個 UTC 日期首次成功檢查時，會附上用於彙總活躍安裝數的匿名標記。標記不含識別碼，我們的伺服器也不會儲存個別安裝資料；應用程式只會保留本機日期標記（~/.super.engineering/update_ping_day），確保每天僅傳送一次。此行為不受上方開關影響。
+settings-privacy-update-checks-description = 除了遙測之外，發行版本每小時會向 releases.super.engineering 檢查更新。每個 UTC 日期首次成功檢查時，會附上用於彙總活躍安裝數的匿名標記。標記不含識別碼，我們的伺服器也不會儲存個別安裝資料；應用程式只會保留本機日期標記（~/.super.engineering/update_ping_day），確保每天僅傳送一次。每次檢查也會傳送應用程式的 CPU 架構（ARM 或 Intel），以便依架構區分統計。此行為不受上方開關影響。
 settings-privacy-install-id-location = 你的安裝 ID 位於 ~/.super.engineering/install_id，可隨時刪除以重設。
 settings-privacy-install-id-disclosure = 你的安裝 ID 如何產生
 settings-privacy-events-disclosure = 事件如何傳送
@@ -2036,6 +2033,15 @@ settings-ai-mixed = 混合
 settings-ai-current-chat = 目前聊天
 settings-ai-provider-toggle-description = 在「新增分頁」選單和聊天介面中顯示此服務供應商。
 settings-ai-provider-last-enabled-description = { $description } 至少必須保留一個啟用的服務供應商。
+settings-ai-provider-status-chat-terminal = 聊天和終端機
+settings-ai-provider-status-terminal = 終端機
+settings-ai-provider-status-disabled = 已停用
+settings-ai-provider-disabled-detail = 啟用 { $provider } 以設定其模型和啟動選項。
+settings-ai-provider-section-models = 模型
+settings-ai-provider-section-chat = 聊天
+settings-ai-provider-section-runtime = 執行環境
+settings-ai-provider-profiles-description = 此服務供應商的帳戶和設定主目錄。
+settings-ai-provider-manage-profiles = 管理設定檔
 settings-ai-provider-antigravity-description = 啟用 Antigravity 作為終端機服務供應商（需要安裝 Antigravity CLI `agy`）。
 settings-ai-provider-hermes-description = 啟用 Hermes 作為終端機服務供應商（需要安裝 Hermes Agent `hermes`）。
 settings-ai-provider-qwen-description = 啟用 Qwen Code 作為終端機服務供應商（需要安裝 Qwen Code CLI `qwen`）。
@@ -2122,7 +2128,7 @@ workspace-review-request-state-changed = { $kind } 狀態已變更；此操作�
 workspace-remote-forge-cli-not-authenticated-hint = 提示：主機上的 { $cli } 尚未通過驗證。請在主機上執行 `{ $cli } auth login`，讓代理程式可以建立 { $kind }。
 workspace-remote-forge-cli-missing-hint = 提示：請在主機上安裝 { $cli } 並執行 `{ $cli } auth login`，讓代理程式可以建立 { $kind }。
 workspace-review-request-url-copied = 已複製 { $kind } URL
-workspace-review-request-url-unavailable = 沒有可用的審查請求 URL
+workspace-review-request-none-yet = 此分支尚無 { $kind }
 worktree-prompt = 提示詞
 worktree-branches = 分支
 worktree-merge-requests = 合併請求
@@ -2701,6 +2707,38 @@ pr-checks-failing-count = { $count } 項檢查失敗
 pr-actions-required-count = { $count } 項操作需要執行
 pr-checks-pending = 檢查待處理
 pr-checks-pending-count = { $count } 項檢查待處理
+hover-card-needs-answer = 需要你的回答
+hover-card-no-review-request =
+    { $forge ->
+        [gitlab] 沒有合併請求
+       *[other] 沒有提取要求
+    }
+hover-card-checks-running = 檢查執行中，已通過 { $passed }/{ $total }
+hover-card-more-running = 另外 { $count } 個正在執行
+hover-card-stopping = 正在停止
+hover-card-main-checkout = 主要簽出
+hover-card-main-checkouts = 主要簽出
+hover-card-add-repo = 新增儲存庫
+hover-card-add-repo-count = +{ $count }
+hover-card-find-repo = 尋找儲存庫
+hover-card-checking-repos = 正在檢查儲存庫
+hover-card-all-merged = 全部已合併
+hover-card-repos-merged = { $count } 個已合併
+hover-card-more-repos = 另外 { $count } 個
+hover-card-run-repos = { $count ->
+    [0] 執行
+   *[other] 執行 { $count } 個
+}
+hover-card-stop-repos = { $count ->
+    [0] 停止
+   *[other] 停止 { $count } 個
+}
+hover-card-run-select-repos = 選擇要執行的儲存庫
+hover-card-run-selected-repos = 執行所選儲存庫
+hover-card-stop-selected-repos = 停止所選儲存庫
+hover-card-checking-status = 正在檢查狀態
+hover-card-nothing-to-commit = 沒有需要提交或推送的內容
+hover-card-unpushed-commits = { $count } 個未推送
 icon-picker-emoji-tooltip = 表情符號：{ $glyph }
 icon-picker-named-icon-tooltip =
     { $name ->
@@ -3309,8 +3347,6 @@ settings-ai-git-button-routes-description = 設定每個 AI 驅動的 Git 按鈕
 settings-ai-other-routes = 其他路由
 settings-ai-other-routes-description = 設定命名、內嵌提交訊息、提示詞增強和審查回覆。自訂指令路由仍在「指令」的各個指令中設定。
 settings-ai-follows-session-default = 沿用工作階段預設值
-settings-ai-advanced-setup = 進階設定
-settings-ai-advanced-setup-description = 此服務供應商的執行檔和共用啟動旗標。
 settings-ai-model-routing = 模型路由
 settings-ai-model-routing-description = 選擇預設模型、設定檔和思考層級，或為特定操作自訂。
 settings-ai-manage-routing = 開啟路由
@@ -3350,6 +3386,12 @@ chat-steer-hold-waiting = { $provider } 暫時無法接受方向調整。
 chat-steer-hold-waiting-detail = 可以調整時會用此訊息調整方向，否則會在本輪結束後傳送。
 chat-steer-refused = 無法調整方向。
 chat-steer-refused-detail = { $provider } 傳回錯誤。重試前請檢查對話。
+chat-reconnecting = 正在重新連線到 { $provider }。
+chat-reconnecting-held = 連線恢復後就會傳送你的訊息。
+chat-reconnecting-retry = 請稍後再試一次。
+chat-reconnecting-slow = 花費的時間比平常久，正在建立新的連線。
+chat-reconnect-failed = 無法重新連線到 { $provider }。
+chat-reconnect-try-again = 再試一次
 chat-steered = 已調整方向
 chat-steer-not-read = 未讀
 chat-steer-send-again = 傳送
@@ -3375,6 +3417,8 @@ notification-codex-thread-archive-done = { $count ->
     }
 notification-codex-thread-archive-failed = 部分 Codex 執行緒未能封存
 notification-installing-update = 正在安裝更新。完成後應用程式會重新啟動。
+notification-update-installed = 更新已安裝。正在重新啟動
+notification-update-installed-after-typing = 更新已安裝。停止輸入後將重新啟動
 worktree-delete-agent-working = 仍有代理程式在此工作
 worktree-delete-all-action = 全部刪除
 worktree-delete-body = 資料夾將從磁碟中刪除。

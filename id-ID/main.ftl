@@ -148,31 +148,21 @@ browser-home = Beranda
 browser-start-tab-title = Halaman Awal
 browser-address-placeholder = Cari server atau masukkan alamat
 browser-start-running = Berjalan
-browser-start-server-count = { $count ->
-   *[other] { $count } server
-}
-browser-start-show-all = Tampilkan semua { $count }
 browser-start-show-less = Tampilkan lebih sedikit
-browser-start-more-projects = { $count ->
-    [1] Tampilkan 1 proyek lagi
-   *[other] Tampilkan { $count } proyek lagi
-}
 browser-start-recent = Baru dikunjungi
+browser-start-also-running = Juga berjalan
+browser-start-more = { $count } lagi
+browser-start-stopped = Berhenti
+browser-start-starting = Memulai
+browser-start-clock = { $elapsed }
+browser-start-run-script = Jalankan skrip
+browser-start-run-script-named = Jalankan { $script }
+browser-start-stop-script = Hentikan { $script }
 browser-start-clear = Hapus
-browser-start-none-body = Server yang dimulai di worktree mana pun muncul di sini.
 browser-start-run = Mulai Run
-browser-start-stop-run = Hentikan Run
 browser-start-this-worktree = Worktree ini
 browser-start-pull-request = Pull request
 browser-start-merge-request = Merge request
-browser-start-checks = Pemeriksaan
-browser-start-checks-passing = Lulus
-browser-start-checks-failing = { $count ->
-   *[other] { $count } gagal
-}
-browser-start-checks-running = { $count ->
-   *[other] { $count } berjalan
-}
 browser-start-repository = Repositori
 browser-nothing-title = { $host } tidak berjalan
 browser-nothing-lede = Halaman ini terbuka di sini saat server dimulai.
@@ -811,6 +801,10 @@ settings-updates-ready = Update siap: { $version }
 settings-updates-check-failed = Pemeriksaan pembaruan gagal: { $error }
 toast-update-apply-failed-title = Tidak dapat menerapkan pembaruan
 toast-update-apply-failed = Tidak dapat menerapkan pembaruan: { $error }
+toast-update-previous-launch-failed-title = Update did not finish starting
+toast-update-previous-launch-failed = The last launch of this update closed before its window appeared. If problems continue, see { $url }
+toast-update-rolled-back-title = Update rolled back
+toast-update-rolled-back = The update to { $version } closed before it finished starting, so super.engineering went back to the previous version. The next nightly will be offered automatically.
 settings-updates-downloading-version = Mengunduh pembaruan { $version }...
 settings-updates-installing-version = Menginstal pembaruan { $version }...
 settings-updates-description = Periksa dan instal rilis super.engineering baru.
@@ -819,6 +813,7 @@ settings-updates-channel-description = Nightly saat ini adalah satu-satunya lagu
 settings-updates-current-version-label = Versi saat ini
 settings-updates-installed = Terpasang
 settings-updates-status-label = Status pembaruan
+settings-updates-package-managed = Updates are managed by your package manager
 settings-ai-inherited = diwariskan
 settings-ai-search-models-placeholder = Cari model...
 settings-ai-action-column = Aksi
@@ -1062,7 +1057,6 @@ settings-ai-fast-model-description = Model yang digunakan untuk mekanisme ringan
 settings-ai-thorough-model-description = Model yang digunakan untuk tindakan tinjauan dan perbaikan.
 settings-ai-fast = Cepat
 settings-ai-thorough = teliti
-settings-ai-provider-disabled = Dinonaktifkan — aktifkan pada bagian Penyedia.
 settings-ai-all-buckets-cli-default = Semua bucket menggunakan model default CLI.
 settings-ai-inheriting-parent-scope = Mewarisi dari lingkup induk.
 settings-ai-customized = Disesuaikan
@@ -1133,6 +1127,8 @@ shared-parent-git-all-repos = Semua · { $repos }
 shared-parent-git-menu-tooltip = Tindakan Git untuk repo turunan
 shared-parent-git-unavailable-title = Tidak dapat membuka repo ini
 shared-context-choose-projects-to-run = Pilih proyek untuk dijalankan
+shared-context-run-count = Menjalankan { $selected } dari { $total }
+shared-context-run-none = Tidak ada
 workspace-choose-what-to-launch = Pilih apa yang akan diluncurkan...
 icon-picker-tab-symbols = Simbol
 icon-picker-tab-icons = Ikon
@@ -1648,10 +1644,10 @@ settings-diagnostics-status-label = Status diagnostik
 settings-privacy-telemetry-heading = telemetri
 settings-privacy-share-label = Bagikan data penggunaan anonim
 settings-privacy-share-description = Membantu kami memahami bagaimana super.engineering digunakan dan memprioritaskan perbaikan. Tidak ada data pribadi, data proyek, atau isi file yang pernah keluar dari mesin Anda.
-settings-privacy-what-we-send-description = ID per instalasi acak, ID sesi aplikasi acak, versi aplikasi, saluran pembaruan, versi macOS, timestamp dan durasi mulai/akhir sesi, serta event aktif harian saat peluncuran atau fokus/input aplikasi berikutnya pertama per hari UTC. Menonaktifkan ini menghentikan telemetri tanpa event opt-out terakhir. ID instalasi tetap tersimpan di perangkat Anda dan digunakan kembali jika telemetri diaktifkan lagi; status sesi dihapus.
+settings-privacy-what-we-send-description = ID per instalasi acak, ID sesi aplikasi acak, versi aplikasi, saluran pembaruan, nama dan versi sistem operasi, arsitektur CPU, timestamp dan durasi mulai/akhir sesi, serta event aktif harian saat peluncuran atau fokus/input aplikasi berikutnya yang pertama per hari UTC. Menonaktifkan ini menghentikan telemetri tanpa event opt-out terakhir. ID instalasi tetap tersimpan di perangkat Anda dan digunakan kembali jika telemetri diaktifkan lagi; status sesi dihapus.
 settings-privacy-what-we-never-send-description = Nama, email, nama host, direktori kerja, nama proyek, jalur file, nama cabang, input perintah, isi clipboard, atau kode apa pun. GeoIP enrichment dinonaktifkan pada setiap event.
 settings-privacy-ip-data-capture-description = Kami mengatur $geoip_disable: true di setiap event sehingga PostHog melewati pengayaan negara/kota. Proyek PostHog kami juga dikonfigurasi untuk membuang alamat IP klien sebelum penyimpanan — lihat Dokumen untuk cara kerjanya di sisi mereka.
-settings-privacy-update-checks-description = Terpisah dari telemetry, rilis build releases.super.engineering memeriksa setiap jam untuk pembaruan. Pemeriksaan pertama yang berhasil setiap hari UTC membawa penanda anonim yang digunakan untuk menghitung instalasi aktif secara agregat. Tidak ada pengenal dan tidak ada yang disimpan di server kami per instalasi; Aplikasi hanya menyimpan penanda hari lokal (~/.super.engineering/update_ping_day) sehingga mengirimkan penanda sekali sehari. Tidak terpengaruh oleh toggle di atas.
+settings-privacy-update-checks-description = Terpisah dari telemetri, build rilis memeriksa releases.super.engineering setiap jam untuk pembaruan. Pemeriksaan pertama yang berhasil setiap hari UTC membawa penanda anonim yang digunakan untuk menghitung instalasi aktif secara agregat. Penanda ini tidak berisi pengenal dan tidak ada data per instalasi yang disimpan di server kami; aplikasi hanya menyimpan penanda hari lokal (~/.super.engineering/update_ping_day) sehingga penanda dikirim sekali sehari. Setiap pemeriksaan juga mengirimkan arsitektur CPU aplikasi (ARM atau Intel), sehingga hitungan dapat dipisahkan berdasarkan arsitektur. Tidak terpengaruh oleh toggle di atas.
 settings-privacy-install-id-location = ID instalasi Anda berada di ~/.super.engineering/install_id — hapus kapan saja untuk reset.
 settings-privacy-install-id-disclosure = Bagaimana ID instalasi Anda dihasilkan
 settings-privacy-events-disclosure = Cara acara dikirim
@@ -2015,6 +2011,15 @@ settings-ai-mixed = Campuran
 settings-ai-current-chat = Obrolan saat ini
 settings-ai-provider-toggle-description = Tampilkan penyedia ini di menu Tab Baru dan UI Chat.
 settings-ai-provider-last-enabled-description = { $description } Setidaknya satu penyedia harus tetap aktif.
+settings-ai-provider-status-chat-terminal = Chat dan terminal
+settings-ai-provider-status-terminal = Terminal
+settings-ai-provider-status-disabled = Dinonaktifkan
+settings-ai-provider-disabled-detail = Aktifkan { $provider } untuk mengonfigurasi model dan opsi peluncurannya.
+settings-ai-provider-section-models = Model
+settings-ai-provider-section-chat = Chat
+settings-ai-provider-section-runtime = Runtime
+settings-ai-provider-profiles-description = Akun dan direktori home konfigurasi untuk penyedia ini.
+settings-ai-provider-manage-profiles = Kelola profil
 settings-ai-provider-antigravity-description = Aktifkan Antigravitasi sebagai penyedia terminal (memerlukan pemasangan CLI `agy` Antigravitasi).
 settings-ai-provider-hermes-description = Aktifkan Hermes sebagai penyedia terminal (memerlukan Hermes Agent `hermes` terpasang).
 settings-ai-provider-qwen-description = Aktifkan Qwen Code sebagai penyedia terminal (memerlukan Qwen Code CLI `qwen` terinstal).
@@ -2101,7 +2106,7 @@ workspace-review-request-state-changed = { $kind } negara bagian berubah; aksi t
 workspace-remote-forge-cli-not-authenticated-hint = Tips: { $cli } pada host tidak terautentikasi — jalankan `{ $cli } auth login` di sana untuk membuat { $kind } dengan agen.
 workspace-remote-forge-cli-missing-hint = Tips: instal { $cli } di host dan jalankan `{ $cli } auth login` untuk membuat { $kind } dengan agen.
 workspace-review-request-url-copied = Disalin { $kind } URL
-workspace-review-request-url-unavailable = Tidak ada permintaan ulasan URL tersedia
+workspace-review-request-none-yet = Cabang ini belum memiliki { $kind }
 worktree-prompt = Prompt
 worktree-branches = Cabang-cabang
 worktree-merge-requests = Permintaan penggabungan
@@ -2678,6 +2683,38 @@ pr-checks-failing-count = { $count } pemeriksaan gagal
 pr-actions-required-count = { $count } tindakan diperlukan
 pr-checks-pending = Pemeriksaan tertunda
 pr-checks-pending-count = { $count } pemeriksaan tertunda
+hover-card-needs-answer = Perlu jawaban Anda
+hover-card-no-review-request =
+    { $forge ->
+        [gitlab] Tidak ada merge request
+       *[other] Tidak ada pull request
+    }
+hover-card-checks-running = Pemeriksaan berjalan, { $passed } dari { $total }
+hover-card-more-running = { $count } lagi berjalan
+hover-card-stopping = Menghentikan
+hover-card-main-checkout = Checkout utama
+hover-card-main-checkouts = Checkout utama
+hover-card-add-repo = Tambah repo
+hover-card-add-repo-count = +{ $count }
+hover-card-find-repo = Cari repo
+hover-card-checking-repos = Memeriksa repo
+hover-card-all-merged = Semua digabungkan
+hover-card-repos-merged = { $count } digabungkan
+hover-card-more-repos = { $count } lagi
+hover-card-run-repos = { $count ->
+    [0] Jalankan
+   *[other] Jalankan { $count }
+}
+hover-card-stop-repos = { $count ->
+    [0] Hentikan
+   *[other] Hentikan { $count }
+}
+hover-card-run-select-repos = Pilih repo untuk dijalankan
+hover-card-run-selected-repos = Jalankan repo terpilih
+hover-card-stop-selected-repos = Hentikan repo terpilih
+hover-card-checking-status = Memeriksa status
+hover-card-nothing-to-commit = Tidak ada yang perlu di-commit atau di-push
+hover-card-unpushed-commits = { $count } belum di-push
 icon-picker-emoji-tooltip = Emoji: { $glyph }
 icon-picker-named-icon-tooltip =
     { $name ->
@@ -3294,8 +3331,6 @@ settings-ai-git-button-routes-description = Atur setiap tombol Git berbasis AI. 
 settings-ai-other-routes = Rute lain
 settings-ai-other-routes-description = Atur penamaan, pesan commit sebaris, penyempurnaan prompt, dan balasan tinjauan. Rute perintah khusus tetap bersama setiap perintah di Perintah.
 settings-ai-follows-session-default = Mengikuti Bawaan sesi
-settings-ai-advanced-setup = Penyiapan lanjutan
-settings-ai-advanced-setup-description = Berkas eksekusi dan flag peluncuran bersama untuk penyedia ini.
 settings-ai-model-routing = Perutean model
 settings-ai-model-routing-description = Pilih model, profil, dan tingkat pemikiran bawaan, atau sesuaikan untuk tindakan tertentu.
 settings-ai-manage-routing = Buka perutean
@@ -3335,6 +3370,12 @@ chat-steer-hold-waiting = { $provider } belum dapat menerima arahan.
 chat-steer-hold-waiting-detail = Pesan Anda akan mengarahkan agen saat memungkinkan, atau dikirim setelah giliran ini.
 chat-steer-refused = Tidak dapat mengarahkan.
 chat-steer-refused-detail = { $provider } mengembalikan kesalahan. Periksa percakapan sebelum mencoba lagi.
+chat-reconnecting = Menghubungkan kembali ke { $provider }.
+chat-reconnecting-held = Pesan Anda akan terkirim setelah koneksi pulih.
+chat-reconnecting-retry = Coba lagi sebentar lagi.
+chat-reconnecting-slow = Memakan waktu lebih lama dari biasanya, memulai koneksi baru.
+chat-reconnect-failed = Tidak dapat terhubung kembali ke { $provider }.
+chat-reconnect-try-again = Coba lagi
 chat-steered = Diarahkan
 chat-steer-not-read = Belum dibaca
 chat-steer-send-again = Kirim
@@ -3369,6 +3410,8 @@ notification-codex-thread-archive-done = { $count ->
 }
 notification-codex-thread-archive-failed = Beberapa utas Codex tidak diarsipkan
 notification-installing-update = Memasang pembaruan. Aplikasi akan dimulai ulang setelah selesai.
+notification-update-installed = Pembaruan terpasang. Memulai ulang
+notification-update-installed-after-typing = Pembaruan terpasang. Dimulai ulang setelah berhenti mengetik
 worktree-delete-agent-working = Masih ada agen yang bekerja di sini
 worktree-delete-all-action = Hapus semua
 worktree-delete-body = Foldernya dihapus dari disk.

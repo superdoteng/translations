@@ -141,41 +141,21 @@ browser-home = الرئيسية
 browser-start-tab-title = صفحة البداية
 browser-address-placeholder = ابحث في الخوادم أو أدخل عنوانًا
 browser-start-running = قيد التشغيل
-browser-start-server-count = { $count ->
-    [zero] { $count } خادم
-    [one] خادم واحد
-    [two] خادمان
-    [few] { $count } خوادم
-    [many] { $count } خادمًا
-   *[other] { $count } خادم
-}
-browser-start-show-all = عرض الكل ({ $count })
 browser-start-show-less = عرض أقل
-browser-start-more-projects = { $count ->
-    [1] عرض مشروع آخر
-    [two] عرض مشروعين آخرين
-    [few] عرض { $count } مشاريع أخرى
-    [many] عرض { $count } مشروعًا آخر
-   *[other] عرض { $count } مشروع آخر
-}
 browser-start-recent = تمت زيارتها مؤخرًا
+browser-start-also-running = قيد التشغيل أيضًا
+browser-start-more = { $count } أخرى
+browser-start-stopped = متوقف
+browser-start-starting = جارٍ البدء
+browser-start-clock = { $elapsed }
+browser-start-run-script = تشغيل سكربت
+browser-start-run-script-named = تشغيل { $script }
+browser-start-stop-script = إيقاف { $script }
 browser-start-clear = مسح
-browser-start-none-body = تظهر هنا الخوادم التي تبدأ في أي شجرة عمل.
 browser-start-run = بدء التشغيل
-browser-start-stop-run = إيقاف التشغيل
 browser-start-this-worktree = شجرة العمل هذه
 browser-start-pull-request = طلب سحب
 browser-start-merge-request = طلب دمج
-browser-start-checks = عمليات التحقق
-browser-start-checks-passing = ناجحة
-browser-start-checks-failing = { $count ->
-    [one] { $count } فاشلة
-   *[other] { $count } فاشلة
-}
-browser-start-checks-running = { $count ->
-    [one] { $count } قيد التشغيل
-   *[other] { $count } قيد التشغيل
-}
 browser-start-repository = المستودع
 browser-nothing-title = { $host } لا يعمل
 browser-nothing-lede = تُفتح هذه الصفحة هنا عند بدء الخادم.
@@ -829,6 +809,10 @@ settings-updates-ready = التحديث جاهز: { $version }
 settings-updates-check-failed = فشل التحقق من التحديث: { $error }
 toast-update-apply-failed-title = تعذر تطبيق التحديث
 toast-update-apply-failed = تعذر تطبيق التحديث: { $error }
+toast-update-previous-launch-failed-title = Update did not finish starting
+toast-update-previous-launch-failed = The last launch of this update closed before its window appeared. If problems continue, see { $url }
+toast-update-rolled-back-title = Update rolled back
+toast-update-rolled-back = The update to { $version } closed before it finished starting, so super.engineering went back to the previous version. The next nightly will be offered automatically.
 settings-updates-downloading-version = جارٍ تنزيل التحديث { $version }...
 settings-updates-installing-version = جارٍ تثبيت التحديث { $version }...
 settings-updates-description = تحقق من وجود إصدارات super.engineering جديدة وقم بتثبيت النتائج.
@@ -837,6 +821,7 @@ settings-updates-channel-description = Nightly هو حاليًا مسار الإ
 settings-updates-current-version-label = الإصدار الحالي
 settings-updates-installed = تم التثبيت
 settings-updates-status-label = تحديث الحالة
+settings-updates-package-managed = Updates are managed by your package manager
 settings-ai-inherited = موروثة
 settings-ai-search-models-placeholder = نماذج البحث...
 settings-ai-action-column = العمل
@@ -1088,7 +1073,6 @@ settings-ai-fast-model-description = النموذج المستخدم للحرك�
 settings-ai-thorough-model-description = النموذج المستخدم في إجراءات المراجعة والإصلاح.
 settings-ai-fast = سريع
 settings-ai-thorough = دقيق
-settings-ai-provider-disabled = معطلة — تفعيل في قسم المزودين.
 settings-ai-all-buckets-cli-default = جميع الدلاء تستخدم النموذج الافتراضي CLI.
 settings-ai-inheriting-parent-scope = الوراثة من نطاق الوالد.
 settings-ai-customized = مخصص
@@ -1159,6 +1143,8 @@ shared-parent-git-all-repos = الكل · { $repos }
 shared-parent-git-menu-tooltip = إجراءات Git للمستودعات الفرعية
 shared-parent-git-unavailable-title = تعذر فتح هذه المستودعات
 shared-context-choose-projects-to-run = اختر المشاريع المراد تشغيلها
+shared-context-run-count = يشغّل { $selected } من { $total }
+shared-context-run-none = لا شيء
 workspace-choose-what-to-launch = اختر ما ستطلقه...
 icon-picker-tab-symbols = الرموز
 icon-picker-tab-icons = الأيقونات
@@ -1682,10 +1668,10 @@ settings-diagnostics-status-label = حالة التشخيص
 settings-privacy-telemetry-heading = القياس عن بعد
 settings-privacy-share-label = مشاركة بيانات الاستخدام المجهولة
 settings-privacy-share-description = يساعدنا على فهم كيفية استخدام super.engineering وإعطاء الأولوية للتحسينات. لا تغادر أي بيانات شخصية أو بيانات مشروع أو محتويات ملفات جهازك أبدا.
-settings-privacy-what-we-send-description = معرف عشوائي لكل تثبيت، معرف جلسة تطبيق عشوائي، إصدار تطبيق، قناة تحديث، إصدار macOS، طوابع زمنية ومدة بدء وانتهاء الجلسة، وحدث نشط يوميا عند الإطلاق أو أول تركيز/إدخال لاحق للتطبيق في كل يوم UTC. يؤدي إيقاف هذا الخيار إلى إيقاف إرسال بيانات القياس دون إرسال حدث إلغاء اشتراك أخير. يبقى معرف التثبيت على جهازك ويُعاد استخدامه إذا فعّلت القياس مجددًا؛ وتُحذف حالة الجلسة.
+settings-privacy-what-we-send-description = معرّف عشوائي لكل تثبيت، ومعرّف جلسة تطبيق عشوائي، وإصدار التطبيق، وقناة التحديث، واسم نظام التشغيل وإصداره، وبنية المعالج CPU، وطوابع زمنية لبدء الجلسة وانتهائها ومدتها، وحدث نشاط يومي عند الإطلاق أو عند أول تركيز/إدخال لاحق في التطبيق في كل يوم UTC. يؤدي إيقاف هذا الخيار إلى إيقاف إرسال بيانات القياس دون إرسال حدث إلغاء اشتراك أخير. يبقى معرّف التثبيت على جهازك ويُعاد استخدامه إذا فعّلت القياس مجددًا؛ وتُحذف حالة الجلسة.
 settings-privacy-what-we-never-send-description = اسمك، بريدك الإلكتروني، اسم المضيف، الأدلة العاملة، أسماء المشاريع، مسارات الملفات، أسماء الفروع، مدخلات الأوامر، محتويات لوحة الحافظ، أو أي كود. يتم تعطيل إثراء GeoIP في كل حدث.
 settings-privacy-ip-data-capture-description = قمنا بتعيين $geoip_disable: صحيح في كل حدث لذا PostHog يتخطى إثراء البلد أو المدينة. مشروع PostHog لدينا أيضا مهيأ لتجاهل عناوين IP للعملاء قبل التخزين — راجع Docs لمعرفة كيفية عمل ذلك من جانبهم.
-settings-privacy-update-checks-description = بعيدا عن التليمتري، تتحقق نسخ الإصدار releases.super.engineering كل ساعة للحصول على التحديثات. أول فحص ناجح في كل يوم UTC يحمل علامة مجهولة تستخدم لعد التثبيت النشط بشكل مجمع. لا يحتوي على معرف ولا يوجد أي شيء مخزن في كل تثبيت على خوادمنا؛ التطبيق يحتفظ فقط بعلامة اليوم المحلية (~/.super.engineering/update_ping_day) لذا يرسل المؤشر مرة واحدة يوميا. لا يتأثر بالمفتاح أعلاه.
+settings-privacy-update-checks-description = بعيدًا عن القياس عن بُعد، تتحقق نسخ الإصدار من releases.super.engineering كل ساعة بحثًا عن تحديثات. أول فحص ناجح في كل يوم UTC يحمل علامة مجهولة تُستخدم لعدّ التثبيتات النشطة بشكل مجمّع. لا تحتوي على أي معرّف ولا يُخزَّن أي شيء خاص بكل تثبيت على خوادمنا؛ يحتفظ التطبيق فقط بعلامة يوم محلية (~/.super.engineering/update_ping_day) لكي يرسل العلامة مرة واحدة يوميًا. يرسل كل فحص أيضًا بنية المعالج CPU للتطبيق (ARM أو Intel)، حتى يمكن تقسيم العدد حسب البنية. لا يتأثر بالمفتاح أعلاه.
 settings-privacy-install-id-location = معرف التثبيت الخاص بك موجود في ~/.super.engineering/install_id — قم بحذفه في أي وقت لإعادة الضبط.
 settings-privacy-install-id-disclosure = كيف يتم إنشاء معرف التثبيت الخاص بك
 settings-privacy-events-disclosure = كيف ترسل الأحداث
@@ -2049,6 +2035,15 @@ settings-ai-mixed = مختلط
 settings-ai-current-chat = الدردشة الحالية
 settings-ai-provider-toggle-description = اعرض هذا المزود في قائمة التبويب الجديد وواجهة الدردشة.
 settings-ai-provider-last-enabled-description = { $description } يجب أن يبقى مزود واحد على الأقل مفعلا.
+settings-ai-provider-status-chat-terminal = المحادثة والطرفية
+settings-ai-provider-status-terminal = الطرفية
+settings-ai-provider-status-disabled = معطّل
+settings-ai-provider-disabled-detail = فعّل { $provider } لضبط نماذجه وخيارات تشغيله.
+settings-ai-provider-section-models = النماذج
+settings-ai-provider-section-chat = المحادثة
+settings-ai-provider-section-runtime = بيئة التشغيل
+settings-ai-provider-profiles-description = الحسابات ومجلدات الإعداد لهذا المزوّد.
+settings-ai-provider-manage-profiles = إدارة الملفات الشخصية
 settings-ai-provider-antigravity-description = تفعيل Antigravity كمزود طرفي (يتطلب تركيب CLI `agy` Antigravity).
 settings-ai-provider-hermes-description = تفعيل هيرميس كمزود طرفية (يتطلب تثبيت `hermes` Hermes Agent).
 settings-ai-provider-qwen-description = تفعيل كود كوين كمزود طرفية (يتطلب تثبيت كود كوين CLI `qwen`).
@@ -2135,7 +2130,7 @@ workspace-review-request-state-changed = { $kind } تغيرت الدولة؛ ل�
 workspace-remote-forge-cli-not-authenticated-hint = نصيحة: { $cli } على المضيف غير مصادق — قم `{ $cli } auth login` هناك لإنشاء { $kind } مع الوكيل.
 workspace-remote-forge-cli-missing-hint = نصيحة: قم بتثبيت { $cli } على المضيف وتشغيل `{ $cli } auth login` لإنشاء { $kind } مع الوكيل.
 workspace-review-request-url-copied = تم نسخ { $kind } URL
-workspace-review-request-url-unavailable = لا URL يتوفر طلب مراجعة
+workspace-review-request-none-yet = لا يوجد { $kind } لهذا الفرع بعد
 worktree-prompt = الموضوع
 worktree-branches = الفروع
 worktree-merge-requests = طلبات الدمج
@@ -2551,6 +2546,38 @@ pr-checks-pending-count =
         [many] { $count } فحصًا معلّقًا
        *[other] { $count } فحص معلّق
     }
+hover-card-needs-answer = بانتظار إجابتك
+hover-card-no-review-request =
+    { $forge ->
+        [gitlab] لا يوجد طلب دمج
+       *[other] لا يوجد طلب سحب
+    }
+hover-card-checks-running = عمليات التحقق قيد التشغيل، { $passed } من { $total }
+hover-card-more-running = { $count } أخرى قيد التشغيل
+hover-card-stopping = جارٍ الإيقاف
+hover-card-main-checkout = النسخة الرئيسية
+hover-card-main-checkouts = النسخ الرئيسية
+hover-card-add-repo = إضافة مستودع
+hover-card-add-repo-count = +{ $count }
+hover-card-find-repo = البحث عن مستودع
+hover-card-checking-repos = جارٍ فحص المستودعات
+hover-card-all-merged = تم دمج الكل
+hover-card-repos-merged = تم دمج { $count }
+hover-card-more-repos = { $count } أخرى
+hover-card-run-repos = { $count ->
+    [0] تشغيل
+   *[other] تشغيل { $count }
+}
+hover-card-stop-repos = { $count ->
+    [0] إيقاف
+   *[other] إيقاف { $count }
+}
+hover-card-run-select-repos = اختر المستودعات لتشغيلها
+hover-card-run-selected-repos = تشغيل المستودعات المحددة
+hover-card-stop-selected-repos = إيقاف المستودعات المحددة
+hover-card-checking-status = جارٍ فحص الحالة
+hover-card-nothing-to-commit = لا شيء للالتزام أو الدفع
+hover-card-unpushed-commits = { $count } غير مرفوعة
 icon-picker-emoji-tooltip = رمز تعبيري: { $glyph }
 icon-picker-named-icon-tooltip =
     { $name ->
@@ -3562,8 +3589,6 @@ settings-ai-git-button-routes-description = اضبط كل زر Git مدعوم ب
 settings-ai-other-routes = مسارات أخرى
 settings-ai-other-routes-description = اضبط التسمية ورسائل الالتزام المضمنة وتحسين المطالبات وردود المراجعة. تبقى مسارات الأوامر المخصصة مع كل أمر في «الأوامر».
 settings-ai-follows-session-default = يتبع الإعداد الافتراضي للجلسة
-settings-ai-advanced-setup = إعداد متقدم
-settings-ai-advanced-setup-description = الملف التنفيذي وخيارات التشغيل المشتركة لهذا الموفر.
 settings-ai-model-routing = توجيه النماذج
 settings-ai-model-routing-description = اختر النماذج والملفات الشخصية ومستويات التفكير الافتراضية، أو خصّصها لإجراءات محددة.
 settings-ai-manage-routing = فتح التوجيه
@@ -3603,6 +3628,12 @@ chat-steer-hold-waiting = لا يستطيع { $provider } قبول توجيه ب
 chat-steer-hold-waiting-detail = ستوجّه رسالتك العمل بمجرد أن يصبح ذلك ممكنًا، أو تُرسل بعد هذا الدور.
 chat-steer-refused = تعذر التوجيه.
 chat-steer-refused-detail = أعاد { $provider } خطأً. تحقق من المحادثة قبل إعادة المحاولة.
+chat-reconnecting = جارٍ إعادة الاتصال بـ { $provider }.
+chat-reconnecting-held = ستُرسل رسالتك عند عودة الاتصال.
+chat-reconnecting-retry = أعد المحاولة بعد لحظات.
+chat-reconnecting-slow = يستغرق الأمر وقتًا أطول من المعتاد، جارٍ بدء اتصال جديد.
+chat-reconnect-failed = تعذّرت إعادة الاتصال بـ { $provider }.
+chat-reconnect-try-again = إعادة المحاولة
 chat-steered = تم التوجيه
 chat-steer-not-read = لم تُقرأ
 chat-steer-send-again = إرسال
@@ -3642,6 +3673,8 @@ notification-codex-thread-archive-done = { $count ->
     }
 notification-codex-thread-archive-failed = لم تُؤرشف بعض سلاسل محادثات Codex
 notification-installing-update = جارٍ تثبيت التحديث. سيُعاد تشغيل التطبيق عند الانتهاء.
+notification-update-installed = تم تثبيت التحديث. جارٍ إعادة التشغيل
+notification-update-installed-after-typing = تم تثبيت التحديث. سيُعاد التشغيل عند التوقف عن الكتابة
 worktree-delete-agent-working = لا يزال وكيل يعمل هنا
 worktree-delete-all-action = حذف الكل
 worktree-delete-body = يُحذف مجلدها من القرص.

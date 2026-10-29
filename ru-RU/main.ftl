@@ -149,43 +149,21 @@ browser-home = Домой
 browser-start-tab-title = Начальная страница
 browser-address-placeholder = Найдите сервер или введите адрес
 browser-start-running = Запущены
-browser-start-server-count = { $count ->
-    [one] { $count } сервер
-    [few] { $count } сервера
-    [many] { $count } серверов
-   *[other] { $count } сервера
-}
-browser-start-show-all = Показать все { $count }
 browser-start-show-less = Показать меньше
-browser-start-more-projects = { $count ->
-    [1] Показать ещё 1 проект
-    [one] Показать ещё { $count } проект
-    [few] Показать ещё { $count } проекта
-    [many] Показать ещё { $count } проектов
-   *[other] Показать ещё { $count } проекта
-}
 browser-start-recent = Недавно посещённые
+browser-start-also-running = Также запущены
+browser-start-more = Ещё { $count }
+browser-start-stopped = Остановлен
+browser-start-starting = Запуск
+browser-start-clock = { $elapsed }
+browser-start-run-script = Запустить скрипт
+browser-start-run-script-named = Запустить { $script }
+browser-start-stop-script = Остановить { $script }
 browser-start-clear = Очистить
-browser-start-none-body = Здесь появляются серверы, запущенные в любом рабочем дереве.
 browser-start-run = Начать запуск
-browser-start-stop-run = Остановить запуск
 browser-start-this-worktree = Это рабочее дерево
 browser-start-pull-request = Pull request
 browser-start-merge-request = Запрос на слияние
-browser-start-checks = Проверки
-browser-start-checks-passing = Пройдены
-browser-start-checks-failing = { $count ->
-    [one] { $count } не пройдена
-    [few] { $count } не пройдены
-    [many] { $count } не пройдено
-   *[other] { $count } не пройдено
-}
-browser-start-checks-running = { $count ->
-    [one] { $count } выполняется
-    [few] { $count } выполняются
-    [many] { $count } выполняются
-   *[other] { $count } выполняется
-}
 browser-start-repository = Репозиторий
 browser-nothing-title = { $host } не запущен
 browser-nothing-lede = Страница откроется здесь, когда сервер запустится.
@@ -837,6 +815,10 @@ settings-updates-ready = Обновление готово: { $version }
 settings-updates-check-failed = Проверка обновления не прошла: { $error }
 toast-update-apply-failed-title = Не удалось применить обновление
 toast-update-apply-failed = Не удалось применить обновление: { $error }
+toast-update-previous-launch-failed-title = Update did not finish starting
+toast-update-previous-launch-failed = The last launch of this update closed before its window appeared. If problems continue, see { $url }
+toast-update-rolled-back-title = Update rolled back
+toast-update-rolled-back = The update to { $version } closed before it finished starting, so super.engineering went back to the previous version. The next nightly will be offered automatically.
 settings-updates-downloading-version = Скачиваю обновление { $version }...
 settings-updates-installing-version = Устанавливаю обновление { $version }...
 settings-updates-description = Проверьте и установите новые релизы super.engineering.
@@ -845,6 +827,7 @@ settings-updates-channel-description = Nightly — единственный до
 settings-updates-current-version-label = Текущая версия
 settings-updates-installed = Установка
 settings-updates-status-label = Статус обновления
+settings-updates-package-managed = Updates are managed by your package manager
 settings-ai-inherited = Унаследованный
 settings-ai-search-models-placeholder = Модели поиска...
 settings-ai-action-column = Бой
@@ -1088,7 +1071,6 @@ settings-ai-fast-model-description = Модель используется дл�
 settings-ai-thorough-model-description = Модель используется для проверки и ремонта.
 settings-ai-fast = Быстро
 settings-ai-thorough = Тщательно
-settings-ai-provider-disabled = Отключён — включить в разделе «Поставщики».
 settings-ai-all-buckets-cli-default = Все бакеты используют модель CLI по умолчанию.
 settings-ai-inheriting-parent-scope = Наследование от родительского масштаба.
 settings-ai-customized = Персонализация
@@ -1159,6 +1141,8 @@ shared-parent-git-all-repos = Все · { $repos }
 shared-parent-git-menu-tooltip = Действия Git для дочерних репозиториев
 shared-parent-git-unavailable-title = Не удалось открыть эти репозитории
 shared-context-choose-projects-to-run = Выбирайте проекты для запуска
+shared-context-run-count = Запуск: { $selected } из { $total }
+shared-context-run-none = Нет
 workspace-choose-what-to-launch = Выбирай, что запускать...
 icon-picker-tab-symbols = Символы
 icon-picker-tab-icons = Иконы
@@ -1678,10 +1662,10 @@ settings-diagnostics-status-label = Статус диагностики
 settings-privacy-telemetry-heading = Телеметрия
 settings-privacy-share-label = Обмен анонимными данными об использовании
 settings-privacy-share-description = Это помогает нам понять, как используется super.engineering, и расставлять приоритеты для улучшений. Никакие личные данные, данные проекта или содержимое файлов никогда не покидают ваш компьютер.
-settings-privacy-what-we-send-description = Случайный идентификатор для каждой установки, случайный идентификатор сессии приложения, версия приложения, канал обновления, macOS версии, временные метки и продолжительность старта/окончания сессии, а также ежедневное активное событие при запуске или первое более позднее фокус/ввод приложения за UTC день. При отключении телеметрия прекращается без отправки последнего события отказа. Идентификатор установки сохраняется на устройстве и используется повторно при включении телеметрии; состояние сессии удаляется.
+settings-privacy-what-we-send-description = Случайный идентификатор установки, случайный идентификатор сессии приложения, версия приложения, канал обновлений, название и версия операционной системы, архитектура CPU, временные метки начала и окончания сессии и её продолжительность, а также событие ежедневной активности при запуске или при первом последующем фокусе/вводе в приложении за каждые сутки по UTC. При отключении телеметрия прекращается без отправки последнего события отказа. Идентификатор установки сохраняется на устройстве и используется повторно при повторном включении телеметрии; состояние сессии удаляется.
 settings-privacy-what-we-never-send-description = Ваше имя, электронная почта, имя хоста, рабочие каталоги, имена проектов, пути к файлам, имена веток, командные вводы, содержимое буфера обмена или любой код. Обогащение GeoIP отключено на каждом событии.
 settings-privacy-ip-data-capture-description = Мы устанавливаем $geoip_disable: true на каждом событии, чтобы PostHog пропускал обогащение страны/города. Наш проект PostHog также настроен на удаление IP-адресов клиентов перед хранением — см. раздел Docs, как это работает на их стороне.
-settings-privacy-update-checks-description = Отдельно от телеметрии, релизные сборки проверяются releases.super.engineering час на обновления. Первая успешная проверка за каждый UTC день содержит анонимный маркер, используемый для подсчёта активных установок в агрегате. Он не содержит идентификатора, и на наших серверах не хранится ничего на одну установку; Приложение хранит только локальный маркер дня (~/.super.engineering/update_ping_day), поэтому отправляет маркер один раз в день. Переключатель выше не влияет.
+settings-privacy-update-checks-description = Отдельно от телеметрии релизные сборки ежечасно проверяют наличие обновлений на releases.super.engineering. Первая успешная проверка за каждые сутки по UTC содержит анонимный маркер, который используется для подсчёта активных установок в совокупности. Он не содержит идентификатора, и на наших серверах ничего не хранится по отдельным установкам; приложение хранит только локальный маркер дня (~/.super.engineering/update_ping_day), чтобы отправлять маркер один раз в день. Каждая проверка также передаёт архитектуру CPU приложения (ARM или Intel), чтобы подсчёт можно было разделить по архитектуре. Переключатель выше на это не влияет.
 settings-privacy-install-id-location = Ваш установочный идентификатор находится на ~/.super.engineering/install_id — удаляйте его в любое время для сброса.
 settings-privacy-install-id-disclosure = Как генерируется ваш установочный ID
 settings-privacy-events-disclosure = Как отправляются события
@@ -2045,6 +2029,15 @@ settings-ai-mixed = Смешанные
 settings-ai-current-chat = Текущий разговор
 settings-ai-provider-toggle-description = Покажите этого провайдера в меню новой вкладки и интерфейсе чата.
 settings-ai-provider-last-enabled-description = { $description } Как минимум один провайдер должен оставаться включённым.
+settings-ai-provider-status-chat-terminal = Чат и терминал
+settings-ai-provider-status-terminal = Терминал
+settings-ai-provider-status-disabled = Отключён
+settings-ai-provider-disabled-detail = Включите { $provider }, чтобы настроить его модели и параметры запуска.
+settings-ai-provider-section-models = Модели
+settings-ai-provider-section-chat = Чат
+settings-ai-provider-section-runtime = Среда выполнения
+settings-ai-provider-profiles-description = Аккаунты и домашние каталоги конфигурации для этого поставщика.
+settings-ai-provider-manage-profiles = Управление профилями
 settings-ai-provider-antigravity-description = Включите Antigravity как провайдера терминала (требуется CLI `agy` установлен Antigravity).
 settings-ai-provider-hermes-description = Включите Hermes как поставщика терминала (требуется `hermes` установлен Hermes Agent).
 settings-ai-provider-qwen-description = Включите Qwen Code в качестве провайдера терминала (требуется CLI `qwen` установленный Qwen Code).
@@ -2131,7 +2124,7 @@ workspace-review-request-state-changed = { $kind } состояние измен
 workspace-remote-forge-cli-not-authenticated-hint = Совет: { $cli } на хосте не аутентифицировано — запустите `{ $cli } auth login` туда, чтобы создать { $kind } с агентом.
 workspace-remote-forge-cli-missing-hint = Совет: установите { $cli } на хосте и запустите `{ $cli } auth login`, чтобы создать { $kind } с агентом.
 workspace-review-request-url-copied = Скопировано { $kind } URL
-workspace-review-request-url-unavailable = Запрос на отзыв URL доступен
+workspace-review-request-none-yet = У этой ветки пока нет { $kind }
 worktree-prompt = Подсказка
 worktree-branches = Филиалы
 worktree-merge-requests = Запросы на слияние
@@ -2768,6 +2761,38 @@ pr-checks-pending-count =
         [many] { $count } проверок ожидают выполнения
        *[other] { $count } проверки ожидают выполнения
     }
+hover-card-needs-answer = Нужен ваш ответ
+hover-card-no-review-request =
+    { $forge ->
+        [gitlab] Нет запроса на слияние
+       *[other] Нет pull request
+    }
+hover-card-checks-running = Идут проверки: { $passed } из { $total }
+hover-card-more-running = Запущено ещё: { $count }
+hover-card-stopping = Остановка
+hover-card-main-checkout = Основная рабочая копия
+hover-card-main-checkouts = Основные рабочие копии
+hover-card-add-repo = Добавить репозиторий
+hover-card-add-repo-count = +{ $count }
+hover-card-find-repo = Найти репозиторий
+hover-card-checking-repos = Проверка репозиториев
+hover-card-all-merged = Все объединены
+hover-card-repos-merged = Объединено: { $count }
+hover-card-more-repos = Ещё { $count }
+hover-card-run-repos = { $count ->
+    [0] Запустить
+   *[other] Запустить { $count }
+}
+hover-card-stop-repos = { $count ->
+    [0] Остановить
+   *[other] Остановить { $count }
+}
+hover-card-run-select-repos = Выберите репозитории для запуска
+hover-card-run-selected-repos = Запустить выбранные репозитории
+hover-card-stop-selected-repos = Остановить выбранные репозитории
+hover-card-checking-status = Проверка статуса
+hover-card-nothing-to-commit = Нечего коммитить или отправлять
+hover-card-unpushed-commits = Не отправлено: { $count }
 icon-picker-emoji-tooltip = Эмодзи: { $glyph }
 icon-picker-named-icon-tooltip =
     { $name ->
@@ -3457,8 +3482,6 @@ settings-ai-git-button-routes-description = Настройте все кнопк
 settings-ai-other-routes = Другие маршруты
 settings-ai-other-routes-description = Настройте именование, встроенные сообщения коммитов, улучшение запросов и ответы на рецензии. Маршруты пользовательских команд остаются при каждой команде в разделе «Команды».
 settings-ai-follows-session-default = Следует настройкам сеанса по умолчанию
-settings-ai-advanced-setup = Расширенная настройка
-settings-ai-advanced-setup-description = Исполняемый файл и общие флаги запуска этого поставщика.
 settings-ai-model-routing = Маршрутизация моделей
 settings-ai-model-routing-description = Выберите модели, профили и уровни мышления по умолчанию или настройте их для отдельных действий.
 settings-ai-manage-routing = Открыть маршрутизацию
@@ -3498,6 +3521,12 @@ chat-steer-hold-waiting = { $provider } пока не может принять 
 chat-steer-hold-waiting-detail = Сообщение скорректирует работу, как только это станет возможно, или отправится после этого хода.
 chat-steer-refused = Не удалось скорректировать работу.
 chat-steer-refused-detail = { $provider } вернул ошибку. Перед повтором проверьте разговор.
+chat-reconnecting = Переподключение к { $provider }.
+chat-reconnecting-held = Ваше сообщение отправится, когда связь восстановится.
+chat-reconnecting-retry = Повторите попытку чуть позже.
+chat-reconnecting-slow = Это занимает больше времени, чем обычно; открываем новое соединение.
+chat-reconnect-failed = Не удалось переподключиться к { $provider }.
+chat-reconnect-try-again = Повторить
 chat-steered = Работа скорректирована
 chat-steer-not-read = Не прочитано
 chat-steer-send-again = Отправить
@@ -3535,6 +3564,8 @@ notification-codex-thread-archive-done = { $count ->
 }
 notification-codex-thread-archive-failed = Некоторые обсуждения Codex не заархивированы
 notification-installing-update = Установка обновления. После завершения приложение перезапустится.
+notification-update-installed = Обновление установлено. Перезапуск
+notification-update-installed-after-typing = Обновление установлено. Перезапуск после окончания ввода
 worktree-delete-agent-working = Здесь ещё работает агент
 worktree-delete-all-action = Удалить всё
 worktree-delete-body = Его папка будет удалена с диска.

@@ -148,34 +148,21 @@ browser-home = ہوم
 browser-start-tab-title = ابتدائی صفحہ
 browser-address-placeholder = سرورز تلاش کریں یا پتہ درج کریں
 browser-start-running = چل رہے ہیں
-browser-start-server-count = { $count ->
-    [one] { $count } سرور
-   *[other] { $count } سرورز
-}
-browser-start-show-all = تمام { $count } دکھائیں
 browser-start-show-less = کم دکھائیں
-browser-start-more-projects = { $count ->
-    [1] ایک مزید پروجیکٹ دکھائیں
-   *[other] { $count } مزید پروجیکٹس دکھائیں
-}
 browser-start-recent = حال ہی میں دیکھے گئے
+browser-start-also-running = یہ بھی چل رہے ہیں
+browser-start-more = { $count } مزید
+browser-start-stopped = رک گیا
+browser-start-starting = شروع ہو رہا ہے
+browser-start-clock = { $elapsed }
+browser-start-run-script = اسکرپٹ چلائیں
+browser-start-run-script-named = { $script } چلائیں
+browser-start-stop-script = { $script } روکیں
 browser-start-clear = صاف کریں
-browser-start-none-body = کسی بھی ورک ٹری میں شروع کیے گئے سرورز یہاں ظاہر ہوتے ہیں۔
 browser-start-run = رن شروع کریں
-browser-start-stop-run = رن روکیں
 browser-start-this-worktree = یہ ورک ٹری
 browser-start-pull-request = پل ریکویسٹ
 browser-start-merge-request = مرج ریکویسٹ
-browser-start-checks = چیکس
-browser-start-checks-passing = کامیاب
-browser-start-checks-failing = { $count ->
-    [one] { $count } ناکام
-   *[other] { $count } ناکام
-}
-browser-start-checks-running = { $count ->
-    [one] { $count } چل رہا ہے
-   *[other] { $count } چل رہے ہیں
-}
 browser-start-repository = ریپوزٹری
 browser-nothing-title = { $host } نہیں چل رہا
 browser-nothing-lede = سرور شروع ہونے پر یہ صفحہ یہیں کھلے گا۔
@@ -819,6 +806,10 @@ settings-updates-ready = اپ ڈیٹ تیار ہے: { $version }
 settings-updates-check-failed = اپ ڈیٹ چیک ناکام: { $error }
 toast-update-apply-failed-title = اپ ڈیٹ لاگو نہیں ہو سکی
 toast-update-apply-failed = اپ ڈیٹ لاگو نہیں ہو سکی: { $error }
+toast-update-previous-launch-failed-title = Update did not finish starting
+toast-update-previous-launch-failed = The last launch of this update closed before its window appeared. If problems continue, see { $url }
+toast-update-rolled-back-title = Update rolled back
+toast-update-rolled-back = The update to { $version } closed before it finished starting, so super.engineering went back to the previous version. The next nightly will be offered automatically.
 settings-updates-downloading-version = اپ ڈیٹ { $version } ڈاؤن لوڈ کر رہا ہوں...
 settings-updates-installing-version = اپ ڈیٹ { $version } انسٹال کر رہا ہوں...
 settings-updates-description = نئے super.engineering ریلیزز چیک کریں اور انسٹال کریں۔
@@ -827,6 +818,7 @@ settings-updates-channel-description = نائٹلی اس وقت واحد ریل�
 settings-updates-current-version-label = موجودہ ورژن
 settings-updates-installed = نصب شدہ
 settings-updates-status-label = اپ ڈیٹ کی صورتحال
+settings-updates-package-managed = Updates are managed by your package manager
 settings-ai-inherited = وراثت میں
 settings-ai-search-models-placeholder = ماڈلز تلاش کریں...
 settings-ai-action-column = کارروائی
@@ -1070,7 +1062,6 @@ settings-ai-fast-model-description = ماڈل جو ہلکے وزن کے ایکش
 settings-ai-thorough-model-description = ماڈل جو جائزہ اور مرمت کے عمل کے لیے استعمال ہوتا ہے۔
 settings-ai-fast = تیز
 settings-ai-thorough = مکمل
-settings-ai-provider-disabled = غیر فعال — فراہم کنندگان کے سیکشن میں فعال کریں۔
 settings-ai-all-buckets-cli-default = تمام بکٹ CLI ڈیفالٹ ماڈل استعمال کرتے ہیں۔
 settings-ai-inheriting-parent-scope = والدین کے اسکوپ سے وراثت حاصل کرنا۔
 settings-ai-customized = حسب ضرورت
@@ -1141,6 +1132,8 @@ shared-parent-git-all-repos = سب · { $repos }
 shared-parent-git-menu-tooltip = چائلڈ ریپوز کے لیے Git ایکشنز
 shared-parent-git-unavailable-title = یہ ریپوز نہیں کھل سکے
 shared-context-choose-projects-to-run = چلانے کے لیے پروجیکٹس منتخب کریں
+shared-context-run-count = { $total } میں سے { $selected } چلاتا ہے
+shared-context-run-none = کوئی نہیں
 workspace-choose-what-to-launch = منتخب کریں کہ کیا لانچ کرنا ہے...
 icon-picker-tab-symbols = علامات
 icon-picker-tab-icons = آئیکونز
@@ -1656,10 +1649,10 @@ settings-diagnostics-status-label = تشخیصی صورتحال
 settings-privacy-telemetry-heading = ٹیلی میٹری
 settings-privacy-share-label = گمنام استعمال کا ڈیٹا شیئر کریں
 settings-privacy-share-description = یہ ہمیں سمجھنے میں مدد دیتا ہے کہ super.engineering کیسے استعمال ہوتا ہے اور بہتری کو ترجیح دی جاتی ہے۔ کوئی ذاتی ڈیٹا، پروجیکٹ ڈیٹا، یا فائل کا مواد کبھی آپ کی مشین سے نہیں نکلتا۔
-settings-privacy-what-we-send-description = ایک رینڈم فی انسٹال آئی ڈی، رینڈم ایپ سیشن آئی ڈی، ایپ ورژن، اپ ڈیٹ چینل، macOS ورژن، سیشن اسٹارٹ/اینڈ ٹائم اسٹیمپس اور دورانیہ، اور روزانہ فعال ایونٹ لانچ پر یا ہر دن پہلے بعد کی ایپ فوکس/ان UTC پٹ۔ اسے بند کرنے سے ٹیلی میٹری کسی آخری آپٹ آؤٹ ایونٹ کے بغیر رک جاتی ہے۔ انسٹال آئی ڈی آپ کے آلے پر محفوظ رہتی ہے اور ٹیلی میٹری دوبارہ فعال کرنے پر استعمال ہوتی ہے؛ سیشن کی حالت حذف کر دی جاتی ہے۔
+settings-privacy-what-we-send-description = ایک رینڈم فی انسٹال آئی ڈی، رینڈم ایپ سیشن آئی ڈی، ایپ ورژن، اپ ڈیٹ چینل، آپریٹنگ سسٹم کا نام اور ورژن، CPU آرکیٹیکچر، سیشن اسٹارٹ/اینڈ ٹائم اسٹیمپس اور دورانیہ، اور ہر UTC دن لانچ پر یا ایپ کے پہلے بعد کے فوکس/ان پٹ پر ایک روزانہ فعال ایونٹ۔ اسے بند کرنے سے ٹیلی میٹری کسی آخری آپٹ آؤٹ ایونٹ کے بغیر رک جاتی ہے۔ انسٹال آئی ڈی آپ کے آلے پر محفوظ رہتی ہے اور ٹیلی میٹری دوبارہ فعال کرنے پر استعمال ہوتی ہے؛ سیشن کی حالت حذف کر دی جاتی ہے۔
 settings-privacy-what-we-never-send-description = آپ کا نام، ای میل، ہوسٹ نیم، ورکنگ ڈائریکٹریز، پروجیکٹ نام، فائل پاتھز، برانچ نام، کمانڈ ان پٹس، کلپ بورڈ کا مواد، یا کوئی بھی کوڈ۔ ہر ایونٹ پر جیو آئی پی انریچمنٹ غیر فعال ہے۔
 settings-privacy-ip-data-capture-description = ہم نے ہر ایونٹ پر $geoip_disable: true سیٹ کیا ہے تاکہ PostHog کنٹری/سٹی انریچمنٹ کو چھوڑ دے۔ ہمارا PostHog پروجیکٹ بھی اس طرح کنفیگر کیا گیا ہے کہ کلائنٹ IP ایڈریسز اسٹوریج سے پہلے ضائع کر دیں — اس کے لیے Docs دیکھیں۔
-settings-privacy-update-checks-description = ٹیلی میٹری سے الگ، ریلیز بلڈز ہر گھنٹے releases.super.engineering اپ ڈیٹس چیک کرتے ہیں۔ ہر UTC دن کا پہلا کامیاب چیک ایک گمنام مارکر کے ساتھ ہوتا ہے جو فعال انسٹالیشنز کو مجموعی طور پر گننے کے لیے استعمال ہوتا ہے۔ اس میں کوئی شناخت کنندہ نہیں ہوتا اور ہمارے سرورز پر ہر انسٹالیشن میں کچھ بھی محفوظ نہیں ہوتا؛ ایپ صرف ایک مقامی دن کا مارکر (~/.super.engineering/update_ping_day) رکھتی ہے، اس لیے یہ مارکر روزانہ ایک بار بھیجتی ہے۔ اوپر دیے گئے ٹوگل سے متاثر نہیں ہوتا۔
+settings-privacy-update-checks-description = ٹیلی میٹری سے الگ، ریلیز بلڈز ہر گھنٹے releases.super.engineering پر اپ ڈیٹس چیک کرتے ہیں۔ ہر UTC دن کا پہلا کامیاب چیک ایک گمنام مارکر کے ساتھ ہوتا ہے جو فعال انسٹالیشنز کو مجموعی طور پر گننے کے لیے استعمال ہوتا ہے۔ اس میں کوئی شناخت کنندہ نہیں ہوتا اور ہمارے سرورز پر کسی انسٹالیشن کے لیے الگ سے کچھ بھی محفوظ نہیں ہوتا؛ ایپ صرف ایک مقامی دن کا مارکر (~/.super.engineering/update_ping_day) رکھتی ہے، اس لیے یہ مارکر روزانہ ایک بار بھیجتی ہے۔ ہر چیک ایپ کا CPU آرکیٹیکچر (ARM یا Intel) بھی بھیجتا ہے، تاکہ گنتی کو آرکیٹیکچر کے لحاظ سے تقسیم کیا جا سکے۔ اوپر دیے گئے ٹوگل سے متاثر نہیں ہوتا۔
 settings-privacy-install-id-location = آپ کا انسٹال آئی ڈی ~/.super.engineering/install_id پر موجود ہے — ری سیٹ کے لیے کسی بھی وقت اسے ڈیلیٹ کر دیں۔
 settings-privacy-install-id-disclosure = آپ کی انسٹالیشن آئی ڈی کیسے بنتی ہے
 settings-privacy-events-disclosure = واقعات کیسے بھیجے جاتے ہیں
@@ -2023,6 +2016,15 @@ settings-ai-mixed = مخلوط
 settings-ai-current-chat = موجودہ گفتگو
 settings-ai-provider-toggle-description = اس فراہم کنندہ کو New Tab مینو اور چیٹ UI میں دکھائیں۔
 settings-ai-provider-last-enabled-description = { $description } کم از کم ایک فراہم کنندہ فعال رہنا ضروری ہے۔
+settings-ai-provider-status-chat-terminal = چیٹ اور ٹرمینل
+settings-ai-provider-status-terminal = ٹرمینل
+settings-ai-provider-status-disabled = غیر فعال
+settings-ai-provider-disabled-detail = { $provider } کے ماڈلز اور لانچ آپشنز کنفیگر کرنے کے لیے اسے آن کریں۔
+settings-ai-provider-section-models = ماڈلز
+settings-ai-provider-section-chat = چیٹ
+settings-ai-provider-section-runtime = رن ٹائم
+settings-ai-provider-profiles-description = اس پرووائیڈر کے اکاؤنٹس اور کنفیگ ہوم ڈائریکٹریز۔
+settings-ai-provider-manage-profiles = پروفائلز کا نظم کریں
 settings-ai-provider-antigravity-description = اینٹی گریویٹی کو ٹرمینل فراہم کنندہ کے طور پر فعال کریں (اینٹی گریویٹی CLI `agy` انسٹال کرنا ضروری ہے)۔
 settings-ai-provider-hermes-description = ہرمیس کو ٹرمینل فراہم کنندہ کے طور پر فعال کریں (اس کے لیے ہرمیس ایجنٹ `hermes` انسٹال ہونا ضروری ہے)۔
 settings-ai-provider-qwen-description = Qwen Code کو ٹرمینل فراہم کنندہ کے طور پر فعال کریں (Qwen Code CLI `qwen` انسٹال ہونا ضروری ہے)۔
@@ -2109,7 +2111,7 @@ workspace-review-request-state-changed = { $kind } حالت بدل گئی؛ اب
 workspace-remote-forge-cli-not-authenticated-hint = مشورہ: { $cli } ہوسٹ پر تصدیق شدہ نہیں ہے — وہاں `{ $cli } auth login` چلائیں تاکہ ایجنٹ کے ساتھ { $kind } بنایا جا سکے۔
 workspace-remote-forge-cli-missing-hint = مشورہ: ہوسٹ پر { $cli } انسٹال کریں اور ایجنٹ کے ساتھ { $kind } بنانے کے لیے `{ $cli } auth login` چلائیں۔
 workspace-review-request-url-copied = کاپی { $kind } URL
-workspace-review-request-url-unavailable = کوئی جائزہ لینے کی درخواست دستیاب نہیں URL
+workspace-review-request-none-yet = اس برانچ میں ابھی کوئی { $kind } نہیں ہے
 worktree-prompt = موضوع
 worktree-branches = شاخیں
 worktree-merge-requests = انضمام کی درخواستیں
@@ -2726,6 +2728,38 @@ pr-checks-pending-count =
         [one] { $count } زیر التوا جانچ
        *[other] { $count } زیر التوا جانچیں
     }
+hover-card-needs-answer = آپ کے جواب کا انتظار ہے
+hover-card-no-review-request =
+    { $forge ->
+        [gitlab] کوئی مرج ریکویسٹ نہیں
+       *[other] کوئی پل ریکویسٹ نہیں
+    }
+hover-card-checks-running = چیکس چل رہے ہیں، { $total } میں سے { $passed }
+hover-card-more-running = { $count } مزید چل رہے ہیں
+hover-card-stopping = روکا جا رہا ہے
+hover-card-main-checkout = مین چیک آؤٹ
+hover-card-main-checkouts = مین چیک آؤٹس
+hover-card-add-repo = ریپو شامل کریں
+hover-card-add-repo-count = +{ $count }
+hover-card-find-repo = ریپو تلاش کریں
+hover-card-checking-repos = ریپوز چیک ہو رہے ہیں
+hover-card-all-merged = سب مرج ہو گئے
+hover-card-repos-merged = { $count } مرج شدہ
+hover-card-more-repos = { $count } مزید
+hover-card-run-repos = { $count ->
+    [0] چلائیں
+   *[other] { $count } چلائیں
+}
+hover-card-stop-repos = { $count ->
+    [0] روکیں
+   *[other] { $count } روکیں
+}
+hover-card-run-select-repos = چلانے کے لیے ریپوز منتخب کریں
+hover-card-run-selected-repos = منتخب ریپوز چلائیں
+hover-card-stop-selected-repos = منتخب ریپوز روکیں
+hover-card-checking-status = اسٹیٹس چیک ہو رہا ہے
+hover-card-nothing-to-commit = کمٹ یا پش کرنے کے لیے کچھ نہیں
+hover-card-unpushed-commits = { $count } ان پشڈ
 icon-picker-emoji-tooltip = ایموجی: { $glyph }
 icon-picker-named-icon-tooltip =
     { $name ->
@@ -3364,8 +3398,6 @@ settings-ai-git-button-routes-description = ہر AI پر مبنی Git بٹن ت�
 settings-ai-other-routes = دیگر راستے
 settings-ai-other-routes-description = نام رکھنے، ان لائن کمٹ پیغامات، پرامپٹ کی بہتری اور جائزے کے جوابات کی ترتیب دیں۔ حسبِ ضرورت کمانڈ کے راستے کمانڈز میں ہر کمانڈ کے ساتھ رہتے ہیں۔
 settings-ai-follows-session-default = سیشن ڈیفالٹ کی پیروی ہو رہی ہے
-settings-ai-advanced-setup = اعلیٰ سیٹ اپ
-settings-ai-advanced-setup-description = اس فراہم کنندہ کی قابلِ اجرا فائل اور مشترکہ لانچ فلیگز۔
 settings-ai-model-routing = ماڈل روٹنگ
 settings-ai-model-routing-description = ڈیفالٹ ماڈلز، پروفائلز اور سوچ کی سطحیں منتخب کریں، یا مخصوص کارروائیوں کے لیے بدلیں۔
 settings-ai-manage-routing = روٹنگ کھولیں
@@ -3405,6 +3437,12 @@ chat-steer-hold-waiting = { $provider } ابھی دورانِ کام ہدایت 
 chat-steer-hold-waiting-detail = ممکن ہوتے ہی آپ کا پیغام کام کا رخ بدلے گا، یا اس باری کے بعد بھیجا جائے گا۔
 chat-steer-refused = کام کا رخ نہیں بدلا جا سکا۔
 chat-steer-refused-detail = { $provider } نے خرابی لوٹائی۔ دوبارہ کوشش سے پہلے گفتگو دیکھیں۔
+chat-reconnecting = { $provider } سے دوبارہ کنیکٹ ہو رہا ہے۔
+chat-reconnecting-held = کنکشن بحال ہوتے ہی آپ کا پیغام بھیج دیا جائے گا۔
+chat-reconnecting-retry = ایک لمحے بعد دوبارہ کوشش کریں۔
+chat-reconnecting-slow = معمول سے زیادہ وقت لگ رہا ہے، نیا کنکشن شروع کیا جا رہا ہے۔
+chat-reconnect-failed = { $provider } سے دوبارہ کنیکٹ نہیں ہو سکا۔
+chat-reconnect-try-again = دوبارہ کوشش کریں
 chat-steered = کام کا رخ بدل دیا گیا
 chat-steer-not-read = پڑھا نہیں گیا
 chat-steer-send-again = بھیجیں
@@ -3440,6 +3478,8 @@ notification-codex-thread-archive-done = { $count ->
     }
 notification-codex-thread-archive-failed = کچھ Codex تھریڈز آرکائیو نہیں ہوئے
 notification-installing-update = اپ ڈیٹ انسٹال ہو رہی ہے۔ مکمل ہونے پر ایپ دوبارہ شروع ہوگی۔
+notification-update-installed = اپ ڈیٹ انسٹال ہو گئی۔ دوبارہ شروع ہو رہی ہے
+notification-update-installed-after-typing = اپ ڈیٹ انسٹال ہو گئی۔ ٹائپنگ رکنے پر دوبارہ شروع ہوگی
 worktree-delete-agent-working = ایک ایجنٹ ابھی یہاں کام کر رہا ہے
 worktree-delete-all-action = سب حذف کریں
 worktree-delete-body = اس کا فولڈر ڈسک سے ہٹا دیا جاتا ہے۔

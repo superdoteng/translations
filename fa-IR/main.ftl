@@ -141,34 +141,21 @@ browser-home = خانه
 browser-start-tab-title = صفحهٔ شروع
 browser-address-placeholder = سرورها را جست‌وجو کنید یا نشانی وارد کنید
 browser-start-running = در حال اجرا
-browser-start-server-count = { $count ->
-    [one] { $count } سرور
-   *[other] { $count } سرور
-}
-browser-start-show-all = نمایش همهٔ { $count } مورد
 browser-start-show-less = نمایش کمتر
-browser-start-more-projects = { $count ->
-    [1] نمایش یک پروژهٔ دیگر
-   *[other] نمایش { $count } پروژهٔ دیگر
-}
 browser-start-recent = بازدیدهای اخیر
+browser-start-also-running = در حال اجرای دیگر
+browser-start-more = { $count } مورد دیگر
+browser-start-stopped = متوقف شد
+browser-start-starting = در حال شروع
+browser-start-clock = { $elapsed }
+browser-start-run-script = اجرای اسکریپت
+browser-start-run-script-named = اجرای { $script }
+browser-start-stop-script = توقف { $script }
 browser-start-clear = پاک کردن
-browser-start-none-body = سرورهایی که در هر ورک‌تری اجرا شوند، اینجا نمایش داده می‌شوند.
 browser-start-run = شروع اجرا
-browser-start-stop-run = توقف اجرا
 browser-start-this-worktree = این ورک‌تری
 browser-start-pull-request = درخواست کشش
 browser-start-merge-request = درخواست ادغام
-browser-start-checks = بررسی‌ها
-browser-start-checks-passing = موفق
-browser-start-checks-failing = { $count ->
-    [one] { $count } ناموفق
-   *[other] { $count } ناموفق
-}
-browser-start-checks-running = { $count ->
-    [one] { $count } در حال اجرا
-   *[other] { $count } در حال اجرا
-}
 browser-start-repository = مخزن
 browser-nothing-title = { $host } در حال اجرا نیست
 browser-nothing-lede = وقتی سرور شروع به کار کند، این صفحه همین‌جا باز می‌شود.
@@ -808,6 +795,10 @@ settings-updates-ready = به روز رسانی آماده است: { $version }
 settings-updates-check-failed = بررسی به‌روزرسانی انجام نشد: { $error }
 toast-update-apply-failed-title = اعمال به‌روزرسانی ممکن نشد
 toast-update-apply-failed = اعمال به‌روزرسانی ممکن نشد: { $error }
+toast-update-previous-launch-failed-title = Update did not finish starting
+toast-update-previous-launch-failed = The last launch of this update closed before its window appeared. If problems continue, see { $url }
+toast-update-rolled-back-title = Update rolled back
+toast-update-rolled-back = The update to { $version } closed before it finished starting, so super.engineering went back to the previous version. The next nightly will be offered automatically.
 settings-updates-downloading-version = در حال دانلود به روز رسانی { $version }...
 settings-updates-installing-version = در حال نصب به روز رسانی { $version }...
 settings-updates-description = نسخه های جدید super.engineering را بررسی و نصب کنید.
@@ -816,6 +807,7 @@ settings-updates-channel-description = Nightly در حال حاضر تنها آ�
 settings-updates-current-version-label = نسخه فعلی
 settings-updates-installed = نصب شده است
 settings-updates-status-label = به روز رسانی وضعیت
+settings-updates-package-managed = Updates are managed by your package manager
 settings-ai-inherited = به ارث رسیده است
 settings-ai-search-models-placeholder = جستجوی مدل های ...
 settings-ai-action-column = اقدام
@@ -1067,7 +1059,6 @@ settings-ai-fast-model-description = مدلی که برای حرکات سبک و
 settings-ai-thorough-model-description = مدل برای بررسی و تعمیرات استفاده می شود.
 settings-ai-fast = سریع
 settings-ai-thorough = کامل
-settings-ai-provider-disabled = غیرفعال — فعال سازی در بخش ارائه دهندگان.
 settings-ai-all-buckets-cli-default = تمام سطل ها از مدل پیش فرض CLI استفاده می کنند.
 settings-ai-inheriting-parent-scope = به ارث بردن از دامنه والد.
 settings-ai-customized = سفارشی سازی شده
@@ -1138,6 +1129,8 @@ shared-parent-git-all-repos = همه · { $repos }
 shared-parent-git-menu-tooltip = اقدامات Git برای مخزن‌های فرزند
 shared-parent-git-unavailable-title = باز کردن این مخزن‌ها ممکن نشد
 shared-context-choose-projects-to-run = انتخاب پروژه هایی برای اجرا
+shared-context-run-count = اجرای { $selected } از { $total }
+shared-context-run-none = هیچ‌کدام
 workspace-choose-what-to-launch = انتخاب کنید چه چیزی را پرتاب کنید...
 icon-picker-tab-symbols = نمادها
 icon-picker-tab-icons = آیکون ها
@@ -1653,10 +1646,10 @@ settings-diagnostics-status-label = وضعیت تشخیصی
 settings-privacy-telemetry-heading = تله متری
 settings-privacy-share-label = اشتراک گذاری داده های استفاده ناشناس
 settings-privacy-share-description = کمک می کند بفهمیم super.engineering چگونه استفاده می شود و بهبودها را اولویت بندی می کند. هیچ داده شخصی، داده پروژه یا محتوای فایل هرگز از دستگاه شما خارج نمی شود.
-settings-privacy-what-we-send-description = یک شناسه تصادفی برای هر نصب، شناسه نشست اپلیکیشن تصادفی، نسخه اپلیکیشن، کانال به روزرسانی، نسخه macOS، زمان و مدت زمان شروع/پایان جلسه، و یک رویداد روزانه فعال هنگام راه اندازی یا اولین تمرکز/ورودی بعدی برنامه در هر روز UTC. با خاموش کردن این گزینه، ارسال تله‌متری بدون رویداد نهایی انصراف متوقف می‌شود. شناسه نصب روی دستگاه شما باقی می‌ماند و با فعال‌سازی دوباره تله‌متری مجدداً استفاده می‌شود؛ وضعیت نشست حذف می‌شود.
+settings-privacy-what-we-send-description = یک شناسه تصادفی برای هر نصب، شناسه نشست اپلیکیشن تصادفی، نسخه اپلیکیشن، کانال به‌روزرسانی، نام و نسخه سیستم‌عامل، معماری CPU، زمان شروع/پایان نشست و مدت آن، و یک رویداد فعالیت روزانه هنگام راه‌اندازی یا اولین تمرکز/ورودی بعدی برنامه در هر روز UTC. با خاموش کردن این گزینه، ارسال تله‌متری بدون رویداد نهایی انصراف متوقف می‌شود. شناسه نصب روی دستگاه شما باقی می‌ماند و با فعال‌سازی دوباره تله‌متری مجدداً استفاده می‌شود؛ وضعیت نشست حذف می‌شود.
 settings-privacy-what-we-never-send-description = نام شما، ایمیل، نام میزبان، دایرکتوری های کاری، نام پروژه ها، مسیرهای فایل، نام شاخه ها، ورودی های فرمان، محتوای کلیپ بورد یا هر کدی که باشد. غنی سازی GeoIP در هر رویداد غیرفعال است.
 settings-privacy-ip-data-capture-description = ما $geoip_disable: را در همه رویدادها تنظیم کردیم تا PostHog غنی سازی کشور/شهر را رد کند. پروژه PostHog ما همچنین طوری تنظیم شده که آدرس های IP کلاینت را قبل از ذخیره سازی حذف کند — برای نحوه عملکرد آن ها به Docs مراجعه کنید.
-settings-privacy-update-checks-description = جدا از تله متری، نسخه های انتشار هر ساعت releases.super.engineering برای به روزرسانی ها چک می کنند. اولین بررسی موفق هر روز UTC دارای یک نشانگر ناشناس است که برای شمارش نصب های فعال به صورت تجمعی استفاده می شود. هیچ شناسه ای ندارد و هیچ چیزی در هر نصب روی سرورهای ما ذخیره نمی شود؛ اپلیکیشن فقط یک نشانگر روز محلی (~/.super.engineering/update_ping_day) نگه می دارد، بنابراین مارکر را روزی یک بار ارسال می کند. تحت تأثیر گزینه بالا قرار نمی گیرد.
+settings-privacy-update-checks-description = جدا از تله‌متری، نسخه‌های انتشار هر ساعت releases.super.engineering را برای به‌روزرسانی‌ها بررسی می‌کنند. اولین بررسی موفق هر روز UTC دارای یک نشانگر ناشناس است که برای شمارش نصب‌های فعال به‌صورت تجمعی استفاده می‌شود. هیچ شناسه‌ای ندارد و هیچ داده‌ای به ازای هر نصب روی سرورهای ما ذخیره نمی‌شود؛ اپلیکیشن فقط یک نشانگر روز محلی (~/.super.engineering/update_ping_day) نگه می‌دارد تا نشانگر را روزی یک بار ارسال کند. هر بررسی همچنین معماری CPU اپلیکیشن (ARM یا Intel) را ارسال می‌کند تا شمارش بر اساس معماری قابل تفکیک باشد. تحت تأثیر گزینهٔ بالا قرار نمی‌گیرد.
 settings-privacy-install-id-location = شناسه نصب شما روی ~/.super.engineering/install_id قرار دارد — هر وقت خواستید برای ریست آن را حذف کنید.
 settings-privacy-install-id-disclosure = شناسه نصب شما چگونه تولید می شود
 settings-privacy-events-disclosure = نحوه ارسال رویدادها
@@ -2020,6 +2013,15 @@ settings-ai-mixed = ترکیبی
 settings-ai-current-chat = گفتگوی فعلی
 settings-ai-provider-toggle-description = این ارائه دهنده را در منوی تب جدید و رابط کاربری چت نشان دهید.
 settings-ai-provider-last-enabled-description = { $description } حداقل یک ارائه دهنده باید فعال باقی بماند.
+settings-ai-provider-status-chat-terminal = گفتگو و پایانه
+settings-ai-provider-status-terminal = پایانه
+settings-ai-provider-status-disabled = غیرفعال
+settings-ai-provider-disabled-detail = برای پیکربندی مدل‌ها و گزینه‌های اجرای { $provider }، آن را روشن کنید.
+settings-ai-provider-section-models = مدل‌ها
+settings-ai-provider-section-chat = گفتگو
+settings-ai-provider-section-runtime = محیط اجرا
+settings-ai-provider-profiles-description = حساب‌ها و پوشه‌های پیکربندی این ارائه‌دهنده.
+settings-ai-provider-manage-profiles = مدیریت پروفایل‌ها
 settings-ai-provider-antigravity-description = فعال کردن Antigravity به عنوان ارائه دهنده ترمینال (که نیاز به نصب Antigravity CLI `agy` دارد).
 settings-ai-provider-hermes-description = فعال سازی Hermes به عنوان ارائه دهنده ترمینال (نیازمند نصب `hermes` عامل Hermes است).
 settings-ai-provider-qwen-description = فعال سازی Qwen Code به عنوان ارائه دهنده ترمینال (نیازمند نصب کد Qwen CLI `qwen`).
@@ -2106,7 +2108,7 @@ workspace-review-request-state-changed = { $kind } ایالت تغییر کرد�
 workspace-remote-forge-cli-not-authenticated-hint = نکته: { $cli } روی میزبان احراز هویت نشده — `{ $cli } auth login` را آنجا اجرا کنید تا با عامل { $kind } بسازید.
 workspace-remote-forge-cli-missing-hint = نکته: { $cli } را روی میزبان نصب کنید و `{ $cli } auth login` را اجرا کنید تا با عامل { $kind } بسازید.
 workspace-review-request-url-copied = کپی { $kind } URL
-workspace-review-request-url-unavailable = هیچ درخواست بازبینی در دسترس URL
+workspace-review-request-none-yet = این شاخه هنوز { $kind } ندارد
 worktree-prompt = موضوع
 worktree-branches = شاخه ها
 worktree-merge-requests = درخواست های ادغام
@@ -2683,6 +2685,38 @@ pr-checks-failing-count = { $count } بررسی ناموفق
 pr-actions-required-count = { $count } اقدام لازم
 pr-checks-pending = بررسی‌ها در انتظارند
 pr-checks-pending-count = { $count } بررسی در انتظار
+hover-card-needs-answer = در انتظار پاسخ شما
+hover-card-no-review-request =
+    { $forge ->
+        [gitlab] بدون درخواست ادغام
+       *[other] بدون درخواست کشش
+    }
+hover-card-checks-running = چک‌ها در حال اجرا، { $passed } از { $total }
+hover-card-more-running = { $count } مورد دیگر در حال اجرا
+hover-card-stopping = در حال توقف
+hover-card-main-checkout = نسخهٔ اصلی
+hover-card-main-checkouts = نسخه‌های اصلی
+hover-card-add-repo = افزودن مخزن
+hover-card-add-repo-count = +{ $count }
+hover-card-find-repo = یافتن مخزن
+hover-card-checking-repos = در حال بررسی مخزن‌ها
+hover-card-all-merged = همه ادغام شدند
+hover-card-repos-merged = { $count } ادغام‌شده
+hover-card-more-repos = { $count } مورد دیگر
+hover-card-run-repos = { $count ->
+    [0] اجرا
+   *[other] اجرای { $count }
+}
+hover-card-stop-repos = { $count ->
+    [0] توقف
+   *[other] توقف { $count }
+}
+hover-card-run-select-repos = مخزن‌ها را برای اجرا انتخاب کنید
+hover-card-run-selected-repos = اجرای مخزن‌های انتخاب‌شده
+hover-card-stop-selected-repos = توقف مخزن‌های انتخاب‌شده
+hover-card-checking-status = در حال بررسی وضعیت
+hover-card-nothing-to-commit = چیزی برای کامیت یا پوش نیست
+hover-card-unpushed-commits = { $count } پوش‌نشده
 icon-picker-emoji-tooltip = ایموجی: { $glyph }
 icon-picker-named-icon-tooltip =
     { $name ->
@@ -3306,8 +3340,6 @@ settings-ai-git-button-routes-description = همهٔ دکمه‌های Git مب�
 settings-ai-other-routes = مسیرهای دیگر
 settings-ai-other-routes-description = نام‌گذاری، پیام‌های کامیت درجا، بهبود درخواست و پاسخ‌های بازبینی را تنظیم کنید. مسیرهای فرمان سفارشی در بخش «فرمان‌ها» همراه هر فرمان می‌مانند.
 settings-ai-follows-session-default = پیروی از پیش‌فرض نشست
-settings-ai-advanced-setup = راه‌اندازی پیشرفته
-settings-ai-advanced-setup-description = فایل اجرایی و پرچم‌های مشترک راه‌اندازی این ارائه‌دهنده.
 settings-ai-model-routing = مسیریابی مدل
 settings-ai-model-routing-description = مدل‌ها، نمایه‌ها و سطوح تفکر پیش‌فرض را انتخاب کنید یا برای کارهای مشخص سفارشی کنید.
 settings-ai-manage-routing = باز کردن مسیریابی
@@ -3347,6 +3379,12 @@ chat-steer-hold-waiting = { $provider } هنوز نمی‌تواند تغییر 
 chat-steer-hold-waiting-detail = پیام شما به‌محض امکان، مسیر کار را تغییر می‌دهد یا پس از این نوبت ارسال می‌شود.
 chat-steer-refused = تغییر مسیر ممکن نشد.
 chat-steer-refused-detail = { $provider } خطایی برگرداند. پیش از تلاش دوباره، گفت‌وگو را بررسی کنید.
+chat-reconnecting = در حال اتصال دوباره به { $provider }.
+chat-reconnecting-held = پیام شما پس از برقراری دوباره اتصال ارسال می‌شود.
+chat-reconnecting-retry = لحظاتی دیگر دوباره تلاش کنید.
+chat-reconnecting-slow = بیش از حد معمول طول کشیده است، در حال برقراری اتصال تازه.
+chat-reconnect-failed = اتصال دوباره به { $provider } ممکن نشد.
+chat-reconnect-try-again = تلاش دوباره
 chat-steered = مسیر تغییر کرد
 chat-steer-not-read = خوانده نشده
 chat-steer-send-again = ارسال
@@ -3382,6 +3420,8 @@ notification-codex-thread-archive-done = { $count ->
     }
 notification-codex-thread-archive-failed = برخی رشته‌های Codex بایگانی نشدند
 notification-installing-update = در حال نصب به‌روزرسانی. برنامه پس از پایان دوباره راه‌اندازی می‌شود.
+notification-update-installed = به‌روزرسانی نصب شد. در حال راه‌اندازی دوباره
+notification-update-installed-after-typing = به‌روزرسانی نصب شد. پس از توقف تایپ دوباره راه‌اندازی می‌شود
 worktree-delete-agent-working = عاملی هنوز اینجا مشغول کار است
 worktree-delete-all-action = حذف همه
 worktree-delete-body = پوشهٔ آن از دیسک حذف می‌شود.
