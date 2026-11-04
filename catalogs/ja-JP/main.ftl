@@ -305,8 +305,7 @@ project-loading-merge-options = マージオプションを読み込み中
 update-cli-action-update = アップデート
 update-cli-manual-hint = 手動アップデート
 sidebar-add-project-to-start = プロジェクトを追加して始めましょう
-sidebar-search-project-worktrees-placeholder = { $project } のワークツリーを検索
-sidebar-search-hidden-worktrees-placeholder = { $project } の非表示ワークツリーを検索
+
 sidebar-install-ssh-key = SSH キーをインストール
 action-update = アップデート
 workspace-no-ai-background-tasks = AI のバックグラウンドタスクはありません
@@ -620,8 +619,7 @@ worktree-create-branches-unavailable = リポジトリはまだ読み込まれ�
 worktree-create-in-background = バックグラウンドで作成
 worktree-create-refresh-branches = リモートブランチを取得
 worktree-create-refresh-failed = 取得に失敗しました: { $error }
-worktree-create-return = 作成 ↵
-worktree-in-workspace = ワークスペース内
+
 worktree-no-matching-branches = 一致するブランチはありません
 worktree-not-installed = インストールされていません
 settings-sidebar-group-general = 一般
@@ -1159,6 +1157,7 @@ settings-ai-reset-to-inherited = 継承値にリセット
 settings-ai-system-instructions-placeholder = システム指示を入力…
 settings-ai-user-message-placeholder = ユーザーメッセージ…
 settings-ai-launch-flags-description = このプロバイダーを起動するたびに使用します。これらのフラグが先に追加されます。
+settings-ai-launch-flags-placeholders = { $placeholders } を使うと、起動ごとにワークツリー名、ブランチ名、プロジェクト名を挿入できます。
 settings-ai-profile-definitions = プロファイル定義
 settings-ai-global-default = グローバルデフォルト
 settings-ai-workspace-override = ワークスペースオーバーライド
@@ -1176,9 +1175,9 @@ settings-ai-all-models = すべてのモデル
 settings-ai-select-models = モデルを選択
 settings-ai-select-models-count = モデルを選択（{ $count }）
 settings-ai-model-visibility = モデルの表示
-settings-ai-compliant-claude-tooltip = オフの場合、または SSH ワークスペースでは、Claude チャットは構造化された claude -p トランスポートを使用します。
-settings-ai-compliant-claude-view = Claude 準拠ビュー
-settings-ai-compliant-claude-view-description = ローカルの Claude チャットを Claude Code の対話モードで実行します。SSH ワークスペースでは構造化された claude -p トランスポートを使用します。
+settings-ai-claude-interactive-mode-tooltip = オフの場合、または SSH ワークスペースでは、Claude チャットはプリントモード (claude -p) を使用します。
+settings-ai-claude-interactive-mode = 対話モード
+settings-ai-claude-interactive-mode-description = ローカルの Claude チャットを、プリントモード (claude -p) ではなく Claude Code の対話モードで実行します。SSH ワークスペースでは常にプリントモードを使用します。
 settings-ai-action-model-pins = 詳細設定 — アクション別の固定モデル
 settings-ai-action-model-pins-description = グループのデフォルトでは不十分な場合に限り、特定のアクションにモデルを固定します。
 settings-ai-session-model-description = 新しいセッションでデフォルトで使用するモデルです。
@@ -1662,8 +1661,8 @@ settings-search-entry-agents-routing-thorough-actions-label = 詳細アクショ
 settings-search-entry-agents-routing-thorough-actions-description = CI、ブロックされたマージ、コメント、変更要求、競合の修正とレビュー。
 settings-search-entry-agents-providers-claude-code-provider-label = Claude Code プロバイダー
 settings-search-entry-agents-providers-claude-code-provider-description = Claude Code を有効にし、モデル、プロファイル、起動フラグを設定します。
-settings-search-entry-agents-providers-compliant-claude-view-label = Claude 準拠ビュー
-settings-search-entry-agents-providers-compliant-claude-view-description = Claude Code の対話モードで Claude チャットを実行し、サブスクリプションプラン内で使用できるようにします。
+settings-search-entry-agents-providers-claude-interactive-mode-label = Claude 対話モード
+settings-search-entry-agents-providers-claude-interactive-mode-description = ローカルの Claude チャットを、プリントモード (claude -p) ではなく Claude Code の対話モードで実行します。SSH ワークスペースでは常にプリントモードを使用します。新しく開いたチャットに適用されます。
 settings-search-entry-agents-providers-codex-provider-label = Codex プロバイダー
 settings-search-entry-agents-providers-codex-provider-description = Codex を有効にし、モデル、プロファイル、起動フラグを設定します。
 settings-search-entry-agents-providers-pi-provider-label = Pi プロバイダー
@@ -1763,7 +1762,7 @@ settings-ai-provider-section-chat = チャット
 settings-ai-provider-section-runtime = ランタイム
 settings-ai-provider-profiles-description = このプロバイダーのアカウントと設定ホームディレクトリ。
 settings-ai-provider-manage-profiles = プロファイルを管理
-settings-ai-provider-antigravity-description = Antigravity をターミナルプロバイダーとして有効にします（Antigravity CLI の `agy` がインストールされている必要があります）。
+settings-ai-provider-antigravity-description = Antigravity のチャットとターミナルのサポートを有効にします（Antigravity CLI `agy` のインストールが必要です）。
 settings-ai-provider-hermes-description = Hermes をターミナルプロバイダーとして有効にします（Hermes Agent の `hermes` がインストールされている必要があります）。
 settings-ai-provider-qwen-description = Qwen Code をターミナルプロバイダーとして有効にします（Qwen Code CLI の `qwen` がインストールされている必要があります）。
 settings-ai-provider-kimi-description = Kimi Code をチャットおよびターミナルプロバイダーとして有効にします（最新の Kimi Code CLI の `kimi` がインストールされている必要があります）。
@@ -2249,33 +2248,9 @@ worktree-context-placeholder = エージェントに依頼する作業を入力�
 worktree-filter-branches-placeholder = ブランチを絞り込み…
 worktree-label-placeholder = ワークツリーのラベル
 worktree-prompt-placeholder = 何に取り組んでいますか？
-worktree-search-branches-placeholder = ブランチを検索…
-worktree-search-branches-mrs-placeholder = ブランチと MR を検索…
-worktree-search-branches-prs-placeholder = ブランチと PR を検索…
-worktree-fetching-branches = ブランチを取得しています…
-worktree-fetching-branches-mrs = ブランチと MR を取得しています…
-worktree-fetching-branches-prs = ブランチと PR を取得しています…
-worktree-prompt = プロンプト
-worktree-branches = ブランチ
-worktree-merge-requests = マージリクエスト
-worktree-pull-requests = プルリクエスト
-worktree-review-requests = レビューリクエスト
-worktree-tab-with-count = { $label }（{ $count }）
-worktree-no-open-merge-requests = オープンなマージリクエストはありません
-worktree-no-open-pull-requests = オープンなプルリクエストはありません
-worktree-no-open-review-requests = オープンなレビューリクエストはありません
-worktree-no-branches = ブランチがありません
+
 common-no-matches = 一致する項目はありません
-worktree-gitlab-cli-missing = マージリクエストを読み込めませんでした：GitLab CLI (`glab`) がインストールされていないか、PATH にありません。`glab` をインストールし、`glab auth login` で認証してから再試行してください。
-worktree-gitlab-auth-required = マージリクエストを読み込めませんでした：GitLab CLI (`glab`) が認証されていません。この GitLab ホストに対して `glab auth login` を実行してから再試行してください。
-worktree-github-auth-required = プルリクエストを読み込めませんでした：GitHub CLI (`gh`) がこのホスト用に認証されていません。`gh auth login --hostname <host>` を実行してから再試行してください。
-worktree-github-load-error = プルリクエストを読み込めませんでした：{ $error }
-worktree-gitlab-load-error = マージリクエストを読み込めませんでした：{ $error }
-worktree-bitbucket-cli-missing = プルリクエストを読み込めませんでした：Bitbucket CLI (`bkt`) がインストールされていないか、PATH にありません。`bkt` をインストールし、`bkt auth login https://bitbucket.org --kind cloud --web-token` を実行して、`bkt context create cloud --host api.bitbucket.org --workspace <workspace> --set-active` でコンテキストを作成してから再試行してください。
-worktree-bitbucket-auth-required = プルリクエストを読み込めませんでした：Bitbucket CLI (`bkt`) が認証されていません。`bkt auth login https://bitbucket.org --kind cloud --web-token` を実行してから再試行してください。
-worktree-bitbucket-no-context = プルリクエストを読み込めませんでした：{ $error }
-worktree-bitbucket-load-error = プルリクエストを読み込めませんでした：{ $error }
-worktree-review-request-load-error = レビューリクエストを読み込めませんでした：{ $error }
+
 right-panel-switch-stacked = 積み重ね表示のターミナルに切り替え
 right-panel-switch-bottom = 下部ターミナルに切り替え
 right-panel-switch-side-by-side = 横並び表示のターミナルに切り替え
@@ -2894,20 +2869,16 @@ usage-meter-error = 使用量を読み込めませんでした
 usage-meter-loading = 使用量を読み込んでいます…
 usage-meter-outdated = 使用量データが古くなっています
 usage-meter-updated = 更新：{ $ago }
-usage-meter-resets = リセット：{ $duration }
-usage-meter-window-session = セッション
+
 usage-meter-window-daily = 日次
 usage-meter-window-weekly = 週次
 usage-meter-window-monthly = 月次
-usage-meter-window-other = その他
-usage-meter-all-providers = すべてのプロバイダー
+
 usage-meter-percent-left = 残り { $percent }%
 usage-meter-no-account = アカウントが選択されていません
 usage-meter-now = 今
 usage-meter-default-account = 既定
-usage-popover-runs-out = 上限到達：{ $time }、リセット：{ $reset }
-usage-popover-runs-out-then-credits = 上限到達：{ $time }、以降はクレジット
-usage-popover-using-credits = クレジットを使用中
+
 usage-api-key = API キー
 usage-api-key-week = 今週の推定額
 usage-api-key-today = 今日 { $amount }
@@ -2922,8 +2893,7 @@ usage-popover-window-left = { $window } の残り
 usage-popover-updating = 更新中…
 usage-popover-retry = 再試行
 usage-popover-accounts = アカウント
-usage-popover-in-use = 使用中
-usage-popover-unused = 未使用 { $count } 件
+
 usage-graph-on-pace = ペースどおり
 usage-graph-in-reserve = { $percent }% の余裕
 usage-graph-behind = ペースを { $percent }% 超過
@@ -2932,10 +2902,9 @@ usage-graph-lasts = リセットまで持ちます
 usage-graph-collecting = データが届くとグラフが表示されます
 usage-instrument-gauge = ゲージ
 usage-instrument-graph = グラフ
-usage-popover-no-other-limits = ほかの制限はありません
+
 usage-popover-no-data = { $providers } の使用量はまだありません
-usage-popover-more = もっと見る
-usage-popover-less = 折りたたむ
+
 tool-verb-ran = 実行
 tool-verb-running = 実行中
 tool-verb-messaging = メッセージ送信中
@@ -3406,7 +3375,7 @@ workspace-fx-remote-history-unsupported = FX のリモートターミナルは�
 settings-keybinding-action-rename-selected-entry = 選択項目の名前を変更
 settings-keybinding-action-chat-effort-backward = チャットの推論レベルを逆順に切り替え
 worktree-preparing = ワークツリーを準備中…
-chat-queued-until-worktree-ready = ワークツリーの準備ができ次第開始
+chat-queued-until-worktree-ready = 準備ができたら送信
 chat-delivery-unconfirmed = 配信を確認できません
 chat-delivery-unconfirmed-retry = 再試行する前に会話を確認してください。このメッセージはすでに配信されている可能性があります。
 chat-answer-pending-delivery = 配信待ち
@@ -3608,21 +3577,10 @@ usage-reset-busy = まだ更新中です。少し待ってからもう一度ス�
 usage-reset-unavailable = 利用できるリセットはありません
 usage-credits = クレジット
 usage-credits-unlimited = 無制限
-usage-account-resets = { $count ->
-   *[other] リセット { $count } 回
-}
-usage-account-credits = { $amount } クレジット
-usage-account-ring-window = { $account } { $window }
-usage-account-window-left = { $window } { $percent }%
-usage-graph-account-left = { $account } の { $window } の残り
-usage-graph-now = 現在
-usage-accounts-on-gauge = ゲージに表示
+
 usage-accounts-sign-in = サインイン
 usage-accounts-signing-in = サインイン中…
-usage-accounts-single = { $count ->
-    [1] { $providers } のアカウントは 1 つです。
-   *[other] { $providers } のアカウントはそれぞれ 1 つです。
-}
+
 usage-account-empty-title = { $account } の使用量はまだありません
 usage-account-empty-body = このプロファイルの最初のセッション後にデータが表示されます。
 usage-account-signed-out-title = { $account } はサインインしていません
@@ -3633,3 +3591,675 @@ usage-graph-legend-even = 均等ペース
 usage-graph-legend-projection = 予測
 usage-graph-legend-estimated = 推定
 usage-graph-estimated = この Mac でのアクティビティから推定
+
+browser-annotations-send-short = 送信
+
+browser-agent-take-over = 操作を引き継ぐ
+
+browser-agent-you-have-control = 操作権があります
+
+browser-agent-hand-back = 操作権を返す
+
+browser-agent-is-waiting = { $agent } が待機中です
+
+browser-agent-handed-back-message = ブラウザーの操作権を返しました。中断したところから続けてください。
+
+browser-agent-cue-clicking = 「{ $name }」をクリック中
+
+browser-agent-cue-clicking-bare = クリック中
+
+browser-agent-cue-turning-on = 「{ $name }」をオンにしています
+
+browser-agent-cue-turning-off = 「{ $name }」をオフにしています
+
+browser-agent-cue-selecting = 「{ $name }」を選択中
+
+browser-agent-cue-typing = 「{ $value }」を入力中
+
+browser-agent-cue-typing-bare = 入力中
+
+browser-agent-cue-pressing = { $key } を押しています
+
+browser-agent-cue-hovering = 「{ $name }」にカーソルを合わせています
+
+browser-agent-cue-checking = 「{ $name }」を確認中
+
+browser-agent-cue-reading = ページを読み取り中
+
+browser-agent-cue-scrolling = スクロール中
+
+browser-agent-cue-capturing = スクリーンショットを撮影中
+
+browser-agent-cue-capturing-element = 「{ $name }」のスクリーンショットを撮影中
+
+browser-agent-cue-capturing-full = ページ全体のスクリーンショットを撮影中
+
+browser-agent-cue-uploading = { $file } をアップロード中
+
+browser-agent-cue-running-script = スクリプトを実行中
+
+browser-agent-cue-scheme-dark = ダークモードに切り替え中
+
+browser-agent-cue-scheme-light = ライトモードに切り替え中
+
+browser-agent-cue-waiting = ページを待機中
+
+browser-agent-cue-opening = { $url } を開いています
+
+browser-agent-cue-going-back = 戻っています
+
+browser-agent-cue-going-forward = 進んでいます
+
+browser-agent-cue-reloading = ページを再読み込み中
+
+browser-agent-cue-new-tab = 新しいタブを開いています
+
+browser-agent-cue-working = 作業中
+
+sidebar-search-project-placeholder = { $project } を検索
+
+sidebar-search-hidden-worktrees-count-placeholder = 非表示のワークツリー { $count } 件を検索
+
+project-search-filter-hint = running、open、merged、または #番号を試してください
+
+project-search-all-projects = すべてのプロジェクトを検索
+
+project-search-hand-off-hint = すべてのプロジェクト
+
+project-search-section-worktrees = ワークツリー
+
+project-search-section-filter-hint = セクション、running、open、または #番号を試してください
+
+history-empty-title = 閉じたチャットをワンクリックで再開
+
+history-empty-hint = このワークツリーで閉じたチャットがここに表示され、いつでも続きから再開できます。
+
+history-empty-filtered-title = { $agent } のチャットはまだありません
+
+history-show-all-agents = すべてのエージェントを表示
+
+settings-keybinding-action-toggle-bookmarks = ブックマークの表示を切り替え
+
+settings-keybinding-action-previous-bookmark = 前のブックマーク
+
+settings-keybinding-action-next-bookmark = 次のブックマーク
+
+worktree-step-checking-out = { $forge ->
+    [gitlab] !{ $number } をチェックアウト中
+   *[other] #{ $number } をチェックアウト中
+}
+
+worktree-step-checking-out-branch = { $branch } をチェックアウト中
+
+worktree-step-creating-branch-from = { $base } からブランチを作成中
+
+worktree-step-creating-branch = ブランチを作成中
+
+worktree-step-naming = タスクに基づいて名前を付けています
+
+worktree-step-setup = セットアップを実行中
+
+worktree-step-opening-agent = { $agent } を開いています
+
+chat-waiting-on-agents = { $count } 個のエージェントを待機中…
+
+chat-shell-mode = シェルコマンド
+
+chat-shell-mode-detail = このワークスペースで実行します。結果の「チャットに追加」でエージェントに共有できます。
+
+chat-shell-add-to-chat = チャットに追加
+
+markdown-run-command = ターミナルで開く
+
+chat-shell-exit = 終了コード { $code }
+
+chat-shell-stopped = 停止済み
+
+chat-shell-finished = 完了
+
+chat-shell-no-output = 出力なし
+
+chat-shell-show-all = 全 { $count } 行を表示
+
+chat-shell-run-again = 再実行
+
+chat-shell-open-in-terminal = ターミナルで開く
+
+chat-shell-running = 実行中
+
+chat-shell-stopping = 停止中
+
+chat-shell-stop = 停止
+
+chat-shell-stop-hint = 停止 (Esc)
+
+chat-shell-unavailable = このチャットでは現在シェルコマンドを使用できません。
+
+chat-shell-open-refused = 実行せずにターミナルで開くことができませんでした。代わりにコマンドをコピーしてください。
+
+chat-shell-start-failed = コマンドを実行できませんでした: { $error }
+
+chat-files-changed-diff-unavailable = この差分は利用できなくなりました。
+
+chat-files-changed-diff-no-lines = このファイルは名前または権限のみが変更されました。
+
+chat-files-changed-diff-binary = バイナリファイルには表示できる行の差分がありません。
+
+chat-files-changed-diff-not-utf8 = このファイルは UTF-8 テキストではないため、行を表示できません。
+
+chat-files-changed-diff-too-large = この差分は大きすぎるため、ここでは表示できません。
+
+chat-files-changed-binary = バイナリ
+
+chat-files-changed-review-tooltip = これらのファイルをレビューし、このチャットにフィードバックを送信
+
+chat-files-changed-review-tooltip-stale-snapshot = これらのファイルをレビューします。{ $count } 件は後のターンで再度変更されました。このターンでは、このターン終了時の状態を表示しています。
+
+chat-files-changed-review-tooltip-stale-current = これらのファイルをレビューします。{ $count } 件は後のターンで再度変更されました。レビューでは現在の状態を表示します。
+
+chat-diff-unchanged-lines = 変更のない { $count } 行
+
+chat-files-changed-shared = このターン中、別のチャットもこのワークツリーで作業していました。両方のチャットが変更したファイルには、両方の編集内容が表示されます。
+
+chat-files-changed-unattributed = このターン中、別のチャットもこのワークツリーで作業していました。薄く表示されたファイルはその作業中に変更されており、そのチャットによる変更の可能性があります。
+
+chat-files-changed-snapshot-failed = このターンのワークツリーのスナップショットを作成できなかったため、ツールが報告したファイルのみを表示します。
+
+palette-mode-all = すべて
+
+palette-mode-conversations = 会話
+
+palette-search-all = エージェント、ワークツリー、コマンド、ファイルを検索…
+
+palette-search-files-short = ファイルを検索…
+
+palette-section-needs-you = 対応が必要
+
+palette-section-running = 実行中
+
+palette-section-recent = 最近
+
+palette-section-suggested = おすすめ
+
+palette-section-draft = 下書き
+
+palette-section-actions = アクション
+
+palette-quick-new-chat = { $worktree } で新しいチャット
+
+palette-quick-new-worktree = 新しいワークツリー
+
+palette-quick-new-terminal = 新しいターミナル
+
+palette-quick-feedback = 不具合の報告や機能のリクエスト
+
+palette-section-top-hit = 最も一致する結果
+
+palette-section-matches = 一致する結果
+
+palette-section-tabs = タブ
+
+palette-section-worktrees = ワークツリー
+
+palette-section-conversations = 会話
+
+palette-section-commands = コマンド
+
+palette-section-files = ファイル
+
+palette-section-changed = このブランチでの変更
+
+palette-files-show-all = 全 { $count } 件を表示
+
+palette-footer-branches = ブランチ
+
+palette-section-use-query-with = 「{ $query }」を使用
+
+palette-ask-agent-new-chat = 新しい { $provider } チャット
+
+palette-search-conversation-history = 会話履歴を検索
+
+palette-suggest-review-comments = レビューコメント { $count } 件
+
+palette-suggest-checks-failing = チェック失敗
+
+palette-suggest-files-changed = { $count } 個のファイルを変更
+
+palette-current = 現在
+
+palette-empty-scope = 「{ $query }」に一致する{ $scope }はありません
+
+palette-empty-recent = 最近の項目はまだありません
+
+palette-search-everything = すべてを検索
+
+palette-footer-run = 実行
+
+palette-footer-start = 開始
+
+palette-footer-search = 検索
+
+palette-footer-show = 表示
+
+palette-footer-report = 報告
+
+palette-footer-request = リクエスト
+
+palette-report-as-bug = 不具合として報告
+
+palette-report-as-feature = 機能としてリクエスト
+
+palette-finish-bug-report = 不具合報告を完成させる
+
+palette-finish-feature-request = 機能リクエストを完成させる
+
+palette-actions = アクション
+
+palette-actions-search = アクションを検索…
+
+palette-actions-no-match = 「{ $query }」に一致するアクションはありません
+
+palette-action-open = 開く
+
+palette-action-switch-worktree = ワークツリーに切り替え
+
+palette-action-search-inside = このワークツリー内を検索
+
+palette-action-open-pr = プルリクエスト #{ $number } を開く
+
+palette-action-copy-worktree-path = ワークツリーのパスをコピー
+
+palette-action-group-ask-agent = このワークツリーでエージェントに質問
+
+palette-action-open-tab = タブを開く
+
+palette-action-preview = プレビュー
+
+palette-action-close-tab = タブを閉じる
+
+palette-action-open-conversation = 会話を開く
+
+palette-action-open-in = 次で開く…
+
+palette-action-show-ignored = 無視されたファイルを表示
+
+palette-action-run-command = コマンドを実行
+
+palette-action-start-in = { $worktree } で開始
+
+palette-action-group-another-agent = 別のエージェント
+
+palette-action-start-with = { $provider } で開始
+
+palette-mode-pull-requests = { $forge ->
+    [gitlab] マージリクエスト
+   *[other] プルリクエスト
+}
+
+palette-mode-branch-from = ブランチの作成元
+
+palette-search-pull-requests = { $forge ->
+    [gitlab] マージリクエストを検索するか、リンクを貼り付け…
+   *[other] プルリクエストを検索するか、リンクを貼り付け…
+}
+
+palette-search-branch-from = ブランチの作成元…
+
+palette-section-pull-requests = { $forge ->
+    [gitlab] マージリクエスト
+   *[other] プルリクエスト
+}
+
+palette-section-with-worktree = ワークツリーあり
+
+palette-section-open-pull-requests = 未完了
+
+palette-section-review-requested = レビュー依頼済み
+
+palette-section-needs-your-review = レビューが必要
+
+palette-section-yours = 自分のもの
+
+palette-section-open-review-requests = { $forge ->
+    [gitlab] 未完了のマージリクエスト
+   *[other] 未完了のプルリクエスト
+}
+
+palette-loading-pull-requests = { $forge ->
+    [gitlab] マージリクエストを読み込み中…
+   *[other] プルリクエストを読み込み中…
+}
+
+palette-no-open-pull-requests = { $forge ->
+    [gitlab] 未完了のマージリクエストはありません
+   *[other] 未完了のプルリクエストはありません
+}
+
+palette-footer-check-out = チェックアウト
+
+palette-footer-create = 作成
+
+palette-footer-choose = 選択
+
+palette-action-start-in-new-worktree = 新しいワークツリーで開始
+
+palette-action-check-out = チェックアウト
+
+palette-action-work-on-it = 作業する
+
+palette-action-copy-link = リンクをコピー
+
+palette-action-copy-number = 番号をコピー
+
+palette-action-create-worktree = ワークツリーを作成
+
+palette-action-choose-base = ベースブランチを選択
+
+palette-start-agent-on = 「{ $query }」について { $provider } を開始
+
+palette-in-new-worktree = 新しいワークツリーで
+
+palette-new-branch = 新しいブランチ { $name }
+
+palette-new-branch-from = { $base } から
+
+palette-new-branch-choose-base = ベースを選択
+
+palette-branch-note-default = デフォルト
+
+palette-branch-note-current = このワークツリー
+
+palette-branch-note-remote = リモート
+
+palette-no-branches = ブランチなし
+
+palette-no-branch-named = 「{ $query }」というブランチはありません
+
+palette-search-new-worktree = { $forge ->
+    [gitlab] ブランチ名、タスクの説明、または MR を入力
+   *[other] ブランチ名、タスクの説明、または PR を入力
+}
+
+palette-search-new-worktree-no-forge = ブランチ名またはタスクの説明を入力
+
+palette-action-open-review-request = { $forge ->
+    [gitlab] マージリクエスト !{ $number } を開く
+   *[other] プルリクエスト #{ $number } を開く
+}
+
+palette-action-create-and-start = 作成して { $provider } を開始
+
+palette-search-projects = プロジェクトを選択
+
+palette-mode-projects = プロジェクト
+
+palette-section-branches = ブランチ
+
+palette-section-look-up = 検索
+
+palette-loading-branches = ブランチを読み込み中…
+
+palette-no-open-pull-request = { $forge ->
+    [gitlab] 未完了のマージリクエストはありません
+   *[other] 未完了のプルリクエストはありません
+}
+
+palette-pull-request-number = { $forge ->
+    [gitlab] マージリクエスト !{ $number }
+   *[other] プルリクエスト #{ $number }
+}
+
+palette-new-worktree-in = { $project } に新しいワークツリー
+
+palette-quick-new-worktree-in = { $project } 内
+
+history-button-tooltip = 履歴
+
+usage-window-minutes = { $count } 分
+
+usage-window-hours = { $count } 時間
+
+usage-window-days = { $count } 日
+
+usage-window-weeks = { $count } 週間
+
+usage-window-all-models = すべてのモデル
+
+usage-gauge-window-reached = { $window } の上限に到達
+
+usage-gauge-reached = 上限に到達
+
+usage-limit-no-reset = リセット時刻の報告なし
+
+usage-limit-back = { $time } に再び利用可能
+
+usage-limit-in = { $duration } 後
+
+usage-account-until = { $window }、{ $time } まで
+
+usage-account-back-at = { $window }、{ $time } に再開
+
+usage-credits-balance = { $amount } クレジット
+
+usage-details = 使用量の詳細
+
+usage-details-runs-out = このペースでは { $time } に使い切る可能性があります
+
+usage-details-lasts = このペースではリセットまで持ちます
+
+usage-details-used-up = { $window } は { $time } まで使い切っています
+
+usage-details-estimate = この期間の開始からの平均使用量に基づく推定です。使用量に応じて変動しますが、リセット時刻は変わりません。
+
+usage-details-no-reset = { $provider } からこの期間のリセット時刻が報告されていないため、予測はありません。
+
+usage-details-source = 上限とリセット時刻は { $provider } から取得します。このアカウントに報告された上限のみを表示します。
+
+chat-artifact-open-in-app-browser = アプリ内ブラウザー
+
+chat-artifact-open-in-default-browser = 既定のブラウザー
+
+bookmarks-title = ブックマーク
+
+bookmarks-search-placeholder = ブックマークを検索…
+
+bookmarks-section-this-chat = このチャット
+
+bookmarks-saved-label = 保存済み
+
+bookmarks-untitled-chat = 無題のチャット
+
+bookmarks-loading = ブックマークを読み込み中…
+
+bookmarks-load-failed = ブックマークを読み込めませんでした
+
+bookmarks-load-failed-hint = 保存した返信は残っています。
+
+bookmarks-load-failed-again-hint = まだ読み込めません。保存した返信は残っています。
+
+bookmarks-this-chat-load-failed = このチャットのブックマークを読み込めませんでした
+
+bookmarks-other-chats-load-failed = 他のチャットのブックマークを読み込めませんでした
+
+bookmarks-try-again = 再試行
+
+bookmarks-empty-title = 読み返したい返信を保存
+
+bookmarks-empty-hint = 返信にカーソルを合わせてブックマークをクリックすると、すべてのチャットで保存した返信がここに集まります。
+
+bookmarks-no-matches = 「{ $query }」に一致するブックマークはありません
+
+bookmarks-untitled-response = 無題の返信
+
+bookmarks-add = 返信をブックマーク
+
+bookmarks-remove = ブックマークを削除
+
+bookmarks-saved-ago = { $elapsed } に保存
+
+bookmarks-open-beside = このチャットの隣に開く
+
+bookmarks-response-streaming = 返信が完了するとブックマークできます
+
+bookmarks-response-unavailable = 返信を利用できません
+
+bookmarks-save-failed = ブックマークを保存できませんでした。再試行してください。
+
+bookmarks-remove-failed = ブックマークを削除できませんでした。再試行してください。
+
+notification-open = 開く
+
+chat-report-error = この問題を報告
+
+menu-help = ヘルプ
+
+menu-help-report-bug = 不具合を報告…
+
+menu-help-suggest-feature = 機能をリクエスト…
+
+issue-report-command-bug = 不具合を報告
+
+issue-report-command-feature = 機能をリクエスト
+
+issue-report-kind-bug = 不具合
+
+issue-report-kind-feature = 機能
+
+issue-report-placeholder-bug = 何が起きましたか？期待していた結果は何ですか？
+
+issue-report-placeholder-feature = 何をしようとしていますか？
+
+issue-report-placeholder-error = 失敗したとき何をしていましたか？
+
+issue-report-error-title = ターンが失敗しました: { $error }
+
+issue-report-title = タイトル
+
+issue-report-title-drafted = 説明をもとに作成
+
+issue-report-title-from-error = エラーから作成
+
+issue-report-title-restored = 保存した下書き
+
+issue-report-draft-saved = 報告を下書きとして保存しました
+
+issue-report-action-discard = 下書きを破棄
+
+issue-report-screenshot = スクリーンショット
+
+issue-report-screenshots = スクリーンショット
+
+issue-report-drop-now = ドロップして画像を添付
+
+issue-report-drop-hint = スクリーンショットをドロップまたは貼り付け
+
+issue-report-drop-hint-review = またはここにドロップ
+
+issue-report-capture-window = ウィンドウを撮影
+
+issue-report-choose-images = 画像を添付…
+
+issue-report-screenshot-pending = 撮影中…
+
+issue-report-image-copied = スクリーンショットをコピーしました。報告に貼り付けてください。
+
+issue-report-images-revealed = スクリーンショットを Finder に表示しました。報告にドラッグしてください。
+
+issue-report-review = 確認
+
+issue-report-post = 公開投稿
+
+issue-report-review-title = 投稿前に確認
+
+issue-report-review-comment-on = #{ $number } にコメント
+
+issue-report-audience = GitHub の誰でも閲覧できます
+
+issue-report-heading-bug = 何が起きましたか？
+
+issue-report-heading-feature = 何をしようとしていますか？
+
+issue-report-field-app-version = アプリのバージョン
+
+issue-report-field-os = オペレーティングシステム
+
+issue-report-field-system = システムの詳細
+
+issue-report-field-agent = コーディングエージェント
+
+issue-report-field-error = エラー
+
+issue-report-image-note = GitHub では専用フォームでのみ画像を受け付けるため、報告はそちらで完成させます。本文は入力済みで、スクリーンショットは貼り付けられるようクリップボードにあります。
+
+issue-report-images-note = GitHub では専用フォームでのみ画像を受け付けるため、報告はそちらで完成させます。本文は入力済みで、スクリーンショットをドラッグできるよう Finder が開きます。
+
+issue-report-checks-title = 追加すると役立つ情報
+
+issue-report-check-expected = 期待した結果
+
+issue-report-check-steps = 再現手順
+
+issue-report-check-screenshot = スクリーンショット
+
+issue-report-check-today = 現在の対処方法
+
+issue-report-add-expected = 期待していたのは
+
+issue-report-add-steps = 再現手順:
+    1.
+
+issue-report-add-today = 現在は
+
+issue-report-agent-title = エージェントに書いてもらう
+
+issue-report-agent-detail = 不足している情報を尋ねてから、承認用の下書きを作成します
+
+issue-report-agent-no-worktree = エージェントが作業できるよう、先にワークツリーを開いてください
+
+issue-report-included = 含まれる情報
+
+issue-report-fact-error = エラーメッセージ
+
+issue-report-fact-app = アプリ { $version }
+
+issue-report-fact-system = システムの詳細
+
+issue-report-similar-bugs = 類似の報告
+
+issue-report-similar-features = 類似のリクエスト
+
+issue-report-destination = { $repo } の公開 Issue
+
+issue-report-signed-out = ここから送信するには GitHub CLI にサインインしてください
+
+issue-report-match-open = #{ $number } はすでに未完了です
+
+issue-report-match-votes = #{ $number } に { $count } 票
+
+issue-report-continue-github = GitHub で続ける
+
+issue-report-add-details = 自分の詳細を追加
+
+issue-report-upvote = 賛成票を投じる
+
+issue-report-open-issue = #{ $number } を開く
+
+issue-report-sending = 送信中…
+
+issue-report-send-failed = 送信できませんでした。下書きは残っています。
+
+issue-report-filed = #{ $number } を提出しました
+
+issue-report-added = #{ $number } に追加しました
+
+issue-report-upvoted = #{ $number } に賛成票を投じました
+
+issue-report-copied = 報告をコピーしました
+
+issue-report-actions-private = 非公開
+
+issue-report-action-draft-agent = エージェントで下書き
+
+issue-report-action-copy-markdown = Markdown としてコピー
+
+issue-report-action-email = 非公開でメール送信

@@ -296,8 +296,7 @@ project-pinned = مثبّت
 project-no-worktrees-found = لم يتم العثور على أشجار عمل
 project-loading-merge-options = جارٍ تحميل خيارات الدمج
 sidebar-add-project-to-start = أضف مشروعًا للبدء
-sidebar-search-project-worktrees-placeholder = البحث في أشجار العمل في { $project }
-sidebar-search-hidden-worktrees-placeholder = البحث في أشجار العمل المخفية في { $project }
+
 sidebar-install-ssh-key = تثبيت SSH المفتاح
 action-update = تحديث
 workspace-no-ai-background-tasks = لا توجد مهام خلفية AI
@@ -612,8 +611,7 @@ worktree-create-branches-unavailable = المستودع لم يُحمّل بعد
 worktree-create-in-background = إنشاء في الخلفية
 worktree-create-refresh-branches = جلب الفروع البعيدة
 worktree-create-refresh-failed = فشل الجلب: { $error }
-worktree-create-return = إنشاء ↵
-worktree-in-workspace = في مساحة العمل
+
 worktree-no-matching-branches = لا توجد فروع مطابقة
 worktree-not-installed = غير مثبت
 settings-sidebar-group-general = عام
@@ -1046,6 +1044,7 @@ settings-ai-reset-to-inherited = إعادة التعيين إلى الوراثة
 settings-ai-system-instructions-placeholder = تعليمات النظام...
 settings-ai-user-message-placeholder = رسالة المستخدم...
 settings-ai-launch-flags-description = يستخدم في كل إطلاق لهذا المزود. يتم إضافة هذه أولا.
+settings-ai-launch-flags-placeholders = استخدم { $placeholders } لإدراج اسم الشجرة أو الفرع أو المشروع في كل إطلاق.
 settings-ai-profile-definitions = تعريفات الملف الشخصي
 settings-ai-global-default = التخلف عن السداد العالمي
 settings-ai-workspace-override = تجاوز مساحة العمل
@@ -1063,9 +1062,9 @@ settings-ai-all-models = جميع الطرازات
 settings-ai-select-models = نماذج مختارة
 settings-ai-select-models-count = نماذج مختارة ({ $count })
 settings-ai-model-visibility = رؤية النموذج
-settings-ai-compliant-claude-tooltip = عند تعطيل هذا الخيار — أو داخل مساحة عمل عبر SSH — تستخدم دردشة Claude النقل المنظّم claude -p.
-settings-ai-compliant-claude-view = رأي Claude متوافق
-settings-ai-compliant-claude-view-description = شغل محادثات Claude المحلية من خلال الوضع التفاعلي في Claude Code للحفاظ على الاستخدام ضمن خطة الاشتراك الخاصة بك. تستخدم مساحات SSH النقل المنظم Claude -p.
+settings-ai-claude-interactive-mode-tooltip = عند الإيقاف، أو في مساحة عمل SSH، تستخدم محادثة Claude وضع الطباعة (claude -p).
+settings-ai-claude-interactive-mode = الوضع التفاعلي
+settings-ai-claude-interactive-mode-description = شغّل محادثات Claude المحلية في الوضع التفاعلي لـ Claude Code بدلاً من وضع الطباعة (claude -p). تستخدم مساحات عمل SSH وضع الطباعة دائماً.
 settings-ai-action-model-pins = متقدمة — دبابيس النموذج لكل إجراء
 settings-ai-action-model-pins-description = نماذج التثبيت لإجراءات محددة فقط عندما لا يكون الافتراضي كافيا.
 settings-ai-session-model-description = النموذج المستخدم للجلسات الجديدة بشكل افتراضي.
@@ -1354,12 +1353,7 @@ worktree-context-placeholder = صف ما تريد من الوكيل أن يعم�
 worktree-filter-branches-placeholder = فروع التصفية...
 worktree-label-placeholder = مسمية شجرة العمل
 worktree-prompt-placeholder = على ماذا تعمل؟
-worktree-search-branches-placeholder = البحث في الفروع...
-worktree-search-branches-mrs-placeholder = ابحث في الفروع و MRs...
-worktree-search-branches-prs-placeholder = ابحث في الفروع و PRs...
-worktree-fetching-branches = جلب الأغصان...
-worktree-fetching-branches-mrs = جلب الأغصان MRs...
-worktree-fetching-branches-prs = يجلب الأغصان PRs...
+
 right-panel-switch-stacked = التحول إلى الطرفية المكدسة
 right-panel-switch-bottom = التحويل إلى الطرف السفلي
 right-panel-switch-side-by-side = التبديل إلى الطرف الجانبي
@@ -1943,8 +1937,8 @@ settings-search-entry-agents-routing-thorough-actions-label = إجراءات ش�
 settings-search-entry-agents-routing-thorough-actions-description = إصلاح CI، الدمج المحجوب، التعليقات، التغييرات، التعارضات، والمراجعات.
 settings-search-entry-agents-providers-claude-code-provider-label = مزود Claude Code
 settings-search-entry-agents-providers-claude-code-provider-description = تمكين Claude Code وقم بتكوين نماذجه وملفائه الشخصية وعلامات الإطلاق.
-settings-search-entry-agents-providers-compliant-claude-view-label = رأي Claude متوافق
-settings-search-entry-agents-providers-compliant-claude-view-description = شغل Claude الدردشة عبر وضع التفاعل في Claude Code للحفاظ على الاستخدام في خطة الاشتراك الخاصة بك.
+settings-search-entry-agents-providers-claude-interactive-mode-label = الوضع التفاعلي لـ Claude
+settings-search-entry-agents-providers-claude-interactive-mode-description = شغّل محادثات Claude المحلية في الوضع التفاعلي لـ Claude Code بدلاً من وضع الطباعة (claude -p). تستخدم مساحات عمل SSH وضع الطباعة دائماً. ينطبق على المحادثات المفتوحة حديثاً.
 settings-search-entry-agents-providers-codex-provider-label = مزود Codex
 settings-search-entry-agents-providers-codex-provider-description = قم بتمكين Codex وقم بتكوين نماذجه وملفائه الشخصية وأعلام الإطلاق.
 settings-search-entry-agents-providers-pi-provider-label = مزود Pi
@@ -2044,7 +2038,7 @@ settings-ai-provider-section-chat = المحادثة
 settings-ai-provider-section-runtime = بيئة التشغيل
 settings-ai-provider-profiles-description = الحسابات ومجلدات الإعداد لهذا المزوّد.
 settings-ai-provider-manage-profiles = إدارة الملفات الشخصية
-settings-ai-provider-antigravity-description = تفعيل Antigravity كمزود طرفي (يتطلب تركيب CLI `agy` Antigravity).
+settings-ai-provider-antigravity-description = تفعيل دعم محادثات Antigravity والطرفية (يتطلب تثبيت Antigravity CLI `agy`).
 settings-ai-provider-hermes-description = تفعيل هيرميس كمزود طرفية (يتطلب تثبيت `hermes` Hermes Agent).
 settings-ai-provider-qwen-description = تفعيل كود كوين كمزود طرفية (يتطلب تثبيت كود كوين CLI `qwen`).
 settings-ai-provider-kimi-description = تفعيل رمز Kimi كمزود دردشة وطرفية (يتطلب تثبيت رمز Kimi الحالي CLI `kimi`).
@@ -2131,27 +2125,9 @@ workspace-remote-forge-cli-not-authenticated-hint = نصيحة: { $cli } على 
 workspace-remote-forge-cli-missing-hint = نصيحة: قم بتثبيت { $cli } على المضيف وتشغيل `{ $cli } auth login` لإنشاء { $kind } مع الوكيل.
 workspace-review-request-url-copied = تم نسخ { $kind } URL
 workspace-review-request-none-yet = لا يوجد { $kind } لهذا الفرع بعد
-worktree-prompt = الموضوع
-worktree-branches = الفروع
-worktree-merge-requests = طلبات الدمج
-worktree-pull-requests = طلبات السحب
-worktree-review-requests = طلبات المراجعة
-worktree-tab-with-count = { $label } ({ $count })
-worktree-no-open-merge-requests = لا توجد طلبات دمج مفتوح
-worktree-no-open-pull-requests = لا توجد طلبات سحب مفتوحة
-worktree-no-open-review-requests = لا توجد طلبات مراجعة مفتوحة
-worktree-no-branches = لا توجد فروع
+
 common-no-matches = لا توجد مباريات
-worktree-gitlab-cli-missing = لم يتم تحميل طلبات الدمج: GitLab CLI (`glab`) غير مثبت أو غير موجود على PATH. قم بتثبيت `glab`، ثم المصادقة باستخدام `glab auth login`، ثم أعد المحاولة.
-worktree-gitlab-auth-required = لم يتم تحميل طلبات الدمج: GitLab CLI (`glab`) غير مصادق. شغل `glab auth login` لهذا المضيف GitLab، ثم أعد المحاولة.
-worktree-github-auth-required = لم أتمكن من تحميل طلبات السحب: GitHub CLI (`gh`) غير مصادق على هذا المضيف. شغل `gh auth login --hostname <host>`، ثم أعد المحاولة.
-worktree-github-load-error = لم أتمكن من تحميل طلبات السحب: { $error }
-worktree-gitlab-load-error = لم أتمكن من تحميل طلبات الدمج: { $error }
-worktree-bitbucket-cli-missing = تعذّر تحميل طلبات السحب: Bitbucket CLI (`bkt`) غير مثبّت أو غير موجود في PATH. ثبّت `bkt`، وشغّل `bkt auth login https://bitbucket.org --kind cloud --web-token`، وأنشئ سياقًا باستخدام `bkt context create cloud --host api.bitbucket.org --workspace <workspace> --set-active`، ثم أعد المحاولة.
-worktree-bitbucket-auth-required = تعذّر تحميل طلبات السحب: Bitbucket CLI (`bkt`) غير مُصادَق عليه. شغّل `bkt auth login https://bitbucket.org --kind cloud --web-token`، ثم أعد المحاولة.
-worktree-bitbucket-no-context = تعذّر تحميل طلبات السحب: { $error }
-worktree-bitbucket-load-error = تعذّر تحميل طلبات السحب: { $error }
-worktree-review-request-load-error = لم أتمكن من تحميل طلبات المراجعة: { $error }
+
 remote-cli-install-succeeded = تم تثبيت { $app_name } CLI { $package } (api={ $api }، watch={ $watch }، hooks={ $hooks }) على جهاز التحكم عن بعد.
 remote-cli-install-failed = فشل CLI التثبيت: { $error }
 chat-composer-placeholder-active = اكتب رسالة...
@@ -2891,20 +2867,16 @@ usage-meter-error = تعذّر تحميل الاستخدام
 usage-meter-loading = جارٍ تحميل الاستخدام…
 usage-meter-outdated = بيانات الاستخدام قديمة
 usage-meter-updated = تم التحديث { $ago }
-usage-meter-resets = إعادة التعيين خلال { $duration }
-usage-meter-window-session = الجلسة
+
 usage-meter-window-daily = يومي
 usage-meter-window-weekly = أسبوعي
 usage-meter-window-monthly = شهري
-usage-meter-window-other = أخرى
-usage-meter-all-providers = جميع المزوّدين
+
 usage-meter-percent-left = متبقٍ { $percent }%
 usage-meter-no-account = لم يتم تحديد حساب
 usage-meter-now = الآن
 usage-meter-default-account = افتراضي
-usage-popover-runs-out = ينفد { $time }، ويُعاد التعيين { $reset }
-usage-popover-runs-out-then-credits = ينفد { $time }، ثم تُستخدم الاعتمادات
-usage-popover-using-credits = يستخدم الاعتمادات
+
 usage-api-key = مفتاح API
 usage-api-key-week = تقديريًا هذا الأسبوع
 usage-api-key-today = { $amount } اليوم
@@ -2919,8 +2891,7 @@ usage-popover-window-left = المتبقي من { $window }
 usage-popover-updating = جارٍ التحديث…
 usage-popover-retry = أعد المحاولة
 usage-popover-accounts = الحسابات
-usage-popover-in-use = قيد الاستخدام
-usage-popover-unused = { $count } غير مستخدم
+
 usage-graph-on-pace = ضمن الوتيرة
 usage-graph-in-reserve = { $percent }% في الاحتياط
 usage-graph-behind = متأخر { $percent }% عن الوتيرة
@@ -2929,10 +2900,9 @@ usage-graph-lasts = يكفي حتى إعادة التعيين
 usage-graph-collecting = يمتلئ الرسم البياني مع وصول القراءات
 usage-instrument-gauge = مقياس
 usage-instrument-graph = رسم بياني
-usage-popover-no-other-limits = لا حدود أخرى
+
 usage-popover-no-data = لا استخدام بعد من { $providers }
-usage-popover-more = المزيد
-usage-popover-less = أقل
+
 tool-verb-ran = شغّل
 tool-verb-running = يشغّل
 tool-verb-messaging = يراسل
@@ -3597,7 +3567,7 @@ workspace-fx-remote-history-unsupported = لا تدعم طرفيات FX البع
 settings-keybinding-action-rename-selected-entry = إعادة تسمية العنصر المحدد
 settings-keybinding-action-chat-effort-backward = التنقل للخلف بين مستويات جهد المحادثة
 worktree-preparing = جارٍ تجهيز شجرة العمل…
-chat-queued-until-worktree-ready = سيبدأ عندما تصبح شجرة العمل جاهزة
+chat-queued-until-worktree-ready = يُرسَل عند الاستعداد
 chat-delivery-unconfirmed = التسليم غير مؤكد
 chat-delivery-unconfirmed-retry = تحقق من المحادثة قبل إعادة المحاولة؛ ربما سُلّمت هذه الرسالة بالفعل.
 chat-answer-pending-delivery = بانتظار التسليم
@@ -3851,30 +3821,10 @@ usage-reset-busy = لا يزال التحديث جاريًا. اسحب مرة أ
 usage-reset-unavailable = لا تتوفر إعادة تعيين
 usage-credits = الاعتمادات
 usage-credits-unlimited = غير محدود
-usage-account-resets = { $count ->
-    [zero] لا إعادات تعيين
-    [one] إعادة تعيين واحدة
-    [two] إعادتا تعيين
-    [few] { $count } إعادات تعيين
-    [many] { $count } إعادة تعيين
-   *[other] { $count } إعادة تعيين
-}
-usage-account-credits = { $amount } من الاعتمادات
-usage-account-ring-window = { $account } { $window }
-usage-account-window-left = { $window } { $percent }%
-usage-graph-account-left = المتبقي من { $window } لـ { $account }
-usage-graph-now = الآن
-usage-accounts-on-gauge = على المقياس
+
 usage-accounts-sign-in = تسجيل الدخول
 usage-accounts-signing-in = جارٍ تسجيل الدخول…
-usage-accounts-single = { $count ->
-    [zero] لدى كلٍّ من { $providers } حساب واحد.
-    [one] لدى { $providers } حساب واحد.
-    [two] لدى كلٍّ من { $providers } حساب واحد.
-    [few] لدى كلٍّ من { $providers } حساب واحد.
-    [many] لدى كلٍّ من { $providers } حساب واحد.
-   *[other] لدى كلٍّ من { $providers } حساب واحد.
-}
+
 usage-account-empty-title = لا استخدام على { $account } بعد
 usage-account-empty-body = تظهر القراءات بعد أول جلسة لهذا الملف الشخصي.
 usage-account-signed-out-title = لم يتم تسجيل الدخول إلى { $account }
@@ -3885,3 +3835,417 @@ usage-graph-legend-even = وتيرة متساوية
 usage-graph-legend-projection = التوقع
 usage-graph-legend-estimated = تقديري
 usage-graph-estimated = تقدير من النشاط على جهاز Mac هذا
+
+browser-annotations-send-short = إرسال
+browser-agent-take-over = تولّي التحكم
+browser-agent-you-have-control = أنت تتحكم الآن
+browser-agent-hand-back = إعادة التحكم
+browser-agent-is-waiting = { $agent } ينتظر
+browser-agent-handed-back-message = أعدتُ التحكم في المتصفح إليك. تابع من حيث توقفت.
+browser-agent-cue-clicking = النقر على «{ $name }»
+browser-agent-cue-clicking-bare = النقر
+browser-agent-cue-turning-on = تشغيل «{ $name }»
+browser-agent-cue-turning-off = إيقاف «{ $name }»
+browser-agent-cue-selecting = تحديد «{ $name }»
+browser-agent-cue-typing = كتابة «{ $value }»
+browser-agent-cue-typing-bare = الكتابة
+browser-agent-cue-pressing = الضغط على { $key }
+browser-agent-cue-hovering = التمرير فوق «{ $name }»
+browser-agent-cue-checking = التحقق من «{ $name }»
+browser-agent-cue-reading = قراءة الصفحة
+browser-agent-cue-scrolling = التمرير
+browser-agent-cue-capturing = التقاط لقطة شاشة
+browser-agent-cue-capturing-element = التقاط لقطة شاشة لـ«{ $name }»
+browser-agent-cue-capturing-full = التقاط لقطة للصفحة كاملة
+browser-agent-cue-uploading = رفع { $file }
+browser-agent-cue-running-script = تشغيل برنامج نصي
+browser-agent-cue-scheme-dark = التبديل إلى الوضع الداكن
+browser-agent-cue-scheme-light = التبديل إلى الوضع الفاتح
+browser-agent-cue-waiting = انتظار الصفحة
+browser-agent-cue-opening = فتح { $url }
+browser-agent-cue-going-back = الرجوع
+browser-agent-cue-going-forward = التقدم
+browser-agent-cue-reloading = إعادة تحميل الصفحة
+browser-agent-cue-new-tab = فتح علامة تبويب جديدة
+browser-agent-cue-working = جارٍ العمل
+sidebar-search-project-placeholder = البحث في { $project }
+sidebar-search-hidden-worktrees-count-placeholder = { $count ->
+    [one] البحث في شجرة عمل مخفية واحدة
+    [two] البحث في شجرتَي عمل مخفيتين
+    [few] البحث في { $count } أشجار عمل مخفية
+    [many] البحث في { $count } شجرة عمل مخفية
+   *[other] البحث في { $count } شجرة عمل مخفية
+}
+project-search-filter-hint = جرّب running أو open أو merged أو #number
+project-search-all-projects = البحث في كل المشاريع
+project-search-hand-off-hint = كل المشاريع
+project-search-section-worktrees = أشجار العمل
+project-search-section-filter-hint = جرّب قسمًا أو running أو open أو #number
+history-empty-title = كل محادثة مغلقة على بُعد نقرة
+history-empty-hint = تظهر هنا المحادثات التي تغلقها في شجرة العمل هذه، لتتابع من حيث توقفت.
+history-empty-filtered-title = لا توجد محادثات مع { $agent } بعد
+history-show-all-agents = إظهار كل الوكلاء
+settings-keybinding-action-toggle-bookmarks = إظهار الإشارات المرجعية أو إخفاؤها
+settings-keybinding-action-previous-bookmark = الإشارة المرجعية السابقة
+settings-keybinding-action-next-bookmark = الإشارة المرجعية التالية
+worktree-step-checking-out = { $forge ->
+    [gitlab] استخراج !{ $number }
+   *[other] استخراج #{ $number }
+}
+worktree-step-checking-out-branch = استخراج { $branch }
+worktree-step-creating-branch-from = إنشاء فرع من { $base }
+worktree-step-creating-branch = إنشاء فرع
+worktree-step-naming = تسميته بناءً على مهمتك
+worktree-step-setup = تشغيل الإعداد
+worktree-step-opening-agent = فتح { $agent }
+chat-waiting-on-agents = { $count ->
+    [one] بانتظار وكيل واحد…
+    [two] بانتظار وكيلين…
+    [few] بانتظار { $count } وكلاء…
+    [many] بانتظار { $count } وكيلًا…
+   *[other] بانتظار { $count } وكيل…
+}
+chat-shell-mode = أمر Shell
+chat-shell-mode-detail = يُشغَّل في مساحة العمل هذه. استخدم «إضافة إلى المحادثة» في النتيجة لعرضها على الوكيل.
+chat-shell-add-to-chat = إضافة إلى المحادثة
+markdown-run-command = فتح في الطرفية
+chat-shell-exit = خروج { $code }
+chat-shell-stopped = متوقف
+chat-shell-finished = مكتمل
+chat-shell-no-output = لا توجد مخرجات
+chat-shell-show-all = إظهار كل الأسطر ({ $count })
+chat-shell-run-again = تشغيل مجددًا
+chat-shell-open-in-terminal = فتح في الطرفية
+chat-shell-running = قيد التشغيل
+chat-shell-stopping = جارٍ الإيقاف
+chat-shell-stop = إيقاف
+chat-shell-stop-hint = إيقاف (Esc)
+chat-shell-unavailable = أوامر Shell غير متاحة في هذه المحادثة حاليًا.
+chat-shell-open-refused = تعذّر فتح هذا في الطرفية دون تشغيله. انسخ الأمر بدلًا من ذلك.
+chat-shell-start-failed = تعذّر تشغيل الأمر: { $error }
+chat-files-changed-diff-unavailable = لم يعد هذا الفرق متاحًا.
+chat-files-changed-diff-no-lines = تغيّر اسم الملف أو أذوناته فقط.
+chat-files-changed-diff-binary = لا توجد فروق أسطر لعرضها في الملفات الثنائية.
+chat-files-changed-diff-not-utf8 = هذا الملف ليس نصًا بترميز UTF-8، لذا لا يمكن عرض أسطره.
+chat-files-changed-diff-too-large = هذا الفرق كبير جدًا لعرضه هنا.
+chat-files-changed-binary = ثنائي
+chat-files-changed-review-tooltip = راجع هذه الملفات وأرسل ملاحظاتك إلى هذه المحادثة
+chat-files-changed-review-tooltip-stale-snapshot = راجع هذه الملفات. عدد الملفات التي تغيّرت مجددًا في دور لاحق: { $count }؛ يعرضها هذا الدور كما تركها.
+chat-files-changed-review-tooltip-stale-current = راجع هذه الملفات. عدد الملفات التي تغيّرت مجددًا في دور لاحق: { $count }؛ تعرض المراجعة حالتها الحالية.
+chat-diff-unchanged-lines = { $count ->
+    [one] سطر واحد دون تغيير
+    [two] سطران دون تغيير
+    [few] { $count } أسطر دون تغيير
+    [many] { $count } سطرًا دون تغيير
+   *[other] { $count } سطر دون تغيير
+}
+chat-files-changed-shared = كانت محادثة أخرى تعمل في شجرة العمل هذه أثناء هذا الدور. الملف الذي غيّرته المحادثتان يعرض تعديلات كلتيهما.
+chat-files-changed-unattributed = كانت محادثة أخرى تعمل في شجرة العمل هذه أثناء هذا الدور. تغيّرت الملفات الباهتة أثناء عملها وقد تكون تعديلاتها.
+chat-files-changed-snapshot-failed = تعذّر حفظ لقطة لشجرة العمل في هذا الدور، لذا تُعرض فقط الملفات التي أبلغت عنها أدواته.
+palette-mode-all = الكل
+palette-mode-conversations = المحادثات
+palette-search-all = البحث في الوكلاء وأشجار العمل والأوامر والملفات…
+palette-search-files-short = البحث في الملفات…
+palette-section-needs-you = بحاجة إليك
+palette-section-running = قيد التشغيل
+palette-section-recent = الأخيرة
+palette-section-suggested = المقترحة
+palette-section-draft = مسودة
+palette-section-actions = الإجراءات
+palette-quick-new-chat = محادثة جديدة في { $worktree }
+palette-quick-new-worktree = شجرة عمل جديدة
+palette-quick-new-terminal = طرفية جديدة
+palette-quick-feedback = الإبلاغ عن خطأ أو طلب ميزة
+palette-section-top-hit = أفضل نتيجة
+palette-section-matches = النتائج المطابقة
+palette-section-tabs = علامات التبويب
+palette-section-worktrees = أشجار العمل
+palette-section-conversations = المحادثات
+palette-section-commands = الأوامر
+palette-section-files = الملفات
+palette-section-changed = تغيّرت في هذا الفرع
+palette-files-show-all = إظهار الكل ({ $count })
+palette-footer-branches = الفروع
+palette-section-use-query-with = استخدام «{ $query }» مع
+palette-ask-agent-new-chat = محادثة { $provider } جديدة
+palette-search-conversation-history = البحث في سجل المحادثات
+palette-suggest-review-comments = { $count ->
+    [one] تعليق مراجعة واحد
+    [two] تعليقا مراجعة
+    [few] { $count } تعليقات مراجعة
+    [many] { $count } تعليق مراجعة
+   *[other] { $count } تعليق مراجعة
+}
+palette-suggest-checks-failing = الفحوصات تفشل
+palette-suggest-files-changed = { $count ->
+    [one] تغيّر ملف واحد
+    [two] تغيّر ملفان
+    [few] تغيّرت { $count } ملفات
+    [many] تغيّر { $count } ملفًا
+   *[other] تغيّر { $count } ملف
+}
+palette-current = الحالية
+palette-empty-scope = لا توجد نتائج في { $scope } تطابق «{ $query }»
+palette-empty-recent = لا توجد عناصر حديثة بعد
+palette-search-everything = البحث في كل شيء
+palette-footer-run = تشغيل
+palette-footer-start = بدء
+palette-footer-search = بحث
+palette-footer-show = إظهار
+palette-footer-report = إبلاغ
+palette-footer-request = طلب
+palette-report-as-bug = الإبلاغ عنه كخطأ
+palette-report-as-feature = طلبه كميزة
+palette-finish-bug-report = إكمال بلاغ الخطأ
+palette-finish-feature-request = إكمال طلب الميزة
+palette-actions = الإجراءات
+palette-actions-search = البحث في الإجراءات…
+palette-actions-no-match = لا توجد إجراءات تطابق «{ $query }»
+palette-action-open = فتح
+palette-action-switch-worktree = التبديل إلى شجرة العمل
+palette-action-search-inside = البحث داخل شجرة العمل هذه
+palette-action-open-pr = فتح طلب السحب #{ $number }
+palette-action-copy-worktree-path = نسخ مسار شجرة العمل
+palette-action-group-ask-agent = سؤال وكيل في شجرة العمل هذه
+palette-action-open-tab = فتح علامة تبويب
+palette-action-preview = معاينة
+palette-action-close-tab = إغلاق علامة التبويب
+palette-action-open-conversation = فتح المحادثة
+palette-action-open-in = فتح في…
+palette-action-show-ignored = إظهار الملفات المتجاهَلة
+palette-action-run-command = تشغيل الأمر
+palette-action-start-in = البدء في { $worktree }
+palette-action-group-another-agent = وكيل آخر
+palette-action-start-with = البدء مع { $provider }
+palette-mode-pull-requests = { $forge ->
+    [gitlab] طلبات الدمج
+   *[other] طلبات السحب
+}
+palette-mode-branch-from = إنشاء فرع من
+palette-search-pull-requests = { $forge ->
+    [gitlab] البحث في طلبات الدمج أو لصق رابط…
+   *[other] البحث في طلبات السحب أو لصق رابط…
+}
+palette-search-branch-from = إنشاء فرع من…
+palette-section-pull-requests = { $forge ->
+    [gitlab] طلبات الدمج
+   *[other] طلبات السحب
+}
+palette-section-with-worktree = مع شجرة عمل
+palette-section-open-pull-requests = مفتوحة
+palette-section-review-requested = طُلبت مراجعتها
+palette-section-needs-your-review = بحاجة إلى مراجعتك
+palette-section-yours = الخاصة بك
+palette-section-open-review-requests = { $forge ->
+    [gitlab] طلبات الدمج المفتوحة
+   *[other] طلبات السحب المفتوحة
+}
+palette-loading-pull-requests = { $forge ->
+    [gitlab] تحميل طلبات الدمج…
+   *[other] تحميل طلبات السحب…
+}
+palette-no-open-pull-requests = { $forge ->
+    [gitlab] لا توجد طلبات دمج مفتوحة
+   *[other] لا توجد طلبات سحب مفتوحة
+}
+palette-footer-check-out = استخراج
+palette-footer-create = إنشاء
+palette-footer-choose = اختيار
+palette-action-start-in-new-worktree = البدء في شجرة عمل جديدة
+palette-action-check-out = استخراج
+palette-action-work-on-it = العمل عليه
+palette-action-copy-link = نسخ الرابط
+palette-action-copy-number = نسخ الرقم
+palette-action-create-worktree = إنشاء شجرة عمل
+palette-action-choose-base = اختيار الفرع الأساسي
+palette-start-agent-on = بدء { $provider } للعمل على «{ $query }»
+palette-in-new-worktree = في شجرة عمل جديدة
+palette-new-branch = فرع جديد { $name }
+palette-new-branch-from = من { $base }
+palette-new-branch-choose-base = اختيار الأساس
+palette-branch-note-default = افتراضي
+palette-branch-note-current = شجرة العمل هذه
+palette-branch-note-remote = بعيد
+palette-no-branches = لا توجد فروع
+palette-no-branch-named = لا يوجد فرع باسم «{ $query }»
+palette-search-new-worktree = { $forge ->
+    [gitlab] سمِّ فرعًا أو صِف مهمة أو الصق طلب دمج
+   *[other] سمِّ فرعًا أو صِف مهمة أو الصق طلب سحب
+}
+palette-search-new-worktree-no-forge = سمِّ فرعًا أو صِف مهمة
+palette-action-open-review-request = { $forge ->
+    [gitlab] فتح طلب الدمج !{ $number }
+   *[other] فتح طلب السحب #{ $number }
+}
+palette-action-create-and-start = إنشاء وبدء { $provider }
+palette-search-projects = اختيار مشروع
+palette-mode-projects = المشاريع
+palette-section-branches = الفروع
+palette-section-look-up = بحث عن
+palette-loading-branches = تحميل الفروع…
+palette-no-open-pull-request = { $forge ->
+    [gitlab] لا يوجد طلب دمج مفتوح
+   *[other] لا يوجد طلب سحب مفتوح
+}
+palette-pull-request-number = { $forge ->
+    [gitlab] طلب دمج !{ $number }
+   *[other] طلب سحب #{ $number }
+}
+palette-new-worktree-in = شجرة عمل جديدة في { $project }
+palette-quick-new-worktree-in = في { $project }
+history-button-tooltip = السجل
+usage-window-minutes = { $count ->
+    [one] دقيقة واحدة
+    [two] دقيقتان
+    [few] { $count } دقائق
+    [many] { $count } دقيقةً
+   *[other] { $count } دقيقة
+}
+usage-window-hours = { $count ->
+    [one] ساعة واحدة
+    [two] ساعتان
+    [few] { $count } ساعات
+    [many] { $count } ساعةً
+   *[other] { $count } ساعة
+}
+usage-window-days = { $count ->
+    [one] يوم واحد
+    [two] يومان
+    [few] { $count } أيام
+    [many] { $count } يومًا
+   *[other] { $count } يوم
+}
+usage-window-weeks = { $count ->
+    [one] أسبوع واحد
+    [two] أسبوعان
+    [few] { $count } أسابيع
+    [many] { $count } أسبوعًا
+   *[other] { $count } أسبوع
+}
+usage-window-all-models = كل النماذج
+usage-gauge-window-reached = تم بلوغ حد { $window }
+usage-gauge-reached = تم بلوغ الحد
+usage-limit-no-reset = لم يُبلَّغ عن وقت إعادة التعيين
+usage-limit-back = متاح مجددًا { $time }
+usage-limit-in = خلال { $duration }
+usage-account-until = { $window }، حتى { $time }
+usage-account-back-at = { $window }، متاح مجددًا عند { $time }
+usage-credits-balance = { $amount } رصيد
+usage-details = تفاصيل الاستخدام
+usage-details-runs-out = بهذا المعدل، قد ينفد { $time }
+usage-details-lasts = بهذا المعدل، سيكفي حتى إعادة التعيين
+usage-details-used-up = استُنفدت { $window } حتى { $time }
+usage-details-estimate = تقدير مبني على متوسط استخدامك منذ بداية هذه الفترة. يتغير مع تغيّر استخدامك؛ أما وقت إعادة التعيين فلا يتغير.
+usage-details-no-reset = لم يُبلّغ { $provider } عن موعد إعادة تعيين هذه الفترة، لذا لا توجد توقعات.
+usage-details-source = تأتي الحدود وأوقات إعادة التعيين من { $provider }. لا يظهر الحد إلا عند الإبلاغ عنه لهذا الحساب.
+chat-artifact-open-in-app-browser = المتصفح داخل التطبيق
+chat-artifact-open-in-default-browser = المتصفح الافتراضي
+bookmarks-title = الإشارات المرجعية
+bookmarks-search-placeholder = البحث في الإشارات المرجعية…
+bookmarks-section-this-chat = هذه المحادثة
+bookmarks-saved-label = محفوظة
+bookmarks-untitled-chat = محادثة بلا عنوان
+bookmarks-loading = تحميل الإشارات المرجعية…
+bookmarks-load-failed = لم تُحمَّل الإشارات المرجعية
+bookmarks-load-failed-hint = ردودك المحفوظة لا تزال موجودة.
+bookmarks-load-failed-again-hint = لا تزال لا تُحمَّل. ردودك المحفوظة لا تزال موجودة.
+bookmarks-this-chat-load-failed = لم تُحمَّل إشارات هذه المحادثة المرجعية
+bookmarks-other-chats-load-failed = لم تُحمَّل الإشارات المرجعية للمحادثات الأخرى
+bookmarks-try-again = إعادة المحاولة
+bookmarks-empty-title = احتفظ بالردود التي تستحق إعادة القراءة
+bookmarks-empty-hint = مرّر المؤشر فوق رد وانقر على الإشارة المرجعية. تتجمع هنا الردود المحفوظة من كل المحادثات.
+bookmarks-no-matches = لا توجد إشارات مرجعية تطابق «{ $query }»
+bookmarks-untitled-response = رد بلا عنوان
+bookmarks-add = إضافة الرد إلى الإشارات المرجعية
+bookmarks-remove = إزالة الإشارة المرجعية
+bookmarks-saved-ago = حُفظت { $elapsed }
+bookmarks-open-beside = فتح بجانب هذه المحادثة
+bookmarks-response-streaming = يمكنك إضافة هذا الرد إلى الإشارات المرجعية عند اكتماله
+bookmarks-response-unavailable = الرد غير متاح
+bookmarks-save-failed = تعذّر حفظ الإشارة المرجعية. أعد المحاولة.
+bookmarks-remove-failed = تعذّرت إزالة الإشارة المرجعية. أعد المحاولة.
+notification-open = فتح
+chat-report-error = الإبلاغ عن هذه المشكلة
+menu-help = مساعدة
+menu-help-report-bug = الإبلاغ عن خطأ…
+menu-help-suggest-feature = طلب ميزة…
+issue-report-command-bug = الإبلاغ عن خطأ
+issue-report-command-feature = طلب ميزة
+issue-report-kind-bug = خطأ
+issue-report-kind-feature = ميزة
+issue-report-placeholder-bug = ماذا حدث؟ وماذا توقعت بدلًا من ذلك؟
+issue-report-placeholder-feature = ما الذي تحاول فعله؟
+issue-report-placeholder-error = ماذا كنت تفعل عند حدوث الفشل؟
+issue-report-error-title = فشل الدور: { $error }
+issue-report-title = العنوان
+issue-report-title-drafted = صيغت من كلماتك
+issue-report-title-from-error = من الخطأ
+issue-report-title-restored = مسودة محفوظة
+issue-report-draft-saved = حُفظ بلاغك كمسودة
+issue-report-action-discard = تجاهل المسودة
+issue-report-screenshot = لقطة شاشة
+issue-report-screenshots = لقطات شاشة
+issue-report-drop-now = أفلت لإرفاق الصور
+issue-report-drop-hint = أفلت لقطات الشاشة أو الصقها
+issue-report-drop-hint-review = أو أفلت واحدة هنا
+issue-report-capture-window = التقاط النافذة
+issue-report-choose-images = إرفاق صور…
+issue-report-screenshot-pending = جارٍ الالتقاط…
+issue-report-image-copied = نُسخت لقطة الشاشة. الصقها في البلاغ.
+issue-report-images-revealed = لقطات الشاشة في Finder. اسحبها إلى البلاغ.
+issue-report-review = مراجعة
+issue-report-post = نشر علنًا
+issue-report-review-title = مراجعة قبل النشر
+issue-report-review-comment-on = التعليق على #{ $number }
+issue-report-audience = يمكن لأي شخص على GitHub رؤية هذا
+issue-report-heading-bug = ماذا حدث؟
+issue-report-heading-feature = ما الذي تحاول فعله؟
+issue-report-field-app-version = إصدار التطبيق
+issue-report-field-os = نظام التشغيل
+issue-report-field-system = تفاصيل النظام
+issue-report-field-agent = وكيل البرمجة
+issue-report-field-error = خطأ
+issue-report-image-note = يقبل GitHub الصور في نموذجه الخاص فقط، لذا يُستكمل هذا البلاغ هناك. النص مُعبّأ ولقطة الشاشة في الحافظة لتلصقها.
+issue-report-images-note = يقبل GitHub الصور في نموذجه الخاص فقط، لذا يُستكمل هذا البلاغ هناك. النص مُعبّأ، ويُفتح Finder وفيه لقطات الشاشة لتسحبها.
+issue-report-checks-title = يُستحسن إضافته
+issue-report-check-expected = ما الذي توقعته
+issue-report-check-steps = خطوات إعادة إظهار المشكلة
+issue-report-check-screenshot = لقطة شاشة
+issue-report-check-today = كيف تتعامل معها اليوم
+issue-report-add-expected = توقعتُ
+issue-report-add-steps = خطوات إعادة إظهار المشكلة:
+    1.
+issue-report-add-today = حاليًا أنا
+issue-report-agent-title = دع وكيلًا يكتبه
+issue-report-agent-detail = يسأل عمّا ينقص ثم يكتب مسودة لتوافق عليها
+issue-report-agent-no-worktree = افتح شجرة عمل أولًا ليجد الوكيل مكانًا يعمل فيه
+issue-report-included = مُضمَّن
+issue-report-fact-error = رسالة الخطأ
+issue-report-fact-app = التطبيق { $version }
+issue-report-fact-system = تفاصيل النظام
+issue-report-similar-bugs = بلاغات مشابهة
+issue-report-similar-features = طلبات مشابهة
+issue-report-destination = مشكلة عامة في { $repo }
+issue-report-signed-out = سجّل الدخول إلى GitHub CLI للإرسال من هنا
+issue-report-match-open = #{ $number } مفتوحة بالفعل
+issue-report-match-votes = { $count ->
+    [one] لـ #{ $number } صوت واحد
+    [two] لـ #{ $number } صوتان
+    [few] لـ #{ $number } { $count } أصوات
+    [many] لـ #{ $number } { $count } صوتًا
+   *[other] لـ #{ $number } { $count } صوت
+}
+issue-report-continue-github = المتابعة على GitHub
+issue-report-add-details = إضافة تفاصيلي
+issue-report-upvote = تأييد
+issue-report-open-issue = فتح #{ $number }
+issue-report-sending = جارٍ الإرسال…
+issue-report-send-failed = تعذّر الإرسال. مسودتك لا تزال هنا.
+issue-report-filed = تم تسجيل #{ $number }
+issue-report-added = أُضيف إلى #{ $number }
+issue-report-upvoted = تم تأييد #{ $number }
+issue-report-copied = نُسخ البلاغ
+issue-report-actions-private = خاص
+issue-report-action-draft-agent = كتابة مسودة مع وكيل
+issue-report-action-copy-markdown = نسخ بصيغة Markdown
+issue-report-action-email = إرسال بالبريد الإلكتروني بشكل خاص

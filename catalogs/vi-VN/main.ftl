@@ -296,8 +296,7 @@ project-pinned = đã ghim
 project-no-worktrees-found = Không tìm thấy cây làm việc
 project-loading-merge-options = Tải các tùy chọn hợp nhất
 sidebar-add-project-to-start = Thêm dự án để bắt đầu
-sidebar-search-project-worktrees-placeholder = Tìm kiếm cây làm việc trong { $project }
-sidebar-search-hidden-worktrees-placeholder = Tìm kiếm cây làm việc bị ẩn trong { $project }
+
 sidebar-install-ssh-key = Cài đặt khóa SSH
 action-update = Cập nhật
 workspace-no-ai-background-tasks = Không AI tác vụ nền
@@ -604,8 +603,7 @@ worktree-create-branches-unavailable = Kho lưu trữ chưa được tải
 worktree-create-in-background = Tạo trong nền
 worktree-create-refresh-branches = Tải nhánh từ xa
 worktree-create-refresh-failed = Tải thất bại: { $error }
-worktree-create-return = Tạo ↵
-worktree-in-workspace = Trong không gian làm việc
+
 worktree-no-matching-branches = Không có nhánh tương ứng
 worktree-not-installed = Chưa cài đặt
 settings-sidebar-group-general = Tổng quan
@@ -1030,6 +1028,7 @@ settings-ai-reset-to-inherited = Đặt lại về kế thừa
 settings-ai-system-instructions-placeholder = Hướng dẫn hệ thống...
 settings-ai-user-message-placeholder = Tin nhắn người dùng...
 settings-ai-launch-flags-description = Được sử dụng cho mọi lần ra mắt nhà cung cấp này. Chúng được thêm vào trước.
+settings-ai-launch-flags-placeholders = Dùng { $placeholders } để chèn tên cây làm việc, nhánh hoặc dự án cho mỗi lần khởi chạy.
 settings-ai-profile-definitions = Định nghĩa hồ sơ
 settings-ai-global-default = Mặc định toàn cục
 settings-ai-workspace-override = Ghi đè không gian làm việc
@@ -1047,9 +1046,9 @@ settings-ai-all-models = Tất cả các mẫu
 settings-ai-select-models = Một số mẫu
 settings-ai-select-models-count = Chọn mẫu ({ $count })
 settings-ai-model-visibility = Khả năng hiển thị mô hình
-settings-ai-compliant-claude-tooltip = Khi tắt—hoặc trong không gian làm việc SSH—trò chuyện Claude sử dụng phương pháp vận chuyển -p có cấu trúc.
-settings-ai-compliant-claude-view = Chế độ xem Claude tuân thủ
-settings-ai-compliant-claude-view-description = Chạy các cuộc trò chuyện Claude cục bộ qua chế độ tương tác của Claude Code để giữ mức sử dụng trên gói đăng ký của bạn. SSH không gian làm việc sử dụng vận chuyển claude -p có cấu trúc.
+settings-ai-claude-interactive-mode-tooltip = Khi tắt—hoặc trong không gian làm việc SSH—trò chuyện Claude dùng chế độ in (claude -p).
+settings-ai-claude-interactive-mode = Chế độ tương tác
+settings-ai-claude-interactive-mode-description = Chạy các cuộc trò chuyện Claude cục bộ ở chế độ tương tác của Claude Code thay vì chế độ in (claude -p). Không gian làm việc SSH luôn dùng chế độ in.
 settings-ai-action-model-pins = Nâng cao — chân cho từng hành động của mô hình
 settings-ai-action-model-pins-description = Chỉ ghim mô hình cho các hành động cụ thể khi một bucket mặc định là không đủ.
 settings-ai-session-model-description = Mô hình mặc định được sử dụng cho các phiên làm việc mới.
@@ -1334,12 +1333,7 @@ worktree-context-placeholder = Mô tả những gì bạn muốn đại lý làm
 worktree-filter-branches-placeholder = Lọc cành cây...
 worktree-label-placeholder = Nhãn cây làm việc
 worktree-prompt-placeholder = Bạn đang làm gì vậy?
-worktree-search-branches-placeholder = Tìm kiếm các chi nhánh...
-worktree-search-branches-mrs-placeholder = Tìm kiếm các chi nhánh và MRs...
-worktree-search-branches-prs-placeholder = Tìm kiếm các chi nhánh và PRs...
-worktree-fetching-branches = Đi lấy cành cây...
-worktree-fetching-branches-mrs = Lấy cành cây và MRs...
-worktree-fetching-branches-prs = Lấy cành cây và PRs...
+
 right-panel-switch-stacked = Chuyển sang thiết bị đầu cuối xếp chồng
 right-panel-switch-bottom = Chuyển sang đầu cuối dưới cùng
 right-panel-switch-side-by-side = Chuyển sang đầu nối song song
@@ -1919,8 +1913,8 @@ settings-search-entry-agents-routing-thorough-actions-label = Hành động kỹ
 settings-search-entry-agents-routing-thorough-actions-description = Sửa lỗi CI, các lần gộp bị chặn, bình luận, thay đổi, xung đột và đánh giá.
 settings-search-entry-agents-providers-claude-code-provider-label = nhà cung cấp Claude Code
 settings-search-entry-agents-providers-claude-code-provider-description = Kích hoạt Claude Code và cấu hình các mẫu, hồ sơ và cờ phóng của nó.
-settings-search-entry-agents-providers-compliant-claude-view-label = Chế độ xem Claude tuân thủ
-settings-search-entry-agents-providers-compliant-claude-view-description = Chạy trò chuyện Claude qua chế độ tương tác của Claude Code để giữ mức sử dụng trên gói đăng ký của bạn.
+settings-search-entry-agents-providers-claude-interactive-mode-label = Chế độ tương tác của Claude
+settings-search-entry-agents-providers-claude-interactive-mode-description = Chạy các cuộc trò chuyện Claude cục bộ ở chế độ tương tác của Claude Code thay vì chế độ in (claude -p). Không gian làm việc SSH luôn dùng chế độ in. Áp dụng cho các cuộc trò chuyện mới mở.
 settings-search-entry-agents-providers-codex-provider-label = nhà cung cấp Codex
 settings-search-entry-agents-providers-codex-provider-description = Kích hoạt Codex và cấu hình các mẫu, hồ sơ và cờ phóng của nó.
 settings-search-entry-agents-providers-pi-provider-label = Pi provider
@@ -2020,7 +2014,7 @@ settings-ai-provider-section-chat = Chat
 settings-ai-provider-section-runtime = Môi trường chạy
 settings-ai-provider-profiles-description = Tài khoản và thư mục cấu hình của nhà cung cấp này.
 settings-ai-provider-manage-profiles = Quản lý hồ sơ
-settings-ai-provider-antigravity-description = Kích hoạt Antigravity làm nhà cung cấp terminal (yêu cầu CLI `agy` cài đặt Antigravity).
+settings-ai-provider-antigravity-description = Bật hỗ trợ trò chuyện và terminal Antigravity (cần cài Antigravity CLI `agy`).
 settings-ai-provider-hermes-description = Kích hoạt Hermes như một nhà cung cấp terminal (yêu cầu cài đặt Hermes Agent `hermes`).
 settings-ai-provider-qwen-description = Kích hoạt Qwen Code như một nhà cung cấp terminal (yêu cầu cài đặt Qwen Code CLI `qwen` cài đặt).
 settings-ai-provider-kimi-description = Kích hoạt mã Kimi làm nhà cung cấp chat và terminal (yêu cầu mã Kimi hiện tại CLI `kimi` đã cài đặt).
@@ -2107,27 +2101,9 @@ workspace-remote-forge-cli-not-authenticated-hint = Mẹo: { $cli } trên máy c
 workspace-remote-forge-cli-missing-hint = Mẹo: cài đặt { $cli } trên máy chủ và chạy `{ $cli } auth login` để tạo { $kind } với agent.
 workspace-review-request-url-copied = Đã sao chép { $kind } URL
 workspace-review-request-none-yet = Nhánh này chưa có { $kind }
-worktree-prompt = Đề bài
-worktree-branches = Các chi nhánh
-worktree-merge-requests = Yêu cầu hợp nhất
-worktree-pull-requests = Yêu cầu kéo
-worktree-review-requests = Xem xét các yêu cầu
-worktree-tab-with-count = { $label } ({ $count })
-worktree-no-open-merge-requests = Không có yêu cầu hợp nhất mở
-worktree-no-open-pull-requests = Không có pull request đang mở
-worktree-no-open-review-requests = Không có yêu cầu xem xét mở
-worktree-no-branches = Không có nhánh
+
 common-no-matches = Không có kết quả trùng khớp
-worktree-gitlab-cli-missing = Không thể tải yêu cầu hợp nhất: GitLab CLI (`glab`) chưa được cài đặt hoặc không có trên PATH. Cài đặt `glab`, xác thực với `glab auth login`, rồi thử lại.
-worktree-gitlab-auth-required = Không thể tải yêu cầu hợp nhất: GitLab CLI (`glab`) chưa được xác thực. Chạy `glab auth login` cho máy chủ GitLab này, rồi thử lại.
-worktree-github-auth-required = Không thể tải pull requests: GitHub CLI (`gh`) không được xác thực cho máy chủ này. Chạy `gh auth login --hostname <host>` rồi thử lại.
-worktree-github-load-error = Không thể tải pull requests: { $error }
-worktree-gitlab-load-error = Không thể tải các yêu cầu gộp: { $error }
-worktree-bitbucket-cli-missing = Không thể tải pull request: Bitbucket CLI (`bkt`) chưa được cài đặt hoặc không có trên PATH. Cài đặt `bkt`, chạy `bkt auth login https://bitbucket.org --kind cloud --web-token`, tạo ngữ cảnh bằng `bkt context create cloud --host api.bitbucket.org --workspace <workspace> --set-active`, rồi thử lại.
-worktree-bitbucket-auth-required = Không thể tải pull request: Bitbucket CLI (`bkt`) chưa được xác thực. Chạy `bkt auth login https://bitbucket.org --kind cloud --web-token`, rồi thử lại.
-worktree-bitbucket-no-context = Không thể tải pull request: { $error }
-worktree-bitbucket-load-error = Không thể tải pull request: { $error }
-worktree-review-request-load-error = Không thể tải các yêu cầu xem xét: { $error }
+
 remote-cli-install-succeeded = Đã cài đặt { $app_name } CLI { $package } (api={ $api }, watch={ $watch }, hooks={ $hooks }) trên remote.
 remote-cli-install-failed = CLI cài đặt thất bại: { $error }
 chat-composer-placeholder-active = Gõ một tin nhắn...
@@ -2746,20 +2722,16 @@ usage-meter-error = Không thể tải dữ liệu sử dụng
 usage-meter-loading = Đang tải dữ liệu sử dụng…
 usage-meter-outdated = Dữ liệu sử dụng đã cũ
 usage-meter-updated = Đã cập nhật { $ago }
-usage-meter-resets = Đặt lại sau { $duration }
-usage-meter-window-session = Phiên
+
 usage-meter-window-daily = Hàng ngày
 usage-meter-window-weekly = Hàng tuần
 usage-meter-window-monthly = Hàng tháng
-usage-meter-window-other = Khác
-usage-meter-all-providers = Tất cả nhà cung cấp
+
 usage-meter-percent-left = Còn { $percent }%
 usage-meter-no-account = Chưa chọn tài khoản
 usage-meter-now = bây giờ
 usage-meter-default-account = Mặc định
-usage-popover-runs-out = Hết { $time }, đặt lại { $reset }
-usage-popover-runs-out-then-credits = Hết { $time }, sau đó dùng tín dụng
-usage-popover-using-credits = Đang dùng tín dụng
+
 usage-api-key = Khóa API
 usage-api-key-week = ước tính tuần này
 usage-api-key-today = { $amount } hôm nay
@@ -2774,8 +2746,7 @@ usage-popover-window-left = { $window } còn lại
 usage-popover-updating = Đang cập nhật…
 usage-popover-retry = Thử lại
 usage-popover-accounts = Tài khoản
-usage-popover-in-use = Đang dùng
-usage-popover-unused = { $count } chưa dùng
+
 usage-graph-on-pace = Đúng nhịp
 usage-graph-in-reserve = Dư { $percent }%
 usage-graph-behind = Vượt nhịp { $percent }%
@@ -2784,10 +2755,9 @@ usage-graph-lasts = Đủ dùng đến khi đặt lại
 usage-graph-collecting = Biểu đồ sẽ đầy dần khi có số liệu
 usage-instrument-gauge = Đồng hồ
 usage-instrument-graph = Biểu đồ
-usage-popover-no-other-limits = Không có giới hạn khác
+
 usage-popover-no-data = Chưa có mức dùng từ { $providers }
-usage-popover-more = Thêm
-usage-popover-less = Ít hơn
+
 tool-verb-ran = Đã chạy
 tool-verb-running = Đang chạy
 tool-verb-messaging = Đang nhắn tin cho
@@ -3339,7 +3309,7 @@ workspace-fx-remote-history-unsupported = Terminal FX từ xa chưa hỗ trợ l
 settings-keybinding-action-rename-selected-entry = Đổi tên mục đã chọn
 settings-keybinding-action-chat-effort-backward = Chuyển ngược mức nỗ lực trò chuyện
 worktree-preparing = Đang chuẩn bị cây làm việc…
-chat-queued-until-worktree-ready = Bắt đầu khi cây làm việc sẵn sàng
+chat-queued-until-worktree-ready = Gửi khi sẵn sàng
 chat-delivery-unconfirmed = Chưa xác nhận đã gửi
 chat-delivery-unconfirmed-retry = Kiểm tra cuộc trò chuyện trước khi thử lại; tin nhắn này có thể đã được gửi.
 chat-answer-pending-delivery = Đang chờ gửi
@@ -3554,22 +3524,10 @@ usage-reset-busy = Vẫn đang cập nhật. Hãy trượt lại sau giây lát
 usage-reset-unavailable = Không có lượt đặt lại nào
 usage-credits = Tín dụng
 usage-credits-unlimited = Không giới hạn
-usage-account-resets = { $count ->
-    [one] 1 lượt đặt lại
-   *[other] { $count } lượt đặt lại
-}
-usage-account-credits = { $amount } tín dụng
-usage-account-ring-window = { $account } { $window }
-usage-account-window-left = { $window } { $percent }%
-usage-graph-account-left = { $window } còn lại của { $account }
-usage-graph-now = Bây giờ
-usage-accounts-on-gauge = Trên đồng hồ
+
 usage-accounts-sign-in = Đăng nhập
 usage-accounts-signing-in = Đang đăng nhập…
-usage-accounts-single = { $count ->
-    [1] { $providers } có một tài khoản.
-   *[other] { $providers } mỗi bên có một tài khoản.
-}
+
 usage-account-empty-title = Chưa có mức dùng trên { $account }
 usage-account-empty-body = Số liệu sẽ xuất hiện sau phiên đầu tiên của hồ sơ này.
 usage-account-signed-out-title = { $account } chưa đăng nhập
@@ -3580,3 +3538,357 @@ usage-graph-legend-even = Nhịp đều
 usage-graph-legend-projection = Dự báo
 usage-graph-legend-estimated = Ước tính
 usage-graph-estimated = Ước tính từ hoạt động trên Mac này
+
+browser-annotations-send-short = Gửi
+browser-agent-take-over = Tiếp quản
+browser-agent-you-have-control = Bạn đang điều khiển
+browser-agent-hand-back = Trả lại quyền điều khiển
+browser-agent-is-waiting = { $agent } đang chờ
+browser-agent-handed-back-message = Tôi đã trả lại quyền điều khiển trình duyệt. Hãy tiếp tục từ chỗ bạn dừng lại.
+browser-agent-cue-clicking = Đang nhấp vào “{ $name }”
+browser-agent-cue-clicking-bare = Đang nhấp
+browser-agent-cue-turning-on = Đang bật “{ $name }”
+browser-agent-cue-turning-off = Đang tắt “{ $name }”
+browser-agent-cue-selecting = Đang chọn “{ $name }”
+browser-agent-cue-typing = Đang nhập “{ $value }”
+browser-agent-cue-typing-bare = Đang nhập
+browser-agent-cue-pressing = Đang nhấn { $key }
+browser-agent-cue-hovering = Đang di chuột lên “{ $name }”
+browser-agent-cue-checking = Đang kiểm tra “{ $name }”
+browser-agent-cue-reading = Đang đọc trang
+browser-agent-cue-scrolling = Đang cuộn
+browser-agent-cue-capturing = Đang chụp ảnh màn hình
+browser-agent-cue-capturing-element = Đang chụp ảnh màn hình “{ $name }”
+browser-agent-cue-capturing-full = Đang chụp toàn bộ trang
+browser-agent-cue-uploading = Đang tải lên { $file }
+browser-agent-cue-running-script = Đang chạy tập lệnh
+browser-agent-cue-scheme-dark = Đang chuyển sang chế độ tối
+browser-agent-cue-scheme-light = Đang chuyển sang chế độ sáng
+browser-agent-cue-waiting = Đang chờ trang
+browser-agent-cue-opening = Đang mở { $url }
+browser-agent-cue-going-back = Đang quay lại
+browser-agent-cue-going-forward = Đang tiến tới
+browser-agent-cue-reloading = Đang tải lại trang
+browser-agent-cue-new-tab = Đang mở thẻ mới
+browser-agent-cue-working = Đang làm việc
+sidebar-search-project-placeholder = Tìm trong { $project }
+sidebar-search-hidden-worktrees-count-placeholder = Tìm trong { $count } worktree bị ẩn
+project-search-filter-hint = Thử running, open, merged hoặc #number
+project-search-all-projects = Tìm trong tất cả dự án
+project-search-hand-off-hint = Tất cả dự án
+project-search-section-worktrees = Worktree
+project-search-section-filter-hint = Thử một mục, running, open hoặc #number
+history-empty-title = Mọi cuộc trò chuyện đã đóng, chỉ cách một cú nhấp
+history-empty-hint = Các cuộc trò chuyện bạn đóng trong worktree này sẽ xuất hiện ở đây, sẵn sàng để bạn tiếp tục từ chỗ đã dừng.
+history-empty-filtered-title = Chưa có cuộc trò chuyện với { $agent }
+history-show-all-agents = Hiện tất cả tác nhân
+settings-keybinding-action-toggle-bookmarks = Bật/tắt dấu trang
+settings-keybinding-action-previous-bookmark = Dấu trang trước
+settings-keybinding-action-next-bookmark = Dấu trang tiếp theo
+worktree-step-checking-out = { $forge ->
+    [gitlab] Đang checkout !{ $number }
+   *[other] Đang checkout #{ $number }
+}
+worktree-step-checking-out-branch = Đang checkout { $branch }
+worktree-step-creating-branch-from = Đang tạo nhánh từ { $base }
+worktree-step-creating-branch = Đang tạo nhánh
+worktree-step-naming = Đang đặt tên theo tác vụ của bạn
+worktree-step-setup = Đang chạy thiết lập
+worktree-step-opening-agent = Đang mở { $agent }
+chat-waiting-on-agents = Đang chờ { $count } tác nhân…
+chat-shell-mode = Lệnh shell
+chat-shell-mode-detail = Chạy trong không gian làm việc này. Dùng Thêm vào cuộc trò chuyện trên kết quả để cho tác nhân xem.
+chat-shell-add-to-chat = Thêm vào cuộc trò chuyện
+markdown-run-command = Mở trong terminal
+chat-shell-exit = thoát { $code }
+chat-shell-stopped = đã dừng
+chat-shell-finished = đã hoàn tất
+chat-shell-no-output = Không có đầu ra
+chat-shell-show-all = Hiện tất cả { $count } dòng
+chat-shell-run-again = Chạy lại
+chat-shell-open-in-terminal = Mở trong terminal
+chat-shell-running = Đang chạy
+chat-shell-stopping = Đang dừng
+chat-shell-stop = Dừng
+chat-shell-stop-hint = Dừng (Esc)
+chat-shell-unavailable = Hiện không thể dùng lệnh shell trong cuộc trò chuyện này.
+chat-shell-open-refused = Không thể mở lệnh này trong terminal mà không chạy. Hãy sao chép lệnh.
+chat-shell-start-failed = Không thể chạy lệnh: { $error }
+chat-files-changed-diff-unavailable = Bản diff này không còn khả dụng.
+chat-files-changed-diff-no-lines = Chỉ tên hoặc quyền của tệp này đã thay đổi.
+chat-files-changed-diff-binary = Tệp nhị phân không có diff theo dòng để hiển thị.
+chat-files-changed-diff-not-utf8 = Tệp này không phải văn bản UTF-8 nên không thể hiển thị các dòng.
+chat-files-changed-diff-too-large = Bản diff này quá lớn để hiển thị ở đây.
+chat-files-changed-binary = Nhị phân
+chat-files-changed-review-tooltip = Xem xét các tệp này và gửi phản hồi vào cuộc trò chuyện này
+chat-files-changed-review-tooltip-stale-snapshot = Xem xét các tệp này. { $count } tệp lại thay đổi ở lượt sau; lượt này hiển thị chúng ở trạng thái khi lượt này kết thúc.
+chat-files-changed-review-tooltip-stale-current = Xem xét các tệp này. { $count } tệp lại thay đổi ở lượt sau; chế độ xem xét hiển thị trạng thái hiện tại.
+chat-diff-unchanged-lines = { $count } dòng không thay đổi
+chat-files-changed-shared = Một cuộc trò chuyện khác đang làm việc trong worktree này ở lượt này. Tệp được cả hai cuộc trò chuyện chỉnh sửa sẽ hiển thị thay đổi của cả hai.
+chat-files-changed-unattributed = Một cuộc trò chuyện khác đang làm việc trong worktree này ở lượt này. Các tệp mờ đã thay đổi khi cuộc trò chuyện đó hoạt động và có thể là thay đổi của nó.
+chat-files-changed-snapshot-failed = Không thể chụp trạng thái worktree của lượt này, nên chỉ liệt kê các tệp mà công cụ của lượt này báo cáo.
+palette-mode-all = Tất cả
+palette-mode-conversations = Cuộc trò chuyện
+palette-search-all = Tìm tác nhân, worktree, lệnh, tệp…
+palette-search-files-short = Tìm tệp…
+palette-section-needs-you = Cần bạn
+palette-section-running = Đang chạy
+palette-section-recent = Gần đây
+palette-section-suggested = Đề xuất
+palette-section-draft = Bản nháp
+palette-section-actions = Thao tác
+palette-quick-new-chat = Cuộc trò chuyện mới trong { $worktree }
+palette-quick-new-worktree = Worktree mới
+palette-quick-new-terminal = Terminal mới
+palette-quick-feedback = Báo lỗi hoặc yêu cầu tính năng
+palette-section-top-hit = Kết quả hàng đầu
+palette-section-matches = Kết quả phù hợp
+palette-section-tabs = Thẻ
+palette-section-worktrees = Worktree
+palette-section-conversations = Cuộc trò chuyện
+palette-section-commands = Lệnh
+palette-section-files = Tệp
+palette-section-changed = Đã thay đổi trên nhánh này
+palette-files-show-all = Hiện tất cả { $count }
+palette-footer-branches = Nhánh
+palette-section-use-query-with = Dùng “{ $query }” với
+palette-ask-agent-new-chat = Cuộc trò chuyện { $provider } mới
+palette-search-conversation-history = Tìm trong lịch sử trò chuyện
+palette-suggest-review-comments = { $count } nhận xét xem xét
+palette-suggest-checks-failing = Kiểm tra không đạt
+palette-suggest-files-changed = { $count } tệp đã thay đổi
+palette-current = Hiện tại
+palette-empty-scope = Không có kết quả trong { $scope } khớp với “{ $query }”
+palette-empty-recent = Chưa có mục nào gần đây
+palette-search-everything = Tìm mọi thứ
+palette-footer-run = Chạy
+palette-footer-start = Bắt đầu
+palette-footer-search = Tìm
+palette-footer-show = Hiện
+palette-footer-report = Báo cáo
+palette-footer-request = Yêu cầu
+palette-report-as-bug = Báo cáo dưới dạng lỗi
+palette-report-as-feature = Yêu cầu dưới dạng tính năng
+palette-finish-bug-report = Hoàn tất báo cáo lỗi
+palette-finish-feature-request = Hoàn tất yêu cầu tính năng
+palette-actions = Thao tác
+palette-actions-search = Tìm thao tác…
+palette-actions-no-match = Không có thao tác nào khớp với “{ $query }”
+palette-action-open = Mở
+palette-action-switch-worktree = Chuyển sang worktree
+palette-action-search-inside = Tìm trong worktree này
+palette-action-open-pr = Mở pull request #{ $number }
+palette-action-copy-worktree-path = Sao chép đường dẫn worktree
+palette-action-group-ask-agent = Hỏi tác nhân trong worktree này
+palette-action-open-tab = Mở thẻ
+palette-action-preview = Xem trước
+palette-action-close-tab = Đóng thẻ
+palette-action-open-conversation = Mở cuộc trò chuyện
+palette-action-open-in = Mở trong…
+palette-action-show-ignored = Hiện tệp bị bỏ qua
+palette-action-run-command = Chạy lệnh
+palette-action-start-in = Bắt đầu trong { $worktree }
+palette-action-group-another-agent = Tác nhân khác
+palette-action-start-with = Bắt đầu với { $provider }
+palette-mode-pull-requests = { $forge ->
+    [gitlab] Merge request
+   *[other] Pull request
+}
+palette-mode-branch-from = Tạo nhánh từ
+palette-search-pull-requests = { $forge ->
+    [gitlab] Tìm merge request hoặc dán liên kết…
+   *[other] Tìm pull request hoặc dán liên kết…
+}
+palette-search-branch-from = Tạo nhánh từ…
+palette-section-pull-requests = { $forge ->
+    [gitlab] Merge request
+   *[other] Pull request
+}
+palette-section-with-worktree = Có worktree
+palette-section-open-pull-requests = Đang mở
+palette-section-review-requested = Đã yêu cầu xem xét
+palette-section-needs-your-review = Cần bạn xem xét
+palette-section-yours = Của bạn
+palette-section-open-review-requests = { $forge ->
+    [gitlab] Merge request đang mở
+   *[other] Pull request đang mở
+}
+palette-loading-pull-requests = { $forge ->
+    [gitlab] Đang tải merge request…
+   *[other] Đang tải pull request…
+}
+palette-no-open-pull-requests = { $forge ->
+    [gitlab] Không có merge request đang mở
+   *[other] Không có pull request đang mở
+}
+palette-footer-check-out = Checkout
+palette-footer-create = Tạo
+palette-footer-choose = Chọn
+palette-action-start-in-new-worktree = Bắt đầu trong worktree mới
+palette-action-check-out = Checkout
+palette-action-work-on-it = Làm việc với mục này
+palette-action-copy-link = Sao chép liên kết
+palette-action-copy-number = Sao chép số
+palette-action-create-worktree = Tạo worktree
+palette-action-choose-base = Chọn nhánh cơ sở
+palette-start-agent-on = Bắt đầu { $provider } với “{ $query }”
+palette-in-new-worktree = trong worktree mới
+palette-new-branch = Nhánh mới { $name }
+palette-new-branch-from = từ { $base }
+palette-new-branch-choose-base = Chọn cơ sở
+palette-branch-note-default = mặc định
+palette-branch-note-current = worktree này
+palette-branch-note-remote = từ xa
+palette-no-branches = Không có nhánh
+palette-no-branch-named = Không có nhánh tên “{ $query }”
+palette-search-new-worktree = { $forge ->
+    [gitlab] Đặt tên nhánh, mô tả tác vụ hoặc dán MR
+   *[other] Đặt tên nhánh, mô tả tác vụ hoặc dán PR
+}
+palette-search-new-worktree-no-forge = Đặt tên nhánh hoặc mô tả tác vụ
+palette-action-open-review-request = { $forge ->
+    [gitlab] Mở merge request !{ $number }
+   *[other] Mở pull request #{ $number }
+}
+palette-action-create-and-start = Tạo và bắt đầu { $provider }
+palette-search-projects = Chọn dự án
+palette-mode-projects = Dự án
+palette-section-branches = Nhánh
+palette-section-look-up = Tra cứu
+palette-loading-branches = Đang tải nhánh…
+palette-no-open-pull-request = { $forge ->
+    [gitlab] Không có merge request đang mở
+   *[other] Không có pull request đang mở
+}
+palette-pull-request-number = { $forge ->
+    [gitlab] Merge request !{ $number }
+   *[other] Pull request #{ $number }
+}
+palette-new-worktree-in = Worktree mới trong { $project }
+palette-quick-new-worktree-in = trong { $project }
+history-button-tooltip = Lịch sử
+usage-window-minutes = { $count } phút
+usage-window-hours = { $count } giờ
+usage-window-days = { $count } ngày
+usage-window-weeks = { $count } tuần
+usage-window-all-models = Tất cả mô hình
+usage-gauge-window-reached = Đã đạt giới hạn { $window }
+usage-gauge-reached = Đã đạt giới hạn
+usage-limit-no-reset = Không có thông tin về thời gian đặt lại
+usage-limit-back = Khả dụng trở lại { $time }
+usage-limit-in = sau { $duration }
+usage-account-until = { $window }, đến { $time }
+usage-account-back-at = { $window }, khả dụng lại lúc { $time }
+usage-credits-balance = { $amount } tín dụng
+usage-details = Chi tiết sử dụng
+usage-details-runs-out = Với tốc độ này, có thể hết { $time }
+usage-details-lasts = Với tốc độ này, sẽ đủ đến khi đặt lại
+usage-details-used-up = { $window } đã dùng hết cho đến { $time }
+usage-details-estimate = Ước tính từ mức sử dụng trung bình của bạn kể từ đầu khoảng thời gian này. Ước tính thay đổi theo mức sử dụng; thời gian đặt lại thì không.
+usage-details-no-reset = { $provider } không báo thời gian đặt lại khoảng này nên không có dự báo.
+usage-details-source = Giới hạn và thời gian đặt lại do { $provider } cung cấp. Giới hạn chỉ hiển thị khi được báo cáo cho tài khoản này.
+chat-artifact-open-in-app-browser = Trình duyệt trong ứng dụng
+chat-artifact-open-in-default-browser = Trình duyệt mặc định
+bookmarks-title = Dấu trang
+bookmarks-search-placeholder = Tìm dấu trang…
+bookmarks-section-this-chat = Cuộc trò chuyện này
+bookmarks-saved-label = Đã lưu
+bookmarks-untitled-chat = Cuộc trò chuyện chưa có tiêu đề
+bookmarks-loading = Đang tải dấu trang…
+bookmarks-load-failed = Không tải được dấu trang
+bookmarks-load-failed-hint = Các câu trả lời đã lưu vẫn còn đó.
+bookmarks-load-failed-again-hint = Vẫn chưa tải được. Các câu trả lời đã lưu vẫn còn đó.
+bookmarks-this-chat-load-failed = Không tải được dấu trang của cuộc trò chuyện này
+bookmarks-other-chats-load-failed = Không tải được dấu trang của các cuộc trò chuyện khác
+bookmarks-try-again = Thử lại
+bookmarks-empty-title = Giữ lại những câu trả lời đáng đọc lại
+bookmarks-empty-hint = Di chuột lên câu trả lời và nhấp vào dấu trang. Các câu trả lời đã lưu từ mọi cuộc trò chuyện sẽ tập hợp ở đây.
+bookmarks-no-matches = Không có dấu trang nào khớp với “{ $query }”
+bookmarks-untitled-response = Câu trả lời chưa có tiêu đề
+bookmarks-add = Đánh dấu câu trả lời
+bookmarks-remove = Xóa dấu trang
+bookmarks-saved-ago = Đã lưu { $elapsed }
+bookmarks-open-beside = Mở cạnh cuộc trò chuyện này
+bookmarks-response-streaming = Bạn có thể đánh dấu câu trả lời này khi hoàn tất
+bookmarks-response-unavailable = Câu trả lời không khả dụng
+bookmarks-save-failed = Không thể lưu dấu trang. Hãy thử lại.
+bookmarks-remove-failed = Không thể xóa dấu trang. Hãy thử lại.
+notification-open = Mở
+chat-report-error = Báo cáo sự cố này
+menu-help = Trợ giúp
+menu-help-report-bug = Báo lỗi…
+menu-help-suggest-feature = Yêu cầu tính năng…
+issue-report-command-bug = Báo lỗi
+issue-report-command-feature = Yêu cầu tính năng
+issue-report-kind-bug = Lỗi
+issue-report-kind-feature = Tính năng
+issue-report-placeholder-bug = Điều gì đã xảy ra? Bạn đã mong đợi điều gì?
+issue-report-placeholder-feature = Bạn đang muốn làm gì?
+issue-report-placeholder-error = Bạn đang làm gì khi xảy ra lỗi?
+issue-report-error-title = Lượt bị lỗi: { $error }
+issue-report-title = Tiêu đề
+issue-report-title-drafted = Soạn từ nội dung của bạn
+issue-report-title-from-error = Từ lỗi
+issue-report-title-restored = Bản nháp đã lưu
+issue-report-draft-saved = Đã lưu báo cáo thành bản nháp
+issue-report-action-discard = Hủy bản nháp
+issue-report-screenshot = Ảnh chụp màn hình
+issue-report-screenshots = Ảnh chụp màn hình
+issue-report-drop-now = Thả để đính kèm ảnh
+issue-report-drop-hint = Thả hoặc dán ảnh chụp màn hình
+issue-report-drop-hint-review = hoặc thả một ảnh vào đây
+issue-report-capture-window = Chụp cửa sổ
+issue-report-choose-images = Đính kèm ảnh…
+issue-report-screenshot-pending = Đang chụp…
+issue-report-image-copied = Đã sao chép ảnh chụp màn hình. Hãy dán vào báo cáo.
+issue-report-images-revealed = Ảnh chụp màn hình nằm trong Finder. Hãy kéo vào báo cáo.
+issue-report-review = Xem xét
+issue-report-post = Đăng công khai
+issue-report-review-title = Xem lại trước khi đăng
+issue-report-review-comment-on = Bình luận vào #{ $number }
+issue-report-audience = Bất kỳ ai trên GitHub đều có thể xem nội dung này
+issue-report-heading-bug = Điều gì đã xảy ra?
+issue-report-heading-feature = Bạn đang muốn làm gì?
+issue-report-field-app-version = Phiên bản ứng dụng
+issue-report-field-os = Hệ điều hành
+issue-report-field-system = Chi tiết hệ thống
+issue-report-field-agent = Tác nhân lập trình
+issue-report-field-error = Lỗi
+issue-report-image-note = GitHub chỉ nhận ảnh trong biểu mẫu riêng, nên báo cáo này sẽ được hoàn tất ở đó. Văn bản đã điền sẵn và ảnh chụp màn hình nằm trong bảng nhớ tạm để dán.
+issue-report-images-note = GitHub chỉ nhận ảnh trong biểu mẫu riêng, nên báo cáo này sẽ được hoàn tất ở đó. Văn bản đã điền sẵn và Finder mở các ảnh chụp màn hình để bạn kéo vào.
+issue-report-checks-title = Nên bổ sung
+issue-report-check-expected = Điều bạn mong đợi
+issue-report-check-steps = Các bước tái hiện
+issue-report-check-screenshot = Ảnh chụp màn hình
+issue-report-check-today = Cách bạn xử lý hiện tại
+issue-report-add-expected = Tôi mong đợi
+issue-report-add-steps = Các bước tái hiện:
+    1.
+issue-report-add-today = Hiện tại tôi
+issue-report-agent-title = Nhờ tác nhân viết
+issue-report-agent-detail = Tác nhân hỏi thông tin còn thiếu, rồi soạn bản nháp để bạn duyệt
+issue-report-agent-no-worktree = Hãy mở worktree trước để tác nhân có nơi làm việc
+issue-report-included = Đã bao gồm
+issue-report-fact-error = Thông báo lỗi
+issue-report-fact-app = Ứng dụng { $version }
+issue-report-fact-system = Chi tiết hệ thống
+issue-report-similar-bugs = Báo cáo tương tự
+issue-report-similar-features = Yêu cầu tương tự
+issue-report-destination = Issue công khai trong { $repo }
+issue-report-signed-out = Đăng nhập vào GitHub CLI để gửi từ đây
+issue-report-match-open = #{ $number } đã được mở
+issue-report-match-votes = #{ $number } có { $count } lượt bình chọn
+issue-report-continue-github = Tiếp tục trên GitHub
+issue-report-add-details = Thêm thông tin của tôi
+issue-report-upvote = Bình chọn ủng hộ
+issue-report-open-issue = Mở #{ $number }
+issue-report-sending = Đang gửi…
+issue-report-send-failed = Không thể gửi. Bản nháp vẫn còn ở đây.
+issue-report-filed = Đã gửi #{ $number }
+issue-report-added = Đã thêm vào #{ $number }
+issue-report-upvoted = Đã ủng hộ #{ $number }
+issue-report-copied = Đã sao chép báo cáo
+issue-report-actions-private = Riêng tư
+issue-report-action-draft-agent = Soạn nháp với tác nhân
+issue-report-action-copy-markdown = Sao chép dưới dạng Markdown
+issue-report-action-email = Gửi riêng qua email

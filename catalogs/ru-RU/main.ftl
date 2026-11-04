@@ -304,8 +304,7 @@ project-pinned = Удержано
 project-no-worktrees-found = Рабочих деревьев не найдено
 project-loading-merge-options = Загрузка опций слияния
 sidebar-add-project-to-start = Добавьте проект, чтобы начать
-sidebar-search-project-worktrees-placeholder = Искать рабочие деревья в { $project }
-sidebar-search-hidden-worktrees-placeholder = Искать скрытые рабочие деревья в { $project }
+
 sidebar-install-ssh-key = Установите SSH ключ
 action-update = Обновление
 workspace-no-ai-background-tasks = Без AI фоновых задач
@@ -618,8 +617,7 @@ worktree-create-branches-unavailable = Репозиторий ещё не заг
 worktree-create-in-background = Создавайте на фоне
 worktree-create-refresh-branches = Получить удалённые ветки
 worktree-create-refresh-failed = Не удалось получить: { $error }
-worktree-create-return = Создать ↵
-worktree-in-workspace = В рабочем пространстве
+
 worktree-no-matching-branches = Нет соответствующих ветвей
 worktree-not-installed = Не установлен
 settings-sidebar-group-general = Общие заведения
@@ -1044,6 +1042,7 @@ settings-ai-reset-to-inherited = Сброс на унаследование
 settings-ai-system-instructions-placeholder = Системные инструкции...
 settings-ai-user-message-placeholder = Сообщение пользователя...
 settings-ai-launch-flags-description = Используется при каждом запуске этого провайдера. Сначала добавляют их.
+settings-ai-launch-flags-placeholders = Используйте { $placeholders }, чтобы подставлять имя рабочего дерева, ветви или проекта при каждом запуске.
 settings-ai-profile-definitions = Определения профиля
 settings-ai-global-default = Глобальный дефолт
 settings-ai-workspace-override = Обойдение рабочего пространства
@@ -1061,9 +1060,9 @@ settings-ai-all-models = Все модели
 settings-ai-select-models = Избранные модели
 settings-ai-select-models-count = Избранные модели ({ $count })
 settings-ai-model-visibility = Видимость модели
-settings-ai-compliant-claude-tooltip = Когда он выключен — или находится в SSH рабочем пространстве — Claude чат использует структурированный транспорт claude -p.
-settings-ai-compliant-claude-view = Соответствующее Claude взгляд
-settings-ai-compliant-claude-view-description = Запускайте локальные Claude чаты в интерактивном режиме Claude Code, чтобы поддерживать использование на вашем тарифном плане. SSH рабочих пространствах используют структурированный транспорт claude -p.
+settings-ai-claude-interactive-mode-tooltip = Если выключено (или в рабочем пространстве SSH), чат Claude использует режим печати (claude -p).
+settings-ai-claude-interactive-mode = Интерактивный режим
+settings-ai-claude-interactive-mode-description = Запускать локальные чаты Claude в интерактивном режиме Claude Code вместо режима печати (claude -p). Рабочие пространства SSH всегда используют режим печати.
 settings-ai-action-model-pins = Advanced — контакты для каждой модели действия
 settings-ai-action-model-pins-description = Моделирование заклинаний для конкретных действий только тогда, когда по умолчанию ведро недостаточно.
 settings-ai-session-model-description = Модель по умолчанию используется для новых сессий.
@@ -1350,12 +1349,7 @@ worktree-context-placeholder = Опишите, над чем вы хотите, 
 worktree-filter-branches-placeholder = Фильтрующие ветви...
 worktree-label-placeholder = Метка Worktree
 worktree-prompt-placeholder = Над чем вы работаете?
-worktree-search-branches-placeholder = Поиск отделов...
-worktree-search-branches-mrs-placeholder = Обыск отделений и MRs...
-worktree-search-branches-prs-placeholder = Обыск ветвей и PRs...
-worktree-fetching-branches = Приносить ветки...
-worktree-fetching-branches-mrs = Собирать ветки и MRs...
-worktree-fetching-branches-prs = Собирать ветки и PRs...
+
 right-panel-switch-stacked = Переключение на стековый терминал
 right-panel-switch-bottom = Переключитесь на нижний терминал
 right-panel-switch-side-by-side = Переключитесь на терминал side by side
@@ -1937,8 +1931,8 @@ settings-search-entry-agents-routing-thorough-actions-label = Тщательны
 settings-search-entry-agents-routing-thorough-actions-description = Исправьте CI, заблокированные слияния, комментарии, изменения, конфликты и отзывы.
 settings-search-entry-agents-providers-claude-code-provider-label = Claude Code провайдер
 settings-search-entry-agents-providers-claude-code-provider-description = Включите Claude Code и настройте его модели, профили и флаги запуска.
-settings-search-entry-agents-providers-compliant-claude-view-label = Соответствующий Claude взгляд
-settings-search-entry-agents-providers-compliant-claude-view-description = Запустите Claude чат через интерактивный режим Claude Code, чтобы поддерживать использование на вашем тарифном плане.
+settings-search-entry-agents-providers-claude-interactive-mode-label = Интерактивный режим Claude
+settings-search-entry-agents-providers-claude-interactive-mode-description = Запускать локальные чаты Claude в интерактивном режиме Claude Code вместо режима печати (claude -p). Рабочие пространства SSH всегда используют режим печати. Применяется к новым чатам.
 settings-search-entry-agents-providers-codex-provider-label = Codex провайдер
 settings-search-entry-agents-providers-codex-provider-description = Включите Codex и настройте его модели, профили и флаги запуска.
 settings-search-entry-agents-providers-pi-provider-label = Провайдер Pi
@@ -2038,7 +2032,7 @@ settings-ai-provider-section-chat = Чат
 settings-ai-provider-section-runtime = Среда выполнения
 settings-ai-provider-profiles-description = Аккаунты и домашние каталоги конфигурации для этого поставщика.
 settings-ai-provider-manage-profiles = Управление профилями
-settings-ai-provider-antigravity-description = Включите Antigravity как провайдера терминала (требуется CLI `agy` установлен Antigravity).
+settings-ai-provider-antigravity-description = Включить чат и терминал Antigravity (требуется установленная Antigravity CLI `agy`).
 settings-ai-provider-hermes-description = Включите Hermes как поставщика терминала (требуется `hermes` установлен Hermes Agent).
 settings-ai-provider-qwen-description = Включите Qwen Code в качестве провайдера терминала (требуется CLI `qwen` установленный Qwen Code).
 settings-ai-provider-kimi-description = Включите Kimi код как провайдера чата и терминала (требуется текущий Kimi код CLI `kimi` установлен).
@@ -2125,27 +2119,9 @@ workspace-remote-forge-cli-not-authenticated-hint = Совет: { $cli } на х
 workspace-remote-forge-cli-missing-hint = Совет: установите { $cli } на хосте и запустите `{ $cli } auth login`, чтобы создать { $kind } с агентом.
 workspace-review-request-url-copied = Скопировано { $kind } URL
 workspace-review-request-none-yet = У этой ветки пока нет { $kind }
-worktree-prompt = Подсказка
-worktree-branches = Филиалы
-worktree-merge-requests = Запросы на слияние
-worktree-pull-requests = Pull requests
-worktree-review-requests = Запросы на рассмотрение
-worktree-tab-with-count = { $label } ({ $count })
-worktree-no-open-merge-requests = Нет открытых запросов на слияние
-worktree-no-open-pull-requests = Нет открытых pull заявок
-worktree-no-open-review-requests = Открытых запросов на рассмотрение не запрещается
-worktree-no-branches = Нет филиалов
+
 common-no-matches = Совпадений не было
-worktree-gitlab-cli-missing = Не удалось загрузить запросы на слияние: GitLab CLI (`glab`) не установлен или не находится на PATH. Установите `glab`, аутентифицируйтесь с помощью `glab auth login`, затем попробуйте снова.
-worktree-gitlab-auth-required = Не удалось загрузить запросы на слияние: GitLab CLI (`glab`) не аутентифицирован. Запустите `glab auth login` для этого GitLab хоста, затем попробуйте снова.
-worktree-github-auth-required = Не удалось загрузить pull request: GitHub CLI (`gh`) не аутентифицирован для этого хоста. Запустите `gh auth login --hostname <host>`, потом попробуйте снова.
-worktree-github-load-error = Не удалось загрузить pull request: { $error }
-worktree-gitlab-load-error = Не удалось загрузить запросы на слияние: { $error }
-worktree-bitbucket-cli-missing = Не удалось загрузить pull request: Bitbucket CLI (`bkt`) не установлен или отсутствует в PATH. Установите `bkt`, выполните `bkt auth login https://bitbucket.org --kind cloud --web-token`, создайте контекст командой `bkt context create cloud --host api.bitbucket.org --workspace <workspace> --set-active` и повторите попытку.
-worktree-bitbucket-auth-required = Не удалось загрузить pull request: Bitbucket CLI (`bkt`) не аутентифицирован. Выполните `bkt auth login https://bitbucket.org --kind cloud --web-token` и повторите попытку.
-worktree-bitbucket-no-context = Не удалось загрузить pull request: { $error }
-worktree-bitbucket-load-error = Не удалось загрузить pull request: { $error }
-worktree-review-request-load-error = Не удалось загрузить запросы на отзыв: { $error }
+
 remote-cli-install-succeeded = Установил { $app_name } CLI { $package } (api={ $api }, watch={ $watch }, крючки={ $hooks }) на пульт.
 remote-cli-install-failed = CLI установка не удалась: { $error }
 chat-composer-placeholder-active = Напиши сообщение...
@@ -2824,20 +2800,16 @@ usage-meter-error = Не удалось загрузить данные об и�
 usage-meter-loading = Загрузка данных об использовании…
 usage-meter-outdated = Данные об использовании устарели
 usage-meter-updated = Обновлено { $ago }
-usage-meter-resets = Сброс через { $duration }
-usage-meter-window-session = Сессия
+
 usage-meter-window-daily = День
 usage-meter-window-weekly = Неделя
 usage-meter-window-monthly = Месяц
-usage-meter-window-other = Другое
-usage-meter-all-providers = Все провайдеры
+
 usage-meter-percent-left = Осталось { $percent }%
 usage-meter-no-account = Аккаунт не выбран
 usage-meter-now = сейчас
 usage-meter-default-account = По умолчанию
-usage-popover-runs-out = Закончится { $time }, сброс { $reset }
-usage-popover-runs-out-then-credits = Закончится { $time }, затем кредиты
-usage-popover-using-credits = Используются кредиты
+
 usage-api-key = API-ключ
 usage-api-key-week = оценка за эту неделю
 usage-api-key-today = { $amount } сегодня
@@ -2852,8 +2824,7 @@ usage-popover-window-left = { $window }: осталось
 usage-popover-updating = Обновление…
 usage-popover-retry = Повторить
 usage-popover-accounts = Аккаунты
-usage-popover-in-use = Используется
-usage-popover-unused = Не используются: { $count }
+
 usage-graph-on-pace = По графику
 usage-graph-in-reserve = { $percent }% в запасе
 usage-graph-behind = { $percent }% сверх темпа
@@ -2862,10 +2833,9 @@ usage-graph-lasts = Хватит до сброса
 usage-graph-collecting = График заполняется по мере поступления данных
 usage-instrument-gauge = Шкала
 usage-instrument-graph = График
-usage-popover-no-other-limits = Других лимитов нет
+
 usage-popover-no-data = Пока нет данных об использовании от { $providers }
-usage-popover-more = Ещё
-usage-popover-less = Меньше
+
 tool-verb-ran = Выполнил
 tool-verb-running = Выполняет
 tool-verb-messaging = Пишет сообщение для
@@ -3490,7 +3460,7 @@ workspace-fx-remote-history-unsupported = Удалённые терминалы 
 settings-keybinding-action-rename-selected-entry = Переименовать выбранный элемент
 settings-keybinding-action-chat-effort-backward = Переключить усилие чата назад
 worktree-preparing = Подготовка рабочего дерева…
-chat-queued-until-worktree-ready = Запуск, когда рабочее дерево будет готово
+chat-queued-until-worktree-ready = Отправится, когда будет готово
 chat-delivery-unconfirmed = Доставка не подтверждена
 chat-delivery-unconfirmed-retry = Перед повтором проверьте разговор: возможно, сообщение уже доставлено.
 chat-answer-pending-delivery = Ожидает доставки
@@ -3728,26 +3698,10 @@ usage-reset-busy = Ещё обновляется. Сдвиньте снова ч
 usage-reset-unavailable = Нет доступных сбросов
 usage-credits = Кредиты
 usage-credits-unlimited = Без ограничений
-usage-account-resets = { $count ->
-    [one] { $count } сброс
-    [few] { $count } сброса
-    [many] { $count } сбросов
-   *[other] { $count } сброса
-}
-usage-account-credits = Кредиты: { $amount }
-usage-account-ring-window = { $account } { $window }
-usage-account-window-left = { $window } { $percent }%
-usage-graph-account-left = { $account }, { $window }: осталось
-usage-graph-now = Сейчас
-usage-accounts-on-gauge = На шкале
+
 usage-accounts-sign-in = Войти
 usage-accounts-signing-in = Вход…
-usage-accounts-single = { $count ->
-    [one] У { $providers } один аккаунт.
-    [few] У { $providers } по одному аккаунту.
-    [many] У { $providers } по одному аккаунту.
-   *[other] У { $providers } по одному аккаунту.
-}
+
 usage-account-empty-title = У { $account } пока нет данных об использовании
 usage-account-empty-body = Данные появятся после первого сеанса этого профиля.
 usage-account-signed-out-title = Вход в { $account } не выполнен
@@ -3758,3 +3712,397 @@ usage-graph-legend-even = Равномерный темп
 usage-graph-legend-projection = Прогноз
 usage-graph-legend-estimated = Оценка
 usage-graph-estimated = Оценка по активности на этом Mac
+
+browser-annotations-send-short = Отправить
+browser-agent-take-over = Взять управление
+browser-agent-you-have-control = Вы управляете
+browser-agent-hand-back = Вернуть управление
+browser-agent-is-waiting = { $agent } ожидает
+browser-agent-handed-back-message = Я вернул управление браузером. Продолжай с того места, где остановился.
+browser-agent-cue-clicking = Нажатие «{ $name }»
+browser-agent-cue-clicking-bare = Нажатие
+browser-agent-cue-turning-on = Включение «{ $name }»
+browser-agent-cue-turning-off = Выключение «{ $name }»
+browser-agent-cue-selecting = Выбор «{ $name }»
+browser-agent-cue-typing = Ввод «{ $value }»
+browser-agent-cue-typing-bare = Ввод
+browser-agent-cue-pressing = Нажатие { $key }
+browser-agent-cue-hovering = Наведение на «{ $name }»
+browser-agent-cue-checking = Проверка «{ $name }»
+browser-agent-cue-reading = Чтение страницы
+browser-agent-cue-scrolling = Прокрутка
+browser-agent-cue-capturing = Создание снимка экрана
+browser-agent-cue-capturing-element = Создание снимка «{ $name }»
+browser-agent-cue-capturing-full = Создание снимка всей страницы
+browser-agent-cue-uploading = Загрузка { $file }
+browser-agent-cue-running-script = Выполнение скрипта
+browser-agent-cue-scheme-dark = Переход в тёмный режим
+browser-agent-cue-scheme-light = Переход в светлый режим
+browser-agent-cue-waiting = Ожидание страницы
+browser-agent-cue-opening = Открытие { $url }
+browser-agent-cue-going-back = Переход назад
+browser-agent-cue-going-forward = Переход вперёд
+browser-agent-cue-reloading = Перезагрузка страницы
+browser-agent-cue-new-tab = Открытие новой вкладки
+browser-agent-cue-working = В работе
+sidebar-search-project-placeholder = Поиск в { $project }
+sidebar-search-hidden-worktrees-count-placeholder = { $count ->
+    [one] Поиск в { $count } скрытом рабочем дереве
+    [few] Поиск в { $count } скрытых рабочих деревьях
+    [many] Поиск в { $count } скрытых рабочих деревьях
+   *[other] Поиск в { $count } скрытых рабочих деревьях
+}
+project-search-filter-hint = Попробуйте running, open, merged или #номер
+project-search-all-projects = Поиск по всем проектам
+project-search-hand-off-hint = Все проекты
+project-search-section-worktrees = Рабочие деревья
+project-search-section-filter-hint = Попробуйте раздел, running, open или #номер
+history-empty-title = Любой закрытый чат — в одном клике
+history-empty-hint = Закрытые в этом рабочем дереве чаты появятся здесь. Продолжайте с того места, где остановились.
+history-empty-filtered-title = Пока нет чатов с { $agent }
+history-show-all-agents = Показать всех агентов
+settings-keybinding-action-toggle-bookmarks = Показать или скрыть закладки
+settings-keybinding-action-previous-bookmark = Предыдущая закладка
+settings-keybinding-action-next-bookmark = Следующая закладка
+worktree-step-checking-out = { $forge ->
+    [gitlab] Переключение на !{ $number }
+   *[other] Переключение на #{ $number }
+}
+worktree-step-checking-out-branch = Переключение на { $branch }
+worktree-step-creating-branch-from = Создание ветки из { $base }
+worktree-step-creating-branch = Создание ветки
+worktree-step-naming = Выбор имени по вашей задаче
+worktree-step-setup = Выполнение настройки
+worktree-step-opening-agent = Открытие { $agent }
+chat-waiting-on-agents = { $count ->
+    [one] Ожидание { $count } агента…
+    [few] Ожидание { $count } агентов…
+    [many] Ожидание { $count } агентов…
+   *[other] Ожидание { $count } агента…
+}
+chat-shell-mode = Команда оболочки
+chat-shell-mode-detail = Выполняется в этой рабочей области. Нажмите «Добавить в чат» у результата, чтобы показать его агенту.
+chat-shell-add-to-chat = Добавить в чат
+markdown-run-command = Открыть в терминале
+chat-shell-exit = код выхода { $code }
+chat-shell-stopped = остановлен
+chat-shell-finished = завершено
+chat-shell-no-output = Нет вывода
+chat-shell-show-all = Показать все строки ({ $count })
+chat-shell-run-again = Выполнить снова
+chat-shell-open-in-terminal = Открыть в терминале
+chat-shell-running = Выполняется
+chat-shell-stopping = Остановка
+chat-shell-stop = Остановить
+chat-shell-stop-hint = Остановить (Esc)
+chat-shell-unavailable = Команды оболочки сейчас недоступны в этом чате.
+chat-shell-open-refused = Не удалось открыть это в терминале без выполнения. Скопируйте команду.
+chat-shell-start-failed = Не удалось выполнить команду: { $error }
+chat-files-changed-diff-unavailable = Этот diff больше недоступен.
+chat-files-changed-diff-no-lines = Изменились только имя или права доступа к файлу.
+chat-files-changed-diff-binary = Для двоичных файлов нет построчного diff.
+chat-files-changed-diff-not-utf8 = Файл не является текстом UTF-8, поэтому его строки нельзя показать.
+chat-files-changed-diff-too-large = Этот diff слишком велик для отображения здесь.
+chat-files-changed-binary = Двоичный
+chat-files-changed-review-tooltip = Проверить эти файлы и отправить отзыв в этот чат
+chat-files-changed-review-tooltip-stale-snapshot = { $count ->
+    [one] Проверьте файлы. { $count } файл снова изменился в следующем ходе; здесь показано его состояние после этого хода.
+    [few] Проверьте файлы. { $count } файла снова изменились в следующих ходах; здесь показано их состояние после этого хода.
+    [many] Проверьте файлы. { $count } файлов снова изменились в следующих ходах; здесь показано их состояние после этого хода.
+   *[other] Проверьте файлы. { $count } файла снова изменились в следующих ходах; здесь показано их состояние после этого хода.
+}
+chat-files-changed-review-tooltip-stale-current = { $count ->
+    [one] Проверьте файлы. { $count } файл снова изменился в следующем ходе; проверка показывает его текущее состояние.
+    [few] Проверьте файлы. { $count } файла снова изменились в следующих ходах; проверка показывает их текущее состояние.
+    [many] Проверьте файлы. { $count } файлов снова изменились в следующих ходах; проверка показывает их текущее состояние.
+   *[other] Проверьте файлы. { $count } файла снова изменились в следующих ходах; проверка показывает их текущее состояние.
+}
+chat-diff-unchanged-lines = { $count ->
+    [one] { $count } неизменённая строка
+    [few] { $count } неизменённые строки
+    [many] { $count } неизменённых строк
+   *[other] { $count } неизменённой строки
+}
+chat-files-changed-shared = Во время этого хода другой чат работал в этом рабочем дереве. Если оба чата изменили файл, показаны изменения обоих.
+chat-files-changed-unattributed = Во время этого хода другой чат работал в этом рабочем дереве. Приглушённые файлы изменились во время его работы и могут содержать его изменения.
+chat-files-changed-snapshot-failed = Не удалось создать снимок рабочего дерева этого хода, поэтому перечислены только файлы, о которых сообщили его инструменты.
+palette-mode-all = Все
+palette-mode-conversations = Беседы
+palette-search-all = Поиск агентов, рабочих деревьев, команд, файлов…
+palette-search-files-short = Поиск файлов…
+palette-section-needs-you = Требует вашего внимания
+palette-section-running = Выполняется
+palette-section-recent = Недавние
+palette-section-suggested = Рекомендации
+palette-section-draft = Черновик
+palette-section-actions = Действия
+palette-quick-new-chat = Новый чат в { $worktree }
+palette-quick-new-worktree = Новое рабочее дерево
+palette-quick-new-terminal = Новый терминал
+palette-quick-feedback = Сообщить об ошибке или предложить функцию
+palette-section-top-hit = Лучший результат
+palette-section-matches = Совпадения
+palette-section-tabs = Вкладки
+palette-section-worktrees = Рабочие деревья
+palette-section-conversations = Беседы
+palette-section-commands = Команды
+palette-section-files = Файлы
+palette-section-changed = Изменено в этой ветке
+palette-files-show-all = Показать всё ({ $count })
+palette-footer-branches = Ветки
+palette-section-use-query-with = Использовать «{ $query }» с
+palette-ask-agent-new-chat = Новый чат { $provider }
+palette-search-conversation-history = Поиск по истории бесед
+palette-suggest-review-comments = { $count ->
+    [one] { $count } комментарий к проверке
+    [few] { $count } комментария к проверке
+    [many] { $count } комментариев к проверке
+   *[other] { $count } комментария к проверке
+}
+palette-suggest-checks-failing = Проверки не пройдены
+palette-suggest-files-changed = { $count ->
+    [one] Изменён { $count } файл
+    [few] Изменено { $count } файла
+    [many] Изменено { $count } файлов
+   *[other] Изменено { $count } файла
+}
+palette-current = Текущий
+palette-empty-scope = Нет совпадений в { $scope } для «{ $query }»
+palette-empty-recent = Пока нет недавних элементов
+palette-search-everything = Поиск везде
+palette-footer-run = Выполнить
+palette-footer-start = Запустить
+palette-footer-search = Найти
+palette-footer-show = Показать
+palette-footer-report = Сообщить
+palette-footer-request = Запросить
+palette-report-as-bug = Сообщить как об ошибке
+palette-report-as-feature = Предложить как функцию
+palette-finish-bug-report = Завершить отчёт об ошибке
+palette-finish-feature-request = Завершить запрос функции
+palette-actions = Действия
+palette-actions-search = Поиск действий…
+palette-actions-no-match = Нет действий для «{ $query }»
+palette-action-open = Открыть
+palette-action-switch-worktree = Перейти к рабочему дереву
+palette-action-search-inside = Поиск в этом рабочем дереве
+palette-action-open-pr = Открыть pull request #{ $number }
+palette-action-copy-worktree-path = Копировать путь рабочего дерева
+palette-action-group-ask-agent = Спросить агента в этом рабочем дереве
+palette-action-open-tab = Открыть вкладку
+palette-action-preview = Превью
+palette-action-close-tab = Закрыть вкладку
+palette-action-open-conversation = Открыть беседу
+palette-action-open-in = Открыть в…
+palette-action-show-ignored = Показать игнорируемые файлы
+palette-action-run-command = Выполнить команду
+palette-action-start-in = Запустить в { $worktree }
+palette-action-group-another-agent = Другой агент
+palette-action-start-with = Запустить с { $provider }
+palette-mode-pull-requests = { $forge ->
+    [gitlab] Merge requests
+   *[other] Pull requests
+}
+palette-mode-branch-from = Создать ветку из
+palette-search-pull-requests = { $forge ->
+    [gitlab] Поиск merge requests или вставка ссылки…
+   *[other] Поиск pull requests или вставка ссылки…
+}
+palette-search-branch-from = Создать ветку из…
+palette-section-pull-requests = { $forge ->
+    [gitlab] Merge requests
+   *[other] Pull requests
+}
+palette-section-with-worktree = С рабочим деревом
+palette-section-open-pull-requests = Открытые
+palette-section-review-requested = Запрошена проверка
+palette-section-needs-your-review = Требует вашей проверки
+palette-section-yours = Ваши
+palette-section-open-review-requests = { $forge ->
+    [gitlab] Открытые merge requests
+   *[other] Открытые pull requests
+}
+palette-loading-pull-requests = { $forge ->
+    [gitlab] Загрузка merge requests…
+   *[other] Загрузка pull requests…
+}
+palette-no-open-pull-requests = { $forge ->
+    [gitlab] Нет открытых merge requests
+   *[other] Нет открытых pull requests
+}
+palette-footer-check-out = Переключиться
+palette-footer-create = Создать
+palette-footer-choose = Выбрать
+palette-action-start-in-new-worktree = Запустить в новом рабочем дереве
+palette-action-check-out = Переключиться
+palette-action-work-on-it = Начать работу
+palette-action-copy-link = Копировать ссылку
+palette-action-copy-number = Копировать номер
+palette-action-create-worktree = Создать рабочее дерево
+palette-action-choose-base = Выбрать базовую ветку
+palette-start-agent-on = Запустить { $provider } для «{ $query }»
+palette-in-new-worktree = в новом рабочем дереве
+palette-new-branch = Новая ветка { $name }
+palette-new-branch-from = из { $base }
+palette-new-branch-choose-base = Выбрать основу
+palette-branch-note-default = по умолчанию
+palette-branch-note-current = это рабочее дерево
+palette-branch-note-remote = удалённая
+palette-no-branches = Нет веток
+palette-no-branch-named = Нет ветки с именем «{ $query }»
+palette-search-new-worktree = { $forge ->
+    [gitlab] Назовите ветку, опишите задачу или вставьте MR
+   *[other] Назовите ветку, опишите задачу или вставьте PR
+}
+palette-search-new-worktree-no-forge = Назовите ветку или опишите задачу
+palette-action-open-review-request = { $forge ->
+    [gitlab] Открыть merge request !{ $number }
+   *[other] Открыть pull request #{ $number }
+}
+palette-action-create-and-start = Создать и запустить { $provider }
+palette-search-projects = Выбрать проект
+palette-mode-projects = Проекты
+palette-section-branches = Ветки
+palette-section-look-up = Найти
+palette-loading-branches = Загрузка веток…
+palette-no-open-pull-request = { $forge ->
+    [gitlab] Нет открытого merge request
+   *[other] Нет открытого pull request
+}
+palette-pull-request-number = { $forge ->
+    [gitlab] Merge request !{ $number }
+   *[other] Pull request #{ $number }
+}
+palette-new-worktree-in = Новое рабочее дерево в { $project }
+palette-quick-new-worktree-in = в { $project }
+history-button-tooltip = История
+usage-window-minutes = { $count } мин.
+usage-window-hours = { $count } ч.
+usage-window-days = { $count } дн.
+usage-window-weeks = { $count } нед.
+usage-window-all-models = Все модели
+usage-gauge-window-reached = Лимит за { $window } достигнут
+usage-gauge-reached = Лимит достигнут
+usage-limit-no-reset = Время сброса не указано
+usage-limit-back = Снова доступно { $time }
+usage-limit-in = через { $duration }
+usage-account-until = { $window }, до { $time }
+usage-account-back-at = { $window }, снова в { $time }
+usage-credits-balance = Кредиты: { $amount }
+usage-details = Сведения об использовании
+usage-details-runs-out = При таком темпе лимит может закончиться { $time }
+usage-details-lasts = При таком темпе лимита хватит до сброса
+usage-details-used-up = Лимит за { $window } исчерпан до { $time }
+usage-details-estimate = Оценка по среднему использованию с начала этого периода. Она меняется вместе с использованием, а время сброса остаётся прежним.
+usage-details-no-reset = { $provider } не сообщил время сброса этого периода, поэтому прогноз недоступен.
+usage-details-source = Лимиты и время сброса предоставляет { $provider }. Лимит отображается, только если он указан для этого аккаунта.
+chat-artifact-open-in-app-browser = Встроенный браузер
+chat-artifact-open-in-default-browser = Браузер по умолчанию
+bookmarks-title = Закладки
+bookmarks-search-placeholder = Поиск закладок…
+bookmarks-section-this-chat = Этот чат
+bookmarks-saved-label = Сохранено
+bookmarks-untitled-chat = Чат без названия
+bookmarks-loading = Загрузка закладок…
+bookmarks-load-failed = Не удалось загрузить закладки
+bookmarks-load-failed-hint = Сохранённые ответы никуда не делись.
+bookmarks-load-failed-again-hint = Закладки всё ещё не загружаются. Сохранённые ответы никуда не делись.
+bookmarks-this-chat-load-failed = Не удалось загрузить закладки этого чата
+bookmarks-other-chats-load-failed = Не удалось загрузить закладки других чатов
+bookmarks-try-again = Повторить
+bookmarks-empty-title = Сохраняйте ответы, к которым стоит вернуться
+bookmarks-empty-hint = Наведите указатель на ответ и нажмите значок закладки. Здесь собраны сохранённые ответы из всех чатов.
+bookmarks-no-matches = Нет закладок для «{ $query }»
+bookmarks-untitled-response = Ответ без названия
+bookmarks-add = Добавить ответ в закладки
+bookmarks-remove = Удалить закладку
+bookmarks-saved-ago = Сохранено { $elapsed }
+bookmarks-open-beside = Открыть рядом с этим чатом
+bookmarks-response-streaming = Этот ответ можно добавить в закладки после его завершения
+bookmarks-response-unavailable = Ответ недоступен
+bookmarks-save-failed = Не удалось сохранить закладку. Попробуйте снова.
+bookmarks-remove-failed = Не удалось удалить закладку. Попробуйте снова.
+notification-open = Открыть
+chat-report-error = Сообщить об этой проблеме
+menu-help = Справка
+menu-help-report-bug = Сообщить об ошибке…
+menu-help-suggest-feature = Предложить функцию…
+issue-report-command-bug = Сообщить об ошибке
+issue-report-command-feature = Предложить функцию
+issue-report-kind-bug = Ошибка
+issue-report-kind-feature = Функция
+issue-report-placeholder-bug = Что произошло? Чего вы ожидали?
+issue-report-placeholder-feature = Что вы пытаетесь сделать?
+issue-report-placeholder-error = Что вы делали, когда произошёл сбой?
+issue-report-error-title = Ошибка хода: { $error }
+issue-report-title = Заголовок
+issue-report-title-drafted = Составлен на основе ваших слов
+issue-report-title-from-error = Из сообщения об ошибке
+issue-report-title-restored = Сохранённый черновик
+issue-report-draft-saved = Ваш отчёт сохранён как черновик
+issue-report-action-discard = Удалить черновик
+issue-report-screenshot = Снимок экрана
+issue-report-screenshots = Снимки экрана
+issue-report-drop-now = Отпустите, чтобы прикрепить изображения
+issue-report-drop-hint = Перетащите или вставьте снимки экрана
+issue-report-drop-hint-review = или перетащите сюда
+issue-report-capture-window = Снимок окна
+issue-report-choose-images = Прикрепить изображения…
+issue-report-screenshot-pending = Создание снимка…
+issue-report-image-copied = Снимок скопирован. Вставьте его в отчёт.
+issue-report-images-revealed = Снимки экрана находятся в Finder. Перетащите их в отчёт.
+issue-report-review = Проверить
+issue-report-post = Опубликовать
+issue-report-review-title = Проверить перед публикацией
+issue-report-review-comment-on = Комментировать #{ $number }
+issue-report-audience = Это увидят все пользователи GitHub
+issue-report-heading-bug = Что произошло?
+issue-report-heading-feature = Что вы пытаетесь сделать?
+issue-report-field-app-version = Версия приложения
+issue-report-field-os = Операционная система
+issue-report-field-system = Сведения о системе
+issue-report-field-agent = Агент программирования
+issue-report-field-error = Ошибка
+issue-report-image-note = GitHub принимает изображения только в своей форме, поэтому отчёт завершается там. Текст уже заполнен, а снимок экрана находится в буфере обмена для вставки.
+issue-report-images-note = GitHub принимает изображения только в своей форме, поэтому отчёт завершается там. Текст уже заполнен, а Finder откроется со снимками экрана, которые можно перетащить.
+issue-report-checks-title = Стоит добавить
+issue-report-check-expected = Что вы ожидали
+issue-report-check-steps = Шаги для воспроизведения
+issue-report-check-screenshot = Снимок экрана
+issue-report-check-today = Как вы решаете это сейчас
+issue-report-add-expected = Я ожидал
+issue-report-add-steps = Шаги для воспроизведения:
+    1.
+issue-report-add-today = Сейчас я
+issue-report-agent-title = Поручить написание агенту
+issue-report-agent-detail = Он уточнит недостающие сведения и подготовит черновик для вашего одобрения
+issue-report-agent-no-worktree = Сначала откройте рабочее дерево, чтобы агенту было где работать
+issue-report-included = Включено
+issue-report-fact-error = Сообщение об ошибке
+issue-report-fact-app = Приложение { $version }
+issue-report-fact-system = Сведения о системе
+issue-report-similar-bugs = Похожие отчёты
+issue-report-similar-features = Похожие запросы
+issue-report-destination = Публичная задача в { $repo }
+issue-report-signed-out = Войдите в GitHub CLI, чтобы отправить отсюда
+issue-report-match-open = #{ $number } уже открыта
+issue-report-match-votes = { $count ->
+    [one] У #{ $number } { $count } голос
+    [few] У #{ $number } { $count } голоса
+    [many] У #{ $number } { $count } голосов
+   *[other] У #{ $number } { $count } голоса
+}
+issue-report-continue-github = Продолжить на GitHub
+issue-report-add-details = Добавить мои сведения
+issue-report-upvote = Проголосовать
+issue-report-open-issue = Открыть #{ $number }
+issue-report-sending = Отправка…
+issue-report-send-failed = Не удалось отправить. Ваш черновик сохранён.
+issue-report-filed = Создана задача #{ $number }
+issue-report-added = Добавлено в #{ $number }
+issue-report-upvoted = Голос за #{ $number } добавлен
+issue-report-copied = Отчёт скопирован
+issue-report-actions-private = Приватно
+issue-report-action-draft-agent = Подготовить с агентом
+issue-report-action-copy-markdown = Копировать как Markdown
+issue-report-action-email = Отправить приватно по почте

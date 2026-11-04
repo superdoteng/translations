@@ -297,8 +297,7 @@ project-pinned = Pinned
 project-no-worktrees-found = Çalışma ağacı bulunmadı
 project-loading-merge-options = Birleştirme seçenekleri yükleniyor
 sidebar-add-project-to-start = Başlamak için bir proje ekleyin
-sidebar-search-project-worktrees-placeholder = { $project } içindeki çalışma ağaçlarında ara
-sidebar-search-hidden-worktrees-placeholder = { $project } içindeki gizli çalışma ağaçlarında ara
+
 sidebar-install-ssh-key = Takla SSH anahtarı
 action-update = Güncelleme
 workspace-no-ai-background-tasks = Arka plan AI görevi yok
@@ -605,8 +604,7 @@ worktree-create-branches-unavailable = Depo henüz yüklenmedi
 worktree-create-in-background = Arka planda yarat
 worktree-create-refresh-branches = Uzak dalları getir
 worktree-create-refresh-failed = Getirme başarısız: { $error }
-worktree-create-return = Yarat ↵
-worktree-in-workspace = Çalışma alanında
+
 worktree-no-matching-branches = Eşleşen dal yok
 worktree-not-installed = Takılmadı
 settings-sidebar-group-general = Genel
@@ -1031,6 +1029,7 @@ settings-ai-reset-to-inherited = Miras Alma
 settings-ai-system-instructions-placeholder = Sistem talimatları...
 settings-ai-user-message-placeholder = Kullanıcı mesajı...
 settings-ai-launch-flags-description = Bu sağlayıcının her lansmanında kullanıldı. Bunlar önce eklenir.
+settings-ai-launch-flags-placeholders = Her başlatmada iş ağacı, dal veya proje adını eklemek için { $placeholders } kullanın.
 settings-ai-profile-definitions = Profil tanımları
 settings-ai-global-default = Küresel temerrüt
 settings-ai-workspace-override = Çalışma alanı geçersiz kalması
@@ -1048,9 +1047,9 @@ settings-ai-all-models = Tüm modeller
 settings-ai-select-models = Seçili modeller
 settings-ai-select-models-count = Seçilmiş modeller ({ $count })
 settings-ai-model-visibility = Model görünürlüğü
-settings-ai-compliant-claude-tooltip = Kapalı olduğunda ya da SSH bir çalışma alanında olduğunda, Claude sohbet yapılandırılmış claude -p taşımasını kullanır.
-settings-ai-compliant-claude-view = Uyumlu Claude görünümü
-settings-ai-compliant-claude-view-description = Abonelik planınızda kullanımı sürdürmek için Claude Code'un etkileşimli modu üzerinden yerel Claude sohbetleri yürütün. SSH çalışma alanları yapılandırılmış Claude -p taşımasını kullanır.
+settings-ai-claude-interactive-mode-tooltip = Kapalıyken veya bir SSH çalışma alanında Claude sohbeti yazdırma modunu (claude -p) kullanır.
+settings-ai-claude-interactive-mode = Etkileşimli mod
+settings-ai-claude-interactive-mode-description = Yerel Claude sohbetlerini yazdırma modu (claude -p) yerine Claude Code'un etkileşimli modunda çalıştırın. SSH çalışma alanları her zaman yazdırma modunu kullanır.
 settings-ai-action-model-pins = Gelişmiş — her harekete göre model pinleri
 settings-ai-action-model-pins-description = Modelleri belirli eylemler için sadece bir bucket varsayılan yeterli olmadığında sabitleyin.
 settings-ai-session-model-description = Yeni oturumlar için varsayılan olarak kullanılan model.
@@ -1335,12 +1334,7 @@ worktree-context-placeholder = Ajanın üzerinde çalışmasını istediğin şe
 worktree-filter-branches-placeholder = Dalları filtrele...
 worktree-label-placeholder = Worktree etiketi
 worktree-prompt-placeholder = Ne üzerinde çalışıyorsun?
-worktree-search-branches-placeholder = Dalları ara...
-worktree-search-branches-mrs-placeholder = Şubeleri ve MRs ara...
-worktree-search-branches-prs-placeholder = Şubeleri ve PRs ara...
-worktree-fetching-branches = Dal toplamak...
-worktree-fetching-branches-mrs = Dal ve MRs getirmek...
-worktree-fetching-branches-prs = Dal ve PRs getirmek...
+
 right-panel-switch-stacked = Stacked terminal'e geçiş
 right-panel-switch-bottom = Alt terminale geçiş
 right-panel-switch-side-by-side = Yan yana terminale geçin
@@ -1920,8 +1914,8 @@ settings-search-entry-agents-routing-thorough-actions-label = Kapsamlı eylemler
 settings-search-entry-agents-routing-thorough-actions-description = CI, engellenen birleşmeleri, yorumları, değişiklikleri, çatışmaları ve incelemeleri düzeltin.
 settings-search-entry-agents-providers-claude-code-provider-label = Claude Code sağlayıcı
 settings-search-entry-agents-providers-claude-code-provider-description = Claude Code etkinleştirin ve modellerini, profillerini ve fırlatma bayraklarını yapılandırın.
-settings-search-entry-agents-providers-compliant-claude-view-label = Uyumlu Claude görüşü
-settings-search-entry-agents-providers-compliant-claude-view-description = Abonelik planınızda Claude kullanımını sürdürmek için Claude Code'ın etkileşimli modunda sohbet yapın.
+settings-search-entry-agents-providers-claude-interactive-mode-label = Claude etkileşimli modu
+settings-search-entry-agents-providers-claude-interactive-mode-description = Yerel Claude sohbetlerini yazdırma modu (claude -p) yerine Claude Code'un etkileşimli modunda çalıştırın. SSH çalışma alanları her zaman yazdırma modunu kullanır. Yeni açılan sohbetler için geçerlidir.
 settings-search-entry-agents-providers-codex-provider-label = Codex sağlayıcı
 settings-search-entry-agents-providers-codex-provider-description = Codex etkinleştirin ve modellerini, profillerini ve lansman bayraklarını yapılandırın.
 settings-search-entry-agents-providers-pi-provider-label = Pi sağlayıcı
@@ -2021,7 +2015,7 @@ settings-ai-provider-section-chat = Sohbet
 settings-ai-provider-section-runtime = Çalışma zamanı
 settings-ai-provider-profiles-description = Bu sağlayıcının hesapları ve yapılandırma ana dizinleri.
 settings-ai-provider-manage-profiles = Profilleri yönet
-settings-ai-provider-antigravity-description = Antigravity'yi terminal sağlayıcı olarak etkinleştirin (Antigravity CLI `agy` kurulmasını gerektirir).
+settings-ai-provider-antigravity-description = Antigravity sohbet ve terminal desteğini etkinleştir (Antigravity CLI `agy` kurulu olmalıdır).
 settings-ai-provider-hermes-description = Hermes'i terminal sağlayıcısı olarak etkinleştirin (Hermes Agent `hermes` kurulu gerektirir).
 settings-ai-provider-qwen-description = Qwen Kodunu terminal sağlayıcı olarak etkinleştirin (Qwen Kodu'nun yüklü CLI `qwen` gereklidir).
 settings-ai-provider-kimi-description = Kimi Code'u sohbet ve terminal sağlayıcısı olarak etkinleştirin (mevcut Kimi Kodu CLI `kimi` kurulu olmalı).
@@ -2108,27 +2102,9 @@ workspace-remote-forge-cli-not-authenticated-hint = İpucu: { $cli } sunucuda ki
 workspace-remote-forge-cli-missing-hint = İpucu: { $cli }'yi sunucuya yükleyip `{ $cli } auth login` çalıştırarak ajanla { $kind } oluşturun.
 workspace-review-request-url-copied = Kopya { $kind } URL
 workspace-review-request-none-yet = Bu dalın henüz bir { $kind } yok
-worktree-prompt = Prompt
-worktree-branches = Şubeler
-worktree-merge-requests = Birleştirme talepleri
-worktree-pull-requests = Pull requests
-worktree-review-requests = İnceleme talepleri
-worktree-tab-with-count = { $label } ({ $count })
-worktree-no-open-merge-requests = Açık birleştirme talebi yok
-worktree-no-open-pull-requests = Açık pull isteği yok
-worktree-no-open-review-requests = Açık inceleme talebi yok
-worktree-no-branches = Dal yok
+
 common-no-matches = Maç yok
-worktree-gitlab-cli-missing = Birleştirme istekleri yüklenemedi: GitLab CLI (`glab`) yüklenmedi veya PATH'de değil. `glab` kur, `glab auth login` ile kimlik doğrulama yap, sonra tekrar dene.
-worktree-gitlab-auth-required = Birleştirme istekleri yüklenemedi: GitLab CLI (`glab`) kimlik doğrulaması yapılmadı. Bu GitLab sunucu için `glab auth login` çalıştır, sonra tekrar dene.
-worktree-github-auth-required = Pull request'leri yüklenemedi: GitHub CLI (`gh`) bu ana bilgisayar için kimlik doğrulaması yapılmadı. `gh auth login --hostname <host>` çalıştır, sonra tekrar dene.
-worktree-github-load-error = Çekme istekleri yüklenemedi: { $error }
-worktree-gitlab-load-error = Birleştirme istekleri yüklenemedi: { $error }
-worktree-bitbucket-cli-missing = Pull request'ler yüklenemedi: Bitbucket CLI (`bkt`) yüklü değil veya PATH'te değil. `bkt` yükleyin, `bkt auth login https://bitbucket.org --kind cloud --web-token` çalıştırın, `bkt context create cloud --host api.bitbucket.org --workspace <workspace> --set-active` ile bir bağlam oluşturun, ardından tekrar deneyin.
-worktree-bitbucket-auth-required = Pull request'ler yüklenemedi: Bitbucket CLI (`bkt`) kimliği doğrulanmamış. `bkt auth login https://bitbucket.org --kind cloud --web-token` çalıştırın, ardından tekrar deneyin.
-worktree-bitbucket-no-context = Pull request'ler yüklenemedi: { $error }
-worktree-bitbucket-load-error = Pull request'ler yüklenemedi: { $error }
-worktree-review-request-load-error = İnceleme istekleri yüklenemedi: { $error }
+
 remote-cli-install-succeeded = Uzaktan kumandaya { $app_name } CLI { $package } (api={ $api }, watch={ $watch }, hooks={ $hooks }) kurdum.
 remote-cli-install-failed = CLI kurulum başarısız oldu: { $error }
 chat-composer-placeholder-active = Bir mesaj yazın...
@@ -2747,20 +2723,16 @@ usage-meter-error = Kullanım yüklenemedi
 usage-meter-loading = Kullanım yükleniyor…
 usage-meter-outdated = Kullanım verileri güncel değil
 usage-meter-updated = { $ago } güncellendi
-usage-meter-resets = { $duration } içinde sıfırlanır
-usage-meter-window-session = Oturum
+
 usage-meter-window-daily = Günlük
 usage-meter-window-weekly = Haftalık
 usage-meter-window-monthly = Aylık
-usage-meter-window-other = Diğer
-usage-meter-all-providers = Tüm sağlayıcılar
+
 usage-meter-percent-left = %{ $percent } kaldı
 usage-meter-no-account = Hesap seçilmedi
 usage-meter-now = şimdi
 usage-meter-default-account = Varsayılan
-usage-popover-runs-out = Tükenme: { $time }, sıfırlanma: { $reset }
-usage-popover-runs-out-then-credits = Tükenme: { $time }, ardından krediler
-usage-popover-using-credits = Krediler kullanılıyor
+
 usage-api-key = API anahtarı
 usage-api-key-week = bu hafta tahmini
 usage-api-key-today = bugün { $amount }
@@ -2775,8 +2747,7 @@ usage-popover-window-left = { $window } kalan
 usage-popover-updating = Güncelleniyor…
 usage-popover-retry = Tekrar dene
 usage-popover-accounts = Hesaplar
-usage-popover-in-use = Kullanımda
-usage-popover-unused = { $count } kullanılmıyor
+
 usage-graph-on-pace = Tempoda
 usage-graph-in-reserve = %{ $percent } yedekte
 usage-graph-behind = Tempodan %{ $percent } fazla
@@ -2785,10 +2756,9 @@ usage-graph-lasts = Sıfırlanana kadar yeter
 usage-graph-collecting = Grafik, ölçümler geldikçe dolar
 usage-instrument-gauge = Gösterge
 usage-instrument-graph = Grafik
-usage-popover-no-other-limits = Başka sınır yok
+
 usage-popover-no-data = { $providers } için henüz kullanım yok
-usage-popover-more = Daha fazla
-usage-popover-less = Daha az
+
 tool-verb-ran = Çalıştırdı
 tool-verb-running = Çalıştırıyor
 tool-verb-messaging = Mesaj gönderiyor
@@ -3347,7 +3317,7 @@ workspace-fx-remote-history-unsupported = FX uzak terminalleri henüz oturum ge�
 settings-keybinding-action-rename-selected-entry = Seçili öğeyi yeniden adlandır
 settings-keybinding-action-chat-effort-backward = Sohbet çabasını geriye doğru değiştir
 worktree-preparing = Çalışma ağacı hazırlanıyor…
-chat-queued-until-worktree-ready = Çalışma ağacı hazır olduğunda başlayacak
+chat-queued-until-worktree-ready = Hazır olduğunda gönderilir
 chat-delivery-unconfirmed = Teslimat doğrulanmadı
 chat-delivery-unconfirmed-retry = Yeniden denemeden önce konuşmayı kontrol edin; bu ileti zaten teslim edilmiş olabilir.
 chat-answer-pending-delivery = Teslimat bekleniyor
@@ -3569,22 +3539,10 @@ usage-reset-busy = Hâlâ güncelleniyor. Birazdan tekrar kaydırın
 usage-reset-unavailable = Kullanılabilir sıfırlama yok
 usage-credits = Krediler
 usage-credits-unlimited = Sınırsız
-usage-account-resets = { $count ->
-    [one] 1 sıfırlama
-   *[other] { $count } sıfırlama
-}
-usage-account-credits = { $amount } kredi
-usage-account-ring-window = { $account } { $window }
-usage-account-window-left = { $window } %{ $percent }
-usage-graph-account-left = { $account } { $window } kalan
-usage-graph-now = Şimdi
-usage-accounts-on-gauge = Göstergede
+
 usage-accounts-sign-in = Oturum aç
 usage-accounts-signing-in = Oturum açılıyor…
-usage-accounts-single = { $count ->
-    [one] { $providers } için tek hesap var.
-   *[other] { $providers } için birer hesap var.
-}
+
 usage-account-empty-title = { $account } için henüz kullanım yok
 usage-account-empty-body = Ölçümler bu profilin ilk oturumundan sonra görünür.
 usage-account-signed-out-title = { $account } için oturum açılmadı
@@ -3595,3 +3553,381 @@ usage-graph-legend-even = Eşit tempo
 usage-graph-legend-projection = Öngörü
 usage-graph-legend-estimated = Tahmini
 usage-graph-estimated = Bu Mac'teki etkinlikten tahmin edildi
+
+browser-annotations-send-short = Gönder
+browser-agent-take-over = Kontrolü devral
+browser-agent-you-have-control = Kontrol sizde
+browser-agent-hand-back = Kontrolü geri ver
+browser-agent-is-waiting = { $agent } bekliyor
+browser-agent-handed-back-message = Tarayıcıyı geri verdim. Kaldığın yerden devam et.
+browser-agent-cue-clicking = “{ $name }” tıklanıyor
+browser-agent-cue-clicking-bare = Tıklanıyor
+browser-agent-cue-turning-on = “{ $name }” açılıyor
+browser-agent-cue-turning-off = “{ $name }” kapatılıyor
+browser-agent-cue-selecting = “{ $name }” seçiliyor
+browser-agent-cue-typing = “{ $value }” yazılıyor
+browser-agent-cue-typing-bare = Yazılıyor
+browser-agent-cue-pressing = { $key } tuşuna basılıyor
+browser-agent-cue-hovering = “{ $name }” üzerine geliniyor
+browser-agent-cue-checking = “{ $name }” kontrol ediliyor
+browser-agent-cue-reading = Sayfa okunuyor
+browser-agent-cue-scrolling = Kaydırılıyor
+browser-agent-cue-capturing = Ekran görüntüsü alınıyor
+browser-agent-cue-capturing-element = “{ $name }” ekran görüntüsü alınıyor
+browser-agent-cue-capturing-full = Tam sayfa ekran görüntüsü alınıyor
+browser-agent-cue-uploading = { $file } yükleniyor
+browser-agent-cue-running-script = Betik çalıştırılıyor
+browser-agent-cue-scheme-dark = Koyu moda geçiliyor
+browser-agent-cue-scheme-light = Açık moda geçiliyor
+browser-agent-cue-waiting = Sayfa bekleniyor
+browser-agent-cue-opening = { $url } açılıyor
+browser-agent-cue-going-back = Geri gidiliyor
+browser-agent-cue-going-forward = İleri gidiliyor
+browser-agent-cue-reloading = Sayfa yeniden yükleniyor
+browser-agent-cue-new-tab = Yeni sekme açılıyor
+browser-agent-cue-working = Çalışıyor
+sidebar-search-project-placeholder = { $project } içinde ara
+sidebar-search-hidden-worktrees-count-placeholder = { $count ->
+    [one] 1 gizli çalışma ağacında ara
+   *[other] { $count } gizli çalışma ağacında ara
+}
+project-search-filter-hint = running, open, merged veya #numara deneyin
+project-search-all-projects = Tüm projelerde ara
+project-search-hand-off-hint = Tüm projeler
+project-search-section-worktrees = Çalışma ağaçları
+project-search-section-filter-hint = Bir bölüm, running, open veya #numara deneyin
+history-empty-title = Kapatılan her sohbet bir tık uzağınızda
+history-empty-hint = Bu çalışma ağacında kapattığınız sohbetler burada görünür; kaldığınız yerden devam edebilirsiniz.
+history-empty-filtered-title = Henüz { $agent } sohbeti yok
+history-show-all-agents = Tüm ajanları göster
+settings-keybinding-action-toggle-bookmarks = Yer işaretlerini aç/kapat
+settings-keybinding-action-previous-bookmark = Önceki yer işareti
+settings-keybinding-action-next-bookmark = Sonraki yer işareti
+worktree-step-checking-out = { $forge ->
+    [gitlab] !{ $number } kullanıma alınıyor
+   *[other] #{ $number } kullanıma alınıyor
+}
+worktree-step-checking-out-branch = { $branch } kullanıma alınıyor
+worktree-step-creating-branch-from = { $base } temelinden dal oluşturuluyor
+worktree-step-creating-branch = Dal oluşturuluyor
+worktree-step-naming = Görevinize göre adlandırılıyor
+worktree-step-setup = Kurulum çalıştırılıyor
+worktree-step-opening-agent = { $agent } açılıyor
+chat-waiting-on-agents = { $count ->
+    [one] { $count } ajan bekleniyor…
+   *[other] { $count } ajan bekleniyor…
+}
+chat-shell-mode = Kabuk komutu
+chat-shell-mode-detail = Bu çalışma alanında çalışır. Sonucu ajana göstermek için Sohbete ekle'yi kullanın.
+chat-shell-add-to-chat = Sohbete ekle
+markdown-run-command = Terminalde aç
+chat-shell-exit = çıkış { $code }
+chat-shell-stopped = durduruldu
+chat-shell-finished = tamamlandı
+chat-shell-no-output = Çıktı yok
+chat-shell-show-all = { $count } satırın tümünü göster
+chat-shell-run-again = Yeniden çalıştır
+chat-shell-open-in-terminal = Terminalde aç
+chat-shell-running = Çalışıyor
+chat-shell-stopping = Durduruluyor
+chat-shell-stop = Durdur
+chat-shell-stop-hint = Durdur (Esc)
+chat-shell-unavailable = Kabuk komutları şu anda bu sohbette kullanılamıyor.
+chat-shell-open-refused = Bunu çalıştırmadan terminalde açmak mümkün olmadı. Bunun yerine komutu kopyalayın.
+chat-shell-start-failed = Komut çalıştırılamadı: { $error }
+chat-files-changed-diff-unavailable = Bu fark artık kullanılamıyor.
+chat-files-changed-diff-no-lines = Bu dosyanın yalnızca adı veya izinleri değişti.
+chat-files-changed-diff-binary = İkili dosyalar için satır farkı gösterilemez.
+chat-files-changed-diff-not-utf8 = Bu dosya UTF-8 metni olmadığından satırları gösterilemiyor.
+chat-files-changed-diff-too-large = Bu fark burada gösterilemeyecek kadar büyük.
+chat-files-changed-binary = İkili
+chat-files-changed-review-tooltip = Bu dosyaları incele ve bu sohbete geri bildirim gönder
+chat-files-changed-review-tooltip-stale-snapshot = { $count ->
+    [one] Bu dosyaları inceleyin. 1 dosya sonraki bir turda yeniden değişti; bu tur onu bıraktığı haliyle gösterir.
+   *[other] Bu dosyaları inceleyin. { $count } dosya sonraki bir turda yeniden değişti; bu tur onları bıraktığı halleriyle gösterir.
+}
+chat-files-changed-review-tooltip-stale-current = { $count ->
+    [one] Bu dosyaları inceleyin. 1 dosya sonraki bir turda yeniden değişti; inceleme güncel halini gösterir.
+   *[other] Bu dosyaları inceleyin. { $count } dosya sonraki bir turda yeniden değişti; inceleme güncel hallerini gösterir.
+}
+chat-diff-unchanged-lines = { $count ->
+    [one] 1 değişmeyen satır
+   *[other] { $count } değişmeyen satır
+}
+chat-files-changed-shared = Bu tur sırasında başka bir sohbet bu çalışma ağacında çalışıyordu. İki sohbetin de değiştirdiği dosyada her ikisinin düzenlemeleri gösterilir.
+chat-files-changed-unattributed = Bu tur sırasında başka bir sohbet bu çalışma ağacında çalışıyordu. Soluk gösterilen dosyalar onun çalışması sırasında değişti ve onun değişiklikleri olabilir.
+chat-files-changed-snapshot-failed = Bu turun çalışma ağacının anlık görüntüsü alınamadı; yalnızca araçlarının bildirdiği dosyalar listelenir.
+palette-mode-all = Tümü
+palette-mode-conversations = Görüşmeler
+palette-search-all = Ajan, çalışma ağacı, komut, dosya ara…
+palette-search-files-short = Dosya ara…
+palette-section-needs-you = Size ihtiyaç var
+palette-section-running = Çalışıyor
+palette-section-recent = Son kullanılanlar
+palette-section-suggested = Önerilenler
+palette-section-draft = Taslak
+palette-section-actions = Eylemler
+palette-quick-new-chat = { $worktree } içinde yeni sohbet
+palette-quick-new-worktree = Yeni çalışma ağacı
+palette-quick-new-terminal = Yeni terminal
+palette-quick-feedback = Hata bildir veya özellik iste
+palette-section-top-hit = En iyi sonuç
+palette-section-matches = Eşleşmeler
+palette-section-tabs = Sekmeler
+palette-section-worktrees = Çalışma ağaçları
+palette-section-conversations = Görüşmeler
+palette-section-commands = Komutlar
+palette-section-files = Dosyalar
+palette-section-changed = Bu dalda değişenler
+palette-files-show-all = { $count } öğenin tümünü göster
+palette-footer-branches = Dallar
+palette-section-use-query-with = “{ $query }” ile kullan
+palette-ask-agent-new-chat = Yeni { $provider } sohbeti
+palette-search-conversation-history = Görüşme geçmişinde ara
+palette-suggest-review-comments = { $count ->
+    [one] 1 inceleme yorumu
+   *[other] { $count } inceleme yorumu
+}
+palette-suggest-checks-failing = Kontroller başarısız
+palette-suggest-files-changed = { $count ->
+    [one] 1 dosya değişti
+   *[other] { $count } dosya değişti
+}
+palette-current = Geçerli
+palette-empty-scope = { $scope } içinde “{ $query }” ile eşleşen yok
+palette-empty-recent = Henüz son kullanılan öğe yok
+palette-search-everything = Her yerde ara
+palette-footer-run = Çalıştır
+palette-footer-start = Başlat
+palette-footer-search = Ara
+palette-footer-show = Göster
+palette-footer-report = Bildir
+palette-footer-request = İste
+palette-report-as-bug = Hata olarak bildir
+palette-report-as-feature = Özellik olarak iste
+palette-finish-bug-report = Hata bildiriminizi tamamlayın
+palette-finish-feature-request = Özellik isteğinizi tamamlayın
+palette-actions = Eylemler
+palette-actions-search = Eylem ara…
+palette-actions-no-match = “{ $query }” ile eşleşen eylem yok
+palette-action-open = Aç
+palette-action-switch-worktree = Çalışma ağacına geç
+palette-action-search-inside = Bu çalışma ağacında ara
+palette-action-open-pr = #{ $number } çekme isteğini aç
+palette-action-copy-worktree-path = Çalışma ağacı yolunu kopyala
+palette-action-group-ask-agent = Bu çalışma ağacında bir ajana sor
+palette-action-open-tab = Sekmeyi aç
+palette-action-preview = Önizleme
+palette-action-close-tab = Sekmeyi kapat
+palette-action-open-conversation = Görüşmeyi aç
+palette-action-open-in = Şununla aç…
+palette-action-show-ignored = Yok sayılan dosyaları göster
+palette-action-run-command = Komutu çalıştır
+palette-action-start-in = { $worktree } içinde başlat
+palette-action-group-another-agent = Başka bir ajan
+palette-action-start-with = { $provider } ile başlat
+palette-mode-pull-requests = { $forge ->
+    [gitlab] Birleştirme istekleri
+   *[other] Çekme istekleri
+}
+palette-mode-branch-from = Şundan dal oluştur
+palette-search-pull-requests = { $forge ->
+    [gitlab] Birleştirme isteği ara veya bağlantı yapıştır…
+   *[other] Çekme isteği ara veya bağlantı yapıştır…
+}
+palette-search-branch-from = Şundan dal oluştur…
+palette-section-pull-requests = { $forge ->
+    [gitlab] Birleştirme istekleri
+   *[other] Çekme istekleri
+}
+palette-section-with-worktree = Çalışma ağacı olanlar
+palette-section-open-pull-requests = Açık
+palette-section-review-requested = İnceleme istendi
+palette-section-needs-your-review = İncelemeniz gerekiyor
+palette-section-yours = Sizinkiler
+palette-section-open-review-requests = { $forge ->
+    [gitlab] Açık birleştirme istekleri
+   *[other] Açık çekme istekleri
+}
+palette-loading-pull-requests = { $forge ->
+    [gitlab] Birleştirme istekleri yükleniyor…
+   *[other] Çekme istekleri yükleniyor…
+}
+palette-no-open-pull-requests = { $forge ->
+    [gitlab] Açık birleştirme isteği yok
+   *[other] Açık çekme isteği yok
+}
+palette-footer-check-out = Kullanıma al
+palette-footer-create = Oluştur
+palette-footer-choose = Seç
+palette-action-start-in-new-worktree = Yeni çalışma ağacında başlat
+palette-action-check-out = Kullanıma al
+palette-action-work-on-it = Üzerinde çalış
+palette-action-copy-link = Bağlantıyı kopyala
+palette-action-copy-number = Numarayı kopyala
+palette-action-create-worktree = Çalışma ağacı oluştur
+palette-action-choose-base = Temel dalı seç
+palette-start-agent-on = { $provider } ajanını “{ $query }” üzerinde başlat
+palette-in-new-worktree = yeni bir çalışma ağacında
+palette-new-branch = Yeni dal { $name }
+palette-new-branch-from = { $base } temelinden
+palette-new-branch-choose-base = Temeli seç
+palette-branch-note-default = varsayılan
+palette-branch-note-current = bu çalışma ağacı
+palette-branch-note-remote = uzak
+palette-no-branches = Dal yok
+palette-no-branch-named = “{ $query }” adlı dal yok
+palette-search-new-worktree = { $forge ->
+    [gitlab] Dala ad verin, görevi açıklayın veya MR yapıştırın
+   *[other] Dala ad verin, görevi açıklayın veya PR yapıştırın
+}
+palette-search-new-worktree-no-forge = Dala ad verin veya görevi açıklayın
+palette-action-open-review-request = { $forge ->
+    [gitlab] !{ $number } birleştirme isteğini aç
+   *[other] #{ $number } çekme isteğini aç
+}
+palette-action-create-and-start = Oluştur ve { $provider } başlat
+palette-search-projects = Proje seç
+palette-mode-projects = Projeler
+palette-section-branches = Dallar
+palette-section-look-up = Ara
+palette-loading-branches = Dallar yükleniyor…
+palette-no-open-pull-request = { $forge ->
+    [gitlab] Açık birleştirme isteği yok
+   *[other] Açık çekme isteği yok
+}
+palette-pull-request-number = { $forge ->
+    [gitlab] Birleştirme isteği !{ $number }
+   *[other] Çekme isteği #{ $number }
+}
+palette-new-worktree-in = { $project } içinde yeni çalışma ağacı
+palette-quick-new-worktree-in = { $project } içinde
+history-button-tooltip = Geçmiş
+usage-window-minutes = { $count } dakika
+usage-window-hours = { $count } saat
+usage-window-days = { $count } gün
+usage-window-weeks = { $count } hafta
+usage-window-all-models = Tüm modeller
+usage-gauge-window-reached = { $window } sınırına ulaşıldı
+usage-gauge-reached = Sınıra ulaşıldı
+usage-limit-no-reset = Sıfırlanma zamanı bildirilmedi
+usage-limit-back = { $time } yeniden kullanılabilir
+usage-limit-in = { $duration } sonra
+usage-account-until = { $window }, { $time } kadar
+usage-account-back-at = { $window }, { $time } tekrar kullanılabilir
+usage-credits-balance = { $amount } kredi
+usage-details = Kullanım ayrıntıları
+usage-details-runs-out = Bu hızda { $time } tükenebilir
+usage-details-lasts = Bu hızda sıfırlanana kadar yeter
+usage-details-used-up = { $window }, { $time } kadar tükendi
+usage-details-estimate = Bu dönem başladığından beri ortalama kullanımınıza dayanan bir tahmin. Kullanımınız değiştikçe değişir; sıfırlanma zamanı değişmez.
+usage-details-no-reset = { $provider } bu dönemin ne zaman sıfırlanacağını bildirmediği için tahmin yok.
+usage-details-source = Sınırlar ve sıfırlanma zamanları { $provider } tarafından sağlanır. Sınır yalnızca bu hesap için bildirildiğinde gösterilir.
+chat-artifact-open-in-app-browser = Uygulama içi tarayıcı
+chat-artifact-open-in-default-browser = Varsayılan tarayıcı
+bookmarks-title = Yer işaretleri
+bookmarks-search-placeholder = Yer işareti ara…
+bookmarks-section-this-chat = Bu sohbet
+bookmarks-saved-label = Kaydedildi
+bookmarks-untitled-chat = Başlıksız sohbet
+bookmarks-loading = Yer işaretleri yükleniyor…
+bookmarks-load-failed = Yer işaretleri yüklenemedi
+bookmarks-load-failed-hint = Kaydedilmiş yanıtlarınız hâlâ duruyor.
+bookmarks-load-failed-again-hint = Hâlâ yüklenmiyor. Kaydedilmiş yanıtlarınız hâlâ duruyor.
+bookmarks-this-chat-load-failed = Bu sohbetin yer işaretleri yüklenemedi
+bookmarks-other-chats-load-failed = Diğer sohbetlerin yer işaretleri yüklenemedi
+bookmarks-try-again = Tekrar dene
+bookmarks-empty-title = Tekrar okumaya değer yanıtları saklayın
+bookmarks-empty-hint = Yanıtın üzerine gelip yer işaretine tıklayın. Tüm sohbetlerden kaydedilen yanıtlar burada toplanır.
+bookmarks-no-matches = “{ $query }” ile eşleşen yer işareti yok
+bookmarks-untitled-response = Başlıksız yanıt
+bookmarks-add = Yanıta yer işareti ekle
+bookmarks-remove = Yer işaretini kaldır
+bookmarks-saved-ago = { $elapsed } kaydedildi
+bookmarks-open-beside = Bu sohbetin yanında aç
+bookmarks-response-streaming = Bu yanıt tamamlandığında yer işareti ekleyebilirsiniz
+bookmarks-response-unavailable = Yanıt kullanılamıyor
+bookmarks-save-failed = Yer işareti kaydedilemedi. Tekrar deneyin.
+bookmarks-remove-failed = Yer işareti kaldırılamadı. Tekrar deneyin.
+notification-open = Aç
+chat-report-error = Bu sorunu bildir
+menu-help = Yardım
+menu-help-report-bug = Hata bildir…
+menu-help-suggest-feature = Özellik iste…
+issue-report-command-bug = Hata bildir
+issue-report-command-feature = Özellik iste
+issue-report-kind-bug = Hata
+issue-report-kind-feature = Özellik
+issue-report-placeholder-bug = Ne oldu? Bunun yerine ne bekliyordunuz?
+issue-report-placeholder-feature = Ne yapmaya çalışıyorsunuz?
+issue-report-placeholder-error = Hata oluştuğunda ne yapıyordunuz?
+issue-report-error-title = Tur başarısız: { $error }
+issue-report-title = Başlık
+issue-report-title-drafted = Sözlerinizden taslak oluşturuldu
+issue-report-title-from-error = Hatadan
+issue-report-title-restored = Kaydedilmiş taslak
+issue-report-draft-saved = Bildiriminiz taslak olarak kaydedildi
+issue-report-action-discard = Taslağı sil
+issue-report-screenshot = Ekran görüntüsü
+issue-report-screenshots = Ekran görüntüleri
+issue-report-drop-now = Görselleri eklemek için bırakın
+issue-report-drop-hint = Ekran görüntülerini bırakın veya yapıştırın
+issue-report-drop-hint-review = veya buraya bırakın
+issue-report-capture-window = Pencereyi yakala
+issue-report-choose-images = Görsel ekle…
+issue-report-screenshot-pending = Yakalanıyor…
+issue-report-image-copied = Ekran görüntüsü kopyalandı. Bildirime yapıştırın.
+issue-report-images-revealed = Ekran görüntüleriniz Finder'da. Bildirime sürükleyin.
+issue-report-review = İncele
+issue-report-post = Herkese açık paylaş
+issue-report-review-title = Paylaşmadan önce incele
+issue-report-review-comment-on = #{ $number } için yorum yap
+issue-report-audience = GitHub'daki herkes bunu görebilir
+issue-report-heading-bug = Ne oldu?
+issue-report-heading-feature = Ne yapmaya çalışıyorsunuz?
+issue-report-field-app-version = Uygulama sürümü
+issue-report-field-os = İşletim sistemi
+issue-report-field-system = Sistem ayrıntıları
+issue-report-field-agent = Kodlama ajanı
+issue-report-field-error = Hata
+issue-report-image-note = GitHub görselleri yalnızca kendi formunda kabul ettiğinden bildirim orada tamamlanır. Metin doldurulmuştur ve ekran görüntüsü yapıştırmanız için panodadır.
+issue-report-images-note = GitHub görselleri yalnızca kendi formunda kabul ettiğinden bildirim orada tamamlanır. Metin doldurulmuştur ve sürüklemeniz için ekran görüntüleriyle Finder açılır.
+issue-report-checks-title = Eklemeye değer
+issue-report-check-expected = Ne bekliyordunuz
+issue-report-check-steps = Yeniden oluşturma adımları
+issue-report-check-screenshot = Ekran görüntüsü
+issue-report-check-today = Şu anda nasıl çözüyorsunuz
+issue-report-add-expected = Beklediğim
+issue-report-add-steps = Yeniden oluşturma adımları:
+    1.
+issue-report-add-today = Şu anda
+issue-report-agent-title = Bir ajana yazdır
+issue-report-agent-detail = Eksikleri sorar, ardından onaylamanız için taslak hazırlar
+issue-report-agent-no-worktree = Ajanın çalışabileceği bir yer olması için önce bir çalışma ağacı açın
+issue-report-included = Dahil
+issue-report-fact-error = Hata mesajı
+issue-report-fact-app = Uygulama { $version }
+issue-report-fact-system = Sistem ayrıntıları
+issue-report-similar-bugs = Benzer bildirimler
+issue-report-similar-features = Benzer istekler
+issue-report-destination = { $repo } içinde herkese açık sorun kaydı
+issue-report-signed-out = Buradan göndermek için GitHub CLI'a giriş yapın
+issue-report-match-open = #{ $number } zaten açık
+issue-report-match-votes = { $count ->
+    [one] #{ $number } için 1 oy var
+   *[other] #{ $number } için { $count } oy var
+}
+issue-report-continue-github = GitHub'da devam et
+issue-report-add-details = Ayrıntılarımı ekle
+issue-report-upvote = Oy ver
+issue-report-open-issue = #{ $number } aç
+issue-report-sending = Gönderiliyor…
+issue-report-send-failed = Gönderilemedi. Taslağınız hâlâ burada.
+issue-report-filed = #{ $number } olarak kaydedildi
+issue-report-added = #{ $number } kaydına eklendi
+issue-report-upvoted = #{ $number } için oy verildi
+issue-report-copied = Bildirim kopyalandı
+issue-report-actions-private = Özel
+issue-report-action-draft-agent = Bir ajanla taslak oluştur
+issue-report-action-copy-markdown = Markdown olarak kopyala
+issue-report-action-email = Özel e-posta gönder

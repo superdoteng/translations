@@ -296,8 +296,7 @@ project-pinned = dipin
 project-no-worktrees-found = Tidak ditemukan worktree
 project-loading-merge-options = Memuat opsi penggabungan
 sidebar-add-project-to-start = Tambahkan proyek untuk memulai
-sidebar-search-project-worktrees-placeholder = Cari worktree di { $project }
-sidebar-search-hidden-worktrees-placeholder = Cari worktree tersembunyi di { $project }
+
 sidebar-install-ssh-key = Pasang kunci SSH
 action-update = Pembaruan
 workspace-no-ai-background-tasks = Tidak ada tugas latar belakang AI
@@ -604,8 +603,7 @@ worktree-create-branches-unavailable = Repositori belum dimuat
 worktree-create-in-background = Buat di latar belakang
 worktree-create-refresh-branches = Ambil cabang remote
 worktree-create-refresh-failed = Pengambilan gagal: { $error }
-worktree-create-return = Buat ↵
-worktree-in-workspace = Di ruang kerja
+
 worktree-no-matching-branches = Tidak ada cabang yang cocok
 worktree-not-installed = Tidak terpasang
 settings-sidebar-group-general = Umum
@@ -1030,6 +1028,7 @@ settings-ai-reset-to-inherited = Reset ke warisan
 settings-ai-system-instructions-placeholder = Instruksi sistem...
 settings-ai-user-message-placeholder = Pesan pengguna...
 settings-ai-launch-flags-description = Digunakan untuk setiap peluncuran penyedia ini. Yang ini ditambahkan terlebih dahulu.
+settings-ai-launch-flags-placeholders = Gunakan { $placeholders } untuk menyisipkan nama pohon pekerjaan, cabang, atau proyek pada setiap peluncuran.
 settings-ai-profile-definitions = Definisi profil
 settings-ai-global-default = Default global
 settings-ai-workspace-override = Pengaturan ruang kerja
@@ -1047,9 +1046,9 @@ settings-ai-all-models = Semua model
 settings-ai-select-models = Pilihan model
 settings-ai-select-models-count = Model terpilih ({ $count })
 settings-ai-model-visibility = Visibilitas model
-settings-ai-compliant-claude-tooltip = Saat off—atau di ruang kerja SSH—chat Claude menggunakan transport terstruktur claude -p.
-settings-ai-compliant-claude-view = Tampilan Claude yang sesuai
-settings-ai-compliant-claude-view-description = Jalankan obrolan Claude lokal melalui mode interaktif Claude Code untuk menjaga penggunaan tetap dalam paket langganan Anda. SSH ruang kerja menggunakan transportasi Claude -p yang terstruktur.
+settings-ai-claude-interactive-mode-tooltip = Saat nonaktif—atau di ruang kerja SSH—obrolan Claude menggunakan mode cetak (claude -p).
+settings-ai-claude-interactive-mode = Mode interaktif
+settings-ai-claude-interactive-mode-description = Jalankan obrolan Claude lokal dalam mode interaktif Claude Code, bukan mode cetak (claude -p). Ruang kerja SSH selalu menggunakan mode cetak.
 settings-ai-action-model-pins = Pin model lanjutan — per aksi
 settings-ai-action-model-pins-description = Pin model untuk aksi tertentu hanya ketika satu bucket default tidak cukup.
 settings-ai-session-model-description = Model yang digunakan secara default untuk sesi baru.
@@ -1334,12 +1333,7 @@ worktree-context-placeholder = Jelaskan apa yang ingin Anda kerjakan agen...
 worktree-filter-branches-placeholder = Cabang filter...
 worktree-label-placeholder = Label pohon kerja
 worktree-prompt-placeholder = Apa yang sedang kamu kerjakan?
-worktree-search-branches-placeholder = Cari cabang...
-worktree-search-branches-mrs-placeholder = Cari cabang dan MRs...
-worktree-search-branches-prs-placeholder = Cari cabang dan PRs...
-worktree-fetching-branches = Mengambil cabang...
-worktree-fetching-branches-mrs = Mengambil ranting dan MRs...
-worktree-fetching-branches-prs = Mengambil ranting dan PRs...
+
 right-panel-switch-stacked = Beralih ke terminal bertumpuk
 right-panel-switch-bottom = Beralih ke terminal bawah
 right-panel-switch-side-by-side = Beralih ke terminal berdampingan
@@ -1919,8 +1913,8 @@ settings-search-entry-agents-routing-thorough-actions-label = Tindakan menyeluru
 settings-search-entry-agents-routing-thorough-actions-description = Perbaiki CI, penggabungan, komentar, perubahan, konflik, dan ulasan yang diblokir.
 settings-search-entry-agents-providers-claude-code-provider-label = Claude Code penyedia
 settings-search-entry-agents-providers-claude-code-provider-description = Aktifkan Claude Code dan konfigurasikan model, profil, dan flag peluncurannya.
-settings-search-entry-agents-providers-compliant-claude-view-label = Tampilan Claude yang sesuai
-settings-search-entry-agents-providers-compliant-claude-view-description = Jalankan obrolan Claude melalui mode interaktif Claude Code untuk menjaga penggunaan tetap pada paket langganan Anda.
+settings-search-entry-agents-providers-claude-interactive-mode-label = Mode interaktif Claude
+settings-search-entry-agents-providers-claude-interactive-mode-description = Jalankan obrolan Claude lokal dalam mode interaktif Claude Code, bukan mode cetak (claude -p). Ruang kerja SSH selalu menggunakan mode cetak. Berlaku untuk obrolan yang baru dibuka.
 settings-search-entry-agents-providers-codex-provider-label = Codex penyedia
 settings-search-entry-agents-providers-codex-provider-description = Aktifkan Codex dan konfigurasikan model, profil, dan flag peluncurannya.
 settings-search-entry-agents-providers-pi-provider-label = Penyedia Pi
@@ -2020,7 +2014,7 @@ settings-ai-provider-section-chat = Chat
 settings-ai-provider-section-runtime = Runtime
 settings-ai-provider-profiles-description = Akun dan direktori home konfigurasi untuk penyedia ini.
 settings-ai-provider-manage-profiles = Kelola profil
-settings-ai-provider-antigravity-description = Aktifkan Antigravitasi sebagai penyedia terminal (memerlukan pemasangan CLI `agy` Antigravitasi).
+settings-ai-provider-antigravity-description = Aktifkan dukungan chat dan terminal Antigravity (memerlukan Antigravity CLI `agy` terpasang).
 settings-ai-provider-hermes-description = Aktifkan Hermes sebagai penyedia terminal (memerlukan Hermes Agent `hermes` terpasang).
 settings-ai-provider-qwen-description = Aktifkan Qwen Code sebagai penyedia terminal (memerlukan Qwen Code CLI `qwen` terinstal).
 settings-ai-provider-kimi-description = Aktifkan Kimi Code sebagai penyedia chat dan terminal (memerlukan Kimi Code yang terpasang CLI `kimi` terpasang).
@@ -2107,27 +2101,9 @@ workspace-remote-forge-cli-not-authenticated-hint = Tips: { $cli } pada host tid
 workspace-remote-forge-cli-missing-hint = Tips: instal { $cli } di host dan jalankan `{ $cli } auth login` untuk membuat { $kind } dengan agen.
 workspace-review-request-url-copied = Disalin { $kind } URL
 workspace-review-request-none-yet = Cabang ini belum memiliki { $kind }
-worktree-prompt = Prompt
-worktree-branches = Cabang-cabang
-worktree-merge-requests = Permintaan penggabungan
-worktree-pull-requests = Permintaan tarik
-worktree-review-requests = Tinjau permintaan
-worktree-tab-with-count = { $label } ({ $count })
-worktree-no-open-merge-requests = Tidak ada permintaan penggabungan terbuka
-worktree-no-open-pull-requests = Tidak ada permintaan pull yang terbuka
-worktree-no-open-review-requests = Tidak ada permintaan tinjauan terbuka
-worktree-no-branches = Tidak ada cabang
+
 common-no-matches = Tidak ada kecocokan
-worktree-gitlab-cli-missing = Tidak dapat memuat permintaan penggabungan: GitLab CLI (`glab`) tidak terpasang atau tidak ada di PATH. Instal `glab`, autentikasi dengan `glab auth login`, lalu coba lagi.
-worktree-gitlab-auth-required = Tidak dapat memuat permintaan penggabungan: GitLab CLI (`glab`) tidak terautentikasi. Jalankan `glab auth login` untuk host GitLab ini, lalu coba lagi.
-worktree-github-auth-required = Tidak dapat memuat pull request: GitHub CLI (`gh`) tidak terautentikasi untuk host ini. Jalankan `gh auth login --hostname <host>`, lalu coba lagi.
-worktree-github-load-error = Tidak dapat memuat pull request: { $error }
-worktree-gitlab-load-error = Tidak dapat memuat permintaan penggabungan: { $error }
-worktree-bitbucket-cli-missing = Tidak dapat memuat pull request: Bitbucket CLI (`bkt`) tidak terpasang atau tidak ada di PATH. Instal `bkt`, jalankan `bkt auth login https://bitbucket.org --kind cloud --web-token`, buat konteks dengan `bkt context create cloud --host api.bitbucket.org --workspace <workspace> --set-active`, lalu coba lagi.
-worktree-bitbucket-auth-required = Tidak dapat memuat pull request: Bitbucket CLI (`bkt`) tidak terautentikasi. Jalankan `bkt auth login https://bitbucket.org --kind cloud --web-token`, lalu coba lagi.
-worktree-bitbucket-no-context = Tidak dapat memuat pull request: { $error }
-worktree-bitbucket-load-error = Tidak dapat memuat pull request: { $error }
-worktree-review-request-load-error = Tidak dapat memuat permintaan tinjauan: { $error }
+
 remote-cli-install-succeeded = Instal { $app_name } CLI { $package } (api={ $api }, watch={ $watch }, hooks={ $hooks }) di remote.
 remote-cli-install-failed = CLI instalasi gagal: { $error }
 chat-composer-placeholder-active = Ketik pesan...
@@ -2746,20 +2722,16 @@ usage-meter-error = Tidak dapat memuat penggunaan
 usage-meter-loading = Memuat penggunaan…
 usage-meter-outdated = Data penggunaan sudah kedaluwarsa
 usage-meter-updated = Diperbarui { $ago }
-usage-meter-resets = Direset dalam { $duration }
-usage-meter-window-session = Sesi
+
 usage-meter-window-daily = Harian
 usage-meter-window-weekly = Mingguan
 usage-meter-window-monthly = Bulanan
-usage-meter-window-other = Lainnya
-usage-meter-all-providers = Semua penyedia
+
 usage-meter-percent-left = Tersisa { $percent }%
 usage-meter-no-account = Tidak ada akun yang dipilih
 usage-meter-now = sekarang
 usage-meter-default-account = Bawaan
-usage-popover-runs-out = Habis { $time }, direset { $reset }
-usage-popover-runs-out-then-credits = Habis { $time }, lalu memakai kredit
-usage-popover-using-credits = Memakai kredit
+
 usage-api-key = Kunci API
 usage-api-key-week = perkiraan minggu ini
 usage-api-key-today = { $amount } hari ini
@@ -2774,8 +2746,7 @@ usage-popover-window-left = Sisa { $window }
 usage-popover-updating = Memperbarui…
 usage-popover-retry = Coba lagi
 usage-popover-accounts = Akun
-usage-popover-in-use = Digunakan
-usage-popover-unused = { $count } tidak digunakan
+
 usage-graph-on-pace = Sesuai laju
 usage-graph-in-reserve = { $percent }% cadangan
 usage-graph-behind = { $percent }% melebihi laju
@@ -2784,10 +2755,9 @@ usage-graph-lasts = Cukup sampai reset
 usage-graph-collecting = Grafik terisi seiring data masuk
 usage-instrument-gauge = Meteran
 usage-instrument-graph = Grafik
-usage-popover-no-other-limits = Tidak ada batas lain
+
 usage-popover-no-data = Belum ada penggunaan dari { $providers }
-usage-popover-more = Lainnya
-usage-popover-less = Lebih sedikit
+
 tool-verb-ran = Menjalankan
 tool-verb-running = Menjalankan
 tool-verb-messaging = Mengirim pesan ke
@@ -3339,7 +3309,7 @@ workspace-fx-remote-history-unsupported = Terminal jarak jauh FX belum mendukung
 settings-keybinding-action-rename-selected-entry = Ubah nama entri terpilih
 settings-keybinding-action-chat-effort-backward = Putar mundur tingkat upaya obrolan
 worktree-preparing = Menyiapkan worktree…
-chat-queued-until-worktree-ready = Dimulai saat worktree siap
+chat-queued-until-worktree-ready = Dikirim saat siap
 chat-delivery-unconfirmed = Pengiriman belum dikonfirmasi
 chat-delivery-unconfirmed-retry = Periksa percakapan sebelum mencoba lagi; pesan ini mungkin sudah terkirim.
 chat-answer-pending-delivery = Menunggu pengiriman
@@ -3554,22 +3524,10 @@ usage-reset-busy = Masih memperbarui. Geser lagi sebentar lagi
 usage-reset-unavailable = Tidak ada reset yang tersedia
 usage-credits = Kredit
 usage-credits-unlimited = Tak terbatas
-usage-account-resets = { $count ->
-    [one] 1 reset
-   *[other] { $count } reset
-}
-usage-account-credits = { $amount } kredit
-usage-account-ring-window = { $account } { $window }
-usage-account-window-left = { $window } { $percent }%
-usage-graph-account-left = Sisa { $window } { $account }
-usage-graph-now = Sekarang
-usage-accounts-on-gauge = Di meteran
+
 usage-accounts-sign-in = Masuk
 usage-accounts-signing-in = Sedang masuk…
-usage-accounts-single = { $count ->
-    [1] { $providers } memiliki satu akun.
-   *[other] { $providers } masing-masing memiliki satu akun.
-}
+
 usage-account-empty-title = Belum ada penggunaan di { $account }
 usage-account-empty-body = Data muncul setelah sesi pertama profil ini.
 usage-account-signed-out-title = { $account } belum masuk
@@ -3580,3 +3538,357 @@ usage-graph-legend-even = Laju merata
 usage-graph-legend-projection = Proyeksi
 usage-graph-legend-estimated = Perkiraan
 usage-graph-estimated = Diperkirakan dari aktivitas di Mac ini
+
+browser-annotations-send-short = Kirim
+browser-agent-take-over = Ambil alih
+browser-agent-you-have-control = Anda memegang kendali
+browser-agent-hand-back = Kembalikan kendali
+browser-agent-is-waiting = { $agent } sedang menunggu
+browser-agent-handed-back-message = Saya sudah mengembalikan kendali browser. Lanjutkan dari bagian terakhir.
+browser-agent-cue-clicking = Mengeklik “{ $name }”
+browser-agent-cue-clicking-bare = Mengeklik
+browser-agent-cue-turning-on = Mengaktifkan “{ $name }”
+browser-agent-cue-turning-off = Menonaktifkan “{ $name }”
+browser-agent-cue-selecting = Memilih “{ $name }”
+browser-agent-cue-typing = Mengetik “{ $value }”
+browser-agent-cue-typing-bare = Mengetik
+browser-agent-cue-pressing = Menekan { $key }
+browser-agent-cue-hovering = Mengarahkan kursor ke “{ $name }”
+browser-agent-cue-checking = Memeriksa “{ $name }”
+browser-agent-cue-reading = Membaca halaman
+browser-agent-cue-scrolling = Menggulir
+browser-agent-cue-capturing = Mengambil tangkapan layar
+browser-agent-cue-capturing-element = Mengambil tangkapan layar “{ $name }”
+browser-agent-cue-capturing-full = Mengambil tangkapan layar satu halaman penuh
+browser-agent-cue-uploading = Mengunggah { $file }
+browser-agent-cue-running-script = Menjalankan skrip
+browser-agent-cue-scheme-dark = Beralih ke mode gelap
+browser-agent-cue-scheme-light = Beralih ke mode terang
+browser-agent-cue-waiting = Menunggu halaman
+browser-agent-cue-opening = Membuka { $url }
+browser-agent-cue-going-back = Kembali
+browser-agent-cue-going-forward = Maju
+browser-agent-cue-reloading = Memuat ulang halaman
+browser-agent-cue-new-tab = Membuka tab baru
+browser-agent-cue-working = Bekerja
+sidebar-search-project-placeholder = Cari di { $project }
+sidebar-search-hidden-worktrees-count-placeholder = Cari { $count } worktree tersembunyi
+project-search-filter-hint = Coba running, open, merged, atau #number
+project-search-all-projects = Cari di semua proyek
+project-search-hand-off-hint = Semua proyek
+project-search-section-worktrees = Worktree
+project-search-section-filter-hint = Coba bagian, running, open, atau #number
+history-empty-title = Setiap chat yang ditutup, cukup satu klik
+history-empty-hint = Chat yang Anda tutup di worktree ini muncul di sini, siap dilanjutkan dari bagian terakhir.
+history-empty-filtered-title = Belum ada chat { $agent }
+history-show-all-agents = Tampilkan semua agen
+settings-keybinding-action-toggle-bookmarks = Tampilkan/sembunyikan markah
+settings-keybinding-action-previous-bookmark = Markah sebelumnya
+settings-keybinding-action-next-bookmark = Markah berikutnya
+worktree-step-checking-out = { $forge ->
+    [gitlab] Melakukan checkout !{ $number }
+   *[other] Melakukan checkout #{ $number }
+}
+worktree-step-checking-out-branch = Melakukan checkout { $branch }
+worktree-step-creating-branch-from = Membuat branch dari { $base }
+worktree-step-creating-branch = Membuat branch
+worktree-step-naming = Memberi nama berdasarkan tugas Anda
+worktree-step-setup = Menjalankan penyiapan
+worktree-step-opening-agent = Membuka { $agent }
+chat-waiting-on-agents = Menunggu { $count } agen…
+chat-shell-mode = Perintah shell
+chat-shell-mode-detail = Dijalankan di ruang kerja ini. Gunakan Tambahkan ke chat pada hasilnya untuk menunjukkannya kepada agen.
+chat-shell-add-to-chat = Tambahkan ke chat
+markdown-run-command = Buka di terminal
+chat-shell-exit = keluar { $code }
+chat-shell-stopped = dihentikan
+chat-shell-finished = selesai
+chat-shell-no-output = Tidak ada keluaran
+chat-shell-show-all = Tampilkan semua { $count } baris
+chat-shell-run-again = Jalankan lagi
+chat-shell-open-in-terminal = Buka di terminal
+chat-shell-running = Berjalan
+chat-shell-stopping = Menghentikan
+chat-shell-stop = Hentikan
+chat-shell-stop-hint = Hentikan (Esc)
+chat-shell-unavailable = Perintah shell saat ini tidak tersedia di chat ini.
+chat-shell-open-refused = Tidak dapat membukanya di terminal tanpa menjalankannya. Salin perintahnya saja.
+chat-shell-start-failed = Tidak dapat menjalankan perintah: { $error }
+chat-files-changed-diff-unavailable = Diff ini tidak lagi tersedia.
+chat-files-changed-diff-no-lines = Hanya nama atau izin file ini yang berubah.
+chat-files-changed-diff-binary = File biner tidak memiliki diff baris untuk ditampilkan.
+chat-files-changed-diff-not-utf8 = File ini bukan teks UTF-8, jadi barisnya tidak dapat ditampilkan.
+chat-files-changed-diff-too-large = Diff ini terlalu besar untuk ditampilkan di sini.
+chat-files-changed-binary = Biner
+chat-files-changed-review-tooltip = Tinjau file ini dan kirim masukan ke chat ini
+chat-files-changed-review-tooltip-stale-snapshot = Tinjau file ini. { $count } file berubah lagi pada giliran berikutnya; giliran ini menampilkannya sesuai keadaan saat giliran ini berakhir.
+chat-files-changed-review-tooltip-stale-current = Tinjau file ini. { $count } file berubah lagi pada giliran berikutnya; tinjauan menampilkan keadaan terkininya.
+chat-diff-unchanged-lines = { $count } baris tidak berubah
+chat-files-changed-shared = Chat lain bekerja di worktree ini selama giliran ini. File yang diubah oleh kedua chat menampilkan perubahan keduanya.
+chat-files-changed-unattributed = Chat lain bekerja di worktree ini selama giliran ini. File yang diredupkan berubah saat chat tersebut bekerja dan mungkin merupakan perubahannya.
+chat-files-changed-snapshot-failed = Snapshot worktree pada giliran ini tidak dapat dibuat, jadi hanya file yang dilaporkan alatnya yang tercantum.
+palette-mode-all = Semua
+palette-mode-conversations = Percakapan
+palette-search-all = Cari agen, worktree, perintah, file…
+palette-search-files-short = Cari file…
+palette-section-needs-you = Membutuhkan Anda
+palette-section-running = Berjalan
+palette-section-recent = Terbaru
+palette-section-suggested = Disarankan
+palette-section-draft = Draf
+palette-section-actions = Tindakan
+palette-quick-new-chat = Chat baru di { $worktree }
+palette-quick-new-worktree = Worktree baru
+palette-quick-new-terminal = Terminal baru
+palette-quick-feedback = Laporkan bug atau minta fitur
+palette-section-top-hit = Hasil teratas
+palette-section-matches = Kecocokan
+palette-section-tabs = Tab
+palette-section-worktrees = Worktree
+palette-section-conversations = Percakapan
+palette-section-commands = Perintah
+palette-section-files = File
+palette-section-changed = Berubah di branch ini
+palette-files-show-all = Tampilkan semua { $count }
+palette-footer-branches = Branch
+palette-section-use-query-with = Gunakan “{ $query }” dengan
+palette-ask-agent-new-chat = Chat { $provider } baru
+palette-search-conversation-history = Cari riwayat percakapan
+palette-suggest-review-comments = { $count } komentar tinjauan
+palette-suggest-checks-failing = Pemeriksaan gagal
+palette-suggest-files-changed = { $count } file berubah
+palette-current = Saat ini
+palette-empty-scope = Tidak ada { $scope } yang cocok dengan “{ $query }”
+palette-empty-recent = Belum ada yang terbaru
+palette-search-everything = Cari semuanya
+palette-footer-run = Jalankan
+palette-footer-start = Mulai
+palette-footer-search = Cari
+palette-footer-show = Tampilkan
+palette-footer-report = Laporkan
+palette-footer-request = Minta
+palette-report-as-bug = Laporkan sebagai bug
+palette-report-as-feature = Minta sebagai fitur
+palette-finish-bug-report = Selesaikan laporan bug Anda
+palette-finish-feature-request = Selesaikan permintaan fitur Anda
+palette-actions = Tindakan
+palette-actions-search = Cari tindakan…
+palette-actions-no-match = Tidak ada tindakan yang cocok dengan “{ $query }”
+palette-action-open = Buka
+palette-action-switch-worktree = Beralih ke worktree
+palette-action-search-inside = Cari di dalam worktree ini
+palette-action-open-pr = Buka pull request #{ $number }
+palette-action-copy-worktree-path = Salin jalur worktree
+palette-action-group-ask-agent = Tanya agen di worktree ini
+palette-action-open-tab = Buka tab
+palette-action-preview = Pratinjau
+palette-action-close-tab = Tutup tab
+palette-action-open-conversation = Buka percakapan
+palette-action-open-in = Buka di…
+palette-action-show-ignored = Tampilkan file yang diabaikan
+palette-action-run-command = Jalankan perintah
+palette-action-start-in = Mulai di { $worktree }
+palette-action-group-another-agent = Agen lain
+palette-action-start-with = Mulai dengan { $provider }
+palette-mode-pull-requests = { $forge ->
+    [gitlab] Merge request
+   *[other] Pull request
+}
+palette-mode-branch-from = Buat branch dari
+palette-search-pull-requests = { $forge ->
+    [gitlab] Cari merge request, atau tempel tautan…
+   *[other] Cari pull request, atau tempel tautan…
+}
+palette-search-branch-from = Buat branch dari…
+palette-section-pull-requests = { $forge ->
+    [gitlab] Merge request
+   *[other] Pull request
+}
+palette-section-with-worktree = Dengan worktree
+palette-section-open-pull-requests = Terbuka
+palette-section-review-requested = Tinjauan diminta
+palette-section-needs-your-review = Perlu tinjauan Anda
+palette-section-yours = Milik Anda
+palette-section-open-review-requests = { $forge ->
+    [gitlab] Merge request terbuka
+   *[other] Pull request terbuka
+}
+palette-loading-pull-requests = { $forge ->
+    [gitlab] Memuat merge request…
+   *[other] Memuat pull request…
+}
+palette-no-open-pull-requests = { $forge ->
+    [gitlab] Tidak ada merge request terbuka
+   *[other] Tidak ada pull request terbuka
+}
+palette-footer-check-out = Checkout
+palette-footer-create = Buat
+palette-footer-choose = Pilih
+palette-action-start-in-new-worktree = Mulai di worktree baru
+palette-action-check-out = Checkout
+palette-action-work-on-it = Kerjakan
+palette-action-copy-link = Salin tautan
+palette-action-copy-number = Salin nomor
+palette-action-create-worktree = Buat worktree
+palette-action-choose-base = Pilih branch dasar
+palette-start-agent-on = Mulai { $provider } untuk “{ $query }”
+palette-in-new-worktree = di worktree baru
+palette-new-branch = Branch baru { $name }
+palette-new-branch-from = dari { $base }
+palette-new-branch-choose-base = Pilih dasar
+palette-branch-note-default = default
+palette-branch-note-current = worktree ini
+palette-branch-note-remote = remote
+palette-no-branches = Tidak ada branch
+palette-no-branch-named = Tidak ada branch bernama “{ $query }”
+palette-search-new-worktree = { $forge ->
+    [gitlab] Beri nama branch, jelaskan tugas, atau tempel MR
+   *[other] Beri nama branch, jelaskan tugas, atau tempel PR
+}
+palette-search-new-worktree-no-forge = Beri nama branch atau jelaskan tugas
+palette-action-open-review-request = { $forge ->
+    [gitlab] Buka merge request !{ $number }
+   *[other] Buka pull request #{ $number }
+}
+palette-action-create-and-start = Buat dan mulai { $provider }
+palette-search-projects = Pilih proyek
+palette-mode-projects = Proyek
+palette-section-branches = Branch
+palette-section-look-up = Cari
+palette-loading-branches = Memuat branch…
+palette-no-open-pull-request = { $forge ->
+    [gitlab] Tidak ada merge request terbuka
+   *[other] Tidak ada pull request terbuka
+}
+palette-pull-request-number = { $forge ->
+    [gitlab] Merge request !{ $number }
+   *[other] Pull request #{ $number }
+}
+palette-new-worktree-in = Worktree baru di { $project }
+palette-quick-new-worktree-in = di { $project }
+history-button-tooltip = Riwayat
+usage-window-minutes = { $count } menit
+usage-window-hours = { $count } jam
+usage-window-days = { $count } hari
+usage-window-weeks = { $count } minggu
+usage-window-all-models = Semua model
+usage-gauge-window-reached = Batas { $window } tercapai
+usage-gauge-reached = Batas tercapai
+usage-limit-no-reset = Waktu reset tidak dilaporkan
+usage-limit-back = Tersedia lagi { $time }
+usage-limit-in = dalam { $duration }
+usage-account-until = { $window }, hingga { $time }
+usage-account-back-at = { $window }, kembali pada { $time }
+usage-credits-balance = { $amount } kredit
+usage-details = Detail penggunaan
+usage-details-runs-out = Dengan laju ini, mungkin habis { $time }
+usage-details-lasts = Dengan laju ini, cukup hingga reset
+usage-details-used-up = { $window } sudah habis hingga { $time }
+usage-details-estimate = Perkiraan dari penggunaan rata-rata Anda sejak jendela ini dimulai. Berubah mengikuti penggunaan Anda; waktu reset tetap.
+usage-details-no-reset = { $provider } tidak melaporkan kapan jendela ini direset, jadi tidak ada perkiraan.
+usage-details-source = Batas dan waktu reset berasal dari { $provider }. Batas hanya ditampilkan jika dilaporkan untuk akun ini.
+chat-artifact-open-in-app-browser = Browser dalam aplikasi
+chat-artifact-open-in-default-browser = Browser default
+bookmarks-title = Markah
+bookmarks-search-placeholder = Cari markah…
+bookmarks-section-this-chat = Chat ini
+bookmarks-saved-label = Tersimpan
+bookmarks-untitled-chat = Chat tanpa judul
+bookmarks-loading = Memuat markah…
+bookmarks-load-failed = Markah gagal dimuat
+bookmarks-load-failed-hint = Balasan tersimpan Anda masih ada.
+bookmarks-load-failed-again-hint = Masih gagal dimuat. Balasan tersimpan Anda masih ada.
+bookmarks-this-chat-load-failed = Markah chat ini gagal dimuat
+bookmarks-other-chats-load-failed = Markah chat lain gagal dimuat
+bookmarks-try-again = Coba lagi
+bookmarks-empty-title = Simpan balasan yang layak dibaca ulang
+bookmarks-empty-hint = Arahkan kursor ke balasan dan klik markah. Balasan tersimpan dari semua chat dikumpulkan di sini.
+bookmarks-no-matches = Tidak ada markah yang cocok dengan “{ $query }”
+bookmarks-untitled-response = Respons tanpa judul
+bookmarks-add = Markahi respons
+bookmarks-remove = Hapus markah
+bookmarks-saved-ago = Disimpan { $elapsed }
+bookmarks-open-beside = Buka di samping chat ini
+bookmarks-response-streaming = Anda dapat memarkahi respons ini setelah selesai
+bookmarks-response-unavailable = Respons tidak tersedia
+bookmarks-save-failed = Tidak dapat menyimpan markah. Coba lagi.
+bookmarks-remove-failed = Tidak dapat menghapus markah. Coba lagi.
+notification-open = Buka
+chat-report-error = Laporkan masalah ini
+menu-help = Bantuan
+menu-help-report-bug = Laporkan bug…
+menu-help-suggest-feature = Minta fitur…
+issue-report-command-bug = Laporkan bug
+issue-report-command-feature = Minta fitur
+issue-report-kind-bug = Bug
+issue-report-kind-feature = Fitur
+issue-report-placeholder-bug = Apa yang terjadi? Apa yang Anda harapkan?
+issue-report-placeholder-feature = Apa yang ingin Anda lakukan?
+issue-report-placeholder-error = Apa yang Anda lakukan saat terjadi kegagalan?
+issue-report-error-title = Giliran gagal: { $error }
+issue-report-title = Judul
+issue-report-title-drafted = Disusun dari kata-kata Anda
+issue-report-title-from-error = Dari kesalahan
+issue-report-title-restored = Draf tersimpan
+issue-report-draft-saved = Laporan Anda disimpan sebagai draf
+issue-report-action-discard = Buang draf
+issue-report-screenshot = Tangkapan layar
+issue-report-screenshots = Tangkapan layar
+issue-report-drop-now = Lepaskan untuk melampirkan gambar
+issue-report-drop-hint = Lepaskan atau tempel tangkapan layar
+issue-report-drop-hint-review = atau lepaskan satu di sini
+issue-report-capture-window = Tangkap jendela
+issue-report-choose-images = Lampirkan gambar…
+issue-report-screenshot-pending = Mengambil tangkapan…
+issue-report-image-copied = Tangkapan layar disalin. Tempel ke laporan.
+issue-report-images-revealed = Tangkapan layar Anda ada di Finder. Seret ke laporan.
+issue-report-review = Tinjau
+issue-report-post = Posting secara publik
+issue-report-review-title = Tinjau sebelum memposting
+issue-report-review-comment-on = Komentari #{ $number }
+issue-report-audience = Siapa pun di GitHub dapat melihat ini
+issue-report-heading-bug = Apa yang terjadi?
+issue-report-heading-feature = Apa yang ingin Anda lakukan?
+issue-report-field-app-version = Versi aplikasi
+issue-report-field-os = Sistem operasi
+issue-report-field-system = Detail sistem
+issue-report-field-agent = Agen pemrograman
+issue-report-field-error = Kesalahan
+issue-report-image-note = GitHub hanya menerima gambar melalui formulirnya sendiri, jadi laporan ini diselesaikan di sana. Teks sudah diisi dan tangkapan layar ada di papan klip untuk ditempel.
+issue-report-images-note = GitHub hanya menerima gambar melalui formulirnya sendiri, jadi laporan ini diselesaikan di sana. Teks sudah diisi dan Finder terbuka dengan tangkapan layar untuk diseret.
+issue-report-checks-title = Sebaiknya ditambahkan
+issue-report-check-expected = Yang Anda harapkan
+issue-report-check-steps = Langkah reproduksi
+issue-report-check-screenshot = Tangkapan layar
+issue-report-check-today = Cara Anda menanganinya saat ini
+issue-report-add-expected = Saya mengharapkan
+issue-report-add-steps = Langkah reproduksi:
+    1.
+issue-report-add-today = Saat ini saya
+issue-report-agent-title = Minta agen menulisnya
+issue-report-agent-detail = Agen menanyakan yang kurang, lalu menyusun draf untuk Anda setujui
+issue-report-agent-no-worktree = Buka worktree dahulu agar agen memiliki tempat untuk bekerja
+issue-report-included = Disertakan
+issue-report-fact-error = Pesan kesalahan
+issue-report-fact-app = Aplikasi { $version }
+issue-report-fact-system = Detail sistem
+issue-report-similar-bugs = Laporan serupa
+issue-report-similar-features = Permintaan serupa
+issue-report-destination = Issue publik di { $repo }
+issue-report-signed-out = Masuk ke GitHub CLI untuk mengirim dari sini
+issue-report-match-open = #{ $number } sudah terbuka
+issue-report-match-votes = #{ $number } memiliki { $count } suara
+issue-report-continue-github = Lanjutkan di GitHub
+issue-report-add-details = Tambahkan detail saya
+issue-report-upvote = Beri suara dukungan
+issue-report-open-issue = Buka #{ $number }
+issue-report-sending = Mengirim…
+issue-report-send-failed = Tidak dapat mengirim. Draf Anda masih ada di sini.
+issue-report-filed = #{ $number } dibuat
+issue-report-added = Ditambahkan ke #{ $number }
+issue-report-upvoted = Memberi dukungan pada #{ $number }
+issue-report-copied = Laporan disalin
+issue-report-actions-private = Pribadi
+issue-report-action-draft-agent = Susun draf dengan agen
+issue-report-action-copy-markdown = Salin sebagai Markdown
+issue-report-action-email = Kirim melalui email secara pribadi

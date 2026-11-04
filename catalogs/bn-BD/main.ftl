@@ -290,8 +290,7 @@ project-pinned = পিন করা হয়েছে
 project-no-worktrees-found = কোনো কাজের গাছ পাওয়া যায়নি
 project-loading-merge-options = মার্জ অপশন লোড হচ্ছে
 sidebar-add-project-to-start = শুরু করতে একটি প্রকল্প যোগ করুন
-sidebar-search-project-worktrees-placeholder = { $project }-এ ওয়ার্কট্রি খুঁজুন
-sidebar-search-hidden-worktrees-placeholder = { $project }-এ লুকানো ওয়ার্কট্রি খুঁজুন
+
 sidebar-install-ssh-key = SSH কী ইনস্টল করুন
 action-update = আপডেট
 workspace-no-ai-background-tasks = কোনও AI ব্যাকগ্রাউন্ড কাজ নেই
@@ -598,8 +597,7 @@ worktree-create-branches-unavailable = রিপোজিটরি এখনও 
 worktree-create-in-background = পটভূমিতে তৈরি করুন
 worktree-create-refresh-branches = রিমোট শাখা আনুন
 worktree-create-refresh-failed = আনয়ন ব্যর্থ হয়েছে: { $error }
-worktree-create-return = ↵ তৈরি করুন
-worktree-in-workspace = কর্মক্ষেত্রে
+
 worktree-no-matching-branches = কোন মিল শাখা
 worktree-not-installed = ইনস্টল করা হয়নি
 settings-sidebar-group-general = সাধারণ
@@ -1032,6 +1030,7 @@ settings-ai-reset-to-inherited = উত্তরাধিকারসূত্�
 settings-ai-system-instructions-placeholder = সিস্টেম নির্দেশাবলী...
 settings-ai-user-message-placeholder = ব্যবহারকারীর বার্তা...
 settings-ai-launch-flags-description = এই সরবরাহকারীর প্রতিটি লঞ্চের জন্য ব্যবহৃত। এগুলো প্রথমে যোগ করা হয়।
+settings-ai-launch-flags-placeholders = প্রতিটি লঞ্চে ওয়ার্কট্রি, শাখা বা প্রকল্পের নাম যোগ করতে { $placeholders } ব্যবহার করুন।
 settings-ai-profile-definitions = প্রোফাইল সংজ্ঞা
 settings-ai-global-default = গ্লোবাল ডিফল্ট
 settings-ai-workspace-override = কর্মক্ষেত্র ওভাররাইড
@@ -1049,9 +1048,9 @@ settings-ai-all-models = সকল মডেল
 settings-ai-select-models = মডেল নির্বাচন করুন
 settings-ai-select-models-count = মডেল নির্বাচন করুন ({ $count })
 settings-ai-model-visibility = মডেল দৃশ্যমানতা
-settings-ai-compliant-claude-tooltip = বন্ধ থাকাকালীন - বা SSH ওয়ার্কস্পেসে - Claude চ্যাট স্ট্রাকচার্ড ক্লড -পি ট্রান্সপোর্ট ব্যবহার করে।
-settings-ai-compliant-claude-view = অনুগত Claude ভিউ
-settings-ai-compliant-claude-view-description = আপনার সদস্যতা পরিকল্পনায় ব্যবহার রাখতে Claude Code এর ইন্ট্যার ্যাক্টিভ মোডের মাধ্যমে স্থানীয় Claude চ্যাটগুলি চালান। SSH ওয়ার্কস্পেসগুলি স্ট্রাকচার্ড ক্লড -পি ট্রান্সপোর্ট ব্যবহার করে।
+settings-ai-claude-interactive-mode-tooltip = বন্ধ থাকলে—বা SSH ওয়ার্কস্পেসে—Claude চ্যাট প্রিন্ট মোড (claude -p) ব্যবহার করে।
+settings-ai-claude-interactive-mode = ইন্টারঅ্যাক্টিভ মোড
+settings-ai-claude-interactive-mode-description = স্থানীয় Claude চ্যাটগুলি প্রিন্ট মোডের (claude -p) বদলে Claude Code-এর ইন্টারঅ্যাক্টিভ মোডে চালান। SSH ওয়ার্কস্পেস সবসময় প্রিন্ট মোড ব্যবহার করে।
 settings-ai-action-model-pins = উন্নত - প্রতি অ্যাকশন মডেল পিন
 settings-ai-action-model-pins-description = নির্দিষ্ট ক্রিয়াকলাপের জন্য মডেলগুলি কেবল তখনই পিন করুন যখন একটি বালতি ডিফল্ট পর্যাপ্ত না হয়।
 settings-ai-session-model-description = ডিফল্টরূপে নতুন সেশনগুলির জন্য ব্যবহৃত মডেল।
@@ -1336,12 +1335,7 @@ worktree-context-placeholder = আপনি এজেন্টকে কী ক�
 worktree-filter-branches-placeholder = শাখা ফিল্টার করুন...
 worktree-label-placeholder = ওয়ার্কট্রি লেবেল
 worktree-prompt-placeholder = আপনি কি নিয়ে কাজ করছেন?
-worktree-search-branches-placeholder = শাখাগুলি অনুসন্ধান করুন...
-worktree-search-branches-mrs-placeholder = শাখা অনুসন্ধান করুন এবং MRs...
-worktree-search-branches-prs-placeholder = শাখাগুলি অনুসন্ধান করুন এবং PRs...
-worktree-fetching-branches = শাখা আনা হচ্ছে...
-worktree-fetching-branches-mrs = শাখা আনা এবং MRs ...
-worktree-fetching-branches-prs = শাখা আনা এবং PRs ...
+
 right-panel-switch-stacked = স্ট্যাকড টার্মিনালে স্যুইচ করুন
 right-panel-switch-bottom = নীচের টার্মিনালে স্যুইচ করুন
 right-panel-switch-side-by-side = পাশাপাশি টার্মিনালে স্যুইচ করুন
@@ -1921,8 +1915,8 @@ settings-search-entry-agents-routing-thorough-actions-label = পুঙ্খা
 settings-search-entry-agents-routing-thorough-actions-description = CI, অবরুদ্ধ মার্জ, মন্তব্য, পরিবর্তন, দ্বন্দ্ব এবং পর্যালোচনাগুলি ঠিক করুন।
 settings-search-entry-agents-providers-claude-code-provider-label = Claude Code সরবরাহকারী
 settings-search-entry-agents-providers-claude-code-provider-description = এর মডেলগুলি, প্রোফাইলগুলি এবং লঞ্চ পতাকাগুলি Claude Code এবং কনফিগার করুন সক্ষম করুন।
-settings-search-entry-agents-providers-compliant-claude-view-label = Claude ভিউ কমপ্লায়েন্ট
-settings-search-entry-agents-providers-compliant-claude-view-description = আপনার সদস্যতা পরিকল্পনায় ব্যবহার রাখতে Claude Code এর ইন্ট্যার ্যাক্টিভ মোডের মাধ্যমে চ্যাট Claude চালান।
+settings-search-entry-agents-providers-claude-interactive-mode-label = Claude ইন্টারঅ্যাক্টিভ মোড
+settings-search-entry-agents-providers-claude-interactive-mode-description = স্থানীয় Claude চ্যাটগুলি প্রিন্ট মোডের (claude -p) বদলে Claude Code-এর ইন্টারঅ্যাক্টিভ মোডে চালান। SSH ওয়ার্কস্পেস সবসময় প্রিন্ট মোড ব্যবহার করে। নতুন খোলা চ্যাটে প্রযোজ্য।
 settings-search-entry-agents-providers-codex-provider-label = Codex সরবরাহকারী
 settings-search-entry-agents-providers-codex-provider-description = এর মডেল, প্রোফাইল এবং লঞ্চ পতাকাগুলি Codex সক্ষম করুন এবং কনফিগার করুন।
 settings-search-entry-agents-providers-pi-provider-label = পাই সরবরাহকারী
@@ -2022,7 +2016,7 @@ settings-ai-provider-section-chat = চ্যাট
 settings-ai-provider-section-runtime = রানটাইম
 settings-ai-provider-profiles-description = এই প্রদানকারীর অ্যাকাউন্ট ও কনফিগ হোম ডিরেক্টরি।
 settings-ai-provider-manage-profiles = প্রোফাইল পরিচালনা করুন
-settings-ai-provider-antigravity-description = টার্মিনাল সরবরাহকারী হিসাবে অ্যান্টিগ্র্যাভিটি সক্ষম করুন (অ্যান্টিগ্র্যাভিটি ইনস্টল CLI `agy` প্রয়োজন)।
+settings-ai-provider-antigravity-description = Antigravity চ্যাট ও টার্মিনাল সমর্থন চালু করুন (Antigravity CLI `agy` ইনস্টল করা থাকতে হবে)।
 settings-ai-provider-hermes-description = টার্মিনাল সরবরাহকারী হিসাবে হার্মিসকে সক্ষম করুন (হার্মিস এজেন্ট ইনস্টল `hermes` প্রয়োজন)।
 settings-ai-provider-qwen-description = টার্মিনাল সরবরাহকারী হিসাবে Qwen কোড সক্ষম করুন (Qwen কোড ইনস্টল CLI `qwen` প্রয়োজন)।
 settings-ai-provider-kimi-description = একটি চ্যাট এবং টার্মিনাল সরবরাহকারী হিসাবে Kimi কোড সক্ষম করুন (বর্তমান Kimi কোড ইনস্টল CLI `kimi` প্রয়োজন)।
@@ -2109,27 +2103,9 @@ workspace-remote-forge-cli-not-authenticated-hint = টিপ: হোস্ট�
 workspace-remote-forge-cli-missing-hint = টিপ: হোস্টে { $cli } ইনস্টল করুন এবং এজেন্টের সাথে একটি { $kind } তৈরি করতে `{ $cli } auth login` চালান।
 workspace-review-request-url-copied = অনুলিপি করা { $kind } URL
 workspace-review-request-none-yet = এই ব্রাঞ্চে এখনও কোনো { $kind } নেই
-worktree-prompt = প্রম্পট করুন
-worktree-branches = শাখা
-worktree-merge-requests = মার্জ অনুরোধ
-worktree-pull-requests = টানুন অনুরোধ
-worktree-review-requests = রিভিউ অনুরোধ
-worktree-tab-with-count = { $label } ({ $count })
-worktree-no-open-merge-requests = কোনও উন্মুক্ত মার্জ অনুরোধ নেই
-worktree-no-open-pull-requests = কোনও খোলা পুল অনুরোধ নেই
-worktree-no-open-review-requests = কোনও উন্মুক্ত পর্যালোচনা অনুরোধ নেই
-worktree-no-branches = কোন শাখা নেই
+
 common-no-matches = কোন মিল নেই
-worktree-gitlab-cli-missing = মার্জ অনুরোধ লোড করা যায়নি: GitLab CLI (`glab`) ইনস্টল করা নেই বা PATH এ নেই। `glab` ইনস্টল করুন, `glab auth login` দিয়ে প্রমাণীকরণ করুন তারপর পুনরায় চেষ্টা করুন।
-worktree-gitlab-auth-required = মার্জ অনুরোধ লোড করা যায়নি: GitLab CLI (`glab`) প্রমাণিত নয়। এই GitLab হোস্টের জন্য `glab auth login` দৌড়ান তারপর পুনরায় চেষ্টা করুন।
-worktree-github-auth-required = টান অনুরোধ লোড করা যায়নি: GitHub CLI (`gh`) এই হোস্টের জন্য প্রমাণীকরণ করা হয়নি। `gh auth login --hostname <host>` দৌড়ান, তারপরে আবার চেষ্টা করুন।
-worktree-github-load-error = পুল অনুরোধগুলি লোড করা যায়নি: { $error }
-worktree-gitlab-load-error = মার্জ অনুরোধ লোড করা যায়নি: { $error }
-worktree-bitbucket-cli-missing = পুল রিকোয়েস্ট লোড করা যায়নি: Bitbucket CLI (`bkt`) ইনস্টল করা নেই বা PATH-এ নেই। `bkt` ইনস্টল করুন, `bkt auth login https://bitbucket.org --kind cloud --web-token` চালান, `bkt context create cloud --host api.bitbucket.org --workspace <workspace> --set-active` দিয়ে একটি কনটেক্সট তৈরি করুন, তারপর আবার চেষ্টা করুন।
-worktree-bitbucket-auth-required = পুল রিকোয়েস্ট লোড করা যায়নি: Bitbucket CLI (`bkt`) প্রমাণীকৃত নয়। `bkt auth login https://bitbucket.org --kind cloud --web-token` চালান, তারপর আবার চেষ্টা করুন।
-worktree-bitbucket-no-context = পুল রিকোয়েস্ট লোড করা যায়নি: { $error }
-worktree-bitbucket-load-error = পুল রিকোয়েস্ট লোড করা যায়নি: { $error }
-worktree-review-request-load-error = পর্যালোচনা অনুরোধ লোড করা যায়নি: { $error }
+
 remote-cli-install-succeeded = রিমোটে { $app_name } CLI { $package } ইনস্টল করা হয়েছে (এপিআই = { $api }, ঘড়ি = { $watch }, হুক = { $hooks })
 remote-cli-install-failed = CLI ইনস্টলেশন ব্যর্থ হয়েছে: { $error }
 chat-composer-placeholder-active = একটি বার্তা টাইপ করুন...
@@ -2748,20 +2724,16 @@ usage-meter-error = ব্যবহার লোড করা যায়নি
 usage-meter-loading = ব্যবহার লোড হচ্ছে…
 usage-meter-outdated = ব্যবহারের ডেটা পুরোনো
 usage-meter-updated = আপডেট হয়েছে { $ago }
-usage-meter-resets = { $duration } পরে রিসেট হবে
-usage-meter-window-session = সেশন
+
 usage-meter-window-daily = দৈনিক
 usage-meter-window-weekly = সাপ্তাহিক
 usage-meter-window-monthly = মাসিক
-usage-meter-window-other = অন্যান্য
-usage-meter-all-providers = সব প্রদানকারী
+
 usage-meter-percent-left = { $percent }% বাকি
 usage-meter-no-account = কোনো অ্যাকাউন্ট নির্বাচিত নেই
 usage-meter-now = এখন
 usage-meter-default-account = ডিফল্ট
-usage-popover-runs-out = { $time } শেষ হবে, { $reset } রিসেট হবে
-usage-popover-runs-out-then-credits = { $time } শেষ হবে, তারপর ক্রেডিট
-usage-popover-using-credits = ক্রেডিট ব্যবহার হচ্ছে
+
 usage-api-key = API কী
 usage-api-key-week = এই সপ্তাহে আনুমানিক
 usage-api-key-today = আজ { $amount }
@@ -2776,8 +2748,7 @@ usage-popover-window-left = { $window } বাকি
 usage-popover-updating = আপডেট হচ্ছে…
 usage-popover-retry = আবার চেষ্টা করুন
 usage-popover-accounts = অ্যাকাউন্ট
-usage-popover-in-use = ব্যবহৃত হচ্ছে
-usage-popover-unused = { $count }টি অব্যবহৃত
+
 usage-graph-on-pace = গতি অনুযায়ী
 usage-graph-in-reserve = { $percent }% সংরক্ষিত
 usage-graph-behind = গতির চেয়ে { $percent }% পিছিয়ে
@@ -2786,10 +2757,9 @@ usage-graph-lasts = রিসেট পর্যন্ত চলবে
 usage-graph-collecting = রিডিং আসার সঙ্গে সঙ্গে গ্রাফ পূর্ণ হবে
 usage-instrument-gauge = গেজ
 usage-instrument-graph = গ্রাফ
-usage-popover-no-other-limits = আর কোনো সীমা নেই
+
 usage-popover-no-data = { $providers } থেকে এখনও কোনো ব্যবহার নেই
-usage-popover-more = আরও
-usage-popover-less = কম
+
 tool-verb-ran = চালানো হয়েছে
 tool-verb-running = চালানো হচ্ছে
 tool-verb-messaging = বার্তা পাঠানো হচ্ছে
@@ -3348,7 +3318,7 @@ workspace-fx-remote-history-unsupported = FX দূরবর্তী টার�
 settings-keybinding-action-rename-selected-entry = নির্বাচিত আইটেমের নাম বদলান
 settings-keybinding-action-chat-effort-backward = চ্যাটের প্রচেষ্টার স্তর উল্টো দিকে ঘোরান
 worktree-preparing = ওয়ার্কট্রি প্রস্তুত হচ্ছে…
-chat-queued-until-worktree-ready = ওয়ার্কট্রি প্রস্তুত হলে শুরু হবে
+chat-queued-until-worktree-ready = প্রস্তুত হলে পাঠানো হবে
 chat-delivery-unconfirmed = পৌঁছানো নিশ্চিত নয়
 chat-delivery-unconfirmed-retry = আবার চেষ্টার আগে কথোপকথন দেখুন; এই বার্তা হয়তো ইতিমধ্যে পৌঁছেছে।
 chat-answer-pending-delivery = পৌঁছানোর অপেক্ষায়
@@ -3570,22 +3540,10 @@ usage-reset-busy = এখনও আপডেট হচ্ছে। একটু 
 usage-reset-unavailable = কোনো রিসেট উপলভ্য নেই
 usage-credits = ক্রেডিট
 usage-credits-unlimited = সীমাহীন
-usage-account-resets = { $count ->
-    [one] { $count }টি রিসেট
-   *[other] { $count }টি রিসেট
-}
-usage-account-credits = { $amount } ক্রেডিট
-usage-account-ring-window = { $account } { $window }
-usage-account-window-left = { $window } { $percent }%
-usage-graph-account-left = { $account } { $window } বাকি
-usage-graph-now = এখন
-usage-accounts-on-gauge = গেজে
+
 usage-accounts-sign-in = সাইন ইন
 usage-accounts-signing-in = সাইন ইন হচ্ছে…
-usage-accounts-single = { $count ->
-    [one] { $providers }-এর একটি অ্যাকাউন্ট আছে।
-   *[other] { $providers }-এর প্রত্যেকের একটি করে অ্যাকাউন্ট আছে।
-}
+
 usage-account-empty-title = { $account }-এ এখনও কোনো ব্যবহার নেই
 usage-account-empty-body = এই প্রোফাইলের প্রথম সেশনের পরে রিডিং দেখা যাবে।
 usage-account-signed-out-title = { $account } সাইন ইন করা নেই
@@ -3596,3 +3554,675 @@ usage-graph-legend-even = সমান গতি
 usage-graph-legend-projection = পূর্বাভাস
 usage-graph-legend-estimated = আনুমানিক
 usage-graph-estimated = এই Mac-এর কার্যকলাপ থেকে আনুমানিক
+
+browser-annotations-send-short = পাঠান
+
+browser-agent-take-over = নিয়ন্ত্রণ নিন
+
+browser-agent-you-have-control = নিয়ন্ত্রণ আপনার হাতে
+
+browser-agent-hand-back = নিয়ন্ত্রণ ফিরিয়ে দিন
+
+browser-agent-is-waiting = { $agent } অপেক্ষা করছে
+
+browser-agent-handed-back-message = ব্রাউজারের নিয়ন্ত্রণ ফিরিয়ে দিয়েছি। যেখানে থেমেছিলেন সেখান থেকে চালিয়ে যান।
+
+browser-agent-cue-clicking = “{ $name }”-এ ক্লিক করা হচ্ছে
+
+browser-agent-cue-clicking-bare = ক্লিক করা হচ্ছে
+
+browser-agent-cue-turning-on = “{ $name }” চালু করা হচ্ছে
+
+browser-agent-cue-turning-off = “{ $name }” বন্ধ করা হচ্ছে
+
+browser-agent-cue-selecting = “{ $name }” নির্বাচন করা হচ্ছে
+
+browser-agent-cue-typing = “{ $value }” লেখা হচ্ছে
+
+browser-agent-cue-typing-bare = লেখা হচ্ছে
+
+browser-agent-cue-pressing = { $key } চাপা হচ্ছে
+
+browser-agent-cue-hovering = “{ $name }”-এর ওপর পয়েন্টার রাখা হচ্ছে
+
+browser-agent-cue-checking = “{ $name }” পরীক্ষা করা হচ্ছে
+
+browser-agent-cue-reading = পৃষ্ঠা পড়া হচ্ছে
+
+browser-agent-cue-scrolling = স্ক্রল করা হচ্ছে
+
+browser-agent-cue-capturing = স্ক্রিনশট নেওয়া হচ্ছে
+
+browser-agent-cue-capturing-element = “{ $name }”-এর স্ক্রিনশট নেওয়া হচ্ছে
+
+browser-agent-cue-capturing-full = পুরো পৃষ্ঠার স্ক্রিনশট নেওয়া হচ্ছে
+
+browser-agent-cue-uploading = { $file } আপলোড করা হচ্ছে
+
+browser-agent-cue-running-script = স্ক্রিপ্ট চালানো হচ্ছে
+
+browser-agent-cue-scheme-dark = ডার্ক মোডে যাওয়া হচ্ছে
+
+browser-agent-cue-scheme-light = লাইট মোডে যাওয়া হচ্ছে
+
+browser-agent-cue-waiting = পৃষ্ঠার জন্য অপেক্ষা করা হচ্ছে
+
+browser-agent-cue-opening = { $url } খোলা হচ্ছে
+
+browser-agent-cue-going-back = পেছনে যাওয়া হচ্ছে
+
+browser-agent-cue-going-forward = সামনে যাওয়া হচ্ছে
+
+browser-agent-cue-reloading = পৃষ্ঠা আবার লোড করা হচ্ছে
+
+browser-agent-cue-new-tab = নতুন ট্যাব খোলা হচ্ছে
+
+browser-agent-cue-working = কাজ চলছে
+
+sidebar-search-project-placeholder = { $project } খুঁজুন
+
+sidebar-search-hidden-worktrees-count-placeholder = লুকানো { $count }টি ওয়ার্কট্রি খুঁজুন
+
+project-search-filter-hint = running, open, merged বা #নম্বর দিয়ে চেষ্টা করুন
+
+project-search-all-projects = সব প্রকল্পে খুঁজুন
+
+project-search-hand-off-hint = সব প্রকল্প
+
+project-search-section-worktrees = ওয়ার্কট্রি
+
+project-search-section-filter-hint = কোনো বিভাগ, running, open বা #নম্বর দিয়ে চেষ্টা করুন
+
+history-empty-title = বন্ধ করা প্রতিটি চ্যাট এক ক্লিকেই ফিরে পান
+
+history-empty-hint = এই ওয়ার্কট্রিতে বন্ধ করা চ্যাট এখানে দেখা যায়, যাতে যেখানে থেমেছিলেন সেখান থেকেই চালিয়ে যেতে পারেন।
+
+history-empty-filtered-title = এখনও কোনো { $agent } চ্যাট নেই
+
+history-show-all-agents = সব এজেন্ট দেখান
+
+settings-keybinding-action-toggle-bookmarks = বুকমার্ক দেখানো বদলান
+
+settings-keybinding-action-previous-bookmark = আগের বুকমার্ক
+
+settings-keybinding-action-next-bookmark = পরের বুকমার্ক
+
+worktree-step-checking-out = { $forge ->
+    [gitlab] !{ $number } চেকআউট করা হচ্ছে
+   *[other] #{ $number } চেকআউট করা হচ্ছে
+}
+
+worktree-step-checking-out-branch = { $branch } চেকআউট করা হচ্ছে
+
+worktree-step-creating-branch-from = { $base } থেকে ব্রাঞ্চ তৈরি করা হচ্ছে
+
+worktree-step-creating-branch = ব্রাঞ্চ তৈরি করা হচ্ছে
+
+worktree-step-naming = আপনার কাজ অনুযায়ী নাম দেওয়া হচ্ছে
+
+worktree-step-setup = সেটআপ চালানো হচ্ছে
+
+worktree-step-opening-agent = { $agent } খোলা হচ্ছে
+
+chat-waiting-on-agents = { $count }টি এজেন্টের জন্য অপেক্ষা করা হচ্ছে…
+
+chat-shell-mode = শেল কমান্ড
+
+chat-shell-mode-detail = এই ওয়ার্কস্পেসে চলে। ফলাফল এজেন্টকে দেখাতে সেখানে থাকা ‘চ্যাটে যোগ করুন’ ব্যবহার করুন।
+
+chat-shell-add-to-chat = চ্যাটে যোগ করুন
+
+markdown-run-command = টার্মিনালে খুলুন
+
+chat-shell-exit = প্রস্থান কোড { $code }
+
+chat-shell-stopped = থামানো হয়েছে
+
+chat-shell-finished = শেষ হয়েছে
+
+chat-shell-no-output = কোনো আউটপুট নেই
+
+chat-shell-show-all = সব { $count }টি লাইন দেখান
+
+chat-shell-run-again = আবার চালান
+
+chat-shell-open-in-terminal = টার্মিনালে খুলুন
+
+chat-shell-running = চলছে
+
+chat-shell-stopping = থামানো হচ্ছে
+
+chat-shell-stop = থামান
+
+chat-shell-stop-hint = থামান (Esc)
+
+chat-shell-unavailable = এই চ্যাটে এখন শেল কমান্ড ব্যবহার করা যাচ্ছে না।
+
+chat-shell-open-refused = কমান্ড না চালিয়ে এটি টার্মিনালে খোলা যায়নি। তার বদলে কমান্ডটি কপি করুন।
+
+chat-shell-start-failed = কমান্ড চালানো যায়নি: { $error }
+
+chat-files-changed-diff-unavailable = এই পার্থক্য আর উপলভ্য নেই।
+
+chat-files-changed-diff-no-lines = শুধু এই ফাইলের নাম বা অনুমতি বদলেছে।
+
+chat-files-changed-diff-binary = বাইনারি ফাইলে দেখানোর মতো লাইনভিত্তিক পার্থক্য নেই।
+
+chat-files-changed-diff-not-utf8 = এই ফাইলটি UTF-8 টেক্সট নয়, তাই এর লাইন দেখানো যায় না।
+
+chat-files-changed-diff-too-large = এই পার্থক্য এখানে দেখানোর পক্ষে খুব বড়।
+
+chat-files-changed-binary = বাইনারি
+
+chat-files-changed-review-tooltip = এই ফাইলগুলো পর্যালোচনা করে এই চ্যাটে মতামত পাঠান
+
+chat-files-changed-review-tooltip-stale-snapshot = এই ফাইলগুলো পর্যালোচনা করুন। পরের কোনো পালায় { $count }টি আবার বদলেছে; এই পালায় এর শেষে থাকা অবস্থাই দেখানো হচ্ছে।
+
+chat-files-changed-review-tooltip-stale-current = এই ফাইলগুলো পর্যালোচনা করুন। পরের কোনো পালায় { $count }টি আবার বদলেছে; পর্যালোচনায় বর্তমান অবস্থা দেখানো হচ্ছে।
+
+chat-diff-unchanged-lines = অপরিবর্তিত { $count }টি লাইন
+
+chat-files-changed-shared = এই পালায় অন্য একটি চ্যাটও এই ওয়ার্কট্রিতে কাজ করছিল। দুই চ্যাটের বদলানো ফাইলে উভয়ের সম্পাদনা দেখা যায়।
+
+chat-files-changed-unattributed = এই পালায় অন্য একটি চ্যাটও এই ওয়ার্কট্রিতে কাজ করছিল। ম্লান ফাইলগুলো তার কাজের সময় বদলেছে এবং সেগুলো তার পরিবর্তন হতে পারে।
+
+chat-files-changed-snapshot-failed = এই পালার ওয়ার্কট্রির স্ন্যাপশট নেওয়া যায়নি, তাই শুধু এর টুলগুলোর জানানো ফাইল তালিকাভুক্ত রয়েছে।
+
+palette-mode-all = সব
+
+palette-mode-conversations = কথোপকথন
+
+palette-search-all = এজেন্ট, ওয়ার্কট্রি, কমান্ড, ফাইল খুঁজুন…
+
+palette-search-files-short = ফাইল খুঁজুন…
+
+palette-section-needs-you = আপনাকে প্রয়োজন
+
+palette-section-running = চলছে
+
+palette-section-recent = সাম্প্রতিক
+
+palette-section-suggested = প্রস্তাবিত
+
+palette-section-draft = খসড়া
+
+palette-section-actions = অ্যাকশন
+
+palette-quick-new-chat = { $worktree }-তে নতুন চ্যাট
+
+palette-quick-new-worktree = নতুন ওয়ার্কট্রি
+
+palette-quick-new-terminal = নতুন টার্মিনাল
+
+palette-quick-feedback = বাগ জানান বা ফিচার চান
+
+palette-section-top-hit = সেরা মিল
+
+palette-section-matches = মিল
+
+palette-section-tabs = ট্যাব
+
+palette-section-worktrees = ওয়ার্কট্রি
+
+palette-section-conversations = কথোপকথন
+
+palette-section-commands = কমান্ড
+
+palette-section-files = ফাইল
+
+palette-section-changed = এই ব্রাঞ্চে পরিবর্তিত
+
+palette-files-show-all = সব { $count }টি দেখান
+
+palette-footer-branches = ব্রাঞ্চ
+
+palette-section-use-query-with = “{ $query }” ব্যবহার করুন
+
+palette-ask-agent-new-chat = নতুন { $provider } চ্যাট
+
+palette-search-conversation-history = কথোপকথনের ইতিহাসে খুঁজুন
+
+palette-suggest-review-comments = পর্যালোচনার { $count }টি মন্তব্য
+
+palette-suggest-checks-failing = পরীক্ষা ব্যর্থ
+
+palette-suggest-files-changed = { $count }টি ফাইল বদলেছে
+
+palette-current = বর্তমান
+
+palette-empty-scope = “{ $query }”-এর সাথে কোনো { $scope } মেলেনি
+
+palette-empty-recent = এখনও সাম্প্রতিক কিছু নেই
+
+palette-search-everything = সবকিছু খুঁজুন
+
+palette-footer-run = চালান
+
+palette-footer-start = শুরু করুন
+
+palette-footer-search = খুঁজুন
+
+palette-footer-show = দেখান
+
+palette-footer-report = জানান
+
+palette-footer-request = অনুরোধ করুন
+
+palette-report-as-bug = বাগ হিসেবে জানান
+
+palette-report-as-feature = ফিচার হিসেবে অনুরোধ করুন
+
+palette-finish-bug-report = আপনার বাগ রিপোর্ট শেষ করুন
+
+palette-finish-feature-request = আপনার ফিচার অনুরোধ শেষ করুন
+
+palette-actions = অ্যাকশন
+
+palette-actions-search = অ্যাকশন খুঁজুন…
+
+palette-actions-no-match = “{ $query }”-এর সাথে কোনো অ্যাকশন মেলেনি
+
+palette-action-open = খুলুন
+
+palette-action-switch-worktree = ওয়ার্কট্রিতে যান
+
+palette-action-search-inside = এই ওয়ার্কট্রির ভেতরে খুঁজুন
+
+palette-action-open-pr = পুল রিকোয়েস্ট #{ $number } খুলুন
+
+palette-action-copy-worktree-path = ওয়ার্কট্রির পাথ কপি করুন
+
+palette-action-group-ask-agent = এই ওয়ার্কট্রিতে কোনো এজেন্টকে জিজ্ঞেস করুন
+
+palette-action-open-tab = ট্যাব খুলুন
+
+palette-action-preview = পূর্বরূপ
+
+palette-action-close-tab = ট্যাব বন্ধ করুন
+
+palette-action-open-conversation = কথোপকথন খুলুন
+
+palette-action-open-in = অন্য অ্যাপে খুলুন…
+
+palette-action-show-ignored = উপেক্ষিত ফাইল দেখান
+
+palette-action-run-command = কমান্ড চালান
+
+palette-action-start-in = { $worktree }-তে শুরু করুন
+
+palette-action-group-another-agent = অন্য এজেন্ট
+
+palette-action-start-with = { $provider } দিয়ে শুরু করুন
+
+palette-mode-pull-requests = { $forge ->
+    [gitlab] মার্জ রিকোয়েস্ট
+   *[other] পুল রিকোয়েস্ট
+}
+
+palette-mode-branch-from = যেখান থেকে ব্রাঞ্চ করবেন
+
+palette-search-pull-requests = { $forge ->
+    [gitlab] মার্জ রিকোয়েস্ট খুঁজুন বা লিংক পেস্ট করুন…
+   *[other] পুল রিকোয়েস্ট খুঁজুন বা লিংক পেস্ট করুন…
+}
+
+palette-search-branch-from = যেখান থেকে ব্রাঞ্চ করবেন…
+
+palette-section-pull-requests = { $forge ->
+    [gitlab] মার্জ রিকোয়েস্ট
+   *[other] পুল রিকোয়েস্ট
+}
+
+palette-section-with-worktree = ওয়ার্কট্রি আছে
+
+palette-section-open-pull-requests = খোলা
+
+palette-section-review-requested = পর্যালোচনা চাওয়া হয়েছে
+
+palette-section-needs-your-review = আপনার পর্যালোচনা প্রয়োজন
+
+palette-section-yours = আপনার
+
+palette-section-open-review-requests = { $forge ->
+    [gitlab] খোলা মার্জ রিকোয়েস্ট
+   *[other] খোলা পুল রিকোয়েস্ট
+}
+
+palette-loading-pull-requests = { $forge ->
+    [gitlab] মার্জ রিকোয়েস্ট লোড হচ্ছে…
+   *[other] পুল রিকোয়েস্ট লোড হচ্ছে…
+}
+
+palette-no-open-pull-requests = { $forge ->
+    [gitlab] কোনো খোলা মার্জ রিকোয়েস্ট নেই
+   *[other] কোনো খোলা পুল রিকোয়েস্ট নেই
+}
+
+palette-footer-check-out = চেকআউট করুন
+
+palette-footer-create = তৈরি করুন
+
+palette-footer-choose = বেছে নিন
+
+palette-action-start-in-new-worktree = নতুন ওয়ার্কট্রিতে শুরু করুন
+
+palette-action-check-out = চেকআউট করুন
+
+palette-action-work-on-it = এতে কাজ করুন
+
+palette-action-copy-link = লিংক কপি করুন
+
+palette-action-copy-number = নম্বর কপি করুন
+
+palette-action-create-worktree = ওয়ার্কট্রি তৈরি করুন
+
+palette-action-choose-base = ভিত্তি ব্রাঞ্চ বেছে নিন
+
+palette-start-agent-on = “{ $query }”-এ { $provider } শুরু করুন
+
+palette-in-new-worktree = নতুন ওয়ার্কট্রিতে
+
+palette-new-branch = নতুন ব্রাঞ্চ { $name }
+
+palette-new-branch-from = { $base } থেকে
+
+palette-new-branch-choose-base = ভিত্তি বেছে নিন
+
+palette-branch-note-default = ডিফল্ট
+
+palette-branch-note-current = এই ওয়ার্কট্রি
+
+palette-branch-note-remote = রিমোট
+
+palette-no-branches = কোনো ব্রাঞ্চ নেই
+
+palette-no-branch-named = “{ $query }” নামে কোনো ব্রাঞ্চ নেই
+
+palette-search-new-worktree = { $forge ->
+    [gitlab] ব্রাঞ্চের নাম দিন, কাজের বিবরণ লিখুন বা MR পেস্ট করুন
+   *[other] ব্রাঞ্চের নাম দিন, কাজের বিবরণ লিখুন বা PR পেস্ট করুন
+}
+
+palette-search-new-worktree-no-forge = ব্রাঞ্চের নাম দিন বা কাজের বিবরণ লিখুন
+
+palette-action-open-review-request = { $forge ->
+    [gitlab] মার্জ রিকোয়েস্ট !{ $number } খুলুন
+   *[other] পুল রিকোয়েস্ট #{ $number } খুলুন
+}
+
+palette-action-create-and-start = তৈরি করে { $provider } শুরু করুন
+
+palette-search-projects = প্রকল্প বেছে নিন
+
+palette-mode-projects = প্রকল্প
+
+palette-section-branches = ব্রাঞ্চ
+
+palette-section-look-up = খুঁজে দেখুন
+
+palette-loading-branches = ব্রাঞ্চ লোড হচ্ছে…
+
+palette-no-open-pull-request = { $forge ->
+    [gitlab] কোনো খোলা মার্জ রিকোয়েস্ট নেই
+   *[other] কোনো খোলা পুল রিকোয়েস্ট নেই
+}
+
+palette-pull-request-number = { $forge ->
+    [gitlab] মার্জ রিকোয়েস্ট !{ $number }
+   *[other] পুল রিকোয়েস্ট #{ $number }
+}
+
+palette-new-worktree-in = { $project }-এ নতুন ওয়ার্কট্রি
+
+palette-quick-new-worktree-in = { $project }-এ
+
+history-button-tooltip = ইতিহাস
+
+usage-window-minutes = { $count } মিনিটের
+
+usage-window-hours = { $count } ঘণ্টার
+
+usage-window-days = { $count } দিনের
+
+usage-window-weeks = { $count } সপ্তাহের
+
+usage-window-all-models = সব মডেল
+
+usage-gauge-window-reached = { $window } সীমায় পৌঁছেছে
+
+usage-gauge-reached = সীমায় পৌঁছেছে
+
+usage-limit-no-reset = রিসেটের সময় জানানো হয়নি
+
+usage-limit-back = { $time } আবার ব্যবহারযোগ্য
+
+usage-limit-in = { $duration } পরে
+
+usage-account-until = { $window }, { $time } পর্যন্ত
+
+usage-account-back-at = { $window }, { $time } ফিরে আসবে
+
+usage-credits-balance = { $amount } ক্রেডিট
+
+usage-details = ব্যবহারের বিবরণ
+
+usage-details-runs-out = এই গতিতে { $time } ফুরিয়ে যেতে পারে
+
+usage-details-lasts = এই গতিতে রিসেট পর্যন্ত চলবে
+
+usage-details-used-up = { $window } ফুরিয়ে গেছে; { $time } পর্যন্ত অপেক্ষা করুন
+
+usage-details-estimate = এই সময়সীমা শুরু হওয়ার পর থেকে গড় ব্যবহারের ভিত্তিতে অনুমান। ব্যবহার বদলালে এটি বদলায়; রিসেটের সময় বদলায় না।
+
+usage-details-no-reset = { $provider } এই সময়সীমার রিসেটের সময় জানায়নি, তাই কোনো পূর্বাভাস নেই।
+
+usage-details-source = সীমা এবং রিসেটের সময় { $provider } থেকে আসে। এই অ্যাকাউন্টের জন্য জানানো হলেই সীমা দেখানো হয়।
+
+chat-artifact-open-in-app-browser = অ্যাপের ব্রাউজার
+
+chat-artifact-open-in-default-browser = ডিফল্ট ব্রাউজার
+
+bookmarks-title = বুকমার্ক
+
+bookmarks-search-placeholder = বুকমার্ক খুঁজুন…
+
+bookmarks-section-this-chat = এই চ্যাট
+
+bookmarks-saved-label = সংরক্ষিত
+
+bookmarks-untitled-chat = শিরোনামহীন চ্যাট
+
+bookmarks-loading = বুকমার্ক লোড হচ্ছে…
+
+bookmarks-load-failed = বুকমার্ক লোড হয়নি
+
+bookmarks-load-failed-hint = আপনার সংরক্ষিত উত্তরগুলো এখনও আছে।
+
+bookmarks-load-failed-again-hint = এখনও লোড হচ্ছে না। আপনার সংরক্ষিত উত্তরগুলো এখনও আছে।
+
+bookmarks-this-chat-load-failed = এই চ্যাটের বুকমার্ক লোড হয়নি
+
+bookmarks-other-chats-load-failed = অন্য চ্যাটের বুকমার্ক লোড হয়নি
+
+bookmarks-try-again = আবার চেষ্টা করুন
+
+bookmarks-empty-title = আবার পড়ার মতো উত্তরগুলো রাখুন
+
+bookmarks-empty-hint = কোনো উত্তরের ওপর পয়েন্টার রেখে বুকমার্কে ক্লিক করুন। সব চ্যাটের সংরক্ষিত উত্তর এখানে জমা হয়।
+
+bookmarks-no-matches = “{ $query }”-এর সাথে কোনো বুকমার্ক মেলেনি
+
+bookmarks-untitled-response = শিরোনামহীন উত্তর
+
+bookmarks-add = উত্তর বুকমার্ক করুন
+
+bookmarks-remove = বুকমার্ক সরান
+
+bookmarks-saved-ago = { $elapsed } সংরক্ষিত
+
+bookmarks-open-beside = এই চ্যাটের পাশে খুলুন
+
+bookmarks-response-streaming = উত্তরটি শেষ হলে বুকমার্ক করতে পারবেন
+
+bookmarks-response-unavailable = উত্তর উপলভ্য নয়
+
+bookmarks-save-failed = বুকমার্ক সংরক্ষণ করা যায়নি। আবার চেষ্টা করুন।
+
+bookmarks-remove-failed = বুকমার্ক সরানো যায়নি। আবার চেষ্টা করুন।
+
+notification-open = খুলুন
+
+chat-report-error = এই সমস্যাটি জানান
+
+menu-help = সহায়তা
+
+menu-help-report-bug = বাগ জানান…
+
+menu-help-suggest-feature = ফিচার চান…
+
+issue-report-command-bug = বাগ জানান
+
+issue-report-command-feature = ফিচার চান
+
+issue-report-kind-bug = বাগ
+
+issue-report-kind-feature = ফিচার
+
+issue-report-placeholder-bug = কী ঘটেছে? তার বদলে কী আশা করেছিলেন?
+
+issue-report-placeholder-feature = আপনি কী করতে চাইছেন?
+
+issue-report-placeholder-error = ব্যর্থ হওয়ার সময় আপনি কী করছিলেন?
+
+issue-report-error-title = পালা ব্যর্থ: { $error }
+
+issue-report-title = শিরোনাম
+
+issue-report-title-drafted = আপনার কথার ভিত্তিতে খসড়া
+
+issue-report-title-from-error = ত্রুটি থেকে
+
+issue-report-title-restored = সংরক্ষিত খসড়া
+
+issue-report-draft-saved = আপনার রিপোর্ট খসড়া হিসেবে সংরক্ষিত হয়েছে
+
+issue-report-action-discard = খসড়া বাতিল করুন
+
+issue-report-screenshot = স্ক্রিনশট
+
+issue-report-screenshots = স্ক্রিনশট
+
+issue-report-drop-now = ছবি যুক্ত করতে ছেড়ে দিন
+
+issue-report-drop-hint = স্ক্রিনশট ছেড়ে দিন বা পেস্ট করুন
+
+issue-report-drop-hint-review = অথবা এখানে একটি ছেড়ে দিন
+
+issue-report-capture-window = উইন্ডোর ছবি নিন
+
+issue-report-choose-images = ছবি যুক্ত করুন…
+
+issue-report-screenshot-pending = ছবি নেওয়া হচ্ছে…
+
+issue-report-image-copied = স্ক্রিনশট কপি হয়েছে। রিপোর্টে পেস্ট করুন।
+
+issue-report-images-revealed = আপনার স্ক্রিনশট Finder-এ আছে। রিপোর্টে টেনে আনুন।
+
+issue-report-review = পর্যালোচনা
+
+issue-report-post = সবার জন্য প্রকাশ করুন
+
+issue-report-review-title = প্রকাশের আগে পর্যালোচনা
+
+issue-report-review-comment-on = #{ $number }-এ মন্তব্য করুন
+
+issue-report-audience = GitHub-এর যে কেউ এটি দেখতে পাবেন
+
+issue-report-heading-bug = কী ঘটেছে?
+
+issue-report-heading-feature = আপনি কী করতে চাইছেন?
+
+issue-report-field-app-version = অ্যাপের সংস্করণ
+
+issue-report-field-os = অপারেটিং সিস্টেম
+
+issue-report-field-system = সিস্টেমের বিবরণ
+
+issue-report-field-agent = কোডিং এজেন্ট
+
+issue-report-field-error = ত্রুটি
+
+issue-report-image-note = GitHub শুধু নিজস্ব ফর্মেই ছবি গ্রহণ করে, তাই রিপোর্টটি সেখানে শেষ করতে হবে। লেখা পূরণ করা আছে এবং পেস্ট করার জন্য স্ক্রিনশট ক্লিপবোর্ডে আছে।
+
+issue-report-images-note = GitHub শুধু নিজস্ব ফর্মেই ছবি গ্রহণ করে, তাই রিপোর্টটি সেখানে শেষ করতে হবে। লেখা পূরণ করা আছে, আর স্ক্রিনশট টেনে আনার জন্য Finder খুলবে।
+
+issue-report-checks-title = যোগ করলে ভালো হয়
+
+issue-report-check-expected = আপনি কী আশা করেছিলেন
+
+issue-report-check-steps = পুনরায় ঘটানোর ধাপ
+
+issue-report-check-screenshot = স্ক্রিনশট
+
+issue-report-check-today = এখন কীভাবে সামলান
+
+issue-report-add-expected = আমি আশা করেছিলাম
+
+issue-report-add-steps = পুনরায় ঘটানোর ধাপ:
+    1.
+
+issue-report-add-today = এখন আমি
+
+issue-report-agent-title = এজেন্টকে দিয়ে লিখিয়ে নিন
+
+issue-report-agent-detail = কী তথ্য নেই তা জিজ্ঞেস করে, তারপর আপনার অনুমোদনের জন্য খসড়া তৈরি করে
+
+issue-report-agent-no-worktree = আগে একটি ওয়ার্কট্রি খুলুন, যাতে এজেন্টের কাজ করার জায়গা থাকে
+
+issue-report-included = অন্তর্ভুক্ত
+
+issue-report-fact-error = ত্রুটির বার্তা
+
+issue-report-fact-app = অ্যাপ { $version }
+
+issue-report-fact-system = সিস্টেমের বিবরণ
+
+issue-report-similar-bugs = একই ধরনের রিপোর্ট
+
+issue-report-similar-features = একই ধরনের অনুরোধ
+
+issue-report-destination = { $repo }-তে সর্বজনীন ইস্যু
+
+issue-report-signed-out = এখান থেকে জমা দিতে GitHub CLI-এ সাইন ইন করুন
+
+issue-report-match-open = #{ $number } আগে থেকেই খোলা আছে
+
+issue-report-match-votes = #{ $number }-এ { $count }টি ভোট আছে
+
+issue-report-continue-github = GitHub-এ চালিয়ে যান
+
+issue-report-add-details = আমার বিবরণ যোগ করুন
+
+issue-report-upvote = সমর্থন দিন
+
+issue-report-open-issue = #{ $number } খুলুন
+
+issue-report-sending = পাঠানো হচ্ছে…
+
+issue-report-send-failed = পাঠানো যায়নি। আপনার খসড়া এখানেই আছে।
+
+issue-report-filed = #{ $number } জমা হয়েছে
+
+issue-report-added = #{ $number }-এ যোগ হয়েছে
+
+issue-report-upvoted = #{ $number }-এ সমর্থন দেওয়া হয়েছে
+
+issue-report-copied = রিপোর্ট কপি হয়েছে
+
+issue-report-actions-private = ব্যক্তিগত
+
+issue-report-action-draft-agent = এজেন্ট দিয়ে খসড়া করুন
+
+issue-report-action-copy-markdown = Markdown হিসেবে কপি করুন
+
+issue-report-action-email = ব্যক্তিগতভাবে ইমেইল করুন
