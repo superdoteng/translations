@@ -216,6 +216,7 @@ browser-color-scheme-view-dark = 이 페이지를 다크 모드로 보기
 browser-color-scheme-showing-light = 이 페이지를 라이트 모드로 표시하는 중입니다. 클릭하면 앱 설정을 따릅니다
 browser-color-scheme-showing-dark = 이 페이지를 다크 모드로 표시하는 중입니다. 클릭하면 앱 설정을 따릅니다
 browser-picking-hint = 채팅으로 보낼 요소 선택
+browser-find-placeholder = 페이지에서 찾기
 browser-served-stopped = 중지됨
 browser-served-starting = 시작 중
 browser-served-branch = 브랜치
@@ -304,8 +305,7 @@ project-loading-merge-options = 병합 옵션 불러오는 중
 update-cli-action-update = 업데이트
 update-cli-manual-hint = 수동 업데이트
 sidebar-add-project-to-start = 프로젝트를 추가해 시작하세요
-sidebar-search-project-worktrees-placeholder = { $project }의 워크트리 검색
-sidebar-search-hidden-worktrees-placeholder = { $project }의 숨긴 워크트리 검색
+
 sidebar-install-ssh-key = SSH 키 설치
 action-update = 업데이트
 workspace-no-ai-background-tasks = AI 백그라운드 작업 없음
@@ -628,8 +628,7 @@ worktree-create-branches-unavailable = 저장소를 아직 불러오지 않았�
 worktree-create-in-background = 백그라운드에서 만들기
 worktree-create-refresh-branches = 원격 브랜치 가져오기
 worktree-create-refresh-failed = 가져오기 실패: { $error }
-worktree-create-return = 만들기 ↵
-worktree-in-workspace = 워크스페이스에 있음
+
 worktree-no-matching-branches = 일치하는 브랜치 없음
 worktree-not-installed = 설치되지 않음
 
@@ -1540,8 +1539,8 @@ settings-search-entry-agents-routing-thorough-actions-label = 정밀 작업
 settings-search-entry-agents-routing-thorough-actions-description = CI 수정, 차단된 병합, 댓글, 변경 요청, 충돌, 리뷰 처리.
 settings-search-entry-agents-providers-claude-code-provider-label = Claude Code 제공자
 settings-search-entry-agents-providers-claude-code-provider-description = Claude Code를 켜고 모델, 프로필, 실행 플래그를 구성합니다.
-settings-search-entry-agents-providers-compliant-claude-view-label = 약관 준수 Claude 보기
-settings-search-entry-agents-providers-compliant-claude-view-description = Claude 채팅을 Claude Code의 대화형 모드로 실행하여 구독 요금제 사용량으로 계속 처리합니다.
+settings-search-entry-agents-providers-claude-interactive-mode-label = Claude 대화형 모드
+settings-search-entry-agents-providers-claude-interactive-mode-description = 로컬 Claude 채팅을 프린트 모드(claude -p) 대신 Claude Code의 대화형 모드로 실행합니다. SSH 워크스페이스는 항상 프린트 모드를 사용합니다. 새로 여는 채팅에 적용됩니다.
 settings-search-entry-agents-providers-codex-provider-label = Codex 제공자
 settings-search-entry-agents-providers-codex-provider-description = Codex를 켜고 모델, 프로필, 실행 플래그를 구성합니다.
 settings-search-entry-agents-providers-pi-provider-label = Pi 제공자
@@ -1882,6 +1881,7 @@ settings-ai-reset-to-inherited = 상속 값으로 재설정
 settings-ai-system-instructions-placeholder = 시스템 지침…
 settings-ai-user-message-placeholder = 사용자 메시지…
 settings-ai-launch-flags-description = 이 제공자를 실행할 때마다 사용되며, 가장 먼저 추가됩니다.
+settings-ai-launch-flags-placeholders = { $placeholders }를 사용하면 실행할 때마다 워크트리, 브랜치 또는 프로젝트 이름을 넣을 수 있습니다.
 settings-ai-profile-definitions = 프로필 정의
 settings-ai-global-default = 전역 기본값
 settings-ai-workspace-override = 워크스페이스 재정의
@@ -1899,9 +1899,9 @@ settings-ai-all-models = 모든 모델
 settings-ai-select-models = 모델 선택
 settings-ai-select-models-count = 모델 선택 ({ $count })
 settings-ai-model-visibility = 모델 표시
-settings-ai-compliant-claude-tooltip = 이 옵션이 꺼져 있거나 SSH 워크스페이스에서는 Claude 채팅이 구조화된 claude -p 전송 방식을 사용합니다.
-settings-ai-compliant-claude-view = 약관 준수 Claude 보기
-settings-ai-compliant-claude-view-description = 로컬 Claude 채팅을 Claude Code의 대화형 모드로 실행합니다. SSH 워크스페이스는 구조화된 claude -p 전송 방식을 사용합니다.
+settings-ai-claude-interactive-mode-tooltip = 꺼져 있거나 SSH 워크스페이스에서는 Claude 채팅이 프린트 모드(claude -p)를 사용합니다.
+settings-ai-claude-interactive-mode = 대화형 모드
+settings-ai-claude-interactive-mode-description = 로컬 Claude 채팅을 프린트 모드(claude -p) 대신 Claude Code의 대화형 모드로 실행합니다. SSH 워크스페이스는 항상 프린트 모드를 사용합니다.
 settings-ai-action-model-pins = 고급 — 동작별 모델 고정
 settings-ai-action-model-pins-description = 버킷 기본값으로 충분하지 않을 때만 특정 동작에 모델을 고정하세요.
 settings-ai-session-model-description = 새 세션에 기본으로 사용하는 모델.
@@ -1962,7 +1962,7 @@ settings-ai-provider-section-chat = 채팅
 settings-ai-provider-section-runtime = 런타임
 settings-ai-provider-profiles-description = 이 제공자의 계정과 구성 홈 디렉터리입니다.
 settings-ai-provider-manage-profiles = 프로필 관리
-settings-ai-provider-antigravity-description = Antigravity를 터미널 제공자로 사용합니다(Antigravity CLI `agy` 설치 필요).
+settings-ai-provider-antigravity-description = Antigravity 채팅 및 터미널 지원을 활성화합니다(Antigravity CLI `agy` 설치 필요).
 settings-ai-provider-hermes-description = Hermes를 터미널 제공자로 사용합니다(Hermes Agent `hermes` 설치 필요).
 settings-ai-provider-qwen-description = Qwen Code를 터미널 제공자로 사용합니다(Qwen Code CLI `qwen` 설치 필요).
 settings-ai-provider-fx-description = fx 채팅 및 터미널 지원을 켭니다(fx CLI `fx` 설치 필요).
@@ -2073,6 +2073,7 @@ settings-keybinding-action-focus-chat-input = 채팅 입력란에 포커스
 settings-keybinding-action-find = 찾기
 find-placeholder = 찾기…
 find-results-none = 결과 0개
+find-no-matches = 일치하는 항목 없음
 find-results-count = 결과 { $count }개
 find-results-current = { $count }개 중 { $current }
 settings-keybinding-action-dismiss-search = 검색 닫기
@@ -2083,6 +2084,7 @@ settings-keybinding-action-reload = 새로고침
 settings-keybinding-action-chat-model-picker = 채팅 모델 선택기 보이기/숨기기
 settings-keybinding-action-chat-fast-mode = 채팅 빠른 모드 켜기/끄기
 settings-keybinding-action-chat-plan-mode = 채팅 계획 모드 켜기/끄기
+settings-keybinding-action-chat-ultracode = 채팅 Ultracode 켜기/끄기
 settings-keybinding-action-chat-effort = 채팅 추론 강도 전환
 settings-keybinding-action-chat-effort-backward = 채팅 추론 강도 역방향 전환
 settings-keybinding-action-chat-permission-picker = 채팅 권한 선택기 보이기/숨기기
@@ -2121,7 +2123,7 @@ chat-fast-mode = 빠른 모드
 chat-fast = 빠름
 chat-queued-until-setup-finishes = 셋업이 끝날 때까지 대기 중
 worktree-preparing = 워크트리 준비 중…
-chat-queued-until-worktree-ready = 워크트리가 준비되면 시작
+chat-queued-until-worktree-ready = 준비되면 전송
 chat-queued-position = 대기열 { $position }번째
 chat-delivery-unconfirmed = 전송 미확인
 chat-delivery-unconfirmed-retry = 다시 보내기 전에 대화를 확인하세요. 이 메시지는 이미 전달되었을 수 있습니다.
@@ -2145,18 +2147,20 @@ review-resolved-count = 해결됨 ({ $count })
 right-panel-setup = 셋업
 action-stop = 중지
 right-panel-terminal = 터미널
-setup-no-output = 셋업 스크립트 출력 없음
-setup-output-description = 셋업을 실행하면 스크립트 출력이 여기에 표시됩니다.
 setup-run = 셋업 실행
+setup-empty-title = 셋업 스크립트 추가
+setup-empty-description = 새 워크트리마다 실행되어 종속성을 설치하고 환경 파일을 복사합니다.
+setup-pending-title = 셋업 스크립트
+setup-pending-description = 새 워크트리가 생성될 때 이 명령을 실행합니다.
+run-empty-title = 실행 스크립트 추가
+run-empty-description = 개발 서버나 앱을 시작합니다. 각 스크립트는 별도의 탭에서 열립니다.
+run-idle-description = 스크립트가 실행되면 여기에 출력이 표시됩니다.
+script-suggestion-from = { $file }에서
+script-suggestion-use = 사용
+script-write-with-agent = 에이전트에게 작성 요청
+script-edit-in-settings = 프로젝트 설정 열기
+script-commands-more = { $count }개 더
 setup-not-configured = 구성된 셋업 스크립트가 없습니다
-setup-configure = 셋업 스크립트 구성
-setup-configure-description = 프로젝트 설정에서 셋업 스크립트를 구성하거나 .super.engineering/config.json 파일을 추가하세요.
-run-no-output = 실행 스크립트 출력 없음
-run-output-description = 실행 스크립트 출력이 여기에 표시됩니다.
-run-workspace = 워크스페이스 실행
-run-not-configured = 구성된 실행 스크립트가 없습니다
-run-configure = 실행 스크립트 구성
-run-configure-description = 프로젝트 설정에서 실행 스크립트를 구성하거나 .super.engineering/config.json 파일을 추가하세요.
 review-submitted-reviews = 제출된 리뷰
 review-ai-questions = AI 질문
 review-no-comments = 아직 리뷰 댓글이 없습니다
@@ -2235,6 +2239,9 @@ composer-model = 모델
 composer-effort = 추론 강도
 composer-effort-lower = 추론 강도 낮추기
 composer-effort-raise = 추론 강도 높이기
+composer-ultracode = Ultracode
+composer-ultracode-tooltip = Ultracode가 꺼져 있습니다. 켜면 Claude가 규모가 큰 작업에 멀티 에이전트 워크플로를 실행하므로 토큰을 더 많이 사용합니다. 클릭하면 켜집니다.
+composer-ultracode-on-tooltip = Ultracode가 켜져 있습니다. Claude가 규모가 큰 작업에 멀티 에이전트 워크플로를 실행하므로 토큰을 더 많이 사용합니다. 클릭하면 꺼집니다.
 reasoning-effort-unspecified = 지정되지 않음
 settings-ai-thinking-unavailable = 이 모델은 사고 수준 설정을 지원하지 않습니다.
 context-title = 컨텍스트
@@ -2471,33 +2478,9 @@ worktree-context-placeholder = 에이전트에게 맡길 작업을 설명하세�
 worktree-filter-branches-placeholder = 브랜치 필터…
 worktree-label-placeholder = 기능 라벨
 worktree-prompt-placeholder = 어떤 작업을 하시나요?
-worktree-search-branches-placeholder = 브랜치 검색…
-worktree-search-branches-mrs-placeholder = 브랜치와 MR 검색…
-worktree-search-branches-prs-placeholder = 브랜치와 PR 검색…
-worktree-fetching-branches = 브랜치 가져오는 중…
-worktree-fetching-branches-mrs = 브랜치와 MR 가져오는 중…
-worktree-fetching-branches-prs = 브랜치와 PR 가져오는 중…
-worktree-prompt = 프롬프트
-worktree-branches = 브랜치
-worktree-merge-requests = 머지 리퀘스트
-worktree-pull-requests = 풀 리퀘스트
-worktree-review-requests = 리뷰 요청
-worktree-tab-with-count = { $label } ({ $count })
-worktree-no-open-merge-requests = 열린 머지 리퀘스트 없음
-worktree-no-open-pull-requests = 열린 풀 리퀘스트 없음
-worktree-no-open-review-requests = 열린 리뷰 요청 없음
-worktree-no-branches = 브랜치 없음
+
 common-no-matches = 일치하는 항목 없음
-worktree-gitlab-cli-missing = 머지 리퀘스트를 불러오지 못했습니다: GitLab CLI(`glab`)가 설치되지 않았거나 PATH에 없습니다. `glab`을 설치하고 `glab auth login`으로 인증한 뒤 다시 시도하세요.
-worktree-gitlab-auth-required = 머지 리퀘스트를 불러오지 못했습니다: GitLab CLI(`glab`)가 인증되지 않았습니다. 이 GitLab 호스트에 `glab auth login`을 실행한 뒤 다시 시도하세요.
-worktree-github-auth-required = 풀 리퀘스트를 불러오지 못했습니다: 이 호스트에 대해 GitHub CLI(`gh`)가 인증되지 않았습니다. `gh auth login --hostname <host>`를 실행한 뒤 다시 시도하세요.
-worktree-github-load-error = 풀 리퀘스트를 불러오지 못했습니다: { $error }
-worktree-gitlab-load-error = 머지 리퀘스트를 불러오지 못했습니다: { $error }
-worktree-bitbucket-cli-missing = 풀 리퀘스트를 불러오지 못했습니다: Bitbucket CLI(`bkt`)가 설치되지 않았거나 PATH에 없습니다. `bkt`를 설치하고 `bkt auth login https://bitbucket.org --kind cloud --web-token`을 실행한 다음, `bkt context create cloud --host api.bitbucket.org --workspace <workspace> --set-active`로 컨텍스트를 만든 후 다시 시도하세요.
-worktree-bitbucket-auth-required = 풀 리퀘스트를 불러오지 못했습니다: Bitbucket CLI(`bkt`)가 인증되지 않았습니다. `bkt auth login https://bitbucket.org --kind cloud --web-token`을 실행한 후 다시 시도하세요.
-worktree-bitbucket-no-context = 풀 리퀘스트를 불러오지 못했습니다: { $error }
-worktree-bitbucket-load-error = 풀 리퀘스트를 불러오지 못했습니다: { $error }
-worktree-review-request-load-error = 리뷰 요청을 불러오지 못했습니다: { $error }
+
 right-panel-switch-stacked = 쌓인 터미널로 전환
 right-panel-switch-bottom = 하단 터미널로 전환
 right-panel-switch-side-by-side = 나란히 놓인 터미널로 전환
@@ -3099,20 +3082,16 @@ usage-meter-error = 사용량을 불러오지 못했습니다
 usage-meter-loading = 사용량 불러오는 중…
 usage-meter-outdated = 사용량 데이터가 오래되었습니다
 usage-meter-updated = { $ago } 업데이트됨
-usage-meter-resets = { $duration } 후 초기화
-usage-meter-window-session = 세션
+
 usage-meter-window-daily = 일간
 usage-meter-window-weekly = 주간
 usage-meter-window-monthly = 월간
-usage-meter-window-other = 기타
-usage-meter-all-providers = 모든 제공자
+
 usage-meter-percent-left = { $percent }% 남음
 usage-meter-no-account = 선택된 계정 없음
 usage-meter-now = 지금
 usage-meter-default-account = 기본
-usage-popover-runs-out = { $time }에 소진, { $reset }에 초기화
-usage-popover-runs-out-then-credits = { $time }에 소진, 이후 크레딧 사용
-usage-popover-using-credits = 크레딧 사용 중
+
 usage-api-key = API 키
 usage-api-key-week = 이번 주 추정치
 usage-api-key-today = 오늘 { $amount }
@@ -3127,8 +3106,7 @@ usage-popover-window-left = { $window } 남음
 usage-popover-updating = 업데이트 중…
 usage-popover-retry = 다시 시도
 usage-popover-accounts = 계정
-usage-popover-in-use = 사용 중
-usage-popover-unused = 미사용 { $count }개
+
 usage-graph-on-pace = 적정 속도
 usage-graph-in-reserve = { $percent }% 여유
 usage-graph-behind = 적정 속도보다 { $percent }% 초과
@@ -3137,10 +3115,9 @@ usage-graph-lasts = 초기화 전까지 충분
 usage-graph-collecting = 데이터가 쌓이면 그래프가 채워집니다
 usage-instrument-gauge = 게이지
 usage-instrument-graph = 그래프
-usage-popover-no-other-limits = 다른 한도 없음
+
 usage-popover-no-data = 아직 { $providers }의 사용량이 없습니다
-usage-popover-more = 더 보기
-usage-popover-less = 간략히
+
 tool-verb-ran = 실행함
 tool-verb-running = 실행 중
 tool-verb-messaging = 메시지 보내는 중
@@ -3253,21 +3230,10 @@ usage-reset-busy = 아직 업데이트 중입니다. 잠시 후 다시 밀어 �
 usage-reset-unavailable = 사용 가능한 초기화 없음
 usage-credits = 크레딧
 usage-credits-unlimited = 무제한
-usage-account-resets = { $count ->
-   *[other] 초기화 { $count }회
-}
-usage-account-credits = { $amount } 크레딧
-usage-account-ring-window = { $account } { $window }
-usage-account-window-left = { $window } { $percent }%
-usage-graph-account-left = { $account } { $window } 남음
-usage-graph-now = 지금
-usage-accounts-on-gauge = 게이지에 표시
+
 usage-accounts-sign-in = 로그인
 usage-accounts-signing-in = 로그인 중…
-usage-accounts-single = { $count ->
-    [1] { $providers }의 계정은 1개입니다.
-   *[other] { $providers }의 계정은 각각 1개입니다.
-}
+
 usage-account-empty-title = 아직 { $account }의 사용량이 없습니다
 usage-account-empty-body = 이 프로필의 첫 세션 이후 데이터가 표시됩니다.
 usage-account-signed-out-title = { $account }에 로그인되어 있지 않습니다
@@ -3586,3 +3552,676 @@ chat-mention-section-sessions = 에이전트
 chat-mention-section-worktrees = 워크트리
 chat-mention-section-scripts-terminals = 스크립트 및 터미널
 chat-mention-section-files = 파일
+
+browser-annotations-send-short = 보내기
+
+browser-agent-take-over = 제어권 가져오기
+
+browser-agent-you-have-control = 제어권을 가지고 있습니다
+
+browser-agent-hand-back = 제어권 돌려주기
+
+browser-agent-is-waiting = { $agent } 대기 중
+
+browser-agent-handed-back-message = 브라우저 제어권을 돌려주었습니다. 하던 작업을 계속하세요.
+
+browser-agent-cue-clicking = “{ $name }” 클릭 중
+
+browser-agent-cue-clicking-bare = 클릭 중
+
+browser-agent-cue-turning-on = “{ $name }” 켜는 중
+
+browser-agent-cue-turning-off = “{ $name }” 끄는 중
+
+browser-agent-cue-selecting = “{ $name }” 선택 중
+
+browser-agent-cue-typing = “{ $value }” 입력 중
+
+browser-agent-cue-typing-bare = 입력 중
+
+browser-agent-cue-pressing = { $key } 누르는 중
+
+browser-agent-cue-hovering = “{ $name }” 위에 포인터를 올리는 중
+
+browser-agent-cue-checking = “{ $name }” 확인 중
+
+browser-agent-cue-reading = 페이지 읽는 중
+
+browser-agent-cue-scrolling = 스크롤 중
+
+browser-agent-cue-capturing = 스크린샷 촬영 중
+
+browser-agent-cue-capturing-element = “{ $name }” 스크린샷 촬영 중
+
+browser-agent-cue-capturing-full = 전체 페이지 스크린샷 촬영 중
+
+browser-agent-cue-uploading = { $file } 업로드 중
+
+browser-agent-cue-running-script = 스크립트 실행 중
+
+browser-agent-cue-scheme-dark = 다크 모드로 전환 중
+
+browser-agent-cue-scheme-light = 라이트 모드로 전환 중
+
+browser-agent-cue-waiting = 페이지 대기 중
+
+browser-agent-cue-opening = { $url } 여는 중
+
+browser-agent-cue-going-back = 뒤로 가는 중
+
+browser-agent-cue-going-forward = 앞으로 가는 중
+
+browser-agent-cue-reloading = 페이지 새로 고침 중
+
+browser-agent-cue-new-tab = 새 탭 여는 중
+
+browser-agent-cue-working = 작업 중
+
+sidebar-search-project-placeholder = { $project } 검색
+
+sidebar-search-hidden-worktrees-count-placeholder = 숨겨진 워크트리 { $count }개 검색
+
+project-search-filter-hint = running, open, merged 또는 #번호를 입력해 보세요
+
+project-search-all-projects = 모든 프로젝트 검색
+
+project-search-hand-off-hint = 모든 프로젝트
+
+project-search-section-worktrees = 워크트리
+
+project-search-section-filter-hint = 섹션, running, open 또는 #번호를 입력해 보세요
+
+history-empty-title = 닫은 채팅을 클릭 한 번으로 다시 열기
+
+history-empty-hint = 이 워크트리에서 닫은 채팅이 여기에 표시되어 언제든 이어서 대화할 수 있습니다.
+
+history-empty-filtered-title = 아직 { $agent } 채팅이 없습니다
+
+history-show-all-agents = 모든 에이전트 표시
+
+settings-keybinding-action-toggle-bookmarks = 북마크 표시 전환
+
+settings-keybinding-action-previous-bookmark = 이전 북마크
+
+settings-keybinding-action-next-bookmark = 다음 북마크
+
+worktree-step-checking-out = { $forge ->
+    [gitlab] !{ $number } 체크아웃 중
+   *[other] #{ $number } 체크아웃 중
+}
+
+worktree-step-checking-out-branch = { $branch } 체크아웃 중
+
+worktree-step-creating-branch-from = { $base }에서 브랜치 만드는 중
+
+worktree-step-creating-branch = 브랜치 만드는 중
+
+worktree-step-naming = 작업을 바탕으로 이름 짓는 중
+
+worktree-step-setup = 설정 실행 중
+
+worktree-step-opening-agent = { $agent } 여는 중
+
+chat-waiting-on-agents = 에이전트 { $count }개 대기 중…
+
+chat-shell-mode = 셸 명령
+
+chat-shell-mode-detail = 이 작업 공간에서 실행합니다. 결과에서 '채팅에 추가'를 눌러 에이전트에게 보여 주세요.
+
+chat-shell-add-to-chat = 채팅에 추가
+
+markdown-run-command = 터미널에서 열기
+
+chat-shell-exit = 종료 코드 { $code }
+
+chat-shell-stopped = 중지됨
+
+chat-shell-finished = 완료됨
+
+chat-shell-no-output = 출력 없음
+
+chat-shell-show-all = 전체 { $count }줄 표시
+
+chat-shell-run-again = 다시 실행
+
+chat-shell-open-in-terminal = 터미널에서 열기
+
+chat-shell-running = 실행 중
+
+chat-shell-stopping = 중지 중
+
+chat-shell-stop = 중지
+
+chat-shell-stop-hint = 중지 (Esc)
+
+chat-shell-unavailable = 현재 이 채팅에서는 셸 명령을 사용할 수 없습니다.
+
+chat-shell-open-refused = 실행하지 않고는 터미널에서 열 수 없습니다. 대신 명령을 복사하세요.
+
+chat-shell-start-failed = 명령을 실행할 수 없습니다: { $error }
+
+chat-files-changed-diff-unavailable = 이 차이는 더 이상 사용할 수 없습니다.
+
+chat-files-changed-diff-no-lines = 이 파일의 이름이나 권한만 변경되었습니다.
+
+chat-files-changed-diff-binary = 바이너리 파일에는 표시할 줄 단위 차이가 없습니다.
+
+chat-files-changed-diff-not-utf8 = 이 파일은 UTF-8 텍스트가 아니므로 줄을 표시할 수 없습니다.
+
+chat-files-changed-diff-too-large = 이 차이는 너무 커서 여기에 표시할 수 없습니다.
+
+chat-files-changed-binary = 바이너리
+
+chat-files-changed-review-tooltip = 이 파일들을 검토하고 이 채팅에 피드백 보내기
+
+chat-files-changed-review-tooltip-stale-snapshot = 이 파일들을 검토합니다. { $count }개는 이후 턴에서 다시 변경되었습니다. 이 턴에는 이 턴이 끝났을 때의 상태가 표시됩니다.
+
+chat-files-changed-review-tooltip-stale-current = 이 파일들을 검토합니다. { $count }개는 이후 턴에서 다시 변경되었습니다. 검토 화면에는 현재 상태가 표시됩니다.
+
+chat-diff-unchanged-lines = 변경되지 않은 { $count }줄
+
+chat-files-changed-shared = 이 턴 동안 다른 채팅도 이 워크트리에서 작업했습니다. 두 채팅이 모두 변경한 파일에는 양쪽의 편집 내용이 표시됩니다.
+
+chat-files-changed-unattributed = 이 턴 동안 다른 채팅도 이 워크트리에서 작업했습니다. 흐리게 표시된 파일은 다른 채팅의 작업 중 변경되었으며 해당 채팅이 변경했을 수 있습니다.
+
+chat-files-changed-snapshot-failed = 이 턴의 워크트리 스냅샷을 만들 수 없어 도구에서 보고한 파일만 나열합니다.
+
+palette-mode-all = 전체
+
+palette-mode-conversations = 대화
+
+palette-search-all = 에이전트, 워크트리, 명령, 파일 검색…
+
+palette-search-files-short = 파일 검색…
+
+palette-section-needs-you = 응답 필요
+
+palette-section-running = 실행 중
+
+palette-section-recent = 최근
+
+palette-section-suggested = 추천
+
+palette-section-draft = 초안
+
+palette-section-actions = 작업
+
+palette-quick-new-chat = { $worktree }에서 새 채팅
+
+palette-quick-new-worktree = 새 워크트리
+
+palette-quick-new-terminal = 새 터미널
+
+palette-quick-feedback = 버그 신고 또는 기능 요청
+
+palette-section-top-hit = 가장 일치하는 결과
+
+palette-section-matches = 일치하는 결과
+
+palette-section-tabs = 탭
+
+palette-section-worktrees = 워크트리
+
+palette-section-conversations = 대화
+
+palette-section-commands = 명령
+
+palette-section-files = 파일
+
+palette-section-changed = 이 브랜치에서 변경됨
+
+palette-files-show-all = { $count }개 모두 표시
+
+palette-footer-branches = 브랜치
+
+palette-section-use-query-with = “{ $query }” 사용
+
+palette-ask-agent-new-chat = 새 { $provider } 채팅
+
+palette-search-conversation-history = 대화 기록 검색
+
+palette-suggest-review-comments = 검토 댓글 { $count }개
+
+palette-suggest-checks-failing = 검사 실패
+
+palette-suggest-files-changed = 파일 { $count }개 변경됨
+
+palette-current = 현재
+
+palette-empty-scope = “{ $query }”와 일치하는 { $scope } 없음
+
+palette-empty-recent = 아직 최근 항목이 없습니다
+
+palette-search-everything = 전체 검색
+
+palette-footer-run = 실행
+
+palette-footer-start = 시작
+
+palette-footer-search = 검색
+
+palette-footer-show = 표시
+
+palette-footer-report = 신고
+
+palette-footer-request = 요청
+
+palette-report-as-bug = 버그로 신고
+
+palette-report-as-feature = 기능으로 요청
+
+palette-finish-bug-report = 버그 신고 마무리
+
+palette-finish-feature-request = 기능 요청 마무리
+
+palette-actions = 작업
+
+palette-actions-search = 작업 검색…
+
+palette-actions-no-match = “{ $query }”와 일치하는 작업 없음
+
+palette-action-open = 열기
+
+palette-action-switch-worktree = 워크트리로 전환
+
+palette-action-search-inside = 이 워크트리 안에서 검색
+
+palette-action-open-pr = 풀 리퀘스트 #{ $number } 열기
+
+palette-action-copy-worktree-path = 워크트리 경로 복사
+
+palette-action-group-ask-agent = 이 워크트리에서 에이전트에게 질문
+
+palette-action-open-tab = 탭 열기
+
+palette-action-preview = 미리 보기
+
+palette-action-close-tab = 탭 닫기
+
+palette-action-open-conversation = 대화 열기
+
+palette-action-open-in = 다음으로 열기…
+
+palette-action-show-ignored = 무시된 파일 표시
+
+palette-action-run-command = 명령 실행
+
+palette-action-start-in = { $worktree }에서 시작
+
+palette-action-group-another-agent = 다른 에이전트
+
+palette-action-start-with = { $provider }로 시작
+
+palette-mode-pull-requests = { $forge ->
+    [gitlab] 머지 리퀘스트
+   *[other] 풀 리퀘스트
+}
+
+palette-mode-branch-from = 브랜치 생성 기준
+
+palette-search-pull-requests = { $forge ->
+    [gitlab] 머지 리퀘스트 검색 또는 링크 붙여넣기…
+   *[other] 풀 리퀘스트 검색 또는 링크 붙여넣기…
+}
+
+palette-search-branch-from = 브랜치 생성 기준…
+
+palette-section-pull-requests = { $forge ->
+    [gitlab] 머지 리퀘스트
+   *[other] 풀 리퀘스트
+}
+
+palette-section-with-worktree = 워크트리 있음
+
+palette-section-open-pull-requests = 열림
+
+palette-section-review-requested = 검토 요청됨
+
+palette-section-needs-your-review = 검토 필요
+
+palette-section-yours = 내 항목
+
+palette-section-open-review-requests = { $forge ->
+    [gitlab] 열린 머지 리퀘스트
+   *[other] 열린 풀 리퀘스트
+}
+
+palette-loading-pull-requests = { $forge ->
+    [gitlab] 머지 리퀘스트 불러오는 중…
+   *[other] 풀 리퀘스트 불러오는 중…
+}
+
+palette-no-open-pull-requests = { $forge ->
+    [gitlab] 열린 머지 리퀘스트 없음
+   *[other] 열린 풀 리퀘스트 없음
+}
+
+palette-footer-check-out = 체크아웃
+
+palette-footer-create = 만들기
+
+palette-footer-choose = 선택
+
+palette-action-start-in-new-worktree = 새 워크트리에서 시작
+
+palette-action-check-out = 체크아웃
+
+palette-action-work-on-it = 작업하기
+
+palette-action-copy-link = 링크 복사
+
+palette-action-copy-number = 번호 복사
+
+palette-action-create-worktree = 워크트리 만들기
+
+palette-action-choose-base = 기준 브랜치 선택
+
+palette-start-agent-on = “{ $query }”에 대해 { $provider } 시작
+
+palette-in-new-worktree = 새 워크트리에서
+
+palette-new-branch = 새 브랜치 { $name }
+
+palette-new-branch-from = { $base }에서
+
+palette-new-branch-choose-base = 기준 선택
+
+palette-branch-note-default = 기본
+
+palette-branch-note-current = 이 워크트리
+
+palette-branch-note-remote = 원격
+
+palette-no-branches = 브랜치 없음
+
+palette-no-branch-named = “{ $query }”라는 브랜치 없음
+
+palette-search-new-worktree = { $forge ->
+    [gitlab] 브랜치 이름, 작업 설명 또는 MR 입력
+   *[other] 브랜치 이름, 작업 설명 또는 PR 입력
+}
+
+palette-search-new-worktree-no-forge = 브랜치 이름 또는 작업 설명 입력
+
+palette-action-open-review-request = { $forge ->
+    [gitlab] 머지 리퀘스트 !{ $number } 열기
+   *[other] 풀 리퀘스트 #{ $number } 열기
+}
+
+palette-action-create-and-start = 만들고 { $provider } 시작
+
+palette-search-projects = 프로젝트 선택
+
+palette-mode-projects = 프로젝트
+
+palette-section-branches = 브랜치
+
+palette-section-look-up = 찾기
+
+palette-loading-branches = 브랜치 불러오는 중…
+
+palette-no-open-pull-request = { $forge ->
+    [gitlab] 열린 머지 리퀘스트 없음
+   *[other] 열린 풀 리퀘스트 없음
+}
+
+palette-pull-request-number = { $forge ->
+    [gitlab] 머지 리퀘스트 !{ $number }
+   *[other] 풀 리퀘스트 #{ $number }
+}
+
+palette-new-worktree-in = { $project }에 새 워크트리
+
+palette-quick-new-worktree-in = { $project }에서
+
+history-button-tooltip = 기록
+
+usage-window-minutes = { $count }분
+
+usage-window-hours = { $count }시간
+
+usage-window-days = { $count }일
+
+usage-window-weeks = { $count }주
+
+usage-window-all-models = 모든 모델
+
+usage-gauge-window-reached = { $window } 한도 도달
+
+usage-gauge-reached = 한도 도달
+
+usage-limit-no-reset = 초기화 시간 미제공
+
+usage-limit-back = { $time }에 다시 사용 가능
+
+usage-limit-in = { $duration } 후
+
+usage-account-until = { $window }, { $time }까지
+
+usage-account-back-at = { $window }, { $time }에 재개
+
+usage-credits-balance = { $amount } 크레딧
+
+usage-details = 사용량 세부 정보
+
+usage-details-runs-out = 이 속도라면 { $time }에 소진될 수 있습니다
+
+usage-details-lasts = 이 속도라면 초기화될 때까지 사용할 수 있습니다
+
+usage-details-used-up = { $window }을(를) 모두 사용했습니다. { $time }에 다시 사용 가능합니다
+
+usage-details-estimate = 이 기간이 시작된 이후의 평균 사용량을 바탕으로 한 추정입니다. 사용량에 따라 변하지만 초기화 시간은 변하지 않습니다.
+
+usage-details-no-reset = { $provider }에서 이 기간의 초기화 시간을 제공하지 않아 예측할 수 없습니다.
+
+usage-details-source = 한도와 초기화 시간은 { $provider }에서 제공합니다. 이 계정에 보고된 한도만 표시합니다.
+
+chat-artifact-open-in-app-browser = 앱 내 브라우저
+
+chat-artifact-open-in-default-browser = 기본 브라우저
+
+bookmarks-title = 북마크
+
+bookmarks-search-placeholder = 북마크 검색…
+
+bookmarks-section-this-chat = 이 채팅
+
+bookmarks-saved-label = 저장됨
+
+bookmarks-untitled-chat = 제목 없는 채팅
+
+bookmarks-loading = 북마크 불러오는 중…
+
+bookmarks-load-failed = 북마크를 불러오지 못했습니다
+
+bookmarks-load-failed-hint = 저장한 답변은 그대로 있습니다.
+
+bookmarks-load-failed-again-hint = 아직 불러오지 못했습니다. 저장한 답변은 그대로 있습니다.
+
+bookmarks-this-chat-load-failed = 이 채팅의 북마크를 불러오지 못했습니다
+
+bookmarks-other-chats-load-failed = 다른 채팅의 북마크를 불러오지 못했습니다
+
+bookmarks-try-again = 다시 시도
+
+bookmarks-empty-title = 다시 읽고 싶은 답변을 보관하세요
+
+bookmarks-empty-hint = 답변 위에 포인터를 올리고 북마크를 클릭하세요. 모든 채팅에서 저장한 답변이 여기에 모입니다.
+
+bookmarks-no-matches = “{ $query }”와 일치하는 북마크 없음
+
+bookmarks-untitled-response = 제목 없는 답변
+
+bookmarks-add = 답변 북마크
+
+bookmarks-remove = 북마크 제거
+
+bookmarks-saved-ago = { $elapsed }에 저장
+
+bookmarks-open-beside = 이 채팅 옆에서 열기
+
+bookmarks-response-streaming = 답변이 완료되면 북마크할 수 있습니다
+
+bookmarks-response-unavailable = 답변을 사용할 수 없습니다
+
+bookmarks-save-failed = 북마크를 저장하지 못했습니다. 다시 시도하세요.
+
+bookmarks-remove-failed = 북마크를 제거하지 못했습니다. 다시 시도하세요.
+
+notification-open = 열기
+
+chat-report-error = 이 문제 신고
+
+menu-help = 도움말
+
+menu-help-report-bug = 버그 신고…
+
+menu-help-suggest-feature = 기능 요청…
+
+issue-report-command-bug = 버그 신고
+
+issue-report-command-feature = 기능 요청
+
+issue-report-kind-bug = 버그
+
+issue-report-kind-feature = 기능
+
+issue-report-placeholder-bug = 무슨 일이 있었나요? 어떤 결과를 예상하셨나요?
+
+issue-report-placeholder-feature = 무엇을 하려고 하시나요?
+
+issue-report-placeholder-error = 실패했을 때 무엇을 하고 계셨나요?
+
+issue-report-error-title = 턴 실패: { $error }
+
+issue-report-title = 제목
+
+issue-report-title-drafted = 설명을 바탕으로 작성됨
+
+issue-report-title-from-error = 오류에서 가져옴
+
+issue-report-title-restored = 저장된 초안
+
+issue-report-draft-saved = 신고 내용을 초안으로 저장했습니다
+
+issue-report-action-discard = 초안 버리기
+
+issue-report-screenshot = 스크린샷
+
+issue-report-screenshots = 스크린샷
+
+issue-report-drop-now = 놓아서 이미지 첨부
+
+issue-report-drop-hint = 스크린샷을 놓거나 붙여넣기
+
+issue-report-drop-hint-review = 또는 여기에 놓기
+
+issue-report-capture-window = 창 캡처
+
+issue-report-choose-images = 이미지 첨부…
+
+issue-report-screenshot-pending = 캡처 중…
+
+issue-report-image-copied = 스크린샷을 복사했습니다. 신고 내용에 붙여넣으세요.
+
+issue-report-images-revealed = 스크린샷을 Finder에 표시했습니다. 신고 내용으로 드래그하세요.
+
+issue-report-review = 검토
+
+issue-report-post = 공개 게시
+
+issue-report-review-title = 게시 전 검토
+
+issue-report-review-comment-on = #{ $number }에 댓글 달기
+
+issue-report-audience = GitHub의 누구나 볼 수 있습니다
+
+issue-report-heading-bug = 무슨 일이 있었나요?
+
+issue-report-heading-feature = 무엇을 하려고 하시나요?
+
+issue-report-field-app-version = 앱 버전
+
+issue-report-field-os = 운영 체제
+
+issue-report-field-system = 시스템 세부 정보
+
+issue-report-field-agent = 코딩 에이전트
+
+issue-report-field-error = 오류
+
+issue-report-image-note = GitHub는 자체 양식에서만 이미지를 받으므로 신고는 그곳에서 마무리합니다. 본문은 입력되어 있으며 스크린샷은 붙여넣을 수 있도록 클립보드에 있습니다.
+
+issue-report-images-note = GitHub는 자체 양식에서만 이미지를 받으므로 신고는 그곳에서 마무리합니다. 본문은 입력되어 있으며 스크린샷을 드래그할 수 있도록 Finder가 열립니다.
+
+issue-report-checks-title = 추가하면 좋은 정보
+
+issue-report-check-expected = 예상한 결과
+
+issue-report-check-steps = 재현 단계
+
+issue-report-check-screenshot = 스크린샷
+
+issue-report-check-today = 현재 대처 방법
+
+issue-report-add-expected = 예상한 결과는
+
+issue-report-add-steps = 재현 단계:
+    1.
+
+issue-report-add-today = 현재 저는
+
+issue-report-agent-title = 에이전트에게 작성 맡기기
+
+issue-report-agent-detail = 부족한 정보를 물어본 뒤 승인할 초안을 작성합니다
+
+issue-report-agent-no-worktree = 에이전트가 작업할 수 있도록 먼저 워크트리를 여세요
+
+issue-report-included = 포함된 내용
+
+issue-report-fact-error = 오류 메시지
+
+issue-report-fact-app = 앱 { $version }
+
+issue-report-fact-system = 시스템 세부 정보
+
+issue-report-similar-bugs = 비슷한 신고
+
+issue-report-similar-features = 비슷한 요청
+
+issue-report-destination = { $repo }의 공개 이슈
+
+issue-report-signed-out = 여기서 제출하려면 GitHub CLI에 로그인하세요
+
+issue-report-match-open = #{ $number }이(가) 이미 열려 있습니다
+
+issue-report-match-votes = #{ $number }에 { $count }표
+
+issue-report-continue-github = GitHub에서 계속
+
+issue-report-add-details = 내 세부 정보 추가
+
+issue-report-upvote = 추천 투표
+
+issue-report-open-issue = #{ $number } 열기
+
+issue-report-sending = 보내는 중…
+
+issue-report-send-failed = 보내지 못했습니다. 초안은 그대로 있습니다.
+issue-report-vote-failed = 투표를 업데이트하지 못했습니다. 다시 시도해 주세요.
+
+issue-report-filed = #{ $number } 제출됨
+
+issue-report-added = #{ $number }에 추가됨
+
+issue-report-upvoted = #{ $number }에 추천 투표함
+
+issue-report-copied = 신고 내용 복사됨
+
+issue-report-actions-private = 비공개
+
+issue-report-action-draft-agent = 에이전트로 초안 작성
+
+issue-report-action-copy-markdown = Markdown으로 복사
+
+issue-report-action-email = 비공개 이메일로 보내기

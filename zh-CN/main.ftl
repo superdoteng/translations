@@ -220,6 +220,7 @@ browser-color-scheme-view-dark = 以深色模式查看此页面
 browser-color-scheme-showing-light = 正在以浅色模式显示此页面。点击以跟随应用设置
 browser-color-scheme-showing-dark = 正在以深色模式显示此页面。点击以跟随应用设置
 browser-picking-hint = 选择要发送到聊天的元素
+browser-find-placeholder = 在页面中查找
 browser-served-stopped = 已停止
 browser-served-starting = 正在启动
 browser-served-branch = 分支
@@ -307,8 +308,7 @@ project-loading-merge-options = 正在加载合并选项…
 update-cli-action-update = 更新
 update-cli-manual-hint = 手动更新
 sidebar-add-project-to-start = 添加项目以开始使用
-sidebar-search-project-worktrees-placeholder = 搜索 { $project } 中的工作树
-sidebar-search-hidden-worktrees-placeholder = 搜索 { $project } 中隐藏的工作树
+
 sidebar-install-ssh-key = 安装 SSH 密钥
 action-update = 更新
 workspace-no-ai-background-tasks = 没有 AI 后台任务
@@ -618,8 +618,7 @@ worktree-create-branches-unavailable = 仓库尚未加载
 worktree-create-in-background = 在后台创建
 worktree-create-refresh-branches = 获取远程分支
 worktree-create-refresh-failed = 获取失败：{ $error }
-worktree-create-return = 创建↵
-worktree-in-workspace = 在工作区中
+
 worktree-no-matching-branches = 没有匹配的分支
 worktree-not-installed = 未安装
 settings-sidebar-group-general = 通用
@@ -1057,6 +1056,7 @@ settings-ai-reset-to-inherited = 重置为继承值
 settings-ai-system-instructions-placeholder = 系统指令…
 settings-ai-user-message-placeholder = 用户消息…
 settings-ai-launch-flags-description = 每次启动此提供商时都会使用，并会最先添加这些参数。
+settings-ai-launch-flags-placeholders = 使用 { $placeholders } 可在每次启动时插入工作树、分支或项目名称。
 settings-ai-profile-definitions = 配置文件定义
 settings-ai-global-default = 全局默认设置
 settings-ai-workspace-override = 工作区覆盖
@@ -1074,9 +1074,9 @@ settings-ai-all-models = 所有模型
 settings-ai-select-models = 选择模型
 settings-ai-select-models-count = 选择模型（{ $count }）
 settings-ai-model-visibility = 模型可见性
-settings-ai-compliant-claude-tooltip = 关闭时或在 SSH 工作区中，Claude 聊天使用结构化的 claude -p 传输方式。
-settings-ai-compliant-claude-view = 合规 Claude 视图
-settings-ai-compliant-claude-view-description = 通过 Claude Code 的交互模式运行本地 Claude 聊天。SSH 工作区使用结构化的 claude -p 传输方式。
+settings-ai-claude-interactive-mode-tooltip = 关闭时或在 SSH 工作区中，Claude 聊天使用打印模式（claude -p）。
+settings-ai-claude-interactive-mode = 交互模式
+settings-ai-claude-interactive-mode-description = 在 Claude Code 的交互模式（而非打印模式 claude -p）中运行本地 Claude 聊天。SSH 工作区始终使用打印模式。
 settings-ai-action-model-pins = 高级 — 按操作指定模型
 settings-ai-action-model-pins-description = 仅在分组默认值不足时，为特定操作指定模型。
 settings-ai-session-model-description = 默认用于新会话的模型。
@@ -1120,18 +1120,20 @@ review-resolved-count = 已解决（{ $count }）
 right-panel-setup = 初始化
 action-stop = 停止
 right-panel-terminal = 终端
-setup-no-output = 没有初始化脚本输出
-setup-output-description = 运行初始化后，初始化脚本的输出将显示在此处。
 setup-run = 运行初始化
+setup-empty-title = 添加初始化脚本
+setup-empty-description = 在每个新工作树中运行，用于安装依赖并复制环境文件。
+setup-pending-title = 初始化脚本
+setup-pending-description = 新工作树会在创建时运行这些命令。
+run-empty-title = 添加运行脚本
+run-empty-description = 启动开发服务器或应用。每个脚本都会在独立的标签页中打开。
+run-idle-description = 脚本运行时，输出会显示在此处。
+script-suggestion-from = 来自 { $file }
+script-suggestion-use = 使用
+script-write-with-agent = 让智能体编写
+script-edit-in-settings = 打开项目设置
+script-commands-more = 另外 { $count } 项
 setup-not-configured = 未配置初始化脚本
-setup-configure = 配置初始化脚本
-setup-configure-description = 在“项目设置”中配置初始化脚本，或添加 .super.engineering/config.json 文件。
-run-no-output = 没有运行脚本输出
-run-output-description = 运行脚本输出会显示在这里。
-run-workspace = 运行工作区
-run-not-configured = 没有配置运行脚本
-run-configure = 配置运行脚本
-run-configure-description = 在项目设置中配置运行脚本，或添加 .super.engineering/config.json 文件。
 review-submitted-reviews = 已提交的审查
 review-ai-questions = AI 问题
 review-no-comments = 尚无审查评论
@@ -1366,12 +1368,7 @@ worktree-context-placeholder = 描述你希望智能体处理的内容…
 worktree-filter-branches-placeholder = 筛选分支…
 worktree-label-placeholder = 工作树标签
 worktree-prompt-placeholder = 你在做什么？
-worktree-search-branches-placeholder = 搜索分支…
-worktree-search-branches-mrs-placeholder = 搜索分支和 MR…
-worktree-search-branches-prs-placeholder = 搜索分支和 PR…
-worktree-fetching-branches = 正在获取分支…
-worktree-fetching-branches-mrs = 正在获取分支和 MR…
-worktree-fetching-branches-prs = 正在获取分支和 PR…
+
 right-panel-switch-stacked = 切换到堆叠终端
 right-panel-switch-bottom = 切换到底部终端
 right-panel-switch-side-by-side = 切换到并排终端
@@ -1941,8 +1938,8 @@ settings-search-entry-agents-routing-thorough-actions-label = 全面操作
 settings-search-entry-agents-routing-thorough-actions-description = 修复 CI、修复受阻合并、处理评论、处理修改要求、解决冲突及执行审查。
 settings-search-entry-agents-providers-claude-code-provider-label = Claude Code 提供商
 settings-search-entry-agents-providers-claude-code-provider-description = 启用 Claude Code，并配置其模型、配置文件和启动参数。
-settings-search-entry-agents-providers-compliant-claude-view-label = 合规 Claude 视图
-settings-search-entry-agents-providers-compliant-claude-view-description = 通过 Claude Code 的交互模式运行 Claude 聊天，使使用量计入订阅方案。
+settings-search-entry-agents-providers-claude-interactive-mode-label = Claude 交互模式
+settings-search-entry-agents-providers-claude-interactive-mode-description = 在 Claude Code 的交互模式（而非打印模式 claude -p）中运行本地 Claude 聊天。SSH 工作区始终使用打印模式。对新打开的聊天生效。
 settings-search-entry-agents-providers-codex-provider-label = Codex 提供商
 settings-search-entry-agents-providers-codex-provider-description = 启用 Codex，并配置其模型、配置文件和启动参数。
 settings-search-entry-agents-providers-pi-provider-label = Pi 提供商
@@ -2042,7 +2039,7 @@ settings-ai-provider-section-chat = 聊天
 settings-ai-provider-section-runtime = 运行时
 settings-ai-provider-profiles-description = 此提供商的账户和配置主目录。
 settings-ai-provider-manage-profiles = 管理配置文件
-settings-ai-provider-antigravity-description = 启用 Antigravity 作为终端提供商（需要安装 Antigravity CLI `agy`）。
+settings-ai-provider-antigravity-description = 启用 Antigravity 聊天和终端支持（需要安装 Antigravity CLI `agy`）。
 settings-ai-provider-hermes-description = 启用 Hermes 作为终端提供商（需要安装 Hermes Agent `hermes`）。
 settings-ai-provider-qwen-description = 启用 Qwen Code 作为终端提供商（需要安装 Qwen Code CLI `qwen`）。
 settings-ai-provider-kimi-description = 启用 Kimi Code 作为聊天和终端提供商（需要安装当前版本的 Kimi Code CLI `kimi`）。
@@ -2129,27 +2126,9 @@ workspace-remote-forge-cli-not-authenticated-hint = 提示：主机上的 { $cli
 workspace-remote-forge-cli-missing-hint = 提示：请在主机上安装 { $cli } 并运行 `{ $cli } auth login`，以便智能体创建 { $kind }。
 workspace-review-request-url-copied = 已复制 { $kind } URL
 workspace-review-request-none-yet = 此分支还没有 { $kind }
-worktree-prompt = 提示词
-worktree-branches = 分支
-worktree-merge-requests = 合并请求
-worktree-pull-requests = 拉取请求
-worktree-review-requests = 审查请求
-worktree-tab-with-count = { $label }（{ $count }）
-worktree-no-open-merge-requests = 没有未关闭的合并请求
-worktree-no-open-pull-requests = 没有未关闭的拉取请求
-worktree-no-open-review-requests = 没有未关闭的审查请求
-worktree-no-branches = 没有分支
+
 common-no-matches = 没有匹配项
-worktree-gitlab-cli-missing = 无法加载合并请求：GitLab CLI（`glab`）未安装或不在 PATH 中。请安装 `glab`，使用 `glab auth login` 完成身份验证，然后重试。
-worktree-gitlab-auth-required = 无法加载合并请求：GitLab CLI（`glab`）尚未通过身份验证。请为此 GitLab 主机运行 `glab auth login`，然后重试。
-worktree-github-auth-required = 无法加载拉取请求：GitHub CLI（`gh`）尚未通过此主机的身份验证。请运行 `gh auth login --hostname <host>`，然后重试。
-worktree-github-load-error = 无法加载拉取请求：{ $error }
-worktree-gitlab-load-error = 无法加载合并请求：{ $error }
-worktree-bitbucket-cli-missing = 无法加载拉取请求：Bitbucket CLI（`bkt`）未安装或不在 PATH 中。请安装 `bkt`，运行 `bkt auth login https://bitbucket.org --kind cloud --web-token`，使用 `bkt context create cloud --host api.bitbucket.org --workspace <workspace> --set-active` 创建上下文，然后重试。
-worktree-bitbucket-auth-required = 无法加载拉取请求：Bitbucket CLI（`bkt`）未通过身份验证。请运行 `bkt auth login https://bitbucket.org --kind cloud --web-token`，然后重试。
-worktree-bitbucket-no-context = 无法加载拉取请求：{ $error }
-worktree-bitbucket-load-error = 无法加载拉取请求：{ $error }
-worktree-review-request-load-error = 无法加载审查请求：{ $error }
+
 remote-cli-install-succeeded = 已在远程主机上安装 { $app_name } CLI { $package }（api={ $api }，watch={ $watch }，hooks={ $hooks }）。
 remote-cli-install-failed = CLI 安装失败：{ $error }
 chat-composer-placeholder-active = 输入一条消息…
@@ -2634,6 +2613,7 @@ settings-keybinding-action-focus-chat-input = 聚焦聊天输入框
 settings-keybinding-action-find = 查找
 find-placeholder = 查找…
 find-results-none = 0 个结果
+find-no-matches = 无匹配项
 find-results-count = { $count ->
     [one] 1 个结果
    *[other] { $count } 个结果
@@ -2647,6 +2627,7 @@ settings-keybinding-action-reload = 重新加载
 settings-keybinding-action-chat-model-picker = 切换聊天模型选择器
 settings-keybinding-action-chat-fast-mode = 切换聊天快速模式
 settings-keybinding-action-chat-plan-mode = 切换聊天计划模式
+settings-keybinding-action-chat-ultracode = 切换聊天 Ultracode
 settings-keybinding-action-chat-effort = 循环切换聊天推理强度
 settings-keybinding-action-chat-permission-picker = 切换聊天权限选择器
 settings-keybinding-action-split-pane-right = 向右拆分窗格
@@ -2843,20 +2824,16 @@ usage-meter-error = 无法加载使用量
 usage-meter-loading = 正在加载使用量…
 usage-meter-outdated = 使用量数据不是最新的
 usage-meter-updated = 更新：{ $ago }
-usage-meter-resets = 重置：{ $duration }
-usage-meter-window-session = 会话
+
 usage-meter-window-daily = 每日
 usage-meter-window-weekly = 每周
 usage-meter-window-monthly = 每月
-usage-meter-window-other = 其他
-usage-meter-all-providers = 所有提供商
+
 usage-meter-percent-left = 剩余 { $percent }%
 usage-meter-no-account = 未选择账户
 usage-meter-now = 现在
 usage-meter-default-account = 默认
-usage-popover-runs-out = 预计 { $time } 用完，{ $reset } 重置
-usage-popover-runs-out-then-credits = 预计 { $time } 用完，之后使用积分
-usage-popover-using-credits = 正在使用积分
+
 usage-api-key = API 密钥
 usage-api-key-week = 本周估算
 usage-api-key-today = 今天 { $amount }
@@ -2871,8 +2848,7 @@ usage-popover-window-left = { $window } 剩余
 usage-popover-updating = 正在更新…
 usage-popover-retry = 重试
 usage-popover-accounts = 账户
-usage-popover-in-use = 使用中
-usage-popover-unused = { $count } 个未使用
+
 usage-graph-on-pace = 进度正常
 usage-graph-in-reserve = 余量 { $percent }%
 usage-graph-behind = 超出进度 { $percent }%
@@ -2881,10 +2857,9 @@ usage-graph-lasts = 可用到重置
 usage-graph-collecting = 随着读数到来，图表会逐步填充
 usage-instrument-gauge = 仪表
 usage-instrument-graph = 图表
-usage-popover-no-other-limits = 没有其他限额
+
 usage-popover-no-data = { $providers } 暂无用量
-usage-popover-more = 更多
-usage-popover-less = 收起
+
 tool-verb-ran = 已运行
 tool-verb-running = 正在运行
 tool-verb-messaging = 正在发消息给
@@ -3355,7 +3330,7 @@ workspace-fx-remote-history-unsupported = FX 远程终端暂不支持会话历�
 settings-keybinding-action-rename-selected-entry = 重命名所选项
 settings-keybinding-action-chat-effort-backward = 反向循环切换聊天推理强度
 worktree-preparing = 正在准备工作树…
-chat-queued-until-worktree-ready = 工作树就绪后开始
+chat-queued-until-worktree-ready = 就绪后发送
 chat-delivery-unconfirmed = 送达状态未确认
 chat-delivery-unconfirmed-retry = 重试前请检查对话；此消息可能已送达。
 chat-answer-pending-delivery = 等待送达
@@ -3374,6 +3349,9 @@ composer-model = 模型
 composer-effort = 推理强度
 composer-effort-lower = 降低推理强度
 composer-effort-raise = 提高推理强度
+composer-ultracode = Ultracode
+composer-ultracode-tooltip = Ultracode 已关闭。开启后，Claude 会为较大的任务运行多智能体工作流，因此会消耗更多词元。点击即可开启。
+composer-ultracode-on-tooltip = Ultracode 已开启。Claude 会为较大的任务运行多智能体工作流，因此会消耗更多词元。点击即可关闭。
 reasoning-effort-unspecified = 未指定
 settings-ai-thinking-unavailable = 此模型不提供可配置的思考级别。
 chat-message-tokens-not-reported = 未报告
@@ -3557,21 +3535,10 @@ usage-reset-busy = 仍在更新。请稍后再滑动
 usage-reset-unavailable = 没有可用的重置
 usage-credits = 积分
 usage-credits-unlimited = 无限制
-usage-account-resets = { $count ->
-   *[other] { $count } 次重置
-}
-usage-account-credits = { $amount } 积分
-usage-account-ring-window = { $account } { $window }
-usage-account-window-left = { $window } { $percent }%
-usage-graph-account-left = { $account } { $window } 剩余
-usage-graph-now = 现在
-usage-accounts-on-gauge = 显示在仪表上
+
 usage-accounts-sign-in = 登录
 usage-accounts-signing-in = 正在登录…
-usage-accounts-single = { $count ->
-    [1] { $providers } 只有一个账户。
-   *[other] { $providers } 各有一个账户。
-}
+
 usage-account-empty-title = { $account } 暂无用量
 usage-account-empty-body = 此配置文件完成首个会话后会显示读数。
 usage-account-signed-out-title = { $account } 未登录
@@ -3582,3 +3549,676 @@ usage-graph-legend-even = 匀速
 usage-graph-legend-projection = 预测
 usage-graph-legend-estimated = 估算
 usage-graph-estimated = 根据此 Mac 上的活动估算
+
+browser-annotations-send-short = 发送
+
+browser-agent-take-over = 接管
+
+browser-agent-you-have-control = 你拥有控制权
+
+browser-agent-hand-back = 交还控制权
+
+browser-agent-is-waiting = { $agent } 正在等待
+
+browser-agent-handed-back-message = 我已交还浏览器控制权。请从刚才的位置继续。
+
+browser-agent-cue-clicking = 正在点击“{ $name }”
+
+browser-agent-cue-clicking-bare = 正在点击
+
+browser-agent-cue-turning-on = 正在开启“{ $name }”
+
+browser-agent-cue-turning-off = 正在关闭“{ $name }”
+
+browser-agent-cue-selecting = 正在选择“{ $name }”
+
+browser-agent-cue-typing = 正在输入“{ $value }”
+
+browser-agent-cue-typing-bare = 正在输入
+
+browser-agent-cue-pressing = 正在按下 { $key }
+
+browser-agent-cue-hovering = 正在悬停于“{ $name }”
+
+browser-agent-cue-checking = 正在检查“{ $name }”
+
+browser-agent-cue-reading = 正在读取页面
+
+browser-agent-cue-scrolling = 正在滚动
+
+browser-agent-cue-capturing = 正在截图
+
+browser-agent-cue-capturing-element = 正在截取“{ $name }”
+
+browser-agent-cue-capturing-full = 正在截取整个页面
+
+browser-agent-cue-uploading = 正在上传 { $file }
+
+browser-agent-cue-running-script = 正在运行脚本
+
+browser-agent-cue-scheme-dark = 正在切换至深色模式
+
+browser-agent-cue-scheme-light = 正在切换至浅色模式
+
+browser-agent-cue-waiting = 正在等待页面
+
+browser-agent-cue-opening = 正在打开 { $url }
+
+browser-agent-cue-going-back = 正在后退
+
+browser-agent-cue-going-forward = 正在前进
+
+browser-agent-cue-reloading = 正在重新加载页面
+
+browser-agent-cue-new-tab = 正在打开新标签页
+
+browser-agent-cue-working = 正在处理
+
+sidebar-search-project-placeholder = 搜索 { $project }
+
+sidebar-search-hidden-worktrees-count-placeholder = 搜索 { $count } 个隐藏工作树
+
+project-search-filter-hint = 试试 running、open、merged 或 #编号
+
+project-search-all-projects = 搜索所有项目
+
+project-search-hand-off-hint = 所有项目
+
+project-search-section-worktrees = 工作树
+
+project-search-section-filter-hint = 试试分区、running、open 或 #编号
+
+history-empty-title = 一键找回所有已关闭的聊天
+
+history-empty-hint = 在此工作树中关闭的聊天会显示在这里，随时可以接着聊。
+
+history-empty-filtered-title = 还没有 { $agent } 聊天
+
+history-show-all-agents = 显示所有代理
+
+settings-keybinding-action-toggle-bookmarks = 切换书签
+
+settings-keybinding-action-previous-bookmark = 上一个书签
+
+settings-keybinding-action-next-bookmark = 下一个书签
+
+worktree-step-checking-out = { $forge ->
+    [gitlab] 正在检出 !{ $number }
+   *[other] 正在检出 #{ $number }
+}
+
+worktree-step-checking-out-branch = 正在检出 { $branch }
+
+worktree-step-creating-branch-from = 正在从 { $base } 创建分支
+
+worktree-step-creating-branch = 正在创建分支
+
+worktree-step-naming = 正在根据你的任务命名
+
+worktree-step-setup = 正在运行设置
+
+worktree-step-opening-agent = 正在打开 { $agent }
+
+chat-waiting-on-agents = 正在等待 { $count } 个代理…
+
+chat-shell-mode = Shell 命令
+
+chat-shell-mode-detail = 在此工作区运行。点击结果上的“添加到聊天”可将其展示给代理。
+
+chat-shell-add-to-chat = 添加到聊天
+
+markdown-run-command = 在终端中打开
+
+chat-shell-exit = 退出码 { $code }
+
+chat-shell-stopped = 已停止
+
+chat-shell-finished = 已完成
+
+chat-shell-no-output = 无输出
+
+chat-shell-show-all = 显示全部 { $count } 行
+
+chat-shell-run-again = 再次运行
+
+chat-shell-open-in-terminal = 在终端中打开
+
+chat-shell-running = 正在运行
+
+chat-shell-stopping = 正在停止
+
+chat-shell-stop = 停止
+
+chat-shell-stop-hint = 停止 (Esc)
+
+chat-shell-unavailable = 此聊天目前无法使用 Shell 命令。
+
+chat-shell-open-refused = 无法在不执行命令的情况下在终端中打开。请改为复制命令。
+
+chat-shell-start-failed = 无法运行命令：{ $error }
+
+chat-files-changed-diff-unavailable = 此差异已不可用。
+
+chat-files-changed-diff-no-lines = 仅此文件的名称或权限发生了变化。
+
+chat-files-changed-diff-binary = 二进制文件没有可显示的行差异。
+
+chat-files-changed-diff-not-utf8 = 此文件不是 UTF-8 文本，无法显示其内容行。
+
+chat-files-changed-diff-too-large = 此差异太大，无法在此显示。
+
+chat-files-changed-binary = 二进制
+
+chat-files-changed-review-tooltip = 审查这些文件并向此聊天发送反馈
+
+chat-files-changed-review-tooltip-stale-snapshot = 审查这些文件。其中 { $count } 个在后续轮次再次发生变化；本轮显示的是本轮结束时的状态。
+
+chat-files-changed-review-tooltip-stale-current = 审查这些文件。其中 { $count } 个在后续轮次再次发生变化；审查视图显示其当前状态。
+
+chat-diff-unchanged-lines = { $count } 行未更改
+
+chat-files-changed-shared = 本轮期间另一个聊天也在此工作树中进行操作。两个聊天都修改过的文件会显示双方的编辑。
+
+chat-files-changed-unattributed = 本轮期间另一个聊天也在此工作树中进行操作。灰显文件在其操作期间发生了变化，可能由其修改。
+
+chat-files-changed-snapshot-failed = 无法为本轮的工作树创建快照，因此仅列出工具报告的文件。
+
+palette-mode-all = 全部
+
+palette-mode-conversations = 对话
+
+palette-search-all = 搜索代理、工作树、命令、文件…
+
+palette-search-files-short = 搜索文件…
+
+palette-section-needs-you = 需要你处理
+
+palette-section-running = 正在运行
+
+palette-section-recent = 最近
+
+palette-section-suggested = 建议
+
+palette-section-draft = 草稿
+
+palette-section-actions = 操作
+
+palette-quick-new-chat = 在 { $worktree } 中新建聊天
+
+palette-quick-new-worktree = 新建工作树
+
+palette-quick-new-terminal = 新建终端
+
+palette-quick-feedback = 报告错误或请求功能
+
+palette-section-top-hit = 最佳匹配
+
+palette-section-matches = 匹配结果
+
+palette-section-tabs = 标签页
+
+palette-section-worktrees = 工作树
+
+palette-section-conversations = 对话
+
+palette-section-commands = 命令
+
+palette-section-files = 文件
+
+palette-section-changed = 此分支中的更改
+
+palette-files-show-all = 显示全部 { $count } 项
+
+palette-footer-branches = 分支
+
+palette-section-use-query-with = 将“{ $query }”用于
+
+palette-ask-agent-new-chat = 新建 { $provider } 聊天
+
+palette-search-conversation-history = 搜索对话历史
+
+palette-suggest-review-comments = { $count } 条审查评论
+
+palette-suggest-checks-failing = 检查失败
+
+palette-suggest-files-changed = { $count } 个文件已更改
+
+palette-current = 当前
+
+palette-empty-scope = 没有与“{ $query }”匹配的{ $scope }
+
+palette-empty-recent = 暂无最近记录
+
+palette-search-everything = 搜索全部内容
+
+palette-footer-run = 运行
+
+palette-footer-start = 启动
+
+palette-footer-search = 搜索
+
+palette-footer-show = 显示
+
+palette-footer-report = 报告
+
+palette-footer-request = 请求
+
+palette-report-as-bug = 作为错误报告
+
+palette-report-as-feature = 作为功能请求
+
+palette-finish-bug-report = 完成你的错误报告
+
+palette-finish-feature-request = 完成你的功能请求
+
+palette-actions = 操作
+
+palette-actions-search = 搜索操作…
+
+palette-actions-no-match = 没有与“{ $query }”匹配的操作
+
+palette-action-open = 打开
+
+palette-action-switch-worktree = 切换到工作树
+
+palette-action-search-inside = 在此工作树内搜索
+
+palette-action-open-pr = 打开拉取请求 #{ $number }
+
+palette-action-copy-worktree-path = 复制工作树路径
+
+palette-action-group-ask-agent = 在此工作树中询问代理
+
+palette-action-open-tab = 打开标签页
+
+palette-action-preview = 预览
+
+palette-action-close-tab = 关闭标签页
+
+palette-action-open-conversation = 打开对话
+
+palette-action-open-in = 打开方式…
+
+palette-action-show-ignored = 显示已忽略的文件
+
+palette-action-run-command = 运行命令
+
+palette-action-start-in = 在 { $worktree } 中启动
+
+palette-action-group-another-agent = 另一个代理
+
+palette-action-start-with = 使用 { $provider } 启动
+
+palette-mode-pull-requests = { $forge ->
+    [gitlab] 合并请求
+   *[other] 拉取请求
+}
+
+palette-mode-branch-from = 创建分支自
+
+palette-search-pull-requests = { $forge ->
+    [gitlab] 搜索合并请求，或粘贴链接…
+   *[other] 搜索拉取请求，或粘贴链接…
+}
+
+palette-search-branch-from = 创建分支自…
+
+palette-section-pull-requests = { $forge ->
+    [gitlab] 合并请求
+   *[other] 拉取请求
+}
+
+palette-section-with-worktree = 已有工作树
+
+palette-section-open-pull-requests = 未关闭
+
+palette-section-review-requested = 已请求审查
+
+palette-section-needs-your-review = 需要你审查
+
+palette-section-yours = 你的
+
+palette-section-open-review-requests = { $forge ->
+    [gitlab] 未关闭的合并请求
+   *[other] 未关闭的拉取请求
+}
+
+palette-loading-pull-requests = { $forge ->
+    [gitlab] 正在加载合并请求…
+   *[other] 正在加载拉取请求…
+}
+
+palette-no-open-pull-requests = { $forge ->
+    [gitlab] 没有未关闭的合并请求
+   *[other] 没有未关闭的拉取请求
+}
+
+palette-footer-check-out = 检出
+
+palette-footer-create = 创建
+
+palette-footer-choose = 选择
+
+palette-action-start-in-new-worktree = 在新工作树中启动
+
+palette-action-check-out = 检出
+
+palette-action-work-on-it = 开始处理
+
+palette-action-copy-link = 复制链接
+
+palette-action-copy-number = 复制编号
+
+palette-action-create-worktree = 创建工作树
+
+palette-action-choose-base = 选择基础分支
+
+palette-start-agent-on = 让 { $provider } 处理“{ $query }”
+
+palette-in-new-worktree = 在新工作树中
+
+palette-new-branch = 新分支 { $name }
+
+palette-new-branch-from = 从 { $base }
+
+palette-new-branch-choose-base = 选择基础分支
+
+palette-branch-note-default = 默认
+
+palette-branch-note-current = 此工作树
+
+palette-branch-note-remote = 远程
+
+palette-no-branches = 没有分支
+
+palette-no-branch-named = 没有名为“{ $query }”的分支
+
+palette-search-new-worktree = { $forge ->
+    [gitlab] 输入分支名称、描述任务或粘贴合并请求
+   *[other] 输入分支名称、描述任务或粘贴拉取请求
+}
+
+palette-search-new-worktree-no-forge = 输入分支名称或描述任务
+
+palette-action-open-review-request = { $forge ->
+    [gitlab] 打开合并请求 !{ $number }
+   *[other] 打开拉取请求 #{ $number }
+}
+
+palette-action-create-and-start = 创建并启动 { $provider }
+
+palette-search-projects = 选择项目
+
+palette-mode-projects = 项目
+
+palette-section-branches = 分支
+
+palette-section-look-up = 查找
+
+palette-loading-branches = 正在加载分支…
+
+palette-no-open-pull-request = { $forge ->
+    [gitlab] 没有未关闭的合并请求
+   *[other] 没有未关闭的拉取请求
+}
+
+palette-pull-request-number = { $forge ->
+    [gitlab] 合并请求 !{ $number }
+   *[other] 拉取请求 #{ $number }
+}
+
+palette-new-worktree-in = 在 { $project } 中新建工作树
+
+palette-quick-new-worktree-in = 在 { $project } 中
+
+history-button-tooltip = 历史记录
+
+usage-window-minutes = { $count } 分钟
+
+usage-window-hours = { $count } 小时
+
+usage-window-days = { $count } 天
+
+usage-window-weeks = { $count } 周
+
+usage-window-all-models = 所有模型
+
+usage-gauge-window-reached = 已达到 { $window } 限额
+
+usage-gauge-reached = 已达到限额
+
+usage-limit-no-reset = 未提供重置时间
+
+usage-limit-back = { $time } 后恢复可用
+
+usage-limit-in = { $duration } 后
+
+usage-account-until = { $window }，截至 { $time }
+
+usage-account-back-at = { $window }，{ $time } 恢复
+
+usage-credits-balance = { $amount } 点额度
+
+usage-details = 用量详情
+
+usage-details-runs-out = 按此速度，可能在 { $time } 耗尽
+
+usage-details-lasts = 按此速度，可持续使用到重置
+
+usage-details-used-up = { $window } 已耗尽，将于 { $time } 恢复
+
+usage-details-estimate = 根据此周期开始以来的平均用量估算。估算随用量变化，重置时间不变。
+
+usage-details-no-reset = { $provider } 未提供此周期的重置时间，因此无法预测。
+
+usage-details-source = 限额和重置时间来自 { $provider }。仅显示此账号已报告的限额。
+
+chat-artifact-open-in-app-browser = 应用内浏览器
+
+chat-artifact-open-in-default-browser = 默认浏览器
+
+bookmarks-title = 书签
+
+bookmarks-search-placeholder = 搜索书签…
+
+bookmarks-section-this-chat = 此聊天
+
+bookmarks-saved-label = 已保存
+
+bookmarks-untitled-chat = 未命名聊天
+
+bookmarks-loading = 正在加载书签…
+
+bookmarks-load-failed = 书签加载失败
+
+bookmarks-load-failed-hint = 你保存的回复仍然存在。
+
+bookmarks-load-failed-again-hint = 仍然无法加载。你保存的回复仍然存在。
+
+bookmarks-this-chat-load-failed = 此聊天的书签加载失败
+
+bookmarks-other-chats-load-failed = 其他聊天的书签加载失败
+
+bookmarks-try-again = 重试
+
+bookmarks-empty-title = 留住值得重读的回复
+
+bookmarks-empty-hint = 将鼠标悬停在回复上并点击书签。所有聊天中保存的回复都会汇集在这里。
+
+bookmarks-no-matches = 没有与“{ $query }”匹配的书签
+
+bookmarks-untitled-response = 未命名回复
+
+bookmarks-add = 为回复添加书签
+
+bookmarks-remove = 移除书签
+
+bookmarks-saved-ago = 保存于 { $elapsed }
+
+bookmarks-open-beside = 在此聊天旁打开
+
+bookmarks-response-streaming = 回复完成后即可添加书签
+
+bookmarks-response-unavailable = 回复不可用
+
+bookmarks-save-failed = 无法保存书签。请重试。
+
+bookmarks-remove-failed = 无法移除书签。请重试。
+
+notification-open = 打开
+
+chat-report-error = 报告此问题
+
+menu-help = 帮助
+
+menu-help-report-bug = 报告错误…
+
+menu-help-suggest-feature = 请求功能…
+
+issue-report-command-bug = 报告错误
+
+issue-report-command-feature = 请求功能
+
+issue-report-kind-bug = 错误
+
+issue-report-kind-feature = 功能
+
+issue-report-placeholder-bug = 发生了什么？你期望的结果是什么？
+
+issue-report-placeholder-feature = 你想做什么？
+
+issue-report-placeholder-error = 出错时你正在做什么？
+
+issue-report-error-title = 本轮失败：{ $error }
+
+issue-report-title = 标题
+
+issue-report-title-drafted = 根据你的描述起草
+
+issue-report-title-from-error = 来自错误信息
+
+issue-report-title-restored = 已保存的草稿
+
+issue-report-draft-saved = 已将你的报告保存为草稿
+
+issue-report-action-discard = 丢弃草稿
+
+issue-report-screenshot = 截图
+
+issue-report-screenshots = 截图
+
+issue-report-drop-now = 拖放以附加图片
+
+issue-report-drop-hint = 拖放或粘贴截图
+
+issue-report-drop-hint-review = 或将截图拖到这里
+
+issue-report-capture-window = 截取窗口
+
+issue-report-choose-images = 附加图片…
+
+issue-report-screenshot-pending = 正在截取…
+
+issue-report-image-copied = 截图已复制。请将其粘贴到报告中。
+
+issue-report-images-revealed = 截图已在 Finder 中显示。请将其拖入报告。
+
+issue-report-review = 审阅
+
+issue-report-post = 公开发布
+
+issue-report-review-title = 发布前审阅
+
+issue-report-review-comment-on = 评论 #{ $number }
+
+issue-report-audience = GitHub 上的任何人都可以看到
+
+issue-report-heading-bug = 发生了什么？
+
+issue-report-heading-feature = 你想做什么？
+
+issue-report-field-app-version = 应用版本
+
+issue-report-field-os = 操作系统
+
+issue-report-field-system = 系统详情
+
+issue-report-field-agent = 编程代理
+
+issue-report-field-error = 错误
+
+issue-report-image-note = GitHub 仅支持在其表单中添加图片，因此请前往 GitHub 完成报告。文字已填好，截图已复制到剪贴板，可直接粘贴。
+
+issue-report-images-note = GitHub 仅支持在其表单中添加图片，因此请前往 GitHub 完成报告。文字已填好，Finder 将打开截图所在位置，可直接拖入。
+
+issue-report-checks-title = 建议补充
+
+issue-report-check-expected = 你期望的结果
+
+issue-report-check-steps = 复现步骤
+
+issue-report-check-screenshot = 截图
+
+issue-report-check-today = 你目前如何处理
+
+issue-report-add-expected = 我期望
+
+issue-report-add-steps = 复现步骤：
+    1.
+
+issue-report-add-today = 目前我
+
+issue-report-agent-title = 让代理代写
+
+issue-report-agent-detail = 代理会询问缺失信息，然后起草供你确认
+
+issue-report-agent-no-worktree = 请先打开工作树，让代理有地方进行操作
+
+issue-report-included = 已包含
+
+issue-report-fact-error = 错误信息
+
+issue-report-fact-app = 应用 { $version }
+
+issue-report-fact-system = 系统详情
+
+issue-report-similar-bugs = 类似报告
+
+issue-report-similar-features = 类似请求
+
+issue-report-destination = { $repo } 中的公开议题
+
+issue-report-signed-out = 登录 GitHub CLI 后即可在此提交
+
+issue-report-match-open = #{ $number } 已处于打开状态
+
+issue-report-match-votes = #{ $number } 已获得 { $count } 票
+
+issue-report-continue-github = 在 GitHub 上继续
+
+issue-report-add-details = 添加我的详细信息
+
+issue-report-upvote = 投赞成票
+
+issue-report-open-issue = 打开 #{ $number }
+
+issue-report-sending = 正在发送…
+
+issue-report-send-failed = 无法发送。你的草稿仍在这里。
+issue-report-vote-failed = 无法更新你的投票。请重试。
+
+issue-report-filed = 已提交 #{ $number }
+
+issue-report-added = 已添加到 #{ $number }
+
+issue-report-upvoted = 已为 #{ $number } 投赞成票
+
+issue-report-copied = 报告已复制
+
+issue-report-actions-private = 私密
+
+issue-report-action-draft-agent = 使用代理起草
+
+issue-report-action-copy-markdown = 复制为 Markdown
+
+issue-report-action-email = 私下通过电子邮件发送

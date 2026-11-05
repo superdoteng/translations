@@ -211,6 +211,7 @@ browser-color-scheme-view-dark = הצג את הדף במצב כהה
 browser-color-scheme-showing-light = הדף מוצג במצב בהיר. לחץ כדי לעקוב אחר היישום
 browser-color-scheme-showing-dark = הדף מוצג במצב כהה. לחץ כדי לעקוב אחר היישום
 browser-picking-hint = בחר אלמנט לשליחה לצ׳אט
+browser-find-placeholder = חיפוש בדף
 browser-served-stopped = עצור
 browser-served-starting = מתחיל
 browser-served-branch = ענף
@@ -297,8 +298,7 @@ project-pinned = הוצמד
 project-no-worktrees-found = לא נמצאו עצי עבודה
 project-loading-merge-options = אפשרויות מיזוג טעינה
 sidebar-add-project-to-start = הוסף פרויקט כדי להתחיל
-sidebar-search-project-worktrees-placeholder = חיפוש עצי עבודה ב־{ $project }
-sidebar-search-hidden-worktrees-placeholder = חיפוש עצי עבודה מוסתרים ב־{ $project }
+
 sidebar-install-ssh-key = התקן את המפתח SSH
 action-update = עדכון
 workspace-no-ai-background-tasks = אין משימות רקע AI
@@ -609,8 +609,7 @@ worktree-create-branches-unavailable = המאגר עדיין לא נטען
 worktree-create-in-background = צור ברקע
 worktree-create-refresh-branches = אחזר ענפים מרוחקים
 worktree-create-refresh-failed = האחזור נכשל: { $error }
-worktree-create-return = יצור ↵
-worktree-in-workspace = במרחב העבודה
+
 worktree-no-matching-branches = אין ענפים תואמים
 worktree-not-installed = לא מותקן
 settings-sidebar-group-general = כללי
@@ -1035,6 +1034,7 @@ settings-ai-reset-to-inherited = איפוס למצב ירושה
 settings-ai-system-instructions-placeholder = הוראות מערכת...
 settings-ai-user-message-placeholder = הודעת משתמש...
 settings-ai-launch-flags-description = משמש בכל השקה של ספק זה. אלה מתווספים קודם.
+settings-ai-launch-flags-placeholders = השתמש ב-{ $placeholders } כדי להוסיף את שם עץ העבודה, הענף או הפרויקט בכל השקה.
 settings-ai-profile-definitions = הגדרות פרופיל
 settings-ai-global-default = חדלות פירעון גלובלית
 settings-ai-workspace-override = עקיפת מרחב עבודה
@@ -1052,9 +1052,9 @@ settings-ai-all-models = כל הדגמים
 settings-ai-select-models = דגמים נבחרים
 settings-ai-select-models-count = דגמים נבחרים ({ $count })
 settings-ai-model-visibility = נראות הדגם
-settings-ai-compliant-claude-tooltip = כשצ'אט Claude כבוי — או בסביבת עבודה SSH — משתמש ב-claude -p transport המובנה.
-settings-ai-compliant-claude-view = עמדת Claude תואם
-settings-ai-compliant-claude-view-description = הרץ צ'אטים Claude מקומיים דרך מצב האינטראקטיבי של Claude Code כדי לשמור על השימוש בחבילת המנוי שלך. SSH מרחבי העבודה משתמשים ב-claude -p transport המובנה.
+settings-ai-claude-interactive-mode-tooltip = כשהאפשרות כבויה, או בסביבת עבודה SSH, צ'אט Claude משתמש במצב הדפסה (claude -p).
+settings-ai-claude-interactive-mode = מצב אינטראקטיבי
+settings-ai-claude-interactive-mode-description = הרץ צ'אטים מקומיים של Claude במצב האינטראקטיבי של Claude Code במקום במצב הדפסה (claude -p). סביבות עבודה SSH תמיד משתמשות במצב הדפסה.
 settings-ai-action-model-pins = מתקדם — פיני מודל לכל פעולה
 settings-ai-action-model-pins-description = מודלים של PIN לפעולות מסוימות רק כאשר ברירת המחדל של דלי אינה מספיקה.
 settings-ai-session-model-description = המודל המשמש כברירת מחדל לסשנים חדשים.
@@ -1098,18 +1098,20 @@ review-resolved-count = נפתר ({ $count })
 right-panel-setup = הכנה
 action-stop = עצור
 right-panel-terminal = טרמינל
-setup-no-output = אין פלט של סקריפט הגדרה
-setup-output-description = פלט סקריפטים של ההגדרה יופיע כאן אחרי הרצת ההגדרה.
 setup-run = הגדרת הריצה
+setup-empty-title = הוספת סקריפט הכנה
+setup-empty-description = הסקריפט פועל בכל עץ עבודה חדש כדי להתקין תלויות ולהעתיק קובצי סביבה.
+setup-pending-title = סקריפט הכנה
+setup-pending-description = עצי עבודה חדשים מריצים את הפקודות האלה בעת יצירתם.
+run-empty-title = הוספת סקריפט ריצה
+run-empty-description = הסקריפט מפעיל את שרת הפיתוח או את האפליקציה. כל סקריפט נפתח בלשונית משלו.
+run-idle-description = הפלט מופיע כאן כשהסקריפט רץ.
+script-suggestion-from = מתוך { $file }
+script-suggestion-use = שימוש
+script-write-with-agent = לבקש מסוכן לכתוב אותו
+script-edit-in-settings = פתיחת הגדרות הפרויקט
+script-commands-more = עוד { $count }
 setup-not-configured = אין תסריט הגדרה
-setup-configure = הגדרת סקריפט ההגדרה
-setup-configure-description = הגדר סקריפט הגדרה בהגדרות פרויקט או הוסף קובץ .super.engineering/config.json.
-run-no-output = אין פלט של סקריפט הרצה
-run-output-description = פלט סקריפט הרצת יופיע כאן.
-run-workspace = הרץ סביבת עבודה
-run-not-configured = אין להגדיר סקריפט ריצה
-run-configure = הגדרת סקריפט ריצה
-run-configure-description = הגדר סקריפט ריצה בהגדרות פרויקט או הוסף קובץ .super.engineering/config.json.
 review-submitted-reviews = ביקורות שהוגשו
 review-ai-questions = AI שאלות
 review-no-comments = עדיין אין הערות ביקורת
@@ -1339,12 +1341,7 @@ worktree-context-placeholder = תאר מה אתה רוצה שהסוכן יעבו
 worktree-filter-branches-placeholder = סינון ענפים...
 worktree-label-placeholder = תווית עץ העבודה
 worktree-prompt-placeholder = על מה אתה עובד?
-worktree-search-branches-placeholder = חפש סניפים...
-worktree-search-branches-mrs-placeholder = חיפוש בסניפים MRs...
-worktree-search-branches-prs-placeholder = חפש סניפים PRs...
-worktree-fetching-branches = להביא ענפים...
-worktree-fetching-branches-mrs = להביא ענפים MRs...
-worktree-fetching-branches-prs = להביא ענפים PRs...
+
 right-panel-switch-stacked = מעבר לטרמינל ערום
 right-panel-switch-bottom = מעבר לטרמינל התחתון
 right-panel-switch-side-by-side = מעבר לטרמינל זה בצד
@@ -1925,8 +1922,8 @@ settings-search-entry-agents-routing-thorough-actions-label = פעולות יס�
 settings-search-entry-agents-routing-thorough-actions-description = תיקון CI, מיזוגים חסומים, תגובות, שינויים, קונפליקטים וביקורות.
 settings-search-entry-agents-providers-claude-code-provider-label = ספק Claude Code
 settings-search-entry-agents-providers-claude-code-provider-description = הפעל Claude Code והגדר את המודלים, הפרופילים ודגלי ההשקה.
-settings-search-entry-agents-providers-compliant-claude-view-label = עמדת Claude תואמת
-settings-search-entry-agents-providers-compliant-claude-view-description = הרץ Claude צ'אט דרך מצב האינטראקטיבי של Claude Code כדי לשמור על השימוש בחבילת המנוי שלך.
+settings-search-entry-agents-providers-claude-interactive-mode-label = מצב אינטראקטיבי של Claude
+settings-search-entry-agents-providers-claude-interactive-mode-description = הרץ צ'אטים מקומיים של Claude במצב האינטראקטיבי של Claude Code במקום במצב הדפסה (claude -p). סביבות עבודה SSH תמיד משתמשות במצב הדפסה. חל על צ'אטים שנפתחים מעכשיו.
 settings-search-entry-agents-providers-codex-provider-label = ספק Codex
 settings-search-entry-agents-providers-codex-provider-description = הפעל Codex והגדר את המודלים, הפרופילים ודגלי ההשקה.
 settings-search-entry-agents-providers-pi-provider-label = ספק Pi
@@ -2026,7 +2023,7 @@ settings-ai-provider-section-chat = צ׳אט
 settings-ai-provider-section-runtime = סביבת הרצה
 settings-ai-provider-profiles-description = חשבונות ותיקיות הגדרות עבור ספק זה.
 settings-ai-provider-manage-profiles = נהל פרופילים
-settings-ai-provider-antigravity-description = הפעל את Antigravity כספק טרמינל (דורש התקנת Antigravity CLI `agy`).
+settings-ai-provider-antigravity-description = הפעלת תמיכה בצ׳אט ובמסוף של Antigravity (דורש התקנה של Antigravity CLI‏ `agy`).
 settings-ai-provider-hermes-description = הפעל את Hermes כספק טרמינל (דורש התקנת `hermes` של Hermes Agent).
 settings-ai-provider-qwen-description = הפעל את קוד Qwen כספק טרמינל (דורש התקנת קוד Qwen CLI `qwen`).
 settings-ai-provider-kimi-description = הפעל את קוד Kimi כספק צ'אט וטרמינל (דורש מותקן CLI `kimi` קוד Kimi הנוכחי).
@@ -2113,27 +2110,9 @@ workspace-remote-forge-cli-not-authenticated-hint = טיפ: { $cli } על המא
 workspace-remote-forge-cli-missing-hint = טיפ: התקן { $cli } על המארח והריץ `{ $cli } auth login` כדי ליצור { $kind } עם הסוכן.
 workspace-review-request-url-copied = העתקתי { $kind } URL
 workspace-review-request-none-yet = לענף הזה עדיין אין { $kind }
-worktree-prompt = הנחיה
-worktree-branches = סניפים
-worktree-merge-requests = בקשות מיזוג
-worktree-pull-requests = בקשות משיכה
-worktree-review-requests = בקשות לסקירה
-worktree-tab-with-count = { $label } ({ $count })
-worktree-no-open-merge-requests = אין בקשות מיזוג פתוחות
-worktree-no-open-pull-requests = אין בקשות משיכה פתוחה
-worktree-no-open-review-requests = אין בקשות לסקירה פתוחה
-worktree-no-branches = אין ענפים
+
 common-no-matches = אין התאמות
-worktree-gitlab-cli-missing = לא הצלחתי לטעון בקשות מיזוג: GitLab CLI (`glab`) לא מותקן או לא על PATH. התקן `glab`, אימות עם `glab auth login`, ואז נסה שוב.
-worktree-gitlab-auth-required = לא ניתן לטעון בקשות מיזוג: GitLab CLI (`glab`) לא מאומת. הרץ `glab auth login` למארח GitLab הזה, ואז נסה שוב.
-worktree-github-auth-required = לא ניתן לטעון בקשות משיכה: GitHub CLI (`gh`) לא מאומת עבור המארח הזה. הרץ `gh auth login --hostname <host>`, ואז נסה שוב.
-worktree-github-load-error = לא הצלחתי לטעון בקשות משיכה: { $error }
-worktree-gitlab-load-error = לא הצלחתי לטעון בקשות מיזוג: { $error }
-worktree-bitbucket-cli-missing = לא ניתן לטעון בקשות משיכה: Bitbucket CLI (`bkt`) אינו מותקן או אינו נמצא ב-PATH. התקן את `bkt`, הרץ את `bkt auth login https://bitbucket.org --kind cloud --web-token`, צור הקשר באמצעות `bkt context create cloud --host api.bitbucket.org --workspace <workspace> --set-active` ונסה שוב.
-worktree-bitbucket-auth-required = לא ניתן לטעון בקשות משיכה: Bitbucket CLI (`bkt`) אינו מאומת. הרץ את `bkt auth login https://bitbucket.org --kind cloud --web-token` ונסה שוב.
-worktree-bitbucket-no-context = לא ניתן לטעון בקשות משיכה: { $error }
-worktree-bitbucket-load-error = לא ניתן לטעון בקשות משיכה: { $error }
-worktree-review-request-load-error = לא ניתן לטעון בקשות ביקורת: { $error }
+
 remote-cli-install-succeeded = התקנתי { $app_name } CLI { $package } (api={ $api }, watch={ $watch }, hooks={ $hooks }) על השלט.
 remote-cli-install-failed = CLI התקנה נכשלה: { $error }
 chat-composer-placeholder-active = הקליד הודעה...
@@ -2644,6 +2623,7 @@ settings-keybinding-action-focus-chat-input = קלט מיקוד בצ'אט
 settings-keybinding-action-find = חיפוש
 find-placeholder = חיפוש...
 find-results-none = 0 תוצאות
+find-no-matches = אין התאמות
 find-results-count = { $count ->
     [one] תוצאה אחת
     [two] שתי תוצאות
@@ -2658,6 +2638,7 @@ settings-keybinding-action-reload = טעינה מחדש
 settings-keybinding-action-chat-model-picker = בחירת מודלים בצ'אט מתגבר
 settings-keybinding-action-chat-fast-mode = החלפת מצב צ'אט מהיר
 settings-keybinding-action-chat-plan-mode = החלפת מצב צ'אט לתוכנית
+settings-keybinding-action-chat-ultracode = הפעלה או כיבוי של Ultracode בצ׳אט
 settings-keybinding-action-chat-effort = מאמץ צ'אט במחזור
 settings-keybinding-action-chat-permission-picker = הצגה או הסתרה של בורר ההרשאות בצ'אט
 settings-keybinding-action-split-pane-right = חלון מפוצל ימין
@@ -2796,20 +2777,16 @@ usage-meter-error = לא ניתן לטעון את השימוש
 usage-meter-loading = השימוש נטען…
 usage-meter-outdated = נתוני השימוש אינם עדכניים
 usage-meter-updated = עודכן { $ago }
-usage-meter-resets = מתאפס בעוד { $duration }
-usage-meter-window-session = סשן
+
 usage-meter-window-daily = יומי
 usage-meter-window-weekly = שבועי
 usage-meter-window-monthly = חודשי
-usage-meter-window-other = אחר
-usage-meter-all-providers = כל הספקים
+
 usage-meter-percent-left = נותרו { $percent }%
 usage-meter-no-account = לא נבחר חשבון
 usage-meter-now = עכשיו
 usage-meter-default-account = ברירת מחדל
-usage-popover-runs-out = ייגמר { $time }, מתאפס { $reset }
-usage-popover-runs-out-then-credits = ייגמר { $time }, ואז קרדיטים
-usage-popover-using-credits = משתמש בקרדיטים
+
 usage-api-key = מפתח API
 usage-api-key-week = משוער השבוע
 usage-api-key-today = { $amount } היום
@@ -2824,8 +2801,7 @@ usage-popover-window-left = נותר ב־{ $window }
 usage-popover-updating = מעדכן…
 usage-popover-retry = ניסיון חוזר
 usage-popover-accounts = חשבונות
-usage-popover-in-use = בשימוש
-usage-popover-unused = { $count } לא בשימוש
+
 usage-graph-on-pace = בקצב
 usage-graph-in-reserve = { $percent }% ברזרבה
 usage-graph-behind = { $percent }% מאחורי הקצב
@@ -2834,10 +2810,9 @@ usage-graph-lasts = יספיק עד האיפוס
 usage-graph-collecting = הגרף יתמלא ככל שיגיעו מדידות
 usage-instrument-gauge = מד
 usage-instrument-graph = גרף
-usage-popover-no-other-limits = אין מגבלות נוספות
+
 usage-popover-no-data = עדיין אין שימוש מ־{ $providers }
-usage-popover-more = עוד
-usage-popover-less = פחות
+
 tool-verb-ran = הרצה
 tool-verb-running = מריץ
 tool-verb-messaging = שולח הודעה אל
@@ -3445,7 +3420,7 @@ workspace-fx-remote-history-unsupported = טרמינלים מרוחקים של F
 settings-keybinding-action-rename-selected-entry = שנה את שם הפריט שנבחר
 settings-keybinding-action-chat-effort-backward = עבור אחורה בין רמות מאמץ בצ׳אט
 worktree-preparing = מכין Worktree…
-chat-queued-until-worktree-ready = מתחיל כשה־Worktree מוכן
+chat-queued-until-worktree-ready = יישלח כשיהיה מוכן
 chat-delivery-unconfirmed = המסירה לא אושרה
 chat-delivery-unconfirmed-retry = בדוק את השיחה לפני ניסיון חוזר; ייתכן שההודעה הזו כבר נמסרה.
 chat-answer-pending-delivery = ממתין למסירה
@@ -3464,6 +3439,9 @@ composer-model = מודל
 composer-effort = מאמץ
 composer-effort-lower = הפחת מאמץ
 composer-effort-raise = הגבר מאמץ
+composer-ultracode = Ultracode
+composer-ultracode-tooltip = Ultracode כבוי. כשהוא מופעל, Claude מריץ תהליכי עבודה מרובי סוכנים למשימות גדולות, מה שצורך יותר טוקנים. לחצו כדי להפעיל.
+composer-ultracode-on-tooltip = Ultracode מופעל. Claude מריץ תהליכי עבודה מרובי סוכנים למשימות גדולות, מה שצורך יותר טוקנים. לחצו כדי לכבות.
 reasoning-effort-unspecified = לא צוין
 settings-ai-thinking-unavailable = המודל הזה אינו חושף רמות חשיבה ניתנות להגדרה.
 chat-message-tokens-not-reported = לא דווח
@@ -3674,23 +3652,10 @@ usage-reset-busy = עדיין מעדכן. החלק שוב בעוד רגע
 usage-reset-unavailable = אין איפוס זמין
 usage-credits = קרדיטים
 usage-credits-unlimited = ללא הגבלה
-usage-account-resets = { $count ->
-    [one] איפוס אחד
-    [two] שני איפוסים
-   *[other] { $count } איפוסים
-}
-usage-account-credits = { $amount } קרדיטים
-usage-account-ring-window = { $account } { $window }
-usage-account-window-left = { $window } { $percent }%
-usage-graph-account-left = נותר ב־{ $window } של { $account }
-usage-graph-now = עכשיו
-usage-accounts-on-gauge = במד
+
 usage-accounts-sign-in = התחברות
 usage-accounts-signing-in = מתחבר…
-usage-accounts-single = { $count ->
-    [one] ל־{ $providers } יש חשבון אחד.
-   *[other] לכל אחד מ־{ $providers } יש חשבון אחד.
-}
+
 usage-account-empty-title = עדיין אין שימוש ב־{ $account }
 usage-account-empty-body = מדידות יופיעו אחרי הסשן הראשון של הפרופיל הזה.
 usage-account-signed-out-title = { $account } לא מחובר
@@ -3701,3 +3666,398 @@ usage-graph-legend-even = קצב אחיד
 usage-graph-legend-projection = תחזית
 usage-graph-legend-estimated = משוער
 usage-graph-estimated = הערכה לפי הפעילות ב־Mac הזה
+
+browser-annotations-send-short = שליחה
+browser-agent-take-over = קבלת שליטה
+browser-agent-you-have-control = השליטה בידיך
+browser-agent-hand-back = החזרת השליטה
+browser-agent-is-waiting = { $agent } ממתין
+browser-agent-handed-back-message = החזרתי את השליטה בדפדפן. אפשר להמשיך מהמקום שבו עצרת.
+browser-agent-cue-clicking = לחיצה על „{ $name }”
+browser-agent-cue-clicking-bare = לחיצה
+browser-agent-cue-turning-on = הפעלת „{ $name }”
+browser-agent-cue-turning-off = כיבוי „{ $name }”
+browser-agent-cue-selecting = בחירת „{ $name }”
+browser-agent-cue-typing = הקלדת „{ $value }”
+browser-agent-cue-typing-bare = הקלדה
+browser-agent-cue-pressing = הקשה על { $key }
+browser-agent-cue-hovering = ריחוף מעל „{ $name }”
+browser-agent-cue-checking = בדיקת „{ $name }”
+browser-agent-cue-reading = קריאת הדף
+browser-agent-cue-scrolling = גלילה
+browser-agent-cue-capturing = צילום מסך
+browser-agent-cue-capturing-element = צילום מסך של „{ $name }”
+browser-agent-cue-capturing-full = צילום הדף המלא
+browser-agent-cue-uploading = העלאת { $file }
+browser-agent-cue-running-script = הרצת סקריפט
+browser-agent-cue-scheme-dark = מעבר למצב כהה
+browser-agent-cue-scheme-light = מעבר למצב בהיר
+browser-agent-cue-waiting = המתנה לדף
+browser-agent-cue-opening = פתיחת { $url }
+browser-agent-cue-going-back = חזרה אחורה
+browser-agent-cue-going-forward = מעבר קדימה
+browser-agent-cue-reloading = טעינת הדף מחדש
+browser-agent-cue-new-tab = פתיחת לשונית חדשה
+browser-agent-cue-working = בעבודה
+sidebar-search-project-placeholder = חיפוש ב־{ $project }
+sidebar-search-hidden-worktrees-count-placeholder = { $count ->
+    [one] חיפוש בעץ עבודה מוסתר אחד
+   *[other] חיפוש ב־{ $count } עצי עבודה מוסתרים
+}
+project-search-filter-hint = אפשר לנסות running, open, merged או #number
+project-search-all-projects = חיפוש בכל הפרויקטים
+project-search-hand-off-hint = כל הפרויקטים
+project-search-section-worktrees = עצי עבודה
+project-search-section-filter-hint = אפשר לנסות מקטע, running, open או #number
+history-empty-title = כל שיחה שנסגרה, במרחק לחיצה
+history-empty-hint = שיחות שנסגרות בעץ העבודה הזה מופיעות כאן, מוכנות להמשך מהמקום שבו עצרת.
+history-empty-filtered-title = אין עדיין שיחות עם { $agent }
+history-show-all-agents = הצגת כל הסוכנים
+settings-keybinding-action-toggle-bookmarks = הצגה או הסתרה של סימניות
+settings-keybinding-action-previous-bookmark = הסימנייה הקודמת
+settings-keybinding-action-next-bookmark = הסימנייה הבאה
+worktree-step-checking-out = { $forge ->
+    [gitlab] מעבר ל־!{ $number }
+   *[other] מעבר ל־#{ $number }
+}
+worktree-step-checking-out-branch = מעבר ל־{ $branch }
+worktree-step-creating-branch-from = יצירת ענף מתוך { $base }
+worktree-step-creating-branch = יצירת ענף
+worktree-step-naming = מתן שם לפי המשימה שלך
+worktree-step-setup = הרצת ההגדרה
+worktree-step-opening-agent = פתיחת { $agent }
+chat-waiting-on-agents = { $count ->
+    [one] בהמתנה לסוכן אחד…
+   *[other] בהמתנה ל־{ $count } סוכנים…
+}
+chat-shell-mode = פקודת מעטפת
+chat-shell-mode-detail = מופעל בסביבת העבודה הזו. כדי להציג את התוצאה לסוכן, יש לבחור בה „הוספה לשיחה”.
+chat-shell-add-to-chat = הוספה לשיחה
+markdown-run-command = פתיחה במסוף
+chat-shell-exit = יציאה { $code }
+chat-shell-stopped = נעצר
+chat-shell-finished = הסתיים
+chat-shell-no-output = אין פלט
+chat-shell-show-all = הצגת כל { $count } השורות
+chat-shell-run-again = הרצה חוזרת
+chat-shell-open-in-terminal = פתיחה במסוף
+chat-shell-running = פועל
+chat-shell-stopping = נעצר כעת
+chat-shell-stop = עצירה
+chat-shell-stop-hint = עצירה (Esc)
+chat-shell-unavailable = פקודות מעטפת אינן זמינות כרגע בשיחה הזו.
+chat-shell-open-refused = לא ניתן לפתוח זאת במסוף בלי להריץ. אפשר להעתיק את הפקודה במקום.
+chat-shell-start-failed = לא ניתן להריץ את הפקודה: { $error }
+chat-files-changed-diff-unavailable = ההבדל הזה אינו זמין עוד.
+chat-files-changed-diff-no-lines = רק שם הקובץ או ההרשאות שלו השתנו.
+chat-files-changed-diff-binary = בקבצים בינאריים אין הבדלי שורות להצגה.
+chat-files-changed-diff-not-utf8 = הקובץ אינו טקסט בקידוד UTF-8 ולכן לא ניתן להציג את שורותיו.
+chat-files-changed-diff-too-large = ההבדל הזה גדול מדי להצגה כאן.
+chat-files-changed-binary = בינארי
+chat-files-changed-review-tooltip = סקירת הקבצים האלה ושליחת משוב לשיחה הזו
+chat-files-changed-review-tooltip-stale-snapshot = { $count ->
+    [one] אפשר לסקור את הקבצים. קובץ אחד השתנה שוב בתור מאוחר יותר; התור הזה מציג אותו כפי שהשאיר אותו.
+   *[other] אפשר לסקור את הקבצים. { $count } קבצים השתנו שוב בתור מאוחר יותר; התור הזה מציג אותם כפי שהשאיר אותם.
+}
+chat-files-changed-review-tooltip-stale-current = { $count ->
+    [one] אפשר לסקור את הקבצים. קובץ אחד השתנה שוב בתור מאוחר יותר; הסקירה מציגה את מצבו הנוכחי.
+   *[other] אפשר לסקור את הקבצים. { $count } קבצים השתנו שוב בתור מאוחר יותר; הסקירה מציגה את מצבם הנוכחי.
+}
+chat-diff-unchanged-lines = { $count ->
+    [one] שורה אחת ללא שינוי
+   *[other] { $count } שורות ללא שינוי
+}
+chat-files-changed-shared = שיחה נוספת עבדה בעץ העבודה הזה במהלך התור. קובץ ששתי השיחות שינו מציג את העריכות של שתיהן.
+chat-files-changed-unattributed = שיחה נוספת עבדה בעץ העבודה הזה במהלך התור. קבצים מעומעמים השתנו בזמן שעבדה וייתכן שהשינויים שייכים לה.
+chat-files-changed-snapshot-failed = לא ניתן היה לשמור תמונת מצב של עץ העבודה בתור הזה, לכן מופיעים רק קבצים שעליהם דיווחו הכלים שלו.
+palette-mode-all = הכול
+palette-mode-conversations = שיחות
+palette-search-all = חיפוש סוכנים, עצי עבודה, פקודות, קבצים…
+palette-search-files-short = חיפוש קבצים…
+palette-section-needs-you = דורש את תשומת ליבך
+palette-section-running = פועל
+palette-section-recent = אחרונים
+palette-section-suggested = מוצעים
+palette-section-draft = טיוטה
+palette-section-actions = פעולות
+palette-quick-new-chat = שיחה חדשה ב־{ $worktree }
+palette-quick-new-worktree = עץ עבודה חדש
+palette-quick-new-terminal = מסוף חדש
+palette-quick-feedback = דיווח על באג או בקשת תכונה
+palette-section-top-hit = התוצאה המובילה
+palette-section-matches = התאמות
+palette-section-tabs = לשוניות
+palette-section-worktrees = עצי עבודה
+palette-section-conversations = שיחות
+palette-section-commands = פקודות
+palette-section-files = קבצים
+palette-section-changed = השתנו בענף הזה
+palette-files-show-all = הצגת כל { $count } הפריטים
+palette-footer-branches = ענפים
+palette-section-use-query-with = שימוש ב־„{ $query }” עם
+palette-ask-agent-new-chat = שיחת { $provider } חדשה
+palette-search-conversation-history = חיפוש בהיסטוריית השיחות
+palette-suggest-review-comments = { $count ->
+    [one] הערת סקירה אחת
+   *[other] { $count } הערות סקירה
+}
+palette-suggest-checks-failing = בדיקות נכשלות
+palette-suggest-files-changed = { $count ->
+    [one] קובץ אחד השתנה
+   *[other] { $count } קבצים השתנו
+}
+palette-current = נוכחי
+palette-empty-scope = אין התאמות ב־{ $scope } ל־„{ $query }”
+palette-empty-recent = אין עדיין פריטים אחרונים
+palette-search-everything = חיפוש בכל מקום
+palette-footer-run = הרצה
+palette-footer-start = התחלה
+palette-footer-search = חיפוש
+palette-footer-show = הצגה
+palette-footer-report = דיווח
+palette-footer-request = בקשה
+palette-report-as-bug = דיווח כבאג
+palette-report-as-feature = בקשה כתכונה
+palette-finish-bug-report = השלמת דיווח הבאג שלך
+palette-finish-feature-request = השלמת בקשת התכונה שלך
+palette-actions = פעולות
+palette-actions-search = חיפוש פעולות…
+palette-actions-no-match = אין פעולות שתואמות ל־„{ $query }”
+palette-action-open = פתיחה
+palette-action-switch-worktree = מעבר לעץ העבודה
+palette-action-search-inside = חיפוש בתוך עץ העבודה הזה
+palette-action-open-pr = פתיחת בקשת משיכה #{ $number }
+palette-action-copy-worktree-path = העתקת נתיב עץ העבודה
+palette-action-group-ask-agent = שאלה לסוכן בעץ העבודה הזה
+palette-action-open-tab = פתיחת לשונית
+palette-action-preview = תצוגה מקדימה
+palette-action-close-tab = סגירת לשונית
+palette-action-open-conversation = פתיחת שיחה
+palette-action-open-in = פתיחה ב…
+palette-action-show-ignored = הצגת קבצים שמתעלמים מהם
+palette-action-run-command = הרצת פקודה
+palette-action-start-in = התחלה ב־{ $worktree }
+palette-action-group-another-agent = סוכן אחר
+palette-action-start-with = התחלה עם { $provider }
+palette-mode-pull-requests = { $forge ->
+    [gitlab] בקשות מיזוג
+   *[other] בקשות משיכה
+}
+palette-mode-branch-from = יצירת ענף מתוך
+palette-search-pull-requests = { $forge ->
+    [gitlab] חיפוש בקשות מיזוג או הדבקת קישור…
+   *[other] חיפוש בקשות משיכה או הדבקת קישור…
+}
+palette-search-branch-from = יצירת ענף מתוך…
+palette-section-pull-requests = { $forge ->
+    [gitlab] בקשות מיזוג
+   *[other] בקשות משיכה
+}
+palette-section-with-worktree = עם עץ עבודה
+palette-section-open-pull-requests = פתוחות
+palette-section-review-requested = סקירה התבקשה
+palette-section-needs-your-review = דורש סקירה שלך
+palette-section-yours = שלך
+palette-section-open-review-requests = { $forge ->
+    [gitlab] בקשות מיזוג פתוחות
+   *[other] בקשות משיכה פתוחות
+}
+palette-loading-pull-requests = { $forge ->
+    [gitlab] טעינת בקשות מיזוג…
+   *[other] טעינת בקשות משיכה…
+}
+palette-no-open-pull-requests = { $forge ->
+    [gitlab] אין בקשות מיזוג פתוחות
+   *[other] אין בקשות משיכה פתוחות
+}
+palette-footer-check-out = מעבר לענף
+palette-footer-create = יצירה
+palette-footer-choose = בחירה
+palette-action-start-in-new-worktree = התחלה בעץ עבודה חדש
+palette-action-check-out = מעבר לענף
+palette-action-work-on-it = עבודה על זה
+palette-action-copy-link = העתקת קישור
+palette-action-copy-number = העתקת מספר
+palette-action-create-worktree = יצירת עץ עבודה
+palette-action-choose-base = בחירת ענף בסיס
+palette-start-agent-on = הפעלת { $provider } על „{ $query }”
+palette-in-new-worktree = בעץ עבודה חדש
+palette-new-branch = ענף חדש { $name }
+palette-new-branch-from = מתוך { $base }
+palette-new-branch-choose-base = בחירת בסיס
+palette-branch-note-default = ברירת מחדל
+palette-branch-note-current = עץ העבודה הזה
+palette-branch-note-remote = מרוחק
+palette-no-branches = אין ענפים
+palette-no-branch-named = אין ענף בשם „{ $query }”
+palette-search-new-worktree = { $forge ->
+    [gitlab] מתן שם לענף, תיאור משימה או הדבקת MR
+   *[other] מתן שם לענף, תיאור משימה או הדבקת PR
+}
+palette-search-new-worktree-no-forge = מתן שם לענף או תיאור משימה
+palette-action-open-review-request = { $forge ->
+    [gitlab] פתיחת בקשת מיזוג !{ $number }
+   *[other] פתיחת בקשת משיכה #{ $number }
+}
+palette-action-create-and-start = יצירה והפעלת { $provider }
+palette-search-projects = בחירת פרויקט
+palette-mode-projects = פרויקטים
+palette-section-branches = ענפים
+palette-section-look-up = חיפוש
+palette-loading-branches = טעינת ענפים…
+palette-no-open-pull-request = { $forge ->
+    [gitlab] אין בקשת מיזוג פתוחה
+   *[other] אין בקשת משיכה פתוחה
+}
+palette-pull-request-number = { $forge ->
+    [gitlab] בקשת מיזוג !{ $number }
+   *[other] בקשת משיכה #{ $number }
+}
+palette-new-worktree-in = עץ עבודה חדש ב־{ $project }
+palette-quick-new-worktree-in = ב־{ $project }
+history-button-tooltip = היסטוריה
+usage-window-minutes = { $count ->
+    [one] דקה
+    [two] שתי דקות
+   *[other] { $count } דקות
+}
+usage-window-hours = { $count ->
+    [one] שעה
+    [two] שעתיים
+   *[other] { $count } שעות
+}
+usage-window-days = { $count ->
+    [one] יום
+    [two] יומיים
+   *[other] { $count } ימים
+}
+usage-window-weeks = { $count ->
+    [one] שבוע
+    [two] שבועיים
+   *[other] { $count } שבועות
+}
+usage-window-all-models = כל המודלים
+usage-gauge-window-reached = הגעת למגבלת { $window }
+usage-gauge-reached = הגעת למגבלה
+usage-limit-no-reset = מועד האיפוס לא דווח
+usage-limit-back = זמין שוב { $time }
+usage-limit-in = בעוד { $duration }
+usage-account-until = { $window }, עד { $time }
+usage-account-back-at = { $window }, שוב זמין ב־{ $time }
+usage-credits-balance = { $amount } קרדיטים
+usage-details = פרטי השימוש
+usage-details-runs-out = בקצב הזה, ייתכן שייגמר { $time }
+usage-details-lasts = בקצב הזה, יספיק עד לאיפוס
+usage-details-used-up = { $window } נוצל במלואו עד { $time }
+usage-details-estimate = הערכה לפי השימוש הממוצע שלך מתחילת החלון הזה. היא משתנה עם השימוש שלך; מועד האיפוס נשאר קבוע.
+usage-details-no-reset = { $provider } לא דיווח מתי החלון הזה מתאפס, ולכן אין תחזית.
+usage-details-source = המגבלות ומועדי האיפוס מגיעים מ־{ $provider }. מגבלה מוצגת רק כשדווחה עבור החשבון הזה.
+chat-artifact-open-in-app-browser = דפדפן בתוך היישום
+chat-artifact-open-in-default-browser = דפדפן ברירת המחדל
+bookmarks-title = סימניות
+bookmarks-search-placeholder = חיפוש סימניות…
+bookmarks-section-this-chat = השיחה הזו
+bookmarks-saved-label = נשמרו
+bookmarks-untitled-chat = שיחה ללא כותרת
+bookmarks-loading = טעינת סימניות…
+bookmarks-load-failed = הסימניות לא נטענו
+bookmarks-load-failed-hint = התשובות ששמרת עדיין קיימות.
+bookmarks-load-failed-again-hint = עדיין לא נטען. התשובות ששמרת עדיין קיימות.
+bookmarks-this-chat-load-failed = הסימניות של השיחה הזו לא נטענו
+bookmarks-other-chats-load-failed = הסימניות של שיחות אחרות לא נטענו
+bookmarks-try-again = ניסיון חוזר
+bookmarks-empty-title = שמירת התשובות ששווה לקרוא שוב
+bookmarks-empty-hint = יש לרחף מעל תשובה וללחוץ על הסימנייה. תשובות שנשמרו מכל השיחות נאספות כאן.
+bookmarks-no-matches = אין סימניות שתואמות ל־„{ $query }”
+bookmarks-untitled-response = תשובה ללא כותרת
+bookmarks-add = הוספת התשובה לסימניות
+bookmarks-remove = הסרת סימנייה
+bookmarks-saved-ago = נשמר { $elapsed }
+bookmarks-open-beside = פתיחה לצד השיחה הזו
+bookmarks-response-streaming = אפשר להוסיף את התשובה לסימניות כשתסתיים
+bookmarks-response-unavailable = התשובה אינה זמינה
+bookmarks-save-failed = לא ניתן לשמור את הסימנייה. יש לנסות שוב.
+bookmarks-remove-failed = לא ניתן להסיר את הסימנייה. יש לנסות שוב.
+notification-open = פתיחה
+chat-report-error = דיווח על הבעיה הזו
+menu-help = עזרה
+menu-help-report-bug = דיווח על באג…
+menu-help-suggest-feature = בקשת תכונה…
+issue-report-command-bug = דיווח על באג
+issue-report-command-feature = בקשת תכונה
+issue-report-kind-bug = באג
+issue-report-kind-feature = תכונה
+issue-report-placeholder-bug = מה קרה? מה ציפית שיקרה במקום?
+issue-report-placeholder-feature = מה ניסית לעשות?
+issue-report-placeholder-error = מה עשית כשהפעולה נכשלה?
+issue-report-error-title = התור נכשל: { $error }
+issue-report-title = כותרת
+issue-report-title-drafted = נוסחה מתוך המילים שלך
+issue-report-title-from-error = מתוך השגיאה
+issue-report-title-restored = טיוטה שמורה
+issue-report-draft-saved = הדיווח שלך נשמר כטיוטה
+issue-report-action-discard = ביטול הטיוטה
+issue-report-screenshot = צילום מסך
+issue-report-screenshots = צילומי מסך
+issue-report-drop-now = שחרור לצירוף תמונות
+issue-report-drop-hint = גרירה או הדבקה של צילומי מסך
+issue-report-drop-hint-review = או לגרור אחד לכאן
+issue-report-capture-window = צילום החלון
+issue-report-choose-images = צירוף תמונות…
+issue-report-screenshot-pending = מצלם…
+issue-report-image-copied = צילום המסך הועתק. אפשר להדביק אותו בדיווח.
+issue-report-images-revealed = צילומי המסך נמצאים ב־Finder. אפשר לגרור אותם לדיווח.
+issue-report-review = סקירה
+issue-report-post = פרסום פומבי
+issue-report-review-title = סקירה לפני הפרסום
+issue-report-review-comment-on = תגובה ל־#{ $number }
+issue-report-audience = כל אחד ב־GitHub יכול לראות את זה
+issue-report-heading-bug = מה קרה?
+issue-report-heading-feature = מה ניסית לעשות?
+issue-report-field-app-version = גרסת היישום
+issue-report-field-os = מערכת הפעלה
+issue-report-field-system = פרטי המערכת
+issue-report-field-agent = סוכן קוד
+issue-report-field-error = שגיאה
+issue-report-image-note = GitHub מקבל תמונות רק בטופס שלו, לכן הדיווח יושלם שם. הטקסט מולא וצילום המסך נמצא בלוח להדבקה.
+issue-report-images-note = GitHub מקבל תמונות רק בטופס שלו, לכן הדיווח יושלם שם. הטקסט מולא ו־Finder נפתח עם צילומי המסך לגרירה.
+issue-report-checks-title = כדאי להוסיף
+issue-report-check-expected = מה ציפית שיקרה
+issue-report-check-steps = שלבים לשחזור
+issue-report-check-screenshot = צילום מסך
+issue-report-check-today = איך מתמודדים עם זה כיום
+issue-report-add-expected = ציפיתי
+issue-report-add-steps = שלבים לשחזור:
+    1.
+issue-report-add-today = כיום אני
+issue-report-agent-title = לתת לסוכן לכתוב את זה
+issue-report-agent-detail = הוא שואל מה חסר ואז מכין טיוטה לאישור שלך
+issue-report-agent-no-worktree = קודם יש לפתוח עץ עבודה כדי שלסוכן יהיה מקום לעבוד
+issue-report-included = כלול
+issue-report-fact-error = הודעת שגיאה
+issue-report-fact-app = יישום { $version }
+issue-report-fact-system = פרטי המערכת
+issue-report-similar-bugs = דיווחים דומים
+issue-report-similar-features = בקשות דומות
+issue-report-destination = בעיה ציבורית ב־{ $repo }
+issue-report-signed-out = יש להתחבר ל־GitHub CLI כדי לשלוח מכאן
+issue-report-match-open = #{ $number } כבר פתוחה
+issue-report-match-votes = { $count ->
+    [one] ל־#{ $number } יש הצבעה אחת
+   *[other] ל־#{ $number } יש { $count } הצבעות
+}
+issue-report-continue-github = המשך ב־GitHub
+issue-report-add-details = הוספת הפרטים שלי
+issue-report-upvote = הצבעה בעד
+issue-report-open-issue = פתיחת #{ $number }
+issue-report-sending = נשלח כעת…
+issue-report-send-failed = לא ניתן לשלוח. הטיוטה שלך עדיין כאן.
+issue-report-vote-failed = לא ניתן לעדכן את ההצבעה שלך. נא לנסות שוב.
+issue-report-filed = #{ $number } נפתחה
+issue-report-added = נוסף ל־#{ $number }
+issue-report-upvoted = הצבעת בעד #{ $number }
+issue-report-copied = הדיווח הועתק
+issue-report-actions-private = פרטי
+issue-report-action-draft-agent = הכנת טיוטה עם סוכן
+issue-report-action-copy-markdown = העתקה כ־Markdown
+issue-report-action-email = שליחה פרטית בדוא״ל
