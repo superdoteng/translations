@@ -2905,6 +2905,7 @@ chat-context-compacted-tokens = { $before } → { $after } token
 chat-context-compacted-tooltip-body = Il contesto precedente è stato riassunto per liberare spazio. I messaggi restano qui per te; l’agente legge invece il suo riepilogo.
 chat-context-compacted-tooltip-title = L’agente ora lavora da un riepilogo
 chat-pill-card-agent = Agente
+chat-pill-card-browser-capability = Aprire pagine, esaminare i contenuti e interagire con i siti web.
 chat-pill-card-command = Comando
 chat-pill-card-items = { $count ->
     [one] 1 elemento

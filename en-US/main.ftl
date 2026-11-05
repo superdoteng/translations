@@ -4366,6 +4366,7 @@ common-collapse = Collapse
 chat-show-more-lines = Show { $count } more lines
 chat-pill-card-skill = Skill
 chat-pill-card-agent = Agent
+chat-pill-card-browser-capability = Open pages, inspect content, and interact with websites.
 chat-pill-card-command = Command
 chat-pill-card-lines = { $count ->
     [one] 1 line
