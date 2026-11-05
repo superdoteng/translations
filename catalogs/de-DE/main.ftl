@@ -204,6 +204,7 @@ browser-color-scheme-view-dark = Diese Seite im dunklen Modus anzeigen
 browser-color-scheme-showing-light = Diese Seite wird im hellen Modus angezeigt. Klicken, um der App zu folgen
 browser-color-scheme-showing-dark = Diese Seite wird im dunklen Modus angezeigt. Klicken, um der App zu folgen
 browser-picking-hint = Wählen Sie ein Element aus, das an einen Chat gesendet wird
+browser-find-placeholder = Auf der Seite suchen
 browser-served-stopped = gestoppt
 browser-served-starting = startet
 browser-served-branch = Branch
@@ -290,8 +291,7 @@ project-pinned = Angepinnt
 project-no-worktrees-found = Keine Arbeitsbäume gefunden
 project-loading-merge-options = Zusammenführungsoptionen werden geladen
 sidebar-add-project-to-start = Fügen Sie ein Projekt hinzu, um loszulegen
-sidebar-search-project-worktrees-placeholder = Worktrees in { $project } durchsuchen
-sidebar-search-hidden-worktrees-placeholder = Ausgeblendete Worktrees in { $project } durchsuchen
+
 sidebar-install-ssh-key = Installiere SSH Schlüssel
 action-update = Aktualisieren
 workspace-no-ai-background-tasks = Keine AI Hintergrundaufgaben
@@ -602,8 +602,7 @@ worktree-create-branches-unavailable = Repository noch nicht geladen
 worktree-create-in-background = Im Hintergrund erstellen
 worktree-create-refresh-branches = Remote-Branches abrufen
 worktree-create-refresh-failed = Abrufen fehlgeschlagen: { $error }
-worktree-create-return = Erstellen Sie ↵
-worktree-in-workspace = Im Arbeitsbereich
+
 worktree-no-matching-branches = Keine passenden Zweige
 worktree-not-installed = Nicht installiert
 settings-sidebar-group-general = Allgemein
@@ -1036,6 +1035,7 @@ settings-ai-reset-to-inherited = Zurücksetzen auf geerbt
 settings-ai-system-instructions-placeholder = Systemanweisungen...
 settings-ai-user-message-placeholder = Benutzernachricht...
 settings-ai-launch-flags-description = Wird bei jedem Start dieses Anbieters verwendet. Diese werden zuerst hinzugefügt.
+settings-ai-launch-flags-placeholders = Verwende { $placeholders }, um bei jedem Start den Namen des Worktree, Branch oder Projekts einzufügen.
 settings-ai-profile-definitions = Profildefinitionen
 settings-ai-global-default = Globaler Standard
 settings-ai-workspace-override = Workspace-Überschreibung
@@ -1053,9 +1053,9 @@ settings-ai-all-models = Alle Modelle
 settings-ai-select-models = Ausgewählte Modelle
 settings-ai-select-models-count = Ausgewählte Modelle ({ $count })
 settings-ai-model-visibility = Modellsichtbarkeit
-settings-ai-compliant-claude-tooltip = Wenn er ausgeschaltet ist – oder sich in einem SSH Arbeitsbereich befindet – verwendet Claude Chat den strukturierten Claude-P-Transport.
-settings-ai-compliant-claude-view = Konforme Claude Ansicht
-settings-ai-compliant-claude-view-description = Führen Sie lokale Claude Chats im interaktiven Modus von Claude Code durch, um die Nutzung Ihres Abonnements zu sichern. SSH Arbeitsbereiche verwenden den strukturierten Claude -p Transport.
+settings-ai-claude-interactive-mode-tooltip = Wenn deaktiviert – oder in einem SSH-Arbeitsbereich – nutzt der Claude-Chat den Print-Modus (claude -p).
+settings-ai-claude-interactive-mode = Interaktiver Modus
+settings-ai-claude-interactive-mode-description = Lokale Claude-Chats im interaktiven Modus von Claude Code statt im Print-Modus (claude -p) ausführen. SSH-Arbeitsbereiche verwenden immer den Print-Modus.
 settings-ai-action-model-pins = Fortschrittlich – Modellstifte pro Aktion
 settings-ai-action-model-pins-description = Pinne Modelle für bestimmte Aktionen nur, wenn ein Bucket-Standard nicht ausreicht.
 settings-ai-session-model-description = Modell wird standardmäßig für neue Sitzungen verwendet.
@@ -1099,18 +1099,20 @@ review-resolved-count = Gelöst ({ $count })
 right-panel-setup = Aufbau
 action-stop = Stopp
 right-panel-terminal = Terminal
-setup-no-output = Keine Ausgabe des Setup-Skripts
-setup-output-description = Die Ausgabe des Setup-Skripts erscheint hier nach dem Einrichten.
 setup-run = Laufaufbau
+setup-empty-title = Einrichtungsskript hinzufügen
+setup-empty-description = Es wird in jedem neuen Worktree ausgeführt, um Abhängigkeiten zu installieren und Umgebungsdateien zu kopieren.
+setup-pending-title = Einrichtungsskript
+setup-pending-description = Neue Worktrees führen diese Befehle bei ihrer Erstellung aus.
+run-empty-title = Run-Skript hinzufügen
+run-empty-description = Es startet Ihren Entwicklungsserver oder Ihre App. Jedes Skript wird in einem eigenen Tab geöffnet.
+run-idle-description = Die Ausgabe erscheint hier, wenn das Skript ausgeführt wird.
+script-suggestion-from = aus { $file }
+script-suggestion-use = Verwenden
+script-write-with-agent = Einen Agenten bitten, es zu schreiben
+script-edit-in-settings = Projekteinstellungen öffnen
+script-commands-more = Noch { $count }
 setup-not-configured = Kein Setup-Skript konfiguriert
-setup-configure = Setup-Skript konfigurieren
-setup-configure-description = Konfigurieren Sie ein Setup-Skript in den Projekteinstellungen oder fügen Sie eine .super.engineering/config.json-Datei hinzu.
-run-no-output = Keine Ausgabe des Run-Skripts
-run-output-description = Die Skriptausgabe wird hier angezeigt.
-run-workspace = Workspace ausführen
-run-not-configured = Kein Run-Skript konfiguriert
-run-configure = Configure Run Script
-run-configure-description = Konfigurieren Sie ein Run-Skript in den Projekteinstellungen oder fügen Sie eine .super.engineering/config.json-Datei hinzu.
 review-submitted-reviews = Eingesendete Bewertungen
 review-ai-questions = AI Fragen
 review-no-comments = Noch keine Bewertungskommentare
@@ -1340,12 +1342,7 @@ worktree-context-placeholder = Beschreibe, woran der Agent arbeiten soll...
 worktree-filter-branches-placeholder = Filter Äste...
 worktree-label-placeholder = Arbeitsbaum-Etikett
 worktree-prompt-placeholder = Woran arbeitest du?
-worktree-search-branches-placeholder = Durchsuche Zweige...
-worktree-search-branches-mrs-placeholder = Durchsuche Zweige und MRs...
-worktree-search-branches-prs-placeholder = Durchsuche Zweige und PRs...
-worktree-fetching-branches = Äste holen...
-worktree-fetching-branches-mrs = Äste holen und MRs...
-worktree-fetching-branches-prs = Äste holen und PRs...
+
 right-panel-switch-stacked = Wechsel zum gestapelten Anschluss
 right-panel-switch-bottom = Schalte auf den unteren Anschluss
 right-panel-switch-side-by-side = Schalten Sie zum Side-by-Side-Terminal
@@ -1925,8 +1922,8 @@ settings-search-entry-agents-routing-thorough-actions-label = Gründliche Maßna
 settings-search-entry-agents-routing-thorough-actions-description = Beheben Sie CI, blockieren Sie Zusammenführungen, Kommentare, Änderungen, Konflikte und Bewertungen.
 settings-search-entry-agents-providers-claude-code-provider-label = Claude Code Anbieter
 settings-search-entry-agents-providers-claude-code-provider-description = Aktivieren Sie Claude Code und konfigurieren Sie dessen Modelle, Profile und Startflags.
-settings-search-entry-agents-providers-compliant-claude-view-label = Konforme Claude Ansicht
-settings-search-entry-agents-providers-compliant-claude-view-description = Führen Sie Claude Chat über den interaktiven Modus von Claude Code, um die Nutzung Ihres Aboplans zu erhalten.
+settings-search-entry-agents-providers-claude-interactive-mode-label = Interaktiver Modus für Claude
+settings-search-entry-agents-providers-claude-interactive-mode-description = Lokale Claude-Chats im interaktiven Modus von Claude Code statt im Print-Modus (claude -p) ausführen. SSH-Arbeitsbereiche verwenden immer den Print-Modus. Gilt für neu geöffnete Chats.
 settings-search-entry-agents-providers-codex-provider-label = Codex Anbieter
 settings-search-entry-agents-providers-codex-provider-description = Aktivieren Sie Codex und konfigurieren Sie dessen Modelle, Profile und Startflags.
 settings-search-entry-agents-providers-pi-provider-label = Pi-Anbieter
@@ -2026,7 +2023,7 @@ settings-ai-provider-section-chat = Chat
 settings-ai-provider-section-runtime = Laufzeit
 settings-ai-provider-profiles-description = Konten und Konfigurationsverzeichnisse für diesen Anbieter.
 settings-ai-provider-manage-profiles = Profile verwalten
-settings-ai-provider-antigravity-description = Aktiviere Antigravity als Terminalanbieter (erfordert Antigravity CLI `agy` installiert).
+settings-ai-provider-antigravity-description = Antigravity-Chat und -Terminal aktivieren (erfordert die installierte Antigravity CLI `agy`).
 settings-ai-provider-hermes-description = Aktiviere Hermes als Terminalanbieter (erfordert die Installation des Hermes Agents `hermes`).
 settings-ai-provider-qwen-description = Aktivieren Sie Qwen Code als Terminalanbieter (erfordert CLI `qwen` Installation von Qwen Code).
 settings-ai-provider-kimi-description = Aktivieren Sie Kimi Code als Chat- und Terminalanbieter (benötigt die Installation des aktuellen Kimi CLI `kimi` Codes).
@@ -2113,27 +2110,9 @@ workspace-remote-forge-cli-not-authenticated-hint = Tipp: { $cli } des Hosts nic
 workspace-remote-forge-cli-missing-hint = Tipp: Installiere { $cli } auf dem Host und führe `{ $cli } auth login` aus, um mit dem Agenten eine { $kind } zu erstellen.
 workspace-review-request-url-copied = Kopiert { $kind } URL
 workspace-review-request-none-yet = Dieser Branch hat noch keinen { $kind }
-worktree-prompt = Prompt
-worktree-branches = Zweigstellen
-worktree-merge-requests = Zusammenführungsanfragen
-worktree-pull-requests = Pull Requests
-worktree-review-requests = Überprüfungsanfragen
-worktree-tab-with-count = { $label } ({ $count })
-worktree-no-open-merge-requests = Keine offenen Merge-Anfragen
-worktree-no-open-pull-requests = Keine offenen Pull Requests
-worktree-no-open-review-requests = Keine offenen Überprüfungsanträge
-worktree-no-branches = Keine Äste
+
 common-no-matches = Keine Matches
-worktree-gitlab-cli-missing = Konnte Merge-Anfragen nicht laden: GitLab CLI (`glab`) ist nicht installiert oder nicht auf PATH. Installiere `glab`, authentifiziere dich bei `glab auth login` und versuche es dann erneut.
-worktree-gitlab-auth-required = Konnte keine Merge-Anfragen laden: GitLab CLI (`glab`) ist nicht authentifiziert. Führe `glab auth login` für diesen GitLab Host aus und versuche es dann erneut.
-worktree-github-auth-required = Pull-Anfragen konnten nicht geladen werden: GitHub CLI (`gh`) ist für diesen Host nicht authentifiziert. Lauf `gh auth login --hostname <host>` und versuche es dann nochmal.
-worktree-github-load-error = Pull-Anfragen konnten nicht geladen werden: { $error }
-worktree-gitlab-load-error = Konnte Merge-Anfragen nicht laden: { $error }
-worktree-bitbucket-cli-missing = Pull Requests konnten nicht geladen werden: Bitbucket CLI (`bkt`) ist nicht installiert oder nicht im PATH. Installiere `bkt`, führe `bkt auth login https://bitbucket.org --kind cloud --web-token` aus, erstelle mit `bkt context create cloud --host api.bitbucket.org --workspace <workspace> --set-active` einen Kontext und versuche es dann erneut.
-worktree-bitbucket-auth-required = Pull Requests konnten nicht geladen werden: Bitbucket CLI (`bkt`) ist nicht authentifiziert. Führe `bkt auth login https://bitbucket.org --kind cloud --web-token` aus und versuche es dann erneut.
-worktree-bitbucket-no-context = Pull Requests konnten nicht geladen werden: { $error }
-worktree-bitbucket-load-error = Pull Requests konnten nicht geladen werden: { $error }
-worktree-review-request-load-error = Überprüfungsanfragen konnten nicht geladen werden: { $error }
+
 remote-cli-install-succeeded = Installiert { $app_name } CLI { $package } (api={ $api }, watch={ $watch }, hooks={ $hooks }) auf der Fernbedienung.
 remote-cli-install-failed = CLI Installation fehlgeschlagen: { $error }
 chat-composer-placeholder-active = Tipp eine Nachricht...
@@ -2648,6 +2627,7 @@ settings-keybinding-action-focus-chat-input = Focus Chat Input
 settings-keybinding-action-find = Suchen
 find-placeholder = Suchen...
 find-results-none = 0 Ergebnisse
+find-no-matches = Keine Treffer
 find-results-count = { $count ->
     [one] 1 Ergebnis
    *[other] { $count } Ergebnisse
@@ -2661,6 +2641,7 @@ settings-keybinding-action-reload = Nachladen
 settings-keybinding-action-chat-model-picker = Chat-Modellwähler umschalten
 settings-keybinding-action-chat-fast-mode = Chat-Schnellmodus umschalten
 settings-keybinding-action-chat-plan-mode = Chat-Plan-Modus umschalten
+settings-keybinding-action-chat-ultracode = Ultracode im Chat umschalten
 settings-keybinding-action-chat-effort = Zyklus-Chat-Aufwand
 settings-keybinding-action-chat-permission-picker = Chat-Berechtigungsauswahl umschalten
 settings-keybinding-action-split-pane-right = Geteilte Scheibe rechts
@@ -2799,20 +2780,16 @@ usage-meter-error = Nutzung konnte nicht geladen werden
 usage-meter-loading = Nutzung wird geladen…
 usage-meter-outdated = Nutzungsdaten sind veraltet
 usage-meter-updated = Aktualisiert { $ago }
-usage-meter-resets = Zurücksetzung in { $duration }
-usage-meter-window-session = Sitzung
+
 usage-meter-window-daily = Täglich
 usage-meter-window-weekly = Wöchentlich
 usage-meter-window-monthly = Monatlich
-usage-meter-window-other = Andere
-usage-meter-all-providers = Alle Anbieter
+
 usage-meter-percent-left = { $percent } % übrig
 usage-meter-no-account = Kein Konto ausgewählt
 usage-meter-now = jetzt
 usage-meter-default-account = Standard
-usage-popover-runs-out = Aufgebraucht ab { $time }, Zurücksetzung { $reset }
-usage-popover-runs-out-then-credits = Aufgebraucht ab { $time }, dann Credits
-usage-popover-using-credits = Credits werden verwendet
+
 usage-api-key = API-Schlüssel
 usage-api-key-week = geschätzt für diese Woche
 usage-api-key-today = { $amount } heute
@@ -2827,8 +2804,7 @@ usage-popover-window-left = { $window } übrig
 usage-popover-updating = Wird aktualisiert…
 usage-popover-retry = Erneut versuchen
 usage-popover-accounts = Konten
-usage-popover-in-use = In Verwendung
-usage-popover-unused = { $count } ungenutzt
+
 usage-graph-on-pace = Im Plan
 usage-graph-in-reserve = { $percent } % in Reserve
 usage-graph-behind = { $percent } % im Defizit
@@ -2837,10 +2813,9 @@ usage-graph-lasts = Reicht bis zur Zurücksetzung
 usage-graph-collecting = Das Diagramm füllt sich, sobald Messwerte eintreffen
 usage-instrument-gauge = Anzeige
 usage-instrument-graph = Diagramm
-usage-popover-no-other-limits = Keine weiteren Limits
+
 usage-popover-no-data = Noch keine Nutzung von { $providers }
-usage-popover-more = Mehr
-usage-popover-less = Weniger
+
 tool-verb-ran = Ausgeführt
 tool-verb-running = Führt aus
 tool-verb-messaging = Schreibt an
@@ -3459,7 +3434,7 @@ workspace-fx-remote-history-unsupported = Entfernte FX-Terminals unterstützen n
 settings-keybinding-action-rename-selected-entry = Ausgewählten Eintrag umbenennen
 settings-keybinding-action-chat-effort-backward = Chat-Aufwand rückwärts durchlaufen
 worktree-preparing = Arbeitsbaum wird vorbereitet…
-chat-queued-until-worktree-ready = Startet, sobald der Arbeitsbaum bereit ist
+chat-queued-until-worktree-ready = Wird gesendet, sobald bereit
 chat-delivery-unconfirmed = Zustellung unbestätigt
 chat-delivery-unconfirmed-retry = Vor erneutem Senden das Gespräch prüfen; die Nachricht wurde möglicherweise bereits zugestellt.
 chat-answer-pending-delivery = Zustellung ausstehend
@@ -3475,6 +3450,9 @@ model-picker-type-to-search-hint = zum Suchen tippen
 composer-effort = Aufwand
 composer-effort-lower = Aufwand verringern
 composer-effort-raise = Aufwand erhöhen
+composer-ultracode = Ultracode
+composer-ultracode-tooltip = Ultracode ist deaktiviert. Wenn aktiviert, führt Claude bei umfangreichen Aufgaben Multi-Agenten-Workflows aus und verbraucht dabei mehr Tokens. Zum Aktivieren klicken.
+composer-ultracode-on-tooltip = Ultracode ist aktiviert. Claude führt bei umfangreichen Aufgaben Multi-Agenten-Workflows aus und verbraucht dabei mehr Tokens. Zum Deaktivieren klicken.
 reasoning-effort-unspecified = Nicht angegeben
 settings-ai-thinking-unavailable = Dieses Modell bietet keine konfigurierbaren Denkstufen.
 chat-message-tokens-not-reported = Nicht gemeldet
@@ -3651,22 +3629,10 @@ usage-reset-busy = Wird noch aktualisiert. Gleich erneut schieben
 usage-reset-unavailable = Kein Reset verfügbar
 usage-credits = Credits
 usage-credits-unlimited = Unbegrenzt
-usage-account-resets = { $count ->
-    [one] 1 Reset
-   *[other] { $count } Resets
-}
-usage-account-credits = { $amount } Credits
-usage-account-ring-window = { $account } { $window }
-usage-account-window-left = { $window } { $percent } %
-usage-graph-account-left = { $account } { $window } übrig
-usage-graph-now = Jetzt
-usage-accounts-on-gauge = In der Anzeige
+
 usage-accounts-sign-in = Anmelden
 usage-accounts-signing-in = Wird angemeldet…
-usage-accounts-single = { $count ->
-    [one] { $providers } hat ein Konto.
-   *[other] { $providers } haben je ein Konto.
-}
+
 usage-account-empty-title = Noch keine Nutzung für { $account }
 usage-account-empty-body = Messwerte erscheinen nach der ersten Sitzung dieses Profils.
 usage-account-signed-out-title = { $account } ist nicht angemeldet
@@ -3677,3 +3643,382 @@ usage-graph-legend-even = Gleichmäßiges Tempo
 usage-graph-legend-projection = Prognose
 usage-graph-legend-estimated = Geschätzt
 usage-graph-estimated = Geschätzt anhand der Aktivität auf diesem Mac
+
+browser-annotations-send-short = Senden
+browser-agent-take-over = Übernehmen
+browser-agent-you-have-control = Du hast die Kontrolle
+browser-agent-hand-back = Zurückgeben
+browser-agent-is-waiting = { $agent } wartet
+browser-agent-handed-back-message = Ich habe den Browser zurückgegeben. Mach dort weiter, wo du aufgehört hast.
+browser-agent-cue-clicking = Klicke auf „{ $name }“
+browser-agent-cue-clicking-bare = Klicke
+browser-agent-cue-turning-on = Aktiviere „{ $name }“
+browser-agent-cue-turning-off = Deaktiviere „{ $name }“
+browser-agent-cue-selecting = Wähle „{ $name }“ aus
+browser-agent-cue-typing = Tippe „{ $value }“
+browser-agent-cue-typing-bare = Tippe
+browser-agent-cue-pressing = Drücke { $key }
+browser-agent-cue-hovering = Zeige auf „{ $name }“
+browser-agent-cue-checking = Prüfe „{ $name }“
+browser-agent-cue-reading = Lese die Seite
+browser-agent-cue-scrolling = Scrolle
+browser-agent-cue-capturing = Erstelle einen Screenshot
+browser-agent-cue-capturing-element = Erstelle einen Screenshot von „{ $name }“
+browser-agent-cue-capturing-full = Erstelle einen Screenshot der ganzen Seite
+browser-agent-cue-uploading = Lade { $file } hoch
+browser-agent-cue-running-script = Führe ein Skript aus
+browser-agent-cue-scheme-dark = Wechsle zum dunklen Modus
+browser-agent-cue-scheme-light = Wechsle zum hellen Modus
+browser-agent-cue-waiting = Warte auf die Seite
+browser-agent-cue-opening = Öffne { $url }
+browser-agent-cue-going-back = Gehe zurück
+browser-agent-cue-going-forward = Gehe vorwärts
+browser-agent-cue-reloading = Lade die Seite neu
+browser-agent-cue-new-tab = Öffne einen neuen Tab
+browser-agent-cue-working = Arbeitet
+sidebar-search-project-placeholder = { $project } durchsuchen
+sidebar-search-hidden-worktrees-count-placeholder = { $count ->
+    [one] 1 ausgeblendeten Worktree durchsuchen
+   *[other] { $count } ausgeblendete Worktrees durchsuchen
+}
+project-search-filter-hint = Versuche running, open, merged oder #Nummer
+project-search-all-projects = Alle Projekte durchsuchen
+project-search-hand-off-hint = Alle Projekte
+project-search-section-worktrees = Worktrees
+project-search-section-filter-hint = Versuche einen Abschnitt, running, open oder #Nummer
+history-empty-title = Jeder geschlossene Chat, nur einen Klick entfernt
+history-empty-hint = Chats, die du in diesem Worktree schließt, erscheinen hier. Setze sie fort, wo du aufgehört hast.
+history-empty-filtered-title = Noch keine Chats mit { $agent }
+history-show-all-agents = Alle Agenten anzeigen
+settings-keybinding-action-toggle-bookmarks = Lesezeichen ein-/ausblenden
+settings-keybinding-action-previous-bookmark = Vorheriges Lesezeichen
+settings-keybinding-action-next-bookmark = Nächstes Lesezeichen
+worktree-step-checking-out = { $forge ->
+    [gitlab] Checke !{ $number } aus
+   *[other] Checke #{ $number } aus
+}
+worktree-step-checking-out-branch = Checke { $branch } aus
+worktree-step-creating-branch-from = Erstelle Branch aus { $base }
+worktree-step-creating-branch = Erstelle Branch
+worktree-step-naming = Benenne ihn nach deiner Aufgabe
+worktree-step-setup = Führe Einrichtung aus
+worktree-step-opening-agent = Öffne { $agent }
+chat-waiting-on-agents = { $count ->
+    [one] Warte auf { $count } Agenten…
+   *[other] Warte auf { $count } Agenten…
+}
+chat-shell-mode = Shell-Befehl
+chat-shell-mode-detail = Wird in diesem Workspace ausgeführt. Wähle beim Ergebnis „Zum Chat hinzufügen“, um es dem Agenten zu zeigen.
+chat-shell-add-to-chat = Zum Chat hinzufügen
+markdown-run-command = Im Terminal öffnen
+chat-shell-exit = Exit { $code }
+chat-shell-stopped = gestoppt
+chat-shell-finished = abgeschlossen
+chat-shell-no-output = Keine Ausgabe
+chat-shell-show-all = Alle { $count } Zeilen anzeigen
+chat-shell-run-again = Erneut ausführen
+chat-shell-open-in-terminal = Im Terminal öffnen
+chat-shell-running = Läuft
+chat-shell-stopping = Wird gestoppt
+chat-shell-stop = Stoppen
+chat-shell-stop-hint = Stoppen (Esc)
+chat-shell-unavailable = Shell-Befehle sind in diesem Chat momentan nicht verfügbar.
+chat-shell-open-refused = Konnte dies nicht im Terminal öffnen, ohne es auszuführen. Kopiere stattdessen den Befehl.
+chat-shell-start-failed = Konnte den Befehl nicht ausführen: { $error }
+chat-files-changed-diff-unavailable = Dieser Diff ist nicht mehr verfügbar.
+chat-files-changed-diff-no-lines = Nur der Name oder die Berechtigungen dieser Datei haben sich geändert.
+chat-files-changed-diff-binary = Für Binärdateien gibt es keinen zeilenweisen Diff.
+chat-files-changed-diff-not-utf8 = Diese Datei ist kein UTF-8-Text, daher können ihre Zeilen nicht angezeigt werden.
+chat-files-changed-diff-too-large = Dieser Diff ist zu groß, um ihn hier anzuzeigen.
+chat-files-changed-binary = Binär
+chat-files-changed-review-tooltip = Diese Dateien prüfen und Feedback an diesen Chat senden
+chat-files-changed-review-tooltip-stale-snapshot = { $count ->
+    [one] Prüfe diese Dateien. 1 wurde in einem späteren Schritt erneut geändert; dieser Schritt zeigt sie in seinem damaligen Zustand.
+   *[other] Prüfe diese Dateien. { $count } wurden in einem späteren Schritt erneut geändert; dieser Schritt zeigt sie in ihrem damaligen Zustand.
+}
+chat-files-changed-review-tooltip-stale-current = { $count ->
+    [one] Prüfe diese Dateien. 1 wurde in einem späteren Schritt erneut geändert; die Prüfung zeigt ihren aktuellen Zustand.
+   *[other] Prüfe diese Dateien. { $count } wurden in einem späteren Schritt erneut geändert; die Prüfung zeigt ihren aktuellen Zustand.
+}
+chat-diff-unchanged-lines = { $count ->
+    [one] 1 unveränderte Zeile
+   *[other] { $count } unveränderte Zeilen
+}
+chat-files-changed-shared = Während dieses Schritts arbeitete ein anderer Chat in diesem Worktree. Bei Dateien, die beide Chats geändert haben, werden die Änderungen beider Chats angezeigt.
+chat-files-changed-unattributed = Während dieses Schritts arbeitete ein anderer Chat in diesem Worktree. Abgeblendete Dateien wurden währenddessen geändert und könnten von ihm stammen.
+chat-files-changed-snapshot-failed = Für das Worktree dieses Schritts konnte kein Snapshot erstellt werden. Daher werden nur Dateien aufgeführt, die seine Tools gemeldet haben.
+palette-mode-all = Alle
+palette-mode-conversations = Unterhaltungen
+palette-search-all = Agenten, Worktrees, Befehle, Dateien suchen…
+palette-search-files-short = Dateien suchen…
+palette-section-needs-you = Braucht dich
+palette-section-running = Läuft
+palette-section-recent = Zuletzt verwendet
+palette-section-suggested = Vorgeschlagen
+palette-section-draft = Entwurf
+palette-section-actions = Aktionen
+palette-quick-new-chat = Neuer Chat in { $worktree }
+palette-quick-new-worktree = Neuer Worktree
+palette-quick-new-terminal = Neues Terminal
+palette-quick-feedback = Fehler melden oder Funktion wünschen
+palette-section-top-hit = Bester Treffer
+palette-section-matches = Treffer
+palette-section-tabs = Tabs
+palette-section-worktrees = Worktrees
+palette-section-conversations = Unterhaltungen
+palette-section-commands = Befehle
+palette-section-files = Dateien
+palette-section-changed = In diesem Branch geändert
+palette-files-show-all = Alle { $count } anzeigen
+palette-footer-branches = Branches
+palette-section-use-query-with = „{ $query }“ verwenden mit
+palette-ask-agent-new-chat = Neuer { $provider }-Chat
+palette-search-conversation-history = Chatverlauf durchsuchen
+palette-suggest-review-comments = { $count ->
+    [one] 1 Review-Kommentar
+   *[other] { $count } Review-Kommentare
+}
+palette-suggest-checks-failing = Prüfungen fehlgeschlagen
+palette-suggest-files-changed = { $count ->
+    [one] 1 Datei geändert
+   *[other] { $count } Dateien geändert
+}
+palette-current = Aktuell
+palette-empty-scope = Keine { $scope } passen zu „{ $query }“
+palette-empty-recent = Noch nichts zuletzt verwendet
+palette-search-everything = Alles durchsuchen
+palette-footer-run = Ausführen
+palette-footer-start = Starten
+palette-footer-search = Suchen
+palette-footer-show = Anzeigen
+palette-footer-report = Melden
+palette-footer-request = Anfragen
+palette-report-as-bug = Als Fehler melden
+palette-report-as-feature = Als Funktion wünschen
+palette-finish-bug-report = Fehlerbericht fertigstellen
+palette-finish-feature-request = Funktionswunsch fertigstellen
+palette-actions = Aktionen
+palette-actions-search = Aktionen suchen…
+palette-actions-no-match = Keine Aktionen passen zu „{ $query }“
+palette-action-open = Öffnen
+palette-action-switch-worktree = Zum Worktree wechseln
+palette-action-search-inside = In diesem Worktree suchen
+palette-action-open-pr = Pull Request #{ $number } öffnen
+palette-action-copy-worktree-path = Worktree-Pfad kopieren
+palette-action-group-ask-agent = Einen Agenten in diesem Worktree fragen
+palette-action-open-tab = Tab öffnen
+palette-action-preview = Vorschau
+palette-action-close-tab = Tab schließen
+palette-action-open-conversation = Unterhaltung öffnen
+palette-action-open-in = Öffnen in…
+palette-action-show-ignored = Ignorierte Dateien anzeigen
+palette-action-run-command = Befehl ausführen
+palette-action-start-in = In { $worktree } starten
+palette-action-group-another-agent = Anderer Agent
+palette-action-start-with = Mit { $provider } starten
+palette-mode-pull-requests = { $forge ->
+    [gitlab] Merge Requests
+   *[other] Pull Requests
+}
+palette-mode-branch-from = Branch erstellen aus
+palette-search-pull-requests = { $forge ->
+    [gitlab] Merge Requests suchen oder Link einfügen…
+   *[other] Pull Requests suchen oder Link einfügen…
+}
+palette-search-branch-from = Branch erstellen aus…
+palette-section-pull-requests = { $forge ->
+    [gitlab] Merge Requests
+   *[other] Pull Requests
+}
+palette-section-with-worktree = Mit Worktree
+palette-section-open-pull-requests = Offen
+palette-section-review-requested = Review angefordert
+palette-section-needs-your-review = Braucht dein Review
+palette-section-yours = Deine
+palette-section-open-review-requests = { $forge ->
+    [gitlab] Offene Merge Requests
+   *[other] Offene Pull Requests
+}
+palette-loading-pull-requests = { $forge ->
+    [gitlab] Lade Merge Requests…
+   *[other] Lade Pull Requests…
+}
+palette-no-open-pull-requests = { $forge ->
+    [gitlab] Keine offenen Merge Requests
+   *[other] Keine offenen Pull Requests
+}
+palette-footer-check-out = Auschecken
+palette-footer-create = Erstellen
+palette-footer-choose = Auswählen
+palette-action-start-in-new-worktree = In neuem Worktree starten
+palette-action-check-out = Auschecken
+palette-action-work-on-it = Daran arbeiten
+palette-action-copy-link = Link kopieren
+palette-action-copy-number = Nummer kopieren
+palette-action-create-worktree = Worktree erstellen
+palette-action-choose-base = Basis-Branch auswählen
+palette-start-agent-on = { $provider } mit „{ $query }“ starten
+palette-in-new-worktree = in einem neuen Worktree
+palette-new-branch = Neuer Branch { $name }
+palette-new-branch-from = von { $base }
+palette-new-branch-choose-base = Basis auswählen
+palette-branch-note-default = Standard
+palette-branch-note-current = dieser Worktree
+palette-branch-note-remote = remote
+palette-no-branches = Keine Branches
+palette-no-branch-named = Kein Branch namens „{ $query }“
+palette-search-new-worktree = { $forge ->
+    [gitlab] Branch benennen, Aufgabe beschreiben oder MR einfügen
+   *[other] Branch benennen, Aufgabe beschreiben oder PR einfügen
+}
+palette-search-new-worktree-no-forge = Branch benennen oder Aufgabe beschreiben
+palette-action-open-review-request = { $forge ->
+    [gitlab] Merge Request !{ $number } öffnen
+   *[other] Pull Request #{ $number } öffnen
+}
+palette-action-create-and-start = Erstellen und { $provider } starten
+palette-search-projects = Projekt auswählen
+palette-mode-projects = Projekte
+palette-section-branches = Branches
+palette-section-look-up = Nachschlagen
+palette-loading-branches = Lade Branches…
+palette-no-open-pull-request = { $forge ->
+    [gitlab] Kein offener Merge Request
+   *[other] Kein offener Pull Request
+}
+palette-pull-request-number = { $forge ->
+    [gitlab] Merge Request !{ $number }
+   *[other] Pull Request #{ $number }
+}
+palette-new-worktree-in = Neuer Worktree in { $project }
+palette-quick-new-worktree-in = in { $project }
+history-button-tooltip = Verlauf
+usage-window-minutes = { $count } Minuten
+usage-window-hours = { $count } Stunden
+usage-window-days = { $count } Tage
+usage-window-weeks = { $count } Wochen
+usage-window-all-models = Alle Modelle
+usage-gauge-window-reached = Limit für { $window } erreicht
+usage-gauge-reached = Limit erreicht
+usage-limit-no-reset = Rücksetzzeit nicht gemeldet
+usage-limit-back = Wieder verfügbar { $time }
+usage-limit-in = in { $duration }
+usage-account-until = { $window }, bis { $time }
+usage-account-back-at = { $window }, wieder ab { $time }
+usage-credits-balance = { $amount } Credits
+usage-details = Nutzungsdetails
+usage-details-runs-out = Bei diesem Tempo könnte es { $time } aufgebraucht sein
+usage-details-lasts = Bei diesem Tempo reicht es bis zum Zurücksetzen
+usage-details-used-up = { $window } ist bis { $time } aufgebraucht
+usage-details-estimate = Eine Schätzung anhand deiner durchschnittlichen Nutzung seit Beginn dieses Zeitfensters. Sie ändert sich mit deiner Nutzung; die Rücksetzzeit bleibt gleich.
+usage-details-no-reset = { $provider } hat keine Rücksetzzeit für dieses Zeitfenster gemeldet, daher gibt es keine Prognose.
+usage-details-source = Limits und Rücksetzzeiten stammen von { $provider }. Ein Limit wird nur angezeigt, wenn es für dieses Konto gemeldet wird.
+chat-artifact-open-in-app-browser = App-interner Browser
+chat-artifact-open-in-default-browser = Standardbrowser
+bookmarks-title = Lesezeichen
+bookmarks-search-placeholder = Lesezeichen suchen…
+bookmarks-section-this-chat = Dieser Chat
+bookmarks-saved-label = Gespeichert
+bookmarks-untitled-chat = Unbenannter Chat
+bookmarks-loading = Lade Lesezeichen…
+bookmarks-load-failed = Lesezeichen konnten nicht geladen werden
+bookmarks-load-failed-hint = Deine gespeicherten Antworten sind noch da.
+bookmarks-load-failed-again-hint = Lädt weiterhin nicht. Deine gespeicherten Antworten sind noch da.
+bookmarks-this-chat-load-failed = Lesezeichen dieses Chats konnten nicht geladen werden
+bookmarks-other-chats-load-failed = Lesezeichen anderer Chats konnten nicht geladen werden
+bookmarks-try-again = Erneut versuchen
+bookmarks-empty-title = Bewahre Antworten auf, die du erneut lesen möchtest
+bookmarks-empty-hint = Bewege den Mauszeiger über eine Antwort und klicke auf das Lesezeichen. Gespeicherte Antworten aus allen Chats sammeln sich hier.
+bookmarks-no-matches = Keine Lesezeichen passen zu „{ $query }“
+bookmarks-untitled-response = Unbenannte Antwort
+bookmarks-add = Antwort als Lesezeichen speichern
+bookmarks-remove = Lesezeichen entfernen
+bookmarks-saved-ago = Gespeichert { $elapsed }
+bookmarks-open-beside = Neben diesem Chat öffnen
+bookmarks-response-streaming = Du kannst diese Antwort als Lesezeichen speichern, wenn sie fertig ist
+bookmarks-response-unavailable = Antwort nicht verfügbar
+bookmarks-save-failed = Konnte das Lesezeichen nicht speichern. Versuche es erneut.
+bookmarks-remove-failed = Konnte das Lesezeichen nicht entfernen. Versuche es erneut.
+notification-open = Öffnen
+chat-report-error = Dieses Problem melden
+menu-help = Hilfe
+menu-help-report-bug = Fehler melden…
+menu-help-suggest-feature = Funktion wünschen…
+issue-report-command-bug = Fehler melden
+issue-report-command-feature = Funktion wünschen
+issue-report-kind-bug = Fehler
+issue-report-kind-feature = Funktion
+issue-report-placeholder-bug = Was ist passiert? Was hast du stattdessen erwartet?
+issue-report-placeholder-feature = Was möchtest du tun?
+issue-report-placeholder-error = Was hast du gemacht, als der Fehler auftrat?
+issue-report-error-title = Schritt fehlgeschlagen: { $error }
+issue-report-title = Titel
+issue-report-title-drafted = Aus deinen Worten erstellt
+issue-report-title-from-error = Aus dem Fehler
+issue-report-title-restored = Gespeicherter Entwurf
+issue-report-draft-saved = Dein Bericht wurde als Entwurf gespeichert
+issue-report-action-discard = Entwurf verwerfen
+issue-report-screenshot = Screenshot
+issue-report-screenshots = Screenshots
+issue-report-drop-now = Loslassen, um Bilder anzuhängen
+issue-report-drop-hint = Screenshots hier ablegen oder einfügen
+issue-report-drop-hint-review = oder hier ablegen
+issue-report-capture-window = Fenster aufnehmen
+issue-report-choose-images = Bilder anhängen…
+issue-report-screenshot-pending = Aufnahme läuft…
+issue-report-image-copied = Screenshot kopiert. Füge ihn in den Bericht ein.
+issue-report-images-revealed = Deine Screenshots sind im Finder. Ziehe sie in den Bericht.
+issue-report-review = Prüfen
+issue-report-post = Öffentlich posten
+issue-report-review-title = Vor dem Posten prüfen
+issue-report-review-comment-on = Kommentar zu #{ $number }
+issue-report-audience = Alle auf GitHub können dies sehen
+issue-report-heading-bug = Was ist passiert?
+issue-report-heading-feature = Was möchtest du tun?
+issue-report-field-app-version = App-Version
+issue-report-field-os = Betriebssystem
+issue-report-field-system = Systemdetails
+issue-report-field-agent = Coding-Agent
+issue-report-field-error = Fehler
+issue-report-image-note = GitHub akzeptiert Bilder nur in seinem eigenen Formular. Daher wird der Bericht dort fertiggestellt. Der Text ist ausgefüllt und der Screenshot liegt zum Einfügen in deiner Zwischenablage.
+issue-report-images-note = GitHub akzeptiert Bilder nur in seinem eigenen Formular. Daher wird der Bericht dort fertiggestellt. Der Text ist ausgefüllt und der Finder öffnet sich mit den Screenshots zum Hineinziehen.
+issue-report-checks-title = Ergänzungen
+issue-report-check-expected = Was du erwartet hast
+issue-report-check-steps = Schritte zur Reproduktion
+issue-report-check-screenshot = Screenshot
+issue-report-check-today = Wie du es bisher löst
+issue-report-add-expected = Ich habe erwartet
+issue-report-add-steps = Schritte zur Reproduktion:
+    1.
+issue-report-add-today = Bisher mache ich
+issue-report-agent-title = Von einem Agenten schreiben lassen
+issue-report-agent-detail = Er fragt nach fehlenden Angaben und erstellt einen Entwurf zur Freigabe
+issue-report-agent-no-worktree = Öffne zuerst einen Worktree, damit der Agent dort arbeiten kann
+issue-report-included = Enthalten
+issue-report-fact-error = Fehlermeldung
+issue-report-fact-app = App { $version }
+issue-report-fact-system = Systemdetails
+issue-report-similar-bugs = Ähnliche Berichte
+issue-report-similar-features = Ähnliche Wünsche
+issue-report-destination = Öffentliches Issue in { $repo }
+issue-report-signed-out = Melde dich bei der GitHub CLI an, um von hier aus zu senden
+issue-report-match-open = #{ $number } ist bereits offen
+issue-report-match-votes = { $count ->
+    [one] #{ $number } hat 1 Stimme
+   *[other] #{ $number } hat { $count } Stimmen
+}
+issue-report-continue-github = Auf GitHub fortfahren
+issue-report-add-details = Meine Details hinzufügen
+issue-report-upvote = Dafür stimmen
+issue-report-open-issue = #{ $number } öffnen
+issue-report-sending = Wird gesendet…
+issue-report-send-failed = Konnte nicht gesendet werden. Dein Entwurf ist noch da.
+issue-report-vote-failed = Deine Stimme konnte nicht aktualisiert werden. Bitte versuche es erneut.
+issue-report-filed = Als #{ $number } eingereicht
+issue-report-added = Zu #{ $number } hinzugefügt
+issue-report-upvoted = Für #{ $number } gestimmt
+issue-report-copied = Bericht kopiert
+issue-report-actions-private = Privat
+issue-report-action-draft-agent = Mit einem Agenten entwerfen
+issue-report-action-copy-markdown = Als Markdown kopieren
+issue-report-action-email = Privat per E-Mail senden

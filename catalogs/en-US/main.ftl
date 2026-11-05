@@ -757,6 +757,7 @@ file-tree-no-files = No files
 
 browser-send-annotations-to = Send annotations to { $destination }
 browser-send-annotations-to-new-chat = Send annotations to a new { $provider } chat
+browser-annotations-send-short = Send
 browser-open-chat-or-enable-provider = Open a chat tab or enable an AI provider
 browser-annotation-destination-unavailable = That annotation destination is no longer available
 browser-annotation-composer-blocked = Can't add annotations while a subagent transcript is focused
@@ -839,6 +840,7 @@ browser-color-scheme-view-dark = View this page in dark mode
 browser-color-scheme-showing-light = Showing this page in light mode. Click to follow the app
 browser-color-scheme-showing-dark = Showing this page in dark mode. Click to follow the app
 browser-picking-hint = Select an element to send to a chat
+browser-find-placeholder = Find in page
 browser-served-stopped = stopped
 browser-served-starting = starting
 browser-served-branch = Branch
@@ -880,6 +882,38 @@ browser-agent-running-script = running a script
 browser-agent-switching-color-scheme = switching the color scheme
 browser-agent-working = working
 browser-agent-back-to-chat = Back to chat
+browser-agent-take-over = Take over
+browser-agent-you-have-control = You have control
+browser-agent-hand-back = Hand back
+browser-agent-is-waiting = { $agent } is waiting
+# Sent to the agent's chat as the user's message when they click Hand back after the agent was blocked.
+browser-agent-handed-back-message = I've handed the browser back. Carry on where you left off.
+browser-agent-cue-clicking = Clicking “{ $name }”
+browser-agent-cue-clicking-bare = Clicking
+browser-agent-cue-turning-on = Turning on “{ $name }”
+browser-agent-cue-turning-off = Turning off “{ $name }”
+browser-agent-cue-selecting = Selecting “{ $name }”
+browser-agent-cue-typing = Typing “{ $value }”
+browser-agent-cue-typing-bare = Typing
+browser-agent-cue-pressing = Pressing { $key }
+browser-agent-cue-hovering = Hovering “{ $name }”
+browser-agent-cue-checking = Checking “{ $name }”
+browser-agent-cue-reading = Reading the page
+browser-agent-cue-scrolling = Scrolling
+browser-agent-cue-capturing = Taking a screenshot
+browser-agent-cue-capturing-element = Taking a screenshot of “{ $name }”
+browser-agent-cue-capturing-full = Taking a full-page screenshot
+browser-agent-cue-uploading = Uploading { $file }
+browser-agent-cue-running-script = Running a script
+browser-agent-cue-scheme-dark = Switching to dark mode
+browser-agent-cue-scheme-light = Switching to light mode
+browser-agent-cue-waiting = Waiting for the page
+browser-agent-cue-opening = Opening { $url }
+browser-agent-cue-going-back = Going back
+browser-agent-cue-going-forward = Going forward
+browser-agent-cue-reloading = Reloading the page
+browser-agent-cue-new-tab = Opening a new tab
+browser-agent-cue-working = Working
 picker-no-results = No results
 palette-search-files = Search files in this worktree...
 palette-no-matching-files = No matching files
@@ -982,8 +1016,16 @@ update-cli-failed-timeout = Timed out after 5 min
 update-cli-failed-outdated = Still { $version } after updating
 update-cli-manual-hint = Manual update
 sidebar-add-project-to-start = Add a project to get started
-sidebar-search-project-worktrees-placeholder = Search worktrees in { $project }
-sidebar-search-hidden-worktrees-placeholder = Search hidden worktrees in { $project }
+sidebar-search-project-placeholder = Search { $project }
+sidebar-search-hidden-worktrees-count-placeholder = { $count ->
+    [one] Search 1 hidden worktree
+   *[other] Search { $count } hidden worktrees
+}
+project-search-filter-hint = Try running, open, merged, or #number
+project-search-all-projects = Search all projects
+project-search-hand-off-hint = All projects
+project-search-section-worktrees = Worktrees
+project-search-section-filter-hint = Try a section, running, open, or #number
 sidebar-install-ssh-key = Install SSH key
 action-update = Update
 workspace-no-ai-background-tasks = No AI background tasks
@@ -1017,6 +1059,11 @@ workspace-pull-back-count = Pull Back ({ $count })
 workspace-tab-in-pip = This tab is in PiP mode
 history-loading = Loading history...
 history-loading-more = Loading more...
+history-empty-title = Every closed chat, one click away
+history-empty-hint = Chats you close in this worktree show up here, ready to pick up where you left off.
+# The agent argument is a name such as "Claude Code" or "Codex".
+history-empty-filtered-title = No { $agent } chats yet
+history-show-all-agents = Show all agents
 action-run = Run
 composer-unknown-command = Unknown command { $command }.
 composer-unknown-command-with-available = Unknown command { $command }. Available: { $available }
@@ -1328,8 +1375,6 @@ worktree-create-branches-unavailable = Repository not loaded yet
 worktree-create-in-background = Create in background
 worktree-create-refresh-branches = Fetch remote branches
 worktree-create-refresh-failed = Fetch failed: { $error }
-worktree-create-return = Create ↵
-worktree-in-workspace = In workspace
 worktree-no-matching-branches = No matching branches
 worktree-not-installed = Not installed
 
@@ -2019,7 +2064,7 @@ settings-search-entry-general-behavior-keyboard-shortcuts-description = Open and
 settings-search-entry-general-behavior-enhance-prompt-label = Enhance prompt
 settings-search-entry-general-behavior-enhance-prompt-description = Show the Enhance prompt action in the chat composer and command palette.
 settings-search-entry-general-behavior-link-previews-label = Show link previews
-settings-search-entry-general-behavior-link-previews-description = Fetch a website's title, summary and image when you hover a link. The site sees your IP address.
+settings-search-entry-general-behavior-link-previews-description = Show each linked site's icon, and its title, summary and image when you hover. Hovering shows the site your IP address. Icons come from Google, which sees the site's name, or straight from the address for local links.
 settings-search-entry-general-behavior-show-cmd-number-hints-on-cmd-hold-label = Show Cmd+number hints on Cmd hold
 settings-search-entry-general-behavior-show-cmd-number-hints-on-cmd-hold-description = Hold Command for 0.5 seconds to show numbered shortcuts for worktrees or tabs.
 settings-search-entry-general-behavior-use-cmd-number-to-switch-tabs-label = Use Cmd+number to switch tabs
@@ -2263,8 +2308,8 @@ settings-search-entry-agents-routing-thorough-actions-label = Thorough actions
 settings-search-entry-agents-routing-thorough-actions-description = Fix CI, blocked merges, comments, changes, conflicts, and reviews.
 settings-search-entry-agents-providers-claude-code-provider-label = Claude Code provider
 settings-search-entry-agents-providers-claude-code-provider-description = Enable Claude Code and configure its models, profiles, and launch flags.
-settings-search-entry-agents-providers-compliant-claude-view-label = Compliant Claude view
-settings-search-entry-agents-providers-compliant-claude-view-description = Run Claude chat through Claude Code's interactive mode to keep usage on your subscription plan.
+settings-search-entry-agents-providers-claude-interactive-mode-label = Claude interactive mode
+settings-search-entry-agents-providers-claude-interactive-mode-description = Run local Claude chats in Claude Code's interactive mode instead of print mode (claude -p). SSH workspaces always use print mode. Applies to newly opened chats.
 settings-search-entry-agents-providers-codex-provider-label = Codex provider
 settings-search-entry-agents-providers-codex-provider-description = Enable Codex and configure its models, profiles, and launch flags.
 settings-search-entry-agents-providers-pi-provider-label = Pi provider
@@ -2611,6 +2656,7 @@ settings-ai-reset-to-inherited = Reset to inherited
 settings-ai-system-instructions-placeholder = System instructions...
 settings-ai-user-message-placeholder = User message...
 settings-ai-launch-flags-description = Used for every launch of this provider. These are added first.
+settings-ai-launch-flags-placeholders = Use { $placeholders } to insert the worktree, branch, or project name for each launch.
 settings-ai-profile-definitions = Profile definitions
 settings-ai-global-default = Global default
 settings-ai-workspace-override = Workspace override
@@ -2628,9 +2674,9 @@ settings-ai-all-models = All models
 settings-ai-select-models = Select models
 settings-ai-select-models-count = Select models ({ $count })
 settings-ai-model-visibility = Model visibility
-settings-ai-compliant-claude-tooltip = When off—or in an SSH workspace—Claude chat uses the structured claude -p transport.
-settings-ai-compliant-claude-view = Compliant Claude view
-settings-ai-compliant-claude-view-description = Run local Claude chats in Claude Code's interactive mode. SSH workspaces use the structured claude -p transport.
+settings-ai-claude-interactive-mode-tooltip = When off—or in an SSH workspace—Claude chat uses print mode (claude -p).
+settings-ai-claude-interactive-mode = Interactive mode
+settings-ai-claude-interactive-mode-description = Run local Claude chats in Claude Code's interactive mode instead of print mode (claude -p). SSH workspaces always use print mode.
 settings-ai-action-model-pins = Advanced — per-action model pins
 settings-ai-action-model-pins-description = Pin models for specific actions only when a bucket default is not enough.
 settings-ai-session-model-description = Model used for new sessions by default.
@@ -2691,7 +2737,7 @@ settings-ai-provider-section-chat = Chat
 settings-ai-provider-section-runtime = Runtime
 settings-ai-provider-profiles-description = Accounts and config homes for this provider.
 settings-ai-provider-manage-profiles = Manage profiles
-settings-ai-provider-antigravity-description = Enable Antigravity as a terminal provider (requires Antigravity CLI `agy` installed).
+settings-ai-provider-antigravity-description = Enable Antigravity chat and terminal support (requires Antigravity CLI `agy` installed).
 settings-ai-provider-hermes-description = Enable Hermes as a terminal provider (requires Hermes Agent `hermes` installed).
 settings-ai-provider-qwen-description = Enable Qwen Code as a terminal provider (requires Qwen Code CLI `qwen` installed).
 settings-ai-provider-fx-description = Enable fx chat and terminal support (requires fx CLI `fx` installed).
@@ -2802,6 +2848,7 @@ settings-keybinding-action-focus-chat-input = Focus Chat Input
 settings-keybinding-action-find = Find
 find-placeholder = Find...
 find-results-none = 0 results
+find-no-matches = No matches
 find-results-count = { $count ->
     [one] 1 result
    *[other] { $count } results
@@ -2814,7 +2861,11 @@ settings-keybinding-action-focus-address-bar = Focus Address Bar
 settings-keybinding-action-reload = Reload
 settings-keybinding-action-chat-model-picker = Toggle Chat Model Picker
 settings-keybinding-action-chat-fast-mode = Toggle Chat Fast Mode
+settings-keybinding-action-toggle-bookmarks = Toggle Bookmarks
+settings-keybinding-action-previous-bookmark = Previous Bookmark
+settings-keybinding-action-next-bookmark = Next Bookmark
 settings-keybinding-action-chat-plan-mode = Toggle Chat Plan Mode
+settings-keybinding-action-chat-ultracode = Toggle Chat Ultracode
 settings-keybinding-action-chat-effort = Cycle Chat Effort
 settings-keybinding-action-chat-effort-backward = Cycle Chat Effort Backward
 settings-keybinding-action-chat-permission-picker = Toggle Chat Permission Picker
@@ -2853,7 +2904,18 @@ chat-fast-mode = Fast mode
 chat-fast = Fast
 chat-queued-until-setup-finishes = Queued until setup finishes
 worktree-preparing = Preparing worktree…
-chat-queued-until-worktree-ready = Starting when worktree is ready
+worktree-step-checking-out =
+    { $forge ->
+        [gitlab] Checking out !{ $number }
+       *[other] Checking out #{ $number }
+    }
+worktree-step-checking-out-branch = Checking out { $branch }
+worktree-step-creating-branch-from = Creating branch from { $base }
+worktree-step-creating-branch = Creating branch
+worktree-step-naming = Naming it from your task
+worktree-step-setup = Running setup
+worktree-step-opening-agent = Opening { $agent }
+chat-queued-until-worktree-ready = Sends when ready
 chat-queued-position = Queued { $position }
 chat-delivery-unconfirmed = Delivery unconfirmed
 chat-delivery-unconfirmed-retry = Check the conversation before retrying; this message may already have been delivered.
@@ -2877,18 +2939,24 @@ review-resolved-count = Resolved ({ $count })
 right-panel-setup = Setup
 action-stop = Stop
 right-panel-terminal = Terminal
-setup-no-output = No setup script output
-setup-output-description = Setup script output will appear here after running setup.
 setup-run = Run setup
+setup-empty-title = Add a setup script
+setup-empty-description = It runs in each new worktree to install dependencies and copy env files.
+setup-pending-title = Setup script
+setup-pending-description = New worktrees run these commands on creation.
+run-empty-title = Add a run script
+run-empty-description = It starts your dev server or app. Each script opens in its own tab.
+run-idle-description = Output appears here when the script runs.
+script-suggestion-from = from { $file }
+script-suggestion-use = Use
+script-write-with-agent = Ask an agent to write it
+script-edit-in-settings = Open project settings
+script-commands-more =
+    { $count ->
+        [one] { $count } more
+       *[other] { $count } more
+    }
 setup-not-configured = No setup script configured
-setup-configure = Configure setup script
-setup-configure-description = Configure a setup script in Project Settings or add a .super.engineering/config.json file.
-run-no-output = No run script output
-run-output-description = Run script output will appear here.
-run-workspace = Run workspace
-run-not-configured = No run script configured
-run-configure = Configure run script
-run-configure-description = Configure a run script in Project Settings or add a .super.engineering/config.json file.
 review-submitted-reviews = Submitted reviews
 review-ai-questions = AI questions
 review-no-comments = No review comments yet
@@ -3063,6 +3131,9 @@ composer-model = Model
 composer-effort = Effort
 composer-effort-lower = Lower effort
 composer-effort-raise = Raise effort
+composer-ultracode = Ultracode
+composer-ultracode-tooltip = Ultracode is off. When on, Claude runs multi-agent workflows for substantial tasks, which uses more tokens. Click to turn on.
+composer-ultracode-on-tooltip = Ultracode is on. Claude runs multi-agent workflows for substantial tasks, which uses more tokens. Click to turn off.
 reasoning-effort-unspecified = Unspecified
 settings-ai-thinking-unavailable = This model does not expose configurable thinking levels.
 context-title = Context
@@ -3128,6 +3199,10 @@ chat-thinking = Thinking
 chat-thinking-in-progress = Thinking…
 chat-waiting-for-answer = Waiting for your answer
 chat-waiting-for-approval = Waiting for approval
+chat-waiting-on-agents = { $count ->
+    [one] Waiting on { $count } agent…
+   *[other] Waiting on { $count } agents…
+}
 chat-thinking-count = Thinking ({ $count })
 chat-thinking-summary = Thinking · { $summary }
 # Live duration is a separate RunTimerView entity, so this prefix cannot take a Fluent placeable.
@@ -3156,6 +3231,31 @@ chat-reconnecting-retry = Try again in a moment.
 chat-reconnecting-slow = Taking longer than usual, starting a fresh connection.
 chat-reconnect-failed = Couldn't reconnect to { $provider }.
 chat-reconnect-try-again = Try again
+# A note above the composer while the draft starts with "!": it runs as a shell command in the chat's workspace instead of going to the agent.
+chat-shell-mode = Shell command
+chat-shell-mode-detail = Runs in this workspace. Use Add to chat on the result to show it to the agent.
+chat-shell-add-to-chat = Add to chat
+# Tooltip on a shell code block's button in a chat message: types the block at a terminal prompt in the chat's workspace without running it.
+markdown-run-command = Open in terminal
+# How a shell command run from the composer ended, in its card's header in the transcript, e.g. "exit 1".
+chat-shell-exit = exit { $code }
+chat-shell-stopped = stopped
+# A shell command's card header when it exited successfully, before how long it took, e.g. "finished · 1m 31s".
+chat-shell-finished = finished
+chat-shell-no-output = No output
+chat-shell-show-all = Show all { $count } lines
+chat-shell-run-again = Run again
+chat-shell-open-in-terminal = Open in terminal
+chat-shell-running = Running
+# A shell command's card header after Stop, until its process is gone. Followed by the running time.
+chat-shell-stopping = Stopping
+chat-shell-stop = Stop
+# Tooltip on the Stop button of a running shell command's card, when Escape would stop it.
+chat-shell-stop-hint = Stop (Esc)
+chat-shell-unavailable = Shell commands aren't available in this chat right now.
+chat-shell-open-refused = Couldn't open this in a terminal without running it. Copy the command instead.
+# Shown above the composer when a command from the composer couldn't start. The error argument is the system's reason, in English.
+chat-shell-start-failed = Couldn't run the command: { $error }
 chat-worked = Worked
 chat-you-stopped = You stopped
 chat-you-stopped-after = You stopped after { $duration }
@@ -3322,6 +3422,28 @@ chat-files-changed-count = { $count ->
 }
 chat-files-expand-all = Expand all files
 chat-files-collapse-all = Collapse all files
+chat-files-changed-diff-unavailable = This diff is no longer available.
+chat-files-changed-diff-no-lines = Only this file's name or permissions changed.
+chat-files-changed-diff-binary = Binary files have no line diff to show.
+chat-files-changed-diff-not-utf8 = This file isn't UTF-8 text, so its lines can't be shown.
+chat-files-changed-diff-too-large = This diff is too large to show here.
+chat-files-changed-binary = Binary
+chat-files-changed-review-tooltip = Review these files and send feedback to this chat
+chat-files-changed-review-tooltip-stale-snapshot = { $count ->
+    [one] Review these files. 1 changed again in a later turn; This turn shows it as this turn left it.
+   *[other] Review these files. { $count } changed again in a later turn; This turn shows them as this turn left them.
+}
+chat-files-changed-review-tooltip-stale-current = { $count ->
+    [one] Review these files. 1 changed again in a later turn; review shows its current state.
+   *[other] Review these files. { $count } changed again in a later turn; review shows their current state.
+}
+chat-diff-unchanged-lines = { $count ->
+    [one] 1 unchanged line
+   *[other] { $count } unchanged lines
+}
+chat-files-changed-shared = Another chat was working in this worktree during this turn. A file both chats changed shows both chats' edits.
+chat-files-changed-unattributed = Another chat was working in this worktree during this turn. Dimmed files changed while it was working and may be its changes.
+chat-files-changed-snapshot-failed = This turn's worktree couldn't be snapshotted, so only files its tools reported are listed.
 git-uncommitted-change-count = Uncommitted changes: { $count }
 git-unpushed-commit-count = Unpushed commits: { $count }
 settings-ai-action-model-pins-set = Action-specific model pins set: { $count }
@@ -3385,33 +3507,7 @@ worktree-context-placeholder = Describe what you want the agent to work on…
 worktree-filter-branches-placeholder = Filter branches…
 worktree-label-placeholder = Feature label
 worktree-prompt-placeholder = What are you working on?
-worktree-search-branches-placeholder = Search branches…
-worktree-search-branches-mrs-placeholder = Search branches and MRs…
-worktree-search-branches-prs-placeholder = Search branches and PRs…
-worktree-fetching-branches = Fetching branches…
-worktree-fetching-branches-mrs = Fetching branches and MRs…
-worktree-fetching-branches-prs = Fetching branches and PRs…
-worktree-prompt = Prompt
-worktree-branches = Branches
-worktree-merge-requests = Merge requests
-worktree-pull-requests = Pull requests
-worktree-review-requests = Review requests
-worktree-tab-with-count = { $label } ({ $count })
-worktree-no-open-merge-requests = No open merge requests
-worktree-no-open-pull-requests = No open pull requests
-worktree-no-open-review-requests = No open review requests
-worktree-no-branches = No branches
 common-no-matches = No matches
-worktree-gitlab-cli-missing = Could not load merge requests: GitLab CLI (`glab`) is not installed or is not on PATH. Install `glab`, authenticate with `glab auth login`, then retry.
-worktree-gitlab-auth-required = Could not load merge requests: GitLab CLI (`glab`) is not authenticated. Run `glab auth login` for this GitLab host, then retry.
-worktree-github-auth-required = Could not load pull requests: GitHub CLI (`gh`) is not authenticated for this host. Run `gh auth login --hostname <host>`, then retry.
-worktree-github-load-error = Could not load pull requests: { $error }
-worktree-gitlab-load-error = Could not load merge requests: { $error }
-worktree-bitbucket-cli-missing = Could not load pull requests: Bitbucket CLI (`bkt`) is not installed or is not on PATH. Install `bkt`, run `bkt auth login https://bitbucket.org --kind cloud --web-token`, create a context with `bkt context create cloud --host api.bitbucket.org --workspace <workspace> --set-active`, then retry.
-worktree-bitbucket-auth-required = Could not load pull requests: Bitbucket CLI (`bkt`) is not authenticated. Run `bkt auth login https://bitbucket.org --kind cloud --web-token`, then retry.
-worktree-bitbucket-no-context = Could not load pull requests: { $error }
-worktree-bitbucket-load-error = Could not load pull requests: { $error }
-worktree-review-request-load-error = Could not load review requests: { $error }
 worktree-delete-agent-working = An agent is still working here
 worktree-delete-all-action = Delete All
 worktree-delete-body = Its folder is removed from disk.
@@ -3911,6 +4007,161 @@ palette-footer-filter = Filter
 palette-footer-close = Close
 palette-footer-back = Back
 palette-action-restore = Restore
+palette-mode-all = All
+palette-mode-conversations = Conversations
+palette-search-all = Search agents, worktrees, commands, files…
+palette-search-files-short = Search files…
+palette-section-needs-you = Needs you
+palette-section-running = Running
+palette-section-recent = Recent
+palette-section-suggested = Suggested
+palette-section-draft = Draft
+palette-section-actions = Actions
+palette-quick-new-chat = New chat in { $worktree }
+palette-quick-new-worktree = New worktree
+palette-quick-new-terminal = New terminal
+palette-quick-feedback = Report a bug or request a feature
+palette-section-top-hit = Top hit
+palette-section-matches = Matches
+palette-section-tabs = Tabs
+palette-section-worktrees = Worktrees
+palette-section-conversations = Conversations
+palette-section-commands = Commands
+palette-section-files = Files
+palette-section-changed = Changed on this branch
+palette-files-show-all = Show all { $count }
+palette-footer-branches = Branches
+palette-section-use-query-with = Use “{ $query }” with
+palette-ask-agent-new-chat = New { $provider } chat
+palette-search-conversation-history = Search conversation history
+palette-suggest-review-comments = { $count ->
+    [one] 1 review comment
+   *[other] { $count } review comments
+}
+palette-suggest-checks-failing = Checks failing
+palette-suggest-files-changed = { $count ->
+    [one] 1 file changed
+   *[other] { $count } files changed
+}
+palette-current = Current
+palette-empty-scope = No { $scope } match “{ $query }”
+palette-empty-recent = Nothing recent yet
+palette-search-everything = Search everything
+palette-footer-run = Run
+palette-footer-start = Start
+palette-footer-search = Search
+palette-footer-show = Show
+palette-footer-report = Report
+palette-footer-request = Request
+palette-report-as-bug = Report as a bug
+palette-report-as-feature = Request as a feature
+palette-finish-bug-report = Finish your bug report
+palette-finish-feature-request = Finish your feature request
+palette-actions = Actions
+palette-actions-search = Search actions…
+palette-actions-no-match = No actions match “{ $query }”
+palette-action-open = Open
+palette-action-switch-worktree = Switch to worktree
+palette-action-search-inside = Search inside this worktree
+palette-action-open-pr = Open pull request #{ $number }
+palette-action-copy-worktree-path = Copy worktree path
+palette-action-group-ask-agent = Ask an agent in this worktree
+palette-action-open-tab = Open tab
+palette-action-preview = Preview
+palette-action-close-tab = Close tab
+palette-action-open-conversation = Open conversation
+palette-action-open-in = Open in…
+palette-action-show-ignored = Show ignored files
+palette-action-run-command = Run command
+palette-action-start-in = Start in { $worktree }
+palette-action-group-another-agent = Another agent
+palette-action-start-with = Start with { $provider }
+palette-mode-pull-requests =
+    { $forge ->
+        [gitlab] Merge requests
+       *[other] Pull requests
+    }
+palette-mode-branch-from = Branch from
+palette-search-pull-requests =
+    { $forge ->
+        [gitlab] Search merge requests, or paste a link…
+       *[other] Search pull requests, or paste a link…
+    }
+palette-search-branch-from = Branch from…
+palette-section-pull-requests =
+    { $forge ->
+        [gitlab] Merge requests
+       *[other] Pull requests
+    }
+palette-section-with-worktree = With a worktree
+palette-section-open-pull-requests = Open
+palette-section-review-requested = Review requested
+palette-section-needs-your-review = Needs your review
+palette-section-yours = Yours
+palette-section-open-review-requests =
+    { $forge ->
+        [gitlab] Open merge requests
+       *[other] Open pull requests
+    }
+palette-loading-pull-requests =
+    { $forge ->
+        [gitlab] Loading merge requests…
+       *[other] Loading pull requests…
+    }
+palette-no-open-pull-requests =
+    { $forge ->
+        [gitlab] No open merge requests
+       *[other] No open pull requests
+    }
+palette-footer-check-out = Check out
+palette-footer-create = Create
+palette-footer-choose = Choose
+palette-action-start-in-new-worktree = Start in a new worktree
+palette-action-check-out = Check out
+palette-action-work-on-it = Work on it
+palette-action-copy-link = Copy link
+palette-action-copy-number = Copy number
+palette-action-create-worktree = Create worktree
+palette-action-choose-base = Choose base branch
+palette-start-agent-on = Start { $provider } on “{ $query }”
+palette-in-new-worktree = in a new worktree
+palette-new-branch = New branch { $name }
+palette-new-branch-from = from { $base }
+palette-new-branch-choose-base = Choose base
+palette-branch-note-default = default
+palette-branch-note-current = this worktree
+palette-branch-note-remote = remote
+palette-no-branches = No branches
+palette-no-branch-named = No branch named “{ $query }”
+palette-search-new-worktree =
+    { $forge ->
+        [gitlab] Name a branch, describe a task, or paste an MR
+       *[other] Name a branch, describe a task, or paste a PR
+    }
+palette-search-new-worktree-no-forge = Name a branch or describe a task
+palette-action-open-review-request =
+    { $forge ->
+        [gitlab] Open merge request !{ $number }
+       *[other] Open pull request #{ $number }
+    }
+palette-action-create-and-start = Create and start { $provider }
+palette-search-projects = Choose a project
+palette-mode-projects = Projects
+palette-section-branches = Branches
+palette-section-look-up = Look up
+palette-loading-branches = Loading branches…
+palette-no-open-pull-request =
+    { $forge ->
+        [gitlab] No open merge request
+       *[other] No open pull request
+    }
+palette-pull-request-number =
+    { $forge ->
+        [gitlab] Merge request !{ $number }
+       *[other] Pull request #{ $number }
+    }
+palette-new-worktree-in = New worktree in { $project }
+palette-quick-new-worktree-in = in { $project }
 
 sidebar-rename-worktree-label = Rename feature label…
 sidebar-rename-feature-label = Rename feature label…
@@ -3933,6 +4184,7 @@ sidebar-move-section-down = Move down
 file-menu-open-in-terminal = Open in Terminal
 shared-context-edit-projects = Edit projects…
 history-load-backfill = Load / Backfill History
+history-button-tooltip = History
 workspace-separate-tab-from-split = Separate Tab from Split
 workspace-move-split-left = Move Left
 workspace-move-split-right = Move Right
@@ -4183,20 +4435,13 @@ usage-meter-error = Couldn't load usage
 usage-meter-loading = Loading usage…
 usage-meter-outdated = Usage data is out of date
 usage-meter-updated = Updated { $ago }
-usage-meter-resets = Resets in { $duration }
-usage-meter-window-session = Session
 usage-meter-window-daily = Daily
 usage-meter-window-weekly = Weekly
 usage-meter-window-monthly = Monthly
-usage-meter-window-other = Other
-usage-meter-all-providers = All providers
 usage-meter-percent-left = { $percent }% left
 usage-meter-no-account = No account selected
 usage-meter-now = now
 usage-meter-default-account = Default
-usage-popover-runs-out = Runs out { $time }, resets { $reset }
-usage-popover-runs-out-then-credits = Runs out { $time }, then credits
-usage-popover-using-credits = Using credits
 usage-api-key = API key
 usage-api-key-week = estimated this week
 usage-api-key-today = { $amount } today
@@ -4211,8 +4456,6 @@ usage-popover-window-left = { $window } left
 usage-popover-updating = Updating…
 usage-popover-retry = Try again
 usage-popover-accounts = Accounts
-usage-popover-in-use = In use
-usage-popover-unused = { $count } unused
 usage-graph-on-pace = On pace
 usage-graph-in-reserve = { $percent }% in reserve
 usage-graph-behind = { $percent }% behind pace
@@ -4221,10 +4464,27 @@ usage-graph-lasts = Lasts until reset
 usage-graph-collecting = The graph fills in as readings arrive
 usage-instrument-gauge = Gauge
 usage-instrument-graph = Graph
-usage-popover-no-other-limits = No other limits
 usage-popover-no-data = No usage yet from { $providers }
-usage-popover-more = More
-usage-popover-less = Less
+usage-window-minutes = { $count }-minute
+usage-window-hours = { $count }-hour
+usage-window-days = { $count }-day
+usage-window-weeks = { $count }-week
+usage-window-all-models = All models
+usage-gauge-window-reached = { $window } limit reached
+usage-gauge-reached = Limit reached
+usage-limit-no-reset = Reset time not reported
+usage-limit-back = Available again { $time }
+usage-limit-in = in { $duration }
+usage-account-until = { $window }, until { $time }
+usage-account-back-at = { $window }, back at { $time }
+usage-credits-balance = { $amount } credits
+usage-details = Usage details
+usage-details-runs-out = At this pace, it may run out { $time }
+usage-details-lasts = At this pace, it lasts until it resets
+usage-details-used-up = { $window } is used up until { $time }
+usage-details-estimate = An estimate from your average use since this window began. It moves as your use changes; the reset time doesn’t.
+usage-details-no-reset = { $provider } didn’t report when this window resets, so there’s no forecast.
+usage-details-source = Limits and reset times come from { $provider }. A limit shows only when it’s reported for this account.
 tool-verb-ran = Ran
 tool-verb-running = Running
 tool-verb-messaging = Messaging
@@ -4320,6 +4580,8 @@ chat-artifact-save-html = Save as HTML file
 chat-artifact-open-in-browser = Open in browser
 chat-artifact-open-in-browser-confirm = Open this artifact in your browser?
 chat-artifact-open-in-browser-detail = Its code runs outside the app's sandbox there, where it can reach the internet. Open it only if you trust what made it.
+chat-artifact-open-in-app-browser = In-App Browser
+chat-artifact-open-in-default-browser = Default Browser
 chat-artifact-open-link = Open this link in your browser?
 chat-artifact-open-link-open = Open
 chat-artifact-open-link-cancel = Cancel
@@ -4338,22 +4600,8 @@ usage-reset-busy = Still updating. Slide again in a moment
 usage-reset-unavailable = No reset available
 usage-credits = Credits
 usage-credits-unlimited = Unlimited
-usage-account-resets = { $count ->
-    [one] 1 reset
-   *[other] { $count } resets
-}
-usage-account-credits = { $amount } credits
-usage-account-ring-window = { $account } { $window }
-usage-account-window-left = { $window } { $percent }%
-usage-graph-account-left = { $account } { $window } left
-usage-graph-now = Now
-usage-accounts-on-gauge = On the gauge
 usage-accounts-sign-in = Sign in
 usage-accounts-signing-in = Signing in…
-usage-accounts-single = { $count ->
-    [one] { $providers } has one account.
-   *[other] { $providers } have one account each.
-}
 usage-account-empty-title = No usage on { $account } yet
 usage-account-empty-body = Readings appear after this profile’s first session.
 usage-account-signed-out-title = { $account } isn’t signed in
@@ -4364,3 +4612,114 @@ usage-graph-legend-even = Even pace
 usage-graph-legend-projection = Projection
 usage-graph-legend-estimated = Estimated
 usage-graph-estimated = Estimated from activity on this Mac
+bookmarks-title = Bookmarks
+bookmarks-search-placeholder = Search bookmarks…
+bookmarks-section-this-chat = This chat
+bookmarks-saved-label = Saved
+bookmarks-untitled-chat = Untitled chat
+bookmarks-loading = Loading bookmarks…
+bookmarks-load-failed = Bookmarks didn't load
+bookmarks-load-failed-hint = Your saved replies are still there.
+bookmarks-load-failed-again-hint = Still not loading. Your saved replies are still there.
+bookmarks-this-chat-load-failed = This chat's bookmarks didn't load
+bookmarks-other-chats-load-failed = Other chats' bookmarks didn't load
+bookmarks-try-again = Try again
+bookmarks-empty-title = Keep the replies worth rereading
+bookmarks-empty-hint = Hover a reply and click the bookmark. Saved replies from every chat collect here.
+bookmarks-no-matches = No bookmarks match “{ $query }”
+bookmarks-untitled-response = Untitled response
+bookmarks-add = Bookmark response
+bookmarks-remove = Remove bookmark
+bookmarks-saved-ago = Saved { $elapsed }
+bookmarks-open-beside = Open beside this chat
+bookmarks-response-streaming = You can bookmark this response when it finishes
+bookmarks-response-unavailable = Response unavailable
+bookmarks-save-failed = Couldn't save the bookmark. Try again.
+bookmarks-remove-failed = Couldn't remove the bookmark. Try again.
+
+## Reporting bugs and feature requests
+
+notification-open = Open
+chat-report-error = Report this problem
+menu-help = Help
+menu-help-report-bug = Report a Bug…
+menu-help-suggest-feature = Request a Feature…
+
+issue-report-command-bug = Report a bug
+issue-report-command-feature = Request a feature
+issue-report-kind-bug = Bug
+issue-report-kind-feature = Feature
+issue-report-placeholder-bug = What happened? What did you expect instead?
+issue-report-placeholder-feature = What are you trying to do?
+issue-report-placeholder-error = What were you doing when it failed?
+issue-report-error-title = Turn failed: { $error }
+issue-report-title = Title
+issue-report-title-drafted = Drafted from your words
+issue-report-title-from-error = From the error
+issue-report-title-restored = Saved draft
+issue-report-draft-saved = Saved your report as a draft
+issue-report-action-discard = Discard draft
+issue-report-screenshot = Screenshot
+issue-report-screenshots = Screenshots
+issue-report-drop-now = Drop to attach images
+issue-report-drop-hint = Drop or paste screenshots
+issue-report-drop-hint-review = or drop one here
+issue-report-capture-window = Capture window
+issue-report-choose-images = Attach images…
+issue-report-screenshot-pending = Capturing…
+issue-report-image-copied = Screenshot copied. Paste it into the report.
+issue-report-images-revealed = Your screenshots are in Finder. Drag them into the report.
+issue-report-review = Review
+issue-report-post = Post publicly
+issue-report-review-title = Review before posting
+issue-report-review-comment-on = Comment on #{ $number }
+issue-report-audience = Anyone on GitHub can see this
+issue-report-heading-bug = What happened?
+issue-report-heading-feature = What are you trying to do?
+issue-report-field-app-version = App version
+issue-report-field-os = Operating system
+issue-report-field-system = System details
+issue-report-field-agent = Coding agent
+issue-report-field-error = Error
+issue-report-image-note = GitHub only accepts images in its own form, so this report finishes there. The text is filled in and the screenshot is on your clipboard to paste.
+issue-report-images-note = GitHub only accepts images in its own form, so this report finishes there. The text is filled in, and Finder opens with the screenshots to drag in.
+issue-report-checks-title = Worth adding
+issue-report-check-expected = What you expected
+issue-report-check-steps = Steps to reproduce
+issue-report-check-screenshot = Screenshot
+issue-report-check-today = How you handle it today
+issue-report-add-expected = I expected
+issue-report-add-steps = Steps to reproduce:
+    1.
+issue-report-add-today = Today I
+issue-report-agent-title = Have an agent write it
+issue-report-agent-detail = It asks what's missing, then drafts it for you to approve
+issue-report-agent-no-worktree = Open a worktree first so the agent has somewhere to work
+issue-report-included = Included
+issue-report-fact-error = Error message
+issue-report-fact-app = App { $version }
+issue-report-fact-system = System details
+issue-report-similar-bugs = Similar reports
+issue-report-similar-features = Similar requests
+issue-report-destination = Public issue in { $repo }
+issue-report-signed-out = Sign in to the GitHub CLI to submit from here
+issue-report-match-open = #{ $number } is already open
+issue-report-match-votes = { $count ->
+    [one] #{ $number } has 1 vote
+   *[other] #{ $number } has { $count } votes
+}
+issue-report-continue-github = Continue on GitHub
+issue-report-add-details = Add my details
+issue-report-upvote = Upvote
+issue-report-open-issue = Open #{ $number }
+issue-report-sending = Sending…
+issue-report-send-failed = Couldn't send. Your draft is still here.
+issue-report-vote-failed = Couldn't update your vote. Please try again.
+issue-report-filed = Filed #{ $number }
+issue-report-added = Added to #{ $number }
+issue-report-upvoted = Upvoted #{ $number }
+issue-report-copied = Copied the report
+issue-report-actions-private = Private
+issue-report-action-draft-agent = Draft with an agent
+issue-report-action-copy-markdown = Copy as Markdown
+issue-report-action-email = Email it privately

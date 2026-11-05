@@ -211,6 +211,7 @@ browser-color-scheme-view-dark = यह पेज डार्क मोड म�
 browser-color-scheme-showing-light = यह पेज लाइट मोड में दिख रहा है। ऐप की सेटिंग अपनाने के लिए क्लिक करें
 browser-color-scheme-showing-dark = यह पेज डार्क मोड में दिख रहा है। ऐप की सेटिंग अपनाने के लिए क्लिक करें
 browser-picking-hint = चैट में भेजने के लिए कोई तत्व चुनें
+browser-find-placeholder = पेज में खोजें
 browser-served-stopped = रुका हुआ
 browser-served-starting = शुरू हो रहा है
 browser-served-branch = ब्रांच
@@ -297,8 +298,7 @@ project-pinned = पिन किया गया
 project-no-worktrees-found = कोई वर्कट्री नहीं मिला
 project-loading-merge-options = मर्ज विकल्प लोड हो रहा है
 sidebar-add-project-to-start = प्रारंभ करने के लिए कोई प्रोजेक्ट जोड़ें
-sidebar-search-project-worktrees-placeholder = { $project } में वर्कट्री खोजें
-sidebar-search-hidden-worktrees-placeholder = { $project } में छिपे हुए वर्कट्री खोजें
+
 sidebar-install-ssh-key = SSH कुंजी स्थापित करें
 action-update = अपडेट करें
 workspace-no-ai-background-tasks = कोई AI पृष्ठभूमि कार्य नहीं
@@ -609,8 +609,7 @@ worktree-create-branches-unavailable = रिपॉजिटरी अभी त
 worktree-create-in-background = पृष्ठभूमि में बनाएँ
 worktree-create-refresh-branches = रिमोट शाखाएँ फ़ेच करें
 worktree-create-refresh-failed = फ़ेच विफल: { $error }
-worktree-create-return = बनाएं ↵
-worktree-in-workspace = कार्यक्षेत्र में
+
 worktree-no-matching-branches = कोई मेल खाने वाली शाखाएं नहीं
 worktree-not-installed = स्थापित नहीं है
 settings-sidebar-group-general = सामान्य
@@ -1035,6 +1034,7 @@ settings-ai-reset-to-inherited = विरासत में रीसेट �
 settings-ai-system-instructions-placeholder = सिस्टम निर्देश...
 settings-ai-user-message-placeholder = उपयोगकर्ता संदेश...
 settings-ai-launch-flags-description = इस प्रदाता के प्रत्येक लॉन्च के लिए उपयोग किया जाता है। इन्हें पहले जोड़ा जाता है।
+settings-ai-launch-flags-placeholders = हर लॉन्च में वर्कट्री, शाखा या प्रोजेक्ट का नाम डालने के लिए { $placeholders } का उपयोग करें।
 settings-ai-profile-definitions = प्रोफ़ाइल परिभाषाएँ
 settings-ai-global-default = वैश्विक डिफ़ॉल्ट
 settings-ai-workspace-override = कार्यक्षेत्र ओवरराइड
@@ -1052,9 +1052,9 @@ settings-ai-all-models = सभी मॉडल
 settings-ai-select-models = मॉडल का चयन करें
 settings-ai-select-models-count = मॉडल चुनें ({ $count })
 settings-ai-model-visibility = मॉडल दृश्यता
-settings-ai-compliant-claude-tooltip = जब बंद या SSH कार्यक्षेत्र में - Claude चैट संरचित क्लाउड -p ट्रांसपोर्ट का उपयोग करती है।
-settings-ai-compliant-claude-view = अनुपालन Claude दृश्य
-settings-ai-compliant-claude-view-description = अपनी सदस्यता योजना पर उपयोग जारी रखने के लिए Claude Code के इंटरैक्टिव मोड के माध्यम से स्थानीय Claude चैट चलाएं। SSH कार्यस्थान संरचित क्लाउड -पी परिवहन का उपयोग करते हैं।
+settings-ai-claude-interactive-mode-tooltip = बंद होने पर—या SSH वर्कस्पेस में—Claude चैट प्रिंट मोड (claude -p) का उपयोग करता है।
+settings-ai-claude-interactive-mode = इंटरैक्टिव मोड
+settings-ai-claude-interactive-mode-description = स्थानीय Claude चैट को प्रिंट मोड (claude -p) के बजाय Claude Code के इंटरैक्टिव मोड में चलाएं। SSH वर्कस्पेस हमेशा प्रिंट मोड का उपयोग करते हैं।
 settings-ai-action-model-pins = उन्नत - प्रति-कार्रवाई मॉडल पिन
 settings-ai-action-model-pins-description = विशिष्ट कार्यों के लिए मॉडल को केवल तभी पिन करें जब एक बाल्टी डिफ़ॉल्ट पर्याप्त न हो।
 settings-ai-session-model-description = डिफ़ॉल्ट रूप से नए सत्रों के लिए उपयोग किया जाने वाला मॉडल।
@@ -1098,18 +1098,20 @@ review-resolved-count = हल किया गया ({ $count })
 right-panel-setup = सेट अप
 action-stop = रुको
 right-panel-terminal = टर्मिनल
-setup-no-output = कोई सेटअप स्क्रिप्ट आउटपुट नहीं
-setup-output-description = सेटअप चलाने के बाद सेटअप स्क्रिप्ट आउटपुट यहां दिखाई देगा।
 setup-run = सेटअप चलाएँ
+setup-empty-title = सेटअप स्क्रिप्ट जोड़ें
+setup-empty-description = यह निर्भरताएँ इंस्टॉल करने और एनवायरनमेंट फ़ाइलें कॉपी करने के लिए हर नए वर्कट्री में चलती है।
+setup-pending-title = सेटअप स्क्रिप्ट
+setup-pending-description = नए वर्कट्री बनते समय ये कमांड चलाते हैं।
+run-empty-title = रन स्क्रिप्ट जोड़ें
+run-empty-description = यह आपका डेवलपमेंट सर्वर या ऐप शुरू करती है। हर स्क्रिप्ट अपने अलग टैब में खुलती है।
+run-idle-description = स्क्रिप्ट चलने पर आउटपुट यहाँ दिखाई देता है।
+script-suggestion-from = { $file } से
+script-suggestion-use = इस्तेमाल करें
+script-write-with-agent = किसी एजेंट से इसे लिखने को कहें
+script-edit-in-settings = प्रोजेक्ट सेटिंग्स खोलें
+script-commands-more = { $count } और
 setup-not-configured = कोई सेटअप स्क्रिप्ट कॉन्फ़िगर नहीं किया गया है
-setup-configure = सेटअप स्क्रिप्ट कॉन्फ़िगर करें
-setup-configure-description = प्रोजेक्ट सेटिंग्स में एक सेटअप स्क्रिप्ट कॉन्फ़िगर करें या एक .super.engineering/config.json फ़ाइल जोड़ें।
-run-no-output = कोई रन स्क्रिप्ट आउटपुट नहीं
-run-output-description = रन स्क्रिप्ट आउटपुट यहां दिखाई देगा।
-run-workspace = कार्यक्षेत्र चलाएँ
-run-not-configured = कोई रन स्क्रिप्ट कॉन्फ़िगर नहीं की गई है
-run-configure = रन स्क्रिप्ट कॉन्फ़िगर करें
-run-configure-description = प्रोजेक्ट सेटिंग्स में एक रन स्क्रिप्ट कॉन्फ़िगर करें या एक .super.engineering/config.json फ़ाइल जोड़ें।
 review-submitted-reviews = प्रस्तुत समीक्षाएँ
 review-ai-questions = AI प्रश्न
 review-no-comments = अभी तक कोई समीक्षा टिप्पणी नहीं
@@ -1339,12 +1341,7 @@ worktree-context-placeholder = वर्णन करें कि आप एज
 worktree-filter-branches-placeholder = शाखाओं को फ़िल्टर करें...
 worktree-label-placeholder = वर्कट्री लेबल
 worktree-prompt-placeholder = आप किस पर काम कर रहे हैं?
-worktree-search-branches-placeholder = शाखाएँ खोजें...
-worktree-search-branches-mrs-placeholder = शाखाओं और MRs खोजें...
-worktree-search-branches-prs-placeholder = शाखाओं और PRs खोजें...
-worktree-fetching-branches = शाखाएँ लाना...
-worktree-fetching-branches-mrs = शाखाएं और MRs लाना...
-worktree-fetching-branches-prs = शाखाएं और PRs लाना...
+
 right-panel-switch-stacked = स्टैक्ड टर्मिनल पर स्विच करें
 right-panel-switch-bottom = निचले टर्मिनल पर स्विच करें
 right-panel-switch-side-by-side = अगल-बगल टर्मिनल पर स्विच करें
@@ -1924,8 +1921,8 @@ settings-search-entry-agents-routing-thorough-actions-label = पूरी त�
 settings-search-entry-agents-routing-thorough-actions-description = CI, अवरुद्ध विलय, टिप्पणियां, परिवर्तन, संघर्ष और समीक्षाएं ठीक करें।
 settings-search-entry-agents-providers-claude-code-provider-label = Claude Code प्रदाता
 settings-search-entry-agents-providers-claude-code-provider-description = Claude Code सक्षम करें और इसके मॉडल, प्रोफाइल और लॉन्च फ्लैग को कॉन्फ़िगर करें।
-settings-search-entry-agents-providers-compliant-claude-view-label = Claude दृश्य के अनुरूप
-settings-search-entry-agents-providers-compliant-claude-view-description = अपनी सदस्यता योजना पर उपयोग जारी रखने के लिए Claude Code के इंटरैक्टिव मोड के माध्यम से Claude चैट चलाएं।
+settings-search-entry-agents-providers-claude-interactive-mode-label = Claude इंटरैक्टिव मोड
+settings-search-entry-agents-providers-claude-interactive-mode-description = स्थानीय Claude चैट को प्रिंट मोड (claude -p) के बजाय Claude Code के इंटरैक्टिव मोड में चलाएं। SSH वर्कस्पेस हमेशा प्रिंट मोड का उपयोग करते हैं। नए खोले गए चैट पर लागू होता है।
 settings-search-entry-agents-providers-codex-provider-label = Codex प्रदाता
 settings-search-entry-agents-providers-codex-provider-description = Codex सक्षम करें और इसके मॉडल, प्रोफाइल और लॉन्च फ़्लैग को कॉन्फ़िगर करें।
 settings-search-entry-agents-providers-pi-provider-label = पाई प्रदाता
@@ -2025,7 +2022,7 @@ settings-ai-provider-section-chat = चैट
 settings-ai-provider-section-runtime = रनटाइम
 settings-ai-provider-profiles-description = इस प्रदाता के खाते और कॉन्फ़िग होम डायरेक्टरी।
 settings-ai-provider-manage-profiles = प्रोफ़ाइल प्रबंधित करें
-settings-ai-provider-antigravity-description = एंटीग्रैविटी को टर्मिनल प्रदाता के रूप में सक्षम करें (एंटीग्रैविटी CLI `agy` स्थापित करने की आवश्यकता है)।
+settings-ai-provider-antigravity-description = Antigravity चैट और टर्मिनल समर्थन सक्षम करें (Antigravity CLI `agy` इंस्टॉल होना ज़रूरी है)।
 settings-ai-provider-hermes-description = हर्मीज़ को टर्मिनल प्रदाता के रूप में सक्षम करें (Hermes एजेंट `hermes` स्थापित करने की आवश्यकता है)।
 settings-ai-provider-qwen-description = Qwen Code को टर्मिनल प्रदाता के रूप में सक्षम करें (Qwen कोड स्थापित CLI `qwen` की आवश्यकता है)।
 settings-ai-provider-kimi-description = चैट और टर्मिनल प्रदाता के रूप में Kimi कोड सक्षम करें (वर्तमान Kimi कोड स्थापित CLI `kimi` की आवश्यकता है)।
@@ -2112,27 +2109,9 @@ workspace-remote-forge-cli-not-authenticated-hint = युक्ति: हो�
 workspace-remote-forge-cli-missing-hint = युक्ति: होस्ट पर { $cli } स्थापित करें और एजेंट के साथ { $kind } बनाने के लिए `{ $cli } auth login` चलाएँ।
 workspace-review-request-url-copied = कॉपी की गई { $kind } URL
 workspace-review-request-none-yet = इस ब्रांच में अभी कोई { $kind } नहीं है
-worktree-prompt = तुरन्त
-worktree-branches = शाखाएं
-worktree-merge-requests = अनुरोध मर्ज करें
-worktree-pull-requests = पुल अनुरोध
-worktree-review-requests = अनुरोधों की समीक्षा करें
-worktree-tab-with-count = { $label } ({ $count })
-worktree-no-open-merge-requests = कोई खुला मर्ज अनुरोध नहीं
-worktree-no-open-pull-requests = कोई खुला पुल अनुरोध नहीं
-worktree-no-open-review-requests = कोई खुली समीक्षा अनुरोध नहीं
-worktree-no-branches = कोई शाखा नहीं
+
 common-no-matches = कोई मैच नहीं
-worktree-gitlab-cli-missing = मर्ज अनुरोध लोड नहीं किया जा सका: GitLab CLI (`glab`) स्थापित नहीं है या PATH पर नहीं है. `glab` स्थापित करें, `glab auth login` के साथ प्रमाणित करें, फिर पुनः प्रयास करें।
-worktree-gitlab-auth-required = मर्ज अनुरोध लोड नहीं कर सका: GitLab CLI (`glab`) प्रमाणित नहीं है। इस GitLab होस्ट के लिए `glab auth login` चलाएँ, फिर पुन: प्रयास करें।
-worktree-github-auth-required = पुल अनुरोध लोड नहीं कर सका: GitHub CLI (`gh`) इस होस्ट के लिए प्रमाणित नहीं है. `gh auth login --hostname <host>` चलाएँ, फिर पुन: प्रयास करें।
-worktree-github-load-error = पुल अनुरोध लोड नहीं कर सका: { $error }
-worktree-gitlab-load-error = मर्ज अनुरोध लोड नहीं कर सका: { $error }
-worktree-bitbucket-cli-missing = पुल रिक्वेस्ट लोड नहीं हो सके: Bitbucket CLI (`bkt`) इंस्टॉल नहीं है या PATH पर नहीं है। `bkt` इंस्टॉल करें, `bkt auth login https://bitbucket.org --kind cloud --web-token` चलाएँ, `bkt context create cloud --host api.bitbucket.org --workspace <workspace> --set-active` से एक कॉन्टेक्स्ट बनाएँ, फिर पुनः प्रयास करें।
-worktree-bitbucket-auth-required = पुल रिक्वेस्ट लोड नहीं हो सके: Bitbucket CLI (`bkt`) प्रमाणित नहीं है। `bkt auth login https://bitbucket.org --kind cloud --web-token` चलाएँ, फिर पुनः प्रयास करें।
-worktree-bitbucket-no-context = पुल रिक्वेस्ट लोड नहीं हो सके: { $error }
-worktree-bitbucket-load-error = पुल रिक्वेस्ट लोड नहीं हो सके: { $error }
-worktree-review-request-load-error = समीक्षा अनुरोध लोड नहीं किया जा सका: { $error }
+
 remote-cli-install-succeeded = रिमोट पर { $app_name } CLI { $package } (एपीआई = { $api }, घड़ी = { $watch }, हुक = { $hooks }) स्थापित किया गया है।
 remote-cli-install-failed = CLI स्थापना विफल: { $error }
 chat-composer-placeholder-active = कोई संदेश लिखें...
@@ -2631,6 +2610,7 @@ settings-keybinding-action-focus-chat-input = फोकस चैट इनप�
 settings-keybinding-action-find = खोजें
 find-placeholder = खोजें...
 find-results-none = 0 परिणाम
+find-no-matches = कोई मेल नहीं मिला
 find-results-count = { $count ->
     [one] 1 परिणाम
    *[other] { $count } परिणाम
@@ -2644,6 +2624,7 @@ settings-keybinding-action-reload = पुनः लोड करें
 settings-keybinding-action-chat-model-picker = टॉगल चैट मॉडल पिकर
 settings-keybinding-action-chat-fast-mode = टॉगल चैट फास्ट मोड
 settings-keybinding-action-chat-plan-mode = चैट प्लान मोड टॉगल करें
+settings-keybinding-action-chat-ultracode = चैट में Ultracode चालू या बंद करें
 settings-keybinding-action-chat-effort = साइकिल चैट प्रयास
 settings-keybinding-action-chat-permission-picker = चैट अनुमति पिकर टॉगल करें
 settings-keybinding-action-split-pane-right = स्प्लिट फलक दाईं ओर
@@ -2771,20 +2752,16 @@ usage-meter-error = उपयोग लोड नहीं हो सका
 usage-meter-loading = उपयोग लोड हो रहा है…
 usage-meter-outdated = उपयोग डेटा पुराना है
 usage-meter-updated = { $ago } अपडेट किया गया
-usage-meter-resets = { $duration } में रीसेट होगा
-usage-meter-window-session = सत्र
+
 usage-meter-window-daily = दैनिक
 usage-meter-window-weekly = साप्ताहिक
 usage-meter-window-monthly = मासिक
-usage-meter-window-other = अन्य
-usage-meter-all-providers = सभी प्रदाता
+
 usage-meter-percent-left = { $percent }% शेष
 usage-meter-no-account = कोई खाता चयनित नहीं है
 usage-meter-now = अभी
 usage-meter-default-account = डिफ़ॉल्ट
-usage-popover-runs-out = { $time } को खत्म होगा, { $reset } को रीसेट होगा
-usage-popover-runs-out-then-credits = { $time } को खत्म होगा, फिर क्रेडिट
-usage-popover-using-credits = क्रेडिट इस्तेमाल हो रहे हैं
+
 usage-api-key = API कुंजी
 usage-api-key-week = इस सप्ताह का अनुमान
 usage-api-key-today = आज { $amount }
@@ -2799,8 +2776,7 @@ usage-popover-window-left = { $window } शेष
 usage-popover-updating = अपडेट हो रहा है…
 usage-popover-retry = फिर से कोशिश करें
 usage-popover-accounts = खाते
-usage-popover-in-use = उपयोग में
-usage-popover-unused = { $count } अप्रयुक्त
+
 usage-graph-on-pace = रफ़्तार सही है
 usage-graph-in-reserve = रफ़्तार से { $percent }% कम
 usage-graph-behind = रफ़्तार से { $percent }% ज़्यादा
@@ -2809,10 +2785,9 @@ usage-graph-lasts = रीसेट तक चलेगा
 usage-graph-collecting = रीडिंग आने के साथ ग्राफ़ भरता जाएगा
 usage-instrument-gauge = गेज
 usage-instrument-graph = ग्राफ़
-usage-popover-no-other-limits = कोई अन्य सीमा नहीं
+
 usage-popover-no-data = { $providers } से अभी कोई उपयोग नहीं
-usage-popover-more = और
-usage-popover-less = कम
+
 tool-verb-ran = चलाया
 tool-verb-running = चला रहा है
 tool-verb-messaging = संदेश भेज रहा है
@@ -3400,7 +3375,7 @@ workspace-fx-remote-history-unsupported = FX रिमोट टर्मिन�
 settings-keybinding-action-rename-selected-entry = चुनी प्रविष्टि का नाम बदलें
 settings-keybinding-action-chat-effort-backward = चैट प्रयास के स्तरों में पीछे जाएँ
 worktree-preparing = वर्कट्री तैयार हो रही है…
-chat-queued-until-worktree-ready = वर्कट्री तैयार होने पर शुरू होगा
+chat-queued-until-worktree-ready = तैयार होने पर भेजा जाएगा
 chat-delivery-unconfirmed = डिलीवरी की पुष्टि नहीं हुई
 chat-delivery-unconfirmed-retry = फिर कोशिश करने से पहले बातचीत जाँचें; यह संदेश पहले ही पहुँच चुका हो सकता है।
 chat-answer-pending-delivery = डिलीवरी बाकी है
@@ -3419,6 +3394,9 @@ composer-model = मॉडल
 composer-effort = प्रयास
 composer-effort-lower = प्रयास घटाएँ
 composer-effort-raise = प्रयास बढ़ाएँ
+composer-ultracode = Ultracode
+composer-ultracode-tooltip = Ultracode बंद है। चालू होने पर बड़े कार्यों के लिए Claude मल्टी-एजेंट वर्कफ़्लो चलाता है, जिससे अधिक टोकन खर्च होते हैं। चालू करने के लिए क्लिक करें।
+composer-ultracode-on-tooltip = Ultracode चालू है। बड़े कार्यों के लिए Claude मल्टी-एजेंट वर्कफ़्लो चलाता है, जिससे अधिक टोकन खर्च होते हैं। बंद करने के लिए क्लिक करें।
 reasoning-effort-unspecified = निर्दिष्ट नहीं
 settings-ai-thinking-unavailable = इस मॉडल में सोच के स्तर बदले नहीं जा सकते।
 chat-message-tokens-not-reported = रिपोर्ट नहीं किया गया
@@ -3622,22 +3600,10 @@ usage-reset-busy = अभी अपडेट हो रहा है। थो�
 usage-reset-unavailable = कोई रीसेट उपलब्ध नहीं
 usage-credits = क्रेडिट
 usage-credits-unlimited = असीमित
-usage-account-resets = { $count ->
-    [one] 1 रीसेट
-   *[other] { $count } रीसेट
-}
-usage-account-credits = { $amount } क्रेडिट
-usage-account-ring-window = { $account } { $window }
-usage-account-window-left = { $window } { $percent }%
-usage-graph-account-left = { $account } { $window } शेष
-usage-graph-now = अभी
-usage-accounts-on-gauge = गेज पर
+
 usage-accounts-sign-in = साइन इन करें
 usage-accounts-signing-in = साइन इन हो रहा है…
-usage-accounts-single = { $count ->
-    [one] { $providers } का एक खाता है।
-   *[other] { $providers } में से हर एक का एक खाता है।
-}
+
 usage-account-empty-title = { $account } पर अभी कोई उपयोग नहीं
 usage-account-empty-body = इस प्रोफ़ाइल के पहले सत्र के बाद रीडिंग दिखेंगी।
 usage-account-signed-out-title = { $account } में साइन इन नहीं है
@@ -3648,3 +3614,383 @@ usage-graph-legend-even = समान रफ़्तार
 usage-graph-legend-projection = पूर्वानुमान
 usage-graph-legend-estimated = अनुमानित
 usage-graph-estimated = इस Mac की गतिविधि से अनुमानित
+
+# Recently added app features
+browser-annotations-send-short = भेजें
+browser-agent-cue-working = कामचलाऊ
+project-search-section-worktrees = वर्कट्री
+chat-shell-stopped = रुका हुआ
+chat-shell-running = चल रहा है
+chat-shell-stopping = रुक रहा है
+chat-shell-stop = रोकें
+palette-mode-all = सभी
+palette-section-running = चला रहा है
+palette-section-recent = हाल में
+palette-section-draft = ड्राफ्ट
+palette-section-actions = कार्रवाइयाँ
+palette-quick-new-worktree = नया वर्कट्री
+palette-quick-new-terminal = नया टर्मिनल
+palette-section-tabs = टैब
+palette-section-worktrees = वर्कट्री
+palette-section-commands = आदेश
+palette-section-files = फ़ाइलें
+palette-footer-branches = शाखाएं
+palette-ask-agent-new-chat = नई { $provider } चैट
+palette-footer-run = चलाना
+palette-footer-search = खोज
+palette-actions = कार्रवाइयाँ
+palette-action-open = खोलें
+palette-action-copy-worktree-path = वर्कट्री पथ की प्रतिलिपि बनाएँ
+palette-action-preview = पूर्वसमीक्षा
+palette-action-close-tab = टैब बंद करें
+palette-action-open-in = में खोलें...
+palette-section-open-pull-requests = खोलें
+palette-footer-create = बनाएं
+palette-action-copy-link = लिंक कॉपी करें
+palette-no-branches = कोई शाखा नहीं
+palette-mode-projects = परियोजनाओं
+palette-section-branches = शाखाएं
+palette-loading-branches = शाखाओं को लोड कर रहा है ...
+usage-window-all-models = सभी मॉडल
+usage-credits-balance = { $amount } क्रेडिट
+bookmarks-saved-label = सहेजा गया
+bookmarks-try-again = फिर से कोशिश करें
+notification-open = खोलें
+issue-report-review = समीक्षा
+issue-report-field-error = चूक
+browser-agent-take-over = नियंत्रण लें
+browser-agent-you-have-control = नियंत्रण आपके पास है
+browser-agent-hand-back = नियंत्रण वापस दें
+browser-agent-is-waiting = { $agent } प्रतीक्षा कर रहा है
+browser-agent-handed-back-message = मैंने ब्राउज़र का नियंत्रण वापस दे दिया है। जहाँ रुके थे, वहीं से आगे बढ़ें।
+browser-agent-cue-clicking = “{ $name }” पर क्लिक हो रहा है
+browser-agent-cue-clicking-bare = क्लिक हो रहा है
+browser-agent-cue-turning-on = “{ $name }” चालू हो रहा है
+browser-agent-cue-turning-off = “{ $name }” बंद हो रहा है
+browser-agent-cue-selecting = “{ $name }” चुना जा रहा है
+browser-agent-cue-typing = “{ $value }” टाइप हो रहा है
+browser-agent-cue-typing-bare = टाइप हो रहा है
+browser-agent-cue-pressing = { $key } दबाया जा रहा है
+browser-agent-cue-hovering = “{ $name }” पर कर्सर ले जाया जा रहा है
+browser-agent-cue-checking = “{ $name }” की जाँच हो रही है
+browser-agent-cue-reading = पेज पढ़ा जा रहा है
+browser-agent-cue-scrolling = स्क्रॉल हो रहा है
+browser-agent-cue-capturing = स्क्रीनशॉट लिया जा रहा है
+browser-agent-cue-capturing-element = “{ $name }” का स्क्रीनशॉट लिया जा रहा है
+browser-agent-cue-capturing-full = पूरे पेज का स्क्रीनशॉट लिया जा रहा है
+browser-agent-cue-uploading = { $file } अपलोड हो रहा है
+browser-agent-cue-running-script = स्क्रिप्ट चल रही है
+browser-agent-cue-scheme-dark = डार्क मोड पर स्विच हो रहा है
+browser-agent-cue-scheme-light = लाइट मोड पर स्विच हो रहा है
+browser-agent-cue-waiting = पेज की प्रतीक्षा हो रही है
+browser-agent-cue-opening = { $url } खुल रहा है
+browser-agent-cue-going-back = पीछे जा रहे हैं
+browser-agent-cue-going-forward = आगे जा रहे हैं
+browser-agent-cue-reloading = पेज फिर से लोड हो रहा है
+browser-agent-cue-new-tab = नया टैब खुल रहा है
+sidebar-search-project-placeholder = { $project } में खोजें
+sidebar-search-hidden-worktrees-count-placeholder = { $count ->
+    [one] 1 छिपा वर्कट्री खोजें
+   *[other] { $count } छिपे वर्कट्री खोजें
+}
+project-search-filter-hint = running, open, merged या #number आज़माएँ
+project-search-all-projects = सभी प्रोजेक्ट में खोजें
+project-search-hand-off-hint = सभी प्रोजेक्ट
+project-search-section-filter-hint = कोई सेक्शन, running, open या #number आज़माएँ
+history-empty-title = हर बंद चैट, बस एक क्लिक दूर
+history-empty-hint = इस वर्कट्री में बंद की गई चैट यहाँ दिखाई देती हैं। जहाँ छोड़ा था, वहीं से फिर शुरू करें।
+history-empty-filtered-title = अभी तक { $agent } की कोई चैट नहीं
+history-show-all-agents = सभी एजेंट दिखाएँ
+settings-keybinding-action-toggle-bookmarks = बुकमार्क दिखाएँ/छिपाएँ
+settings-keybinding-action-previous-bookmark = पिछला बुकमार्क
+settings-keybinding-action-next-bookmark = अगला बुकमार्क
+worktree-step-checking-out = { $forge ->
+    [gitlab] !{ $number } चेकआउट हो रहा है
+   *[other] #{ $number } चेकआउट हो रहा है
+}
+worktree-step-checking-out-branch = { $branch } चेकआउट हो रहा है
+worktree-step-creating-branch-from = { $base } से ब्रांच बन रही है
+worktree-step-creating-branch = ब्रांच बन रही है
+worktree-step-naming = आपके कार्य के आधार पर नाम रखा जा रहा है
+worktree-step-setup = सेटअप चल रहा है
+worktree-step-opening-agent = { $agent } खुल रहा है
+chat-waiting-on-agents = { $count ->
+    [one] { $count } एजेंट की प्रतीक्षा…
+   *[other] { $count } एजेंट की प्रतीक्षा…
+}
+chat-shell-mode = शेल कमांड
+chat-shell-mode-detail = इस वर्कस्पेस में चलता है। परिणाम एजेंट को दिखाने के लिए चैट में जोड़ें का उपयोग करें।
+chat-shell-add-to-chat = चैट में जोड़ें
+markdown-run-command = टर्मिनल में खोलें
+chat-shell-exit = निकास { $code }
+chat-shell-finished = पूरा हुआ
+chat-shell-no-output = कोई आउटपुट नहीं
+chat-shell-show-all = सभी { $count } पंक्तियाँ दिखाएँ
+chat-shell-run-again = फिर चलाएँ
+chat-shell-open-in-terminal = टर्मिनल में खोलें
+chat-shell-stop-hint = रोकें (Esc)
+chat-shell-unavailable = इस चैट में अभी शेल कमांड उपलब्ध नहीं हैं।
+chat-shell-open-refused = इसे चलाए बिना टर्मिनल में नहीं खोला जा सका। इसके बजाय कमांड कॉपी करें।
+chat-shell-start-failed = कमांड नहीं चल सका: { $error }
+chat-files-changed-diff-unavailable = यह डिफ़ अब उपलब्ध नहीं है।
+chat-files-changed-diff-no-lines = केवल इस फ़ाइल का नाम या अनुमतियाँ बदली हैं।
+chat-files-changed-diff-binary = बाइनरी फ़ाइलों में दिखाने के लिए पंक्ति डिफ़ नहीं होता।
+chat-files-changed-diff-not-utf8 = यह फ़ाइल UTF-8 टेक्स्ट नहीं है, इसलिए इसकी पंक्तियाँ नहीं दिखाई जा सकतीं।
+chat-files-changed-diff-too-large = यह डिफ़ यहाँ दिखाने के लिए बहुत बड़ा है।
+chat-files-changed-binary = बाइनरी
+chat-files-changed-review-tooltip = इन फ़ाइलों की समीक्षा करें और इस चैट में प्रतिक्रिया भेजें
+chat-files-changed-review-tooltip-stale-snapshot = { $count ->
+    [one] इन फ़ाइलों की समीक्षा करें। 1 फ़ाइल बाद के टर्न में फिर बदली; यह टर्न उसे अपने अंत की स्थिति में दिखाता है।
+   *[other] इन फ़ाइलों की समीक्षा करें। { $count } फ़ाइलें बाद के टर्न में फिर बदलीं; यह टर्न उन्हें अपने अंत की स्थिति में दिखाता है।
+}
+chat-files-changed-review-tooltip-stale-current = { $count ->
+    [one] इन फ़ाइलों की समीक्षा करें। 1 फ़ाइल बाद के टर्न में फिर बदली; समीक्षा उसकी वर्तमान स्थिति दिखाती है।
+   *[other] इन फ़ाइलों की समीक्षा करें। { $count } फ़ाइलें बाद के टर्न में फिर बदलीं; समीक्षा उनकी वर्तमान स्थिति दिखाती है।
+}
+chat-diff-unchanged-lines = { $count ->
+    [one] 1 अपरिवर्तित पंक्ति
+   *[other] { $count } अपरिवर्तित पंक्तियाँ
+}
+chat-files-changed-shared = इस टर्न के दौरान इस वर्कट्री में एक और चैट काम कर रही थी। दोनों चैट द्वारा बदली गई फ़ाइल में दोनों के संपादन दिखाई देते हैं।
+chat-files-changed-unattributed = इस टर्न के दौरान इस वर्कट्री में एक और चैट काम कर रही थी। धुंधली फ़ाइलें उस चैट के काम के दौरान बदलीं और उसके बदलाव हो सकती हैं।
+chat-files-changed-snapshot-failed = इस टर्न के वर्कट्री का स्नैपशॉट नहीं लिया जा सका, इसलिए केवल इसके टूल द्वारा बताई गई फ़ाइलें सूचीबद्ध हैं।
+palette-mode-conversations = बातचीत
+palette-search-all = एजेंट, वर्कट्री, कमांड, फ़ाइलें खोजें…
+palette-search-files-short = फ़ाइलें खोजें…
+palette-section-needs-you = आपकी ज़रूरत है
+palette-section-suggested = सुझाए गए
+palette-quick-new-chat = { $worktree } में नई चैट
+palette-quick-feedback = बग की रिपोर्ट करें या सुविधा का अनुरोध करें
+palette-section-top-hit = सबसे अच्छा परिणाम
+palette-section-matches = मेल खाते परिणाम
+palette-section-conversations = बातचीत
+palette-section-changed = इस ब्रांच में बदले गए
+palette-files-show-all = सभी { $count } दिखाएँ
+palette-section-use-query-with = “{ $query }” का उपयोग इनके साथ करें
+palette-search-conversation-history = बातचीत के इतिहास में खोजें
+palette-suggest-review-comments = { $count ->
+    [one] 1 समीक्षा टिप्पणी
+   *[other] { $count } समीक्षा टिप्पणियाँ
+}
+palette-suggest-checks-failing = जाँचें विफल हो रही हैं
+palette-suggest-files-changed = { $count ->
+    [one] 1 फ़ाइल बदली
+   *[other] { $count } फ़ाइलें बदलीं
+}
+palette-current = वर्तमान
+palette-empty-scope = “{ $query }” से मेल खाता कोई { $scope } नहीं
+palette-empty-recent = अभी तक कोई हालिया गतिविधि नहीं
+palette-search-everything = सब कुछ खोजें
+palette-footer-start = शुरू करें
+palette-footer-show = दिखाएँ
+palette-footer-report = रिपोर्ट करें
+palette-footer-request = अनुरोध करें
+palette-report-as-bug = बग के रूप में रिपोर्ट करें
+palette-report-as-feature = सुविधा के रूप में अनुरोध करें
+palette-finish-bug-report = अपनी बग रिपोर्ट पूरी करें
+palette-finish-feature-request = अपना सुविधा अनुरोध पूरा करें
+palette-actions-search = कार्रवाइयाँ खोजें…
+palette-actions-no-match = “{ $query }” से मेल खाती कोई कार्रवाई नहीं
+palette-action-switch-worktree = वर्कट्री पर जाएँ
+palette-action-search-inside = इस वर्कट्री के भीतर खोजें
+palette-action-open-pr = पुल अनुरोध #{ $number } खोलें
+palette-action-group-ask-agent = इस वर्कट्री में किसी एजेंट से पूछें
+palette-action-open-tab = टैब खोलें
+palette-action-open-conversation = बातचीत खोलें
+palette-action-show-ignored = अनदेखी फ़ाइलें दिखाएँ
+palette-action-run-command = कमांड चलाएँ
+palette-action-start-in = { $worktree } में शुरू करें
+palette-action-group-another-agent = दूसरा एजेंट
+palette-action-start-with = { $provider } के साथ शुरू करें
+palette-mode-pull-requests = { $forge ->
+    [gitlab] मर्ज अनुरोध
+   *[other] पुल अनुरोध
+}
+palette-mode-branch-from = यहाँ से ब्रांच बनाएँ
+palette-search-pull-requests = { $forge ->
+    [gitlab] मर्ज अनुरोध खोजें या लिंक पेस्ट करें…
+   *[other] पुल अनुरोध खोजें या लिंक पेस्ट करें…
+}
+palette-search-branch-from = यहाँ से ब्रांच बनाएँ…
+palette-section-pull-requests = { $forge ->
+    [gitlab] मर्ज अनुरोध
+   *[other] पुल अनुरोध
+}
+palette-section-with-worktree = वर्कट्री के साथ
+palette-section-review-requested = समीक्षा का अनुरोध किया गया
+palette-section-needs-your-review = आपकी समीक्षा चाहिए
+palette-section-yours = आपके
+palette-section-open-review-requests = { $forge ->
+    [gitlab] खुले मर्ज अनुरोध
+   *[other] खुले पुल अनुरोध
+}
+palette-loading-pull-requests = { $forge ->
+    [gitlab] मर्ज अनुरोध लोड हो रहे हैं…
+   *[other] पुल अनुरोध लोड हो रहे हैं…
+}
+palette-no-open-pull-requests = { $forge ->
+    [gitlab] कोई खुला मर्ज अनुरोध नहीं
+   *[other] कोई खुला पुल अनुरोध नहीं
+}
+palette-footer-check-out = चेकआउट करें
+palette-footer-choose = चुनें
+palette-action-start-in-new-worktree = नए वर्कट्री में शुरू करें
+palette-action-check-out = चेकआउट करें
+palette-action-work-on-it = इस पर काम करें
+palette-action-copy-number = नंबर कॉपी करें
+palette-action-create-worktree = वर्कट्री बनाएँ
+palette-action-choose-base = आधार ब्रांच चुनें
+palette-start-agent-on = “{ $query }” पर { $provider } शुरू करें
+palette-in-new-worktree = नए वर्कट्री में
+palette-new-branch = नई ब्रांच { $name }
+palette-new-branch-from = { $base } से
+palette-new-branch-choose-base = आधार चुनें
+palette-branch-note-default = डिफ़ॉल्ट
+palette-branch-note-current = यह वर्कट्री
+palette-branch-note-remote = रिमोट
+palette-no-branch-named = “{ $query }” नाम की कोई ब्रांच नहीं
+palette-search-new-worktree = { $forge ->
+    [gitlab] ब्रांच का नाम दें, कार्य बताएँ या MR पेस्ट करें
+   *[other] ब्रांच का नाम दें, कार्य बताएँ या PR पेस्ट करें
+}
+palette-search-new-worktree-no-forge = ब्रांच का नाम दें या कार्य बताएँ
+palette-action-open-review-request = { $forge ->
+    [gitlab] मर्ज अनुरोध !{ $number } खोलें
+   *[other] पुल अनुरोध #{ $number } खोलें
+}
+palette-action-create-and-start = बनाएँ और { $provider } शुरू करें
+palette-search-projects = प्रोजेक्ट चुनें
+palette-section-look-up = खोजें
+palette-no-open-pull-request = { $forge ->
+    [gitlab] कोई खुला मर्ज अनुरोध नहीं
+   *[other] कोई खुला पुल अनुरोध नहीं
+}
+palette-pull-request-number = { $forge ->
+    [gitlab] मर्ज अनुरोध !{ $number }
+   *[other] पुल अनुरोध #{ $number }
+}
+palette-new-worktree-in = { $project } में नया वर्कट्री
+palette-quick-new-worktree-in = { $project } में
+history-button-tooltip = इतिहास
+usage-window-minutes = { $count } मिनट का
+usage-window-hours = { $count } घंटे का
+usage-window-days = { $count } दिन का
+usage-window-weeks = { $count } सप्ताह का
+usage-gauge-window-reached = { $window } की सीमा पूरी हो गई
+usage-gauge-reached = सीमा पूरी हो गई
+usage-limit-no-reset = रीसेट का समय नहीं बताया गया
+usage-limit-back = { $time } फिर उपलब्ध
+usage-limit-in = { $duration } में
+usage-account-until = { $window }, { $time } तक
+usage-account-back-at = { $window }, { $time } पर फिर उपलब्ध
+usage-details = उपयोग का विवरण
+usage-details-runs-out = इस गति से यह { $time } समाप्त हो सकता है
+usage-details-lasts = इस गति से यह रीसेट होने तक चलेगा
+usage-details-used-up = { $window } का उपयोग { $time } तक पूरा हो चुका है
+usage-details-estimate = इस अवधि की शुरुआत से आपके औसत उपयोग पर आधारित अनुमान। आपके उपयोग के साथ यह बदलता है; रीसेट का समय नहीं बदलता।
+usage-details-no-reset = { $provider } ने इस अवधि के रीसेट का समय नहीं बताया, इसलिए कोई पूर्वानुमान उपलब्ध नहीं है।
+usage-details-source = सीमाएँ और रीसेट का समय { $provider } से मिलते हैं। सीमा तभी दिखती है जब इस खाते के लिए बताई गई हो।
+chat-artifact-open-in-app-browser = ऐप का ब्राउज़र
+chat-artifact-open-in-default-browser = डिफ़ॉल्ट ब्राउज़र
+bookmarks-title = बुकमार्क
+bookmarks-search-placeholder = बुकमार्क खोजें…
+bookmarks-section-this-chat = यह चैट
+bookmarks-untitled-chat = बिना शीर्षक की चैट
+bookmarks-loading = बुकमार्क लोड हो रहे हैं…
+bookmarks-load-failed = बुकमार्क लोड नहीं हुए
+bookmarks-load-failed-hint = आपके सहेजे गए उत्तर अभी भी मौजूद हैं।
+bookmarks-load-failed-again-hint = अभी भी लोड नहीं हो रहे। आपके सहेजे गए उत्तर अभी भी मौजूद हैं।
+bookmarks-this-chat-load-failed = इस चैट के बुकमार्क लोड नहीं हुए
+bookmarks-other-chats-load-failed = अन्य चैट के बुकमार्क लोड नहीं हुए
+bookmarks-empty-title = दोबारा पढ़ने लायक उत्तर सहेजें
+bookmarks-empty-hint = किसी उत्तर पर कर्सर ले जाकर बुकमार्क पर क्लिक करें। सभी चैट के सहेजे गए उत्तर यहाँ मिलते हैं।
+bookmarks-no-matches = “{ $query }” से मेल खाता कोई बुकमार्क नहीं
+bookmarks-untitled-response = बिना शीर्षक का उत्तर
+bookmarks-add = उत्तर बुकमार्क करें
+bookmarks-remove = बुकमार्क हटाएँ
+bookmarks-saved-ago = { $elapsed } सहेजा गया
+bookmarks-open-beside = इस चैट के बगल में खोलें
+bookmarks-response-streaming = यह उत्तर पूरा होने पर आप इसे बुकमार्क कर सकते हैं
+bookmarks-response-unavailable = उत्तर उपलब्ध नहीं
+bookmarks-save-failed = बुकमार्क सहेजा नहीं जा सका। फिर कोशिश करें।
+bookmarks-remove-failed = बुकमार्क हटाया नहीं जा सका। फिर कोशिश करें।
+chat-report-error = इस समस्या की रिपोर्ट करें
+menu-help = सहायता
+menu-help-report-bug = बग की रिपोर्ट करें…
+menu-help-suggest-feature = सुविधा का अनुरोध करें…
+issue-report-command-bug = बग की रिपोर्ट करें
+issue-report-command-feature = सुविधा का अनुरोध करें
+issue-report-kind-bug = बग
+issue-report-kind-feature = सुविधा
+issue-report-placeholder-bug = क्या हुआ? इसके बजाय आपको क्या होने की उम्मीद थी?
+issue-report-placeholder-feature = आप क्या करना चाहते हैं?
+issue-report-placeholder-error = विफल होने पर आप क्या कर रहे थे?
+issue-report-error-title = टर्न विफल: { $error }
+issue-report-title = शीर्षक
+issue-report-title-drafted = आपके शब्दों से तैयार मसौदा
+issue-report-title-from-error = त्रुटि से
+issue-report-title-restored = सहेजा गया मसौदा
+issue-report-draft-saved = आपकी रिपोर्ट मसौदे के रूप में सहेजी गई
+issue-report-action-discard = मसौदा हटाएँ
+issue-report-screenshot = स्क्रीनशॉट
+issue-report-screenshots = स्क्रीनशॉट
+issue-report-drop-now = चित्र जोड़ने के लिए छोड़ें
+issue-report-drop-hint = स्क्रीनशॉट छोड़ें या पेस्ट करें
+issue-report-drop-hint-review = या एक यहाँ छोड़ें
+issue-report-capture-window = विंडो कैप्चर करें
+issue-report-choose-images = चित्र जोड़ें…
+issue-report-screenshot-pending = कैप्चर हो रहा है…
+issue-report-image-copied = स्क्रीनशॉट कॉपी हो गया। इसे रिपोर्ट में पेस्ट करें।
+issue-report-images-revealed = आपके स्क्रीनशॉट Finder में हैं। उन्हें रिपोर्ट में खींचें।
+issue-report-post = सार्वजनिक रूप से पोस्ट करें
+issue-report-review-title = पोस्ट करने से पहले समीक्षा करें
+issue-report-review-comment-on = #{ $number } पर टिप्पणी करें
+issue-report-audience = GitHub पर कोई भी इसे देख सकता है
+issue-report-heading-bug = क्या हुआ?
+issue-report-heading-feature = आप क्या करना चाहते हैं?
+issue-report-field-app-version = ऐप संस्करण
+issue-report-field-os = ऑपरेटिंग सिस्टम
+issue-report-field-system = सिस्टम विवरण
+issue-report-field-agent = कोडिंग एजेंट
+issue-report-image-note = GitHub केवल अपने फ़ॉर्म में चित्र स्वीकार करता है, इसलिए रिपोर्ट वहीं पूरी होगी। टेक्स्ट भर दिया गया है और स्क्रीनशॉट पेस्ट करने के लिए क्लिपबोर्ड पर है।
+issue-report-images-note = GitHub केवल अपने फ़ॉर्म में चित्र स्वीकार करता है, इसलिए रिपोर्ट वहीं पूरी होगी। टेक्स्ट भर दिया गया है और स्क्रीनशॉट खींचकर जोड़ने के लिए Finder खुलेगा।
+issue-report-checks-title = जोड़ना उपयोगी होगा
+issue-report-check-expected = आपकी अपेक्षा
+issue-report-check-steps = समस्या दोहराने के चरण
+issue-report-check-screenshot = स्क्रीनशॉट
+issue-report-check-today = अभी आप इससे कैसे निपटते हैं
+issue-report-add-expected = मुझे उम्मीद थी
+issue-report-add-steps = समस्या दोहराने के चरण:
+    1.
+issue-report-add-today = अभी मैं
+issue-report-agent-title = किसी एजेंट से लिखवाएँ
+issue-report-agent-detail = यह छूटी हुई जानकारी पूछता है, फिर आपकी स्वीकृति के लिए मसौदा बनाता है
+issue-report-agent-no-worktree = पहले वर्कट्री खोलें ताकि एजेंट के पास काम करने की जगह हो
+issue-report-included = शामिल
+issue-report-fact-error = त्रुटि संदेश
+issue-report-fact-app = ऐप { $version }
+issue-report-fact-system = सिस्टम विवरण
+issue-report-similar-bugs = मिलती-जुलती रिपोर्ट
+issue-report-similar-features = मिलते-जुलते अनुरोध
+issue-report-destination = { $repo } में सार्वजनिक इश्यू
+issue-report-signed-out = यहाँ से भेजने के लिए GitHub CLI में साइन इन करें
+issue-report-match-open = #{ $number } पहले से खुला है
+issue-report-match-votes = { $count ->
+    [one] #{ $number } को 1 वोट मिला है
+   *[other] #{ $number } को { $count } वोट मिले हैं
+}
+issue-report-continue-github = GitHub पर जारी रखें
+issue-report-add-details = मेरी जानकारी जोड़ें
+issue-report-upvote = समर्थन में वोट दें
+issue-report-open-issue = #{ $number } खोलें
+issue-report-sending = भेजा जा रहा है…
+issue-report-send-failed = भेजा नहीं जा सका। आपका मसौदा अभी भी यहाँ है।
+issue-report-vote-failed = आपका वोट अपडेट नहीं हो सका। कृपया फिर से कोशिश करें।
+issue-report-filed = #{ $number } दर्ज किया गया
+issue-report-added = #{ $number } में जोड़ा गया
+issue-report-upvoted = #{ $number } के समर्थन में वोट दिया
+issue-report-copied = रिपोर्ट कॉपी हो गई
+issue-report-actions-private = निजी
+issue-report-action-draft-agent = एजेंट से मसौदा बनवाएँ
+issue-report-action-copy-markdown = Markdown के रूप में कॉपी करें
+issue-report-action-email = निजी तौर पर ईमेल करें
