@@ -2872,6 +2872,7 @@ chat-context-compacted-tokens = { $before } → { $after } टोकन
 chat-context-compacted-tooltip-body = जगह बनाने के लिए पुराने संदर्भ का सारांश बनाया गया। संदेश आपके लिए यहाँ बने रहते हैं; एजेंट अब उनकी जगह सारांश पढ़ता है।
 chat-context-compacted-tooltip-title = एजेंट अब सारांश के आधार पर काम करता है
 chat-pill-card-agent = एजेंट
+chat-pill-card-browser-capability = पेज खोलें, सामग्री की जाँच करें और वेबसाइटों के साथ इंटरैक्ट करें।
 chat-pill-card-command = आदेश
 chat-pill-card-items = { $count ->
     [one] { $count } आइटम

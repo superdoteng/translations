@@ -2892,6 +2892,7 @@ chat-context-compacted-tokens = { $before } → { $after } ٹوکن
 chat-context-compacted-tooltip-body = جگہ بنانے کے لیے پچھلے سیاق کا خلاصہ بنایا گیا۔ پیغامات آپ کے لیے یہیں رہتے ہیں؛ ایجنٹ ان کی جگہ خلاصہ پڑھتا ہے۔
 chat-context-compacted-tooltip-title = ایجنٹ اب خلاصے کی بنیاد پر کام کرتا ہے
 chat-pill-card-agent = ایجنٹ
+chat-pill-card-browser-capability = صفحات کھولیں، مواد کا معائنہ کریں، اور ویب سائٹس کے ساتھ تعامل کریں۔
 chat-pill-card-command = کمانڈ
 chat-pill-card-items = { $count ->
     [one] { $count } آئٹم

@@ -2944,6 +2944,7 @@ chat-context-compacted-tokens = { $before } → { $after } 个词元
 chat-context-compacted-tooltip-body = 先前的上下文已被摘要以腾出空间。消息仍会保留在这里供你查看；智能体会改为读取摘要。
 chat-context-compacted-tooltip-title = 智能体现在基于摘要工作
 chat-pill-card-agent = 智能体
+chat-pill-card-browser-capability = 打开页面、检查内容并与网站交互。
 chat-pill-card-command = 命令
 chat-pill-card-items = { $count } 项
 chat-pill-card-lines = { $count } 行

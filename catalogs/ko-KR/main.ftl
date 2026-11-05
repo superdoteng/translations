@@ -3254,6 +3254,7 @@ chat-context-compacted-tokens = 토큰 { $before } → { $after }
 chat-context-compacted-tooltip-body = 공간을 확보하기 위해 이전 컨텍스트가 요약되었습니다. 메시지는 여기에서 계속 볼 수 있지만, 에이전트는 대신 요약을 읽습니다.
 chat-context-compacted-tooltip-title = 에이전트가 이제 요약을 바탕으로 작업합니다
 chat-pill-card-agent = 에이전트
+chat-pill-card-browser-capability = 페이지를 열고, 콘텐츠를 살펴보고, 웹사이트와 상호작용합니다.
 chat-pill-card-command = 명령
 chat-pill-card-items = 항목 { $count }개
 chat-pill-card-lines = { $count }줄

@@ -2847,6 +2847,7 @@ chat-context-compacted-tokens = { $before } → { $after } token
 chat-context-compacted-tooltip-body = Ngữ cảnh trước đó đã được tóm tắt để tạo chỗ trống. Tin nhắn vẫn ở đây để bạn xem; thay vào đó, tác nhân đọc bản tóm tắt.
 chat-context-compacted-tooltip-title = Tác nhân hiện làm việc dựa trên bản tóm tắt
 chat-pill-card-agent = Tác nhân
+chat-pill-card-browser-capability = Mở trang, kiểm tra nội dung và tương tác với các trang web.
 chat-pill-card-command = Chỉ huy
 chat-pill-card-items = { $count } mục
 chat-pill-card-lines = { $count } dòng

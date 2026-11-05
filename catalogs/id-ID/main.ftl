@@ -2847,6 +2847,7 @@ chat-context-compacted-tokens = { $before } → { $after } token
 chat-context-compacted-tooltip-body = Konteks sebelumnya dirangkum untuk mengosongkan ruang. Pesan tetap ada di sini untuk Anda; agen membaca rangkumannya sebagai gantinya.
 chat-context-compacted-tooltip-title = Agen kini bekerja dari rangkuman
 chat-pill-card-agent = Agen
+chat-pill-card-browser-capability = Buka halaman, periksa konten, dan berinteraksi dengan situs web.
 chat-pill-card-command = Komando
 chat-pill-card-items = { $count } item
 chat-pill-card-lines = { $count } baris

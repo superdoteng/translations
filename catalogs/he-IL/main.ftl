@@ -2897,6 +2897,7 @@ chat-context-compacted-tokens = { $before } → { $after } טוקנים
 chat-context-compacted-tooltip-body = ההקשר הקודם סוכם כדי לפנות מקום. ההודעות נשארות כאן לעיונך; הסוכן קורא כעת את הסיכום שלהן.
 chat-context-compacted-tooltip-title = הסוכן עובד כעת על בסיס סיכום
 chat-pill-card-agent = סוכן
+chat-pill-card-browser-capability = פתיחת דפים, בדיקת תוכן ואינטראקציה עם אתרי אינטרנט.
 chat-pill-card-command = פיקוד
 chat-pill-card-items = { $count ->
     [one] פריט אחד

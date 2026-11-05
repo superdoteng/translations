@@ -2992,6 +2992,7 @@ chat-context-compacted-tokens = { $before } → { $after } رمزًا
 chat-context-compacted-tooltip-body = تم تلخيص السياق السابق لإفساح المجال. تبقى الرسائل هنا لتطّلع عليها؛ ويقرأ الوكيل ملخصها بدلًا منها.
 chat-context-compacted-tooltip-title = يعمل الوكيل الآن اعتمادًا على ملخص
 chat-pill-card-agent = وكيل
+chat-pill-card-browser-capability = فتح الصفحات وفحص المحتوى والتفاعل مع مواقع الويب.
 chat-pill-card-command = القيادة
 chat-pill-card-items = { $count ->
     [zero] لا عناصر
