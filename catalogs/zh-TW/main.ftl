@@ -2909,6 +2909,7 @@ chat-context-compacted-tokens = { $before } → { $after } 個詞元
 chat-context-compacted-tooltip-body = 先前的上下文已彙整為摘要以騰出空間。訊息仍會保留在這裡供你查看；代理程式會改為讀取摘要。
 chat-context-compacted-tooltip-title = 代理程式現在根據摘要工作
 chat-pill-card-agent = 代理程式
+chat-pill-card-browser-capability = 開啟頁面、檢查內容並與網站互動。
 chat-pill-card-command = 指令
 chat-pill-card-items = { $count } 個項目
 chat-pill-card-lines = { $count } 行

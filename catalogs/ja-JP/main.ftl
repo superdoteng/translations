@@ -2994,6 +2994,7 @@ chat-context-compacted-tokens = { $before } → { $after } トークン
 chat-context-compacted-tooltip-body = 空きを確保するため、以前のコンテキストが要約されました。メッセージは引き続きここで確認できますが、エージェントは代わりに要約を読みます。
 chat-context-compacted-tooltip-title = エージェントは要約に基づいて作業しています
 chat-pill-card-agent = エージェント
+chat-pill-card-browser-capability = ページを開き、コンテンツを確認し、ウェブサイトを操作します。
 chat-pill-card-command = コマンド
 chat-pill-card-items = { $count } 項目
 chat-pill-card-lines = { $count } 行

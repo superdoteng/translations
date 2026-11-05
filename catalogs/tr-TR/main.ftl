@@ -2848,6 +2848,7 @@ chat-context-compacted-tokens = { $before } → { $after } belirteç
 chat-context-compacted-tooltip-body = Yer açmak için önceki bağlam özetlendi. Mesajlar sizin için burada kalır; ajan bunun yerine özeti okur.
 chat-context-compacted-tooltip-title = Ajan artık bir özet üzerinden çalışıyor
 chat-pill-card-agent = Ajan
+chat-pill-card-browser-capability = Sayfaları açın, içeriği inceleyin ve web siteleriyle etkileşim kurun.
 chat-pill-card-command = Komuta
 chat-pill-card-items = { $count } öğe
 chat-pill-card-lines = { $count } satır

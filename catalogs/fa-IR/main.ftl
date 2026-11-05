@@ -2849,6 +2849,7 @@ chat-context-compacted-tokens = { $before } → { $after } توکن
 chat-context-compacted-tooltip-body = زمینهٔ قبلی برای باز کردن فضا خلاصه شد. پیام‌ها برای شما اینجا می‌مانند؛ عامل به‌جای آن‌ها خلاصه را می‌خواند.
 chat-context-compacted-tooltip-title = عامل اکنون بر اساس یک خلاصه کار می‌کند
 chat-pill-card-agent = عامل
+chat-pill-card-browser-capability = باز کردن صفحه‌ها، بررسی محتوا و تعامل با وب‌سایت‌ها.
 chat-pill-card-command = فرمان
 chat-pill-card-items = { $count } مورد
 chat-pill-card-lines = { $count } خط

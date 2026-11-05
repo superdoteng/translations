@@ -2925,6 +2925,7 @@ chat-context-compacted-tokens = Токены: { $before } → { $after }
 chat-context-compacted-tooltip-body = Предыдущий контекст был обобщён, чтобы освободить место. Сообщения остаются здесь для вас; агент читает их краткое содержание.
 chat-context-compacted-tooltip-title = Теперь агент работает на основе краткого содержания
 chat-pill-card-agent = Агент
+chat-pill-card-browser-capability = Открывать страницы, изучать содержимое и взаимодействовать с сайтами.
 chat-pill-card-command = Командование
 chat-pill-card-items = { $count ->
     [one] { $count } элемент

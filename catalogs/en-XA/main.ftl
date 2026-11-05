@@ -2996,6 +2996,7 @@ data-directory-notice-config = [!! Repository config: use .super.engineering/con
 data-directory-notice-scripts = [!! Script files stay where they are. If you move a script, update the command that runs it. Scripts should read SUPER_ENGINEERING_* variables; the SUPERCONDUCTOR_* names are still exported for now and will be removed in a later release. !!]
 
 chat-pill-card-agent = [!! Àgëñt !!]
+chat-pill-card-browser-capability = [!! Ôṗëñ ṗàĝëš, ïñšṗëçţ çôñţëñţ, àñđ ïñţëŕàçţ ŵïţħ ŵëƀšïţëš. !!]
 chat-pill-card-command = [!! Çômmàñd !!]
 chat-pill-card-items =
     { $count ->

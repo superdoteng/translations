@@ -2849,6 +2849,7 @@ chat-context-compacted-tokens = { $before } → { $after } টোকেন
 chat-context-compacted-tooltip-body = জায়গা করতে আগের প্রসঙ্গের সারাংশ তৈরি করা হয়েছে। বার্তাগুলো আপনার জন্য এখানেই থাকবে; এজেন্ট তার বদলে সারাংশটি পড়ে।
 chat-context-compacted-tooltip-title = এজেন্ট এখন সারাংশের ভিত্তিতে কাজ করে
 chat-pill-card-agent = এজেন্ট
+chat-pill-card-browser-capability = পৃষ্ঠাগুলি খুলুন, বিষয়বস্তু পরীক্ষা করুন এবং ওয়েবসাইটের সঙ্গে ইন্টারঅ্যাক্ট করুন।
 chat-pill-card-command = আদেশ
 chat-pill-card-items = { $count }টি আইটেম
 chat-pill-card-lines = { $count }টি লাইন
