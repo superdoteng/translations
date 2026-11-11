@@ -4786,3 +4786,14 @@ exit-save-failed-title = Unable to save app state
 exit-save-failed-description = Your latest app state has not been saved. { $error }. Retry after fixing storage, or continue without saving.
 exit-restart-without-saving = Restart without saving
 exit-quit-without-saving = Quit without saving
+
+# Per-chat, in-memory Codex usage-limit retry controls.
+chat-usage-resume-enable = Resume when available
+chat-usage-resume-delay = Delay: { $hours }h (change)
+chat-usage-resume-retry = Retry: { $minutes }m (change)
+chat-usage-resume-next = Next resume attempt at { $deadline }
+chat-usage-resume-checking = Checking availability
+chat-usage-resume-status = { $state } · { $attempts } attempts · expires at { $expiry }
+chat-usage-resume-due = Due now
+chat-usage-resume-countdown = in { $hours }h { $minutes }m
+chat-usage-resume-notification = Session resumed after usage limit

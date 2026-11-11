@@ -4104,3 +4104,13 @@ exit-save-failed-title = No se puede guardar el estado de la aplicación
 exit-save-failed-description = No se ha guardado el estado más reciente de la aplicación. { $error }. Corrige el problema de almacenamiento y vuelve a intentarlo, o continúa sin guardar.
 exit-restart-without-saving = Reiniciar sin guardar
 exit-quit-without-saving = Salir sin guardar
+
+chat-usage-resume-enable = Reanudar cuando esté disponible
+chat-usage-resume-delay = Espera: { $hours } h (cambiar)
+chat-usage-resume-retry = Reintentar: cada { $minutes } min (cambiar)
+chat-usage-resume-next = Próximo intento de reanudación a las { $deadline }
+chat-usage-resume-checking = Comprobando disponibilidad
+chat-usage-resume-status = { $state } · { $attempts } intentos · vence a las { $expiry }
+chat-usage-resume-due = Es el momento
+chat-usage-resume-countdown = en { $hours } h { $minutes } min
+chat-usage-resume-notification = Sesión reanudada tras alcanzar el límite de uso

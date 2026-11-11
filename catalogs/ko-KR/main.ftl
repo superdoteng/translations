@@ -4286,3 +4286,13 @@ exit-save-failed-title = 앱 상태를 저장할 수 없음
 exit-save-failed-description = 최신 앱 상태가 저장되지 않았습니다. { $error }. 저장 공간 문제를 해결한 후 다시 시도하거나 저장하지 않고 계속하세요.
 exit-restart-without-saving = 저장하지 않고 다시 시작
 exit-quit-without-saving = 저장하지 않고 종료
+
+chat-usage-resume-enable = 사용 가능해지면 재개
+chat-usage-resume-delay = 대기: { $hours }시간 (변경)
+chat-usage-resume-retry = 재시도: { $minutes }분마다 (변경)
+chat-usage-resume-next = 다음 재개 시도: { $deadline }
+chat-usage-resume-checking = 사용 가능 여부 확인 중
+chat-usage-resume-status = { $state } · 시도 { $attempts }회 · 만료: { $expiry }
+chat-usage-resume-due = 지금 예정됨
+chat-usage-resume-countdown = { $hours }시간 { $minutes }분 후
+chat-usage-resume-notification = 사용량 한도에 도달한 세션을 재개했습니다

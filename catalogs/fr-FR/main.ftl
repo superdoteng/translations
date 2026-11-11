@@ -4107,3 +4107,13 @@ exit-save-failed-title = Impossible d’enregistrer l’état de l’application
 exit-save-failed-description = Le dernier état de votre application n’a pas été enregistré. { $error }. Corrigez le problème de stockage et réessayez, ou continuez sans enregistrer.
 exit-restart-without-saving = Redémarrer sans enregistrer
 exit-quit-without-saving = Quitter sans enregistrer
+
+chat-usage-resume-enable = Reprendre dès que possible
+chat-usage-resume-delay = Délai : { $hours } h (modifier)
+chat-usage-resume-retry = Réessayer toutes les { $minutes } min (modifier)
+chat-usage-resume-next = Prochaine tentative de reprise à { $deadline }
+chat-usage-resume-checking = Vérification de la disponibilité
+chat-usage-resume-status = { $state } · { $attempts } tentatives · expire à { $expiry }
+chat-usage-resume-due = Échéance atteinte
+chat-usage-resume-countdown = dans { $hours } h { $minutes } min
+chat-usage-resume-notification = Session reprise après avoir atteint la limite d’utilisation

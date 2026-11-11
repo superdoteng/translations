@@ -4123,3 +4123,13 @@ exit-save-failed-title = לא ניתן לשמור את מצב היישום
 exit-save-failed-description = מצב היישום העדכני לא נשמר. { $error }. יש לנסות שוב לאחר תיקון בעיית האחסון, או להמשיך ללא שמירה.
 exit-restart-without-saving = הפעל מחדש ללא שמירה
 exit-quit-without-saving = צא ללא שמירה
+
+chat-usage-resume-enable = המשך כשהשימוש יתאפשר
+chat-usage-resume-delay = השהיה: { $hours } שעות (שינוי)
+chat-usage-resume-retry = ניסיון חוזר: כל { $minutes } דקות (שינוי)
+chat-usage-resume-next = ניסיון ההמשך הבא ב־{ $deadline }
+chat-usage-resume-checking = בודק זמינות
+chat-usage-resume-status = { $state } · { $attempts } ניסיונות · יפוג ב־{ $expiry }
+chat-usage-resume-due = הגיע הזמן
+chat-usage-resume-countdown = בעוד { $hours } שעות ו־{ $minutes } דקות
+chat-usage-resume-notification = ההפעלה נמשכה לאחר הגעה למגבלת השימוש

@@ -4001,3 +4001,13 @@ exit-save-failed-title = Uygulama durumu kaydedilemiyor
 exit-save-failed-description = Uygulamanızın en son durumu kaydedilmedi. { $error }. Depolama sorununu giderdikten sonra tekrar deneyin veya kaydetmeden devam edin.
 exit-restart-without-saving = Kaydetmeden yeniden başlat
 exit-quit-without-saving = Kaydetmeden çık
+
+chat-usage-resume-enable = Kullanılabilir olduğunda devam et
+chat-usage-resume-delay = Gecikme: { $hours } saat (değiştir)
+chat-usage-resume-retry = Her { $minutes } dakikada yeniden dene (değiştir)
+chat-usage-resume-next = Sonraki devam etme denemesi: { $deadline }
+chat-usage-resume-checking = Kullanılabilirlik denetleniyor
+chat-usage-resume-status = { $state } · { $attempts } deneme · son geçerlilik: { $expiry }
+chat-usage-resume-due = Zamanı geldi
+chat-usage-resume-countdown = { $hours } saat { $minutes } dakika içinde
+chat-usage-resume-notification = Kullanım sınırına ulaşılan oturum devam ettirildi

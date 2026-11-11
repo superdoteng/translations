@@ -4283,3 +4283,13 @@ exit-save-failed-title = 无法保存应用状态
 exit-save-failed-description = 最新的应用状态尚未保存。{ $error }。请修复存储问题后重试，或不保存并继续。
 exit-restart-without-saving = 不保存并重启
 exit-quit-without-saving = 不保存并退出
+
+chat-usage-resume-enable = 可用时继续
+chat-usage-resume-delay = 等待：{ $hours } 小时（更改）
+chat-usage-resume-retry = 每 { $minutes } 分钟重试（更改）
+chat-usage-resume-next = 下次尝试继续的时间：{ $deadline }
+chat-usage-resume-checking = 正在检查可用性
+chat-usage-resume-status = { $state } · 已尝试 { $attempts } 次 · 到期时间：{ $expiry }
+chat-usage-resume-due = 已到预定时间
+chat-usage-resume-countdown = { $hours } 小时 { $minutes } 分钟后
+chat-usage-resume-notification = 达到使用限额的会话已继续

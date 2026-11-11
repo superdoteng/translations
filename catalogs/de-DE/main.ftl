@@ -4083,3 +4083,13 @@ exit-save-failed-title = App-Zustand konnte nicht gespeichert werden
 exit-save-failed-description = Dein letzter App-Zustand wurde nicht gespeichert. { $error }. Behebe das Speicherproblem und versuche es erneut oder fahre ohne Speichern fort.
 exit-restart-without-saving = Ohne Speichern neu starten
 exit-quit-without-saving = Ohne Speichern beenden
+
+chat-usage-resume-enable = Fortsetzen, sobald verfügbar
+chat-usage-resume-delay = Verzögerung: { $hours } Std. (ändern)
+chat-usage-resume-retry = Erneut versuchen: alle { $minutes } Min. (ändern)
+chat-usage-resume-next = Nächster Fortsetzungsversuch um { $deadline }
+chat-usage-resume-checking = Verfügbarkeit wird geprüft
+chat-usage-resume-status = { $state } · { $attempts } Versuche · läuft um { $expiry } ab
+chat-usage-resume-due = Jetzt fällig
+chat-usage-resume-countdown = in { $hours } Std. { $minutes } Min.
+chat-usage-resume-notification = Sitzung nach Erreichen des Nutzungslimits fortgesetzt

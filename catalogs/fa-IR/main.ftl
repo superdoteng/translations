@@ -3981,3 +3981,13 @@ exit-save-failed-title = ذخیرهٔ وضعیت برنامه ممکن نیست
 exit-save-failed-description = آخرین وضعیت برنامه ذخیره نشده است. { $error }. پس از رفع مشکل فضای ذخیره‌سازی دوباره تلاش کنید، یا بدون ذخیره ادامه دهید.
 exit-restart-without-saving = راه‌اندازی دوباره بدون ذخیره
 exit-quit-without-saving = خروج بدون ذخیره
+
+chat-usage-resume-enable = ادامه در صورت دسترسی
+chat-usage-resume-delay = تأخیر: { $hours } ساعت (تغییر)
+chat-usage-resume-retry = تلاش مجدد: هر { $minutes } دقیقه (تغییر)
+chat-usage-resume-next = تلاش بعدی برای ادامه در { $deadline }
+chat-usage-resume-checking = در حال بررسی دسترسی
+chat-usage-resume-status = { $state } · { $attempts } تلاش · انقضا در { $expiry }
+chat-usage-resume-due = اکنون موعد آن است
+chat-usage-resume-countdown = تا { $hours } ساعت و { $minutes } دقیقه دیگر
+chat-usage-resume-notification = جلسه پس از رسیدن به سقف استفاده ادامه یافت

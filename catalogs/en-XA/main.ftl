@@ -4542,3 +4542,13 @@ exit-save-failed-title = [!! Üñàþľë ţô šàṽë àþþ šţàţë !!]
 exit-save-failed-description = [!! Ÿôüŕ ľàţëšţ àþþ šţàţë ħàš ñôţ þëëñ šàṽëđ. { $error }. Ŕëţŕÿ àƒţëŕ ƒïẋïñĝ šţôŕàĝë, ôŕ çôñţïñüë ŵïţħôüţ šàṽïñĝ. !!]
 exit-restart-without-saving = [!! Ŕëšţàŕţ ŵïţħôüţ šàṽïñĝ !!]
 exit-quit-without-saving = [!! Qüïţ ŵïţħôüţ šàṽïñĝ !!]
+
+chat-usage-resume-enable = Ŕéšûmé ŵħéñ åṽåîļåƀļé
+chat-usage-resume-delay = Ðéļåý: { $hours }ħ (çħåñĝé)
+chat-usage-resume-retry = Ŕéţŕý: { $minutes }ɱ (çħåñĝé)
+chat-usage-resume-next = Ñéẋţ ŕéšûmé åţţéɱþţ åţ { $deadline }
+chat-usage-resume-checking = Çħéçķîñĝ åṽåîļåƀîļîţý
+chat-usage-resume-status = { $state } · { $attempts } åţţéɱþţš · éẋþîŕéš åţ { $expiry }
+chat-usage-resume-due = Ðûé ñøŵ
+chat-usage-resume-countdown = îñ { $hours }ħ { $minutes }ɱ
+chat-usage-resume-notification = Šéššîøñ ŕéšûɱéð åƒţéŕ ûšåĝé ļîɱîţ
