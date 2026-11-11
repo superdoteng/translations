@@ -4123,3 +4123,8 @@ exit-save-failed-title = לא ניתן לשמור את מצב היישום
 exit-save-failed-description = מצב היישום העדכני לא נשמר. { $error }. יש לנסות שוב לאחר תיקון בעיית האחסון, או להמשיך ללא שמירה.
 exit-restart-without-saving = הפעל מחדש ללא שמירה
 exit-quit-without-saving = צא ללא שמירה
+
+issue-report-check-submission = בדיקת השליחה
+issue-report-submission-uncertain = ייתכן שהדיווח הזה כבר נמצא ב-GitHub. בדקו את השליחה כדי למצוא אותו; הבדיקה לעולם אינה מפרסמת שוב. אם הוא עדיין לא נמצא, המתינו ובדקו שוב, או עיינו בבעיות שלכם ב-GitHub לפני השלכת הטיוטה הזו.
+issue-report-discard-uncertain = השלכת הטיוטה (ייתכן שהדיווח כבר קיים)
+issue-report-draft-load-failed = לא ניתן לקרוא את הדיווח השמור שלכם. פתרו את בעיית האחסון והפעילו מחדש את היישום לפני שליחת דיווח נוסף.

@@ -4107,3 +4107,8 @@ exit-save-failed-title = Impossible d’enregistrer l’état de l’application
 exit-save-failed-description = Le dernier état de votre application n’a pas été enregistré. { $error }. Corrigez le problème de stockage et réessayez, ou continuez sans enregistrer.
 exit-restart-without-saving = Redémarrer sans enregistrer
 exit-quit-without-saving = Quitter sans enregistrer
+
+issue-report-check-submission = Vérifier l’envoi
+issue-report-submission-uncertain = Ce rapport se trouve peut-être déjà sur GitHub. Vérifiez l’envoi pour le retrouver ; cette vérification ne le publie jamais à nouveau. S’il reste introuvable, patientez et réessayez, ou consultez vos tickets GitHub avant d’abandonner ce brouillon.
+issue-report-discard-uncertain = Abandonner le brouillon (le rapport existe peut-être déjà)
+issue-report-draft-load-failed = Impossible de lire votre rapport enregistré. Résolvez le problème de stockage et redémarrez l’application avant d’envoyer un autre rapport.

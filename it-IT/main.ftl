@@ -4109,3 +4109,8 @@ exit-save-failed-title = Impossibile salvare lo stato dell’app
 exit-save-failed-description = L’ultimo stato dell’app non è stato salvato. { $error }. Risolvi il problema di archiviazione e riprova, oppure continua senza salvare.
 exit-restart-without-saving = Riavvia senza salvare
 exit-quit-without-saving = Esci senza salvare
+
+issue-report-check-submission = Verifica invio
+issue-report-submission-uncertain = Questa segnalazione potrebbe essere già su GitHub. Verifica l’invio per trovarla; la verifica non la pubblica mai di nuovo. Se non viene ancora trovata, attendi e verifica di nuovo, oppure controlla le tue issue su GitHub prima di eliminare questa bozza.
+issue-report-discard-uncertain = Elimina bozza (la segnalazione potrebbe già esistere)
+issue-report-draft-load-failed = Impossibile leggere la segnalazione salvata. Risolvi il problema di archiviazione e riavvia l’app prima di inviare un’altra segnalazione.
