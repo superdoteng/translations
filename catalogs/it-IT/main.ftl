@@ -1111,8 +1111,6 @@ script-commands-more = { $count } in più
 setup-not-configured = Nessuno script di configurazione configurato
 review-submitted-reviews = Recensioni inviate
 review-ai-questions = AI domande
-review-no-comments = Nessun commento sulle recensioni per ora
-review-select-lines-hint = Seleziona le righe nel differenziale per iniziare una recensione.
 sidebar-ssh = SSH
 shared-context-generate-ai-context = Generare AI contesto
 action-generate = Genera
@@ -1148,7 +1146,6 @@ review-add-to-fix-list = Aggiungi alla lista delle correzioni
 review-submit-replies = Invia risposte
 review-submit-from-tab = Invia dalla scheda Recensioni →
 review-ai-findings = AI rilievi
-review-findings-triage-count = Da esaminare: { $count }
 review-findings-to-triage = Rilievi AI da esaminare: { $count }
 review-finding-should-fix = Da correggere
 review-finding-dismiss = Ignora
@@ -1185,7 +1182,6 @@ context-output = Produzione
 context-total-io = Total I/O
 context-input-effective = Input efficace
 profile-cli-default = CLI predefinito
-review-no-active-comments = Nessun commento attivo sulle recensioni.
 permission-tools = Strumenti
 permission-ask = Chiedi
 permission-yolo = Yolo
@@ -1239,10 +1235,11 @@ chat-thinking-in-progress = Pensando…
 chat-thinking-count = Pensando ({ $count })
 chat-thinking-summary = Pensando · { $summary }
 chat-working-for = In corso da
-chat-agent-wait-caption = { $count ->
-    [one] { $model } riprende quando l’agente risponde
-   *[other] { $model } riprende quando gli agenti rispondono
-}
+chat-agent-wait-caption =
+    { $count ->
+        [one] { $model } riprende al termine dell’attività
+       *[other] { $model } riprende al termine delle attività
+    }
 chat-worked-for = Ha lavorato per { $duration }
 chat-worked = Ha lavorato
 plan-proposed = PIANO PROPOSTO
@@ -1289,7 +1286,6 @@ image-preview-load-failed = Non è riuscito a caricare l'immagine
 hosted-tab-unavailable = Impossibile mostrare questa scheda perché la sua funzionalità non è disponibile.
 file-tree-new-file = Nuovo file
 file-tree-new-folder = Nuova cartella
-review-suggestion = Suggerimento
 pr-merged = Fusione
 pr-closed = Chiuso
 pr-update-available = Aggiornamento disponibile
@@ -1550,9 +1546,6 @@ review-no-pending-comments = Nessun commento sulle recensioni in sospeso
 review-no-enabled-chat-providers = Nessun provider di chat abilitato
 review-no-enabled-agents = Nessun agente abilitato
 
-review-comment-count = Commenti: { $count }
-review-review-count = Recensioni: { $count }
-review-awaiting-reply-count = In attesa di risposte: { $count }
 review-file-count = Fascicoli: { $count }
 
 settings-ai-codex-profile-directory-missing = Codex elenco profilo non trovato. Crealo prima di lanciare questo profilo.
@@ -2685,8 +2678,6 @@ shared-context-depth-simple-tooltip = Configurazione veloce con scansioni legger
 shared-context-depth-thorough = Approfondito
 shared-context-depth-thorough-summary = Prima fai il colloquio, poi analizza il codice prima di generare le linee guida per lo spazio di lavoro.
 shared-context-depth-thorough-tooltip = Fa domande chiarie, conferma gli obiettivi, poi fa un passaggio più approfondito del codice.
-right-panel-show-gitignored-files = Mostra file gitignorati
-right-panel-hide-gitignored-files = Nascondi file gitignorati
 workspace-hold-command-for-chat-ui = Tieni premuto ⌘ per l'interfaccia della chat
 workspace-hold-command-for-terminal = Tieni premuto ⌘ per il Terminal
 tool-picker-no-matches = Nessun risultato
@@ -4110,6 +4101,325 @@ exit-save-failed-description = L’ultimo stato dell’app non è stato salvato.
 exit-restart-without-saving = Riavvia senza salvare
 exit-quit-without-saving = Esci senza salvare
 
+settings-experimental-resource-monitor-label = Monitor risorse
+settings-experimental-resource-monitor-description = Mostra il pulsante Risorse nella barra del titolo, con memoria e CPU per ogni worktree, scheda e processo di supporto.
+settings-search-section-resources = Risorse
+settings-search-entry-appearance-resources-show-freeable-memory-label = Mostra memoria liberabile
+settings-search-entry-appearance-resources-show-freeable-memory-description = Mostra sul pulsante Risorse quanta memoria si libererebbe sospendendo le schede inattive, e lo colora quando la memoria del Mac è sotto pressione.
+settings-section-resources = Risorse
+chat-queued-waiting-to-steer = In attesa di reindirizzare
+chat-queued-action-no-longer-queued = Questo messaggio non è più in coda.
+chat-queued-steer-failed = Impossibile reindirizzare con questo messaggio.
+chat-queued-change-failed = Impossibile modificare questo messaggio.
+changes-empty-detail = Le modifiche che tu o i tuoi agenti fate in questo worktree compaiono qui.
+changes-empty-turns = Ancora nessun turno
+changes-empty-turns-detail = Quando un agente modifica dei file, compaiono qui sotto il turno che li ha modificati.
+changes-empty-commits = Ancora nessun commit
+changes-empty-commits-detail = I commit su questo branch compaiono qui.
+changes-empty-all-viewed = Tutto visualizzato
+changes-empty-all-viewed-detail = Hai aperto tutti i file modificati.
+review-delivery-prepared = Preparato in { $target }
+review-delivery-sent = Inviato a { $target }
+review-delivery-dispatched = Inviato a { $target } in background
+review-delivery-a-chat = una chat
+review-delivery-a-terminal = un terminale
+review-location-whole-file = Intero file
+review-tooltip-more-lines =
+    { $count ->
+        [one] 1 altra riga
+       *[other] altre { $count } righe
+    }
+review-location-line = Riga { $line }
+review-location-lines = Righe { $start }–{ $end }
+review-pending-summary =
+    { $files ->
+        [one]
+            { $comments ->
+                [one] 1 commento
+               *[other] { $comments } commenti
+            }
+       *[other] { $comments } commenti in { $files } file
+    }
+review-view-open = Aperti
+review-view-done = Completati
+review-your-comments = I tuoi commenti
+review-nothing-to-review = Niente da revisionare
+review-nothing-to-review-detail = I commenti che lasci su un diff e i thread di revisione della tua pull request compaiono qui.
+review-review-changes = Revisiona le modifiche
+review-comment-hint = oppure seleziona delle righe in un diff per commentare
+review-all-caught-up = Tutto in pari
+review-all-caught-up-detail = Nessuna azione richiesta da te.
+review-see-done = Vedi cosa è completato
+review-nothing-done = Ancora niente di completato
+review-nothing-done-detail = I commenti che invii e i thread risolti compaiono qui.
+review-pull-request = Pull request #{ $number }
+review-pull-request-untitled = Pull request
+review-waiting-on-reviewers = Nessuno ha ancora commentato #{ $number }.
+review-resolved-on-pr = Risolto su #{ $number }
+review-pr-refresh = Aggiorna i commenti della pull request
+review-pr-loading = Caricamento dei commenti…
+review-pr-load-failed = Impossibile caricare i commenti della pull request. Aggiorna per riprovare.
+review-pr-older-hidden = I thread meno recenti non sono mostrati.
+review-pr-overview-truncated = Altri thread non sono mostrati qui.
+review-thread-resolve = Risolvi
+review-thread-unresolve = Riapri
+review-thread-resolving = Risoluzione…
+review-thread-unresolving = Riapertura…
+review-thread-update-failed = Impossibile aggiornare. Riprova.
+review-thread-outdated = Obsoleto
+review-thread-byline =
+    { $replies ->
+        [0] { $author } ha commentato { $age }
+        [one] { $author } ha commentato { $age }, 1 risposta
+       *[other] { $author } ha commentato { $age }, { $replies } risposte
+    }
+checks-path-to-merge = Verso il merge
+checks-step-committed = Modifiche nel commit
+checks-step-pushed = Push eseguito
+checks-step-unpushed =
+    { $count ->
+        [one] { $count } commit da inviare con push
+       *[other] { $count } commit da inviare con push
+    }
+checks-step-review-open = { $kind } aperta
+checks-step-checks = Controlli
+checks-step-running = Controlli in corso
+checks-behind-target =
+    { $count ->
+        [one] { $count } commit indietro rispetto a { $target }
+       *[other] { $count } commit indietro rispetto a { $target }
+    }
+right-panel-view-options = Opzioni di visualizzazione
+right-panel-view-changes = Modifiche
+right-panel-view-gitignored-files = File gitignorati
+diff-viewed-toggle = Visualizzato
+diff-since-viewed-note = { $agent } l’ha modificato dopo che l’hai visualizzato. Vengono mostrate le modifiche da allora.
+diff-since-viewed-note-unattributed = Questo file è cambiato dopo che l’hai visualizzato. Vengono mostrate le modifiche da allora.
+diff-since-viewed-show-full = Mostra il diff completo
+diff-turn-review-writing = Scrittura della revisione…
+diff-turn-review-passed = superato
+diff-turn-review-failed = non riuscito
+diff-turn-review-not-checked = Non controllato: { $what }
+diff-turn-review-more-checks = altri { $count }
+diff-turn-review-looks-good = Sembra tutto a posto
+diff-turn-review-comment-hint = Commenta una riga per chiedere modifiche
+right-sidebar-new = Nuovo
+right-sidebar-show-comments = Mostra commenti
+right-sidebar-hint-move = Sposta
+right-sidebar-hint-viewed = Visualizzato
+right-sidebar-hint-next-unviewed = Successivo non visualizzato
+right-sidebar-hint-open = Apri
+right-sidebar-commit-message = Messaggio di commit
+right-sidebar-writing-message = Scrittura del messaggio
+right-sidebar-write-message = Scrivi un messaggio
+right-sidebar-commit-file-count =
+    { $count ->
+        [one] 1 file
+       *[other] { $count } file
+    }
+right-sidebar-commit = Commit
+right-sidebar-commit-and-push = Commit e push
+right-sidebar-amend-last-commit = Modifica l’ultimo commit
+right-sidebar-committing = Commit in corso
+right-sidebar-committed = Commit eseguito
+right-sidebar-push = Push
+right-sidebar-unviewed = Non visualizzato
+changes-file-count =
+    { $count ->
+        [one] 1 file
+       *[other] { $count } file
+    }
+right-sidebar-mark-all-viewed =
+    { $count ->
+        [one] Segna 1 file come visualizzato
+       *[other] Segna tutti i { $count } file come visualizzati
+    }
+right-sidebar-all-viewed = Tutti i file visualizzati
+right-sidebar-viewed = Visualizzato
+right-sidebar-changed-since-viewed = Modificato dopo che l’hai visualizzato
+right-sidebar-changed-since-viewed-by = { $agent } l’ha modificato dopo che l’hai visualizzato
+right-sidebar-changed-since-viewed-count =
+    { $count ->
+        [one] 1 file modificato dopo che l’hai visualizzato
+       *[other] { $count } file modificati dopo che li hai visualizzati
+    }
+right-sidebar-view-all = Tutti
+right-sidebar-view-turns = Turni
+right-sidebar-turn-working = In corso
+right-sidebar-other-changes = Altre modifiche
+right-sidebar-probable-file = Modificato durante questo turno
+right-sidebar-probable-file-detail = Non segnalato dai suoi strumenti, quindi potrebbe essere una modifica di qualcun altro. Confermato al termine del turno.
+resources-title = Risorse
+resources-search = Cerca risorse o progetti
+resources-search-tooltip = Cerca
+resources-remote = Remoto
+resources-asleep = In sospensione
+resources-held-info = Schermate e chat recente conservate nella memoria dell’app così questo worktree si riapre all’istante; sono conteggiate in App sotto In sospensione. Le schermate vengono liberate dopo 15 minuti di sospensione.
+resources-cpu = CPU
+resources-cpu-history = CPU nell’ultimo minuto. La cronologia si accumula mentre Risorse è aperto.
+resources-reclaim =
+    { $count ->
+        [one] 1 scheda inattiva può essere sospesa e liberare circa { $memory }
+       *[other] { $count } schede inattive possono essere sospese e liberare circa { $memory }
+    }
+resources-sleep-idle = Sospendi inattive
+resources-freed = Liberati { $memory }
+resources-sleep = Sospendi
+resources-sleep-tooltip = Libera i suoi processi. Si riattiva con la sua cronologia quando la apri.
+resources-wake = Riattiva
+resources-stop = Arresta
+resources-stop-confirm = Arrestare { $name }?
+resources-stop-consequence = Il lavoro in corso verrà interrotto.
+resources-cancel = Annulla
+resources-exited = Terminato
+resources-exited-just-now = Terminato poco fa
+resources-exited-minutes = Terminato { $minutes } min fa
+resources-exited-hours = Terminato { $hours } h fa
+resources-cpu-row = { $percent }% CPU
+resources-origin-tab = Scheda terminale
+resources-origin-launched = Avviato da { $tab }
+resources-origin-run-script = Script di esecuzione
+resources-origin-panel = Terminale del pannello
+resources-origin-setup = Comando di configurazione
+resources-origin-git = Azione Git
+resources-origin-review = Revisione
+resources-activity-running = Esegue { $process }
+resources-activity-busy = In esecuzione
+resources-activity-idle = Inattivo
+resources-app = App
+resources-browser-services = Servizi del browser
+resources-browser-graphics = Grafica
+resources-browser-networking = Rete
+resources-background = Processi in background
+resources-background-pid = PID { $pid }
+resources-app-graphics = Grafica
+resources-app-graphics-info = Superfici delle finestre e memoria GPU
+resources-app-held-for-reuse = Trattenuta per il riuso
+resources-app-saved-wake = In sospensione
+resources-app-code-system = Codice e sistema
+resources-app-chats = Chat
+resources-app-chats-open = Aperte: { $count }
+resources-app-chats-idle = Inattive: { $count }
+resources-app-chats-history = Cronologia chat
+resources-app-terminals = Terminali
+resources-app-terminals-count =
+    { $count ->
+        [one] 1 terminale
+       *[other] { $count } terminali
+    }
+resources-app-terminals-lines =
+    { $count ->
+        [one] 1 riga
+       *[other] { $count } righe
+    }
+resources-app-saved-count =
+    { $count ->
+        [one] 1 worktree
+       *[other] { $count } worktree
+    }
+resources-app-saved-info = Memoria conservata per i worktree sospesi, così si riaprono all’istante
+resources-app-background-count =
+    { $count ->
+        [one] 1 processo
+       *[other] { $count } processi
+    }
+resources-app-background-info = Git, comandi di supporto e strumenti degli agenti che l’app esegue e che non appartengono a nessun worktree
+resources-app-background-brief = Comandi brevi
+resources-app-other-data = Dati
+resources-app-other-detail = Cresce con progetti e worktree
+resources-app-held-for-reuse-detail = Trattenuta dall’allocatore per il riuso
+resources-app-code-system-detail = Codice del programma e librerie di sistema
+resources-estimated = Stimato
+resources-sleep-idle-chats = Sospendi chat inattive
+resources-sleep-idle-chats-confirm =
+    { $count ->
+        [one] Sospendere 1 chat inattiva?
+       *[other] Sospendere { $count } chat inattive?
+    }
+resources-frees-about = Libera circa { $memory }
+resources-clear = Cancella
+resources-clear-confirm =
+    { $lines ->
+        [one] Cancellare 1 riga della cronologia?
+       *[other] Cancellare { $lines } righe della cronologia?
+    }
+resources-clear-consequence = Lo schermo resta invariato.
+resources-clear-scrollback = Cancella cronologia
+resources-clear-all-confirm =
+    { $count ->
+        [one] Cancellare la cronologia di 1 terminale?
+       *[other] Cancellare la cronologia di { $count } terminali?
+    }
+resources-chat-sleep-running = Sta eseguendo un turno. Potrà essere sospesa al termine del turno.
+resources-chat-sleep-waiting = In attesa della tua risposta. Potrà essere sospesa dopo che avrai risposto.
+resources-chat-sleep-unseen = Ha una risposta che non hai visto. Potrà essere sospesa dopo che l’avrai letta.
+resources-chat-sleep-kept-ready = Tenuta pronta per un rapido ritorno al suo worktree.
+resources-chat-sleep-on-screen = Sullo schermo. Potrà essere sospesa quando non sarà più visibile.
+resources-chat-sleep-queued = Ci sono messaggi in coda. Potrà essere sospesa dopo che saranno stati inviati.
+resources-chat-sleep-busy = Occupata al momento. Riprova tra poco.
+resources-info-title = Ripartizione di { $total }
+resources-info-summary = L’app, più tutto ciò che ha avviato per te.
+resources-info-app = super.engineering
+resources-info-app-hint = L’app e i processi di supporto che esegue
+resources-info-agents-hint = L’agente di ogni chat e gli strumenti che esegue
+resources-info-browser = Schede del browser
+resources-info-browser-hint = Ogni pagina viene eseguita in un proprio processo
+resources-info-terminals-hint = Shell, script di esecuzione e ciò che hanno avviato
+resources-info-remote = I worktree remoti non vengono ancora misurati.
+resources-pressure-warning = La memoria del Mac è sotto pressione. super.engineering usa { $used } su { $ram }.
+resources-pressure-warning-short = La memoria del Mac è sotto pressione.
+resources-pressure-critical = La memoria del Mac è criticamente bassa. super.engineering usa { $used } su { $ram }.
+resources-pressure-critical-others = La memoria del Mac è criticamente bassa, soprattutto a causa di altre app. super.engineering usa { $used } su { $ram }.
+resources-pressure-critical-short = La memoria del Mac è criticamente bassa.
+resources-thermal = Il Mac si sta surriscaldando e potrebbe rallentare.
+resources-measurements-unavailable = Memoria e CPU non sono disponibili al momento. Puoi comunque aprire e gestire le schede.
+resources-loading = Caricamento delle risorse…
+resources-empty = Nessuna risorsa corrispondente.
+resources-empty-all = Niente in esecuzione.
+resources-empty-agents = Nessun agente in esecuzione.
+resources-empty-browser = Nessuna scheda del browser aperta.
+resources-empty-terminals = Nessun terminale in esecuzione.
+resources-tab-all = Tutti
+resources-tab-agents = Agenti
+resources-tab-browser = Browser
+resources-tab-terminals = Terminali
+resources-fact-agents =
+    { $count ->
+        [one] agente
+       *[other] agenti
+    }
+resources-fact-browser-tabs =
+    { $count ->
+        [one] scheda del browser
+       *[other] schede del browser
+    }
+resources-fact-terminals =
+    { $count ->
+        [one] terminale
+       *[other] terminali
+    }
+resources-on-screen = Sullo schermo, quindi resta attiva
+resources-open = Apri
+resources-close = Chiudi
+resources-close-confirm = Chiudere { $name }?
+resources-close-consequence = La sua pagina si chiude.
+resources-average-title = Media per agente
+resources-average-each = Per agente
+resources-average-ten = 10 agenti
+resources-average-each-suffix = ciascuno
+resources-average-for-ten = per 10
+resources-tree-more = +{ $count } altri
+resources-app-item-detail = { $activity }, { $lines }
+resources-app-more-chats =
+    { $count ->
+        [one] 1 altra chat
+       *[other] altre { $count } chat
+    }
+resources-app-more-terminals =
+    { $count ->
+        [one] 1 altro terminale
+       *[other] altri { $count } terminali
+    }
 issue-report-check-submission = Verifica invio
 issue-report-submission-uncertain = Questa segnalazione potrebbe essere già su GitHub. Verifica l’invio per trovarla; la verifica non la pubblica mai di nuovo. Se non viene ancora trovata, attendi e verifica di nuovo, oppure controlla le tue issue su GitHub prima di eliminare questa bozza.
 issue-report-discard-uncertain = Elimina bozza (la segnalazione potrebbe già esistere)

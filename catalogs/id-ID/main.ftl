@@ -1106,8 +1106,6 @@ script-commands-more = { $count } lainnya
 setup-not-configured = Tidak ada skrip setup yang dikonfigurasi
 review-submitted-reviews = Ulasan yang dikirimkan
 review-ai-questions = AI pertanyaan
-review-no-comments = Belum ada komentar ulasan
-review-select-lines-hint = Pilih baris di diff untuk memulai tinjauan.
 sidebar-ssh = SSH
 shared-context-generate-ai-context = Buat Konteks AI
 action-generate = Menghasilkan
@@ -1143,7 +1141,6 @@ review-add-to-fix-list = Tambahkan ke Daftar Perbaikan
 review-submit-replies = Kirim Balasan
 review-submit-from-tab = Kirim dari tab Review →
 review-ai-findings = AI temuan
-review-findings-triage-count = Perlu ditinjau: { $count }
 review-findings-to-triage = Temuan AI yang perlu ditinjau: { $count }
 review-finding-should-fix = Perlu diperbaiki
 review-finding-dismiss = Abaikan
@@ -1180,7 +1177,6 @@ context-output = Output
 context-total-io = Total I/O
 context-input-effective = Input efektif
 profile-cli-default = CLI default
-review-no-active-comments = Tidak ada komentar ulasan aktif.
 permission-tools = Alat
 permission-ask = Tanya
 permission-yolo = yolo
@@ -1234,10 +1230,11 @@ chat-thinking-in-progress = Berpikir…
 chat-thinking-count = Berpikir ({ $count })
 chat-thinking-summary = Berpikir · { $summary }
 chat-working-for = Bekerja selama
-chat-agent-wait-caption = { $count ->
-    [1] { $model } melanjutkan setelah agen melapor kembali
-   *[other] { $model } melanjutkan setelah para agen melapor kembali
-}
+chat-agent-wait-caption =
+    { $count ->
+        [one] { $model } melanjutkan setelah selesai
+       *[other] { $model } melanjutkan setelah semuanya selesai
+    }
 chat-worked-for = Bekerja selama { $duration }
 chat-worked = Bekerja
 plan-proposed = RENCANA YANG DIUSULKAN
@@ -1284,7 +1281,6 @@ image-preview-load-failed = Gagal memuat gambar
 hosted-tab-unavailable = Tab ini tidak dapat ditampilkan karena fiturnya tidak tersedia.
 file-tree-new-file = File Baru
 file-tree-new-folder = Folder Baru
-review-suggestion = saran
 pr-merged = digabungkan
 pr-closed = Tutup
 pr-update-available = Pembaruan tersedia
@@ -1545,9 +1541,6 @@ review-no-pending-comments = Tidak ada komentar ulasan yang tertunda
 review-no-enabled-chat-providers = Tidak ada penyedia chat yang diaktifkan
 review-no-enabled-agents = Tidak ada agen yang diaktifkan
 
-review-comment-count = Komentar: { $count }
-review-review-count = Ulasan: { $count }
-review-awaiting-reply-count = Menunggu balasan: { $count }
 review-file-count = Berkas: { $count }
 
 settings-ai-codex-profile-directory-missing = Codex direktori profil tidak ditemukan. Buat sebelum membuka profil ini.
@@ -2648,8 +2641,6 @@ shared-context-depth-simple-tooltip = Pengaturan cepat dengan pemindaian ringan 
 shared-context-depth-thorough = teliti
 shared-context-depth-thorough-summary = Wawancara terlebih dahulu, lalu analisis basis kode sebelum membuat panduan ruang kerja.
 shared-context-depth-thorough-tooltip = Mengajukan pertanyaan klarifikasi, mengonfirmasi tujuan, lalu melakukan kode yang lebih dalam.
-right-panel-show-gitignored-files = Tampilkan file gitignored
-right-panel-hide-gitignored-files = Sembunyikan file gitignored
 workspace-hold-command-for-chat-ui = Tahan ⌘ untuk UI Chat
 workspace-hold-command-for-terminal = Tahan ⌘ untuk Terminal
 tool-picker-no-matches = Tidak ada yang cocok
@@ -3963,6 +3954,325 @@ exit-save-failed-description = Status aplikasi terbaru belum disimpan. { $error 
 exit-restart-without-saving = Mulai ulang tanpa menyimpan
 exit-quit-without-saving = Keluar tanpa menyimpan
 
+settings-experimental-resource-monitor-label = Pemantau sumber daya
+settings-experimental-resource-monitor-description = Tampilkan tombol Sumber Daya di bilah judul, dengan memori dan CPU untuk setiap worktree, tab, dan proses pembantu.
+settings-search-section-resources = Sumber Daya
+settings-search-entry-appearance-resources-show-freeable-memory-label = Tampilkan memori yang dapat dibebaskan
+settings-search-entry-appearance-resources-show-freeable-memory-description = Tampilkan di tombol Sumber Daya berapa banyak memori yang akan dibebaskan dengan menidurkan tab yang menganggur, dan beri warna saat memori Mac Anda tertekan.
+settings-section-resources = Sumber Daya
+chat-queued-waiting-to-steer = Menunggu untuk mengarahkan
+chat-queued-action-no-longer-queued = Pesan ini tidak lagi dalam antrean.
+chat-queued-steer-failed = Tidak dapat mengarahkan dengan pesan ini.
+chat-queued-change-failed = Tidak dapat mengubah pesan ini.
+changes-empty-detail = Suntingan yang Anda atau agen Anda buat di worktree ini muncul di sini.
+changes-empty-turns = Belum ada giliran
+changes-empty-turns-detail = Saat agen mengubah berkas, berkas tersebut muncul di sini di bawah giliran yang mengubahnya.
+changes-empty-commits = Belum ada commit
+changes-empty-commits-detail = Commit di cabang ini muncul di sini.
+changes-empty-all-viewed = Semua sudah dilihat
+changes-empty-all-viewed-detail = Anda sudah membuka semua berkas yang berubah.
+review-delivery-prepared = Disiapkan di { $target }
+review-delivery-sent = Dikirim ke { $target }
+review-delivery-dispatched = Dikirim ke { $target } di latar belakang
+review-delivery-a-chat = sebuah chat
+review-delivery-a-terminal = sebuah terminal
+review-location-whole-file = Seluruh berkas
+review-tooltip-more-lines =
+    { $count ->
+        [one] { $count } baris lagi
+       *[other] { $count } baris lagi
+    }
+review-location-line = Baris { $line }
+review-location-lines = Baris { $start }–{ $end }
+review-pending-summary =
+    { $files ->
+        [one]
+            { $comments ->
+                [one] { $comments } komentar
+               *[other] { $comments } komentar
+            }
+       *[other] { $comments } komentar di { $files } berkas
+    }
+review-view-open = Terbuka
+review-view-done = Selesai
+review-your-comments = Komentar Anda
+review-nothing-to-review = Tidak ada yang perlu diulas
+review-nothing-to-review-detail = Komentar yang Anda tinggalkan di diff, dan utas ulasan pull request Anda, muncul di sini.
+review-review-changes = Ulas perubahan
+review-comment-hint = atau pilih baris di diff mana pun untuk berkomentar
+review-all-caught-up = Semua sudah beres
+review-all-caught-up-detail = Tidak ada yang menunggu Anda.
+review-see-done = Lihat yang sudah selesai
+review-nothing-done = Belum ada yang selesai
+review-nothing-done-detail = Komentar yang Anda kirim dan utas yang diselesaikan muncul di sini.
+review-pull-request = Pull request #{ $number }
+review-pull-request-untitled = Pull request
+review-waiting-on-reviewers = Belum ada yang berkomentar di #{ $number }.
+review-resolved-on-pr = Diselesaikan di #{ $number }
+review-pr-refresh = Muat ulang komentar pull request
+review-pr-loading = Memuat komentar…
+review-pr-load-failed = Tidak dapat memuat komentar pull request. Muat ulang untuk mencoba lagi.
+review-pr-older-hidden = Utas lama tidak ditampilkan.
+review-pr-overview-truncated = Utas lainnya tidak ditampilkan di sini.
+review-thread-resolve = Selesaikan
+review-thread-unresolve = Buka lagi
+review-thread-resolving = Menyelesaikan…
+review-thread-unresolving = Membuka lagi…
+review-thread-update-failed = Tidak dapat memperbarui. Coba lagi.
+review-thread-outdated = Usang
+review-thread-byline =
+    { $replies ->
+        [0] { $author } berkomentar { $age }
+        [one] { $author } berkomentar { $age }, 1 balasan
+       *[other] { $author } berkomentar { $age }, { $replies } balasan
+    }
+checks-path-to-merge = Jalan menuju merge
+checks-step-committed = Perubahan sudah di-commit
+checks-step-pushed = Sudah di-push
+checks-step-unpushed =
+    { $count ->
+        [one] { $count } commit untuk di-push
+       *[other] { $count } commit untuk di-push
+    }
+checks-step-review-open = { $kind } terbuka
+checks-step-checks = Pemeriksaan
+checks-step-running = Pemeriksaan berjalan
+checks-behind-target =
+    { $count ->
+        [one] { $count } commit di belakang { $target }
+       *[other] { $count } commit di belakang { $target }
+    }
+right-panel-view-options = Opsi tampilan
+right-panel-view-changes = Perubahan
+right-panel-view-gitignored-files = Berkas yang diabaikan Git
+diff-viewed-toggle = Dilihat
+diff-since-viewed-note = { $agent } mengubah ini setelah Anda melihatnya. Menampilkan perubahan sejak saat itu.
+diff-since-viewed-note-unattributed = Berkas ini berubah setelah Anda melihatnya. Menampilkan perubahan sejak saat itu.
+diff-since-viewed-show-full = Tampilkan diff lengkap
+diff-turn-review-writing = Menulis ulasan…
+diff-turn-review-passed = lolos
+diff-turn-review-failed = gagal
+diff-turn-review-not-checked = Tidak diperiksa: { $what }
+diff-turn-review-more-checks = { $count } lagi
+diff-turn-review-looks-good = Tampak bagus
+diff-turn-review-comment-hint = Komentari sebuah baris untuk meminta perubahan
+right-sidebar-new = Baru
+right-sidebar-show-comments = Tampilkan komentar
+right-sidebar-hint-move = Pindah
+right-sidebar-hint-viewed = Dilihat
+right-sidebar-hint-next-unviewed = Berikutnya yang belum dilihat
+right-sidebar-hint-open = Buka
+right-sidebar-commit-message = Pesan commit
+right-sidebar-writing-message = Menulis pesan
+right-sidebar-write-message = Tulis pesan
+right-sidebar-commit-file-count =
+    { $count ->
+        [one] { $count } berkas
+       *[other] { $count } berkas
+    }
+right-sidebar-commit = Commit
+right-sidebar-commit-and-push = Commit dan push
+right-sidebar-amend-last-commit = Ubah commit terakhir
+right-sidebar-committing = Melakukan commit
+right-sidebar-committed = Sudah di-commit
+right-sidebar-push = Push
+right-sidebar-unviewed = Belum dilihat
+changes-file-count =
+    { $count ->
+        [one] { $count } berkas
+       *[other] { $count } berkas
+    }
+right-sidebar-mark-all-viewed =
+    { $count ->
+        [one] Tandai { $count } berkas sudah dilihat
+       *[other] Tandai semua { $count } berkas sudah dilihat
+    }
+right-sidebar-all-viewed = Semua berkas sudah dilihat
+right-sidebar-viewed = Dilihat
+right-sidebar-changed-since-viewed = Berubah sejak Anda melihatnya
+right-sidebar-changed-since-viewed-by = { $agent } mengubah ini sejak Anda melihatnya
+right-sidebar-changed-since-viewed-count =
+    { $count ->
+        [one] { $count } berkas berubah sejak Anda melihatnya
+       *[other] { $count } berkas berubah sejak Anda melihatnya
+    }
+right-sidebar-view-all = Semua
+right-sidebar-view-turns = Giliran
+right-sidebar-turn-working = Bekerja
+right-sidebar-other-changes = Perubahan lain
+right-sidebar-probable-file = Berubah saat giliran ini berjalan
+right-sidebar-probable-file-detail = Tidak dilaporkan oleh alatnya, jadi mungkin ini suntingan orang lain. Dipastikan saat giliran berakhir.
+resources-title = Sumber Daya
+resources-search = Cari sumber daya atau proyek
+resources-search-tooltip = Cari
+resources-remote = Jarak jauh
+resources-asleep = Tertidur
+resources-held-info = Layar dan chat terbaru disimpan di memori aplikasi agar worktree ini terbuka kembali seketika, dihitung di Aplikasi pada Tertidur. Layar dilepas setelah 15 menit tertidur.
+resources-cpu = CPU
+resources-cpu-history = CPU selama satu menit terakhir. Riwayat terkumpul selama Sumber Daya terbuka.
+resources-reclaim =
+    { $count ->
+        [one] { $count } tab yang menganggur dapat ditidurkan dan membebaskan sekitar { $memory }
+       *[other] { $count } tab yang menganggur dapat ditidurkan dan membebaskan sekitar { $memory }
+    }
+resources-sleep-idle = Tidurkan yang menganggur
+resources-freed = { $memory } dibebaskan
+resources-sleep = Tidurkan
+resources-sleep-tooltip = Membebaskan prosesnya. Bangun kembali beserta riwayatnya saat Anda membukanya.
+resources-wake = Bangunkan
+resources-stop = Hentikan
+resources-stop-confirm = Hentikan { $name }?
+resources-stop-consequence = Pekerjaan yang sedang berjalan akan terputus.
+resources-cancel = Batal
+resources-exited = Keluar
+resources-exited-just-now = Baru saja keluar
+resources-exited-minutes = Keluar { $minutes } mnt lalu
+resources-exited-hours = Keluar { $hours } jam lalu
+resources-cpu-row = CPU { $percent }%
+resources-origin-tab = Tab terminal
+resources-origin-launched = Dimulai oleh { $tab }
+resources-origin-run-script = Skrip Run
+resources-origin-panel = Terminal panel
+resources-origin-setup = Perintah setup
+resources-origin-git = Aksi Git
+resources-origin-review = Ulasan
+resources-activity-running = Menjalankan { $process }
+resources-activity-busy = Berjalan
+resources-activity-idle = Menganggur
+resources-app = Aplikasi
+resources-browser-services = Layanan browser
+resources-browser-graphics = Grafis
+resources-browser-networking = Jaringan
+resources-background = Proses latar belakang
+resources-background-pid = PID { $pid }
+resources-app-graphics = Grafis
+resources-app-graphics-info = Permukaan jendela dan memori GPU
+resources-app-held-for-reuse = Disimpan untuk dipakai ulang
+resources-app-saved-wake = Tertidur
+resources-app-code-system = Kode dan sistem
+resources-app-chats = Chat
+resources-app-chats-open = { $count } terbuka
+resources-app-chats-idle = { $count } menganggur
+resources-app-chats-history = Riwayat chat
+resources-app-terminals = Terminal
+resources-app-terminals-count =
+    { $count ->
+        [one] { $count } terminal
+       *[other] { $count } terminal
+    }
+resources-app-terminals-lines =
+    { $count ->
+        [one] { $count } baris
+       *[other] { $count } baris
+    }
+resources-app-saved-count =
+    { $count ->
+        [one] { $count } worktree
+       *[other] { $count } worktree
+    }
+resources-app-saved-info = Memori yang disimpan untuk worktree yang tertidur agar terbuka kembali seketika
+resources-app-background-count =
+    { $count ->
+        [one] { $count } proses
+       *[other] { $count } proses
+    }
+resources-app-background-info = Git, perintah pembantu, dan alat agen yang dijalankan aplikasi tanpa dimiliki worktree mana pun
+resources-app-background-brief = Perintah singkat
+resources-app-other-data = Data
+resources-app-other-detail = Bertambah seiring proyek dan worktree
+resources-app-held-for-reuse-detail = Disimpan oleh alokator untuk dipakai ulang
+resources-app-code-system-detail = Kode program dan pustaka sistem
+resources-estimated = Perkiraan
+resources-sleep-idle-chats = Tidurkan chat yang menganggur
+resources-sleep-idle-chats-confirm =
+    { $count ->
+        [one] Tidurkan { $count } chat yang menganggur?
+       *[other] Tidurkan { $count } chat yang menganggur?
+    }
+resources-frees-about = Membebaskan sekitar { $memory }
+resources-clear = Bersihkan
+resources-clear-confirm =
+    { $lines ->
+        [one] Bersihkan { $lines } baris riwayat gulir?
+       *[other] Bersihkan { $lines } baris riwayat gulir?
+    }
+resources-clear-consequence = Layar tetap seperti semula.
+resources-clear-scrollback = Bersihkan riwayat gulir
+resources-clear-all-confirm =
+    { $count ->
+        [one] Bersihkan riwayat gulir di { $count } terminal?
+       *[other] Bersihkan riwayat gulir di { $count } terminal?
+    }
+resources-chat-sleep-running = Sedang menjalankan giliran. Dapat ditidurkan setelah giliran berakhir.
+resources-chat-sleep-waiting = Menunggu jawaban Anda. Dapat ditidurkan setelah Anda menjawab.
+resources-chat-sleep-unseen = Ada balasan yang belum Anda lihat. Dapat ditidurkan setelah Anda membacanya.
+resources-chat-sleep-kept-ready = Tetap siap agar Anda bisa cepat kembali ke worktree-nya.
+resources-chat-sleep-on-screen = Ada di layar. Dapat ditidurkan setelah tidak terlihat.
+resources-chat-sleep-queued = Ada pesan dalam antrean. Dapat ditidurkan setelah pesan terkirim.
+resources-chat-sleep-busy = Sedang sibuk. Coba lagi sebentar lagi.
+resources-info-title = Ke mana { $total } digunakan
+resources-info-summary = Aplikasi, beserta semua yang dimulainya untuk Anda.
+resources-info-app = super.engineering
+resources-info-app-hint = Aplikasi dan proses pembantu yang dijalankannya
+resources-info-agents-hint = Agen setiap chat dan alat yang dijalankannya
+resources-info-browser = Tab browser
+resources-info-browser-hint = Setiap halaman berjalan dalam prosesnya sendiri
+resources-info-terminals-hint = Shell, skrip Run, dan apa yang dimulainya
+resources-info-remote = Worktree jarak jauh belum diukur.
+resources-pressure-warning = Memori Mac sedang tertekan. super.engineering menggunakan { $used } dari { $ram }.
+resources-pressure-warning-short = Memori Mac sedang tertekan.
+resources-pressure-critical = Memori Mac sangat rendah. super.engineering menggunakan { $used } dari { $ram }.
+resources-pressure-critical-others = Memori Mac sangat rendah, sebagian besar karena aplikasi lain. super.engineering menggunakan { $used } dari { $ram }.
+resources-pressure-critical-short = Memori Mac sangat rendah.
+resources-thermal = Mac terlalu panas dan mungkin melambat.
+resources-measurements-unavailable = Memori dan CPU tidak tersedia saat ini. Anda tetap dapat membuka dan mengelola tab.
+resources-loading = Memuat sumber daya…
+resources-empty = Tidak ada sumber daya yang cocok.
+resources-empty-all = Tidak ada yang berjalan.
+resources-empty-agents = Tidak ada agen yang berjalan.
+resources-empty-browser = Tidak ada tab browser yang terbuka.
+resources-empty-terminals = Tidak ada terminal yang berjalan.
+resources-tab-all = Semua
+resources-tab-agents = Agen
+resources-tab-browser = Browser
+resources-tab-terminals = Terminal
+resources-fact-agents =
+    { $count ->
+        [one] agen
+       *[other] agen
+    }
+resources-fact-browser-tabs =
+    { $count ->
+        [one] tab browser
+       *[other] tab browser
+    }
+resources-fact-terminals =
+    { $count ->
+        [one] terminal
+       *[other] terminal
+    }
+resources-on-screen = Ada di layar, jadi tetap terjaga
+resources-open = Buka
+resources-close = Tutup
+resources-close-confirm = Tutup { $name }?
+resources-close-consequence = Halamannya akan ditutup.
+resources-average-title = Rata-rata per agen
+resources-average-each = Masing-masing
+resources-average-ten = 10 agen
+resources-average-each-suffix = masing-masing
+resources-average-for-ten = untuk 10
+resources-tree-more = +{ $count } lagi
+resources-app-item-detail = { $activity }, { $lines }
+resources-app-more-chats =
+    { $count ->
+        [one] { $count } chat lagi
+       *[other] { $count } chat lagi
+    }
+resources-app-more-terminals =
+    { $count ->
+        [one] { $count } terminal lagi
+       *[other] { $count } terminal lagi
+    }
 issue-report-check-submission = Periksa pengiriman
 issue-report-submission-uncertain = Laporan ini mungkin sudah ada di GitHub. Periksa pengiriman untuk menemukannya; pemeriksaan tidak pernah memposting ulang. Jika belum ditemukan, tunggu dan periksa lagi, atau tinjau issue GitHub Anda sebelum membuang draf ini.
 issue-report-discard-uncertain = Buang draf (laporan mungkin sudah ada)
