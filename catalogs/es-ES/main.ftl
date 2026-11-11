@@ -4104,3 +4104,8 @@ exit-save-failed-title = No se puede guardar el estado de la aplicación
 exit-save-failed-description = No se ha guardado el estado más reciente de la aplicación. { $error }. Corrige el problema de almacenamiento y vuelve a intentarlo, o continúa sin guardar.
 exit-restart-without-saving = Reiniciar sin guardar
 exit-quit-without-saving = Salir sin guardar
+
+issue-report-check-submission = Comprobar envío
+issue-report-submission-uncertain = Este informe podría estar ya en GitHub. Comprueba el envío para encontrarlo; la comprobación nunca vuelve a publicarlo. Si aún no se encuentra, espera y compruébalo de nuevo, o revisa tus incidencias de GitHub antes de descartar este borrador.
+issue-report-discard-uncertain = Descartar borrador (el informe podría existir ya)
+issue-report-draft-load-failed = No se ha podido leer tu informe guardado. Resuelve el problema de almacenamiento y reinicia la aplicación antes de enviar otro informe.

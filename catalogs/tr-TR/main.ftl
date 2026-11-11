@@ -4001,3 +4001,8 @@ exit-save-failed-title = Uygulama durumu kaydedilemiyor
 exit-save-failed-description = Uygulamanızın en son durumu kaydedilmedi. { $error }. Depolama sorununu giderdikten sonra tekrar deneyin veya kaydetmeden devam edin.
 exit-restart-without-saving = Kaydetmeden yeniden başlat
 exit-quit-without-saving = Kaydetmeden çık
+
+issue-report-check-submission = Gönderimi kontrol et
+issue-report-submission-uncertain = Bu rapor zaten GitHub’da olabilir. Bulmak için gönderimi kontrol edin; kontrol işlemi asla yeniden paylaşım yapmaz. Henüz bulunamazsa bekleyip tekrar kontrol edin veya bu taslağı silmeden önce GitHub’daki sorunlarınızı gözden geçirin.
+issue-report-discard-uncertain = Taslağı sil (rapor zaten mevcut olabilir)
+issue-report-draft-load-failed = Kaydedilmiş raporunuz okunamadı. Başka bir rapor göndermeden önce depolama sorununu giderin ve uygulamayı yeniden başlatın.
