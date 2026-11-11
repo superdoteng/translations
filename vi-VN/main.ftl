@@ -3967,3 +3967,4 @@ issue-report-check-submission = Kiểm tra việc gửi
 issue-report-submission-uncertain = Báo cáo này có thể đã có trên GitHub. Hãy kiểm tra việc gửi để tìm báo cáo; việc kiểm tra không bao giờ đăng lại. Nếu vẫn chưa tìm thấy, hãy đợi rồi kiểm tra lại, hoặc xem các issue của bạn trên GitHub trước khi bỏ bản nháp này.
 issue-report-discard-uncertain = Bỏ bản nháp (báo cáo có thể đã tồn tại)
 issue-report-draft-load-failed = Không thể đọc báo cáo đã lưu của bạn. Hãy khắc phục sự cố lưu trữ và khởi động lại ứng dụng trước khi gửi báo cáo khác.
+review-comment-edit-staged = Hãy gỡ bài đánh giá này khỏi khung soạn thảo trước khi chỉnh sửa.

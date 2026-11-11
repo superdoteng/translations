@@ -4288,3 +4288,4 @@ issue-report-check-submission = 檢查提交狀態
 issue-report-submission-uncertain = 此報告可能已在 GitHub 上。請檢查提交狀態以尋找報告；檢查絕不會再次發布。如果暫時找不到，請稍候再檢查，或在捨棄此草稿前查看你在 GitHub 上的議題。
 issue-report-discard-uncertain = 捨棄草稿（報告可能已存在）
 issue-report-draft-load-failed = 無法讀取你儲存的報告。請解決儲存問題並重新啟動應用程式，再提交其他報告。
+review-comment-edit-staged = 請先將此審查從輸入區移除，再進行編輯。
