@@ -4786,3 +4786,5 @@ exit-save-failed-title = Unable to save app state
 exit-save-failed-description = Your latest app state has not been saved. { $error }. Retry after fixing storage, or continue without saving.
 exit-restart-without-saving = Restart without saving
 exit-quit-without-saving = Quit without saving
+
+review-comment-edit-staged = Remove this review from the composer before editing.
