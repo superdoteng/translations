@@ -3962,3 +3962,6 @@ exit-save-failed-title = Không thể lưu trạng thái ứng dụng
 exit-save-failed-description = Trạng thái ứng dụng mới nhất chưa được lưu. { $error }. Hãy khắc phục vấn đề lưu trữ rồi thử lại, hoặc tiếp tục mà không lưu.
 exit-restart-without-saving = Khởi động lại mà không lưu
 exit-quit-without-saving = Thoát mà không lưu
+
+chat-edit-skill-as-text = Chỉnh sửa kỹ năng dưới dạng văn bản
+chat-edit-failed-draft-conflict = Lưu hoặc xóa bản nháp hiện tại trước khi chỉnh sửa tin nhắn bị lỗi.

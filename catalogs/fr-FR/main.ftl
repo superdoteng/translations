@@ -4107,3 +4107,6 @@ exit-save-failed-title = Impossible d’enregistrer l’état de l’application
 exit-save-failed-description = Le dernier état de votre application n’a pas été enregistré. { $error }. Corrigez le problème de stockage et réessayez, ou continuez sans enregistrer.
 exit-restart-without-saving = Redémarrer sans enregistrer
 exit-quit-without-saving = Quitter sans enregistrer
+
+chat-edit-skill-as-text = Modifier avec la compétence en texte
+chat-edit-failed-draft-conflict = Conservez ou effacez votre brouillon actuel avant de modifier le message en échec.

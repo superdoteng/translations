@@ -4283,3 +4283,6 @@ exit-save-failed-title = 無法儲存應用程式狀態
 exit-save-failed-description = 最新的應用程式狀態尚未儲存。{ $error }。請修復儲存問題後重試，或不儲存並繼續。
 exit-restart-without-saving = 不儲存並重新啟動
 exit-quit-without-saving = 不儲存並結束
+
+chat-edit-skill-as-text = 將技能作為文字編輯
+chat-edit-failed-draft-conflict = 編輯失敗的訊息前，請先儲存或清空目前的草稿。

@@ -4001,3 +4001,6 @@ exit-save-failed-title = Uygulama durumu kaydedilemiyor
 exit-save-failed-description = Uygulamanızın en son durumu kaydedilmedi. { $error }. Depolama sorununu giderdikten sonra tekrar deneyin veya kaydetmeden devam edin.
 exit-restart-without-saving = Kaydetmeden yeniden başlat
 exit-quit-without-saving = Kaydetmeden çık
+
+chat-edit-skill-as-text = Beceriyi metin olarak düzenle
+chat-edit-failed-draft-conflict = Başarısız mesajı düzenlemeden önce mevcut taslağınızı saklayın veya temizleyin.

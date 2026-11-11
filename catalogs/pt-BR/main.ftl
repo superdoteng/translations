@@ -4103,3 +4103,6 @@ exit-save-failed-title = Não foi possível salvar o estado do aplicativo
 exit-save-failed-description = O estado mais recente do aplicativo não foi salvo. { $error }. Corrija o problema de armazenamento e tente novamente ou continue sem salvar.
 exit-restart-without-saving = Reiniciar sem salvar
 exit-quit-without-saving = Sair sem salvar
+
+chat-edit-skill-as-text = Editar com a habilidade como texto
+chat-edit-failed-draft-conflict = Salve ou limpe o rascunho atual antes de editar a mensagem que falhou.

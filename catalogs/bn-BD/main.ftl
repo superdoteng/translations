@@ -4299,3 +4299,6 @@ exit-save-failed-title = অ্যাপের অবস্থা সংরক�
 exit-save-failed-description = আপনার অ্যাপের সর্বশেষ অবস্থা সংরক্ষিত হয়নি। { $error }। স্টোরেজের সমস্যা ঠিক করে আবার চেষ্টা করুন অথবা সংরক্ষণ না করেই চালিয়ে যান।
 exit-restart-without-saving = সংরক্ষণ না করে পুনরায় চালু করুন
 exit-quit-without-saving = সংরক্ষণ না করে প্রস্থান করুন
+
+chat-edit-skill-as-text = স্কিলটি পাঠ্য হিসেবে সম্পাদনা করুন
+chat-edit-failed-draft-conflict = ব্যর্থ বার্তাটি সম্পাদনার আগে বর্তমান খসড়াটি সংরক্ষণ করুন বা মুছে ফেলুন।

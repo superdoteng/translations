@@ -4123,3 +4123,6 @@ exit-save-failed-title = לא ניתן לשמור את מצב היישום
 exit-save-failed-description = מצב היישום העדכני לא נשמר. { $error }. יש לנסות שוב לאחר תיקון בעיית האחסון, או להמשיך ללא שמירה.
 exit-restart-without-saving = הפעל מחדש ללא שמירה
 exit-quit-without-saving = צא ללא שמירה
+
+chat-edit-skill-as-text = עריכה עם המיומנות כטקסט
+chat-edit-failed-draft-conflict = יש לשמור או לנקות את הטיוטה הנוכחית לפני עריכת ההודעה שנכשלה.

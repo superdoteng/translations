@@ -4320,3 +4320,6 @@ exit-save-failed-title = تعذّر حفظ حالة التطبيق
 exit-save-failed-description = لم تُحفظ أحدث حالة للتطبيق. { $error }. أعد المحاولة بعد إصلاح مشكلة التخزين، أو تابع دون حفظ.
 exit-restart-without-saving = إعادة التشغيل دون حفظ
 exit-quit-without-saving = إنهاء دون حفظ
+
+chat-edit-skill-as-text = تعديل المهارة كنص
+chat-edit-failed-draft-conflict = احتفظ بمسودتك الحالية أو امسحها قبل تعديل الرسالة التي فشل إرسالها.

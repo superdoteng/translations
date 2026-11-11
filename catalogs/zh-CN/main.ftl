@@ -4283,3 +4283,6 @@ exit-save-failed-title = 无法保存应用状态
 exit-save-failed-description = 最新的应用状态尚未保存。{ $error }。请修复存储问题后重试，或不保存并继续。
 exit-restart-without-saving = 不保存并重启
 exit-quit-without-saving = 不保存并退出
+
+chat-edit-skill-as-text = 将技能作为文本编辑
+chat-edit-failed-draft-conflict = 编辑失败的消息前，请先保存或清空当前草稿。
