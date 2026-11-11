@@ -1133,8 +1133,6 @@ script-commands-more = 另外 { $count } 项
 setup-not-configured = 未配置初始化脚本
 review-submitted-reviews = 已提交的审查
 review-ai-questions = AI 问题
-review-no-comments = 尚无审查评论
-review-select-lines-hint = 在差异视图中选择代码行以开始审查。
 sidebar-ssh = SSH
 shared-context-generate-ai-context = 生成 AI 上下文
 action-generate = 生成
@@ -1170,7 +1168,6 @@ review-add-to-fix-list = 添加到修复列表
 review-submit-replies = 提交回复
 review-submit-from-tab = 从“审查”标签页提交 →
 review-ai-findings = AI 发现的问题
-review-findings-triage-count = 待处理：{ $count }
 review-findings-to-triage = 待处理的 AI 问题：{ $count }
 review-finding-should-fix = 需修复
 review-finding-dismiss = 忽略
@@ -1207,7 +1204,6 @@ context-output = 输出
 context-total-io = 总输入输出
 context-input-effective = 有效输入
 profile-cli-default = CLI 默认
-review-no-active-comments = 没有待处理的审查评论。
 permission-tools = 工具
 permission-ask = 询问
 permission-yolo = Yolo
@@ -1261,9 +1257,10 @@ chat-thinking-in-progress = 思考中
 chat-thinking-count = 思考中（{ $count }）
 chat-thinking-summary = 思考中 · { $summary }
 chat-working-for = 已工作
-chat-agent-wait-caption = { $count ->
-   *[other] 收到汇报后 { $model } 将继续
-}
+chat-agent-wait-caption =
+    { $count ->
+       *[other] 完成后 { $model } 将继续
+    }
 chat-worked-for = 工作了 { $duration }
 chat-worked = 已工作
 plan-proposed = 已提出计划
@@ -1316,7 +1313,6 @@ image-preview-load-failed = 加载图片失败
 hosted-tab-unavailable = 无法显示此标签页，因为其功能不可用。
 file-tree-new-file = 新建文件
 file-tree-new-folder = 新文件夹
-review-suggestion = 建议
 pr-merged = 已合并
 pr-closed = 已关闭
 pr-update-available = 有可用更新
@@ -1550,9 +1546,6 @@ review-no-pending-comments = 没有待处理的审查评论
 review-no-enabled-chat-providers = 没有启用的聊天服务提供商
 review-no-enabled-agents = 没有已启用的智能体
 
-review-comment-count = 评论：{ $count }
-review-review-count = 审查：{ $count }
-review-awaiting-reply-count = 等待回复：{ $count }
 review-file-count = 文件：{ $count }
 
 settings-ai-codex-profile-directory-missing = 找不到 Codex 配置文件目录。请先创建该目录，再启动此配置文件。
@@ -2668,8 +2661,6 @@ shared-context-depth-simple-tooltip = 快速配置，仅进行轻量扫描（REA
 shared-context-depth-thorough = 全面
 shared-context-depth-thorough-summary = 先进行访谈，再分析代码库，然后生成工作区指南。
 shared-context-depth-thorough-tooltip = 提出澄清问题并确认目标，然后深入检查代码。
-right-panel-show-gitignored-files = 显示 Git 忽略的文件
-right-panel-hide-gitignored-files = 隐藏 Git 忽略的文件
 workspace-hold-command-for-chat-ui = 按住 ⌘ 使用聊天界面
 workspace-hold-command-for-terminal = 按住 ⌘ 使用终端
 tool-picker-no-matches = 无匹配项
@@ -4284,6 +4275,301 @@ exit-save-failed-description = 最新的应用状态尚未保存。{ $error }。
 exit-restart-without-saving = 不保存并重启
 exit-quit-without-saving = 不保存并退出
 
+settings-experimental-resource-monitor-label = 资源监视器
+settings-experimental-resource-monitor-description = 在标题栏显示“资源”按钮，查看每个工作树、标签页和辅助进程的内存与 CPU 占用。
+settings-search-section-resources = 资源
+settings-search-entry-appearance-resources-show-freeable-memory-label = 显示可释放内存
+settings-search-entry-appearance-resources-show-freeable-memory-description = 在“资源”按钮上显示让空闲标签页休眠可释放的内存，并在 Mac 内存紧张时为按钮着色。
+settings-section-resources = 资源
+chat-queued-waiting-to-steer = 等待调整方向
+chat-queued-action-no-longer-queued = 此消息已不在队列中。
+chat-queued-steer-failed = 无法用此消息调整方向。
+chat-queued-change-failed = 无法更改此消息。
+changes-empty-detail = 你或你的智能体在此工作树中所做的编辑会显示在这里。
+changes-empty-turns = 暂无对话轮次
+changes-empty-turns-detail = 智能体修改文件后，文件会显示在这里，归入修改它们的那一轮。
+changes-empty-commits = 暂无提交
+changes-empty-commits-detail = 此分支上的提交会显示在这里。
+changes-empty-all-viewed = 已全部查看
+changes-empty-all-viewed-detail = 你已打开所有变更的文件。
+review-delivery-prepared = 已在 { $target } 中准备
+review-delivery-sent = 已发送到 { $target }
+review-delivery-dispatched = 已在后台发送到 { $target }
+review-delivery-a-chat = 聊天
+review-delivery-a-terminal = 终端
+review-location-whole-file = 整个文件
+review-tooltip-more-lines =
+    { $count ->
+       *[other] 还有 { $count } 行
+    }
+review-location-line = 第 { $line } 行
+review-location-lines = 第 { $start }–{ $end } 行
+review-pending-summary =
+    { $files ->
+        [1] { $comments } 条评论
+       *[other] { $files } 个文件中有 { $comments } 条评论
+    }
+review-view-open = 待处理
+review-view-done = 已完成
+review-your-comments = 你的评论
+review-nothing-to-review = 没有需要审查的内容
+review-nothing-to-review-detail = 你在差异中留下的评论以及拉取请求中的审查对话会显示在这里。
+review-review-changes = 审查变更
+review-comment-hint = 或在任意差异中选择代码行来评论
+review-all-caught-up = 全部处理完毕
+review-all-caught-up-detail = 没有等待你处理的内容。
+review-see-done = 查看已完成
+review-nothing-done = 尚无已完成项
+review-nothing-done-detail = 你发送的评论和已解决的对话会显示在这里。
+review-pull-request = 拉取请求 #{ $number }
+review-pull-request-untitled = 拉取请求
+review-waiting-on-reviewers = 还没有人评论 #{ $number }。
+review-resolved-on-pr = 已在 #{ $number } 中解决
+review-pr-refresh = 刷新拉取请求评论
+review-pr-loading = 正在加载评论…
+review-pr-load-failed = 无法加载拉取请求评论。请刷新后重试。
+review-pr-older-hidden = 较早的对话未显示。
+review-pr-overview-truncated = 此处未显示更多对话。
+review-thread-resolve = 解决
+review-thread-unresolve = 标记为未解决
+review-thread-resolving = 正在解决…
+review-thread-unresolving = 正在标记为未解决…
+review-thread-update-failed = 无法更新，请重试。
+review-thread-outdated = 已过时
+review-thread-byline =
+    { $replies ->
+        [0] { $author } 于 { $age }评论
+       *[other] { $author } 于 { $age }评论，{ $replies } 条回复
+    }
+checks-path-to-merge = 合并进度
+checks-step-committed = 变更已提交
+checks-step-pushed = 已推送
+checks-step-unpushed =
+    { $count ->
+       *[other] { $count } 个提交待推送
+    }
+checks-step-review-open = { $kind } 已打开
+checks-step-checks = 检查
+checks-step-running = 检查正在运行
+checks-behind-target =
+    { $count ->
+       *[other] 落后 { $target } { $count } 个提交
+    }
+right-panel-view-options = 视图选项
+right-panel-view-changes = 变更
+right-panel-view-gitignored-files = Git 忽略的文件
+diff-viewed-toggle = 已查看
+diff-since-viewed-note = 你查看后 { $agent } 修改了此文件。正在显示此后的变更。
+diff-since-viewed-note-unattributed = 你查看后此文件有改动。正在显示此后的变更。
+diff-since-viewed-show-full = 显示完整差异
+diff-turn-review-writing = 正在撰写审查…
+diff-turn-review-passed = 通过
+diff-turn-review-failed = 未通过
+diff-turn-review-not-checked = 未检查：{ $what }
+diff-turn-review-more-checks = 另外 { $count } 项
+diff-turn-review-looks-good = 看起来没问题
+diff-turn-review-comment-hint = 在某行发表评论以请求修改
+right-sidebar-new = 新增
+right-sidebar-show-comments = 显示评论
+right-sidebar-hint-move = 移动
+right-sidebar-hint-viewed = 已查看
+right-sidebar-hint-next-unviewed = 下一个未查看
+right-sidebar-hint-open = 打开
+right-sidebar-commit-message = 提交消息
+right-sidebar-writing-message = 正在撰写消息
+right-sidebar-write-message = 撰写消息
+right-sidebar-commit-file-count =
+    { $count ->
+       *[other] { $count } 个文件
+    }
+right-sidebar-commit = 提交
+right-sidebar-commit-and-push = 提交并推送
+right-sidebar-amend-last-commit = 修改上一次提交
+right-sidebar-committing = 正在提交
+right-sidebar-committed = 已提交
+right-sidebar-push = 推送
+right-sidebar-unviewed = 未查看
+changes-file-count =
+    { $count ->
+       *[other] { $count } 个文件
+    }
+right-sidebar-mark-all-viewed =
+    { $count ->
+        [1] 将 1 个文件标记为已查看
+       *[other] 将全部 { $count } 个文件标记为已查看
+    }
+right-sidebar-all-viewed = 已查看所有文件
+right-sidebar-viewed = 已查看
+right-sidebar-changed-since-viewed = 查看后有改动
+right-sidebar-changed-since-viewed-by = 你查看后 { $agent } 修改了此文件
+right-sidebar-changed-since-viewed-count =
+    { $count ->
+       *[other] { $count } 个文件在你查看后有改动
+    }
+right-sidebar-view-all = 全部
+right-sidebar-view-turns = 轮次
+right-sidebar-turn-working = 进行中
+right-sidebar-other-changes = 其他变更
+right-sidebar-probable-file = 在本轮运行期间被修改
+right-sidebar-probable-file-detail = 其工具未报告此修改，因此可能是他人的编辑。本轮结束时确认。
+resources-title = 资源
+resources-search = 搜索资源或项目
+resources-search-tooltip = 搜索
+resources-remote = 远程
+resources-asleep = 已休眠
+resources-held-info = 屏幕和近期聊天保留在应用内存中，以便此工作树立即重新打开，计入“应用”下的“已休眠”。休眠 15 分钟后会释放屏幕。
+resources-cpu = CPU
+resources-cpu-history = 最近一分钟的 CPU 占用。“资源”打开期间会持续记录历史。
+resources-reclaim =
+    { $count ->
+       *[other] 让 { $count } 个空闲标签页休眠可释放约 { $memory }
+    }
+resources-sleep-idle = 休眠空闲项
+resources-freed = 已释放 { $memory }
+resources-sleep = 休眠
+resources-sleep-tooltip = 释放其进程。打开时会连同历史记录一起唤醒。
+resources-wake = 唤醒
+resources-stop = 停止
+resources-stop-confirm = 要停止 { $name } 吗？
+resources-stop-consequence = 正在运行的工作将被中断。
+resources-cancel = 取消
+resources-exited = 已退出
+resources-exited-just-now = 刚刚退出
+resources-exited-minutes = { $minutes } 分钟前退出
+resources-exited-hours = { $hours } 小时前退出
+resources-cpu-row = CPU { $percent }%
+resources-origin-tab = 终端标签页
+resources-origin-launched = 由 { $tab } 启动
+resources-origin-run-script = 运行脚本
+resources-origin-panel = 面板终端
+resources-origin-setup = 初始化命令
+resources-origin-git = Git 操作
+resources-origin-review = 审查
+resources-activity-running = 正在运行 { $process }
+resources-activity-busy = 运行中
+resources-activity-idle = 空闲
+resources-app = 应用
+resources-browser-services = 浏览器服务
+resources-browser-graphics = 图形
+resources-browser-networking = 网络
+resources-background = 后台进程
+resources-background-pid = PID { $pid }
+resources-app-graphics = 图形
+resources-app-graphics-info = 窗口表面和 GPU 内存
+resources-app-held-for-reuse = 保留以供复用
+resources-app-saved-wake = 已休眠
+resources-app-code-system = 代码和系统
+resources-app-chats = 聊天
+resources-app-chats-open = { $count } 个已打开
+resources-app-chats-idle = { $count } 个空闲
+resources-app-chats-history = 聊天记录
+resources-app-terminals = 终端
+resources-app-terminals-count =
+    { $count ->
+       *[other] { $count } 个终端
+    }
+resources-app-terminals-lines =
+    { $count ->
+       *[other] { $count } 行
+    }
+resources-app-saved-count =
+    { $count ->
+       *[other] { $count } 个工作树
+    }
+resources-app-saved-info = 为已休眠的工作树保留的内存，以便立即重新打开
+resources-app-background-count =
+    { $count ->
+       *[other] { $count } 个进程
+    }
+resources-app-background-info = 应用运行的、不属于任何工作树的 Git、辅助命令和智能体工具
+resources-app-background-brief = 短时命令
+resources-app-other-data = 数据
+resources-app-other-detail = 随项目和工作树增多而增长
+resources-app-held-for-reuse-detail = 由分配器保留以供复用
+resources-app-code-system-detail = 程序代码和系统库
+resources-estimated = 估算
+resources-sleep-idle-chats = 休眠空闲聊天
+resources-sleep-idle-chats-confirm =
+    { $count ->
+       *[other] 要休眠 { $count } 个空闲聊天吗？
+    }
+resources-frees-about = 约释放 { $memory }
+resources-clear = 清除
+resources-clear-confirm =
+    { $lines ->
+       *[other] 要清除 { $lines } 行回滚内容吗？
+    }
+resources-clear-consequence = 屏幕内容会保留。
+resources-clear-scrollback = 清除回滚内容
+resources-clear-all-confirm =
+    { $count ->
+       *[other] 要清除 { $count } 个终端的回滚内容吗？
+    }
+resources-chat-sleep-running = 正在进行一轮对话，结束后即可休眠。
+resources-chat-sleep-waiting = 正在等待你的回答，回答后即可休眠。
+resources-chat-sleep-unseen = 有你尚未查看的回复，阅读后即可休眠。
+resources-chat-sleep-kept-ready = 保持就绪，以便快速返回其工作树。
+resources-chat-sleep-on-screen = 正在屏幕上显示，移出视野后即可休眠。
+resources-chat-sleep-queued = 有排队中的消息，发送后即可休眠。
+resources-chat-sleep-busy = 当前正忙，请稍后重试。
+resources-info-title = { $total } 用在哪里
+resources-info-summary = 应用本身，以及它为你启动的一切。
+resources-info-app = super.engineering
+resources-info-app-hint = 应用及其运行的辅助进程
+resources-info-agents-hint = 每个聊天的智能体及其运行的工具
+resources-info-browser = 浏览器标签页
+resources-info-browser-hint = 每个页面在独立进程中运行
+resources-info-terminals-hint = Shell、运行脚本及其启动的内容
+resources-info-remote = 暂不统计远程工作树。
+resources-pressure-warning = Mac 内存紧张。super.engineering 占用了 { $ram } 中的 { $used }。
+resources-pressure-warning-short = Mac 内存紧张。
+resources-pressure-critical = Mac 内存严重不足。super.engineering 占用了 { $ram } 中的 { $used }。
+resources-pressure-critical-others = Mac 内存严重不足，主要由其他应用占用。super.engineering 占用了 { $ram } 中的 { $used }。
+resources-pressure-critical-short = Mac 内存严重不足。
+resources-thermal = Mac 温度较高，可能会变慢。
+resources-measurements-unavailable = 目前无法获取内存和 CPU 数据。你仍可打开和管理标签页。
+resources-loading = 正在加载资源…
+resources-empty = 没有匹配的资源。
+resources-empty-all = 没有正在运行的内容。
+resources-empty-agents = 没有正在运行的智能体。
+resources-empty-browser = 没有打开的浏览器标签页。
+resources-empty-terminals = 没有正在运行的终端。
+resources-tab-all = 全部
+resources-tab-agents = 智能体
+resources-tab-browser = 浏览器
+resources-tab-terminals = 终端
+resources-fact-agents =
+    { $count ->
+       *[other] 个智能体
+    }
+resources-fact-browser-tabs =
+    { $count ->
+       *[other] 个浏览器标签页
+    }
+resources-fact-terminals =
+    { $count ->
+       *[other] 个终端
+    }
+resources-on-screen = 正在屏幕上显示，因此保持唤醒
+resources-open = 打开
+resources-close = 关闭
+resources-close-confirm = 要关闭 { $name } 吗？
+resources-close-consequence = 其页面将关闭。
+resources-average-title = 每个智能体的平均值
+resources-average-each = 单个
+resources-average-ten = 10 个智能体
+resources-average-each-suffix = 每个
+resources-average-for-ten = 10 个合计
+resources-tree-more = +{ $count } 个
+resources-app-item-detail = { $activity }，{ $lines }
+resources-app-more-chats =
+    { $count ->
+       *[other] 还有 { $count } 个聊天
+    }
+resources-app-more-terminals =
+    { $count ->
+       *[other] 还有 { $count } 个终端
+    }
 issue-report-check-submission = 检查提交状态
 issue-report-submission-uncertain = 此报告可能已在 GitHub 上。请检查提交状态以查找它；检查绝不会再次发布。如果暂时未找到，请稍候再检查，或在丢弃此草稿前查看你在 GitHub 上的议题。
 issue-report-discard-uncertain = 丢弃草稿（报告可能已存在）

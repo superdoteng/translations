@@ -1108,8 +1108,6 @@ script-commands-more = { $count } مورد دیگر
 setup-not-configured = هیچ اسکریپت تنظیمی پیکربندی نشده است
 review-submitted-reviews = بررسی های ارسال شده
 review-ai-questions = سؤالات AI
-review-no-comments = هنوز هیچ نظری درباره بررسی ندارم
-review-select-lines-hint = برای شروع بازبینی، خطوطی را در دیفرانسیل انتخاب کنید.
 sidebar-ssh = SSH
 shared-context-generate-ai-context = تولید زمینه AI
 action-generate = تولید کنید
@@ -1145,7 +1143,6 @@ review-add-to-fix-list = افزودن به فهرست اصلاحات
 review-submit-replies = ارسال پاسخ ها
 review-submit-from-tab = ارسال از تب نقد →
 review-ai-findings = یافته‌های AI
-review-findings-triage-count = در انتظار بررسی: { $count }
 review-findings-to-triage = یافته‌های AI در انتظار بررسی: { $count }
 review-finding-should-fix = باید اصلاح شود
 review-finding-dismiss = رد کردن
@@ -1182,7 +1179,6 @@ context-output = خروجی
 context-total-io = کل ورودی/خروجی
 context-input-effective = ورودی مؤثر
 profile-cli-default = پیش فرض CLI
-review-no-active-comments = هیچ کامنت فعالی برای نقد وجود ندارد.
 permission-tools = ابزارها
 permission-ask = بپرس
 permission-yolo = یولو
@@ -1236,10 +1232,11 @@ chat-thinking-in-progress = در حال فکر…
 chat-thinking-count = در حال فکر ({ $count })
 chat-thinking-summary = در حال فکر · { $summary }
 chat-working-for = در حال کار برای
-chat-agent-wait-caption = { $count ->
-    [one] { $model } پس از گزارش آن ادامه می‌دهد
-   *[other] { $model } پس از گزارش آن‌ها ادامه می‌دهد
-}
+chat-agent-wait-caption =
+    { $count ->
+        [one] { $model } پس از پایان کار آن ادامه می‌دهد
+       *[other] { $model } پس از پایان کار آن‌ها ادامه می‌دهد
+    }
 chat-worked-for = کار کرد برای { $duration }
 chat-worked = کار کرد
 plan-proposed = طرح پیشنهادی
@@ -1286,7 +1283,6 @@ image-preview-load-failed = بارگذاری تصویر شکست خورد
 hosted-tab-unavailable = این زبانه نمایش داده نمی‌شود چون قابلیت آن در دسترس نیست.
 file-tree-new-file = پرونده جدید
 file-tree-new-folder = پوشه جدید
-review-suggestion = پیشنهاد
 pr-merged = ادغام شده
 pr-closed = بسته شد
 pr-update-available = به روزرسانی در دسترس است
@@ -1547,9 +1543,6 @@ review-no-pending-comments = هیچ نظر نظری در حال بررسی وج�
 review-no-enabled-chat-providers = هیچ ارائه دهنده چت فعالی وجود ندارد
 review-no-enabled-agents = هیچ عامل فعال شده ای وجود ندارد
 
-review-comment-count = نظرات: { $count }
-review-review-count = نقدها: { $count }
-review-awaiting-reply-count = منتظر پاسخ ها: { $count }
 review-file-count = فایل ها: { $count }
 
 settings-ai-codex-profile-directory-missing = Codex پوشه پروفایل پیدا نشد. قبل از راه اندازی این پروفایل، آن را بسازید.
@@ -2650,8 +2643,6 @@ shared-context-depth-simple-tooltip = راه اندازی سریع با اسکن
 shared-context-depth-thorough = کامل
 shared-context-depth-thorough-summary = ابتدا مصاحبه کنید، سپس کدبیس را تحلیل کنید و سپس راهنمای فضای کاری تولید کنید.
 shared-context-depth-thorough-tooltip = سوالات شفاف سازی می پرسد، اهداف را تأیید می کند و سپس یک کد پس عمیق تر انجام می دهد.
-right-panel-show-gitignored-files = نمایش فایل های gitignored
-right-panel-hide-gitignored-files = مخفی کردن فایل های gitignored
 workspace-hold-command-for-chat-ui = نگه داشتن ⌘ برای رابط کاربری چت
 workspace-hold-command-for-terminal = نگه داشتن ⌘ برای ترمینال
 tool-picker-no-matches = موردی پیدا نشد
@@ -3982,6 +3973,325 @@ exit-save-failed-description = آخرین وضعیت برنامه ذخیره ن�
 exit-restart-without-saving = راه‌اندازی دوباره بدون ذخیره
 exit-quit-without-saving = خروج بدون ذخیره
 
+settings-experimental-resource-monitor-label = پایشگر منابع
+settings-experimental-resource-monitor-description = دکمهٔ منابع را در نوار عنوان نشان می‌دهد، همراه با حافظه و CPU هر ورک‌تری، زبانه و فرایند کمکی.
+settings-search-section-resources = منابع
+settings-search-entry-appearance-resources-show-freeable-memory-label = نمایش حافظهٔ قابل آزادسازی
+settings-search-entry-appearance-resources-show-freeable-memory-description = روی دکمهٔ منابع نشان می‌دهد خواباندن زبانه‌های بیکار چه مقدار حافظه آزاد می‌کند، و وقتی حافظهٔ Mac تحت فشار است آن را رنگی می‌کند.
+settings-section-resources = منابع
+chat-queued-waiting-to-steer = در انتظار هدایت
+chat-queued-action-no-longer-queued = این پیام دیگر در صف نیست.
+chat-queued-steer-failed = هدایت این پیام ممکن نشد.
+chat-queued-change-failed = تغییر این پیام ممکن نشد.
+changes-empty-detail = ویرایش‌هایی که شما یا عامل‌هایتان در این ورک‌تری انجام می‌دهید اینجا نمایش داده می‌شوند.
+changes-empty-turns = هنوز نوبتی نیست
+changes-empty-turns-detail = وقتی عاملی فایل‌ها را تغییر دهد، آن‌ها اینجا زیر نوبتی که تغییرشان داده نمایش داده می‌شوند.
+changes-empty-commits = هنوز کامیتی نیست
+changes-empty-commits-detail = کامیت‌های این شاخه اینجا نمایش داده می‌شوند.
+changes-empty-all-viewed = همه دیده شد
+changes-empty-all-viewed-detail = همهٔ فایل‌های تغییرکرده را باز کرده‌اید.
+review-delivery-prepared = در { $target } آماده شد
+review-delivery-sent = به { $target } ارسال شد
+review-delivery-dispatched = در پس‌زمینه به { $target } ارسال شد
+review-delivery-a-chat = یک گفت‌وگو
+review-delivery-a-terminal = یک ترمینال
+review-location-whole-file = کل فایل
+review-tooltip-more-lines =
+    { $count ->
+        [one] ۱ خط دیگر
+       *[other] { $count } خط دیگر
+    }
+review-location-line = خط { $line }
+review-location-lines = خطوط { $start }–{ $end }
+review-pending-summary =
+    { $files ->
+        [one]
+            { $comments ->
+                [one] ۱ نظر
+               *[other] { $comments } نظر
+            }
+       *[other] { $comments } نظر در { $files } فایل
+    }
+review-view-open = باز
+review-view-done = انجام‌شده
+review-your-comments = نظرهای شما
+review-nothing-to-review = چیزی برای بررسی نیست
+review-nothing-to-review-detail = نظرهایی که روی یک diff می‌گذارید و رشته‌های بررسی درخواست کشش شما اینجا نمایش داده می‌شوند.
+review-review-changes = بررسی تغییرات
+review-comment-hint = یا برای نظر دادن، خطوطی را در هر diff انتخاب کنید
+review-all-caught-up = همه‌چیز رسیدگی شده
+review-all-caught-up-detail = چیزی منتظر شما نیست.
+review-see-done = دیدن موارد انجام‌شده
+review-nothing-done = هنوز چیزی انجام نشده
+review-nothing-done-detail = نظرهایی که ارسال می‌کنید و رشته‌هایی که حل می‌شوند اینجا نمایش داده می‌شوند.
+review-pull-request = درخواست کشش #{ $number }
+review-pull-request-untitled = درخواست کشش
+review-waiting-on-reviewers = هنوز کسی روی #{ $number } نظر نداده است.
+review-resolved-on-pr = در #{ $number } حل شد
+review-pr-refresh = تازه‌سازی نظرهای درخواست کشش
+review-pr-loading = در حال بارگیری نظرها…
+review-pr-load-failed = بارگیری نظرهای درخواست کشش ممکن نشد. برای تلاش دوباره، تازه‌سازی کنید.
+review-pr-older-hidden = رشته‌های قدیمی‌تر نمایش داده نمی‌شوند.
+review-pr-overview-truncated = رشته‌های بیشتری اینجا نمایش داده نمی‌شوند.
+review-thread-resolve = حل کردن
+review-thread-unresolve = لغو حل
+review-thread-resolving = در حال حل…
+review-thread-unresolving = در حال لغو حل…
+review-thread-update-failed = به‌روزرسانی ممکن نشد. دوباره تلاش کنید.
+review-thread-outdated = منسوخ
+review-thread-byline =
+    { $replies ->
+        [0] { $author } { $age } نظر داد
+        [one] { $author } { $age } نظر داد، ۱ پاسخ
+       *[other] { $author } { $age } نظر داد، { $replies } پاسخ
+    }
+checks-path-to-merge = مسیر ادغام
+checks-step-committed = تغییرات کامیت شد
+checks-step-pushed = پوش شد
+checks-step-unpushed =
+    { $count ->
+        [one] { $count } کامیت برای پوش
+       *[other] { $count } کامیت برای پوش
+    }
+checks-step-review-open = { $kind } باز است
+checks-step-checks = چک‌ها
+checks-step-running = چک‌ها در حال اجرا
+checks-behind-target =
+    { $count ->
+        [one] { $count } کامیت عقب‌تر از { $target }
+       *[other] { $count } کامیت عقب‌تر از { $target }
+    }
+right-panel-view-options = گزینه‌های نما
+right-panel-view-changes = تغییرات
+right-panel-view-gitignored-files = فایل‌های نادیده‌گرفته‌شده در Git
+diff-viewed-toggle = دیده شد
+diff-since-viewed-note = { $agent } این را پس از دیدن شما تغییر داد. تغییرات از آن زمان نمایش داده می‌شود.
+diff-since-viewed-note-unattributed = این فایل پس از دیدن شما تغییر کرد. تغییرات از آن زمان نمایش داده می‌شود.
+diff-since-viewed-show-full = نمایش کل diff
+diff-turn-review-writing = در حال نوشتن بررسی…
+diff-turn-review-passed = موفق
+diff-turn-review-failed = ناموفق
+diff-turn-review-not-checked = بررسی نشد: { $what }
+diff-turn-review-more-checks = { $count } مورد دیگر
+diff-turn-review-looks-good = خوب به نظر می‌رسد
+diff-turn-review-comment-hint = برای درخواست تغییر، روی یک خط نظر بدهید
+right-sidebar-new = جدید
+right-sidebar-show-comments = نمایش نظرها
+right-sidebar-hint-move = جابه‌جایی
+right-sidebar-hint-viewed = دیده شد
+right-sidebar-hint-next-unviewed = دیده‌نشدهٔ بعدی
+right-sidebar-hint-open = باز کردن
+right-sidebar-commit-message = پیام کامیت
+right-sidebar-writing-message = در حال نوشتن پیام
+right-sidebar-write-message = نوشتن پیام
+right-sidebar-commit-file-count =
+    { $count ->
+        [one] ۱ فایل
+       *[other] { $count } فایل
+    }
+right-sidebar-commit = کامیت
+right-sidebar-commit-and-push = کامیت و پوش
+right-sidebar-amend-last-commit = اصلاح آخرین کامیت
+right-sidebar-committing = در حال کامیت
+right-sidebar-committed = کامیت شد
+right-sidebar-push = پوش
+right-sidebar-unviewed = دیده‌نشده
+changes-file-count =
+    { $count ->
+        [one] ۱ فایل
+       *[other] { $count } فایل
+    }
+right-sidebar-mark-all-viewed =
+    { $count ->
+        [one] علامت‌گذاری ۱ فایل به‌عنوان دیده‌شده
+       *[other] علامت‌گذاری همهٔ { $count } فایل به‌عنوان دیده‌شده
+    }
+right-sidebar-all-viewed = همهٔ فایل‌ها دیده شد
+right-sidebar-viewed = دیده شد
+right-sidebar-changed-since-viewed = پس از دیدن شما تغییر کرده
+right-sidebar-changed-since-viewed-by = { $agent } این را پس از دیدن شما تغییر داده
+right-sidebar-changed-since-viewed-count =
+    { $count ->
+        [one] ۱ فایل پس از دیدن شما تغییر کرده
+       *[other] { $count } فایل پس از دیدن شما تغییر کرده‌اند
+    }
+right-sidebar-view-all = همه
+right-sidebar-view-turns = نوبت‌ها
+right-sidebar-turn-working = در حال کار
+right-sidebar-other-changes = تغییرات دیگر
+right-sidebar-probable-file = هنگام اجرای این نوبت تغییر کرد
+right-sidebar-probable-file-detail = ابزارهای آن گزارشش نکرده‌اند، پس ممکن است ویرایش شخص دیگری باشد. با پایان نوبت تأیید می‌شود.
+resources-title = منابع
+resources-search = جستجوی منابع یا پروژه‌ها
+resources-search-tooltip = جستجو
+resources-remote = راه دور
+resources-asleep = در خواب
+resources-held-info = صفحه‌ها و گفت‌وگوی اخیر در حافظهٔ برنامه نگه داشته می‌شوند تا این ورک‌تری فوراً دوباره باز شود؛ در «برنامه» زیر «در خواب» شمرده می‌شوند. صفحه‌ها پس از ۱۵ دقیقه خواب آزاد می‌شوند.
+resources-cpu = CPU
+resources-cpu-history = CPU در یک دقیقهٔ گذشته. تاریخچه تا وقتی منابع باز است ساخته می‌شود.
+resources-reclaim =
+    { $count ->
+        [one] ۱ زبانهٔ بیکار می‌تواند بخوابد و حدود { $memory } آزاد کند
+       *[other] { $count } زبانهٔ بیکار می‌توانند بخوابند و حدود { $memory } آزاد کنند
+    }
+resources-sleep-idle = خواباندن بیکارها
+resources-freed = { $memory } آزاد شد
+resources-sleep = خواباندن
+resources-sleep-tooltip = فرایندهایش را آزاد می‌کند. وقتی بازش کنید، با تاریخچه‌اش بیدار می‌شود.
+resources-wake = بیدار کردن
+resources-stop = توقف
+resources-stop-confirm = { $name } متوقف شود؟
+resources-stop-consequence = کار در حال اجرا قطع می‌شود.
+resources-cancel = لغو
+resources-exited = خارج شد
+resources-exited-just-now = همین حالا خارج شد
+resources-exited-minutes = { $minutes } دقیقه پیش خارج شد
+resources-exited-hours = { $hours } ساعت پیش خارج شد
+resources-cpu-row = { $percent }٪ CPU
+resources-origin-tab = زبانهٔ ترمینال
+resources-origin-launched = اجراشده توسط { $tab }
+resources-origin-run-script = اسکریپت اجرا
+resources-origin-panel = ترمینال پنل
+resources-origin-setup = فرمان راه‌اندازی
+resources-origin-git = عملیات Git
+resources-origin-review = بررسی
+resources-activity-running = در حال اجرای { $process }
+resources-activity-busy = در حال اجرا
+resources-activity-idle = بیکار
+resources-app = برنامه
+resources-browser-services = سرویس‌های مرورگر
+resources-browser-graphics = گرافیک
+resources-browser-networking = شبکه
+resources-background = فرایندهای پس‌زمینه
+resources-background-pid = PID { $pid }
+resources-app-graphics = گرافیک
+resources-app-graphics-info = سطوح پنجره و حافظهٔ GPU
+resources-app-held-for-reuse = نگه‌داشته برای استفادهٔ دوباره
+resources-app-saved-wake = در خواب
+resources-app-code-system = کد و سیستم
+resources-app-chats = گفت‌وگوها
+resources-app-chats-open = { $count } باز
+resources-app-chats-idle = { $count } بیکار
+resources-app-chats-history = تاریخچهٔ گفت‌وگو
+resources-app-terminals = ترمینال‌ها
+resources-app-terminals-count =
+    { $count ->
+        [one] ۱ ترمینال
+       *[other] { $count } ترمینال
+    }
+resources-app-terminals-lines =
+    { $count ->
+        [one] ۱ خط
+       *[other] { $count } خط
+    }
+resources-app-saved-count =
+    { $count ->
+        [one] ۱ ورک‌تری
+       *[other] { $count } ورک‌تری
+    }
+resources-app-saved-info = حافظه‌ای که برای ورک‌تری‌های در خواب نگه داشته می‌شود تا فوراً دوباره باز شوند
+resources-app-background-count =
+    { $count ->
+        [one] ۱ فرایند
+       *[other] { $count } فرایند
+    }
+resources-app-background-info = Git، فرمان‌های کمکی و ابزارهای عامل که برنامه اجرا می‌کند و به هیچ ورک‌تری‌ای تعلق ندارند
+resources-app-background-brief = فرمان‌های کوتاه
+resources-app-other-data = داده
+resources-app-other-detail = با پروژه‌ها و ورک‌تری‌ها بزرگ‌تر می‌شود
+resources-app-held-for-reuse-detail = تخصیص‌دهندهٔ حافظه برای استفادهٔ دوباره نگه داشته است
+resources-app-code-system-detail = کد برنامه و کتابخانه‌های سیستم
+resources-estimated = تخمینی
+resources-sleep-idle-chats = خواباندن گفت‌وگوهای بیکار
+resources-sleep-idle-chats-confirm =
+    { $count ->
+        [one] ۱ گفت‌وگوی بیکار خوابانده شود؟
+       *[other] { $count } گفت‌وگوی بیکار خوابانده شوند؟
+    }
+resources-frees-about = حدود { $memory } آزاد می‌کند
+resources-clear = پاک کردن
+resources-clear-confirm =
+    { $lines ->
+        [one] ۱ خط از تاریخچهٔ پیمایش پاک شود؟
+       *[other] { $lines } خط از تاریخچهٔ پیمایش پاک شود؟
+    }
+resources-clear-consequence = صفحه باقی می‌ماند.
+resources-clear-scrollback = پاک کردن تاریخچهٔ پیمایش
+resources-clear-all-confirm =
+    { $count ->
+        [one] تاریخچهٔ پیمایش در ۱ ترمینال پاک شود؟
+       *[other] تاریخچهٔ پیمایش در { $count } ترمینال پاک شود؟
+    }
+resources-chat-sleep-running = در حال اجرای یک نوبت است. با پایان نوبت می‌تواند بخوابد.
+resources-chat-sleep-waiting = منتظر پاسخ شماست. پس از پاسخ شما می‌تواند بخوابد.
+resources-chat-sleep-unseen = پاسخی دارد که هنوز ندیده‌اید. پس از خواندن آن می‌تواند بخوابد.
+resources-chat-sleep-kept-ready = برای بازگشت سریع به ورک‌تری‌اش آماده نگه داشته شده است.
+resources-chat-sleep-on-screen = روی صفحه است. وقتی از دید خارج شود می‌تواند بخوابد.
+resources-chat-sleep-queued = پیام‌هایی در صف هستند. پس از ارسال آن‌ها می‌تواند بخوابد.
+resources-chat-sleep-busy = الان مشغول است. کمی بعد دوباره تلاش کنید.
+resources-info-title = { $total } کجا می‌رود
+resources-info-summary = برنامه، به‌علاوهٔ هر چیزی که برای شما راه‌اندازی کرده است.
+resources-info-app = super.engineering
+resources-info-app-hint = برنامه و فرایندهای کمکی‌ای که اجرا می‌کند
+resources-info-agents-hint = عامل هر گفت‌وگو و ابزارهایی که اجرا می‌کند
+resources-info-browser = زبانه‌های مرورگر
+resources-info-browser-hint = هر صفحه در فرایند خودش اجرا می‌شود
+resources-info-terminals-hint = پوسته‌ها، اسکریپت‌های اجرا و هر چیزی که راه‌اندازی کرده‌اند
+resources-info-remote = ورک‌تری‌های راه دور هنوز اندازه‌گیری نمی‌شوند.
+resources-pressure-warning = حافظهٔ Mac تحت فشار است. super.engineering از { $ram }، { $used } را استفاده می‌کند.
+resources-pressure-warning-short = حافظهٔ Mac تحت فشار است.
+resources-pressure-critical = حافظهٔ Mac به‌شدت کم است. super.engineering از { $ram }، { $used } را استفاده می‌کند.
+resources-pressure-critical-others = حافظهٔ Mac به‌شدت کم است، بیشتر به‌خاطر برنامه‌های دیگر. super.engineering از { $ram }، { $used } را استفاده می‌کند.
+resources-pressure-critical-short = حافظهٔ Mac به‌شدت کم است.
+resources-thermal = Mac داغ شده است و ممکن است کند شود.
+resources-measurements-unavailable = حافظه و CPU در حال حاضر در دسترس نیستند. همچنان می‌توانید زبانه‌ها را باز و مدیریت کنید.
+resources-loading = در حال بارگیری منابع…
+resources-empty = منبع مطابقی نیست.
+resources-empty-all = چیزی در حال اجرا نیست.
+resources-empty-agents = هیچ عاملی در حال اجرا نیست.
+resources-empty-browser = هیچ زبانهٔ مرورگری باز نیست.
+resources-empty-terminals = هیچ ترمینالی در حال اجرا نیست.
+resources-tab-all = همه
+resources-tab-agents = عامل‌ها
+resources-tab-browser = مرورگر
+resources-tab-terminals = ترمینال‌ها
+resources-fact-agents =
+    { $count ->
+        [one] عامل
+       *[other] عامل
+    }
+resources-fact-browser-tabs =
+    { $count ->
+        [one] زبانهٔ مرورگر
+       *[other] زبانهٔ مرورگر
+    }
+resources-fact-terminals =
+    { $count ->
+        [one] ترمینال
+       *[other] ترمینال
+    }
+resources-on-screen = روی صفحه است، پس بیدار می‌ماند
+resources-open = باز کردن
+resources-close = بستن
+resources-close-confirm = { $name } بسته شود؟
+resources-close-consequence = صفحهٔ آن بسته می‌شود.
+resources-average-title = میانگین برای هر عامل
+resources-average-each = هر کدام
+resources-average-ten = ۱۰ عامل
+resources-average-each-suffix = برای هر کدام
+resources-average-for-ten = برای ۱۰
+resources-tree-more = +{ $count } مورد دیگر
+resources-app-item-detail = { $activity }، { $lines }
+resources-app-more-chats =
+    { $count ->
+        [one] ۱ گفت‌وگوی دیگر
+       *[other] { $count } گفت‌وگوی دیگر
+    }
+resources-app-more-terminals =
+    { $count ->
+        [one] ۱ ترمینال دیگر
+       *[other] { $count } ترمینال دیگر
+    }
 issue-report-check-submission = بررسی ارسال
 issue-report-submission-uncertain = ممکن است این گزارش از قبل در GitHub باشد. برای یافتن آن، ارسال را بررسی کنید؛ بررسی هرگز دوباره آن را منتشر نمی‌کند. اگر هنوز پیدا نشد، صبر کنید و دوباره بررسی کنید، یا پیش از دور انداختن این پیش‌نویس، مسئله‌های خود را در GitHub مرور کنید.
 issue-report-discard-uncertain = دور انداختن پیش‌نویس (ممکن است گزارش از قبل وجود داشته باشد)

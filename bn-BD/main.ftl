@@ -1108,8 +1108,6 @@ script-commands-more = আরও { $count }টি
 setup-not-configured = কোনও সেটআপ স্ক্রিপ্ট কনফিগার করা হয়নি
 review-submitted-reviews = জমা দেওয়া পর্যালোচনা
 review-ai-questions = AI প্রশ্ন
-review-no-comments = এখনও কোনও পর্যালোচনা মন্তব্য নেই
-review-select-lines-hint = একটি পর্যালোচনা শুরু করতে ডিফের লাইনগুলি নির্বাচন করুন।
 sidebar-ssh = SSH
 shared-context-generate-ai-context = AI প্রসঙ্গ তৈরি করুন
 action-generate = উত্পন্ন করুন
@@ -1145,7 +1143,6 @@ review-add-to-fix-list = ফিক্স লিস্টে যোগ করু�
 review-submit-replies = উত্তর জমা দিন
 review-submit-from-tab = রিভিউ ট্যাব থেকে জমা দিন →
 review-ai-findings = AI ফলাফল
-review-findings-triage-count = বাছাই বাকি: { $count }
 review-findings-to-triage = বাছাই করার AI ফলাফল: { $count }
 review-finding-should-fix = ঠিক করা দরকার
 review-finding-dismiss = বাতিল
@@ -1182,7 +1179,6 @@ context-output = আউটপুট
 context-total-io = মোট I/O
 context-input-effective = ইনপুট কার্যকর
 profile-cli-default = CLI ডিফল্ট
-review-no-active-comments = কোনও সক্রিয় পর্যালোচনা মন্তব্য নেই।
 permission-tools = সরঞ্জাম
 permission-ask = জিজ্ঞাসা করুন
 permission-yolo = ইয়োলো
@@ -1236,10 +1232,11 @@ chat-thinking-in-progress = চিন্তা করছে…
 chat-thinking-count = চিন্তা করছে ({ $count })
 chat-thinking-summary = চিন্তা করছে · { $summary }
 chat-working-for = কাজ করছে
-chat-agent-wait-caption = { $count ->
-    [one] এটি রিপোর্ট করলে { $model } চালিয়ে যাবে
-   *[other] তারা রিপোর্ট করলে { $model } চালিয়ে যাবে
-}
+chat-agent-wait-caption =
+    { $count ->
+        [one] এটি শেষ হলে { $model } চালিয়ে যাবে
+       *[other] এগুলো শেষ হলে { $model } চালিয়ে যাবে
+    }
 chat-worked-for = কাজ করেছে { $duration }
 chat-worked = কাজ করেছে
 plan-proposed = প্রস্তাবিত পরিকল্পনা
@@ -1286,7 +1283,6 @@ image-preview-load-failed = চিত্র লোড করতে ব্যর�
 hosted-tab-unavailable = এই ট্যাবটি দেখানো যাচ্ছে না কারণ এর বৈশিষ্ট্যটি উপলব্ধ নয়।
 file-tree-new-file = নতুন ফাইল
 file-tree-new-folder = নতুন ফোল্ডার
-review-suggestion = পরামর্শ
 pr-merged = একীভূত
 pr-closed = বন্ধ
 pr-update-available = আপডেট পাওয়া যায়
@@ -1547,9 +1543,6 @@ review-no-pending-comments = কোনও মুলতুবি পর্যা�
 review-no-enabled-chat-providers = কোনও সক্ষম চ্যাট সরবরাহকারী নেই
 review-no-enabled-agents = কোন সক্ষম এজেন্ট নেই
 
-review-comment-count = মন্তব্য: { $count }
-review-review-count = রিভিউ: { $count }
-review-awaiting-reply-count = উত্তরের অপেক্ষা: { $count }
 review-file-count = ফাইল: { $count }
 
 settings-ai-codex-profile-directory-missing = Codex প্রোফাইল ডিরেক্টরি খুঁজে পাওয়া যায়নি। এই প্রোফাইলটি আরম্ভ করার আগে এটি তৈরি করুন।
@@ -2650,8 +2643,6 @@ shared-context-depth-simple-tooltip = লাইটওয়েট স্ক্�
 shared-context-depth-thorough = পুঙ্খানুপুঙ্খ
 shared-context-depth-thorough-summary = প্রথমে সাক্ষাত্কার, তারপরে ওয়ার্কস্পেস গাইডেন্স তৈরি করার আগে কোডবেস বিশ্লেষণ করুন।
 shared-context-depth-thorough-tooltip = স্পষ্ট প্রশ্ন জিজ্ঞাসা করে, লক্ষ্যগুলি নিশ্চিত করে, তারপরে একটি গভীর কোড পাস করে।
-right-panel-show-gitignored-files = গিটইগনোর করা ফাইলগুলি দেখান
-right-panel-hide-gitignored-files = গিটিগনোর ফাইলগুলি লুকান
 workspace-hold-command-for-chat-ui = চ্যাট UI-এর জন্য ⌘ ধরে রাখুন
 workspace-hold-command-for-terminal = টার্মিনালের জন্য ⌘ ধরে রাখুন
 tool-picker-no-matches = কোনো মিল নেই
@@ -4300,6 +4291,325 @@ exit-save-failed-description = আপনার অ্যাপের সর্�
 exit-restart-without-saving = সংরক্ষণ না করে পুনরায় চালু করুন
 exit-quit-without-saving = সংরক্ষণ না করে প্রস্থান করুন
 
+settings-experimental-resource-monitor-label = রিসোর্স মনিটর
+settings-experimental-resource-monitor-description = টাইটেলবারে রিসোর্স বোতাম দেখান, যেখানে প্রতিটি ওয়ার্কট্রি, ট্যাব ও সহায়ক প্রক্রিয়ার মেমরি ও CPU দেখা যায়।
+settings-search-section-resources = রিসোর্স
+settings-search-entry-appearance-resources-show-freeable-memory-label = মুক্তযোগ্য মেমরি দেখান
+settings-search-entry-appearance-resources-show-freeable-memory-description = নিষ্ক্রিয় ট্যাব ঘুম পাড়ালে কতটা মেমরি মুক্ত হবে তা রিসোর্স বোতামে দেখান, এবং আপনার Mac মেমরির চাপে থাকলে সেটিকে রঙিন করুন।
+settings-section-resources = রিসোর্স
+chat-queued-waiting-to-steer = নতুন নির্দেশনা দেওয়ার অপেক্ষায়
+chat-queued-action-no-longer-queued = এই বার্তাটি আর সারিতে নেই।
+chat-queued-steer-failed = এই বার্তা দিয়ে কাজের দিক বদলানো যায়নি।
+chat-queued-change-failed = এই বার্তাটি পরিবর্তন করা যায়নি।
+changes-empty-detail = এই ওয়ার্কট্রিতে আপনি বা আপনার এজেন্টরা যে পরিবর্তন করেন, তা এখানে দেখা যায়।
+changes-empty-turns = এখনও কোনো টার্ন নেই
+changes-empty-turns-detail = কোনো এজেন্ট ফাইল পরিবর্তন করলে সেগুলো এখানে যে টার্নে পরিবর্তন হয়েছে তার নিচে দেখা যায়।
+changes-empty-commits = এখনও কোনো কমিট নেই
+changes-empty-commits-detail = এই ব্রাঞ্চের কমিটগুলো এখানে দেখা যায়।
+changes-empty-all-viewed = সব দেখা হয়েছে
+changes-empty-all-viewed-detail = আপনি পরিবর্তিত প্রতিটি ফাইল খুলেছেন।
+review-delivery-prepared = { $target }-এ প্রস্তুত করা হয়েছে
+review-delivery-sent = { $target }-এ পাঠানো হয়েছে
+review-delivery-dispatched = ব্যাকগ্রাউন্ডে { $target }-এ পাঠানো হয়েছে
+review-delivery-a-chat = একটি চ্যাট
+review-delivery-a-terminal = একটি টার্মিনাল
+review-location-whole-file = পুরো ফাইল
+review-tooltip-more-lines =
+    { $count ->
+        [one] আরও 1টি লাইন
+       *[other] আরও { $count }টি লাইন
+    }
+review-location-line = লাইন { $line }
+review-location-lines = লাইন { $start }–{ $end }
+review-pending-summary =
+    { $files ->
+        [one]
+            { $comments ->
+                [one] 1টি মন্তব্য
+               *[other] { $comments }টি মন্তব্য
+            }
+       *[other] { $files }টি ফাইলে { $comments }টি মন্তব্য
+    }
+review-view-open = খোলা
+review-view-done = সম্পন্ন
+review-your-comments = আপনার মন্তব্য
+review-nothing-to-review = পর্যালোচনার কিছু নেই
+review-nothing-to-review-detail = ডিফে আপনার রাখা মন্তব্য এবং আপনার পুল রিকোয়েস্টের পর্যালোচনা থ্রেড এখানে দেখা যায়।
+review-review-changes = পরিবর্তন পর্যালোচনা করুন
+review-comment-hint = অথবা মন্তব্য করতে যেকোনো ডিফে লাইন নির্বাচন করুন
+review-all-caught-up = সব কাজ শেষ
+review-all-caught-up-detail = কোনো কিছু আপনার অপেক্ষায় নেই।
+review-see-done = কী সম্পন্ন হয়েছে দেখুন
+review-nothing-done = এখনও কিছু সম্পন্ন হয়নি
+review-nothing-done-detail = আপনার পাঠানো মন্তব্য এবং সমাধান হওয়া থ্রেড এখানে দেখা যায়।
+review-pull-request = পুল রিকোয়েস্ট #{ $number }
+review-pull-request-untitled = পুল রিকোয়েস্ট
+review-waiting-on-reviewers = #{ $number }-এ এখনও কেউ মন্তব্য করেননি।
+review-resolved-on-pr = #{ $number }-এ সমাধান করা হয়েছে
+review-pr-refresh = পুল রিকোয়েস্টের মন্তব্য রিফ্রেশ করুন
+review-pr-loading = মন্তব্য লোড হচ্ছে…
+review-pr-load-failed = পুল রিকোয়েস্টের মন্তব্য লোড করা যায়নি। আবার চেষ্টা করতে রিফ্রেশ করুন।
+review-pr-older-hidden = পুরনো থ্রেড দেখানো হচ্ছে না।
+review-pr-overview-truncated = আরও থ্রেড এখানে দেখানো হচ্ছে না।
+review-thread-resolve = সমাধান করুন
+review-thread-unresolve = অমীমাংসিত করুন
+review-thread-resolving = সমাধান করা হচ্ছে…
+review-thread-unresolving = অমীমাংসিত করা হচ্ছে…
+review-thread-update-failed = আপডেট করা যায়নি। আবার চেষ্টা করুন।
+review-thread-outdated = পুরনো
+review-thread-byline =
+    { $replies ->
+        [0] { $author } { $age } মন্তব্য করেছেন
+        [one] { $author } { $age } মন্তব্য করেছেন, 1টি উত্তর
+       *[other] { $author } { $age } মন্তব্য করেছেন, { $replies }টি উত্তর
+    }
+checks-path-to-merge = মার্জের পথ
+checks-step-committed = পরিবর্তন কমিট করা হয়েছে
+checks-step-pushed = পুশ করা হয়েছে
+checks-step-unpushed =
+    { $count ->
+        [one] { $count }টি কমিট পুশ করা বাকি
+       *[other] { $count }টি কমিট পুশ করা বাকি
+    }
+checks-step-review-open = { $kind } খোলা আছে
+checks-step-checks = যাচাই
+checks-step-running = যাচাই চলছে
+checks-behind-target =
+    { $count ->
+        [one] { $target } থেকে { $count }টি কমিট পিছিয়ে
+       *[other] { $target } থেকে { $count }টি কমিট পিছিয়ে
+    }
+right-panel-view-options = দেখার বিকল্প
+right-panel-view-changes = পরিবর্তন
+right-panel-view-gitignored-files = গিটইগনোর করা ফাইল
+diff-viewed-toggle = দেখা হয়েছে
+diff-since-viewed-note = আপনি দেখার পরে { $agent } এটি পরিবর্তন করেছে। তখন থেকে হওয়া পরিবর্তন দেখানো হচ্ছে।
+diff-since-viewed-note-unattributed = আপনি দেখার পরে এই ফাইলটি পরিবর্তিত হয়েছে। তখন থেকে হওয়া পরিবর্তন দেখানো হচ্ছে।
+diff-since-viewed-show-full = পুরো ডিফ দেখান
+diff-turn-review-writing = পর্যালোচনা লেখা হচ্ছে…
+diff-turn-review-passed = পাস করেছে
+diff-turn-review-failed = ব্যর্থ হয়েছে
+diff-turn-review-not-checked = যাচাই করা হয়নি: { $what }
+diff-turn-review-more-checks = আরও { $count }টি
+diff-turn-review-looks-good = ঠিক আছে মনে হচ্ছে
+diff-turn-review-comment-hint = পরিবর্তন চাইতে কোনো লাইনে মন্তব্য করুন
+right-sidebar-new = নতুন
+right-sidebar-show-comments = মন্তব্য দেখান
+right-sidebar-hint-move = সরান
+right-sidebar-hint-viewed = দেখা হয়েছে
+right-sidebar-hint-next-unviewed = পরের না-দেখা
+right-sidebar-hint-open = খুলুন
+right-sidebar-commit-message = কমিট বার্তা
+right-sidebar-writing-message = বার্তা লেখা হচ্ছে
+right-sidebar-write-message = বার্তা লিখুন
+right-sidebar-commit-file-count =
+    { $count ->
+        [one] 1টি ফাইল
+       *[other] { $count }টি ফাইল
+    }
+right-sidebar-commit = কমিট করুন
+right-sidebar-commit-and-push = কমিট ও পুশ করুন
+right-sidebar-amend-last-commit = শেষ কমিট সংশোধন করুন
+right-sidebar-committing = কমিট করা হচ্ছে
+right-sidebar-committed = কমিট করা হয়েছে
+right-sidebar-push = পুশ করুন
+right-sidebar-unviewed = না-দেখা
+changes-file-count =
+    { $count ->
+        [one] 1টি ফাইল
+       *[other] { $count }টি ফাইল
+    }
+right-sidebar-mark-all-viewed =
+    { $count ->
+        [one] 1টি ফাইল দেখা হয়েছে হিসেবে চিহ্নিত করুন
+       *[other] সব { $count }টি ফাইল দেখা হয়েছে হিসেবে চিহ্নিত করুন
+    }
+right-sidebar-all-viewed = সব ফাইল দেখা হয়েছে
+right-sidebar-viewed = দেখা হয়েছে
+right-sidebar-changed-since-viewed = আপনি দেখার পরে পরিবর্তিত হয়েছে
+right-sidebar-changed-since-viewed-by = আপনি দেখার পরে { $agent } এটি পরিবর্তন করেছে
+right-sidebar-changed-since-viewed-count =
+    { $count ->
+        [one] আপনি দেখার পরে 1টি ফাইল পরিবর্তিত হয়েছে
+       *[other] আপনি দেখার পরে { $count }টি ফাইল পরিবর্তিত হয়েছে
+    }
+right-sidebar-view-all = সব
+right-sidebar-view-turns = টার্ন
+right-sidebar-turn-working = কাজ চলছে
+right-sidebar-other-changes = অন্যান্য পরিবর্তন
+right-sidebar-probable-file = এই টার্ন চলার সময় পরিবর্তিত হয়েছে
+right-sidebar-probable-file-detail = এর টুলগুলো এটি জানায়নি, তাই এটি অন্য কারও সম্পাদনা হতে পারে। টার্ন শেষ হলে নিশ্চিত হবে।
+resources-title = রিসোর্স
+resources-search = রিসোর্স বা প্রকল্প খুঁজুন
+resources-search-tooltip = খুঁজুন
+resources-remote = রিমোট
+resources-asleep = ঘুমন্ত
+resources-held-info = এই ওয়ার্কট্রি যেন সঙ্গে সঙ্গে আবার খোলে, সেজন্য স্ক্রিন ও সাম্প্রতিক চ্যাট অ্যাপের মেমরিতে রাখা হয়; এগুলো “অ্যাপ”-এ “ঘুমন্ত”-এর অধীনে গণনা করা হয়। ঘুমন্ত অবস্থায় 15 মিনিট পরে স্ক্রিনগুলো মুক্ত করা হয়।
+resources-cpu = CPU
+resources-cpu-history = গত এক মিনিটের CPU। রিসোর্স খোলা থাকলে ইতিহাস তৈরি হয়।
+resources-reclaim =
+    { $count ->
+        [one] 1টি নিষ্ক্রিয় ট্যাব ঘুমিয়ে প্রায় { $memory } মুক্ত করতে পারে
+       *[other] { $count }টি নিষ্ক্রিয় ট্যাব ঘুমিয়ে প্রায় { $memory } মুক্ত করতে পারে
+    }
+resources-sleep-idle = নিষ্ক্রিয়গুলো ঘুম পাড়ান
+resources-freed = { $memory } মুক্ত হয়েছে
+resources-sleep = ঘুম পাড়ান
+resources-sleep-tooltip = এর প্রক্রিয়াগুলো মুক্ত করে। খুললে এটি ইতিহাসসহ জেগে ওঠে।
+resources-wake = জাগান
+resources-stop = থামান
+resources-stop-confirm = { $name } থামাবেন?
+resources-stop-consequence = চলমান কাজ বাধাগ্রস্ত হবে।
+resources-cancel = বাতিল করুন
+resources-exited = বন্ধ হয়েছে
+resources-exited-just-now = এইমাত্র বন্ধ হয়েছে
+resources-exited-minutes = { $minutes } মিনিট আগে বন্ধ হয়েছে
+resources-exited-hours = { $hours } ঘণ্টা আগে বন্ধ হয়েছে
+resources-cpu-row = { $percent }% CPU
+resources-origin-tab = টার্মিনাল ট্যাব
+resources-origin-launched = { $tab } চালু করেছে
+resources-origin-run-script = রান স্ক্রিপ্ট
+resources-origin-panel = প্যানেল টার্মিনাল
+resources-origin-setup = সেটআপ কমান্ড
+resources-origin-git = Git কাজ
+resources-origin-review = পর্যালোচনা
+resources-activity-running = { $process } চলছে
+resources-activity-busy = চলছে
+resources-activity-idle = নিষ্ক্রিয়
+resources-app = অ্যাপ
+resources-browser-services = ব্রাউজার পরিষেবা
+resources-browser-graphics = গ্রাফিক্স
+resources-browser-networking = নেটওয়ার্কিং
+resources-background = ব্যাকগ্রাউন্ড প্রক্রিয়া
+resources-background-pid = PID { $pid }
+resources-app-graphics = গ্রাফিক্স
+resources-app-graphics-info = উইন্ডো সারফেস ও GPU মেমরি
+resources-app-held-for-reuse = পুনর্ব্যবহারের জন্য রাখা
+resources-app-saved-wake = ঘুমন্ত
+resources-app-code-system = কোড ও সিস্টেম
+resources-app-chats = চ্যাট
+resources-app-chats-open = { $count }টি খোলা
+resources-app-chats-idle = { $count }টি নিষ্ক্রিয়
+resources-app-chats-history = চ্যাটের ইতিহাস
+resources-app-terminals = টার্মিনাল
+resources-app-terminals-count =
+    { $count ->
+        [one] 1টি টার্মিনাল
+       *[other] { $count }টি টার্মিনাল
+    }
+resources-app-terminals-lines =
+    { $count ->
+        [one] 1টি লাইন
+       *[other] { $count }টি লাইন
+    }
+resources-app-saved-count =
+    { $count ->
+        [one] 1টি ওয়ার্কট্রি
+       *[other] { $count }টি ওয়ার্কট্রি
+    }
+resources-app-saved-info = ঘুমন্ত ওয়ার্কট্রিগুলো যেন সঙ্গে সঙ্গে আবার খোলে, সেজন্য রাখা মেমরি
+resources-app-background-count =
+    { $count ->
+        [one] 1টি প্রক্রিয়া
+       *[other] { $count }টি প্রক্রিয়া
+    }
+resources-app-background-info = অ্যাপ যে Git, সহায়ক কমান্ড ও এজেন্ট টুল চালায় এবং যা কোনো ওয়ার্কট্রির নয়
+resources-app-background-brief = স্বল্পস্থায়ী কমান্ড
+resources-app-other-data = ডেটা
+resources-app-other-detail = প্রকল্প ও ওয়ার্কট্রির সঙ্গে বাড়ে
+resources-app-held-for-reuse-detail = অ্যালোকেটর পুনর্ব্যবহারের জন্য রেখেছে
+resources-app-code-system-detail = প্রোগ্রাম কোড ও সিস্টেম লাইব্রেরি
+resources-estimated = আনুমানিক
+resources-sleep-idle-chats = নিষ্ক্রিয় চ্যাট ঘুম পাড়ান
+resources-sleep-idle-chats-confirm =
+    { $count ->
+        [one] 1টি নিষ্ক্রিয় চ্যাট ঘুম পাড়াবেন?
+       *[other] { $count }টি নিষ্ক্রিয় চ্যাট ঘুম পাড়াবেন?
+    }
+resources-frees-about = প্রায় { $memory } মুক্ত করে
+resources-clear = মুছুন
+resources-clear-confirm =
+    { $lines ->
+        [one] স্ক্রলব্যাকের 1টি লাইন মুছবেন?
+       *[other] স্ক্রলব্যাকের { $lines }টি লাইন মুছবেন?
+    }
+resources-clear-consequence = স্ক্রিন যেমন আছে থাকবে।
+resources-clear-scrollback = স্ক্রলব্যাক মুছুন
+resources-clear-all-confirm =
+    { $count ->
+        [one] 1টি টার্মিনালের স্ক্রলব্যাক মুছবেন?
+       *[other] { $count }টি টার্মিনালের স্ক্রলব্যাক মুছবেন?
+    }
+resources-chat-sleep-running = একটি টার্ন চলছে। টার্ন শেষ হলে এটি ঘুমাতে পারবে।
+resources-chat-sleep-waiting = আপনার উত্তরের অপেক্ষায় আছে। উত্তর দিলে এটি ঘুমাতে পারবে।
+resources-chat-sleep-unseen = এমন একটি উত্তর আছে যা আপনি দেখেননি। পড়ে নিলে এটি ঘুমাতে পারবে।
+resources-chat-sleep-kept-ready = এর ওয়ার্কট্রিতে দ্রুত ফেরার জন্য প্রস্তুত রাখা হয়েছে।
+resources-chat-sleep-on-screen = স্ক্রিনে আছে। চোখের আড়াল হলে এটি ঘুমাতে পারবে।
+resources-chat-sleep-queued = বার্তা সারিতে আছে। সেগুলো পাঠানো হলে এটি ঘুমাতে পারবে।
+resources-chat-sleep-busy = এখন ব্যস্ত। একটু পরে আবার চেষ্টা করুন।
+resources-info-title = { $total } কোথায় যাচ্ছে
+resources-info-summary = অ্যাপ, এবং আপনার জন্য এটি যা যা চালু করেছে।
+resources-info-app = super.engineering
+resources-info-app-hint = অ্যাপ ও এটি যে সহায়ক প্রক্রিয়াগুলো চালায়
+resources-info-agents-hint = প্রতিটি চ্যাটের এজেন্ট ও এটি যে টুলগুলো চালায়
+resources-info-browser = ব্রাউজার ট্যাব
+resources-info-browser-hint = প্রতিটি পেজ নিজস্ব প্রক্রিয়ায় চলে
+resources-info-terminals-hint = শেল, রান স্ক্রিপ্ট ও সেগুলো যা চালু করেছে
+resources-info-remote = রিমোট ওয়ার্কট্রি এখনও পরিমাপ করা হয় না।
+resources-pressure-warning = Mac-এর মেমরি চাপে আছে। super.engineering { $ram }-এর মধ্যে { $used } ব্যবহার করছে।
+resources-pressure-warning-short = Mac-এর মেমরি চাপে আছে।
+resources-pressure-critical = Mac-এর মেমরি মারাত্মকভাবে কম। super.engineering { $ram }-এর মধ্যে { $used } ব্যবহার করছে।
+resources-pressure-critical-others = Mac-এর মেমরি মারাত্মকভাবে কম, মূলত অন্য অ্যাপের কারণে। super.engineering { $ram }-এর মধ্যে { $used } ব্যবহার করছে।
+resources-pressure-critical-short = Mac-এর মেমরি মারাত্মকভাবে কম।
+resources-thermal = Mac অনেক গরম হয়ে আছে এবং ধীর হয়ে যেতে পারে।
+resources-measurements-unavailable = মেমরি ও CPU এখন পাওয়া যাচ্ছে না। আপনি তবুও ট্যাব খুলতে ও পরিচালনা করতে পারবেন।
+resources-loading = রিসোর্স লোড হচ্ছে…
+resources-empty = মিলে যাওয়া কোনো রিসোর্স নেই।
+resources-empty-all = কিছুই চলছে না।
+resources-empty-agents = কোনো এজেন্ট চলছে না।
+resources-empty-browser = কোনো ব্রাউজার ট্যাব খোলা নেই।
+resources-empty-terminals = কোনো টার্মিনাল চলছে না।
+resources-tab-all = সব
+resources-tab-agents = এজেন্ট
+resources-tab-browser = ব্রাউজার
+resources-tab-terminals = টার্মিনাল
+resources-fact-agents =
+    { $count ->
+        [one] এজেন্ট
+       *[other] এজেন্ট
+    }
+resources-fact-browser-tabs =
+    { $count ->
+        [one] ব্রাউজার ট্যাব
+       *[other] ব্রাউজার ট্যাব
+    }
+resources-fact-terminals =
+    { $count ->
+        [one] টার্মিনাল
+       *[other] টার্মিনাল
+    }
+resources-on-screen = স্ক্রিনে আছে, তাই জেগে থাকে
+resources-open = খুলুন
+resources-close = বন্ধ করুন
+resources-close-confirm = { $name } বন্ধ করবেন?
+resources-close-consequence = এর পেজ বন্ধ হয়ে যাবে।
+resources-average-title = এজেন্টপ্রতি গড়
+resources-average-each = প্রতিটি
+resources-average-ten = 10টি এজেন্ট
+resources-average-each-suffix = করে
+resources-average-for-ten = 10টির জন্য
+resources-tree-more = আরও +{ $count }
+resources-app-item-detail = { $activity }, { $lines }
+resources-app-more-chats =
+    { $count ->
+        [one] আরও 1টি চ্যাট
+       *[other] আরও { $count }টি চ্যাট
+    }
+resources-app-more-terminals =
+    { $count ->
+        [one] আরও 1টি টার্মিনাল
+       *[other] আরও { $count }টি টার্মিনাল
+    }
 issue-report-check-submission = জমা দেওয়া হয়েছে কি না দেখুন
 issue-report-submission-uncertain = এই প্রতিবেদনটি ইতিমধ্যেই GitHub-এ থাকতে পারে। এটি খুঁজতে জমা দেওয়া হয়েছে কি না দেখুন; এই যাচাই কখনো আবার পোস্ট করে না। এখনো খুঁজে না পেলে অপেক্ষা করে আবার দেখুন, অথবা এই খসড়া বাতিল করার আগে GitHub-এ আপনার ইস্যুগুলো পর্যালোচনা করুন।
 issue-report-discard-uncertain = খসড়া বাতিল করুন (প্রতিবেদনটি ইতিমধ্যেই থাকতে পারে)

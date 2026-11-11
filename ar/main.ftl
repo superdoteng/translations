@@ -1122,8 +1122,6 @@ script-commands-more = المزيد: { $count }
 setup-not-configured = لا يوجد سكريبت إعداد مهيأ
 review-submitted-reviews = المراجعات المقدمة
 review-ai-questions = AI الأسئلة
-review-no-comments = لا توجد تعليقات على المراجعة حتى الآن
-review-select-lines-hint = اختر أسطرا في الفرق لبدء المراجعة.
 sidebar-ssh = SSH
 shared-context-generate-ai-context = توليد AI السياق
 action-generate = توليد
@@ -1159,7 +1157,6 @@ review-add-to-fix-list = إضافة إلى قائمة الإصلاحات
 review-submit-replies = إرسال الردود
 review-submit-from-tab = الإرسال من تبويب المراجعة →
 review-ai-findings = AI ملاحظات
-review-findings-triage-count = بانتظار الفرز: { $count }
 review-findings-to-triage = ملاحظات AI بانتظار الفرز: { $count }
 review-finding-should-fix = يجب إصلاحه
 review-finding-dismiss = تجاهل
@@ -1196,7 +1193,6 @@ context-output = الإنتاج
 context-total-io = إجمالي الإدخال/الإخراج
 context-input-effective = المدخل فعال
 profile-cli-default = CLI الافتراضي
-review-no-active-comments = لا توجد تعليقات نشطة على المراجعات.
 permission-tools = الأدوات
 permission-ask = اسأل
 permission-yolo = يولو
@@ -1250,14 +1246,13 @@ chat-thinking-in-progress = يفكر…
 chat-thinking-count = يفكر ({ $count })
 chat-thinking-summary = يفكر · { $summary }
 chat-working-for = يعمل لمدة
-chat-agent-wait-caption = { $count ->
-    [zero] يتابع { $model } عندما يعود الوكلاء بتقاريرهم
-    [one] يتابع { $model } عندما يعود الوكيل بتقريره
-    [two] يتابع { $model } عندما يعود الوكيلان بتقريرهما
-    [few] يتابع { $model } عندما يعود الوكلاء بتقاريرهم
-    [many] يتابع { $model } عندما يعود الوكلاء بتقاريرهم
-   *[other] يتابع { $model } عندما يعود الوكلاء بتقاريرهم
-}
+chat-agent-wait-caption =
+    { $count ->
+        [zero] يتابع { $model } عندما ينتهون
+        [one] يتابع { $model } عندما ينتهي
+        [two] يتابع { $model } عندما ينتهيان
+       *[other] يتابع { $model } عندما ينتهون
+    }
 chat-worked-for = عمل لمدة { $duration }
 chat-worked = عمل
 plan-proposed = الخطة المقترحة
@@ -1304,7 +1299,6 @@ image-preview-load-failed = فشل تحميل الصورة
 hosted-tab-unavailable = لا يمكن عرض علامة التبويب هذه لأن ميزتها غير متاحة.
 file-tree-new-file = ملف جديد
 file-tree-new-folder = مجلد جديد
-review-suggestion = اقتراح
 pr-merged = تم الاندماج
 pr-closed = مغلق
 pr-update-available = تحديث متوفر
@@ -1569,9 +1563,6 @@ review-no-pending-comments = لا توجد تعليقات مراجعة معلق�
 review-no-enabled-chat-providers = لا يوجد مزودو دردشة مفعلون
 review-no-enabled-agents = لا يوجد وكلاء مفعلون
 
-review-comment-count = تعليقات: { $count }
-review-review-count = المراجعات: { $count }
-review-awaiting-reply-count = بانتظار الردود: { $count }
 review-file-count = الملفات: { $count }
 
 settings-ai-codex-profile-directory-missing = Codex دليل الملف الشخصي غير موجود. أنشئ الملف قبل إطلاق هذا الملف الشخصي.
@@ -2490,8 +2481,6 @@ shared-context-depth-simple-tooltip = إعداد سريع بفحص خفيف (م�
 shared-context-depth-thorough = شامل
 shared-context-depth-thorough-summary = اطرح أسئلة أولًا، ثم حلّل قاعدة الشيفرة قبل إنشاء إرشادات مساحة العمل.
 shared-context-depth-thorough-tooltip = يطرح أسئلة توضيحية، ويؤكد الأهداف، ثم يجري فحصًا أعمق للشيفرة.
-right-panel-show-gitignored-files = إظهار الملفات التي يتجاهلها Git
-right-panel-hide-gitignored-files = إخفاء الملفات التي يتجاهلها Git
 workspace-hold-command-for-chat-ui = اضغط مطولًا على ⌘ لفتح واجهة الدردشة
 workspace-hold-command-for-terminal = اضغط مطولًا على ⌘ لفتح الطرفية
 tool-picker-no-matches = لا توجد نتائج مطابقة
@@ -4321,6 +4310,405 @@ exit-save-failed-description = لم تُحفظ أحدث حالة للتطبيق.
 exit-restart-without-saving = إعادة التشغيل دون حفظ
 exit-quit-without-saving = إنهاء دون حفظ
 
+settings-experimental-resource-monitor-label = مراقب الموارد
+settings-experimental-resource-monitor-description = إظهار زر الموارد في شريط العنوان، مع الذاكرة والمعالج (CPU) لكل شجرة عمل وتبويب وعملية مساعدة.
+settings-search-section-resources = الموارد
+settings-search-entry-appearance-resources-show-freeable-memory-label = إظهار الذاكرة القابلة للتحرير
+settings-search-entry-appearance-resources-show-freeable-memory-description = إظهار مقدار الذاكرة التي يحرّرها تنويم التبويبات الخاملة على زر الموارد، وتلوينه عندما تكون ذاكرة جهاز Mac تحت الضغط.
+settings-section-resources = الموارد
+chat-queued-waiting-to-steer = بانتظار التوجيه
+chat-queued-action-no-longer-queued = لم تعد هذه الرسالة في قائمة الانتظار.
+chat-queued-steer-failed = تعذّر توجيه هذه الرسالة.
+chat-queued-change-failed = تعذّر تغيير هذه الرسالة.
+changes-empty-detail = تظهر هنا التعديلات التي تجريها أنت أو وكلاؤك في شجرة العمل هذه.
+changes-empty-turns = لا أدوار بعد
+changes-empty-turns-detail = عندما يغيّر وكيل ملفات، تظهر هنا تحت الدور الذي غيّرها.
+changes-empty-commits = لا التزامات بعد
+changes-empty-commits-detail = تظهر هنا الالتزامات على هذا الفرع.
+changes-empty-all-viewed = تم عرض الكل
+changes-empty-all-viewed-detail = لقد فتحت كل ملف متغيّر.
+review-delivery-prepared = جُهّز في { $target }
+review-delivery-sent = أُرسل إلى { $target }
+review-delivery-dispatched = أُرسل إلى { $target } في الخلفية
+review-delivery-a-chat = محادثة
+review-delivery-a-terminal = طرفية
+review-location-whole-file = الملف بأكمله
+review-tooltip-more-lines =
+    { $count ->
+        [zero] لا أسطر إضافية
+        [one] سطر إضافي واحد
+        [two] سطران إضافيان
+        [few] { $count } أسطر إضافية
+        [many] { $count } سطرًا إضافيًا
+       *[other] { $count } سطر إضافي
+    }
+review-location-line = السطر { $line }
+review-location-lines = الأسطر { $start }–{ $end }
+review-pending-summary =
+    { $files ->
+        [one]
+            { $comments ->
+                [one] تعليق واحد
+                [two] تعليقان
+                [few] { $comments } تعليقات
+                [many] { $comments } تعليقًا
+               *[other] { $comments } تعليق
+            }
+       *[other]
+            { $comments ->
+                [few] { $comments } تعليقات في { $files } ملفات
+                [many] { $comments } تعليقًا في { $files } ملفات
+               *[other] { $comments } تعليق في { $files } ملفات
+            }
+    }
+review-view-open = مفتوحة
+review-view-done = منتهية
+review-your-comments = تعليقاتك
+review-nothing-to-review = لا شيء للمراجعة
+review-nothing-to-review-detail = تظهر هنا التعليقات التي تتركها على الفروقات، وسلاسل المراجعة في طلب السحب الخاص بك.
+review-review-changes = مراجعة التغييرات
+review-comment-hint = أو حدّد أسطرًا في أي فرق للتعليق
+review-all-caught-up = لا شيء متبقٍّ
+review-all-caught-up-detail = لا شيء بانتظارك.
+review-see-done = عرض ما انتهى
+review-nothing-done = لم ينتهِ شيء بعد
+review-nothing-done-detail = تظهر هنا التعليقات التي ترسلها والسلاسل التي تُحلّ.
+review-pull-request = طلب السحب #{ $number }
+review-pull-request-untitled = طلب سحب
+review-waiting-on-reviewers = لم يعلّق أحد على #{ $number } بعد.
+review-resolved-on-pr = حُلّت في #{ $number }
+review-pr-refresh = تحديث تعليقات طلب السحب
+review-pr-loading = جارٍ تحميل التعليقات…
+review-pr-load-failed = تعذّر تحميل تعليقات طلب السحب. حدّث للمحاولة مرة أخرى.
+review-pr-older-hidden = السلاسل الأقدم غير معروضة.
+review-pr-overview-truncated = سلاسل أخرى غير معروضة هنا.
+review-thread-resolve = حلّ
+review-thread-unresolve = إلغاء الحل
+review-thread-resolving = جارٍ الحل…
+review-thread-unresolving = جارٍ إلغاء الحل…
+review-thread-update-failed = تعذّر التحديث. حاول مرة أخرى.
+review-thread-outdated = قديم
+review-thread-byline =
+    { $replies ->
+        [0] علّق { $author } { $age }
+        [one] علّق { $author } { $age }، رد واحد
+        [two] علّق { $author } { $age }، ردّان
+        [few] علّق { $author } { $age }، { $replies } ردود
+        [many] علّق { $author } { $age }، { $replies } ردًا
+       *[other] علّق { $author } { $age }، { $replies } رد
+    }
+checks-path-to-merge = الطريق إلى الدمج
+checks-step-committed = تم التزام التغييرات
+checks-step-pushed = تم الدفع
+checks-step-unpushed =
+    { $count ->
+        [zero] لا التزامات للدفع
+        [one] التزام واحد للدفع
+        [two] التزامان للدفع
+        [few] { $count } التزامات للدفع
+        [many] { $count } التزامًا للدفع
+       *[other] { $count } التزام للدفع
+    }
+checks-step-review-open = { $kind } مفتوح
+checks-step-checks = عمليات التحقق
+checks-step-running = عمليات التحقق قيد التشغيل
+checks-behind-target =
+    { $count ->
+        [zero] لا تأخر عن { $target }
+        [one] متأخر بالتزام واحد عن { $target }
+        [two] متأخر بالتزامين عن { $target }
+        [few] متأخر بـ { $count } التزامات عن { $target }
+        [many] متأخر بـ { $count } التزامًا عن { $target }
+       *[other] متأخر بـ { $count } التزام عن { $target }
+    }
+right-panel-view-options = خيارات العرض
+right-panel-view-changes = التغييرات
+right-panel-view-gitignored-files = الملفات المتجاهَلة في Git
+diff-viewed-toggle = تم العرض
+diff-since-viewed-note = غيّر { $agent } هذا الملف بعد أن عرضته. يتم عرض التغييرات منذ ذلك الحين.
+diff-since-viewed-note-unattributed = تغيّر هذا الملف بعد أن عرضته. يتم عرض التغييرات منذ ذلك الحين.
+diff-since-viewed-show-full = عرض الفرق كاملًا
+diff-turn-review-writing = جارٍ كتابة المراجعة…
+diff-turn-review-passed = نجح
+diff-turn-review-failed = فشل
+diff-turn-review-not-checked = لم يُتحقق: { $what }
+diff-turn-review-more-checks = { $count } أخرى
+diff-turn-review-looks-good = يبدو جيدًا
+diff-turn-review-comment-hint = علّق على سطر لطلب تغييرات
+right-sidebar-new = جديد
+right-sidebar-show-comments = إظهار التعليقات
+right-sidebar-hint-move = تنقّل
+right-sidebar-hint-viewed = تم العرض
+right-sidebar-hint-next-unviewed = غير المعروض التالي
+right-sidebar-hint-open = فتح
+right-sidebar-commit-message = رسالة الالتزام
+right-sidebar-writing-message = جارٍ كتابة رسالة
+right-sidebar-write-message = كتابة رسالة
+right-sidebar-commit-file-count =
+    { $count ->
+        [zero] لا ملفات
+        [one] ملف واحد
+        [two] ملفان
+        [few] { $count } ملفات
+        [many] { $count } ملفًا
+       *[other] { $count } ملف
+    }
+right-sidebar-commit = التزام
+right-sidebar-commit-and-push = التزام ودفع
+right-sidebar-amend-last-commit = تعديل آخر التزام
+right-sidebar-committing = جارٍ الالتزام
+right-sidebar-committed = تم الالتزام
+right-sidebar-push = دفع
+right-sidebar-unviewed = غير معروض
+changes-file-count =
+    { $count ->
+        [zero] لا ملفات
+        [one] ملف واحد
+        [two] ملفان
+        [few] { $count } ملفات
+        [many] { $count } ملفًا
+       *[other] { $count } ملف
+    }
+right-sidebar-mark-all-viewed =
+    { $count ->
+        [one] تعليم ملف واحد كمعروض
+        [two] تعليم الملفين كمعروضين
+        [few] تعليم الملفات الـ { $count } كمعروضة
+        [many] تعليم الـ { $count } ملفًا كمعروضة
+       *[other] تعليم كل الملفات ({ $count }) كمعروضة
+    }
+right-sidebar-all-viewed = تم عرض كل الملفات
+right-sidebar-viewed = تم العرض
+right-sidebar-changed-since-viewed = تغيّر منذ أن عرضته
+right-sidebar-changed-since-viewed-by = غيّر { $agent } هذا منذ أن عرضته
+right-sidebar-changed-since-viewed-count =
+    { $count ->
+        [one] تغيّر ملف واحد منذ أن عرضته
+        [two] تغيّر ملفان منذ أن عرضتهما
+        [few] تغيّرت { $count } ملفات منذ أن عرضتها
+        [many] تغيّر { $count } ملفًا منذ أن عرضتها
+       *[other] تغيّر { $count } ملف منذ أن عرضتها
+    }
+right-sidebar-view-all = الكل
+right-sidebar-view-turns = الأدوار
+right-sidebar-turn-working = قيد العمل
+right-sidebar-other-changes = تغييرات أخرى
+right-sidebar-probable-file = تغيّر أثناء تشغيل هذا الدور
+right-sidebar-probable-file-detail = لم تُبلغ عنه أدواته، لذا قد يكون تعديلًا من شخص آخر. يتأكد عند انتهاء الدور.
+resources-title = الموارد
+resources-search = البحث في الموارد أو المشاريع
+resources-search-tooltip = بحث
+resources-remote = بعيد
+resources-asleep = في وضع السكون
+resources-held-info = الشاشات والمحادثات الأخيرة محفوظة في ذاكرة التطبيق ليُعاد فتح شجرة العمل هذه فورًا، وتُحتسب في «التطبيق» ضمن «في وضع السكون». تُحرَّر الشاشات بعد 15 دقيقة من السكون.
+resources-cpu = CPU
+resources-cpu-history = استخدام CPU خلال الدقيقة الأخيرة. يتكوّن السجل ما دامت نافذة الموارد مفتوحة.
+resources-reclaim =
+    { $count ->
+        [one] يمكن تنويم تبويب خامل واحد وتحرير نحو { $memory }
+        [two] يمكن تنويم تبويبين خاملين وتحرير نحو { $memory }
+        [few] يمكن تنويم { $count } تبويبات خاملة وتحرير نحو { $memory }
+        [many] يمكن تنويم { $count } تبويبًا خاملًا وتحرير نحو { $memory }
+       *[other] يمكن تنويم { $count } تبويب خامل وتحرير نحو { $memory }
+    }
+resources-sleep-idle = تنويم الخاملة
+resources-freed = حُرّر { $memory }
+resources-sleep = تنويم
+resources-sleep-tooltip = يحرّر عملياته. ويستيقظ مع سجله عند فتحه.
+resources-wake = إيقاظ
+resources-stop = إيقاف
+resources-stop-confirm = إيقاف { $name }؟
+resources-stop-consequence = سيُقاطَع العمل الجاري.
+resources-cancel = إلغاء
+resources-exited = انتهى
+resources-exited-just-now = انتهى للتو
+resources-exited-minutes = انتهى قبل { $minutes } د
+resources-exited-hours = انتهى قبل { $hours } س
+resources-cpu-row = CPU { $percent }%
+resources-origin-tab = تبويب طرفية
+resources-origin-launched = بدأه { $tab }
+resources-origin-run-script = سكربت التشغيل
+resources-origin-panel = طرفية اللوحة
+resources-origin-setup = أمر الإعداد
+resources-origin-git = إجراء Git
+resources-origin-review = مراجعة
+resources-activity-running = يشغّل { $process }
+resources-activity-busy = قيد التشغيل
+resources-activity-idle = خامل
+resources-app = التطبيق
+resources-browser-services = خدمات المتصفح
+resources-browser-graphics = الرسوميات
+resources-browser-networking = الشبكة
+resources-background = عمليات الخلفية
+resources-background-pid = PID { $pid }
+resources-app-graphics = الرسوميات
+resources-app-graphics-info = أسطح النوافذ وذاكرة GPU
+resources-app-held-for-reuse = محجوزة لإعادة الاستخدام
+resources-app-saved-wake = في وضع السكون
+resources-app-code-system = الشيفرة والنظام
+resources-app-chats = المحادثات
+resources-app-chats-open = { $count } مفتوحة
+resources-app-chats-idle = { $count } خاملة
+resources-app-chats-history = سجل المحادثات
+resources-app-terminals = الطرفيات
+resources-app-terminals-count =
+    { $count ->
+        [zero] لا طرفيات
+        [one] طرفية واحدة
+        [two] طرفيتان
+        [few] { $count } طرفيات
+        [many] { $count } طرفيةً
+       *[other] { $count } طرفية
+    }
+resources-app-terminals-lines =
+    { $count ->
+        [zero] لا أسطر
+        [one] سطر واحد
+        [two] سطران
+        [few] { $count } أسطر
+        [many] { $count } سطرًا
+       *[other] { $count } سطر
+    }
+resources-app-saved-count =
+    { $count ->
+        [zero] لا أشجار عمل
+        [one] شجرة عمل واحدة
+        [two] شجرتا عمل
+        [few] { $count } أشجار عمل
+        [many] { $count } شجرة عمل
+       *[other] { $count } شجرة عمل
+    }
+resources-app-saved-info = ذاكرة محفوظة لأشجار العمل النائمة ليُعاد فتحها فورًا
+resources-app-background-count =
+    { $count ->
+        [zero] لا عمليات
+        [one] عملية واحدة
+        [two] عمليتان
+        [few] { $count } عمليات
+        [many] { $count } عمليةً
+       *[other] { $count } عملية
+    }
+resources-app-background-info = Git والأوامر المساعدة وأدوات الوكلاء التي يشغّلها التطبيق ولا تتبع أي شجرة عمل
+resources-app-background-brief = أوامر قصيرة
+resources-app-other-data = البيانات
+resources-app-other-detail = تزداد مع المشاريع وأشجار العمل
+resources-app-held-for-reuse-detail = يحتفظ بها مخصّص الذاكرة لإعادة الاستخدام
+resources-app-code-system-detail = شيفرة البرنامج ومكتبات النظام
+resources-estimated = تقديري
+resources-sleep-idle-chats = تنويم المحادثات الخاملة
+resources-sleep-idle-chats-confirm =
+    { $count ->
+        [one] تنويم محادثة خاملة واحدة؟
+        [two] تنويم محادثتين خاملتين؟
+        [few] تنويم { $count } محادثات خاملة؟
+        [many] تنويم { $count } محادثةً خاملة؟
+       *[other] تنويم { $count } محادثة خاملة؟
+    }
+resources-frees-about = يحرّر نحو { $memory }
+resources-clear = مسح
+resources-clear-confirm =
+    { $lines ->
+        [one] مسح سطر واحد من سجل التمرير؟
+        [two] مسح سطرين من سجل التمرير؟
+        [few] مسح { $lines } أسطر من سجل التمرير؟
+        [many] مسح { $lines } سطرًا من سجل التمرير؟
+       *[other] مسح { $lines } سطر من سجل التمرير؟
+    }
+resources-clear-consequence = تبقى الشاشة كما هي.
+resources-clear-scrollback = مسح سجل التمرير
+resources-clear-all-confirm =
+    { $count ->
+        [one] مسح سجل التمرير في طرفية واحدة؟
+        [two] مسح سجل التمرير في طرفيتين؟
+        [few] مسح سجل التمرير في { $count } طرفيات؟
+        [many] مسح سجل التمرير في { $count } طرفيةً؟
+       *[other] مسح سجل التمرير في { $count } طرفية؟
+    }
+resources-chat-sleep-running = تشغّل دورًا. يمكن تنويمها عند انتهاء الدور.
+resources-chat-sleep-waiting = بانتظار إجابتك. يمكن تنويمها بعد أن تجيب.
+resources-chat-sleep-unseen = فيها رد لم تره. يمكن تنويمها بعد أن تقرأه.
+resources-chat-sleep-kept-ready = تُبقى جاهزة لعودة سريعة إلى شجرة عملها.
+resources-chat-sleep-on-screen = معروضة على الشاشة. يمكن تنويمها عندما تخرج من العرض.
+resources-chat-sleep-queued = توجد رسائل في قائمة الانتظار. يمكن تنويمها بعد إرسالها.
+resources-chat-sleep-busy = مشغولة الآن. حاول مرة أخرى بعد لحظة.
+resources-info-title = أين تذهب { $total }
+resources-info-summary = التطبيق، وكل ما بدأه من أجلك.
+resources-info-app = super.engineering
+resources-info-app-hint = التطبيق والعمليات المساعدة التي يشغّلها
+resources-info-agents-hint = وكيل كل محادثة والأدوات التي يشغّلها
+resources-info-browser = تبويبات المتصفح
+resources-info-browser-hint = تعمل كل صفحة في عمليتها الخاصة
+resources-info-terminals-hint = الأصداف وسكربتات التشغيل وما بدأته
+resources-info-remote = لا تُقاس أشجار العمل البعيدة بعد.
+resources-pressure-warning = ذاكرة جهاز Mac تحت الضغط. يستخدم super.engineering { $used } من { $ram }.
+resources-pressure-warning-short = ذاكرة جهاز Mac تحت الضغط.
+resources-pressure-critical = ذاكرة جهاز Mac منخفضة بشكل حرج. يستخدم super.engineering { $used } من { $ram }.
+resources-pressure-critical-others = ذاكرة جهاز Mac منخفضة بشكل حرج، ومعظم ذلك من تطبيقات أخرى. يستخدم super.engineering { $used } من { $ram }.
+resources-pressure-critical-short = ذاكرة جهاز Mac منخفضة بشكل حرج.
+resources-thermal = جهاز Mac ساخن وقد يتباطأ.
+resources-measurements-unavailable = الذاكرة وCPU غير متاحين الآن. لا يزال بإمكانك فتح التبويبات وإدارتها.
+resources-loading = جارٍ تحميل الموارد…
+resources-empty = لا موارد مطابقة.
+resources-empty-all = لا شيء قيد التشغيل.
+resources-empty-agents = لا وكلاء قيد التشغيل.
+resources-empty-browser = لا تبويبات متصفح مفتوحة.
+resources-empty-terminals = لا طرفيات قيد التشغيل.
+resources-tab-all = الكل
+resources-tab-agents = الوكلاء
+resources-tab-browser = المتصفح
+resources-tab-terminals = الطرفيات
+resources-fact-agents =
+    { $count ->
+        [one] وكيل
+        [two] وكيلان
+        [few] وكلاء
+        [many] وكيلًا
+       *[other] وكيل
+    }
+resources-fact-browser-tabs =
+    { $count ->
+        [one] تبويب متصفح
+        [two] تبويبا متصفح
+        [few] تبويبات متصفح
+        [many] تبويب متصفح
+       *[other] تبويب متصفح
+    }
+resources-fact-terminals =
+    { $count ->
+        [one] طرفية
+        [two] طرفيتان
+        [few] طرفيات
+        [many] طرفيةً
+       *[other] طرفية
+    }
+resources-on-screen = معروض على الشاشة، لذا يبقى نشطًا
+resources-open = فتح
+resources-close = إغلاق
+resources-close-confirm = إغلاق { $name }؟
+resources-close-consequence = ستُغلق صفحته.
+resources-average-title = المتوسط لكل وكيل
+resources-average-each = لكل وكيل
+resources-average-ten = 10 وكلاء
+resources-average-each-suffix = لكل منها
+resources-average-for-ten = لـ 10
+resources-tree-more = +{ $count } أخرى
+resources-app-item-detail = { $activity }، { $lines }
+resources-app-more-chats =
+    { $count ->
+        [one] محادثة أخرى واحدة
+        [two] محادثتان أخريان
+        [few] { $count } محادثات أخرى
+        [many] { $count } محادثةً أخرى
+       *[other] { $count } محادثة أخرى
+    }
+resources-app-more-terminals =
+    { $count ->
+        [one] طرفية أخرى واحدة
+        [two] طرفيتان أخريان
+        [few] { $count } طرفيات أخرى
+        [many] { $count } طرفيةً أخرى
+       *[other] { $count } طرفية أخرى
+    }
 issue-report-check-submission = التحقق من الإرسال
 issue-report-submission-uncertain = قد يكون هذا البلاغ موجودًا بالفعل على GitHub. تحقق من الإرسال للعثور عليه؛ لا يؤدي التحقق إلى نشره مجددًا أبدًا. إذا لم تجده بعد، فانتظر وتحقق مرة أخرى، أو راجع بلاغاتك على GitHub قبل تجاهل هذه المسودة.
 issue-report-discard-uncertain = تجاهل المسودة (قد يكون البلاغ موجودًا بالفعل)
