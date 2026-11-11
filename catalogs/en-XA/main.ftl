@@ -4542,3 +4542,5 @@ exit-save-failed-title = [!! Üñàþľë ţô šàṽë àþþ šţàţë !!]
 exit-save-failed-description = [!! Ÿôüŕ ľàţëšţ àþþ šţàţë ħàš ñôţ þëëñ šàṽëđ. { $error }. Ŕëţŕÿ àƒţëŕ ƒïẋïñĝ šţôŕàĝë, ôŕ çôñţïñüë ŵïţħôüţ šàṽïñĝ. !!]
 exit-restart-without-saving = [!! Ŕëšţàŕţ ŵïţħôüţ šàṽïñĝ !!]
 exit-quit-without-saving = [!! Qüïţ ŵïţħôüţ šàṽïñĝ !!]
+
+review-comment-edit-staged = [!! Ŕëṁôṽë ţħïš ŕëṽïëŵ ƒŕôṁ ţħë çôṁþôšëŕ ƀëƒôŕë ëđïţïñĝ. !!]

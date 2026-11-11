@@ -4055,3 +4055,5 @@ exit-save-failed-title = ऐप की स्थिति सहेजी नह
 exit-save-failed-description = आपके ऐप की नवीनतम स्थिति सहेजी नहीं गई है। { $error }। स्टोरेज की समस्या ठीक करके फिर से कोशिश करें या सहेजे बिना जारी रखें।
 exit-restart-without-saving = सहेजे बिना पुनः शुरू करें
 exit-quit-without-saving = सहेजे बिना बंद करें
+
+review-comment-edit-staged = संपादित करने से पहले इस समीक्षा को कंपोज़र से हटाएँ।

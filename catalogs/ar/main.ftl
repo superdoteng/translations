@@ -4320,3 +4320,5 @@ exit-save-failed-title = تعذّر حفظ حالة التطبيق
 exit-save-failed-description = لم تُحفظ أحدث حالة للتطبيق. { $error }. أعد المحاولة بعد إصلاح مشكلة التخزين، أو تابع دون حفظ.
 exit-restart-without-saving = إعادة التشغيل دون حفظ
 exit-quit-without-saving = إنهاء دون حفظ
+
+review-comment-edit-staged = أزل هذه المراجعة من مربع الكتابة قبل التعديل.

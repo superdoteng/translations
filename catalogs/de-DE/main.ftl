@@ -4083,3 +4083,5 @@ exit-save-failed-title = App-Zustand konnte nicht gespeichert werden
 exit-save-failed-description = Dein letzter App-Zustand wurde nicht gespeichert. { $error }. Behebe das Speicherproblem und versuche es erneut oder fahre ohne Speichern fort.
 exit-restart-without-saving = Ohne Speichern neu starten
 exit-quit-without-saving = Ohne Speichern beenden
+
+review-comment-edit-staged = Entferne dieses Review aus dem Eingabebereich, bevor du es bearbeitest.

@@ -4333,3 +4333,5 @@ exit-save-failed-title = アプリの状態を保存できません
 exit-save-failed-description = 最新のアプリの状態が保存されていません。{ $error }。ストレージの問題を解決して再試行するか、保存せずに続行してください。
 exit-restart-without-saving = 保存せずに再起動
 exit-quit-without-saving = 保存せずに終了
+
+review-comment-edit-staged = 編集する前に、このレビューを入力欄から削除してください。

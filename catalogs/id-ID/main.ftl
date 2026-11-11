@@ -3962,3 +3962,5 @@ exit-save-failed-title = Tidak dapat menyimpan status aplikasi
 exit-save-failed-description = Status aplikasi terbaru belum disimpan. { $error }. Coba lagi setelah memperbaiki penyimpanan, atau lanjutkan tanpa menyimpan.
 exit-restart-without-saving = Mulai ulang tanpa menyimpan
 exit-quit-without-saving = Keluar tanpa menyimpan
+
+review-comment-edit-staged = Hapus ulasan ini dari kolom penulisan sebelum mengeditnya.

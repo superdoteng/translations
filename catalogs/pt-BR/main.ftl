@@ -4103,3 +4103,5 @@ exit-save-failed-title = Não foi possível salvar o estado do aplicativo
 exit-save-failed-description = O estado mais recente do aplicativo não foi salvo. { $error }. Corrija o problema de armazenamento e tente novamente ou continue sem salvar.
 exit-restart-without-saving = Reiniciar sem salvar
 exit-quit-without-saving = Sair sem salvar
+
+review-comment-edit-staged = Remova esta revisão do compositor antes de editá-la.

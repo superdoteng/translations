@@ -4001,3 +4001,5 @@ exit-save-failed-title = Uygulama durumu kaydedilemiyor
 exit-save-failed-description = Uygulamanızın en son durumu kaydedilmedi. { $error }. Depolama sorununu giderdikten sonra tekrar deneyin veya kaydetmeden devam edin.
 exit-restart-without-saving = Kaydetmeden yeniden başlat
 exit-quit-without-saving = Kaydetmeden çık
+
+review-comment-edit-staged = Düzenlemeden önce bu incelemeyi yazma alanından kaldırın.

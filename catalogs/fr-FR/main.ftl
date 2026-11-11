@@ -4107,3 +4107,5 @@ exit-save-failed-title = Impossible d’enregistrer l’état de l’application
 exit-save-failed-description = Le dernier état de votre application n’a pas été enregistré. { $error }. Corrigez le problème de stockage et réessayez, ou continuez sans enregistrer.
 exit-restart-without-saving = Redémarrer sans enregistrer
 exit-quit-without-saving = Quitter sans enregistrer
+
+review-comment-edit-staged = Retirez cette revue de la zone de saisie avant de la modifier.

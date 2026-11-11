@@ -4283,3 +4283,5 @@ exit-save-failed-title = 無法儲存應用程式狀態
 exit-save-failed-description = 最新的應用程式狀態尚未儲存。{ $error }。請修復儲存問題後重試，或不儲存並繼續。
 exit-restart-without-saving = 不儲存並重新啟動
 exit-quit-without-saving = 不儲存並結束
+
+review-comment-edit-staged = 請先將此審查從輸入區移除，再進行編輯。

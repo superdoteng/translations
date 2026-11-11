@@ -3981,3 +3981,5 @@ exit-save-failed-title = ذخیرهٔ وضعیت برنامه ممکن نیست
 exit-save-failed-description = آخرین وضعیت برنامه ذخیره نشده است. { $error }. پس از رفع مشکل فضای ذخیره‌سازی دوباره تلاش کنید، یا بدون ذخیره ادامه دهید.
 exit-restart-without-saving = راه‌اندازی دوباره بدون ذخیره
 exit-quit-without-saving = خروج بدون ذخیره
+
+review-comment-edit-staged = پیش از ویرایش، این بررسی را از کادر نوشتن بردارید.
