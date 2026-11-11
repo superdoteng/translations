@@ -4333,3 +4333,6 @@ exit-save-failed-title = アプリの状態を保存できません
 exit-save-failed-description = 最新のアプリの状態が保存されていません。{ $error }。ストレージの問題を解決して再試行するか、保存せずに続行してください。
 exit-restart-without-saving = 保存せずに再起動
 exit-quit-without-saving = 保存せずに終了
+
+chat-edit-skill-as-text = スキルをテキストとして編集
+chat-edit-failed-draft-conflict = 失敗したメッセージを編集する前に、現在の下書きを保存するか消去してください。

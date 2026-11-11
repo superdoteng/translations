@@ -4378,3 +4378,6 @@ exit-save-failed-title = ایپ کی حالت محفوظ نہیں ہو سکی
 exit-save-failed-description = آپ کی ایپ کی تازہ ترین حالت محفوظ نہیں ہوئی۔ { $error }۔ اسٹوریج کا مسئلہ ٹھیک کرنے کے بعد دوبارہ کوشش کریں، یا محفوظ کیے بغیر جاری رکھیں۔
 exit-restart-without-saving = محفوظ کیے بغیر دوبارہ شروع کریں
 exit-quit-without-saving = محفوظ کیے بغیر بند کریں
+
+chat-edit-skill-as-text = اسکل کو متن کے طور پر ترمیم کریں
+chat-edit-failed-draft-conflict = ناکام پیغام میں ترمیم کرنے سے پہلے موجودہ مسودہ محفوظ کریں یا صاف کریں۔

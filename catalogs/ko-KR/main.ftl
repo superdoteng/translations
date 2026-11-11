@@ -4286,3 +4286,6 @@ exit-save-failed-title = 앱 상태를 저장할 수 없음
 exit-save-failed-description = 최신 앱 상태가 저장되지 않았습니다. { $error }. 저장 공간 문제를 해결한 후 다시 시도하거나 저장하지 않고 계속하세요.
 exit-restart-without-saving = 저장하지 않고 다시 시작
 exit-quit-without-saving = 저장하지 않고 종료
+
+chat-edit-skill-as-text = 스킬을 텍스트로 편집
+chat-edit-failed-draft-conflict = 실패한 메시지를 편집하기 전에 현재 초안을 저장하거나 지우세요.

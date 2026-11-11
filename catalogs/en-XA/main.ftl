@@ -4542,3 +4542,6 @@ exit-save-failed-title = [!! Üñàþľë ţô šàṽë àþþ šţàţë !!]
 exit-save-failed-description = [!! Ÿôüŕ ľàţëšţ àþþ šţàţë ħàš ñôţ þëëñ šàṽëđ. { $error }. Ŕëţŕÿ àƒţëŕ ƒïẋïñĝ šţôŕàĝë, ôŕ çôñţïñüë ŵïţħôüţ šàṽïñĝ. !!]
 exit-restart-without-saving = [!! Ŕëšţàŕţ ŵïţħôüţ šàṽïñĝ !!]
 exit-quit-without-saving = [!! Qüïţ ŵïţħôüţ šàṽïñĝ !!]
+
+chat-edit-skill-as-text = [!! Ëđïţ ŵïţħ šķïľľ àš ţëẋţ !!]
+chat-edit-failed-draft-conflict = [!! Ķëëþ ôŕ çľëàŕ ÿôüŕ çüŕŕëñţ đŕàƒţ bëƒôŕë ëđïţïñĝ ţħë ƒàïľëđ ṁëššàĝë. !!]

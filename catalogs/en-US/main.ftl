@@ -4786,3 +4786,6 @@ exit-save-failed-title = Unable to save app state
 exit-save-failed-description = Your latest app state has not been saved. { $error }. Retry after fixing storage, or continue without saving.
 exit-restart-without-saving = Restart without saving
 exit-quit-without-saving = Quit without saving
+
+chat-edit-skill-as-text = Edit with skill as text
+chat-edit-failed-draft-conflict = Keep or clear your current draft before editing the failed message.
