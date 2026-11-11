@@ -808,6 +808,8 @@ browser-open-over-http = Open over http
 browser-unreachable-title = Can’t reach { $host }
 browser-unreachable-lede = Check the address or your connection.
 browser-try-again = Try again
+browser-dialog-title = { $host } says
+browser-dialog-title-page = This page says
 browser-tip-running-lead = Is the dev server running?
 browser-tip-running-body = Nothing has answered on port { $port } after a few tries. Check the run script or terminal for an error.
 browser-tip-moved-lead = It may have moved.
@@ -1300,6 +1302,7 @@ section-rule-branch-glob = Branch glob
 section-rule-checks-status = Checks status
 section-rule-is-any-of = is any of
 section-rule-more-values = +{ $count } more
+section-rule-path = Path glob
 section-rule-pr-state = Review request state
 section-rule-review-decision = Review decision
 section-rule-run-state = Run state
@@ -1322,10 +1325,7 @@ section-value-review-required = Review required
 section-value-running = Running
 section-value-stopped = Stopped
 section-value-working = Working
-toast-remove-from-app = Remove from { $app_name }
-toast-browser-automation-disabled-title = An agent tried to use the browser
-toast-browser-automation-disabled = Browser automation is off, so the agent's command was refused. Turn it on in Settings › Experimental to let agents read and control your browser tabs.
-toast-open-experimental-settings = Open Settings
+toast-remove-from-app = Remove
 validation-name-required = Name is required
 welcome-clone-from-url = Clone from URL
 welcome-clone-from-url-description = Clone a remote repo
@@ -1900,12 +1900,12 @@ settings-experimental-non-git-projects-label = Non-Git projects
 settings-experimental-non-git-projects-description = Allow adding folders without Git metadata. Existing plain-folder projects stay visible if this is disabled.
 settings-experimental-automations-label = Automations
 settings-experimental-automations-description = Create scheduled and event-driven automations. Early preview, not fully tested yet.
-settings-experimental-browser-automation-label = Browser automation
-settings-experimental-browser-automation-description = Allow agents to use browser control commands. Browser actions still require workspace permission.
 settings-experimental-chat-artifacts-label = Chat artifacts
 settings-experimental-chat-artifacts-description = Let agents publish HTML pages that render live in the chat. Pages run offline in a sandbox.
 settings-experimental-auto-compact-label = Auto-compact Claude Code on context window limit
 settings-experimental-auto-compact-description = When a Claude Code turn fails because the model's context window is exceeded, automatically run /compact and resubmit your last message. Useful for non-1M-context backends (e.g. GLM5.1) where Claude Code's CLAUDE_CODE_AUTO_COMPACT_WINDOW does not fire under -p mode.
+settings-experimental-resource-monitor-label = Resource monitor
+settings-experimental-resource-monitor-description = Show the Resources button in the titlebar, with memory and CPU for each worktree, tab, and helper process.
 settings-experimental-review-label = Review
 settings-experimental-review-description = Run review dispatches in headless provider terminals and keep an AI task history.
 settings-storage-conversation-label = Conversation storage
@@ -1985,6 +1985,7 @@ settings-search-section-layout = Layout
 settings-search-section-chat = Chat
 settings-search-section-files---diffs = Files & diffs
 settings-search-section-usage---cost = Usage & cost
+settings-search-section-resources = Resources
 settings-search-section-appearance = Appearance
 settings-search-section-typography = Typography
 settings-search-section-terminal = Terminal
@@ -2069,6 +2070,8 @@ settings-search-entry-general-behavior-show-cmd-number-hints-on-cmd-hold-label =
 settings-search-entry-general-behavior-show-cmd-number-hints-on-cmd-hold-description = Hold Command for 0.5 seconds to show numbered shortcuts for worktrees or tabs.
 settings-search-entry-general-behavior-use-cmd-number-to-switch-tabs-label = Use Cmd+number to switch tabs
 settings-search-entry-general-behavior-use-cmd-number-to-switch-tabs-description = Use Cmd+1 through Cmd+9 to select tabs in the active worktree instead of switching worktrees.
+settings-search-entry-general-behavior-project-header-click-label = Clicking a project name
+settings-search-entry-general-behavior-project-header-click-description = Choose what clicking a project name in the sidebar does. The arrow next to the name always expands and collapses.
 settings-search-entry-general-behavior-confirm-before-quitting-label = Confirm before quitting
 settings-search-entry-general-behavior-confirm-before-quitting-description = Show a confirmation prompt when you press Cmd+Q or choose Quit from the menu.
 settings-search-entry-general-behavior-confirm-before-closing-a-running-tab-label = Confirm before closing a running tab
@@ -2151,6 +2154,8 @@ settings-search-entry-appearance-layout-default-right-panel-layout-label = Defau
 settings-search-entry-appearance-layout-default-right-panel-layout-description = Choose the default layout for new workspaces: stacked panes or scrollable.
 settings-search-entry-appearance-layout-auto-hide-sidebars-label = Auto-hide sidebars
 settings-search-entry-appearance-layout-auto-hide-sidebars-description = Reveal collapsed sidebars by hovering the window edge.
+settings-search-entry-appearance-resources-show-freeable-memory-label = Show freeable memory
+settings-search-entry-appearance-resources-show-freeable-memory-description = Show how much memory sleeping idle tabs would free on the Resources button, and color it when your Mac is under memory pressure.
 settings-search-entry-appearance-layout-markdown-files-label = Markdown files
 settings-search-entry-appearance-layout-markdown-files-description = Choose whether Markdown files open in the rich editor or source editor.
 settings-markdown-file-open-mode-rich = Rich
@@ -2268,8 +2273,6 @@ settings-search-entry-general-behavior-agent-orchestration-label = Agent orchest
 settings-search-entry-general-behavior-agent-orchestration-description = Make orchestration commands available to agents. Each use still requires an explicit matching request from you.
 settings-search-entry-experimental-feature-flags-automations-label = Automations
 settings-search-entry-experimental-feature-flags-automations-description = Create scheduled and event-driven automations. Early preview, not fully tested yet.
-settings-search-entry-experimental-feature-flags-browser-automation-label = Browser automation
-settings-search-entry-experimental-feature-flags-browser-automation-description = Allow agents to use browser control commands. Browser actions still require workspace permission.
 settings-search-entry-agents-session-context-session-context-for-agents-label = Session context for agents
 settings-search-entry-agents-session-context-session-context-for-agents-description = Add super.engineering context to new agent sessions, or turn ambient injection off.
 settings-search-entry-experimental-feature-flags-auto-compact-claude-code-on-context-window-limit-label = Auto-compact Claude Code on context window limit
@@ -2332,6 +2335,8 @@ settings-search-entry-agents-providers-qwen-code-provider-label = Qwen Code prov
 settings-search-entry-agents-providers-qwen-code-provider-description = Enable Qwen Code and configure its models and launch flags.
 settings-search-entry-agents-providers-kimi-code-provider-label = Kimi Code provider
 settings-search-entry-agents-providers-kimi-code-provider-description = Enable Kimi Code and configure its models and launch flags.
+settings-search-entry-agents-providers-jcode-provider-label = jcode provider
+settings-search-entry-agents-providers-jcode-provider-description = Enable jcode and configure its models and launch flags.
 settings-search-entry-agents-providers-gemini-provider-label = Gemini provider
 settings-search-entry-agents-providers-gemini-provider-description = Enable Gemini and configure its models and launch flags.
 settings-search-entry-agents-providers-kiro-provider-label = Kiro provider
@@ -2406,6 +2411,7 @@ settings-section-layout = Layout
 settings-section-chat = Chat
 settings-section-files-diffs = Files & diffs
 settings-section-usage-cost = Usage & cost
+settings-section-resources = Resources
 settings-section-appearance = Appearance
 settings-section-typography = Typography
 settings-section-terminal = Terminal
@@ -2558,6 +2564,12 @@ settings-orchestrated-worktrees-expanded = Expanded
 settings-orchestrated-worktrees-expanded-description = Always open.
 settings-orchestrated-worktrees-collapsed = Collapsed
 settings-orchestrated-worktrees-collapsed-description = Always folded until you open one.
+settings-project-header-click-toggle = Expand/collapse
+settings-project-header-click-toggle-description = Show or hide the project's worktrees.
+settings-project-header-click-open-primary = Open primary worktree
+settings-project-header-click-open-primary-description = Open the project's main checkout.
+settings-project-header-click-auto = Auto
+settings-project-header-click-auto-description = Open the primary worktree when it's the only one, otherwise expand or collapse.
 settings-right-panel-stacked-panes = Stacked panes
 settings-right-panel-scrollable = Scrollable
 settings-notification-delivery-always = Always
@@ -2743,6 +2755,7 @@ settings-ai-provider-qwen-description = Enable Qwen Code as a terminal provider 
 settings-ai-provider-fx-description = Enable fx chat and terminal support (requires fx CLI `fx` installed).
 workspace-fx-remote-history-unsupported = FX remote terminals do not support session history or resume yet.
 settings-ai-provider-kimi-description = Enable Kimi Code as a chat and terminal provider (requires the current Kimi Code CLI `kimi` installed).
+settings-ai-provider-jcode-description = Enable jcode as a chat and terminal provider (requires the jcode CLI `jcode` installed). Chats run every tool jcode's own config allows; jcode cannot ask for approval first.
 settings-ai-provider-gemini-legacy-description = Enable legacy Gemini CLI as a terminal provider (requires Gemini CLI installed).
 settings-ai-provider-kiro-description = Enable Kiro as a terminal provider (requires kiro-cli installed).
 settings-ai-provider-copilot-description = Enable Copilot as a terminal provider (requires GitHub Copilot CLI installed).
@@ -2892,6 +2905,7 @@ settings-keybinding-action-copy-concise-transcript = Copy Concise Transcript
 settings-keybinding-action-copy-selection = Copy Selection
 settings-keybinding-action-select-all-text = Select All Text
 settings-keybinding-action-steer = Steer
+settings-keybinding-action-paste-as-secret = Paste as Secret
 settings-keybinding-action-save = Save
 settings-keybinding-action-rename-tab = Rename Tab
 settings-keybinding-action-rename-branch = Rename Branch
@@ -2917,6 +2931,10 @@ worktree-step-setup = Running setup
 worktree-step-opening-agent = Opening { $agent }
 chat-queued-until-worktree-ready = Sends when ready
 chat-queued-position = Queued { $position }
+chat-queued-waiting-to-steer = Waiting to steer
+chat-queued-action-no-longer-queued = This message is no longer queued.
+chat-queued-steer-failed = Couldn't steer this message.
+chat-queued-change-failed = Couldn't change this message.
 chat-delivery-unconfirmed = Delivery unconfirmed
 chat-delivery-unconfirmed-retry = Check the conversation before retrying; this message may already have been delivered.
 chat-answer-pending-delivery = Pending delivery
@@ -2933,6 +2951,13 @@ action-forward = Forward
 subagent-no-transcript = No transcript recorded yet.
 action-confirm = Confirm
 changes-no-changes = No changes
+changes-empty-detail = Edits you or your agents make in this worktree show up here.
+changes-empty-turns = No turns yet
+changes-empty-turns-detail = When an agent changes files, they show up here under the turn that changed them.
+changes-empty-commits = No commits yet
+changes-empty-commits-detail = Commits on this branch show up here.
+changes-empty-all-viewed = All viewed
+changes-empty-all-viewed-detail = You’ve opened every changed file.
 changes-commits = Commits
 common-all = All
 review-resolved-count = Resolved ({ $count })
@@ -2959,8 +2984,6 @@ script-commands-more =
 setup-not-configured = No setup script configured
 review-submitted-reviews = Submitted reviews
 review-ai-questions = AI questions
-review-no-comments = No review comments yet
-review-select-lines-hint = Select lines in the diff to start a review.
 sidebar-ssh = SSH
 shared-context-generate-ai-context = Generate AI Context
 action-generate = Generate
@@ -2997,7 +3020,6 @@ review-add-to-fix-list = Add to Fix List
 review-submit-replies = Submit Replies
 review-submit-from-tab = Submit from the Review tab →
 review-ai-findings = AI findings
-review-findings-triage-count = To triage: { $count }
 review-findings-to-triage = AI findings to triage: { $count }
 review-finding-should-fix = Should fix
 review-finding-dismiss = Dismiss
@@ -3146,7 +3168,6 @@ chat-message-tokens-not-reported = Not reported
 context-total-io = Total I/O
 context-input-effective = Input effective
 profile-cli-default = CLI default
-review-no-active-comments = No active review comments.
 permission-tools = Tools
 permission-ask = Ask
 permission-yolo = Yolo
@@ -3199,18 +3220,14 @@ chat-thinking = Thinking
 chat-thinking-in-progress = Thinking…
 chat-waiting-for-answer = Waiting for your answer
 chat-waiting-for-approval = Waiting for approval
-chat-waiting-on-agents = { $count ->
-    [one] Waiting on { $count } agent…
-   *[other] Waiting on { $count } agents…
-}
 chat-thinking-count = Thinking ({ $count })
 chat-thinking-summary = Thinking · { $summary }
 # Live duration is a separate RunTimerView entity, so this prefix cannot take a Fluent placeable.
 chat-working-for = Working for
-# Under the answer a chat waits after while agents it launched still work, e.g. "Opus 5.5 continues when it reports back".
+# Under the answer a chat waits after while agents it launched or commands it runs in the background still work, e.g. "Opus 5.5 continues when it finishes".
 chat-agent-wait-caption = { $count ->
-    [one] { $model } continues when it reports back
-   *[other] { $model } continues when they report back
+    [one] { $model } continues when it finishes
+   *[other] { $model } continues when they finish
 }
 chat-worked-for = Worked for { $duration }
 # A centred timestamp where a conversation picks up after a gap.
@@ -3343,7 +3360,6 @@ image-preview-load-failed = Failed to load image
 hosted-tab-unavailable = This tab can’t be shown because its feature isn’t available.
 file-tree-new-file = New File
 file-tree-new-folder = New Folder
-review-suggestion = suggestion
 pr-merged = Merged
 pr-closed = Closed
 pr-update-available = Update available
@@ -3444,6 +3460,7 @@ chat-diff-unchanged-lines = { $count ->
 chat-files-changed-shared = Another chat was working in this worktree during this turn. A file both chats changed shows both chats' edits.
 chat-files-changed-unattributed = Another chat was working in this worktree during this turn. Dimmed files changed while it was working and may be its changes.
 chat-files-changed-snapshot-failed = This turn's worktree couldn't be snapshotted, so only files its tools reported are listed.
+chat-files-changed-snapshot-partial = Some of this turn's repositories couldn't be snapshotted, so only files its tools reported are listed for them.
 git-uncommitted-change-count = Uncommitted changes: { $count }
 git-unpushed-commit-count = Unpushed commits: { $count }
 settings-ai-action-model-pins-set = Action-specific model pins set: { $count }
@@ -3460,21 +3477,77 @@ review-open-chat-first = Open a chat or agent terminal tab first
 review-no-pending-comments = No pending review comments
 review-no-enabled-chat-providers = No enabled chat providers
 review-no-enabled-agents = No enabled agents
-review-comment-count = Comments: { $count }
-review-review-count = Reviews: { $count }
-review-awaiting-reply-count = Awaiting replies: { $count }
 review-file-count = Files: { $count }
+# Where a review comment went. $target is a chat title, a provider name, or one of the review-delivery-a-* fallbacks.
+review-delivery-prepared = Prepared in { $target }
+review-delivery-sent = Sent to { $target }
+review-delivery-dispatched = Sent to { $target } in the background
+# Fallback $target when the chat or terminal a review went to is no longer open.
+review-delivery-a-chat = a chat
+review-delivery-a-terminal = a terminal
+# Where a review comment sits in its file.
+review-location-whole-file = Whole file
+review-tooltip-more-lines = { $count ->
+    [one] 1 more line
+   *[other] { $count } more lines
+}
+review-location-line = Line { $line }
+review-location-lines = Lines { $start }–{ $end }
+# Summary beside the review submit button.
+review-pending-summary = { $files ->
+    [one] { $comments ->
+        [one] 1 comment
+       *[other] { $comments } comments
+    }
+   *[other] { $comments } comments in { $files } files
+}
+# Review tab: Open holds what still needs you, Done what's finished.
+review-view-open = Open
+review-view-done = Done
+review-your-comments = Your comments
+review-nothing-to-review = Nothing to review
+review-nothing-to-review-detail = Comments you leave on a diff, and your pull request’s review threads, show up here.
+review-review-changes = Review changes
+review-comment-hint = or select lines in any diff to comment
+review-all-caught-up = All caught up
+review-all-caught-up-detail = Nothing is waiting on you.
+review-see-done = See what’s done
+review-nothing-done = Nothing done yet
+review-nothing-done-detail = Comments you send and threads that get resolved show up here.
+# $number is the pull request's number.
+review-pull-request = Pull request #{ $number }
+review-pull-request-untitled = Pull request
+review-waiting-on-reviewers = Nobody has commented on #{ $number } yet.
+review-resolved-on-pr = Resolved on #{ $number }
+review-pr-refresh = Refresh pull request comments
+review-pr-loading = Loading comments…
+review-pr-load-failed = Couldn’t load pull request comments. Refresh to try again.
+review-pr-older-hidden = Older threads aren’t shown.
+review-pr-overview-truncated = More threads aren’t shown here.
+review-thread-resolve = Resolve
+review-thread-unresolve = Unresolve
+review-thread-resolving = Resolving…
+review-thread-unresolving = Unresolving…
+review-thread-update-failed = Couldn’t update. Try again.
+review-thread-outdated = Outdated
+# Who wrote a pull request thread and when, with its replies. $age reads like "3 days ago".
+review-thread-byline = { $replies ->
+    [0] { $author } commented { $age }
+    [one] { $author } commented { $age }, 1 reply
+   *[other] { $author } commented { $age }, { $replies } replies
+}
 settings-ai-codex-profile-directory-missing = Codex profile directory not found. Create it before launching this profile.
 common-subagent = Subagent
 
 action-initialize-anyway = Initialize Anyway
 action-install-key = Install key
-action-update-cli = Update CLI
+action-update-cli = Update
 clone-status-cloning = Cloning { $repository }
 clone-status-canceling = Canceling { $repository }
 clone-status-cloned = Cloned { $repository }
 clone-status-failed = Clone failed: { $repository }
 clone-status-canceled = Clone canceled: { $repository }
+clone-waiting-for-stop = Waiting for the clone process to stop…
 file-dialog-select-profile-folder = Select a Profile Folder
 notification-app-up-to-date = { $app_name } is up to date
 notification-codex-thread-archive-started = Archiving Codex threads from deleted worktrees…
@@ -3600,8 +3673,7 @@ target-branch-push-description = Choose whether to push the newly created target
 toast-error = Error
 toast-busy = Busy
 toast-review = Review
-toast-review-comments-title = Review comments ({ $count })
-toast-review-comments-message = { $count } new review comments. Latest: { $latest }
+toast-review-comments = Review comments
 toast-update-branch-failed = Update branch failed
 toast-keymap-error = Keymap error
 toast-keymap-load-failed = Failed to load keymap: { $error }
@@ -3611,6 +3683,12 @@ toast-retired-codex-models-message = GPT-5.3 Codex, GPT-5.3 Codex Spark, GPT-5.4
 toast-state-file-quarantined = { $file } could not be loaded and was reset to defaults. The original file was preserved at { $backup }.
 toast-state-file-write-blocked = { $file } could not be loaded safely. Changes will not be saved until the file issue is resolved.
 toast-notification = Notification
+toast-report-issue = Report
+toast-rex-session-display-failed = Rex session created, but couldn’t be displayed
+toast-rex-enable-remote-control = Enable Remote Control in Rex Settings → Rex Server, then select the existing session. Opening again creates another session.
+toast-rex-select-existing-session = Select the existing session in Rex. Opening again creates another session.
+toast-open-app-failed = Couldn’t open the selected app
+toast-open-app-failed-message = Check that the app is installed and available. Expand Details for the error.
 toast-cannot-create-worktree = Cannot create worktree
 toast-create-worktree-failed = Create worktree failed
 toast-delete-worktree-failed = Failed to delete worktree
@@ -3722,6 +3800,11 @@ chat-change-profile = Change profile
 chat-copy-command = Copy command
 chat-copy-output = Copy output
 chat-copy-output-modifier-hint = Copy output (hold modifier for command)
+chat-forward = Forward
+chat-forward-search-placeholder = Forward to…
+chat-forward-no-chats = No other chats open
+chat-forward-failed-title = Unable to forward
+chat-forward-failed-message = The destination chat is no longer available or is read-only.
 subagent-transcript-unavailable-provider = Transcript not available for this provider yet
 plan-step-count = { $completed }/{ $total } steps
 
@@ -3750,6 +3833,11 @@ sidebar-toggle-right-panel = Toggle right panel
 sidebar-new-worktree-from = New worktree from
 sidebar-new-worktree = New worktree
 sidebar-copy-review-request-url = Copy { $kind } URL
+workspace-path-copied = Copied path
+workspace-link-copied = Copied link
+workspace-copy-chat-link = Copy link to chat
+workspace-chat-link-copy-failed = Could not copy link to chat
+workspace-chat-link-copied = Copied link to chat
 common-copied = Copied
 common-open = Open
 file-menu-open-in-finder = Open in Finder
@@ -3790,8 +3878,8 @@ git-run-action-in-new-tab = Run action in new tab
 git-run-action = Run action
 right-panel-new-terminal = New terminal
 setup-stop-script = Stop setup script
-run-open-port = Open :{ $port }
-run-open-preview = Open preview
+run-app-on-phone = Open on your phone
+run-app-scan-hint = Scan with a phone on the same Wi-Fi.
 run-stop-script = Stop run script
 run-rerun-workspace = Re-run workspace
 workspace-close-tab = Close tab
@@ -3987,6 +4075,22 @@ checks-summary-action-required = { $required } actions required, { $completed } 
 checks-summary-passing-with-skipped = All checks passing ({ $skipped } skipped)
 checks-summary-all-passing = All checks passing
 checks-summary-passing = { $passing } of { $total } checks passing
+checks-path-to-merge = Path to merge
+checks-step-committed = Changes committed
+checks-step-pushed = Pushed
+checks-step-unpushed =
+    { $count ->
+        [one] { $count } commit to push
+       *[other] { $count } commits to push
+    }
+checks-step-review-open = { $kind } open
+checks-step-checks = Checks
+checks-step-running = Checks running
+checks-behind-target =
+    { $count ->
+        [one] { $count } commit behind { $target }
+       *[other] { $count } commits behind { $target }
+    }
 
 palette-search-commands = Search for commands…
 palette-search-anything = Search for anything…
@@ -4023,6 +4127,7 @@ palette-quick-new-terminal = New terminal
 palette-quick-feedback = Report a bug or request a feature
 palette-section-top-hit = Top hit
 palette-section-matches = Matches
+palette-section-go-to = Go to
 palette-section-tabs = Tabs
 palette-section-worktrees = Worktrees
 palette-section-conversations = Conversations
@@ -4147,6 +4252,10 @@ palette-action-open-review-request =
 palette-action-create-and-start = Create and start { $provider }
 palette-search-projects = Choose a project
 palette-mode-projects = Projects
+palette-navigation-worktrees = { $count ->
+    [one] 1 worktree
+   *[other] { $count } worktrees
+}
 palette-section-branches = Branches
 palette-section-look-up = Look up
 palette-loading-branches = Loading branches…
@@ -4167,6 +4276,16 @@ sidebar-rename-worktree-label = Rename feature label…
 sidebar-rename-feature-label = Rename feature label…
 sidebar-rename-branch = Rename branch…
 group-branch-rename-title = Rename branch
+secret-request-title = An agent is asking for a secret
+secret-request-asked-by = “{ $asker }” asks for: { $label }
+secret-request-asked-by-agent = An agent asks for: { $label }
+secret-request-placeholder = Paste or type the secret
+secret-request-note = Saved to a private file and kept out of chat. The agent's commands can read it for 24 hours.
+secret-request-save = Save privately
+secret-request-show = Show secret
+secret-request-hide = Hide secret
+secret-request-decline = Decline
+secret-request-save-failed = Couldn't save it privately: { $error }
 group-branch-rename-subtitle = { $count ->
     [one] Renames the branch in 1 repository
    *[other] Renames the branch in all { $count } repositories
@@ -4181,6 +4300,11 @@ sidebar-hide-primary-worktree = Hide primary worktree
 sidebar-edit-section = Edit…
 sidebar-move-section-up = Move up
 sidebar-move-section-down = Move down
+sidebar-sort-projects-by = Sort projects by
+sidebar-sort-projects-name = Name
+sidebar-sort-projects-path = Path
+sidebar-collapse-all-projects = Collapse all projects
+sidebar-expand-all-projects = Expand all projects
 file-menu-open-in-terminal = Open in Terminal
 shared-context-edit-projects = Edit projects…
 history-load-backfill = Load / Backfill History
@@ -4249,8 +4373,9 @@ shared-context-depth-simple-tooltip = Fast setup with lightweight scanning (READ
 shared-context-depth-thorough = Thorough
 shared-context-depth-thorough-summary = Interview first, then analyze the codebase before generating workspace guidance.
 shared-context-depth-thorough-tooltip = Asks clarifying questions, confirms goals, then does a deeper code pass.
-right-panel-show-gitignored-files = Show gitignored files
-right-panel-hide-gitignored-files = Hide gitignored files
+right-panel-view-options = View options
+right-panel-view-changes = Changes
+right-panel-view-gitignored-files = Gitignored files
 workspace-hold-command-for-chat-ui = Hold ⌘ for Chat UI
 workspace-hold-command-for-terminal = Hold ⌘ for Terminal
 tool-picker-no-matches = No matches
@@ -4412,6 +4537,16 @@ chat-pill-card-agent-failed = Failed after { $time }
 chat-pill-card-waiting-answer = Waiting for your answer
 chat-pill-card-exited = Exited { $code }, { $time }
 chat-pill-card-uncommitted = { $count } uncommitted
+chat-secret-pill-token = { $issuer } token
+chat-secret-pill-private-key = Private key
+chat-secret-pill-secret = Secret
+chat-secret-card-kind = Kept private
+chat-secret-card-detail = Your agent gets the path to a private file instead of the value. Its commands can still read the file, which is deleted after 24 hours.
+chat-secret-card-paste-as-text = Paste as text
+chat-secret-store-failed = Couldn't keep the secret private, so it wasn't pasted. Paste again to paste it as plain text.
+chat-secret-paste-moved = The draft changed while the secret was being kept private, so it wasn't pasted. Paste it again.
+chat-paste-moved = The draft changed while the paste was being checked, so it wasn't pasted. Paste it again.
+chat-secret-expired = That secret's file is gone, so it can't be pasted as text. Paste it again.
 chat-pill-card-failing-checks = { $count ->
     [one] #{ $number } has 1 failing check: { $names }
    *[other] #{ $number } has { $count } failing checks: { $names }
@@ -4568,6 +4703,43 @@ chat-lock-releasing = Stopping the process and checking the lock…
 chat-lock-released = The process released this thread. You can retry your message.
 chat-lock-release-failed = Could not release the thread. The owner may have changed or may still be running.
 chat-lock-recheck = Check owner again
+
+# Changes review snapshots and diff headers
+# The toggle key matches the diff-view public UI contract.
+diff-viewed-toggle = Viewed
+diff-since-viewed-note = { $agent } changed this after you viewed it. Showing changes since then.
+diff-since-viewed-note-unattributed = This file changed after you viewed it. Showing changes since then.
+diff-since-viewed-show-full = Show full diff
+diff-turn-review-writing = Writing the review…
+diff-turn-review-passed = passed
+diff-turn-review-failed = failed
+diff-turn-review-not-checked = Not checked: { $what }
+diff-turn-review-more-checks = { $count } more
+diff-turn-review-looks-good = Looks good
+diff-turn-review-comment-hint = Comment on a line to ask for changes
+
+## Right sidebar: Changes review, agent grouping, and tabs
+right-sidebar-new = New
+right-sidebar-show-comments = Show comments
+right-sidebar-filter-files = Filter files
+right-sidebar-hint-move = Move
+right-sidebar-hint-viewed = Viewed
+right-sidebar-hint-next-unviewed = Next unviewed
+right-sidebar-hint-open = Open
+right-sidebar-commit-message = Commit message
+right-sidebar-writing-message = Writing a message
+right-sidebar-write-message = Write a message
+right-sidebar-commit-file-count = { $count ->
+    [one] 1 file
+   *[other] { $count } files
+}
+right-sidebar-commit = Commit
+right-sidebar-commit-and-push = Commit and push
+right-sidebar-amend-last-commit = Amend last commit
+right-sidebar-committing = Committing
+right-sidebar-committed = Committed
+right-sidebar-push = Push
+right-sidebar-collapse-all-folders = Collapse all folders
 chat-artifact-loading = Loading artifact…
 chat-artifact-unavailable = This artifact is not available in this conversation.
 chat-artifact-sandboxed = Sandboxed page
@@ -4579,6 +4751,7 @@ chat-artifact-expand = Expand
 chat-artifact-collapse = Close (Esc)
 chat-artifact-save-html = Save as HTML file
 chat-artifact-open-in-browser = Open in browser
+chat-artifact-annotate = Annotate
 chat-artifact-open-in-browser-confirm = Open this artifact in your browser?
 chat-artifact-open-in-browser-detail = Its code runs outside the app's sandbox there, where it can reach the internet. Open it only if you trust what made it.
 chat-artifact-open-in-app-browser = In-App Browser
@@ -4724,3 +4897,214 @@ issue-report-actions-private = Private
 issue-report-action-draft-agent = Draft with an agent
 issue-report-action-copy-markdown = Copy as Markdown
 issue-report-action-email = Email it privately
+
+right-sidebar-reveal-open-file = Reveal open file
+
+right-sidebar-unviewed = Unviewed
+changes-file-count = { $count ->
+    [one] 1 file
+   *[other] { $count } files
+}
+right-sidebar-mark-all-viewed = { $count ->
+    [one] Mark 1 file viewed
+   *[other] Mark all { $count } files viewed
+}
+right-sidebar-all-viewed = All files viewed
+right-sidebar-viewed = Viewed
+right-sidebar-changed-since-viewed = Changed since you viewed it
+right-sidebar-changed-since-viewed-by = { $agent } changed this since you viewed it
+right-sidebar-changed-since-viewed-count = { $count ->
+    [one] 1 file changed since you viewed it
+   *[other] { $count } files changed since you viewed them
+}
+right-sidebar-view-all = All
+right-sidebar-view-turns = Turns
+right-sidebar-turn-working = Working
+right-sidebar-other-changes = Other changes
+right-sidebar-probable-file = Changed while this turn ran
+right-sidebar-probable-file-detail = Not reported by its tools, so it could be someone else's edit. Confirmed when the turn ends.
+
+## Resource Manager
+resources-title = Resources
+resources-search = Search resources or projects
+resources-search-tooltip = Search
+resources-remote = Remote
+resources-asleep = Asleep
+resources-held-info = Screens and recent chat kept in the app's memory so this worktree reopens instantly, counted in App under Asleep. Screens are released after 15 minutes asleep.
+resources-cpu = CPU
+resources-cpu-history = CPU over the last minute. History builds while Resources is open.
+resources-reclaim =
+    { $count ->
+        [one] 1 idle tab can sleep and free about { $memory }
+       *[other] { $count } idle tabs can sleep and free about { $memory }
+    }
+resources-sleep-idle = Sleep idle
+resources-freed = Freed { $memory }
+resources-sleep = Sleep
+resources-sleep-tooltip = Frees its processes. It wakes with its history when you open it.
+resources-wake = Wake
+resources-stop = Stop
+resources-stop-confirm = Stop { $name }?
+resources-stop-consequence = Running work will be interrupted.
+resources-cancel = Cancel
+resources-exited = Exited
+resources-exited-just-now = Exited just now
+resources-exited-minutes = Exited { $minutes } min ago
+resources-exited-hours = Exited { $hours } h ago
+resources-cpu-row = { $percent }% CPU
+resources-origin-tab = Terminal tab
+resources-origin-launched = Started by { $tab }
+resources-origin-run-script = Run script
+resources-origin-panel = Panel terminal
+resources-origin-setup = Setup command
+resources-origin-git = Git action
+resources-origin-review = Review
+resources-activity-running = Running { $process }
+resources-activity-busy = Running
+resources-activity-idle = Idle
+resources-app = App
+resources-browser-services = Browser services
+resources-browser-graphics = Graphics
+resources-browser-networking = Networking
+resources-background = Background processes
+resources-background-pid = PID { $pid }
+resources-app-graphics = Graphics
+resources-app-graphics-info = Window surfaces and GPU memory
+resources-app-held-for-reuse = Held for reuse
+resources-app-saved-wake = Asleep
+resources-app-code-system = Code and system
+resources-app-chats = Chats
+resources-app-chats-open = { $count } open
+resources-app-chats-idle = { $count } idle
+resources-app-chats-history = Chat history
+resources-app-terminals = Terminals
+resources-app-terminals-count =
+    { $count ->
+        [one] 1 terminal
+       *[other] { $count } terminals
+    }
+resources-app-terminals-lines =
+    { $count ->
+        [one] 1 line
+       *[other] { $count } lines
+    }
+resources-app-saved-count =
+    { $count ->
+        [one] 1 worktree
+       *[other] { $count } worktrees
+    }
+resources-app-saved-info = Memory kept for sleeping worktrees so they reopen instantly
+resources-app-background-count =
+    { $count ->
+        [one] 1 process
+       *[other] { $count } processes
+    }
+resources-app-background-info = Git, helper commands and agent tools the app runs that no worktree owns
+resources-app-background-brief = Brief commands
+resources-app-other-data = Data
+resources-app-other-detail = Grows with projects and worktrees
+resources-app-held-for-reuse-detail = Kept by the allocator for reuse
+resources-app-code-system-detail = Program code and system libraries
+resources-estimated = Estimated
+resources-sleep-idle-chats = Sleep idle chats
+resources-sleep-idle-chats-confirm =
+    { $count ->
+        [one] Sleep 1 idle chat?
+       *[other] Sleep { $count } idle chats?
+    }
+resources-frees-about = Frees about { $memory }
+resources-clear = Clear
+resources-clear-confirm =
+    { $lines ->
+        [one] Clear 1 line of scrollback?
+       *[other] Clear { $lines } lines of scrollback?
+    }
+resources-clear-consequence = The screen stays.
+resources-clear-scrollback = Clear scrollback
+resources-clear-all-confirm =
+    { $count ->
+        [one] Clear scrollback in 1 terminal?
+       *[other] Clear scrollback in { $count } terminals?
+    }
+resources-chat-sleep-running = Running a turn. It can sleep when the turn ends.
+resources-chat-sleep-waiting = Waiting for your answer. It can sleep once you answer.
+resources-chat-sleep-unseen = Has a reply you haven't seen. It can sleep once you've read it.
+resources-chat-sleep-kept-ready = Kept ready for a quick return to its worktree.
+resources-chat-sleep-on-screen = On screen. It can sleep once it is out of view.
+resources-chat-sleep-queued = Messages are queued. It can sleep once they are sent.
+resources-chat-sleep-busy = Busy right now. Try again in a moment.
+resources-info-title = Where { $total } goes
+resources-info-summary = The app, plus everything it started for you.
+resources-info-app = super.engineering
+resources-info-app-hint = The app and the helper processes it runs
+resources-info-agents-hint = Each chat's agent and the tools it runs
+resources-info-browser = Browser tabs
+resources-info-browser-hint = Each page runs in its own process
+resources-info-terminals-hint = Shells, run scripts and what they started
+resources-info-remote = Remote worktrees are not measured yet.
+resources-pressure-warning = Mac memory is under pressure. super.engineering uses { $used } of { $ram }.
+resources-pressure-warning-short = Mac memory is under pressure.
+resources-pressure-critical = Mac memory is critically low. super.engineering uses { $used } of { $ram }.
+resources-pressure-critical-others = Mac memory is critically low, mostly from other apps. super.engineering uses { $used } of { $ram }.
+resources-pressure-critical-short = Mac memory is critically low.
+resources-thermal = Mac is running hot and may slow down.
+resources-measurements-unavailable = Memory and CPU are unavailable right now. You can still open and manage tabs.
+resources-loading = Loading resources…
+resources-empty = No matching resources.
+resources-empty-all = Nothing running.
+resources-empty-agents = No agents running.
+resources-empty-browser = No browser tabs open.
+resources-empty-terminals = No terminals running.
+resources-tab-all = All
+resources-tab-agents = Agents
+resources-tab-browser = Browser
+resources-tab-terminals = Terminals
+resources-fact-agents =
+    { $count ->
+        [one] agent
+       *[other] agents
+    }
+resources-fact-browser-tabs =
+    { $count ->
+        [one] browser tab
+       *[other] browser tabs
+    }
+resources-fact-terminals =
+    { $count ->
+        [one] terminal
+       *[other] terminals
+    }
+resources-on-screen = On screen, so it stays awake
+resources-open = Open
+resources-close = Close
+resources-close-confirm = Close { $name }?
+resources-close-consequence = Its page closes.
+resources-average-title = Average per agent
+resources-average-each = Each
+resources-average-ten = 10 agents
+resources-average-each-suffix = each
+resources-average-for-ten = for 10
+resources-tree-more = +{ $count } more
+resources-app-item-detail = { $activity }, { $lines }
+resources-app-more-chats =
+    { $count ->
+        [one] 1 more chat
+       *[other] { $count } more chats
+    }
+resources-app-more-terminals =
+    { $count ->
+        [one] 1 more terminal
+       *[other] { $count } more terminals
+    }
+
+# Final app metadata save before quit/restart.
+exit-save-failed-title = Unable to save app state
+exit-save-failed-description = Your latest app state has not been saved. { $error }. Retry after fixing storage, or continue without saving.
+exit-restart-without-saving = Restart without saving
+exit-quit-without-saving = Quit without saving
+
+issue-report-check-submission = Check submission
+issue-report-submission-uncertain = This report may already be on GitHub. Check submission to find it; checking never posts again. If it is not found yet, wait and check again, or review your GitHub issues before discarding this draft.
+issue-report-discard-uncertain = Discard draft (report may already exist)
+issue-report-draft-load-failed = Could not read your saved report. Resolve the storage problem and restart the app before submitting another report.
+review-comment-edit-staged = Remove this review from the composer before editing.

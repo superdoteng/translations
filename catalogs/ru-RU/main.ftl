@@ -570,10 +570,7 @@ section-value-review-required = Требуется проверка
 section-value-running = Бег
 section-value-stopped = Остановка
 section-value-working = Работа
-toast-remove-from-app = Удалить { $app_name }
-toast-browser-automation-disabled-title = Агент попытался использовать браузер
-toast-browser-automation-disabled = Автоматизация браузера выключена, поэтому команда агента отклонена. Включите её в разделе Настройки › Экспериментальные, чтобы агенты могли читать вкладки вашего браузера и управлять ими.
-toast-open-experimental-settings = Открыть настройки
+toast-remove-from-app = Удалить
 validation-name-required = Требуется имя
 welcome-clone-from-url = Клон из URL
 welcome-clone-from-url-description = Клонируйте удалённый репозиторий
@@ -1123,8 +1120,6 @@ script-commands-more = Ещё { $count }
 setup-not-configured = Скрипт настройки не был настроен
 review-submitted-reviews = Поданные отзывы
 review-ai-questions = AI вопросов
-review-no-comments = Пока нет комментариев в обзоре
-review-select-lines-hint = Выберите строки в дифференции, чтобы начать обзор.
 sidebar-ssh = SSH
 shared-context-generate-ai-context = Сгенерировать AI контекст
 action-generate = Генерировать
@@ -1160,7 +1155,6 @@ review-add-to-fix-list = Добавить в список исправлений
 review-submit-replies = Отправить ответы
 review-submit-from-tab = Отправить через вкладку «Отзыв» →
 review-ai-findings = AI замечания
-review-findings-triage-count = На разбор: { $count }
 review-findings-to-triage = Замечания AI на разбор: { $count }
 review-finding-should-fix = Исправить
 review-finding-dismiss = Отклонить
@@ -1197,7 +1191,6 @@ context-output = Результаты
 context-total-io = Total I/O
 context-input-effective = Эффективный вход
 profile-cli-default = CLI по умолчанию
-review-no-active-comments = Нет активных комментариев в обзорах.
 permission-tools = Инструменты
 permission-ask = Спросите
 permission-yolo = Йоло
@@ -1251,12 +1244,13 @@ chat-thinking-in-progress = Думает…
 chat-thinking-count = Думает ({ $count })
 chat-thinking-summary = Думает · { $summary }
 chat-working-for = Работает
-chat-agent-wait-caption = { $count ->
-    [1] { $model } продолжит, когда агент отчитается
-    [few] { $model } продолжит, когда агенты отчитаются
-    [many] { $model } продолжит, когда агенты отчитаются
-   *[other] { $model } продолжит, когда агенты отчитаются
-}
+chat-agent-wait-caption =
+    { $count ->
+        [one] { $model } продолжит после завершения
+        [few] { $model } продолжит, когда все завершатся
+        [many] { $model } продолжит, когда все завершатся
+       *[other] { $model } продолжит, когда все завершатся
+    }
 chat-worked-for = Работал { $duration }
 chat-worked = Работал
 plan-proposed = ПРЕДЛОЖЕННЫЙ ПЛАН
@@ -1303,7 +1297,6 @@ image-preview-load-failed = Не удалось загрузить изобра�
 hosted-tab-unavailable = Эту вкладку нельзя показать, потому что её функция недоступна.
 file-tree-new-file = Новый файл
 file-tree-new-folder = Новая папка
-review-suggestion = Предложение
 pr-merged = Объединение
 pr-closed = Закрыто
 pr-update-available = Обновление доступно
@@ -1408,8 +1401,6 @@ target-branch-push-description = Выберите возможность отп�
 toast-error = Ошибка
 toast-busy = Занят
 toast-review = Обзор
-toast-review-comments-title = Комментарии к отзывам ({ $count })
-toast-review-comments-message = { $count } новые комментарии к обзорам. Последней: { $latest }
 toast-update-branch-failed = Ветка обновления не удалась
 toast-keymap-error = Ошибка карты клавиш
 toast-keymap-load-failed = Не удалось загрузить ключевую карту: { $error }
@@ -1568,9 +1559,6 @@ review-no-pending-comments = Нет ожидающих комментариев 
 review-no-enabled-chat-providers = Нет включённых чат-провайдеров
 review-no-enabled-agents = Нет активных агентов
 
-review-comment-count = Комментарии: { $count }
-review-review-count = Отзывы: { $count }
-review-awaiting-reply-count = Жду ответов: { $count }
 review-file-count = Файлы: { $count }
 
 settings-ai-codex-profile-directory-missing = Codex каталог профилей не найден. Создайте его перед запуском этого профиля.
@@ -1764,6 +1752,8 @@ settings-search-entry-general-behavior-show-cmd-number-hints-on-cmd-hold-label =
 settings-search-entry-general-behavior-show-cmd-number-hints-on-cmd-hold-description = Удержите команду 0,5 секунды, чтобы показать пронумерованные ярлыки для рабочих деревьев или вкладок.
 settings-search-entry-general-behavior-use-cmd-number-to-switch-tabs-label = Используйте Cmd+number для переключения вкладок
 settings-search-entry-general-behavior-use-cmd-number-to-switch-tabs-description = Используйте Cmd+1 по Cmd+9 для выбора вкладок в активном рабочем дереве вместо переключения между рабочими деревами.
+settings-search-entry-general-behavior-project-header-click-label = Нажатие на имя проекта
+settings-search-entry-general-behavior-project-header-click-description = Выберите, что происходит при нажатии на имя проекта на боковой панели. Стрелка рядом с именем всегда разворачивает и сворачивает.
 settings-search-entry-general-behavior-confirm-before-quitting-label = Проверьте перед увольнением
 settings-search-entry-general-behavior-confirm-before-quitting-description = Покажите подсказку подтверждения при нажатии Cmd+Q или выберите Выйти из меню.
 settings-search-entry-general-behavior-confirm-before-closing-a-running-tab-label = Проверьте перед закрытием вкладки
@@ -2201,8 +2191,6 @@ git-run-action-in-new-tab = Запустить действие в новой в
 git-run-action = Бег в экшн
 right-panel-new-terminal = Новый терминал
 setup-stop-script = Stop setup script
-run-open-port = Открыть :{ $port }
-run-open-preview = Открытый предпросмотр
 run-stop-script = Stop run script
 run-rerun-workspace = Повторный запуск рабочего пространства
 workspace-close-tab = Закрыть вкладку
@@ -2407,6 +2395,11 @@ sidebar-hide-primary-worktree = Скрыть основное рабочее д�
 sidebar-edit-section = Редактирование...
 sidebar-move-section-up = Двигайся вперёд
 sidebar-move-section-down = Двигайся вниз
+sidebar-sort-projects-by = Сортировка проектов
+sidebar-sort-projects-name = Имя
+sidebar-sort-projects-path = Путь
+sidebar-collapse-all-projects = Свернуть все проекты
+sidebar-expand-all-projects = Развернуть все проекты
 file-menu-open-in-terminal = Открыто в терминале
 shared-context-edit-projects = Редактировать проекты...
 history-load-backfill = История загрузки / засыпки
@@ -2708,8 +2701,6 @@ shared-context-depth-simple-tooltip = Быстрая настройка с лё�
 shared-context-depth-thorough = Тщательно
 shared-context-depth-thorough-summary = Сначала проведите собеседование, затем проанализируйте кодовую базу перед формированием рекомендаций по рабочему месту.
 shared-context-depth-thorough-tooltip = Задаёт уточняющие вопросы, уточняет цели, затем делает более глубокий код-пасс.
-right-panel-show-gitignored-files = Показать gitignored файлы
-right-panel-hide-gitignored-files = Скрыть gitignored файлы
 workspace-hold-command-for-chat-ui = Удерживайте ⌘ для интерфейса чата
 workspace-hold-command-for-terminal = Удерживайте ⌘ для терминала
 tool-picker-no-matches = Нет совпадений
@@ -3017,6 +3008,12 @@ settings-orchestrated-worktrees-auto = Авто
 settings-orchestrated-worktrees-auto-description = Открыто, пока агент в нём работает или нуждается в вас.
 settings-orchestrated-worktrees-collapsed = Свёрнуто
 settings-orchestrated-worktrees-collapsed-description = Всегда свёрнуто, пока вы не откроете.
+settings-project-header-click-toggle = Развернуть/свернуть
+settings-project-header-click-toggle-description = Показывает или скрывает worktree проекта.
+settings-project-header-click-open-primary = Открыть основной worktree
+settings-project-header-click-open-primary-description = Открывает основной checkout проекта.
+settings-project-header-click-auto = Авто
+settings-project-header-click-auto-description = Открывает основной worktree, если он единственный, иначе разворачивает или сворачивает.
 settings-orchestrated-worktrees-expanded = Развёрнуто
 settings-orchestrated-worktrees-expanded-description = Всегда открыто.
 settings-search-entry-appearance-layout-orchestrated-worktrees-description = Выберите, как рабочие деревья, которым чат поручил работу, открываются под ним на боковой панели.
@@ -3338,8 +3335,6 @@ settings-remote-key-remove-revoke = Отозвать доступ на { $host }
 settings-remote-key-remove-title = Удалить ключ с { $host }?
 settings-experimental-automations-label = Автоматизации
 settings-experimental-automations-description = Создавайте автоматизации по расписанию и событиям. Ранняя версия, ещё не полностью проверена.
-settings-experimental-browser-automation-label = Автоматизация браузера
-settings-experimental-browser-automation-description = Разрешить агентам использовать команды управления браузером. Действия в браузере по-прежнему требуют разрешения рабочего пространства.
 settings-experimental-chat-artifacts-label = Артефакты чата
 settings-experimental-chat-artifacts-description = Позволяет агентам публиковать HTML-страницы, которые отображаются в чате в реальном времени. Страницы работают офлайн в песочнице.
 settings-search-section-typography = Типографика
@@ -3405,8 +3400,6 @@ settings-search-entry-experimental-feature-flags-workspace-mentions-label = Уп
 settings-search-entry-experimental-feature-flags-workspace-mentions-description = Упоминайте скрипты, терминалы, рабочие деревья, чаты и агентов через @ в чате.
 settings-search-entry-experimental-feature-flags-automations-label = Автоматизации
 settings-search-entry-experimental-feature-flags-automations-description = Создавайте автоматизации по расписанию и событиям. Ранняя версия, ещё не полностью проверена.
-settings-search-entry-experimental-feature-flags-browser-automation-label = Автоматизация браузера
-settings-search-entry-experimental-feature-flags-browser-automation-description = Разрешить агентам использовать команды управления браузером. Действия в браузере по-прежнему требуют разрешения рабочего пространства.
 settings-search-entry-agents-session-context-session-context-for-agents-label = Контекст сеанса для агентов
 settings-search-entry-agents-session-context-session-context-for-agents-description = Добавляйте контекст super.engineering в новые сеансы агентов или отключите фоновое добавление.
 settings-section-typography = Типографика
@@ -3783,12 +3776,6 @@ worktree-step-creating-branch = Создание ветки
 worktree-step-naming = Выбор имени по вашей задаче
 worktree-step-setup = Выполнение настройки
 worktree-step-opening-agent = Открытие { $agent }
-chat-waiting-on-agents = { $count ->
-    [one] Ожидание { $count } агента…
-    [few] Ожидание { $count } агентов…
-    [many] Ожидание { $count } агентов…
-   *[other] Ожидание { $count } агента…
-}
 chat-shell-mode = Команда оболочки
 chat-shell-mode-detail = Выполняется в этой рабочей области. Нажмите «Добавить в чат» у результата, чтобы показать его агенту.
 chat-shell-add-to-chat = Добавить в чат
@@ -3835,6 +3822,7 @@ chat-diff-unchanged-lines = { $count ->
 chat-files-changed-shared = Во время этого хода другой чат работал в этом рабочем дереве. Если оба чата изменили файл, показаны изменения обоих.
 chat-files-changed-unattributed = Во время этого хода другой чат работал в этом рабочем дереве. Приглушённые файлы изменились во время его работы и могут содержать его изменения.
 chat-files-changed-snapshot-failed = Не удалось создать снимок рабочего дерева этого хода, поэтому перечислены только файлы, о которых сообщили его инструменты.
+chat-files-changed-snapshot-partial = Не удалось создать снимок некоторых репозиториев этого хода, поэтому для них перечислены только файлы, о которых сообщили его инструменты.
 palette-mode-all = Все
 palette-mode-conversations = Беседы
 palette-search-all = Поиск агентов, рабочих деревьев, команд, файлов…
@@ -4116,3 +4104,439 @@ issue-report-actions-private = Приватно
 issue-report-action-draft-agent = Подготовить с агентом
 issue-report-action-copy-markdown = Копировать как Markdown
 issue-report-action-email = Отправить приватно по почте
+
+browser-dialog-title = { $host } сообщает
+browser-dialog-title-page = Эта страница сообщает
+section-rule-path = Glob-шаблон пути
+settings-search-entry-agents-providers-jcode-provider-label = Провайдер jcode
+settings-search-entry-agents-providers-jcode-provider-description = Включите jcode и настройте его модели и параметры запуска.
+settings-ai-provider-jcode-description = Включить jcode как провайдер чата и терминала (требуется установленный CLI jcode `jcode`). В чатах запускаются все инструменты, разрешённые собственной конфигурацией jcode; jcode не может предварительно запросить разрешение.
+settings-keybinding-action-paste-as-secret = Вставить как секрет
+clone-waiting-for-stop = Ожидание остановки процесса клонирования…
+toast-review-comments = Просмотреть комментарии
+toast-report-issue = Сообщить
+toast-rex-session-display-failed = Сеанс Rex создан, но его не удалось отобразить
+toast-rex-enable-remote-control = Включите Remote Control в Rex Settings → Rex Server, затем выберите существующий сеанс. Повторное открытие создаёт ещё один сеанс.
+toast-rex-select-existing-session = Выберите существующий сеанс в Rex. Повторное открытие создаёт ещё один сеанс.
+toast-open-app-failed = Не удалось открыть выбранное приложение
+toast-open-app-failed-message = Проверьте, что приложение установлено и доступно. Разверните подробности, чтобы увидеть ошибку.
+chat-forward = Переслать
+chat-forward-search-placeholder = Переслать в…
+chat-forward-no-chats = Других открытых чатов нет
+chat-forward-failed-title = Не удалось переслать
+chat-forward-failed-message = Целевой чат больше недоступен или доступен только для чтения.
+workspace-path-copied = Путь скопирован
+workspace-link-copied = Ссылка скопирована
+workspace-copy-chat-link = Копировать ссылку на чат
+workspace-chat-link-copy-failed = Не удалось скопировать ссылку на чат
+workspace-chat-link-copied = Ссылка на чат скопирована
+run-app-on-phone = Открыть на телефоне
+run-app-scan-hint = Отсканируйте телефоном в той же сети Wi-Fi.
+palette-section-go-to = Перейти к
+palette-navigation-worktrees = { $count ->
+    [one] { $count } рабочее дерево
+    [few] { $count } рабочих дерева
+    [many] { $count } рабочих деревьев
+   *[other] { $count } рабочего дерева
+}
+secret-request-title = Агент запрашивает секрет
+secret-request-asked-by = «{ $asker }» запрашивает: { $label }
+secret-request-asked-by-agent = Агент запрашивает: { $label }
+secret-request-placeholder = Вставьте или введите секрет
+secret-request-note = Сохраняется в приватном файле и не попадает в чат. Команды агента смогут читать его в течение 24 часов.
+secret-request-save = Сохранить приватно
+secret-request-show = Показать секрет
+secret-request-hide = Скрыть секрет
+secret-request-decline = Отклонить
+secret-request-save-failed = Не удалось сохранить приватно: { $error }
+chat-secret-pill-token = Токен { $issuer }
+chat-secret-pill-private-key = Приватный ключ
+chat-secret-pill-secret = Секрет
+chat-secret-card-kind = Сохранено приватно
+chat-secret-card-detail = Ваш агент получает путь к приватному файлу вместо значения. Его команды по-прежнему могут читать файл, который удаляется через 24 часа.
+chat-secret-card-paste-as-text = Вставить как текст
+chat-secret-store-failed = Не удалось сохранить секрет приватно, поэтому он не был вставлен. Вставьте его ещё раз, чтобы вставить как обычный текст.
+chat-secret-paste-moved = Черновик изменился во время приватного сохранения секрета, поэтому секрет не был вставлен. Вставьте его ещё раз.
+chat-paste-moved = Черновик изменился во время проверки вставляемого содержимого, поэтому оно не было вставлено. Вставьте его ещё раз.
+chat-secret-expired = Файл этого секрета больше не существует, поэтому его нельзя вставить как текст. Вставьте его ещё раз.
+chat-artifact-annotate = Добавить аннотацию
+right-sidebar-filter-files = Фильтровать файлы
+right-sidebar-collapse-all-folders = Свернуть все папки
+right-sidebar-reveal-open-file = Показать открытый файл
+exit-save-failed-title = Не удалось сохранить состояние приложения
+exit-save-failed-description = Последнее состояние приложения не сохранено. { $error }. Устраните проблему с хранилищем и повторите попытку или продолжите без сохранения.
+exit-restart-without-saving = Перезапустить без сохранения
+exit-quit-without-saving = Выйти без сохранения
+
+settings-experimental-resource-monitor-label = Монитор ресурсов
+settings-experimental-resource-monitor-description = Показывать кнопку «Ресурсы» в заголовке окна с памятью и CPU для каждого рабочего дерева, вкладки и вспомогательного процесса.
+settings-search-section-resources = Ресурсы
+settings-search-entry-appearance-resources-show-freeable-memory-label = Показывать освобождаемую память
+settings-search-entry-appearance-resources-show-freeable-memory-description = Показывать на кнопке «Ресурсы», сколько памяти освободит усыпление бездействующих вкладок, и выделять её цветом, когда памяти Mac не хватает.
+settings-section-resources = Ресурсы
+chat-queued-waiting-to-steer = Ожидает корректировки
+chat-queued-action-no-longer-queued = Это сообщение больше не в очереди.
+chat-queued-steer-failed = Не удалось скорректировать работу этим сообщением.
+chat-queued-change-failed = Не удалось изменить это сообщение.
+changes-empty-detail = Здесь появятся правки, которые вы или ваши агенты вносите в этом рабочем дереве.
+changes-empty-turns = Ходов пока нет
+changes-empty-turns-detail = Когда агент меняет файлы, они появляются здесь под ходом, в котором были изменены.
+changes-empty-commits = Коммитов пока нет
+changes-empty-commits-detail = Здесь появятся коммиты этой ветки.
+changes-empty-all-viewed = Всё просмотрено
+changes-empty-all-viewed-detail = Вы открыли все изменённые файлы.
+review-delivery-prepared = Подготовлено: { $target }
+review-delivery-sent = Отправлено: { $target }
+review-delivery-dispatched = Отправлено в фоне: { $target }
+review-delivery-a-chat = чат
+review-delivery-a-terminal = терминал
+review-location-whole-file = Весь файл
+review-tooltip-more-lines =
+    { $count ->
+        [one] Ещё { $count } строка
+        [few] Ещё { $count } строки
+        [many] Ещё { $count } строк
+       *[other] Ещё { $count } строки
+    }
+review-location-line = Строка { $line }
+review-location-lines = Строки { $start }–{ $end }
+review-pending-summary =
+    { $files ->
+        [one]
+            { $comments ->
+                [one] { $comments } комментарий
+                [few] { $comments } комментария
+                [many] { $comments } комментариев
+               *[other] { $comments } комментария
+            }
+       *[other]
+            { $comments ->
+                [one] { $comments } комментарий в { $files } файлах
+                [few] { $comments } комментария в { $files } файлах
+                [many] { $comments } комментариев в { $files } файлах
+               *[other] { $comments } комментария в { $files } файлах
+            }
+    }
+review-view-open = Открытые
+review-view-done = Готово
+review-your-comments = Ваши комментарии
+review-nothing-to-review = Нечего проверять
+review-nothing-to-review-detail = Здесь появятся ваши комментарии к диффам и обсуждения ревью вашего pull request.
+review-review-changes = Проверить изменения
+review-comment-hint = или выделите строки в любом диффе, чтобы оставить комментарий
+review-all-caught-up = Всё разобрано
+review-all-caught-up-detail = Ничто не ждёт вашего ответа.
+review-see-done = Посмотреть готовое
+review-nothing-done = Пока ничего не готово
+review-nothing-done-detail = Здесь появятся отправленные вами комментарии и решённые обсуждения.
+review-pull-request = Pull request #{ $number }
+review-pull-request-untitled = Pull request
+review-waiting-on-reviewers = К #{ $number } пока никто не оставил комментариев.
+review-resolved-on-pr = Решено в #{ $number }
+review-pr-refresh = Обновить комментарии pull request
+review-pr-loading = Загрузка комментариев…
+review-pr-load-failed = Не удалось загрузить комментарии pull request. Обновите, чтобы повторить.
+review-pr-older-hidden = Старые обсуждения не показаны.
+review-pr-overview-truncated = Остальные обсуждения здесь не показаны.
+review-thread-resolve = Решить
+review-thread-unresolve = Вернуть в работу
+review-thread-resolving = Решение…
+review-thread-unresolving = Возврат в работу…
+review-thread-update-failed = Не удалось обновить. Повторите попытку.
+review-thread-outdated = Устарело
+review-thread-byline =
+    { $replies ->
+        [0] Комментарий от { $author }, { $age }
+        [one] Комментарий от { $author }, { $age }, { $replies } ответ
+        [few] Комментарий от { $author }, { $age }, { $replies } ответа
+        [many] Комментарий от { $author }, { $age }, { $replies } ответов
+       *[other] Комментарий от { $author }, { $age }, { $replies } ответа
+    }
+checks-path-to-merge = Путь к слиянию
+checks-step-committed = Изменения закоммичены
+checks-step-pushed = Отправлено
+checks-step-unpushed =
+    { $count ->
+        [one] { $count } коммит к отправке
+        [few] { $count } коммита к отправке
+        [many] { $count } коммитов к отправке
+       *[other] { $count } коммита к отправке
+    }
+checks-step-review-open = { $kind } открыт
+checks-step-checks = Проверки
+checks-step-running = Проверки выполняются
+checks-behind-target =
+    { $count ->
+        [one] Отстаёт от { $target } на { $count } коммит
+        [few] Отстаёт от { $target } на { $count } коммита
+        [many] Отстаёт от { $target } на { $count } коммитов
+       *[other] Отстаёт от { $target } на { $count } коммита
+    }
+right-panel-view-options = Параметры вида
+right-panel-view-changes = Изменения
+right-panel-view-gitignored-files = Файлы из .gitignore
+diff-viewed-toggle = Просмотрено
+diff-since-viewed-note = { $agent } изменил это после вашего просмотра. Показаны изменения с того момента.
+diff-since-viewed-note-unattributed = Файл изменился после вашего просмотра. Показаны изменения с того момента.
+diff-since-viewed-show-full = Показать весь дифф
+diff-turn-review-writing = Пишется ревью…
+diff-turn-review-passed = пройдено
+diff-turn-review-failed = не пройдено
+diff-turn-review-not-checked = Не проверено: { $what }
+diff-turn-review-more-checks = Ещё { $count }
+diff-turn-review-looks-good = Выглядит хорошо
+diff-turn-review-comment-hint = Прокомментируйте строку, чтобы попросить изменения
+right-sidebar-new = Новое
+right-sidebar-show-comments = Показать комментарии
+right-sidebar-hint-move = Перейти
+right-sidebar-hint-viewed = Просмотрено
+right-sidebar-hint-next-unviewed = Следующий непросмотренный
+right-sidebar-hint-open = Открыть
+right-sidebar-commit-message = Сообщение коммита
+right-sidebar-writing-message = Пишется сообщение
+right-sidebar-write-message = Написать сообщение
+right-sidebar-commit-file-count =
+    { $count ->
+        [one] { $count } файл
+        [few] { $count } файла
+        [many] { $count } файлов
+       *[other] { $count } файла
+    }
+right-sidebar-commit = Коммит
+right-sidebar-commit-and-push = Коммит и push
+right-sidebar-amend-last-commit = Исправить последний коммит
+right-sidebar-committing = Создание коммита
+right-sidebar-committed = Закоммичено
+right-sidebar-push = Push
+right-sidebar-unviewed = Не просмотрено
+changes-file-count =
+    { $count ->
+        [one] { $count } файл
+        [few] { $count } файла
+        [many] { $count } файлов
+       *[other] { $count } файла
+    }
+right-sidebar-mark-all-viewed =
+    { $count ->
+        [one] Отметить { $count } файл как просмотренный
+        [few] Отметить все { $count } файла как просмотренные
+        [many] Отметить все { $count } файлов как просмотренные
+       *[other] Отметить все { $count } файла как просмотренные
+    }
+right-sidebar-all-viewed = Все файлы просмотрены
+right-sidebar-viewed = Просмотрено
+right-sidebar-changed-since-viewed = Изменён после вашего просмотра
+right-sidebar-changed-since-viewed-by = { $agent } изменил это после вашего просмотра
+right-sidebar-changed-since-viewed-count =
+    { $count ->
+        [one] { $count } файл изменён после вашего просмотра
+        [few] { $count } файла изменены после вашего просмотра
+        [many] { $count } файлов изменены после вашего просмотра
+       *[other] { $count } файла изменены после вашего просмотра
+    }
+right-sidebar-view-all = Все
+right-sidebar-view-turns = Ходы
+right-sidebar-turn-working = В работе
+right-sidebar-other-changes = Другие изменения
+right-sidebar-probable-file = Изменён во время этого хода
+right-sidebar-probable-file-detail = Инструменты хода об этом не сообщали, поэтому это может быть чужая правка. Подтвердится, когда ход завершится.
+resources-title = Ресурсы
+resources-search = Поиск ресурсов или проектов
+resources-search-tooltip = Поиск
+resources-remote = Удалённые
+resources-asleep = Спит
+resources-held-info = Экраны и недавний чат хранятся в памяти приложения, чтобы это рабочее дерево открывалось мгновенно; учитываются в разделе «Приложение» в строке «Спящие». Экраны освобождаются через 15 минут сна.
+resources-cpu = CPU
+resources-cpu-history = CPU за последнюю минуту. История копится, пока открыты «Ресурсы».
+resources-reclaim =
+    { $count ->
+        [one] { $count } бездействующую вкладку можно усыпить и освободить около { $memory }
+        [few] { $count } бездействующие вкладки можно усыпить и освободить около { $memory }
+        [many] { $count } бездействующих вкладок можно усыпить и освободить около { $memory }
+       *[other] { $count } бездействующей вкладки можно усыпить и освободить около { $memory }
+    }
+resources-sleep-idle = Усыпить бездействующие
+resources-freed = Освобождено { $memory }
+resources-sleep = Усыпить
+resources-sleep-tooltip = Освобождает его процессы. При открытии он проснётся с историей.
+resources-wake = Разбудить
+resources-stop = Остановить
+resources-stop-confirm = Остановить { $name }?
+resources-stop-consequence = Текущая работа будет прервана.
+resources-cancel = Отмена
+resources-exited = Завершён
+resources-exited-just-now = Только что завершён
+resources-exited-minutes = Завершён { $minutes } мин назад
+resources-exited-hours = Завершён { $hours } ч назад
+resources-cpu-row = CPU { $percent }%
+resources-origin-tab = Вкладка терминала
+resources-origin-launched = Запущено из { $tab }
+resources-origin-run-script = Скрипт запуска
+resources-origin-panel = Терминал панели
+resources-origin-setup = Команда настройки
+resources-origin-git = Действие Git
+resources-origin-review = Ревью
+resources-activity-running = Выполняется { $process }
+resources-activity-busy = Выполняется
+resources-activity-idle = Бездействует
+resources-app = Приложение
+resources-browser-services = Службы браузера
+resources-browser-graphics = Графика
+resources-browser-networking = Сеть
+resources-background = Фоновые процессы
+resources-background-pid = PID { $pid }
+resources-app-graphics = Графика
+resources-app-graphics-info = Поверхности окон и память GPU
+resources-app-held-for-reuse = Удержано для повторного использования
+resources-app-saved-wake = Спящие
+resources-app-code-system = Код и система
+resources-app-chats = Чаты
+resources-app-chats-open = Открыто: { $count }
+resources-app-chats-idle = Бездействует: { $count }
+resources-app-chats-history = История чатов
+resources-app-terminals = Терминалы
+resources-app-terminals-count =
+    { $count ->
+        [one] { $count } терминал
+        [few] { $count } терминала
+        [many] { $count } терминалов
+       *[other] { $count } терминала
+    }
+resources-app-terminals-lines =
+    { $count ->
+        [one] { $count } строка
+        [few] { $count } строки
+        [many] { $count } строк
+       *[other] { $count } строки
+    }
+resources-app-saved-count =
+    { $count ->
+        [one] { $count } рабочее дерево
+        [few] { $count } рабочих дерева
+        [many] { $count } рабочих деревьев
+       *[other] { $count } рабочего дерева
+    }
+resources-app-saved-info = Память, которую приложение держит для спящих рабочих деревьев, чтобы они открывались мгновенно
+resources-app-background-count =
+    { $count ->
+        [one] { $count } процесс
+        [few] { $count } процесса
+        [many] { $count } процессов
+       *[other] { $count } процесса
+    }
+resources-app-background-info = Git, вспомогательные команды и инструменты агентов, которые приложение запускает вне рабочих деревьев
+resources-app-background-brief = Короткие команды
+resources-app-other-data = Данные
+resources-app-other-detail = Растёт с числом проектов и рабочих деревьев
+resources-app-held-for-reuse-detail = Удерживается аллокатором для повторного использования
+resources-app-code-system-detail = Код программы и системные библиотеки
+resources-estimated = Оценка
+resources-sleep-idle-chats = Усыпить бездействующие чаты
+resources-sleep-idle-chats-confirm =
+    { $count ->
+        [one] Усыпить { $count } бездействующий чат?
+        [few] Усыпить { $count } бездействующих чата?
+        [many] Усыпить { $count } бездействующих чатов?
+       *[other] Усыпить { $count } бездействующего чата?
+    }
+resources-frees-about = Освободит около { $memory }
+resources-clear = Очистить
+resources-clear-confirm =
+    { $lines ->
+        [one] Очистить { $lines } строку истории прокрутки?
+        [few] Очистить { $lines } строки истории прокрутки?
+        [many] Очистить { $lines } строк истории прокрутки?
+       *[other] Очистить { $lines } строки истории прокрутки?
+    }
+resources-clear-consequence = Экран останется.
+resources-clear-scrollback = Очистить историю прокрутки
+resources-clear-all-confirm =
+    { $count ->
+        [one] Очистить историю прокрутки в { $count } терминале?
+       *[other] Очистить историю прокрутки в { $count } терминалах?
+    }
+resources-chat-sleep-running = Выполняется ход. Чат можно усыпить, когда ход завершится.
+resources-chat-sleep-waiting = Ждёт вашего ответа. Чат можно усыпить, когда вы ответите.
+resources-chat-sleep-unseen = Есть непрочитанный ответ. Чат можно усыпить, когда вы его прочтёте.
+resources-chat-sleep-kept-ready = Держится наготове для быстрого возврата к рабочему дереву.
+resources-chat-sleep-on-screen = На экране. Чат можно усыпить, когда он скроется из вида.
+resources-chat-sleep-queued = Есть сообщения в очереди. Чат можно усыпить, когда они отправятся.
+resources-chat-sleep-busy = Сейчас занят. Повторите попытку чуть позже.
+resources-info-title = Куда уходят { $total }
+resources-info-summary = Приложение и всё, что оно запустило для вас.
+resources-info-app = super.engineering
+resources-info-app-hint = Приложение и запускаемые им вспомогательные процессы
+resources-info-agents-hint = Агент каждого чата и запускаемые им инструменты
+resources-info-browser = Вкладки браузера
+resources-info-browser-hint = Каждая страница работает в отдельном процессе
+resources-info-terminals-hint = Оболочки, скрипты запуска и всё, что они запустили
+resources-info-remote = Удалённые рабочие деревья пока не измеряются.
+resources-pressure-warning = Памяти Mac не хватает. super.engineering использует { $used } из { $ram }.
+resources-pressure-warning-short = Памяти Mac не хватает.
+resources-pressure-critical = Памяти Mac критически мало. super.engineering использует { $used } из { $ram }.
+resources-pressure-critical-others = Памяти Mac критически мало, в основном из-за других приложений. super.engineering использует { $used } из { $ram }.
+resources-pressure-critical-short = Памяти Mac критически мало.
+resources-thermal = Mac перегревается и может замедлиться.
+resources-measurements-unavailable = Данные о памяти и CPU сейчас недоступны. Вкладки по-прежнему можно открывать и управлять ими.
+resources-loading = Загрузка ресурсов…
+resources-empty = Подходящих ресурсов нет.
+resources-empty-all = Ничего не запущено.
+resources-empty-agents = Нет запущенных агентов.
+resources-empty-browser = Нет открытых вкладок браузера.
+resources-empty-terminals = Нет запущенных терминалов.
+resources-tab-all = Все
+resources-tab-agents = Агенты
+resources-tab-browser = Браузер
+resources-tab-terminals = Терминалы
+resources-fact-agents =
+    { $count ->
+        [one] агент
+        [few] агента
+        [many] агентов
+       *[other] агента
+    }
+resources-fact-browser-tabs =
+    { $count ->
+        [one] вкладка браузера
+        [few] вкладки браузера
+        [many] вкладок браузера
+       *[other] вкладки браузера
+    }
+resources-fact-terminals =
+    { $count ->
+        [one] терминал
+        [few] терминала
+        [many] терминалов
+       *[other] терминала
+    }
+resources-on-screen = На экране, поэтому не засыпает
+resources-open = Открыть
+resources-close = Закрыть
+resources-close-confirm = Закрыть { $name }?
+resources-close-consequence = Страница закроется.
+resources-average-title = В среднем на агента
+resources-average-each = На каждого
+resources-average-ten = 10 агентов
+resources-average-each-suffix = на каждого
+resources-average-for-ten = на 10
+resources-tree-more = Ещё { $count }
+resources-app-item-detail = { $activity }, { $lines }
+resources-app-more-chats =
+    { $count ->
+        [one] Ещё { $count } чат
+        [few] Ещё { $count } чата
+        [many] Ещё { $count } чатов
+       *[other] Ещё { $count } чата
+    }
+resources-app-more-terminals =
+    { $count ->
+        [one] Ещё { $count } терминал
+        [few] Ещё { $count } терминала
+        [many] Ещё { $count } терминалов
+       *[other] Ещё { $count } терминала
+    }
+issue-report-check-submission = Проверить отправку
+issue-report-submission-uncertain = Этот отчёт, возможно, уже есть на GitHub. Проверьте отправку, чтобы найти его; проверка никогда не публикует отчёт повторно. Если он пока не найден, подождите и проверьте снова или просмотрите свои задачи на GitHub, прежде чем удалять этот черновик.
+issue-report-discard-uncertain = Удалить черновик (отчёт, возможно, уже существует)
+issue-report-draft-load-failed = Не удалось прочитать сохранённый отчёт. Устраните проблему с хранилищем и перезапустите приложение, прежде чем отправлять другой отчёт.
+review-comment-edit-staged = Чтобы изменить это ревью, сначала уберите его из поля ввода.

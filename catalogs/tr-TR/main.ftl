@@ -557,10 +557,7 @@ section-value-review-required = İncele gerekli
 section-value-running = Koşu
 section-value-stopped = Durdu
 section-value-working = Çalışma
-toast-remove-from-app = Kaldır { $app_name }
-toast-browser-automation-disabled-title = Bir ajan tarayıcıyı kullanmaya çalıştı
-toast-browser-automation-disabled = Tarayıcı otomasyonu kapalı olduğundan ajanın komutu reddedildi. Ajanların tarayıcı sekmelerinizi okuyup kontrol etmesine izin vermek için Ayarlar › Deneysel bölümünden açın.
-toast-open-experimental-settings = Ayarları aç
+toast-remove-from-app = Kaldır
 validation-name-required = İsim gereklidir
 welcome-clone-from-url = URL'dan bir klon
 welcome-clone-from-url-description = Uzak depoyu klonla
@@ -1110,8 +1107,6 @@ script-commands-more = { $count } tane daha
 setup-not-configured = Kurulum betiği yapılandırma yok
 review-submitted-reviews = Gönderilen incelemeler
 review-ai-questions = AI soruları
-review-no-comments = Henüz inceleme yorumu yok
-review-select-lines-hint = Bir incelemeye başlamak için diferferdeki çizgileri seçin.
 sidebar-ssh = SSH
 shared-context-generate-ai-context = AI Bağlam Oluştur
 action-generate = Oluştur
@@ -1147,7 +1142,6 @@ review-add-to-fix-list = Düzeltme Listesi Ekle
 review-submit-replies = Yanıtları Gönder
 review-submit-from-tab = İncele sekmesinden gönder →
 review-ai-findings = AI bulguları
-review-findings-triage-count = İncelenecek: { $count }
 review-findings-to-triage = İncelenecek AI bulguları: { $count }
 review-finding-should-fix = Düzeltilmeli
 review-finding-dismiss = Yoksay
@@ -1184,7 +1178,6 @@ context-output = Çıktı
 context-total-io = Toplam G/O
 context-input-effective = Girdi etkili
 profile-cli-default = CLI varsayılan
-review-no-active-comments = Aktif inceleme yorumu yok.
 permission-tools = Araçlar
 permission-ask = Sorun
 permission-yolo = Yolo
@@ -1238,10 +1231,11 @@ chat-thinking-in-progress = Düşünüyor…
 chat-thinking-count = Düşünüyor ({ $count })
 chat-thinking-summary = Düşünüyor · { $summary }
 chat-working-for = Şu süredir çalışıyor
-chat-agent-wait-caption = { $count ->
-    [one] { $model }, ajan rapor verdiğinde devam edecek
-   *[other] { $model }, ajanlar rapor verdiğinde devam edecek
-}
+chat-agent-wait-caption =
+    { $count ->
+        [one] { $model }, iş bittiğinde devam edecek
+       *[other] { $model }, hepsi bittiğinde devam edecek
+    }
 chat-worked-for = { $duration } çalıştı
 chat-worked = Çalıştı
 plan-proposed = ÖNERILEN PLAN
@@ -1288,7 +1282,6 @@ image-preview-load-failed = Görüntü yüklenemedi
 hosted-tab-unavailable = Bu sekmenin özelliği kullanılamadığı için sekme gösterilemiyor.
 file-tree-new-file = Yeni Dosya
 file-tree-new-folder = Yeni Klasör
-review-suggestion = öneri
 pr-merged = Birleşme
 pr-closed = Kapalı
 pr-update-available = Güncelleme mevcut
@@ -1393,8 +1386,6 @@ target-branch-push-description = Yeni oluşturulan hedef dalın orijina itip itm
 toast-error = Hata
 toast-busy = Meşgul
 toast-review = İnceleme
-toast-review-comments-title = İnceleme yorumları ({ $count })
-toast-review-comments-message = { $count } yeni yorumlar. En son: { $latest }
 toast-update-branch-failed = Güncelleme dalı başarısız oldu
 toast-keymap-error = Anahtar haritası hatası
 toast-keymap-load-failed = Tuş haritası yüklenemedi: { $error }
@@ -1551,9 +1542,6 @@ review-no-pending-comments = Bekleyen inceleme yorumu yok
 review-no-enabled-chat-providers = Etkin sohbet sağlayıcısı yok
 review-no-enabled-agents = Etkinleştirilmiş ajan yok
 
-review-comment-count = Yorumlar: { $count }
-review-review-count = İncelemeler: { $count }
-review-awaiting-reply-count = Cevapları bekliyor: { $count }
 review-file-count = Dosyalar: { $count }
 
 settings-ai-codex-profile-directory-missing = Codex profil dizini bulunamadı. Bu profili başlatmadan önce oluşturun.
@@ -1747,6 +1735,8 @@ settings-search-entry-general-behavior-show-cmd-number-hints-on-cmd-hold-label =
 settings-search-entry-general-behavior-show-cmd-number-hints-on-cmd-hold-description = Komut tuşunu 0,5 saniye basılı tutup çalışma ağaçları veya sekmeler için numaralı kısayollar gösterilsin.
 settings-search-entry-general-behavior-use-cmd-number-to-switch-tabs-label = Sekmeleri değiştirmek için Cmd+number kullanın
 settings-search-entry-general-behavior-use-cmd-number-to-switch-tabs-description = Aktif çalışma ağacında sekmeleri seçmek için Cmd+1'den Cmd+9'a kadar kullanın, çalışma ağaçlarını değiştirmek yerine.
+settings-search-entry-general-behavior-project-header-click-label = Proje adına tıklama
+settings-search-entry-general-behavior-project-header-click-description = Kenar çubuğunda bir proje adına tıklamanın ne yapacağını seçin. Adın yanındaki ok her zaman genişletir ve daraltır.
 settings-search-entry-general-behavior-confirm-before-quitting-label = İstifa etmeden önce onaylayın
 settings-search-entry-general-behavior-confirm-before-quitting-description = Cmd+Q tuşlarına bastığınızda veya menüden Çık'ı seçtiğinizde bir onay isteği gösterin.
 settings-search-entry-general-behavior-confirm-before-closing-a-running-tab-label = Bir çalışma sekmesini kapatmadan önce onaylayın
@@ -2184,8 +2174,6 @@ git-run-action-in-new-tab = Yeni sekmede eylemi çalıştır
 git-run-action = Koşu aksiyonu
 right-panel-new-terminal = Yeni terminal
 setup-stop-script = Stop setup script
-run-open-port = Aç :{ $port }
-run-open-preview = Açık önizleme
 run-stop-script = Stop çalıştır scripti
 run-rerun-workspace = Çalışma alanını yeniden çalıştır
 workspace-close-tab = Kapatma sekmesi
@@ -2349,6 +2337,11 @@ sidebar-hide-primary-worktree = Birincil çalışma ağacını gizle
 sidebar-edit-section = Düzenleme...
 sidebar-move-section-up = Yukarı çık
 sidebar-move-section-down = Aşağı çekil
+sidebar-sort-projects-by = Projeleri sırala
+sidebar-sort-projects-name = Ad
+sidebar-sort-projects-path = Yol
+sidebar-collapse-all-projects = Tüm projeleri daralt
+sidebar-expand-all-projects = Tüm projeleri genişlet
 file-menu-open-in-terminal = Terminalde Açık
 shared-context-edit-projects = Projeleri düzenle...
 history-load-backfill = Yükleme / Doldurma Geçmişi
@@ -2649,8 +2642,6 @@ shared-context-depth-simple-tooltip = Hafif tarama ile hızlı kurulum (README'l
 shared-context-depth-thorough = Detaylı
 shared-context-depth-thorough-summary = Önce mülakat yapın, ardından kod tabanını analiz edin ve ardından çalışma alanı rehberliği oluşturun.
 shared-context-depth-thorough-tooltip = Açıklayıcı sorular soruyor, hedefleri doğruluyor, sonra daha derin bir kod geçişi yapıyor.
-right-panel-show-gitignored-files = gitignored dosyalarını göster
-right-panel-hide-gitignored-files = gitignored dosyalarını gizle
 workspace-hold-command-for-chat-ui = Sohbet arayüzü için ⌘ tuşunu basılı tutun
 workspace-hold-command-for-terminal = Terminal için ⌘ tuşunu basılı tutun
 tool-picker-no-matches = Eşleşme yok
@@ -2900,6 +2891,12 @@ settings-orchestrated-worktrees-auto = Otomatik
 settings-orchestrated-worktrees-auto-description = İçinde bir ajan çalışırken veya size ihtiyaç duyduğunda açık olur.
 settings-orchestrated-worktrees-collapsed = Daraltılmış
 settings-orchestrated-worktrees-collapsed-description = Siz açana kadar her zaman daraltılmış.
+settings-project-header-click-toggle = Genişlet/daralt
+settings-project-header-click-toggle-description = Projenin worktree'lerini gösterir veya gizler.
+settings-project-header-click-open-primary = Birincil worktree'yi aç
+settings-project-header-click-open-primary-description = Projenin ana checkout'unu açar.
+settings-project-header-click-auto = Otomatik
+settings-project-header-click-auto-description = Tek worktree birincil olansa onu açar, değilse genişletir veya daraltır.
 settings-orchestrated-worktrees-expanded = Genişletilmiş
 settings-orchestrated-worktrees-expanded-description = Her zaman açık.
 settings-search-entry-appearance-layout-orchestrated-worktrees-description = Bir sohbetin iş devrettiği çalışma ağaçlarının kenar çubuğunda o sohbetin altında nasıl açılacağını seçin.
@@ -3197,8 +3194,6 @@ settings-remote-key-remove-revoke = { $host } üzerindeki yetkiyi kaldır
 settings-remote-key-remove-title = Anahtar { $host } üzerinden kaldırılsın mı?
 settings-experimental-automations-label = Otomasyonlar
 settings-experimental-automations-description = Zamanlanmış ve olay tabanlı otomasyonlar oluşturun. Erken önizleme; henüz tam olarak test edilmedi.
-settings-experimental-browser-automation-label = Tarayıcı otomasyonu
-settings-experimental-browser-automation-description = Ajanların tarayıcı kontrol komutlarını kullanmasına izin verin. Tarayıcı eylemleri yine çalışma alanı izni gerektirir.
 settings-experimental-chat-artifacts-label = Sohbet yapıtları
 settings-experimental-chat-artifacts-description = Ajanların sohbette canlı görüntülenen HTML sayfaları yayımlamasına izin verir. Sayfalar korumalı alanda çevrimdışı çalışır.
 settings-search-section-typography = Tipografi
@@ -3262,8 +3257,6 @@ settings-search-entry-experimental-feature-flags-workspace-mentions-label = Çal
 settings-search-entry-experimental-feature-flags-workspace-mentions-description = Sohbette @ ile betiklerden, terminallerden, çalışma ağaçlarından, sohbetlerden ve ajanlardan bahsedin.
 settings-search-entry-experimental-feature-flags-automations-label = Otomasyonlar
 settings-search-entry-experimental-feature-flags-automations-description = Zamanlanmış ve olay tabanlı otomasyonlar oluşturun. Erken önizleme; henüz tam olarak test edilmedi.
-settings-search-entry-experimental-feature-flags-browser-automation-label = Tarayıcı otomasyonu
-settings-search-entry-experimental-feature-flags-browser-automation-description = Ajanların tarayıcı kontrol komutlarını kullanmasına izin verin. Tarayıcı eylemleri yine çalışma alanı izni gerektirir.
 settings-search-entry-agents-session-context-session-context-for-agents-label = Ajanlar için oturum bağlamı
 settings-search-entry-agents-session-context-session-context-for-agents-description = Yeni ajan oturumlarına super.engineering bağlamı ekleyin veya arka planda eklemeyi kapatın.
 settings-section-typography = Tipografi
@@ -3622,10 +3615,6 @@ worktree-step-creating-branch = Dal oluşturuluyor
 worktree-step-naming = Görevinize göre adlandırılıyor
 worktree-step-setup = Kurulum çalıştırılıyor
 worktree-step-opening-agent = { $agent } açılıyor
-chat-waiting-on-agents = { $count ->
-    [one] { $count } ajan bekleniyor…
-   *[other] { $count } ajan bekleniyor…
-}
 chat-shell-mode = Kabuk komutu
 chat-shell-mode-detail = Bu çalışma alanında çalışır. Sonucu ajana göstermek için Sohbete ekle'yi kullanın.
 chat-shell-add-to-chat = Sohbete ekle
@@ -3666,6 +3655,7 @@ chat-diff-unchanged-lines = { $count ->
 chat-files-changed-shared = Bu tur sırasında başka bir sohbet bu çalışma ağacında çalışıyordu. İki sohbetin de değiştirdiği dosyada her ikisinin düzenlemeleri gösterilir.
 chat-files-changed-unattributed = Bu tur sırasında başka bir sohbet bu çalışma ağacında çalışıyordu. Soluk gösterilen dosyalar onun çalışması sırasında değişti ve onun değişiklikleri olabilir.
 chat-files-changed-snapshot-failed = Bu turun çalışma ağacının anlık görüntüsü alınamadı; yalnızca araçlarının bildirdiği dosyalar listelenir.
+chat-files-changed-snapshot-partial = Bu turun bazı depolarının anlık görüntüsü alınamadı; bunlar için yalnızca araçlarının bildirdiği dosyalar listelenir.
 palette-mode-all = Tümü
 palette-mode-conversations = Görüşmeler
 palette-search-all = Ajan, çalışma ağacı, komut, dosya ara…
@@ -3941,3 +3931,389 @@ issue-report-actions-private = Özel
 issue-report-action-draft-agent = Bir ajanla taslak oluştur
 issue-report-action-copy-markdown = Markdown olarak kopyala
 issue-report-action-email = Özel e-posta gönder
+
+browser-dialog-title = { $host } diyor ki
+browser-dialog-title-page = Bu sayfa diyor ki
+section-rule-path = Yol glob deseni
+settings-search-entry-agents-providers-jcode-provider-label = jcode sağlayıcısı
+settings-search-entry-agents-providers-jcode-provider-description = jcode’u etkinleştirin, modellerini ve başlatma seçeneklerini yapılandırın.
+settings-ai-provider-jcode-description = jcode’u sohbet ve terminal sağlayıcısı olarak etkinleştirin (jcode CLI’sinin `jcode` yüklü olması gerekir). Sohbetler, jcode’un kendi yapılandırmasının izin verdiği tüm araçları çalıştırır; jcode önceden onay isteyemez.
+settings-keybinding-action-paste-as-secret = Gizli bilgi olarak yapıştır
+clone-waiting-for-stop = Klonlama işleminin durması bekleniyor…
+toast-review-comments = Yorumları incele
+toast-report-issue = Bildir
+toast-rex-session-display-failed = Rex oturumu oluşturuldu ancak görüntülenemedi
+toast-rex-enable-remote-control = Rex Settings → Rex Server altında Remote Control seçeneğini etkinleştirin, ardından mevcut oturumu seçin. Tekrar açmak başka bir oturum oluşturur.
+toast-rex-select-existing-session = Rex’te mevcut oturumu seçin. Tekrar açmak başka bir oturum oluşturur.
+toast-open-app-failed = Seçili uygulama açılamadı
+toast-open-app-failed-message = Uygulamanın yüklü ve kullanılabilir olduğunu kontrol edin. Hatayı görmek için Ayrıntılar’ı genişletin.
+chat-forward = İlet
+chat-forward-search-placeholder = Şuraya ilet…
+chat-forward-no-chats = Başka açık sohbet yok
+chat-forward-failed-title = İletilemiyor
+chat-forward-failed-message = Hedef sohbet artık kullanılamıyor veya salt okunur durumda.
+workspace-path-copied = Yol kopyalandı
+workspace-link-copied = Bağlantı kopyalandı
+workspace-copy-chat-link = Sohbet bağlantısını kopyala
+workspace-chat-link-copy-failed = Sohbet bağlantısı kopyalanamadı
+workspace-chat-link-copied = Sohbet bağlantısı kopyalandı
+run-app-on-phone = Telefonunuzda açın
+run-app-scan-hint = Aynı Wi-Fi ağına bağlı bir telefonla tarayın.
+palette-section-go-to = Git
+palette-navigation-worktrees = { $count ->
+    [one] { $count } çalışma ağacı
+   *[other] { $count } çalışma ağacı
+}
+secret-request-title = Bir aracı gizli bilgi istiyor
+secret-request-asked-by = “{ $asker }” şunu istiyor: { $label }
+secret-request-asked-by-agent = Bir aracı şunu istiyor: { $label }
+secret-request-placeholder = Gizli bilgiyi yapıştırın veya yazın
+secret-request-note = Özel bir dosyaya kaydedilir ve sohbet dışında tutulur. Aracının komutları bunu 24 saat boyunca okuyabilir.
+secret-request-save = Özel olarak kaydet
+secret-request-show = Gizli bilgiyi göster
+secret-request-hide = Gizli bilgiyi gizle
+secret-request-decline = Reddet
+secret-request-save-failed = Özel olarak kaydedilemedi: { $error }
+chat-secret-pill-token = { $issuer } belirteci
+chat-secret-pill-private-key = Özel anahtar
+chat-secret-pill-secret = Gizli bilgi
+chat-secret-card-kind = Özel tutuluyor
+chat-secret-card-detail = Aracınız, değer yerine özel bir dosyanın yolunu alır. Komutları dosyayı yine de okuyabilir; dosya 24 saat sonra silinir.
+chat-secret-card-paste-as-text = Metin olarak yapıştır
+chat-secret-store-failed = Gizli bilgi özel tutulamadığı için yapıştırılmadı. Düz metin olarak yapıştırmak için tekrar yapıştırın.
+chat-secret-paste-moved = Gizli bilgi özel olarak kaydedilirken taslak değiştiği için yapıştırılmadı. Tekrar yapıştırın.
+chat-paste-moved = Yapıştırılacak içerik kontrol edilirken taslak değiştiği için içerik yapıştırılmadı. Tekrar yapıştırın.
+chat-secret-expired = Bu gizli bilginin dosyası artık yok, bu nedenle metin olarak yapıştırılamaz. Tekrar yapıştırın.
+chat-artifact-annotate = Açıklama ekle
+right-sidebar-filter-files = Dosyaları filtrele
+right-sidebar-collapse-all-folders = Tüm klasörleri daralt
+right-sidebar-reveal-open-file = Açık dosyayı göster
+exit-save-failed-title = Uygulama durumu kaydedilemiyor
+exit-save-failed-description = Uygulamanızın en son durumu kaydedilmedi. { $error }. Depolama sorununu giderdikten sonra tekrar deneyin veya kaydetmeden devam edin.
+exit-restart-without-saving = Kaydetmeden yeniden başlat
+exit-quit-without-saving = Kaydetmeden çık
+
+settings-experimental-resource-monitor-label = Kaynak izleyici
+settings-experimental-resource-monitor-description = Başlık çubuğunda her çalışma ağacı, sekme ve yardımcı süreç için bellek ve CPU kullanımını gösteren Kaynaklar düğmesini gösterin.
+settings-search-section-resources = Kaynaklar
+settings-search-entry-appearance-resources-show-freeable-memory-label = Boşaltılabilir belleği göster
+settings-search-entry-appearance-resources-show-freeable-memory-description = Boşta duran sekmeler uyutulursa ne kadar bellek boşalacağını Kaynaklar düğmesinde gösterin ve Mac’in belleği sıkıştığında düğmeyi renklendirin.
+settings-section-resources = Kaynaklar
+chat-queued-waiting-to-steer = Yönlendirmek için bekliyor
+chat-queued-action-no-longer-queued = Bu ileti artık kuyrukta değil.
+chat-queued-steer-failed = Bu iletiyle yönlendirme yapılamadı.
+chat-queued-change-failed = Bu ileti değiştirilemedi.
+changes-empty-detail = Sizin veya ajanlarınızın bu çalışma ağacında yaptığı düzenlemeler burada görünür.
+changes-empty-turns = Henüz tur yok
+changes-empty-turns-detail = Bir ajan dosyaları değiştirdiğinde, dosyalar onları değiştiren turun altında burada görünür.
+changes-empty-commits = Henüz commit yok
+changes-empty-commits-detail = Bu daldaki commit’ler burada görünür.
+changes-empty-all-viewed = Tümü görüntülendi
+changes-empty-all-viewed-detail = Değişen tüm dosyaları açtınız.
+review-delivery-prepared = Hazırlandı: { $target }
+review-delivery-sent = Gönderildi: { $target }
+review-delivery-dispatched = Arka planda gönderildi: { $target }
+review-delivery-a-chat = bir sohbet
+review-delivery-a-terminal = bir terminal
+review-location-whole-file = Dosyanın tamamı
+review-tooltip-more-lines =
+    { $count ->
+        [one] { $count } satır daha
+       *[other] { $count } satır daha
+    }
+review-location-line = Satır { $line }
+review-location-lines = Satır { $start }–{ $end }
+review-pending-summary =
+    { $files ->
+        [one]
+            { $comments ->
+                [one] { $comments } yorum
+               *[other] { $comments } yorum
+            }
+       *[other] { $files } dosyada { $comments } yorum
+    }
+review-view-open = Açık
+review-view-done = Bitti
+review-your-comments = Yorumlarınız
+review-nothing-to-review = İncelenecek bir şey yok
+review-nothing-to-review-detail = Bir diff’e bıraktığınız yorumlar ve pull request’inizin inceleme konuları burada görünür.
+review-review-changes = Değişiklikleri incele
+review-comment-hint = veya yorum yapmak için herhangi bir diff’te satır seçin
+review-all-caught-up = Hepsi tamam
+review-all-caught-up-detail = Sizi bekleyen bir şey yok.
+review-see-done = Bitenleri gör
+review-nothing-done = Henüz biten bir şey yok
+review-nothing-done-detail = Gönderdiğiniz yorumlar ve çözülen konular burada görünür.
+review-pull-request = Pull request #{ $number }
+review-pull-request-untitled = Pull request
+review-waiting-on-reviewers = #{ $number } için henüz kimse yorum yapmadı.
+review-resolved-on-pr = #{ $number } üzerinde çözüldü
+review-pr-refresh = Pull request yorumlarını yenile
+review-pr-loading = Yorumlar yükleniyor…
+review-pr-load-failed = Pull request yorumları yüklenemedi. Yeniden denemek için yenileyin.
+review-pr-older-hidden = Eski konular gösterilmiyor.
+review-pr-overview-truncated = Diğer konular burada gösterilmiyor.
+review-thread-resolve = Çöz
+review-thread-unresolve = Yeniden aç
+review-thread-resolving = Çözülüyor…
+review-thread-unresolving = Yeniden açılıyor…
+review-thread-update-failed = Güncellenemedi. Yeniden deneyin.
+review-thread-outdated = Güncel değil
+review-thread-byline =
+    { $replies ->
+        [0] { $author }, { $age } yorum yaptı
+        [one] { $author }, { $age } yorum yaptı, 1 yanıt
+       *[other] { $author }, { $age } yorum yaptı, { $replies } yanıt
+    }
+checks-path-to-merge = Birleştirmeye giden yol
+checks-step-committed = Değişiklikler commit edildi
+checks-step-pushed = Push edildi
+checks-step-unpushed =
+    { $count ->
+        [one] Push edilecek { $count } commit
+       *[other] Push edilecek { $count } commit
+    }
+checks-step-review-open = { $kind } açık
+checks-step-checks = Kontroller
+checks-step-running = Kontroller çalışıyor
+checks-behind-target =
+    { $count ->
+        [one] { $target } dalının { $count } commit gerisinde
+       *[other] { $target } dalının { $count } commit gerisinde
+    }
+right-panel-view-options = Görünüm seçenekleri
+right-panel-view-changes = Değişiklikler
+right-panel-view-gitignored-files = Git’in yok saydığı dosyalar
+diff-viewed-toggle = Görüntülendi
+diff-since-viewed-note = { $agent } bunu siz görüntüledikten sonra değiştirdi. O zamandan beri yapılan değişiklikler gösteriliyor.
+diff-since-viewed-note-unattributed = Bu dosya siz görüntüledikten sonra değişti. O zamandan beri yapılan değişiklikler gösteriliyor.
+diff-since-viewed-show-full = Tam diff’i göster
+diff-turn-review-writing = İnceleme yazılıyor…
+diff-turn-review-passed = geçti
+diff-turn-review-failed = başarısız
+diff-turn-review-not-checked = Kontrol edilmedi: { $what }
+diff-turn-review-more-checks = { $count } tane daha
+diff-turn-review-looks-good = İyi görünüyor
+diff-turn-review-comment-hint = Değişiklik istemek için bir satıra yorum yapın
+right-sidebar-new = Yeni
+right-sidebar-show-comments = Yorumları göster
+right-sidebar-hint-move = Taşı
+right-sidebar-hint-viewed = Görüntülendi
+right-sidebar-hint-next-unviewed = Sonraki görüntülenmemiş
+right-sidebar-hint-open = Aç
+right-sidebar-commit-message = Commit iletisi
+right-sidebar-writing-message = İleti yazılıyor
+right-sidebar-write-message = İleti yaz
+right-sidebar-commit-file-count =
+    { $count ->
+        [one] { $count } dosya
+       *[other] { $count } dosya
+    }
+right-sidebar-commit = Commit
+right-sidebar-commit-and-push = Commit ve push
+right-sidebar-amend-last-commit = Son commit’i düzelt
+right-sidebar-committing = Commit ediliyor
+right-sidebar-committed = Commit edildi
+right-sidebar-push = Push
+right-sidebar-unviewed = Görüntülenmedi
+changes-file-count =
+    { $count ->
+        [one] { $count } dosya
+       *[other] { $count } dosya
+    }
+right-sidebar-mark-all-viewed =
+    { $count ->
+        [one] { $count } dosyayı görüntülendi olarak işaretle
+       *[other] { $count } dosyanın tümünü görüntülendi olarak işaretle
+    }
+right-sidebar-all-viewed = Tüm dosyalar görüntülendi
+right-sidebar-viewed = Görüntülendi
+right-sidebar-changed-since-viewed = Siz görüntüledikten sonra değişti
+right-sidebar-changed-since-viewed-by = { $agent } bunu siz görüntüledikten sonra değiştirdi
+right-sidebar-changed-since-viewed-count =
+    { $count ->
+        [one] { $count } dosya siz görüntüledikten sonra değişti
+       *[other] { $count } dosya siz görüntüledikten sonra değişti
+    }
+right-sidebar-view-all = Tümü
+right-sidebar-view-turns = Turlar
+right-sidebar-turn-working = Çalışıyor
+right-sidebar-other-changes = Diğer değişiklikler
+right-sidebar-probable-file = Bu tur sürerken değişti
+right-sidebar-probable-file-detail = Turun araçları bunu bildirmedi, bu yüzden başka birinin düzenlemesi olabilir. Tur bittiğinde doğrulanır.
+resources-title = Kaynaklar
+resources-search = Kaynak veya proje ara
+resources-search-tooltip = Ara
+resources-remote = Uzak
+resources-asleep = Uykuda
+resources-held-info = Bu çalışma ağacının anında yeniden açılması için ekranlar ve son sohbet uygulamanın belleğinde tutulur; Uygulama altında Uykuda olarak sayılır. Ekranlar 15 dakika uykuda kaldıktan sonra serbest bırakılır.
+resources-cpu = CPU
+resources-cpu-history = Son bir dakikadaki CPU. Geçmiş, Kaynaklar açıkken oluşur.
+resources-reclaim =
+    { $count ->
+        [one] Boştaki { $count } sekme uyutularak yaklaşık { $memory } boşaltılabilir
+       *[other] Boştaki { $count } sekme uyutularak yaklaşık { $memory } boşaltılabilir
+    }
+resources-sleep-idle = Boştakileri uyut
+resources-freed = { $memory } boşaltıldı
+resources-sleep = Uyut
+resources-sleep-tooltip = Süreçlerini serbest bırakır. Açtığınızda geçmişiyle birlikte uyanır.
+resources-wake = Uyandır
+resources-stop = Durdur
+resources-stop-confirm = { $name } durdurulsun mu?
+resources-stop-consequence = Devam eden iş kesintiye uğrayacak.
+resources-cancel = Vazgeç
+resources-exited = Çıktı
+resources-exited-just-now = Az önce çıktı
+resources-exited-minutes = { $minutes } dk önce çıktı
+resources-exited-hours = { $hours } sa önce çıktı
+resources-cpu-row = %{ $percent } CPU
+resources-origin-tab = Terminal sekmesi
+resources-origin-launched = Başlatan: { $tab }
+resources-origin-run-script = Çalıştırma betiği
+resources-origin-panel = Panel terminali
+resources-origin-setup = Kurulum komutu
+resources-origin-git = Git işlemi
+resources-origin-review = İnceleme
+resources-activity-running = { $process } çalışıyor
+resources-activity-busy = Çalışıyor
+resources-activity-idle = Boşta
+resources-app = Uygulama
+resources-browser-services = Tarayıcı hizmetleri
+resources-browser-graphics = Grafik
+resources-browser-networking = Ağ
+resources-background = Arka plan süreçleri
+resources-background-pid = PID { $pid }
+resources-app-graphics = Grafik
+resources-app-graphics-info = Pencere yüzeyleri ve GPU belleği
+resources-app-held-for-reuse = Yeniden kullanım için ayrılan
+resources-app-saved-wake = Uykuda
+resources-app-code-system = Kod ve sistem
+resources-app-chats = Sohbetler
+resources-app-chats-open = { $count } açık
+resources-app-chats-idle = { $count } boşta
+resources-app-chats-history = Sohbet geçmişi
+resources-app-terminals = Terminaller
+resources-app-terminals-count =
+    { $count ->
+        [one] { $count } terminal
+       *[other] { $count } terminal
+    }
+resources-app-terminals-lines =
+    { $count ->
+        [one] { $count } satır
+       *[other] { $count } satır
+    }
+resources-app-saved-count =
+    { $count ->
+        [one] { $count } çalışma ağacı
+       *[other] { $count } çalışma ağacı
+    }
+resources-app-saved-info = Uykudaki çalışma ağaçlarının anında yeniden açılması için tutulan bellek
+resources-app-background-count =
+    { $count ->
+        [one] { $count } süreç
+       *[other] { $count } süreç
+    }
+resources-app-background-info = Uygulamanın çalıştırdığı ve hiçbir çalışma ağacına ait olmayan Git, yardımcı komutlar ve ajan araçları
+resources-app-background-brief = Kısa komutlar
+resources-app-other-data = Veriler
+resources-app-other-detail = Projeler ve çalışma ağaçlarıyla birlikte büyür
+resources-app-held-for-reuse-detail = Ayırıcı tarafından yeniden kullanım için tutulur
+resources-app-code-system-detail = Program kodu ve sistem kitaplıkları
+resources-estimated = Tahmini
+resources-sleep-idle-chats = Boştaki sohbetleri uyut
+resources-sleep-idle-chats-confirm =
+    { $count ->
+        [one] Boştaki { $count } sohbet uyutulsun mu?
+       *[other] Boştaki { $count } sohbet uyutulsun mu?
+    }
+resources-frees-about = Yaklaşık { $memory } boşaltır
+resources-clear = Temizle
+resources-clear-confirm =
+    { $lines ->
+        [one] Kaydırma geçmişindeki { $lines } satır temizlensin mi?
+       *[other] Kaydırma geçmişindeki { $lines } satır temizlensin mi?
+    }
+resources-clear-consequence = Ekran olduğu gibi kalır.
+resources-clear-scrollback = Kaydırma geçmişini temizle
+resources-clear-all-confirm =
+    { $count ->
+        [one] { $count } terminalin kaydırma geçmişi temizlensin mi?
+       *[other] { $count } terminalin kaydırma geçmişi temizlensin mi?
+    }
+resources-chat-sleep-running = Bir tur çalışıyor. Tur bittiğinde uyutulabilir.
+resources-chat-sleep-waiting = Yanıtınızı bekliyor. Yanıt verdiğinizde uyutulabilir.
+resources-chat-sleep-unseen = Görmediğiniz bir yanıt var. Okuduğunuzda uyutulabilir.
+resources-chat-sleep-kept-ready = Çalışma ağacına hızlı dönüş için hazır tutuluyor.
+resources-chat-sleep-on-screen = Ekranda. Görünümden çıktığında uyutulabilir.
+resources-chat-sleep-queued = Kuyrukta iletiler var. Gönderildiklerinde uyutulabilir.
+resources-chat-sleep-busy = Şu anda meşgul. Biraz sonra yeniden deneyin.
+resources-info-title = { $total } nereye gidiyor
+resources-info-summary = Uygulama ve sizin için başlattığı her şey.
+resources-info-app = super.engineering
+resources-info-app-hint = Uygulama ve çalıştırdığı yardımcı süreçler
+resources-info-agents-hint = Her sohbetin ajanı ve çalıştırdığı araçlar
+resources-info-browser = Tarayıcı sekmeleri
+resources-info-browser-hint = Her sayfa kendi sürecinde çalışır
+resources-info-terminals-hint = Kabuklar, çalıştırma betikleri ve bunların başlattıkları
+resources-info-remote = Uzak çalışma ağaçları henüz ölçülmüyor.
+resources-pressure-warning = Mac’in belleği sıkışık. super.engineering { $ram } belleğin { $used } kadarını kullanıyor.
+resources-pressure-warning-short = Mac’in belleği sıkışık.
+resources-pressure-critical = Mac’in belleği kritik düzeyde az. super.engineering { $ram } belleğin { $used } kadarını kullanıyor.
+resources-pressure-critical-others = Mac’in belleği kritik düzeyde az; bunun çoğu diğer uygulamalardan. super.engineering { $ram } belleğin { $used } kadarını kullanıyor.
+resources-pressure-critical-short = Mac’in belleği kritik düzeyde az.
+resources-thermal = Mac ısınıyor ve yavaşlayabilir.
+resources-measurements-unavailable = Bellek ve CPU bilgisi şu anda kullanılamıyor. Sekmeleri yine de açıp yönetebilirsiniz.
+resources-loading = Kaynaklar yükleniyor…
+resources-empty = Eşleşen kaynak yok.
+resources-empty-all = Çalışan bir şey yok.
+resources-empty-agents = Çalışan ajan yok.
+resources-empty-browser = Açık tarayıcı sekmesi yok.
+resources-empty-terminals = Çalışan terminal yok.
+resources-tab-all = Tümü
+resources-tab-agents = Ajanlar
+resources-tab-browser = Tarayıcı
+resources-tab-terminals = Terminaller
+resources-fact-agents =
+    { $count ->
+        [one] ajan
+       *[other] ajan
+    }
+resources-fact-browser-tabs =
+    { $count ->
+        [one] tarayıcı sekmesi
+       *[other] tarayıcı sekmesi
+    }
+resources-fact-terminals =
+    { $count ->
+        [one] terminal
+       *[other] terminal
+    }
+resources-on-screen = Ekranda olduğu için uyanık kalır
+resources-open = Aç
+resources-close = Kapat
+resources-close-confirm = { $name } kapatılsın mı?
+resources-close-consequence = Sayfası kapanır.
+resources-average-title = Ajan başına ortalama
+resources-average-each = Her biri
+resources-average-ten = 10 ajan
+resources-average-each-suffix = her biri
+resources-average-for-ten = 10 için
+resources-tree-more = +{ $count } daha
+resources-app-item-detail = { $activity }, { $lines }
+resources-app-more-chats =
+    { $count ->
+        [one] { $count } sohbet daha
+       *[other] { $count } sohbet daha
+    }
+resources-app-more-terminals =
+    { $count ->
+        [one] { $count } terminal daha
+       *[other] { $count } terminal daha
+    }
+issue-report-check-submission = Gönderimi kontrol et
+issue-report-submission-uncertain = Bu rapor zaten GitHub’da olabilir. Bulmak için gönderimi kontrol edin; kontrol işlemi asla yeniden paylaşım yapmaz. Henüz bulunamazsa bekleyip tekrar kontrol edin veya bu taslağı silmeden önce GitHub’daki sorunlarınızı gözden geçirin.
+issue-report-discard-uncertain = Taslağı sil (rapor zaten mevcut olabilir)
+issue-report-draft-load-failed = Kaydedilmiş raporunuz okunamadı. Başka bir rapor göndermeden önce depolama sorununu giderin ve uygulamayı yeniden başlatın.
+review-comment-edit-staged = Düzenlemeden önce bu incelemeyi yazma alanından kaldırın.

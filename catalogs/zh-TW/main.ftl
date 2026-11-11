@@ -568,10 +568,7 @@ section-value-review-required = 需審查
 section-value-running = 執行中
 section-value-stopped = 已停止
 section-value-working = 工作中
-toast-remove-from-app = 從 { $app_name } 中移除
-toast-browser-automation-disabled-title = 有代理程式嘗試使用瀏覽器
-toast-browser-automation-disabled = 瀏覽器自動化已關閉，因此代理程式的指令遭到拒絕。請在「設定 › 實驗性」中開啟，讓代理程式可以讀取並控制你的瀏覽器分頁。
-toast-open-experimental-settings = 開啟設定
+toast-remove-from-app = 移除
 validation-name-required = 必須填寫名稱
 welcome-clone-from-url = 從 URL 複製
 welcome-clone-from-url-description = 複製遠端儲存庫
@@ -1136,8 +1133,6 @@ script-commands-more = 另外 { $count } 項
 setup-not-configured = 尚未設定初始化指令碼
 review-submitted-reviews = 已送出的審查
 review-ai-questions = AI 問題
-review-no-comments = 目前還沒有審查留言
-review-select-lines-hint = 在差異檢視中選取程式碼行以開始審查。
 sidebar-ssh = SSH
 shared-context-generate-ai-context = 產生 AI 上下文
 action-generate = 產生
@@ -1173,7 +1168,6 @@ review-add-to-fix-list = 新增至修正清單
 review-submit-replies = 送出回覆
 review-submit-from-tab = 從「審查」分頁送出 →
 review-ai-findings = AI 審查結果
-review-findings-triage-count = 待處理：{ $count }
 review-findings-to-triage = 待處理的 AI 審查結果：{ $count }
 review-finding-should-fix = 應修正
 review-finding-dismiss = 忽略
@@ -1210,7 +1204,6 @@ context-output = 輸出
 context-total-io = 輸入／輸出總計
 context-input-effective = 有效輸入量
 profile-cli-default = CLI 預設
-review-no-active-comments = 沒有待處理的審查留言。
 permission-tools = 工具
 permission-ask = 詢問
 permission-yolo = Yolo
@@ -1264,9 +1257,10 @@ chat-thinking-in-progress = 思考中
 chat-thinking-count = 思考中（{ $count }）
 chat-thinking-summary = 思考中 · { $summary }
 chat-working-for = 已工作
-chat-agent-wait-caption = { $count ->
-   *[other] 收到回報後 { $model } 會繼續
-}
+chat-agent-wait-caption =
+    { $count ->
+       *[other] 完成後 { $model } 會繼續
+    }
 chat-worked-for = 工作了 { $duration }
 chat-worked = 已工作
 plan-proposed = 已提出計畫
@@ -1319,7 +1313,6 @@ image-preview-load-failed = 無法載入圖片
 hosted-tab-unavailable = 無法顯示此分頁，因為其功能無法使用。
 file-tree-new-file = 新檔案
 file-tree-new-folder = 新資料夾
-review-suggestion = 建議
 pr-merged = 已合併
 pr-closed = 已關閉
 pr-update-available = 有可用更新
@@ -1424,8 +1417,6 @@ target-branch-push-description = 選擇是否將新建立的目標分支推送�
 toast-error = 錯誤
 toast-busy = 忙碌
 toast-review = 審查
-toast-review-comments-title = 審查留言（{ $count }）
-toast-review-comments-message = { $count } 則新的審查留言。最新一則：{ $latest }
 toast-update-branch-failed = 更新分支失敗
 toast-keymap-error = 快速鍵對應錯誤
 toast-keymap-load-failed = 無法載入快速鍵對應：{ $error }
@@ -1555,9 +1546,6 @@ review-no-pending-comments = 沒有待處理的審查留言
 review-no-enabled-chat-providers = 沒有啟用的聊天服務供應商
 review-no-enabled-agents = 沒有已啟用的代理程式
 
-review-comment-count = 留言：{ $count }
-review-review-count = 審查：{ $count }
-review-awaiting-reply-count = 等待回覆：{ $count }
 review-file-count = 檔案：{ $count }
 
 settings-ai-codex-profile-directory-missing = 找不到 Codex 設定檔目錄。請先建立該目錄，再啟動此設定檔。
@@ -1605,8 +1593,6 @@ settings-experimental-remote-workspaces-label = 遠端工作區
 settings-experimental-remote-workspaces-description = 透過 SSH 建立位於遠端機器上的工作區。停用後，現有的遠端工作區仍可繼續使用。
 settings-experimental-non-git-projects-label = 非 Git 專案
 settings-experimental-non-git-projects-description = 允許加入不含 Git 中繼資料的資料夾。停用後，現有的一般資料夾專案仍會顯示。
-settings-experimental-browser-automation-label = 瀏覽器自動化
-settings-experimental-browser-automation-description = 允許代理程式使用瀏覽器控制指令。瀏覽器操作仍需要工作區權限。
 settings-experimental-chat-artifacts-label = 聊天工件
 settings-experimental-chat-artifacts-description = 允許代理程式發布在聊天中即時呈現的 HTML 頁面。頁面會在沙箱中離線執行。
 settings-experimental-auto-compact-label = Claude Code 達到上下文視窗上限時自動壓縮
@@ -1758,6 +1744,8 @@ settings-search-entry-general-behavior-show-cmd-number-hints-on-cmd-hold-label =
 settings-search-entry-general-behavior-show-cmd-number-hints-on-cmd-hold-description = 按住 Command 鍵 0.5 秒，顯示工作樹或分頁的數字快速鍵。
 settings-search-entry-general-behavior-use-cmd-number-to-switch-tabs-label = 使用 Cmd+數字切換分頁
 settings-search-entry-general-behavior-use-cmd-number-to-switch-tabs-description = 使用 Cmd+1 至 Cmd+9 選取目前工作樹中的分頁，而不是切換工作樹。
+settings-search-entry-general-behavior-project-header-click-label = 點擊專案名稱
+settings-search-entry-general-behavior-project-header-click-description = 選擇在側邊欄點擊專案名稱時的動作。名稱旁的箭頭一律用於展開和收合。
 settings-search-entry-general-behavior-confirm-before-quitting-label = 結束前確認
 settings-search-entry-general-behavior-confirm-before-quitting-description = 按下 Cmd+Q 或從選單選擇「結束」時，顯示確認提示。
 settings-search-entry-general-behavior-confirm-before-closing-a-running-tab-label = 關閉執行中的分頁前先確認
@@ -1898,8 +1886,6 @@ settings-search-entry-experimental-feature-flags-non-git-projects-label = 非 Gi
 settings-search-entry-experimental-feature-flags-non-git-projects-description = 允許加入不含 Git 中繼資料的資料夾。
 settings-search-entry-general-behavior-agent-orchestration-label = 代理程式編排
 settings-search-entry-general-behavior-agent-orchestration-description = 向代理程式提供編排指令。每次使用仍須由你提出明確且相符的要求。
-settings-search-entry-experimental-feature-flags-browser-automation-label = 瀏覽器自動化
-settings-search-entry-experimental-feature-flags-browser-automation-description = 允許代理程式使用瀏覽器控制指令。瀏覽器操作仍需要工作區權限。
 settings-search-entry-agents-session-context-session-context-for-agents-label = 代理程式工作階段上下文
 settings-search-entry-agents-session-context-session-context-for-agents-description = 為新的代理程式工作階段加入 super.engineering 上下文，或關閉自動注入。
 settings-search-entry-experimental-feature-flags-auto-compact-claude-code-on-context-window-limit-label = Claude Code 達到上下文視窗上限時自動壓縮
@@ -2205,8 +2191,6 @@ git-run-action-in-new-tab = 在新分頁執行動作
 git-run-action = 執行操作
 right-panel-new-terminal = 新增終端機
 setup-stop-script = 停止初始化指令碼
-run-open-port = 開啟 :{ $port }
-run-open-preview = 開啟預覽
 run-stop-script = 停止執行指令碼
 run-rerun-workspace = 重新執行工作區
 workspace-close-tab = 關閉分頁
@@ -2372,6 +2356,11 @@ sidebar-hide-primary-worktree = 隱藏主要工作樹
 sidebar-edit-section = 編輯…
 sidebar-move-section-up = 上移
 sidebar-move-section-down = 往下移
+sidebar-sort-projects-by = 專案排序方式
+sidebar-sort-projects-name = 名稱
+sidebar-sort-projects-path = 路徑
+sidebar-collapse-all-projects = 收合所有專案
+sidebar-expand-all-projects = 展開所有專案
 file-menu-open-in-terminal = 在終端機中開啟
 shared-context-edit-projects = 編輯專案…
 history-load-backfill = 載入／補齊歷程記錄
@@ -2672,8 +2661,6 @@ shared-context-depth-simple-tooltip = 快速設定，僅進行輕量掃描（REA
 shared-context-depth-thorough = 深入
 shared-context-depth-thorough-summary = 先進行訪談，再分析程式碼庫，然後產生工作區指南。
 shared-context-depth-thorough-tooltip = 會問一些釐清問題，確認目標，然後進行更深入的程式碼檢查。
-right-panel-show-gitignored-files = 顯示 Git 忽略的檔案
-right-panel-hide-gitignored-files = 隱藏 Git 忽略的檔案
 workspace-hold-command-for-chat-ui = 按住 ⌘ 開啟聊天介面
 workspace-hold-command-for-terminal = 按住 ⌘ 開啟終端機
 tool-picker-no-matches = 沒有符合項目
@@ -2961,6 +2948,12 @@ settings-orchestrated-worktrees-auto = 自動
 settings-orchestrated-worktrees-auto-description = 當其中的代理程式正在工作或需要你處理時展開。
 settings-orchestrated-worktrees-collapsed = 收合
 settings-orchestrated-worktrees-collapsed-description = 一律收合，直到你手動展開。
+settings-project-header-click-toggle = 展開/收合
+settings-project-header-click-toggle-description = 顯示或隱藏專案的工作樹。
+settings-project-header-click-open-primary = 開啟主要工作樹
+settings-project-header-click-open-primary-description = 開啟專案的主要簽出。
+settings-project-header-click-auto = 自動
+settings-project-header-click-auto-description = 若主要工作樹是唯一的工作樹就開啟它，否則展開或收合。
 settings-orchestrated-worktrees-expanded = 展開
 settings-orchestrated-worktrees-expanded-description = 一律展開。
 settings-search-entry-appearance-layout-orchestrated-worktrees-description = 選擇聊天委派工作的工作樹在側邊欄中該聊天下方的展開方式。
@@ -3660,7 +3653,6 @@ worktree-step-setup = 正在執行設定
 
 worktree-step-opening-agent = 正在開啟 { $agent }
 
-chat-waiting-on-agents = 正在等待 { $count } 個代理程式…
 
 chat-shell-mode = Shell 命令
 
@@ -3723,6 +3715,7 @@ chat-files-changed-shared = 本輪期間另一個聊天也在此工作樹中進�
 chat-files-changed-unattributed = 本輪期間另一個聊天也在此工作樹中進行操作。灰顯檔案在其操作期間發生了變化，可能由其修改。
 
 chat-files-changed-snapshot-failed = 無法為本輪的工作樹建立快照，因此僅列出工具報告的檔案。
+chat-files-changed-snapshot-partial = 無法為本輪的部分儲存庫建立快照，因此這些儲存庫僅列出工具報告的檔案。
 
 palette-mode-all = 全部
 
@@ -4223,3 +4216,362 @@ issue-report-action-draft-agent = 使用代理程式起草
 issue-report-action-copy-markdown = 複製為 Markdown
 
 issue-report-action-email = 私下透過電子郵件傳送
+
+browser-dialog-title = { $host } 顯示訊息
+browser-dialog-title-page = 此頁面顯示訊息
+section-rule-path = 路徑 glob 模式
+settings-search-entry-agents-providers-jcode-provider-label = jcode 提供者
+settings-search-entry-agents-providers-jcode-provider-description = 啟用 jcode 並設定其模型和啟動旗標。
+settings-ai-provider-jcode-description = 啟用 jcode 作為聊天和終端機提供者（需安裝 jcode CLI `jcode`）。聊天會執行 jcode 自身設定所允許的所有工具；jcode 無法在執行前要求核准。
+settings-keybinding-action-paste-as-secret = 貼上為機密資訊
+clone-waiting-for-stop = 正在等待複製程序停止…
+toast-review-comments = 審查留言
+toast-report-issue = 回報
+toast-rex-session-display-failed = Rex 工作階段已建立，但無法顯示
+toast-rex-enable-remote-control = 請在 Rex 設定 → Rex Server 中啟用 Remote Control，然後選取現有的工作階段。再次開啟會建立另一個工作階段。
+toast-rex-select-existing-session = 請在 Rex 中選取現有的工作階段。再次開啟會建立另一個工作階段。
+toast-open-app-failed = 無法開啟選取的應用程式
+toast-open-app-failed-message = 請確認應用程式已安裝且可用。展開「詳細資訊」以查看錯誤。
+chat-forward = 轉寄
+chat-forward-search-placeholder = 轉寄至…
+chat-forward-no-chats = 沒有其他開啟的聊天
+chat-forward-failed-title = 無法轉寄
+chat-forward-failed-message = 目標聊天已無法使用或為唯讀。
+workspace-path-copied = 已複製路徑
+workspace-link-copied = 已複製連結
+workspace-copy-chat-link = 複製聊天連結
+workspace-chat-link-copy-failed = 無法複製聊天連結
+workspace-chat-link-copied = 已複製聊天連結
+run-app-on-phone = 在手機上開啟
+run-app-scan-hint = 使用連線至相同 Wi-Fi 的手機掃描。
+palette-section-go-to = 前往
+palette-navigation-worktrees = { $count } 個工作樹
+secret-request-title = 代理程式正在要求機密資訊
+secret-request-asked-by = 「{ $asker }」要求：{ $label }
+secret-request-asked-by-agent = 代理程式要求：{ $label }
+secret-request-placeholder = 貼上或輸入機密資訊
+secret-request-note = 儲存至私人檔案，不會出現在聊天中。代理程式的指令可在 24 小時內讀取該檔案。
+secret-request-save = 私密儲存
+secret-request-show = 顯示機密資訊
+secret-request-hide = 隱藏機密資訊
+secret-request-decline = 拒絕
+secret-request-save-failed = 無法私密儲存：{ $error }
+chat-secret-pill-token = { $issuer } 權杖
+chat-secret-pill-private-key = 私密金鑰
+chat-secret-pill-secret = 機密資訊
+chat-secret-card-kind = 已私密保存
+chat-secret-card-detail = 代理程式會取得私人檔案的路徑，而非實際值。其指令仍可讀取該檔案，檔案將在 24 小時後刪除。
+chat-secret-card-paste-as-text = 貼上為文字
+chat-secret-store-failed = 無法私密保存機密資訊，因此未貼上。再次貼上將以純文字形式貼上。
+chat-secret-paste-moved = 私密保存機密資訊期間草稿已變更，因此未貼上。請重新貼上。
+chat-paste-moved = 檢查貼上內容期間草稿已變更，因此未貼上。請重新貼上。
+chat-secret-expired = 該機密資訊的檔案已不存在，無法貼上為文字。請重新貼上。
+chat-artifact-annotate = 加上註解
+right-sidebar-filter-files = 篩選檔案
+right-sidebar-collapse-all-folders = 收合所有資料夾
+right-sidebar-reveal-open-file = 顯示已開啟的檔案
+exit-save-failed-title = 無法儲存應用程式狀態
+exit-save-failed-description = 最新的應用程式狀態尚未儲存。{ $error }。請修復儲存問題後重試，或不儲存並繼續。
+exit-restart-without-saving = 不儲存並重新啟動
+exit-quit-without-saving = 不儲存並結束
+
+settings-experimental-resource-monitor-label = 資源監視器
+settings-experimental-resource-monitor-description = 在標題列顯示「資源」按鈕，查看每個工作樹、分頁和輔助處理序的記憶體與 CPU 用量。
+settings-search-section-resources = 資源
+settings-search-entry-appearance-resources-show-freeable-memory-label = 顯示可釋放的記憶體
+settings-search-entry-appearance-resources-show-freeable-memory-description = 在「資源」按鈕上顯示讓閒置分頁休眠可釋放的記憶體，並在 Mac 記憶體吃緊時為按鈕標上顏色。
+settings-section-resources = 資源
+chat-queued-waiting-to-steer = 等待調整方向
+chat-queued-action-no-longer-queued = 此訊息已不在佇列中。
+chat-queued-steer-failed = 無法用此訊息調整方向。
+chat-queued-change-failed = 無法變更此訊息。
+changes-empty-detail = 你或你的代理程式在此工作樹中所做的編輯會顯示在這裡。
+changes-empty-turns = 尚無對話輪次
+changes-empty-turns-detail = 代理程式修改檔案後，檔案會顯示在這裡，歸入修改它們的那一輪。
+changes-empty-commits = 尚無提交
+changes-empty-commits-detail = 此分支上的提交會顯示在這裡。
+changes-empty-all-viewed = 已全部檢視
+changes-empty-all-viewed-detail = 你已開啟所有變更的檔案。
+review-delivery-prepared = 已在 { $target } 中備妥
+review-delivery-sent = 已傳送到 { $target }
+review-delivery-dispatched = 已在背景傳送到 { $target }
+review-delivery-a-chat = 聊天
+review-delivery-a-terminal = 終端機
+review-location-whole-file = 整個檔案
+review-tooltip-more-lines =
+    { $count ->
+       *[other] 還有 { $count } 行
+    }
+review-location-line = 第 { $line } 行
+review-location-lines = 第 { $start }–{ $end } 行
+review-pending-summary =
+    { $files ->
+        [1] { $comments } 則留言
+       *[other] { $files } 個檔案中有 { $comments } 則留言
+    }
+review-view-open = 待處理
+review-view-done = 已完成
+review-your-comments = 你的留言
+review-nothing-to-review = 沒有需要審查的內容
+review-nothing-to-review-detail = 你在差異中留下的留言，以及提取要求中的審查對話，都會顯示在這裡。
+review-review-changes = 審查變更
+review-comment-hint = 或在任一差異中選取程式碼行來留言
+review-all-caught-up = 全部處理完畢
+review-all-caught-up-detail = 沒有等待你處理的項目。
+review-see-done = 查看已完成項目
+review-nothing-done = 尚無已完成項目
+review-nothing-done-detail = 你送出的留言和已解決的對話會顯示在這裡。
+review-pull-request = 提取要求 #{ $number }
+review-pull-request-untitled = 提取要求
+review-waiting-on-reviewers = 還沒有人在 #{ $number } 留言。
+review-resolved-on-pr = 已在 #{ $number } 中解決
+review-pr-refresh = 重新整理提取要求留言
+review-pr-loading = 正在載入留言…
+review-pr-load-failed = 無法載入提取要求留言。請重新整理後再試一次。
+review-pr-older-hidden = 較早的對話未顯示。
+review-pr-overview-truncated = 此處未顯示更多對話。
+review-thread-resolve = 解決
+review-thread-unresolve = 標記為未解決
+review-thread-resolving = 正在解決…
+review-thread-unresolving = 正在標記為未解決…
+review-thread-update-failed = 無法更新，請再試一次。
+review-thread-outdated = 已過時
+review-thread-byline =
+    { $replies ->
+        [0] { $author } 於 { $age }留言
+       *[other] { $author } 於 { $age }留言，{ $replies } 則回覆
+    }
+checks-path-to-merge = 合併進度
+checks-step-committed = 變更已提交
+checks-step-pushed = 已推送
+checks-step-unpushed =
+    { $count ->
+       *[other] { $count } 個提交待推送
+    }
+checks-step-review-open = { $kind } 已開啟
+checks-step-checks = 檢查
+checks-step-running = 檢查執行中
+checks-behind-target =
+    { $count ->
+       *[other] 落後 { $target } { $count } 個提交
+    }
+right-panel-view-options = 檢視選項
+right-panel-view-changes = 變更
+right-panel-view-gitignored-files = Git 忽略的檔案
+diff-viewed-toggle = 已檢視
+diff-since-viewed-note = 你檢視後 { $agent } 修改了此檔案。正在顯示之後的變更。
+diff-since-viewed-note-unattributed = 你檢視後此檔案有變動。正在顯示之後的變更。
+diff-since-viewed-show-full = 顯示完整差異
+diff-turn-review-writing = 正在撰寫審查…
+diff-turn-review-passed = 通過
+diff-turn-review-failed = 未通過
+diff-turn-review-not-checked = 未檢查：{ $what }
+diff-turn-review-more-checks = 另外 { $count } 項
+diff-turn-review-looks-good = 看起來沒問題
+diff-turn-review-comment-hint = 在某行留言以要求修改
+right-sidebar-new = 新增
+right-sidebar-show-comments = 顯示留言
+right-sidebar-hint-move = 移動
+right-sidebar-hint-viewed = 已檢視
+right-sidebar-hint-next-unviewed = 下一個未檢視
+right-sidebar-hint-open = 開啟
+right-sidebar-commit-message = 提交訊息
+right-sidebar-writing-message = 正在撰寫訊息
+right-sidebar-write-message = 撰寫訊息
+right-sidebar-commit-file-count =
+    { $count ->
+       *[other] { $count } 個檔案
+    }
+right-sidebar-commit = 提交
+right-sidebar-commit-and-push = 提交並推送
+right-sidebar-amend-last-commit = 修改上一次提交
+right-sidebar-committing = 正在提交
+right-sidebar-committed = 已提交
+right-sidebar-push = 推送
+right-sidebar-unviewed = 未檢視
+changes-file-count =
+    { $count ->
+       *[other] { $count } 個檔案
+    }
+right-sidebar-mark-all-viewed =
+    { $count ->
+        [1] 將 1 個檔案標記為已檢視
+       *[other] 將全部 { $count } 個檔案標記為已檢視
+    }
+right-sidebar-all-viewed = 已檢視所有檔案
+right-sidebar-viewed = 已檢視
+right-sidebar-changed-since-viewed = 檢視後有變動
+right-sidebar-changed-since-viewed-by = 你檢視後 { $agent } 修改了此檔案
+right-sidebar-changed-since-viewed-count =
+    { $count ->
+       *[other] { $count } 個檔案在你檢視後有變動
+    }
+right-sidebar-view-all = 全部
+right-sidebar-view-turns = 輪次
+right-sidebar-turn-working = 進行中
+right-sidebar-other-changes = 其他變更
+right-sidebar-probable-file = 在本輪執行期間被修改
+right-sidebar-probable-file-detail = 其工具未回報此修改，因此可能是他人的編輯。本輪結束時確認。
+resources-title = 資源
+resources-search = 搜尋資源或專案
+resources-search-tooltip = 搜尋
+resources-remote = 遠端
+resources-asleep = 已休眠
+resources-held-info = 畫面和近期聊天保留在應用程式記憶體中，讓此工作樹能立即重新開啟，計入「應用程式」下的「已休眠」。休眠 15 分鐘後會釋放畫面。
+resources-cpu = CPU
+resources-cpu-history = 最近一分鐘的 CPU 用量。「資源」開啟期間會持續記錄歷史。
+resources-reclaim =
+    { $count ->
+       *[other] 讓 { $count } 個閒置分頁休眠可釋放約 { $memory }
+    }
+resources-sleep-idle = 休眠閒置項目
+resources-freed = 已釋放 { $memory }
+resources-sleep = 休眠
+resources-sleep-tooltip = 釋放其處理序。開啟時會連同歷史記錄一起喚醒。
+resources-wake = 喚醒
+resources-stop = 停止
+resources-stop-confirm = 要停止 { $name } 嗎？
+resources-stop-consequence = 執行中的工作將會中斷。
+resources-cancel = 取消
+resources-exited = 已結束
+resources-exited-just-now = 剛剛結束
+resources-exited-minutes = { $minutes } 分鐘前結束
+resources-exited-hours = { $hours } 小時前結束
+resources-cpu-row = CPU { $percent }%
+resources-origin-tab = 終端機分頁
+resources-origin-launched = 由 { $tab } 啟動
+resources-origin-run-script = 執行指令碼
+resources-origin-panel = 面板終端機
+resources-origin-setup = 初始化指令
+resources-origin-git = Git 操作
+resources-origin-review = 審查
+resources-activity-running = 正在執行 { $process }
+resources-activity-busy = 執行中
+resources-activity-idle = 閒置
+resources-app = 應用程式
+resources-browser-services = 瀏覽器服務
+resources-browser-graphics = 圖形
+resources-browser-networking = 網路
+resources-background = 背景處理序
+resources-background-pid = PID { $pid }
+resources-app-graphics = 圖形
+resources-app-graphics-info = 視窗表面與 GPU 記憶體
+resources-app-held-for-reuse = 保留以供重複使用
+resources-app-saved-wake = 已休眠
+resources-app-code-system = 程式碼與系統
+resources-app-chats = 聊天
+resources-app-chats-open = { $count } 個已開啟
+resources-app-chats-idle = { $count } 個閒置
+resources-app-chats-history = 聊天記錄
+resources-app-terminals = 終端機
+resources-app-terminals-count =
+    { $count ->
+       *[other] { $count } 個終端機
+    }
+resources-app-terminals-lines =
+    { $count ->
+       *[other] { $count } 行
+    }
+resources-app-saved-count =
+    { $count ->
+       *[other] { $count } 個工作樹
+    }
+resources-app-saved-info = 為已休眠的工作樹保留的記憶體，以便立即重新開啟
+resources-app-background-count =
+    { $count ->
+       *[other] { $count } 個處理序
+    }
+resources-app-background-info = 應用程式執行、不屬於任何工作樹的 Git、輔助指令和代理程式工具
+resources-app-background-brief = 短時指令
+resources-app-other-data = 資料
+resources-app-other-detail = 隨專案和工作樹增加而成長
+resources-app-held-for-reuse-detail = 由配置器保留以供重複使用
+resources-app-code-system-detail = 程式碼與系統程式庫
+resources-estimated = 估計值
+resources-sleep-idle-chats = 休眠閒置聊天
+resources-sleep-idle-chats-confirm =
+    { $count ->
+       *[other] 要休眠 { $count } 個閒置聊天嗎？
+    }
+resources-frees-about = 約可釋放 { $memory }
+resources-clear = 清除
+resources-clear-confirm =
+    { $lines ->
+       *[other] 要清除 { $lines } 行回捲內容嗎？
+    }
+resources-clear-consequence = 畫面內容會保留。
+resources-clear-scrollback = 清除回捲內容
+resources-clear-all-confirm =
+    { $count ->
+       *[other] 要清除 { $count } 個終端機的回捲內容嗎？
+    }
+resources-chat-sleep-running = 正在進行一輪對話，結束後即可休眠。
+resources-chat-sleep-waiting = 正在等待你的回答，回答後即可休眠。
+resources-chat-sleep-unseen = 有你尚未查看的回覆，閱讀後即可休眠。
+resources-chat-sleep-kept-ready = 保持就緒，以便快速返回其工作樹。
+resources-chat-sleep-on-screen = 正在畫面上顯示，移出視野後即可休眠。
+resources-chat-sleep-queued = 有排入佇列的訊息，傳送後即可休眠。
+resources-chat-sleep-busy = 目前正忙，請稍後再試。
+resources-info-title = { $total } 用在哪裡
+resources-info-summary = 應用程式本身，以及它為你啟動的一切。
+resources-info-app = super.engineering
+resources-info-app-hint = 應用程式及其執行的輔助處理序
+resources-info-agents-hint = 每個聊天的代理程式及其執行的工具
+resources-info-browser = 瀏覽器分頁
+resources-info-browser-hint = 每個頁面在獨立處理序中執行
+resources-info-terminals-hint = Shell、執行指令碼及其啟動的內容
+resources-info-remote = 尚未統計遠端工作樹。
+resources-pressure-warning = Mac 記憶體吃緊。super.engineering 使用了 { $ram } 中的 { $used }。
+resources-pressure-warning-short = Mac 記憶體吃緊。
+resources-pressure-critical = Mac 記憶體嚴重不足。super.engineering 使用了 { $ram } 中的 { $used }。
+resources-pressure-critical-others = Mac 記憶體嚴重不足，主要被其他應用程式占用。super.engineering 使用了 { $ram } 中的 { $used }。
+resources-pressure-critical-short = Mac 記憶體嚴重不足。
+resources-thermal = Mac 溫度偏高，可能會變慢。
+resources-measurements-unavailable = 目前無法取得記憶體與 CPU 資料。你仍可開啟和管理分頁。
+resources-loading = 正在載入資源…
+resources-empty = 沒有相符的資源。
+resources-empty-all = 沒有正在執行的項目。
+resources-empty-agents = 沒有正在執行的代理程式。
+resources-empty-browser = 沒有開啟的瀏覽器分頁。
+resources-empty-terminals = 沒有正在執行的終端機。
+resources-tab-all = 全部
+resources-tab-agents = 代理程式
+resources-tab-browser = 瀏覽器
+resources-tab-terminals = 終端機
+resources-fact-agents =
+    { $count ->
+       *[other] 個代理程式
+    }
+resources-fact-browser-tabs =
+    { $count ->
+       *[other] 個瀏覽器分頁
+    }
+resources-fact-terminals =
+    { $count ->
+       *[other] 個終端機
+    }
+resources-on-screen = 正在畫面上顯示，因此保持喚醒
+resources-open = 開啟
+resources-close = 關閉
+resources-close-confirm = 要關閉 { $name } 嗎？
+resources-close-consequence = 其頁面將會關閉。
+resources-average-title = 每個代理程式的平均值
+resources-average-each = 單個
+resources-average-ten = 10 個代理程式
+resources-average-each-suffix = 每個
+resources-average-for-ten = 10 個合計
+resources-tree-more = +{ $count } 個
+resources-app-item-detail = { $activity }，{ $lines }
+resources-app-more-chats =
+    { $count ->
+       *[other] 還有 { $count } 個聊天
+    }
+resources-app-more-terminals =
+    { $count ->
+       *[other] 還有 { $count } 個終端機
+    }
+issue-report-check-submission = 檢查提交狀態
+issue-report-submission-uncertain = 此報告可能已在 GitHub 上。請檢查提交狀態以尋找報告；檢查絕不會再次發布。如果暫時找不到，請稍候再檢查，或在捨棄此草稿前查看你在 GitHub 上的議題。
+issue-report-discard-uncertain = 捨棄草稿（報告可能已存在）
+issue-report-draft-load-failed = 無法讀取你儲存的報告。請解決儲存問題並重新啟動應用程式，再提交其他報告。
+review-comment-edit-staged = 請先將此審查從輸入區移除，再進行編輯。

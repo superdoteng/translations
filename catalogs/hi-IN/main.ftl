@@ -561,10 +561,7 @@ section-value-review-required = समीक्षा आवश्यक है
 section-value-running = भागना
 section-value-stopped = रोका गया
 section-value-working = कामचलाऊ
-toast-remove-from-app = { $app_name } से निकालें
-toast-browser-automation-disabled-title = एक एजेंट ने ब्राउज़र इस्तेमाल करने की कोशिश की
-toast-browser-automation-disabled = ब्राउज़र ऑटोमेशन बंद है, इसलिए एजेंट का कमांड अस्वीकार कर दिया गया। एजेंटों को आपके ब्राउज़र टैब पढ़ने और नियंत्रित करने देने के लिए इसे सेटिंग्स › प्रायोगिक में चालू करें।
-toast-open-experimental-settings = सेटिंग्स खोलें
+toast-remove-from-app = हटाएँ
 validation-name-required = नाम आवश्यक है
 welcome-clone-from-url = URL से क्लोन
 welcome-clone-from-url-description = रिमोट रेपो क्लोन करें
@@ -1114,8 +1111,6 @@ script-commands-more = { $count } और
 setup-not-configured = कोई सेटअप स्क्रिप्ट कॉन्फ़िगर नहीं किया गया है
 review-submitted-reviews = प्रस्तुत समीक्षाएँ
 review-ai-questions = AI प्रश्न
-review-no-comments = अभी तक कोई समीक्षा टिप्पणी नहीं
-review-select-lines-hint = समीक्षा शुरू करने के लिए अंतर में पंक्तियों का चयन करें.
 sidebar-ssh = SSH
 shared-context-generate-ai-context = AI संदर्भ उत्पन्न करें
 action-generate = उत्पन्न करें
@@ -1151,7 +1146,6 @@ review-add-to-fix-list = फिक्स सूची में जोड़े�
 review-submit-replies = उत्तर सबमिट करें
 review-submit-from-tab = समीक्षा टैब से सबमिट करें →
 review-ai-findings = AI निष्कर्ष
-review-findings-triage-count = छांटने हेतु: { $count }
 review-findings-to-triage = छांटने हेतु AI निष्कर्ष: { $count }
 review-finding-should-fix = सुधारें
 review-finding-dismiss = खारिज करें
@@ -1188,7 +1182,6 @@ context-output = उत्पादन
 context-total-io = कुल I/O
 context-input-effective = इनपुट प्रभावी
 profile-cli-default = CLI डिफ़ॉल्ट
-review-no-active-comments = कोई सक्रिय समीक्षा टिप्पणी नहीं।
 permission-tools = उपकरण
 permission-ask = क़ीमत बताना
 permission-yolo = योलो
@@ -1242,10 +1235,11 @@ chat-thinking-in-progress = सोच रहा है…
 chat-thinking-count = सोच रहा है ({ $count })
 chat-thinking-summary = सोच रहा है · { $summary }
 chat-working-for = काम कर रहा है
-chat-agent-wait-caption = { $count ->
-    [one] उसकी रिपोर्ट मिलने पर { $model } आगे बढ़ेगा
-   *[other] उनकी रिपोर्ट मिलने पर { $model } आगे बढ़ेगा
-}
+chat-agent-wait-caption =
+    { $count ->
+        [one] इसके पूरा होने पर { $model } आगे बढ़ेगा
+       *[other] इनके पूरा होने पर { $model } आगे बढ़ेगा
+    }
 chat-worked-for = { $duration } तक काम किया
 chat-worked = काम किया
 plan-proposed = प्रस्तावित योजना
@@ -1292,7 +1286,6 @@ image-preview-load-failed = छवि लोड करने में विफ
 hosted-tab-unavailable = यह टैब नहीं दिखाया जा सकता क्योंकि इसकी सुविधा उपलब्ध नहीं है।
 file-tree-new-file = नई फ़ाइल
 file-tree-new-folder = नया फ़ोल्डर
-review-suggestion = सुझाव
 pr-merged = विलय किया गया
 pr-closed = बंद
 pr-update-available = अपडेट उपलब्ध है
@@ -1397,8 +1390,6 @@ target-branch-push-description = चुनें कि नई बनाई ग�
 toast-error = चूक
 toast-busy = व्यस्त
 toast-review = समीक्षा
-toast-review-comments-title = टिप्पणियों की समीक्षा करें ({ $count })
-toast-review-comments-message = { $count } नई समीक्षा टिप्पणियाँ। नवीनतम: { $latest }
 toast-update-branch-failed = अद्यतन शाखा विफल रहा
 toast-keymap-error = कीमैप त्रुटि
 toast-keymap-load-failed = कीमैप लोड करने में विफल: { $error }
@@ -1555,9 +1546,6 @@ review-no-pending-comments = कोई लंबित समीक्षा ट
 review-no-enabled-chat-providers = कोई सक्षम चैट प्रदाता नहीं
 review-no-enabled-agents = कोई सक्षम एजेंट नहीं
 
-review-comment-count = टिप्पणियाँ: { $count }
-review-review-count = समीक्षाएं: { $count }
-review-awaiting-reply-count = उत्तर की प्रतीक्षा में: { $count }
 review-file-count = फ़ाइलें: { $count }
 
 settings-ai-codex-profile-directory-missing = Codex प्रोफ़ाइल निर्देशिका नहीं मिली. इस प्रोफ़ाइल को लॉन्च करने से पहले इसे बनाएं।
@@ -1751,6 +1739,8 @@ settings-search-entry-general-behavior-show-cmd-number-hints-on-cmd-hold-label =
 settings-search-entry-general-behavior-show-cmd-number-hints-on-cmd-hold-description = वर्कट्री या टैब के लिए क्रमांकित शॉर्टकट दिखाने के लिए 0.5 सेकंड के लिए कमांड दबाए रखें।
 settings-search-entry-general-behavior-use-cmd-number-to-switch-tabs-label = टैब स्विच करने के लिए Cmd+number का उपयोग करें
 settings-search-entry-general-behavior-use-cmd-number-to-switch-tabs-description = कार्यवृक्ष स्विच करने के बजाय सक्रिय कार्यवृक्ष में टैब का चयन करने के लिए Cmd+1 से Cmd+9 का उपयोग करें.
+settings-search-entry-general-behavior-project-header-click-label = प्रोजेक्ट के नाम पर क्लिक
+settings-search-entry-general-behavior-project-header-click-description = चुनें कि साइडबार में प्रोजेक्ट के नाम पर क्लिक करने से क्या हो। नाम के पास वाला तीर हमेशा फैलाता और समेटता है।
 settings-search-entry-general-behavior-confirm-before-quitting-label = छोड़ने से पहले पुष्टि करें
 settings-search-entry-general-behavior-confirm-before-quitting-description = जब आप Cmd+Q दबाते हैं या मेनू से बाहर निकलें चुनते हैं तो पुष्टिकरण संकेत दिखाएँ.
 settings-search-entry-general-behavior-confirm-before-closing-a-running-tab-label = चल रहे टैब को बंद करने से पहले पुष्टि करें
@@ -2188,8 +2178,6 @@ git-run-action-in-new-tab = नए टैब में कार्रवाई 
 git-run-action = कार्रवाई चलाएँ
 right-panel-new-terminal = नया टर्मिनल
 setup-stop-script = सेटअप स्क्रिप्ट रोकें
-run-open-port = खुला :{ $port }
-run-open-preview = पूर्वावलोकन खोलें
 run-stop-script = स्टॉप रन स्क्रिप्ट
 run-rerun-workspace = कार्यक्षेत्र को फिर से चलाएं
 workspace-close-tab = टैब बंद करें
@@ -2369,6 +2357,11 @@ sidebar-hide-primary-worktree = प्राथमिक कार्यवृ�
 sidebar-edit-section = संपादित करें...
 sidebar-move-section-up = ऊपर ले जाएँ
 sidebar-move-section-down = नीचे ले जाएँ
+sidebar-sort-projects-by = प्रोजेक्ट इसके अनुसार क्रमित करें
+sidebar-sort-projects-name = नाम
+sidebar-sort-projects-path = पथ
+sidebar-collapse-all-projects = सभी प्रोजेक्ट संक्षिप्त करें
+sidebar-expand-all-projects = सभी प्रोजेक्ट विस्तृत करें
 file-menu-open-in-terminal = टर्मिनल में खोलें
 shared-context-edit-projects = परियोजनाओं को संपादित करें...
 history-load-backfill = लोड/बैकफ़िल इतिहास
@@ -2669,8 +2662,6 @@ shared-context-depth-simple-tooltip = हल्के स्कैनिंग (
 shared-context-depth-thorough = पूरी तरह से
 shared-context-depth-thorough-summary = पहले साक्षात्कार लें, फिर कार्यक्षेत्र मार्गदर्शन उत्पन्न करने से पहले कोडबेस का विश्लेषण करें।
 shared-context-depth-thorough-tooltip = स्पष्ट प्रश्न पूछता है, लक्ष्यों की पुष्टि करता है, फिर एक गहरा कोड पास करता है।
-right-panel-show-gitignored-files = gitignored फ़ाइलें दिखाएँ
-right-panel-hide-gitignored-files = gitignored फ़ाइलों को छुपाएं
 workspace-hold-command-for-chat-ui = Chat UI के लिए ⌘ दबाए रखें
 workspace-hold-command-for-terminal = टर्मिनल के लिए ⌘ दबाए रखें
 tool-picker-no-matches = कोई मिलान नहीं
@@ -2947,6 +2938,12 @@ settings-orchestrated-worktrees-auto = स्‍वचालित
 settings-orchestrated-worktrees-auto-description = जब इसमें कोई एजेंट काम कर रहा हो या उसे आपकी ज़रूरत हो, तब खुली रहेगी।
 settings-orchestrated-worktrees-collapsed = संकुचित
 settings-orchestrated-worktrees-collapsed-description = आपके खोलने तक हमेशा संकुचित रहेगी।
+settings-project-header-click-toggle = फैलाएँ/समेटें
+settings-project-header-click-toggle-description = प्रोजेक्ट के वर्कट्री दिखाता या छिपाता है।
+settings-project-header-click-open-primary = प्राथमिक वर्कट्री खोलें
+settings-project-header-click-open-primary-description = प्रोजेक्ट का मुख्य चेकआउट खोलता है।
+settings-project-header-click-auto = स्वचालित
+settings-project-header-click-auto-description = प्राथमिक वर्कट्री अकेला हो तो उसे खोलता है, वरना फैलाता या समेटता है।
 settings-orchestrated-worktrees-expanded = विस्तृत
 settings-orchestrated-worktrees-expanded-description = हमेशा खुली रहेगी।
 settings-search-entry-appearance-layout-orchestrated-worktrees-description = चुनें कि चैट द्वारा काम सौंपी गई वर्कट्री साइडबार में उसी चैट के नीचे कैसे खुलें।
@@ -3250,8 +3247,6 @@ settings-remote-key-remove-revoke = { $host } पर अनुमति रद�
 settings-remote-key-remove-title = { $host } से कुंजी हटाएँ?
 settings-experimental-automations-label = ऑटोमेशन
 settings-experimental-automations-description = समयबद्ध और घटनाओं पर चलने वाले ऑटोमेशन बनाएँ। शुरुआती पूर्वावलोकन है, अभी पूरी तरह जाँचा नहीं गया।
-settings-experimental-browser-automation-label = ब्राउज़र ऑटोमेशन
-settings-experimental-browser-automation-description = एजेंटों को ब्राउज़र नियंत्रण कमांड इस्तेमाल करने दें। ब्राउज़र कार्रवाइयों के लिए कार्यक्षेत्र की अनुमति फिर भी चाहिए।
 settings-experimental-chat-artifacts-label = चैट आर्टिफ़ैक्ट
 settings-experimental-chat-artifacts-description = एजेंट को ऐसे HTML पेज प्रकाशित करने दें जो चैट में लाइव दिखते हैं। पेज सैंडबॉक्स में ऑफ़लाइन चलते हैं।
 settings-search-section-typography = टाइपोग्राफ़ी
@@ -3315,8 +3310,6 @@ settings-search-entry-experimental-feature-flags-workspace-mentions-label = क�
 settings-search-entry-experimental-feature-flags-workspace-mentions-description = चैट में @ से स्क्रिप्ट, टर्मिनल, वर्कट्री, चैट और एजेंट का उल्लेख करें।
 settings-search-entry-experimental-feature-flags-automations-label = ऑटोमेशन
 settings-search-entry-experimental-feature-flags-automations-description = समयबद्ध और घटनाओं पर चलने वाले ऑटोमेशन बनाएँ। शुरुआती पूर्वावलोकन है, अभी पूरी तरह जाँचा नहीं गया।
-settings-search-entry-experimental-feature-flags-browser-automation-label = ब्राउज़र ऑटोमेशन
-settings-search-entry-experimental-feature-flags-browser-automation-description = एजेंटों को ब्राउज़र नियंत्रण कमांड इस्तेमाल करने दें। ब्राउज़र कार्रवाइयों के लिए कार्यक्षेत्र की अनुमति फिर भी चाहिए।
 settings-search-entry-agents-session-context-session-context-for-agents-label = एजेंटों के लिए सत्र संदर्भ
 settings-search-entry-agents-session-context-session-context-for-agents-description = नए एजेंट सत्रों में super.engineering संदर्भ जोड़ें, या पृष्ठभूमि में संदर्भ जोड़ना बंद करें।
 settings-section-typography = टाइपोग्राफ़ी
@@ -3715,10 +3708,6 @@ worktree-step-creating-branch = ब्रांच बन रही है
 worktree-step-naming = आपके कार्य के आधार पर नाम रखा जा रहा है
 worktree-step-setup = सेटअप चल रहा है
 worktree-step-opening-agent = { $agent } खुल रहा है
-chat-waiting-on-agents = { $count ->
-    [one] { $count } एजेंट की प्रतीक्षा…
-   *[other] { $count } एजेंट की प्रतीक्षा…
-}
 chat-shell-mode = शेल कमांड
 chat-shell-mode-detail = इस वर्कस्पेस में चलता है। परिणाम एजेंट को दिखाने के लिए चैट में जोड़ें का उपयोग करें।
 chat-shell-add-to-chat = चैट में जोड़ें
@@ -3755,6 +3744,7 @@ chat-diff-unchanged-lines = { $count ->
 chat-files-changed-shared = इस टर्न के दौरान इस वर्कट्री में एक और चैट काम कर रही थी। दोनों चैट द्वारा बदली गई फ़ाइल में दोनों के संपादन दिखाई देते हैं।
 chat-files-changed-unattributed = इस टर्न के दौरान इस वर्कट्री में एक और चैट काम कर रही थी। धुंधली फ़ाइलें उस चैट के काम के दौरान बदलीं और उसके बदलाव हो सकती हैं।
 chat-files-changed-snapshot-failed = इस टर्न के वर्कट्री का स्नैपशॉट नहीं लिया जा सका, इसलिए केवल इसके टूल द्वारा बताई गई फ़ाइलें सूचीबद्ध हैं।
+chat-files-changed-snapshot-partial = इस टर्न की कुछ रिपॉज़िटरी का स्नैपशॉट नहीं लिया जा सका, इसलिए उनके लिए केवल इसके टूल द्वारा बताई गई फ़ाइलें सूचीबद्ध हैं।
 palette-mode-conversations = बातचीत
 palette-search-all = एजेंट, वर्कट्री, कमांड, फ़ाइलें खोजें…
 palette-search-files-short = फ़ाइलें खोजें…
@@ -3995,3 +3985,389 @@ issue-report-actions-private = निजी
 issue-report-action-draft-agent = एजेंट से मसौदा बनवाएँ
 issue-report-action-copy-markdown = Markdown के रूप में कॉपी करें
 issue-report-action-email = निजी तौर पर ईमेल करें
+
+browser-dialog-title = { $host } का संदेश
+browser-dialog-title-page = इस पेज का संदेश
+section-rule-path = पाथ ग्लॉब पैटर्न
+settings-search-entry-agents-providers-jcode-provider-label = jcode प्रदाता
+settings-search-entry-agents-providers-jcode-provider-description = jcode सक्षम करें और इसके मॉडल और लॉन्च फ़्लैग कॉन्फ़िगर करें।
+settings-ai-provider-jcode-description = jcode को चैट और टर्मिनल प्रदाता के रूप में सक्षम करें (jcode CLI `jcode` इंस्टॉल होना ज़रूरी है)। चैट में हर वह टूल चलता है जिसकी अनुमति jcode की अपनी सेटिंग देती है; jcode पहले मंज़ूरी नहीं माँग सकता।
+settings-keybinding-action-paste-as-secret = गोपनीय जानकारी के रूप में पेस्ट करें
+clone-waiting-for-stop = क्लोन प्रक्रिया के रुकने का इंतज़ार है…
+toast-review-comments = समीक्षा की टिप्पणियाँ
+toast-report-issue = रिपोर्ट करें
+toast-rex-session-display-failed = Rex सत्र बन गया, लेकिन दिखाया नहीं जा सका
+toast-rex-enable-remote-control = Rex सेटिंग → Rex सर्वर में रिमोट कंट्रोल सक्षम करें, फिर मौजूदा सत्र चुनें। दोबारा खोलने पर एक और सत्र बनता है।
+toast-rex-select-existing-session = Rex में मौजूदा सत्र चुनें। दोबारा खोलने पर एक और सत्र बनता है।
+toast-open-app-failed = चुना गया ऐप नहीं खुल सका
+toast-open-app-failed-message = जाँचें कि ऐप इंस्टॉल है और उपलब्ध है। त्रुटि देखने के लिए विवरण खोलें।
+chat-forward = आगे भेजें
+chat-forward-search-placeholder = यहाँ आगे भेजें…
+chat-forward-no-chats = कोई अन्य चैट खुली नहीं है
+chat-forward-failed-title = आगे नहीं भेजा जा सका
+chat-forward-failed-message = गंतव्य चैट अब उपलब्ध नहीं है या केवल पढ़ने के लिए है।
+workspace-path-copied = पाथ कॉपी किया गया
+workspace-link-copied = लिंक कॉपी किया गया
+workspace-copy-chat-link = चैट का लिंक कॉपी करें
+workspace-chat-link-copy-failed = चैट का लिंक कॉपी नहीं हो सका
+workspace-chat-link-copied = चैट का लिंक कॉपी किया गया
+run-app-on-phone = अपने फ़ोन पर खोलें
+run-app-scan-hint = उसी Wi-Fi से जुड़े फ़ोन से स्कैन करें।
+palette-section-go-to = यहाँ जाएँ
+palette-navigation-worktrees = { $count ->
+    [one] { $count } वर्कट्री
+   *[other] { $count } वर्कट्री
+}
+secret-request-title = एक एजेंट गोपनीय जानकारी माँग रहा है
+secret-request-asked-by = “{ $asker }” ने माँगा है: { $label }
+secret-request-asked-by-agent = एक एजेंट ने माँगा है: { $label }
+secret-request-placeholder = गोपनीय जानकारी पेस्ट करें या टाइप करें
+secret-request-note = एक निजी फ़ाइल में सहेजी जाती है और चैट में नहीं रखी जाती। एजेंट के कमांड इसे 24 घंटे तक पढ़ सकते हैं।
+secret-request-save = निजी रूप से सहेजें
+secret-request-show = गोपनीय जानकारी दिखाएँ
+secret-request-hide = गोपनीय जानकारी छिपाएँ
+secret-request-decline = अस्वीकार करें
+secret-request-save-failed = निजी रूप से सहेजा नहीं जा सका: { $error }
+chat-secret-pill-token = { $issuer } टोकन
+chat-secret-pill-private-key = निजी कुंजी
+chat-secret-pill-secret = गोपनीय जानकारी
+chat-secret-card-kind = निजी रखी गई
+chat-secret-card-detail = आपके एजेंट को मान के बजाय एक निजी फ़ाइल का पाथ मिलता है। उसके कमांड अब भी फ़ाइल पढ़ सकते हैं, जिसे 24 घंटे बाद मिटा दिया जाता है।
+chat-secret-card-paste-as-text = टेक्स्ट के रूप में पेस्ट करें
+chat-secret-store-failed = गोपनीय जानकारी निजी नहीं रखी जा सकी, इसलिए पेस्ट नहीं की गई। इसे सादे टेक्स्ट के रूप में पेस्ट करने के लिए दोबारा पेस्ट करें।
+chat-secret-paste-moved = गोपनीय जानकारी को निजी रखने के दौरान ड्राफ़्ट बदल गया, इसलिए वह पेस्ट नहीं की गई। उसे दोबारा पेस्ट करें।
+chat-paste-moved = पेस्ट की जाने वाली सामग्री की जाँच के दौरान ड्राफ़्ट बदल गया, इसलिए सामग्री पेस्ट नहीं की गई। उसे दोबारा पेस्ट करें।
+chat-secret-expired = उस गोपनीय जानकारी की फ़ाइल अब मौजूद नहीं है, इसलिए उसे टेक्स्ट के रूप में पेस्ट नहीं किया जा सकता। उसे दोबारा पेस्ट करें।
+chat-artifact-annotate = टिप्पणी जोड़ें
+right-sidebar-filter-files = फ़ाइलें फ़िल्टर करें
+right-sidebar-collapse-all-folders = सभी फ़ोल्डर समेटें
+right-sidebar-reveal-open-file = खुली फ़ाइल दिखाएँ
+exit-save-failed-title = ऐप की स्थिति सहेजी नहीं जा सकी
+exit-save-failed-description = आपके ऐप की नवीनतम स्थिति सहेजी नहीं गई है। { $error }। स्टोरेज की समस्या ठीक करके फिर से कोशिश करें या सहेजे बिना जारी रखें।
+exit-restart-without-saving = सहेजे बिना पुनः शुरू करें
+exit-quit-without-saving = सहेजे बिना बंद करें
+
+settings-experimental-resource-monitor-label = संसाधन मॉनिटर
+settings-experimental-resource-monitor-description = टाइटलबार में संसाधन बटन दिखाएँ, जिसमें हर वर्कट्री, टैब और सहायक प्रक्रिया की मेमोरी और CPU दिखे।
+settings-search-section-resources = संसाधन
+settings-search-entry-appearance-resources-show-freeable-memory-label = खाली की जा सकने वाली मेमोरी दिखाएँ
+settings-search-entry-appearance-resources-show-freeable-memory-description = संसाधन बटन पर दिखाएँ कि निष्क्रिय टैब को स्लीप करने से कितनी मेमोरी खाली होगी, और आपके Mac पर मेमोरी का दबाव होने पर उसे रंगीन करें।
+settings-section-resources = संसाधन
+chat-queued-waiting-to-steer = दिशा बदलने की प्रतीक्षा में
+chat-queued-action-no-longer-queued = यह संदेश अब कतार में नहीं है।
+chat-queued-steer-failed = इस संदेश से दिशा नहीं बदली जा सकी।
+chat-queued-change-failed = यह संदेश बदला नहीं जा सका।
+changes-empty-detail = इस वर्कट्री में आप या आपके एजेंट जो बदलाव करते हैं, वे यहाँ दिखते हैं।
+changes-empty-turns = अभी कोई टर्न नहीं
+changes-empty-turns-detail = जब कोई एजेंट फ़ाइलें बदलता है, तो वे यहाँ उसी टर्न के नीचे दिखती हैं जिसने उन्हें बदला।
+changes-empty-commits = अभी कोई कमिट नहीं
+changes-empty-commits-detail = इस ब्रांच के कमिट यहाँ दिखते हैं।
+changes-empty-all-viewed = सब देख लिया
+changes-empty-all-viewed-detail = आपने हर बदली गई फ़ाइल खोल ली है।
+review-delivery-prepared = { $target } में तैयार किया गया
+review-delivery-sent = { $target } को भेजा गया
+review-delivery-dispatched = { $target } को पृष्ठभूमि में भेजा गया
+review-delivery-a-chat = एक चैट
+review-delivery-a-terminal = एक टर्मिनल
+review-location-whole-file = पूरी फ़ाइल
+review-tooltip-more-lines =
+    { $count ->
+        [one] 1 और पंक्ति
+       *[other] { $count } और पंक्तियाँ
+    }
+review-location-line = पंक्ति { $line }
+review-location-lines = पंक्तियाँ { $start }–{ $end }
+review-pending-summary =
+    { $files ->
+        [one]
+            { $comments ->
+                [one] 1 टिप्पणी
+               *[other] { $comments } टिप्पणियाँ
+            }
+       *[other] { $files } फ़ाइलों में { $comments } टिप्पणियाँ
+    }
+review-view-open = खुले
+review-view-done = पूरे हुए
+review-your-comments = आपकी टिप्पणियाँ
+review-nothing-to-review = समीक्षा के लिए कुछ नहीं
+review-nothing-to-review-detail = डिफ पर आपकी टिप्पणियाँ और आपके पुल रिक्वेस्ट के समीक्षा थ्रेड यहाँ दिखते हैं।
+review-review-changes = परिवर्तनों की समीक्षा करें
+review-comment-hint = या टिप्पणी करने के लिए किसी भी डिफ में पंक्तियाँ चुनें
+review-all-caught-up = सब निपट गया
+review-all-caught-up-detail = कुछ भी आपकी प्रतीक्षा में नहीं है।
+review-see-done = देखें क्या पूरा हुआ
+review-nothing-done = अभी कुछ पूरा नहीं हुआ
+review-nothing-done-detail = आपकी भेजी गई टिप्पणियाँ और हल हुए थ्रेड यहाँ दिखते हैं।
+review-pull-request = पुल रिक्वेस्ट #{ $number }
+review-pull-request-untitled = पुल रिक्वेस्ट
+review-waiting-on-reviewers = #{ $number } पर अभी तक किसी ने टिप्पणी नहीं की है।
+review-resolved-on-pr = #{ $number } पर हल किया गया
+review-pr-refresh = पुल रिक्वेस्ट की टिप्पणियाँ रीफ़्रेश करें
+review-pr-loading = टिप्पणियाँ लोड हो रही हैं…
+review-pr-load-failed = पुल रिक्वेस्ट की टिप्पणियाँ लोड नहीं हो सकीं। फिर से कोशिश करने के लिए रीफ़्रेश करें।
+review-pr-older-hidden = पुराने थ्रेड नहीं दिखाए गए हैं।
+review-pr-overview-truncated = और थ्रेड यहाँ नहीं दिखाए गए हैं।
+review-thread-resolve = हल करें
+review-thread-unresolve = अनसुलझा करें
+review-thread-resolving = हल किया जा रहा है…
+review-thread-unresolving = अनसुलझा किया जा रहा है…
+review-thread-update-failed = अपडेट नहीं हो सका। फिर से कोशिश करें।
+review-thread-outdated = पुराना
+review-thread-byline =
+    { $replies ->
+        [0] { $author } ने { $age } टिप्पणी की
+        [one] { $author } ने { $age } टिप्पणी की, 1 जवाब
+       *[other] { $author } ने { $age } टिप्पणी की, { $replies } जवाब
+    }
+checks-path-to-merge = मर्ज तक का रास्ता
+checks-step-committed = परिवर्तन कमिट किए गए
+checks-step-pushed = पुश किया गया
+checks-step-unpushed =
+    { $count ->
+        [one] { $count } कमिट पुश करना बाकी
+       *[other] { $count } कमिट पुश करने बाकी
+    }
+checks-step-review-open = { $kind } खुला है
+checks-step-checks = चेक
+checks-step-running = चेक चल रहे हैं
+checks-behind-target =
+    { $count ->
+        [one] { $target } से { $count } कमिट पीछे
+       *[other] { $target } से { $count } कमिट पीछे
+    }
+right-panel-view-options = दृश्य विकल्प
+right-panel-view-changes = परिवर्तन
+right-panel-view-gitignored-files = gitignored फ़ाइलें
+diff-viewed-toggle = देखा गया
+diff-since-viewed-note = आपके देखने के बाद { $agent } ने इसे बदला। तब से हुए परिवर्तन दिखाए जा रहे हैं।
+diff-since-viewed-note-unattributed = आपके देखने के बाद यह फ़ाइल बदली। तब से हुए परिवर्तन दिखाए जा रहे हैं।
+diff-since-viewed-show-full = पूरा डिफ दिखाएँ
+diff-turn-review-writing = समीक्षा लिखी जा रही है…
+diff-turn-review-passed = पास
+diff-turn-review-failed = विफल
+diff-turn-review-not-checked = जाँचा नहीं गया: { $what }
+diff-turn-review-more-checks = { $count } और
+diff-turn-review-looks-good = ठीक लग रहा है
+diff-turn-review-comment-hint = परिवर्तन माँगने के लिए किसी पंक्ति पर टिप्पणी करें
+right-sidebar-new = नया
+right-sidebar-show-comments = टिप्पणियाँ दिखाएँ
+right-sidebar-hint-move = ले जाएँ
+right-sidebar-hint-viewed = देखा गया
+right-sidebar-hint-next-unviewed = अगली अनदेखी
+right-sidebar-hint-open = खोलें
+right-sidebar-commit-message = कमिट संदेश
+right-sidebar-writing-message = संदेश लिखा जा रहा है
+right-sidebar-write-message = संदेश लिखें
+right-sidebar-commit-file-count =
+    { $count ->
+        [one] 1 फ़ाइल
+       *[other] { $count } फ़ाइलें
+    }
+right-sidebar-commit = कमिट करें
+right-sidebar-commit-and-push = कमिट और पुश करें
+right-sidebar-amend-last-commit = पिछला कमिट संशोधित करें
+right-sidebar-committing = कमिट हो रहा है
+right-sidebar-committed = कमिट हो गया
+right-sidebar-push = पुश करें
+right-sidebar-unviewed = अनदेखी
+changes-file-count =
+    { $count ->
+        [one] 1 फ़ाइल
+       *[other] { $count } फ़ाइलें
+    }
+right-sidebar-mark-all-viewed =
+    { $count ->
+        [one] 1 फ़ाइल को देखी गई के रूप में चिह्नित करें
+       *[other] सभी { $count } फ़ाइलों को देखी गई के रूप में चिह्नित करें
+    }
+right-sidebar-all-viewed = सभी फ़ाइलें देख ली गईं
+right-sidebar-viewed = देखा गया
+right-sidebar-changed-since-viewed = आपके देखने के बाद बदली गई
+right-sidebar-changed-since-viewed-by = आपके देखने के बाद { $agent } ने इसे बदला
+right-sidebar-changed-since-viewed-count =
+    { $count ->
+        [one] आपके देखने के बाद 1 फ़ाइल बदली
+       *[other] आपके देखने के बाद { $count } फ़ाइलें बदलीं
+    }
+right-sidebar-view-all = सभी
+right-sidebar-view-turns = टर्न
+right-sidebar-turn-working = काम जारी
+right-sidebar-other-changes = अन्य परिवर्तन
+right-sidebar-probable-file = इस टर्न के दौरान बदली गई
+right-sidebar-probable-file-detail = इसके टूल ने इसकी जानकारी नहीं दी, इसलिए यह किसी और का बदलाव हो सकता है। टर्न खत्म होने पर पुष्टि होगी।
+resources-title = संसाधन
+resources-search = संसाधन या प्रोजेक्ट खोजें
+resources-search-tooltip = खोजें
+resources-remote = दूरस्थ
+resources-asleep = स्लीप में
+resources-held-info = स्क्रीन और हाल की चैट ऐप की मेमोरी में रखी जाती हैं ताकि यह वर्कट्री तुरंत फिर से खुले; इन्हें “ऐप” में “स्लीप में” के तहत गिना जाता है। स्लीप में 15 मिनट के बाद स्क्रीन मुक्त कर दी जाती हैं।
+resources-cpu = CPU
+resources-cpu-history = पिछले एक मिनट का CPU। संसाधन खुला रहने पर इतिहास बनता है।
+resources-reclaim =
+    { $count ->
+        [one] 1 निष्क्रिय टैब स्लीप होकर लगभग { $memory } खाली कर सकता है
+       *[other] { $count } निष्क्रिय टैब स्लीप होकर लगभग { $memory } खाली कर सकते हैं
+    }
+resources-sleep-idle = निष्क्रिय को स्लीप करें
+resources-freed = { $memory } खाली हुई
+resources-sleep = स्लीप करें
+resources-sleep-tooltip = इसकी प्रक्रियाएँ मुक्त करता है। खोलने पर यह अपने इतिहास के साथ जाग जाता है।
+resources-wake = जगाएँ
+resources-stop = रोकें
+resources-stop-confirm = { $name } को रोकें?
+resources-stop-consequence = चल रहा काम बीच में रुक जाएगा।
+resources-cancel = रद्द करें
+resources-exited = बंद हो गया
+resources-exited-just-now = अभी-अभी बंद हुआ
+resources-exited-minutes = { $minutes } मिनट पहले बंद हुआ
+resources-exited-hours = { $hours } घंटे पहले बंद हुआ
+resources-cpu-row = { $percent }% CPU
+resources-origin-tab = टर्मिनल टैब
+resources-origin-launched = { $tab } द्वारा शुरू किया गया
+resources-origin-run-script = रन स्क्रिप्ट
+resources-origin-panel = पैनल टर्मिनल
+resources-origin-setup = सेटअप कमांड
+resources-origin-git = Git कार्रवाई
+resources-origin-review = समीक्षा
+resources-activity-running = { $process } चल रहा है
+resources-activity-busy = चल रहा है
+resources-activity-idle = निष्क्रिय
+resources-app = ऐप
+resources-browser-services = ब्राउज़र सेवाएँ
+resources-browser-graphics = ग्राफ़िक्स
+resources-browser-networking = नेटवर्किंग
+resources-background = पृष्ठभूमि प्रक्रियाएँ
+resources-background-pid = PID { $pid }
+resources-app-graphics = ग्राफ़िक्स
+resources-app-graphics-info = विंडो सतहें और GPU मेमोरी
+resources-app-held-for-reuse = दोबारा उपयोग के लिए रखी गई
+resources-app-saved-wake = स्लीप में
+resources-app-code-system = कोड और सिस्टम
+resources-app-chats = चैट
+resources-app-chats-open = { $count } खुली
+resources-app-chats-idle = { $count } निष्क्रिय
+resources-app-chats-history = चैट इतिहास
+resources-app-terminals = टर्मिनल
+resources-app-terminals-count =
+    { $count ->
+        [one] 1 टर्मिनल
+       *[other] { $count } टर्मिनल
+    }
+resources-app-terminals-lines =
+    { $count ->
+        [one] 1 पंक्ति
+       *[other] { $count } पंक्तियाँ
+    }
+resources-app-saved-count =
+    { $count ->
+        [one] 1 वर्कट्री
+       *[other] { $count } वर्कट्री
+    }
+resources-app-saved-info = स्लीप में पड़ी वर्कट्री के लिए रखी गई मेमोरी, ताकि वे तुरंत फिर से खुलें
+resources-app-background-count =
+    { $count ->
+        [one] 1 प्रक्रिया
+       *[other] { $count } प्रक्रियाएँ
+    }
+resources-app-background-info = Git, सहायक कमांड और एजेंट टूल जिन्हें ऐप चलाता है और जो किसी वर्कट्री के नहीं हैं
+resources-app-background-brief = छोटे कमांड
+resources-app-other-data = डेटा
+resources-app-other-detail = प्रोजेक्ट और वर्कट्री के साथ बढ़ता है
+resources-app-held-for-reuse-detail = एलोकेटर द्वारा दोबारा उपयोग के लिए रखी गई
+resources-app-code-system-detail = प्रोग्राम कोड और सिस्टम लाइब्रेरी
+resources-estimated = अनुमानित
+resources-sleep-idle-chats = निष्क्रिय चैट स्लीप करें
+resources-sleep-idle-chats-confirm =
+    { $count ->
+        [one] 1 निष्क्रिय चैट को स्लीप करें?
+       *[other] { $count } निष्क्रिय चैट को स्लीप करें?
+    }
+resources-frees-about = लगभग { $memory } खाली करता है
+resources-clear = साफ़ करें
+resources-clear-confirm =
+    { $lines ->
+        [one] स्क्रॉलबैक की 1 पंक्ति साफ़ करें?
+       *[other] स्क्रॉलबैक की { $lines } पंक्तियाँ साफ़ करें?
+    }
+resources-clear-consequence = स्क्रीन बनी रहती है।
+resources-clear-scrollback = स्क्रॉलबैक साफ़ करें
+resources-clear-all-confirm =
+    { $count ->
+        [one] 1 टर्मिनल का स्क्रॉलबैक साफ़ करें?
+       *[other] { $count } टर्मिनल का स्क्रॉलबैक साफ़ करें?
+    }
+resources-chat-sleep-running = टर्न चल रहा है। टर्न खत्म होने पर इसे स्लीप किया जा सकता है।
+resources-chat-sleep-waiting = आपके जवाब की प्रतीक्षा है। जवाब देने के बाद इसे स्लीप किया जा सकता है।
+resources-chat-sleep-unseen = इसमें एक जवाब है जो आपने नहीं देखा। पढ़ लेने के बाद इसे स्लीप किया जा सकता है।
+resources-chat-sleep-kept-ready = इसकी वर्कट्री पर जल्दी लौटने के लिए तैयार रखा गया है।
+resources-chat-sleep-on-screen = स्क्रीन पर है। नज़र से हटने के बाद इसे स्लीप किया जा सकता है।
+resources-chat-sleep-queued = संदेश कतार में हैं। उनके भेजे जाने के बाद इसे स्लीप किया जा सकता है।
+resources-chat-sleep-busy = अभी व्यस्त है। थोड़ी देर बाद फिर कोशिश करें।
+resources-info-title = { $total } कहाँ जा रहा है
+resources-info-summary = ऐप, और वह सब कुछ जो इसने आपके लिए शुरू किया।
+resources-info-app = super.engineering
+resources-info-app-hint = ऐप और उसकी चलाई सहायक प्रक्रियाएँ
+resources-info-agents-hint = हर चैट का एजेंट और उसके चलाए टूल
+resources-info-browser = ब्राउज़र टैब
+resources-info-browser-hint = हर पेज अपनी अलग प्रक्रिया में चलता है
+resources-info-terminals-hint = शेल, रन स्क्रिप्ट और उनके शुरू किए प्रोग्राम
+resources-info-remote = दूरस्थ वर्कट्री अभी मापी नहीं जातीं।
+resources-pressure-warning = Mac की मेमोरी पर दबाव है। super.engineering { $ram } में से { $used } इस्तेमाल कर रहा है।
+resources-pressure-warning-short = Mac की मेमोरी पर दबाव है।
+resources-pressure-critical = Mac की मेमोरी बहुत कम है। super.engineering { $ram } में से { $used } इस्तेमाल कर रहा है।
+resources-pressure-critical-others = Mac की मेमोरी बहुत कम है, ज़्यादातर दूसरे ऐप्स के कारण। super.engineering { $ram } में से { $used } इस्तेमाल कर रहा है।
+resources-pressure-critical-short = Mac की मेमोरी बहुत कम है।
+resources-thermal = Mac बहुत गर्म हो रहा है और धीमा हो सकता है।
+resources-measurements-unavailable = मेमोरी और CPU अभी उपलब्ध नहीं हैं। आप फिर भी टैब खोल और प्रबंधित कर सकते हैं।
+resources-loading = संसाधन लोड हो रहे हैं…
+resources-empty = कोई मेल खाता संसाधन नहीं।
+resources-empty-all = कुछ नहीं चल रहा।
+resources-empty-agents = कोई एजेंट नहीं चल रहा।
+resources-empty-browser = कोई ब्राउज़र टैब खुला नहीं है।
+resources-empty-terminals = कोई टर्मिनल नहीं चल रहा।
+resources-tab-all = सभी
+resources-tab-agents = एजेंट
+resources-tab-browser = ब्राउज़र
+resources-tab-terminals = टर्मिनल
+resources-fact-agents =
+    { $count ->
+        [one] एजेंट
+       *[other] एजेंट
+    }
+resources-fact-browser-tabs =
+    { $count ->
+        [one] ब्राउज़र टैब
+       *[other] ब्राउज़र टैब
+    }
+resources-fact-terminals =
+    { $count ->
+        [one] टर्मिनल
+       *[other] टर्मिनल
+    }
+resources-on-screen = स्क्रीन पर है, इसलिए जागा रहता है
+resources-open = खोलें
+resources-close = बंद करें
+resources-close-confirm = { $name } को बंद करें?
+resources-close-consequence = इसका पेज बंद हो जाएगा।
+resources-average-title = प्रति एजेंट औसत
+resources-average-each = प्रति एजेंट
+resources-average-ten = 10 एजेंट
+resources-average-each-suffix = प्रति एजेंट
+resources-average-for-ten = 10 के लिए
+resources-tree-more = +{ $count } और
+resources-app-item-detail = { $activity }, { $lines }
+resources-app-more-chats =
+    { $count ->
+        [one] 1 और चैट
+       *[other] { $count } और चैट
+    }
+resources-app-more-terminals =
+    { $count ->
+        [one] 1 और टर्मिनल
+       *[other] { $count } और टर्मिनल
+    }
+issue-report-check-submission = सबमिशन जाँचें
+issue-report-submission-uncertain = यह रिपोर्ट GitHub पर पहले से मौजूद हो सकती है। इसे खोजने के लिए सबमिशन जाँचें; जाँच करने से यह कभी दोबारा पोस्ट नहीं होती। अगर यह अभी नहीं मिलती है, तो प्रतीक्षा करके फिर से जाँचें, या इस ड्राफ़्ट को हटाने से पहले GitHub पर अपने इश्यू देखें।
+issue-report-discard-uncertain = ड्राफ़्ट हटाएँ (रिपोर्ट पहले से मौजूद हो सकती है)
+issue-report-draft-load-failed = आपकी सहेजी गई रिपोर्ट पढ़ी नहीं जा सकी। दूसरी रिपोर्ट सबमिट करने से पहले स्टोरेज की समस्या हल करें और ऐप को पुनः शुरू करें।
+review-comment-edit-staged = संपादित करने से पहले इस समीक्षा को कंपोज़र से हटाएँ।

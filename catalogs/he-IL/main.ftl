@@ -561,10 +561,7 @@ section-value-review-required = נדרש סקירה
 section-value-running = ריצה
 section-value-stopped = נעצר
 section-value-working = עבודה
-toast-remove-from-app = הסר מ-{ $app_name }
-toast-browser-automation-disabled-title = סוכן ניסה להשתמש בדפדפן
-toast-browser-automation-disabled = אוטומציית הדפדפן כבויה, ולכן הפקודה של הסוכן נדחתה. הפעילו אותה בהגדרות › ניסיוני כדי לאפשר לסוכנים לקרוא ולשלוט בכרטיסיות הדפדפן שלכם.
-toast-open-experimental-settings = פתיחת ההגדרות
+toast-remove-from-app = הסר
 validation-name-required = שם נדרש
 welcome-clone-from-url = שיבוט מ-URL
 welcome-clone-from-url-description = שכפל מאגר מרוחק
@@ -1114,8 +1111,6 @@ script-commands-more = עוד { $count }
 setup-not-configured = אין תסריט הגדרה
 review-submitted-reviews = ביקורות שהוגשו
 review-ai-questions = AI שאלות
-review-no-comments = עדיין אין הערות ביקורת
-review-select-lines-hint = בחר שורות בהפרש כדי להתחיל ביקורת.
 sidebar-ssh = SSH
 shared-context-generate-ai-context = יצירת הקשר AI
 action-generate = Generate
@@ -1151,7 +1146,6 @@ review-add-to-fix-list = הוסף לרשימת התיקונים
 review-submit-replies = שלח תגובות
 review-submit-from-tab = שלח מתוך לשונית הביקורת →
 review-ai-findings = AI ממצאים
-review-findings-triage-count = ממתינים למיון: { $count }
 review-findings-to-triage = ממצאי AI הממתינים למיון: { $count }
 review-finding-should-fix = לתקן
 review-finding-dismiss = לדחות
@@ -1188,7 +1182,6 @@ context-output = פלט
 context-total-io = קלט/פלט כולל
 context-input-effective = קלט אפקטיבי
 profile-cli-default = ברירת מחדל CLI
-review-no-active-comments = אין תגובות פעילות לביקורת.
 permission-tools = כלים
 permission-ask = תשאל
 permission-yolo = יולו
@@ -1242,10 +1235,11 @@ chat-thinking-in-progress = חושב…
 chat-thinking-count = חושב ({ $count })
 chat-thinking-summary = חושב · { $summary }
 chat-working-for = עובד במשך
-chat-agent-wait-caption = { $count ->
-    [one] { $model } ימשיך כשהסוכן ידווח בחזרה
-   *[other] { $model } ימשיך כשהסוכנים ידווחו בחזרה
-}
+chat-agent-wait-caption =
+    { $count ->
+        [one] { $model } ימשיך כשהסוכן יסיים
+       *[other] { $model } ימשיך כשהסוכנים יסיימו
+    }
 chat-worked-for = עבד במשך { $duration }
 chat-worked = עבד
 plan-proposed = תוכנית מוצעת
@@ -1292,7 +1286,6 @@ image-preview-load-failed = נכשל בטעינת התמונה
 hosted-tab-unavailable = לא ניתן להציג את הכרטיסייה הזו כי התכונה שלה אינה זמינה.
 file-tree-new-file = קובץ חדש
 file-tree-new-folder = תיקייה חדשה
-review-suggestion = הצעה
 pr-merged = מיזוג
 pr-closed = סגור
 pr-update-available = עדכון זמין
@@ -1397,8 +1390,6 @@ target-branch-push-description = בחר אם לדחוף את ענף היעד ה�
 toast-error = שגיאה
 toast-busy = עסוק
 toast-review = סקירה
-toast-review-comments-title = תגובות ביקורת ({ $count })
-toast-review-comments-message = { $count } תגובות לביקורות חדשות. העדכונים האחרונים: { $latest }
 toast-update-branch-failed = ענף עדכון נכשל
 toast-keymap-error = שגיאת מפת מפתח
 toast-keymap-load-failed = לא נטען את מפת המקשים: { $error }
@@ -1556,9 +1547,6 @@ review-no-pending-comments = אין תגובות ביקורת ממתינות
 review-no-enabled-chat-providers = אין ספקי צ'אט מופעלים
 review-no-enabled-agents = אין סוכנים מופעלים
 
-review-comment-count = תגובות: { $count }
-review-review-count = ביקורות: { $count }
-review-awaiting-reply-count = ממתין לתגובות: { $count }
 review-file-count = קבצים: { $count }
 
 settings-ai-codex-profile-directory-missing = תיקיית הפרופיל Codex לא נמצאה. צור אותו לפני שאתה פותח את הפרופיל הזה.
@@ -1752,6 +1740,8 @@ settings-search-entry-general-behavior-show-cmd-number-hints-on-cmd-hold-label =
 settings-search-entry-general-behavior-show-cmd-number-hints-on-cmd-hold-description = החזק את פקודה למשך 0.5 שניות כדי להציג קיצורי דרך ממוספרים לעצי עבודה או לשוניות.
 settings-search-entry-general-behavior-use-cmd-number-to-switch-tabs-label = השתמש ב-Cmd+number כדי להחליף טאבים
 settings-search-entry-general-behavior-use-cmd-number-to-switch-tabs-description = השתמש ב-Cmd+1 עד Cmd+9 כדי לבחור טאבים בעץ העבודה הפעיל במקום להחליף בין עצי עבודה.
+settings-search-entry-general-behavior-project-header-click-label = לחיצה על שם פרויקט
+settings-search-entry-general-behavior-project-header-click-description = בחרו מה קורה בלחיצה על שם פרויקט בסרגל הצד. החץ שליד השם תמיד מרחיב ומכווץ.
 settings-search-entry-general-behavior-confirm-before-quitting-label = תאשר לפני שאתה עוזב
 settings-search-entry-general-behavior-confirm-before-quitting-description = הצג פקודת אישור כשאתה לוחץ על Cmd+Q או בוחר יציאה מהתפריט.
 settings-search-entry-general-behavior-confirm-before-closing-a-running-tab-label = אשר לפני סגירת לשונית רצה
@@ -2189,8 +2179,6 @@ git-run-action-in-new-tab = הרץ פעולה בלשונית חדשה
 git-run-action = פעולת ריצה
 right-panel-new-terminal = טרמינל חדש
 setup-stop-script = סקריפט עצירת ההגדרה
-run-open-port = פתוח :{ $port }
-run-open-preview = תצוגה מקדימה פתוחה
 run-stop-script = סקריפט עצירת ריצה
 run-rerun-workspace = הפעלה מחדש של מרחב העבודה
 workspace-close-tab = סגור את הטאב
@@ -2382,6 +2370,11 @@ sidebar-hide-primary-worktree = הסתר עץ עבודה ראשי
 sidebar-edit-section = עריכה...
 sidebar-move-section-up = תזוז קדימה
 sidebar-move-section-down = תזוז למטה
+sidebar-sort-projects-by = מיין פרויקטים לפי
+sidebar-sort-projects-name = שם
+sidebar-sort-projects-path = נתיב
+sidebar-collapse-all-projects = כווץ את כל הפרויקטים
+sidebar-expand-all-projects = הרחב את כל הפרויקטים
 file-menu-open-in-terminal = פתוח בטרמינל
 shared-context-edit-projects = עריכה: פרויקטים...
 history-load-backfill = היסטוריית טעינה / מילוי חוזר
@@ -2683,8 +2676,6 @@ shared-context-depth-simple-tooltip = הגדרה מהירה עם סריקה קל
 shared-context-depth-thorough = יסודי
 shared-context-depth-thorough-summary = ראיין קודם, ואז נתח את בסיס הקוד לפני יצירת הנחיות סביבת העבודה.
 shared-context-depth-thorough-tooltip = שואל שאלות הבהרה, מאשר מטרות, ואז עושה העברת קוד מעמיקה יותר.
-right-panel-show-gitignored-files = הצג קבצים עם gitignored
-right-panel-hide-gitignored-files = הסתר קבצים עם gitignored
 workspace-hold-command-for-chat-ui = החזק ⌘ לממשק צ'אט
 workspace-hold-command-for-terminal = החזק ⌘ לטרמינל
 tool-picker-no-matches = אין התאמות
@@ -2981,6 +2972,12 @@ settings-orchestrated-worktrees-auto = אוטו
 settings-orchestrated-worktrees-auto-description = פתוח בזמן שסוכן עובד בו או זקוק לך.
 settings-orchestrated-worktrees-collapsed = מכווץ
 settings-orchestrated-worktrees-collapsed-description = מכווץ תמיד עד לפתיחה ידנית.
+settings-project-header-click-toggle = הרחבה/כיווץ
+settings-project-header-click-toggle-description = מציג או מסתיר את עצי העבודה של הפרויקט.
+settings-project-header-click-open-primary = פתיחת עץ העבודה הראשי
+settings-project-header-click-open-primary-description = פותח את ה־checkout הראשי של הפרויקט.
+settings-project-header-click-auto = אוטומטי
+settings-project-header-click-auto-description = פותח את עץ העבודה הראשי אם הוא היחיד, אחרת מרחיב או מכווץ.
 settings-orchestrated-worktrees-expanded = מורחב
 settings-orchestrated-worktrees-expanded-description = פתוח תמיד.
 settings-search-entry-appearance-layout-orchestrated-worktrees-description = בחירת אופן הפתיחה בסרגל הצד של עצי עבודה שהצ׳אט העביר אליהם משימות, מתחת לצ׳אט עצמו.
@@ -3294,8 +3291,6 @@ settings-remote-key-remove-revoke = בטל את ההרשאה שלו ב־⁨{ $ho
 settings-remote-key-remove-title = להסיר את המפתח מ־⁨{ $host }⁩?
 settings-experimental-automations-label = אוטומציות
 settings-experimental-automations-description = צור אוטומציות מתוזמנות ומונעות אירועים. תצוגה מקדימה מוקדמת, שטרם נבדקה במלואה.
-settings-experimental-browser-automation-label = אוטומציית דפדפן
-settings-experimental-browser-automation-description = אפשר לסוכנים להשתמש בפקודות שליטה בדפדפן. פעולות הדפדפן עדיין דורשות הרשאה בסביבת העבודה.
 settings-experimental-chat-artifacts-label = תוצרי צ׳אט
 settings-experimental-chat-artifacts-description = מאפשר לסוכנים לפרסם דפי HTML שמוצגים בזמן אמת בצ׳אט. הדפים פועלים במצב לא מקוון בארגז חול.
 settings-search-section-typography = טיפוגרפיה
@@ -3360,8 +3355,6 @@ settings-search-entry-experimental-feature-flags-workspace-mentions-label = אז
 settings-search-entry-experimental-feature-flags-workspace-mentions-description = אזכר סקריפטים, טרמינלים, עצי עבודה, צ׳אטים וסוכנים באמצעות @ בצ׳אט.
 settings-search-entry-experimental-feature-flags-automations-label = אוטומציות
 settings-search-entry-experimental-feature-flags-automations-description = צור אוטומציות מתוזמנות ומונעות אירועים. תצוגה מקדימה מוקדמת, שטרם נבדקה במלואה.
-settings-search-entry-experimental-feature-flags-browser-automation-label = אוטומציית דפדפן
-settings-search-entry-experimental-feature-flags-browser-automation-description = אפשר לסוכנים להשתמש בפקודות שליטה בדפדפן. פעולות הדפדפן עדיין דורשות הרשאה בסביבת העבודה.
 settings-search-entry-agents-session-context-session-context-for-agents-label = הקשר סשן לסוכנים
 settings-search-entry-agents-session-context-session-context-for-agents-description = הוסף הקשר של super.engineering לסשנים חדשים של סוכנים, או כבה הזרקת הקשר אוטומטית.
 settings-section-typography = טיפוגרפיה
@@ -3727,10 +3720,6 @@ worktree-step-creating-branch = יצירת ענף
 worktree-step-naming = מתן שם לפי המשימה שלך
 worktree-step-setup = הרצת ההגדרה
 worktree-step-opening-agent = פתיחת { $agent }
-chat-waiting-on-agents = { $count ->
-    [one] בהמתנה לסוכן אחד…
-   *[other] בהמתנה ל־{ $count } סוכנים…
-}
 chat-shell-mode = פקודת מעטפת
 chat-shell-mode-detail = מופעל בסביבת העבודה הזו. כדי להציג את התוצאה לסוכן, יש לבחור בה „הוספה לשיחה”.
 chat-shell-add-to-chat = הוספה לשיחה
@@ -3771,6 +3760,7 @@ chat-diff-unchanged-lines = { $count ->
 chat-files-changed-shared = שיחה נוספת עבדה בעץ העבודה הזה במהלך התור. קובץ ששתי השיחות שינו מציג את העריכות של שתיהן.
 chat-files-changed-unattributed = שיחה נוספת עבדה בעץ העבודה הזה במהלך התור. קבצים מעומעמים השתנו בזמן שעבדה וייתכן שהשינויים שייכים לה.
 chat-files-changed-snapshot-failed = לא ניתן היה לשמור תמונת מצב של עץ העבודה בתור הזה, לכן מופיעים רק קבצים שעליהם דיווחו הכלים שלו.
+chat-files-changed-snapshot-partial = לא ניתן היה לשמור תמונת מצב של חלק מהמאגרים בתור הזה, לכן עבורם מופיעים רק קבצים שעליהם דיווחו הכלים שלו.
 palette-mode-all = הכול
 palette-mode-conversations = שיחות
 palette-search-all = חיפוש סוכנים, עצי עבודה, פקודות, קבצים…
@@ -4062,3 +4052,408 @@ issue-report-actions-private = פרטי
 issue-report-action-draft-agent = הכנת טיוטה עם סוכן
 issue-report-action-copy-markdown = העתקה כ־Markdown
 issue-report-action-email = שליחה פרטית בדוא״ל
+
+browser-dialog-title = { $host } אומר
+browser-dialog-title-page = הדף הזה אומר
+section-rule-path = תבנית התאמת נתיב
+settings-search-entry-agents-providers-jcode-provider-label = ספק jcode
+settings-search-entry-agents-providers-jcode-provider-description = הפעלת jcode והגדרת המודלים ודגלי ההפעלה שלו.
+settings-ai-provider-jcode-description = הפעלת jcode כספק צ׳אט וטרמינל (נדרשת התקנת CLI של jcode בשם ⁨`jcode`⁩). הצ׳אטים מפעילים כל כלי שההגדרות של jcode מתירות; jcode אינו יכול לבקש אישור מראש.
+settings-keybinding-action-paste-as-secret = הדבק כסוד
+clone-waiting-for-stop = ממתין לעצירת תהליך השכפול…
+toast-review-comments = הערות סקירה
+toast-report-issue = דיווח
+toast-rex-session-display-failed = נוצרה הפעלת Rex, אך לא ניתן היה להציג אותה
+toast-rex-enable-remote-control = יש להפעיל שליטה מרחוק בהגדרות Rex ← שרת Rex, ואז לבחור בהפעלה הקיימת. פתיחה חוזרת יוצרת הפעלה נוספת.
+toast-rex-select-existing-session = יש לבחור בהפעלה הקיימת ב־Rex. פתיחה חוזרת יוצרת הפעלה נוספת.
+toast-open-app-failed = לא ניתן לפתוח את היישום שנבחר
+toast-open-app-failed-message = יש לוודא שהיישום מותקן וזמין. יש להרחיב את הפרטים כדי לראות את השגיאה.
+chat-forward = העבר
+chat-forward-search-placeholder = העבר אל…
+chat-forward-no-chats = אין צ׳אטים אחרים פתוחים
+chat-forward-failed-title = לא ניתן להעביר
+chat-forward-failed-message = צ׳אט היעד אינו זמין עוד או שהוא לקריאה בלבד.
+workspace-path-copied = הנתיב הועתק
+workspace-link-copied = הקישור הועתק
+workspace-copy-chat-link = העתק קישור לצ׳אט
+workspace-chat-link-copy-failed = לא ניתן להעתיק קישור לצ׳אט
+workspace-chat-link-copied = הקישור לצ׳אט הועתק
+run-app-on-phone = פתח בטלפון שלך
+run-app-scan-hint = יש לסרוק בטלפון המחובר לאותה רשת Wi-Fi.
+palette-section-go-to = מעבר אל
+palette-navigation-worktrees = { $count ->
+    [one] עץ עבודה אחד
+    [two] שני עצי עבודה
+   *[other] { $count } עצי עבודה
+}
+secret-request-title = סוכן מבקש סוד
+secret-request-asked-by = ״{ $asker }״ מבקש: { $label }
+secret-request-asked-by-agent = סוכן מבקש: { $label }
+secret-request-placeholder = יש להדביק או להקליד את הסוד
+secret-request-note = נשמר בקובץ פרטי ואינו מופיע בצ׳אט. פקודות הסוכן יכולות לקרוא אותו במשך 24 שעות.
+secret-request-save = שמור באופן פרטי
+secret-request-show = הצג סוד
+secret-request-hide = הסתר סוד
+secret-request-decline = דחה
+secret-request-save-failed = לא ניתן לשמור באופן פרטי: { $error }
+chat-secret-pill-token = אסימון { $issuer }
+chat-secret-pill-private-key = מפתח פרטי
+chat-secret-pill-secret = סוד
+chat-secret-card-kind = נשמר באופן פרטי
+chat-secret-card-detail = הסוכן שלך מקבל נתיב לקובץ פרטי במקום את הערך. הפקודות שלו עדיין יכולות לקרוא את הקובץ, שנמחק לאחר 24 שעות.
+chat-secret-card-paste-as-text = הדבק כטקסט
+chat-secret-store-failed = לא ניתן היה לשמור על פרטיות הסוד, ולכן הוא לא הודבק. יש להדביק שוב כדי להדביק אותו כטקסט רגיל.
+chat-secret-paste-moved = הטיוטה השתנתה בזמן שמירת הסוד באופן פרטי, ולכן הוא לא הודבק. יש להדביק אותו שוב.
+chat-paste-moved = הטיוטה השתנתה בזמן בדיקת התוכן להדבקה, ולכן הוא לא הודבק. יש להדביק אותו שוב.
+chat-secret-expired = הקובץ של הסוד הזה אינו קיים עוד, ולכן אי אפשר להדביק אותו כטקסט. יש להדביק אותו שוב.
+chat-artifact-annotate = הוסף הערות
+right-sidebar-filter-files = סנן קבצים
+right-sidebar-collapse-all-folders = כווץ את כל התיקיות
+right-sidebar-reveal-open-file = הצג קובץ פתוח
+exit-save-failed-title = לא ניתן לשמור את מצב היישום
+exit-save-failed-description = מצב היישום העדכני לא נשמר. { $error }. יש לנסות שוב לאחר תיקון בעיית האחסון, או להמשיך ללא שמירה.
+exit-restart-without-saving = הפעל מחדש ללא שמירה
+exit-quit-without-saving = צא ללא שמירה
+
+settings-experimental-resource-monitor-label = צג משאבים
+settings-experimental-resource-monitor-description = הצגת כפתור המשאבים בשורת הכותרת, עם זיכרון ו־CPU לכל עץ עבודה, לשונית ותהליך עזר.
+settings-search-section-resources = משאבים
+settings-search-entry-appearance-resources-show-freeable-memory-label = הצגת זיכרון שניתן לשחרר
+settings-search-entry-appearance-resources-show-freeable-memory-description = הצגה על כפתור המשאבים של כמות הזיכרון שתשתחרר אם לשוניות לא פעילות יעברו למצב שינה, וצביעתו כשהזיכרון של ה־Mac בלחץ.
+settings-section-resources = משאבים
+chat-queued-waiting-to-steer = ממתין להכוונה
+chat-queued-action-no-longer-queued = ההודעה הזו כבר לא ממתינה בתור.
+chat-queued-steer-failed = לא ניתן היה להכווין את ההודעה הזו.
+chat-queued-change-failed = לא ניתן היה לשנות את ההודעה הזו.
+changes-empty-detail = עריכות שאתה או הסוכנים שלך מבצעים בעץ העבודה הזה יופיעו כאן.
+changes-empty-turns = אין עדיין תורים
+changes-empty-turns-detail = כשסוכן משנה קבצים, הם יופיעו כאן תחת התור ששינה אותם.
+changes-empty-commits = אין עדיין קומיטים
+changes-empty-commits-detail = קומיטים בענף הזה יופיעו כאן.
+changes-empty-all-viewed = הכול נצפה
+changes-empty-all-viewed-detail = פתחת כל קובץ שהשתנה.
+review-delivery-prepared = הוכן ב־{ $target }
+review-delivery-sent = נשלח אל { $target }
+review-delivery-dispatched = נשלח אל { $target } ברקע
+review-delivery-a-chat = צ׳אט
+review-delivery-a-terminal = טרמינל
+review-location-whole-file = כל הקובץ
+review-tooltip-more-lines =
+    { $count ->
+        [one] עוד שורה אחת
+        [two] עוד שתי שורות
+       *[other] עוד { $count } שורות
+    }
+review-location-line = שורה { $line }
+review-location-lines = שורות { $start }–{ $end }
+review-pending-summary =
+    { $files ->
+        [one]
+            { $comments ->
+                [one] הערה אחת
+               *[other] { $comments } הערות
+            }
+       *[other] { $comments } הערות ב־{ $files } קבצים
+    }
+review-view-open = פתוחות
+review-view-done = הושלמו
+review-your-comments = ההערות שלך
+review-nothing-to-review = אין מה לסקור
+review-nothing-to-review-detail = הערות שתשאיר על diff, ושרשורי הסקירה של בקשת המשיכה שלך, יופיעו כאן.
+review-review-changes = סקירת שינויים
+review-comment-hint = או בחר שורות בכל diff כדי להעיר
+review-all-caught-up = הכול מטופל
+review-all-caught-up-detail = שום דבר לא ממתין לך.
+review-see-done = הצגת מה שהושלם
+review-nothing-done = עדיין לא הושלם דבר
+review-nothing-done-detail = הערות שתשלח ושרשורים שייפתרו יופיעו כאן.
+review-pull-request = בקשת משיכה #{ $number }
+review-pull-request-untitled = בקשת משיכה
+review-waiting-on-reviewers = עדיין אף אחד לא הגיב על #{ $number }.
+review-resolved-on-pr = נפתר ב־#{ $number }
+review-pr-refresh = רענון הערות בקשת המשיכה
+review-pr-loading = טוען הערות…
+review-pr-load-failed = לא ניתן היה לטעון את הערות בקשת המשיכה. רענן כדי לנסות שוב.
+review-pr-older-hidden = שרשורים ישנים יותר לא מוצגים.
+review-pr-overview-truncated = שרשורים נוספים לא מוצגים כאן.
+review-thread-resolve = סימון כנפתר
+review-thread-unresolve = ביטול סימון כנפתר
+review-thread-resolving = מסמן כנפתר…
+review-thread-unresolving = מבטל סימון כנפתר…
+review-thread-update-failed = לא ניתן היה לעדכן. נסה שוב.
+review-thread-outdated = לא עדכני
+review-thread-byline =
+    { $replies ->
+        [0] { $author } הגיב { $age }
+        [one] { $author } הגיב { $age }, תגובה אחת
+        [two] { $author } הגיב { $age }, שתי תגובות
+       *[other] { $author } הגיב { $age }, { $replies } תגובות
+    }
+checks-path-to-merge = הדרך למיזוג
+checks-step-committed = השינויים נשמרו בקומיט
+checks-step-pushed = נדחף
+checks-step-unpushed =
+    { $count ->
+        [one] קומיט אחד לדחיפה
+        [two] שני קומיטים לדחיפה
+       *[other] { $count } קומיטים לדחיפה
+    }
+checks-step-review-open = { $kind } פתוח
+checks-step-checks = בדיקות
+checks-step-running = בדיקות רצות
+checks-behind-target =
+    { $count ->
+        [one] קומיט אחד מאחורי { $target }
+        [two] שני קומיטים מאחורי { $target }
+       *[other] { $count } קומיטים מאחורי { $target }
+    }
+right-panel-view-options = אפשרויות תצוגה
+right-panel-view-changes = שינויים
+right-panel-view-gitignored-files = קבצים שמוחרגים ב־Git
+diff-viewed-toggle = נצפה
+diff-since-viewed-note = { $agent } שינה את זה אחרי שצפית בו. מוצגים השינויים מאז.
+diff-since-viewed-note-unattributed = הקובץ הזה השתנה אחרי שצפית בו. מוצגים השינויים מאז.
+diff-since-viewed-show-full = הצגת ה־diff המלא
+diff-turn-review-writing = כותב את הסקירה…
+diff-turn-review-passed = עבר
+diff-turn-review-failed = נכשל
+diff-turn-review-not-checked = לא נבדק: { $what }
+diff-turn-review-more-checks = עוד { $count }
+diff-turn-review-looks-good = נראה טוב
+diff-turn-review-comment-hint = הגב על שורה כדי לבקש שינויים
+right-sidebar-new = חדש
+right-sidebar-show-comments = הצגת הערות
+right-sidebar-hint-move = מעבר
+right-sidebar-hint-viewed = נצפה
+right-sidebar-hint-next-unviewed = הבא שלא נצפה
+right-sidebar-hint-open = פתיחה
+right-sidebar-commit-message = הודעת קומיט
+right-sidebar-writing-message = כותב הודעה
+right-sidebar-write-message = כתיבת הודעה
+right-sidebar-commit-file-count =
+    { $count ->
+        [one] קובץ אחד
+        [two] שני קבצים
+       *[other] { $count } קבצים
+    }
+right-sidebar-commit = קומיט
+right-sidebar-commit-and-push = קומיט ודחיפה
+right-sidebar-amend-last-commit = תיקון הקומיט האחרון
+right-sidebar-committing = יוצר קומיט
+right-sidebar-committed = נוצר קומיט
+right-sidebar-push = דחיפה
+right-sidebar-unviewed = לא נצפה
+changes-file-count =
+    { $count ->
+        [one] קובץ אחד
+        [two] שני קבצים
+       *[other] { $count } קבצים
+    }
+right-sidebar-mark-all-viewed =
+    { $count ->
+        [one] סימון קובץ אחד כנצפה
+        [two] סימון שני הקבצים כנצפו
+       *[other] סימון כל { $count } הקבצים כנצפו
+    }
+right-sidebar-all-viewed = כל הקבצים נצפו
+right-sidebar-viewed = נצפה
+right-sidebar-changed-since-viewed = השתנה מאז שצפית בו
+right-sidebar-changed-since-viewed-by = { $agent } שינה את זה מאז שצפית בו
+right-sidebar-changed-since-viewed-count =
+    { $count ->
+        [one] קובץ אחד השתנה מאז שצפית בו
+        [two] שני קבצים השתנו מאז שצפית בהם
+       *[other] { $count } קבצים השתנו מאז שצפית בהם
+    }
+right-sidebar-view-all = הכול
+right-sidebar-view-turns = תורים
+right-sidebar-turn-working = עובד
+right-sidebar-other-changes = שינויים אחרים
+right-sidebar-probable-file = השתנה בזמן שהתור הזה רץ
+right-sidebar-probable-file-detail = הכלים שלו לא דיווחו על כך, כך שייתכן שזו עריכה של מישהו אחר. יאומת כשהתור יסתיים.
+resources-title = משאבים
+resources-search = חיפוש משאבים או פרויקטים
+resources-search-tooltip = חיפוש
+resources-remote = מרוחק
+resources-asleep = במצב שינה
+resources-held-info = מסכים וצ׳אט אחרון נשמרים בזיכרון של האפליקציה כדי שעץ העבודה הזה ייפתח מחדש מיד, ונספרים ב״אפליקציה״ תחת ״במצב שינה״. המסכים משתחררים אחרי 15 דקות במצב שינה.
+resources-cpu = CPU
+resources-cpu-history = CPU בדקה האחרונה. ההיסטוריה נבנית כל עוד חלון המשאבים פתוח.
+resources-reclaim =
+    { $count ->
+        [one] לשונית לא פעילה אחת יכולה לעבור למצב שינה ולשחרר כ־{ $memory }
+        [two] שתי לשוניות לא פעילות יכולות לעבור למצב שינה ולשחרר כ־{ $memory }
+       *[other] { $count } לשוניות לא פעילות יכולות לעבור למצב שינה ולשחרר כ־{ $memory }
+    }
+resources-sleep-idle = השכבת לא פעילים
+resources-freed = שוחררו { $memory }
+resources-sleep = שינה
+resources-sleep-tooltip = משחרר את התהליכים שלו. מתעורר עם ההיסטוריה שלו כשתפתח אותו.
+resources-wake = הוצאה משינה
+resources-stop = עצירה
+resources-stop-confirm = לעצור את { $name }?
+resources-stop-consequence = עבודה שרצה תיקטע.
+resources-cancel = ביטול
+resources-exited = יצא
+resources-exited-just-now = יצא הרגע
+resources-exited-minutes = יצא לפני { $minutes } דק׳
+resources-exited-hours = יצא לפני { $hours } שע׳
+resources-cpu-row = { $percent }% CPU
+resources-origin-tab = לשונית טרמינל
+resources-origin-launched = הופעל על ידי { $tab }
+resources-origin-run-script = סקריפט ריצה
+resources-origin-panel = טרמינל בלוח
+resources-origin-setup = פקודת הכנה
+resources-origin-git = פעולת Git
+resources-origin-review = סקירה
+resources-activity-running = מריץ את { $process }
+resources-activity-busy = פועל
+resources-activity-idle = לא פעיל
+resources-app = אפליקציה
+resources-browser-services = שירותי דפדפן
+resources-browser-graphics = גרפיקה
+resources-browser-networking = רשת
+resources-background = תהליכי רקע
+resources-background-pid = PID { $pid }
+resources-app-graphics = גרפיקה
+resources-app-graphics-info = משטחי חלונות וזיכרון GPU
+resources-app-held-for-reuse = שמור לשימוש חוזר
+resources-app-saved-wake = במצב שינה
+resources-app-code-system = קוד ומערכת
+resources-app-chats = צ׳אטים
+resources-app-chats-open = { $count } פתוחים
+resources-app-chats-idle = { $count } לא פעילים
+resources-app-chats-history = היסטוריית צ׳אטים
+resources-app-terminals = טרמינלים
+resources-app-terminals-count =
+    { $count ->
+        [one] טרמינל אחד
+        [two] שני טרמינלים
+       *[other] { $count } טרמינלים
+    }
+resources-app-terminals-lines =
+    { $count ->
+        [one] שורה אחת
+        [two] שתי שורות
+       *[other] { $count } שורות
+    }
+resources-app-saved-count =
+    { $count ->
+        [one] עץ עבודה אחד
+        [two] שני עצי עבודה
+       *[other] { $count } עצי עבודה
+    }
+resources-app-saved-info = זיכרון שנשמר לעצי עבודה במצב שינה כדי שייפתחו מחדש מיד
+resources-app-background-count =
+    { $count ->
+        [one] תהליך אחד
+        [two] שני תהליכים
+       *[other] { $count } תהליכים
+    }
+resources-app-background-info = Git, פקודות עזר וכלי סוכנים שהאפליקציה מריצה ושאינם שייכים לאף עץ עבודה
+resources-app-background-brief = פקודות קצרות
+resources-app-other-data = נתונים
+resources-app-other-detail = גדל עם הפרויקטים ועצי העבודה
+resources-app-held-for-reuse-detail = נשמר על ידי מקצה הזיכרון לשימוש חוזר
+resources-app-code-system-detail = קוד התוכנה וספריות המערכת
+resources-estimated = משוער
+resources-sleep-idle-chats = השכבת צ׳אטים לא פעילים
+resources-sleep-idle-chats-confirm =
+    { $count ->
+        [one] להעביר צ׳אט לא פעיל אחד למצב שינה?
+        [two] להעביר שני צ׳אטים לא פעילים למצב שינה?
+       *[other] להעביר { $count } צ׳אטים לא פעילים למצב שינה?
+    }
+resources-frees-about = משחרר כ־{ $memory }
+resources-clear = ניקוי
+resources-clear-confirm =
+    { $lines ->
+        [one] לנקות שורה אחת מהיסטוריית הגלילה?
+        [two] לנקות שתי שורות מהיסטוריית הגלילה?
+       *[other] לנקות { $lines } שורות מהיסטוריית הגלילה?
+    }
+resources-clear-consequence = המסך נשאר.
+resources-clear-scrollback = ניקוי היסטוריית הגלילה
+resources-clear-all-confirm =
+    { $count ->
+        [one] לנקות את היסטוריית הגלילה בטרמינל אחד?
+        [two] לנקות את היסטוריית הגלילה בשני טרמינלים?
+       *[other] לנקות את היסטוריית הגלילה ב־{ $count } טרמינלים?
+    }
+resources-chat-sleep-running = מריץ תור. יוכל לעבור למצב שינה כשהתור יסתיים.
+resources-chat-sleep-waiting = ממתין לתשובתך. יוכל לעבור למצב שינה אחרי שתענה.
+resources-chat-sleep-unseen = יש בו תשובה שעוד לא ראית. יוכל לעבור למצב שינה אחרי שתקרא אותה.
+resources-chat-sleep-kept-ready = נשמר מוכן לחזרה מהירה לעץ העבודה שלו.
+resources-chat-sleep-on-screen = מוצג על המסך. יוכל לעבור למצב שינה כשלא יהיה גלוי.
+resources-chat-sleep-queued = יש הודעות בתור. יוכל לעבור למצב שינה אחרי שיישלחו.
+resources-chat-sleep-busy = עסוק כרגע. נסה שוב בעוד רגע.
+resources-info-title = לאן הולכים { $total }
+resources-info-summary = האפליקציה, וכל מה שהיא הפעילה בשבילך.
+resources-info-app = super.engineering
+resources-info-app-hint = האפליקציה ותהליכי העזר שהיא מריצה
+resources-info-agents-hint = הסוכן של כל צ׳אט והכלים שהוא מריץ
+resources-info-browser = לשוניות דפדפן
+resources-info-browser-hint = כל דף רץ בתהליך משלו
+resources-info-terminals-hint = מעטפות, סקריפטי ריצה ומה שהם הפעילו
+resources-info-remote = עצי עבודה מרוחקים עדיין לא נמדדים.
+resources-pressure-warning = הזיכרון של ה־Mac בלחץ. super.engineering משתמשת ב־{ $used } מתוך { $ram }.
+resources-pressure-warning-short = הזיכרון של ה־Mac בלחץ.
+resources-pressure-critical = הזיכרון של ה־Mac נמוך באופן קריטי. super.engineering משתמשת ב־{ $used } מתוך { $ram }.
+resources-pressure-critical-others = הזיכרון של ה־Mac נמוך באופן קריטי, בעיקר בגלל אפליקציות אחרות. super.engineering משתמשת ב־{ $used } מתוך { $ram }.
+resources-pressure-critical-short = הזיכרון של ה־Mac נמוך באופן קריטי.
+resources-thermal = ה־Mac מתחמם ועלול להאט.
+resources-measurements-unavailable = זיכרון ו־CPU לא זמינים כרגע. עדיין אפשר לפתוח ולנהל לשוניות.
+resources-loading = טוען משאבים…
+resources-empty = אין משאבים תואמים.
+resources-empty-all = שום דבר לא פועל.
+resources-empty-agents = אין סוכנים פעילים.
+resources-empty-browser = אין לשוניות דפדפן פתוחות.
+resources-empty-terminals = אין טרמינלים פעילים.
+resources-tab-all = הכול
+resources-tab-agents = סוכנים
+resources-tab-browser = דפדפן
+resources-tab-terminals = טרמינלים
+resources-fact-agents =
+    { $count ->
+        [one] סוכן
+       *[other] סוכנים
+    }
+resources-fact-browser-tabs =
+    { $count ->
+        [one] לשונית דפדפן
+       *[other] לשוניות דפדפן
+    }
+resources-fact-terminals =
+    { $count ->
+        [one] טרמינל
+       *[other] טרמינלים
+    }
+resources-on-screen = מוצג על המסך, לכן נשאר ער
+resources-open = פתיחה
+resources-close = סגירה
+resources-close-confirm = לסגור את { $name }?
+resources-close-consequence = הדף שלו ייסגר.
+resources-average-title = ממוצע לסוכן
+resources-average-each = לכל אחד
+resources-average-ten = 10 סוכנים
+resources-average-each-suffix = לכל אחד
+resources-average-for-ten = ל־10
+resources-tree-more = +{ $count } נוספים
+resources-app-item-detail = { $activity }, { $lines }
+resources-app-more-chats =
+    { $count ->
+        [one] עוד צ׳אט אחד
+        [two] עוד שני צ׳אטים
+       *[other] עוד { $count } צ׳אטים
+    }
+resources-app-more-terminals =
+    { $count ->
+        [one] עוד טרמינל אחד
+        [two] עוד שני טרמינלים
+       *[other] עוד { $count } טרמינלים
+    }
+issue-report-check-submission = בדיקת השליחה
+issue-report-submission-uncertain = ייתכן שהדיווח הזה כבר נמצא ב-GitHub. בדקו את השליחה כדי למצוא אותו; הבדיקה לעולם אינה מפרסמת שוב. אם הוא עדיין לא נמצא, המתינו ובדקו שוב, או עיינו בבעיות שלכם ב-GitHub לפני השלכת הטיוטה הזו.
+issue-report-discard-uncertain = השלכת הטיוטה (ייתכן שהדיווח כבר קיים)
+issue-report-draft-load-failed = לא ניתן לקרוא את הדיווח השמור שלכם. פתרו את בעיית האחסון והפעילו מחדש את היישום לפני שליחת דיווח נוסף.
+review-comment-edit-staged = יש להסיר את הסקירה הזו מתיבת הכתיבה לפני העריכה.

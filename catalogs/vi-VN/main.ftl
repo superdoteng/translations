@@ -556,10 +556,7 @@ section-value-review-required = Yêu cầu xem xét
 section-value-running = Chạy bộ
 section-value-stopped = Đã dừng lại
 section-value-working = Làm việc
-toast-remove-from-app = Xóa khỏi { $app_name }
-toast-browser-automation-disabled-title = Một tác nhân đã cố dùng trình duyệt
-toast-browser-automation-disabled = Tự động hóa trình duyệt đang tắt nên lệnh của tác nhân đã bị từ chối. Hãy bật trong Cài đặt › Thí nghiệm để cho phép tác nhân đọc và điều khiển các thẻ trình duyệt của bạn.
-toast-open-experimental-settings = Mở Cài đặt
+toast-remove-from-app = Gỡ bỏ
 validation-name-required = Tên là bắt buộc
 welcome-clone-from-url = Bản sao từ URL
 welcome-clone-from-url-description = Sao chép một kho từ xa
@@ -1109,8 +1106,6 @@ script-commands-more = Thêm { $count }
 setup-not-configured = Không có script cài đặt nào được cấu hình
 review-submitted-reviews = Các đánh giá đã gửi
 review-ai-questions = AI câu hỏi
-review-no-comments = Chưa có bình luận đánh giá nào
-review-select-lines-hint = Chọn các dòng trong vi sai để bắt đầu xem xét.
 sidebar-ssh = SSH
 shared-context-generate-ai-context = Tạo ngữ cảnh AI
 action-generate = tạo ra
@@ -1146,7 +1141,6 @@ review-add-to-fix-list = Thêm vào danh sách sửa lỗi
 review-submit-replies = Gửi phản hồi
 review-submit-from-tab = Gửi từ tab Xem →
 review-ai-findings = AI phát hiện
-review-findings-triage-count = Cần phân loại: { $count }
 review-findings-to-triage = Phát hiện AI cần phân loại: { $count }
 review-finding-should-fix = Cần sửa
 review-finding-dismiss = Bỏ qua
@@ -1183,7 +1177,6 @@ context-output = Sản lượng
 context-total-io = Tổng số I/O
 context-input-effective = Hiệu quả đầu vào
 profile-cli-default = CLI mặc định
-review-no-active-comments = Không có bình luận đánh giá đang hoạt động.
 permission-tools = Dụng cụ
 permission-ask = Hỏi đi
 permission-yolo = yolo
@@ -1237,10 +1230,11 @@ chat-thinking-in-progress = Đang suy nghĩ…
 chat-thinking-count = Đang suy nghĩ ({ $count })
 chat-thinking-summary = Đang suy nghĩ · { $summary }
 chat-working-for = Đang làm việc
-chat-agent-wait-caption = { $count ->
-    [1] { $model } tiếp tục khi tác nhân báo cáo lại
-   *[other] { $model } tiếp tục khi các tác nhân báo cáo lại
-}
+chat-agent-wait-caption =
+    { $count ->
+        [one] { $model } sẽ tiếp tục khi nó hoàn tất
+       *[other] { $model } sẽ tiếp tục khi chúng hoàn tất
+    }
 chat-worked-for = Đã làm việc { $duration }
 chat-worked = Đã làm
 plan-proposed = KẾ HOẠCH ĐỀ XUẤT
@@ -1287,7 +1281,6 @@ image-preview-load-failed = Tải ảnh thất bại
 hosted-tab-unavailable = Không thể hiển thị tab này vì tính năng của nó không khả dụng.
 file-tree-new-file = Tệp mới
 file-tree-new-folder = Thư mục mới
-review-suggestion = đề xuất
 pr-merged = đã hợp nhất
 pr-closed = Đã đóng cửa
 pr-update-available = Có bản cập nhật
@@ -1392,8 +1385,6 @@ target-branch-push-description = Chọn có đẩy nhánh mục tiêu mới tạ
 toast-error = Lỗi
 toast-busy = Bận rộn
 toast-review = Đánh giá
-toast-review-comments-title = Bình luận đánh giá ({ $count })
-toast-review-comments-message = { $count } bình luận đánh giá mới. Mới nhất: { $latest }
 toast-update-branch-failed = Nhánh cập nhật thất bại
 toast-keymap-error = Lỗi keymap
 toast-keymap-load-failed = Tải keymap thất bại: { $error }
@@ -1550,9 +1541,6 @@ review-no-pending-comments = Không có bình luận đánh giá đang chờ x�
 review-no-enabled-chat-providers = Không có nhà cung cấp chat được bật
 review-no-enabled-agents = Không có agent được kích hoạt
 
-review-comment-count = Bình luận: { $count }
-review-review-count = Đánh giá: { $count }
-review-awaiting-reply-count = Chờ phản hồi: { $count }
 review-file-count = Tập tin: { $count }
 
 settings-ai-codex-profile-directory-missing = Không tìm thấy thư mục hồ sơ Codex. Tạo nó trước khi khởi chạy hồ sơ này.
@@ -1746,6 +1734,8 @@ settings-search-entry-general-behavior-show-cmd-number-hints-on-cmd-hold-label =
 settings-search-entry-general-behavior-show-cmd-number-hints-on-cmd-hold-description = Giữ lệnh trong 0,5 giây để hiển thị các phím tắt có số cho cây làm việc hoặc tab.
 settings-search-entry-general-behavior-use-cmd-number-to-switch-tabs-label = Sử dụng Cmd+number để chuyển đổi tab
 settings-search-entry-general-behavior-use-cmd-number-to-switch-tabs-description = Sử dụng Cmd+1 đến Cmd+9 để chọn tab trong cây làm việc đang hoạt động thay vì chuyển đổi cây làm việc.
+settings-search-entry-general-behavior-project-header-click-label = Khi nhấp vào tên dự án
+settings-search-entry-general-behavior-project-header-click-description = Chọn hành động khi nhấp vào tên dự án trong thanh bên. Mũi tên cạnh tên luôn mở rộng và thu gọn.
 settings-search-entry-general-behavior-confirm-before-quitting-label = Xác nhận trước khi thoát
 settings-search-entry-general-behavior-confirm-before-quitting-description = Hiển thị lời nhắc xác nhận khi bạn nhấn Cmd+Q hoặc chọn Quit từ menu.
 settings-search-entry-general-behavior-confirm-before-closing-a-running-tab-label = Xác nhận trước khi đóng tab đang chạy
@@ -2183,8 +2173,6 @@ git-run-action-in-new-tab = Chạy hành động trong tab mới
 git-run-action = Chạy hành động
 right-panel-new-terminal = Nhà ga mới
 setup-stop-script = Dừng kịch bản cài đặt
-run-open-port = Mở :{ $port }
-run-open-preview = Mở xem trước
 run-stop-script = Dừng chạy script
 run-rerun-workspace = Chạy lại không gian làm việc
 workspace-close-tab = Đóng tab
@@ -2348,6 +2336,11 @@ sidebar-hide-primary-worktree = Ẩn cây làm việc chính
 sidebar-edit-section = Chỉnh sửa...
 sidebar-move-section-up = Di chuyển lên
 sidebar-move-section-down = Di chuyển xuống
+sidebar-sort-projects-by = Sắp xếp dự án theo
+sidebar-sort-projects-name = Tên
+sidebar-sort-projects-path = Đường dẫn
+sidebar-collapse-all-projects = Thu gọn tất cả dự án
+sidebar-expand-all-projects = Mở rộng tất cả dự án
 file-menu-open-in-terminal = Mở trong Terminal
 shared-context-edit-projects = Chỉnh sửa dự án...
 history-load-backfill = Lịch sử tải / lấp lại
@@ -2648,8 +2641,6 @@ shared-context-depth-simple-tooltip = Cài đặt nhanh với quét nhẹ (READM
 shared-context-depth-thorough = kỹ lưỡng
 shared-context-depth-thorough-summary = Phỏng vấn trước, sau đó phân tích mã nguồn trước khi tạo hướng dẫn về không gian làm việc.
 shared-context-depth-thorough-tooltip = Hỏi các câu hỏi làm rõ, xác nhận mục tiêu, rồi thực hiện một bước code pass sâu hơn.
-right-panel-show-gitignored-files = Hiển thị các tệp gitignored
-right-panel-hide-gitignored-files = Ẩn các tệp gitignor
 workspace-hold-command-for-chat-ui = Giữ ⌘ cho giao diện Chat
 workspace-hold-command-for-terminal = Giữ ⌘ cho Terminal
 tool-picker-no-matches = Không có kết quả phù hợp
@@ -2899,6 +2890,12 @@ settings-orchestrated-worktrees-auto = Tự động
 settings-orchestrated-worktrees-auto-description = Mở khi một tác nhân trong đó đang làm việc hoặc cần bạn.
 settings-orchestrated-worktrees-collapsed = Thu gọn
 settings-orchestrated-worktrees-collapsed-description = Luôn thu gọn cho đến khi bạn mở.
+settings-project-header-click-toggle = Mở rộng/thu gọn
+settings-project-header-click-toggle-description = Hiện hoặc ẩn các worktree của dự án.
+settings-project-header-click-open-primary = Mở worktree chính
+settings-project-header-click-open-primary-description = Mở bản checkout chính của dự án.
+settings-project-header-click-auto = Tự động
+settings-project-header-click-auto-description = Mở worktree chính nếu đó là worktree duy nhất, nếu không thì mở rộng hoặc thu gọn.
 settings-orchestrated-worktrees-expanded = Mở rộng
 settings-orchestrated-worktrees-expanded-description = Luôn mở.
 settings-search-entry-appearance-layout-orchestrated-worktrees-description = Chọn cách các cây làm việc được cuộc trò chuyện giao việc mở bên dưới cuộc trò chuyện đó trong thanh bên.
@@ -3189,8 +3186,6 @@ settings-remote-key-remove-revoke = Thu hồi quyền trên { $host }
 settings-remote-key-remove-title = Xóa khóa khỏi { $host }?
 settings-experimental-automations-label = Tự động hóa
 settings-experimental-automations-description = Tạo tự động hóa theo lịch và theo sự kiện. Bản xem trước sớm, chưa được kiểm thử đầy đủ.
-settings-experimental-browser-automation-label = Tự động hóa trình duyệt
-settings-experimental-browser-automation-description = Cho phép tác nhân dùng lệnh điều khiển trình duyệt. Hành động trình duyệt vẫn cần quyền của không gian làm việc.
 settings-experimental-chat-artifacts-label = Tạo phẩm trong trò chuyện
 settings-experimental-chat-artifacts-description = Cho phép tác tử xuất bản trang HTML hiển thị trực tiếp trong cuộc trò chuyện. Trang chạy ngoại tuyến trong hộp cát.
 settings-search-section-typography = Kiểu chữ
@@ -3254,8 +3249,6 @@ settings-search-entry-experimental-feature-flags-workspace-mentions-label = Nh�
 settings-search-entry-experimental-feature-flags-workspace-mentions-description = Nhắc đến tập lệnh, terminal, cây làm việc, cuộc trò chuyện và tác nhân bằng @ trong trò chuyện.
 settings-search-entry-experimental-feature-flags-automations-label = Tự động hóa
 settings-search-entry-experimental-feature-flags-automations-description = Tạo tự động hóa theo lịch và theo sự kiện. Bản xem trước sớm, chưa được kiểm thử đầy đủ.
-settings-search-entry-experimental-feature-flags-browser-automation-label = Tự động hóa trình duyệt
-settings-search-entry-experimental-feature-flags-browser-automation-description = Cho phép tác nhân dùng lệnh điều khiển trình duyệt. Hành động trình duyệt vẫn cần quyền của không gian làm việc.
 settings-search-entry-agents-session-context-session-context-for-agents-label = Ngữ cảnh phiên cho tác nhân
 settings-search-entry-agents-session-context-session-context-for-agents-description = Thêm ngữ cảnh super.engineering vào phiên tác nhân mới, hoặc tắt việc chèn ngầm.
 settings-section-typography = Kiểu chữ
@@ -3604,7 +3597,6 @@ worktree-step-creating-branch = Đang tạo nhánh
 worktree-step-naming = Đang đặt tên theo tác vụ của bạn
 worktree-step-setup = Đang chạy thiết lập
 worktree-step-opening-agent = Đang mở { $agent }
-chat-waiting-on-agents = Đang chờ { $count } tác nhân…
 chat-shell-mode = Lệnh shell
 chat-shell-mode-detail = Chạy trong không gian làm việc này. Dùng Thêm vào cuộc trò chuyện trên kết quả để cho tác nhân xem.
 chat-shell-add-to-chat = Thêm vào cuộc trò chuyện
@@ -3636,6 +3628,7 @@ chat-diff-unchanged-lines = { $count } dòng không thay đổi
 chat-files-changed-shared = Một cuộc trò chuyện khác đang làm việc trong worktree này ở lượt này. Tệp được cả hai cuộc trò chuyện chỉnh sửa sẽ hiển thị thay đổi của cả hai.
 chat-files-changed-unattributed = Một cuộc trò chuyện khác đang làm việc trong worktree này ở lượt này. Các tệp mờ đã thay đổi khi cuộc trò chuyện đó hoạt động và có thể là thay đổi của nó.
 chat-files-changed-snapshot-failed = Không thể chụp trạng thái worktree của lượt này, nên chỉ liệt kê các tệp mà công cụ của lượt này báo cáo.
+chat-files-changed-snapshot-partial = Không thể chụp trạng thái một số kho mã của lượt này, nên với các kho đó chỉ liệt kê các tệp mà công cụ của lượt này báo cáo.
 palette-mode-all = Tất cả
 palette-mode-conversations = Cuộc trò chuyện
 palette-search-all = Tìm tác nhân, worktree, lệnh, tệp…
@@ -3902,3 +3895,386 @@ issue-report-actions-private = Riêng tư
 issue-report-action-draft-agent = Soạn nháp với tác nhân
 issue-report-action-copy-markdown = Sao chép dưới dạng Markdown
 issue-report-action-email = Gửi riêng qua email
+
+browser-dialog-title = { $host } cho biết
+browser-dialog-title-page = Trang này cho biết
+section-rule-path = Mẫu glob đường dẫn
+settings-search-entry-agents-providers-jcode-provider-label = Nhà cung cấp jcode
+settings-search-entry-agents-providers-jcode-provider-description = Bật jcode và cấu hình các mô hình cùng cờ khởi chạy.
+settings-ai-provider-jcode-description = Bật jcode làm nhà cung cấp trò chuyện và terminal (cần cài đặt CLI jcode `jcode`). Các cuộc trò chuyện chạy mọi công cụ được cấu hình riêng của jcode cho phép; jcode không thể yêu cầu phê duyệt trước.
+settings-keybinding-action-paste-as-secret = Dán dưới dạng bí mật
+clone-waiting-for-stop = Đang chờ tiến trình sao chép dừng…
+toast-review-comments = Bình luận đánh giá
+toast-report-issue = Báo cáo
+toast-rex-session-display-failed = Đã tạo phiên Rex nhưng không thể hiển thị
+toast-rex-enable-remote-control = Bật Remote Control trong Cài đặt Rex → Rex Server, rồi chọn phiên hiện có. Mở lại sẽ tạo một phiên khác.
+toast-rex-select-existing-session = Chọn phiên hiện có trong Rex. Mở lại sẽ tạo một phiên khác.
+toast-open-app-failed = Không thể mở ứng dụng đã chọn
+toast-open-app-failed-message = Kiểm tra xem ứng dụng đã được cài đặt và khả dụng chưa. Mở rộng Chi tiết để xem lỗi.
+chat-forward = Chuyển tiếp
+chat-forward-search-placeholder = Chuyển tiếp đến…
+chat-forward-no-chats = Không có cuộc trò chuyện nào khác đang mở
+chat-forward-failed-title = Không thể chuyển tiếp
+chat-forward-failed-message = Cuộc trò chuyện đích không còn khả dụng hoặc ở chế độ chỉ đọc.
+workspace-path-copied = Đã sao chép đường dẫn
+workspace-link-copied = Đã sao chép liên kết
+workspace-copy-chat-link = Sao chép liên kết đến cuộc trò chuyện
+workspace-chat-link-copy-failed = Không thể sao chép liên kết đến cuộc trò chuyện
+workspace-chat-link-copied = Đã sao chép liên kết đến cuộc trò chuyện
+run-app-on-phone = Mở trên điện thoại
+run-app-scan-hint = Quét bằng điện thoại kết nối cùng mạng Wi-Fi.
+palette-section-go-to = Đi đến
+palette-navigation-worktrees = { $count } cây làm việc
+secret-request-title = Một agent đang yêu cầu bí mật
+secret-request-asked-by = “{ $asker }” yêu cầu: { $label }
+secret-request-asked-by-agent = Một agent yêu cầu: { $label }
+secret-request-placeholder = Dán hoặc nhập bí mật
+secret-request-note = Được lưu vào tệp riêng tư và không xuất hiện trong cuộc trò chuyện. Các lệnh của agent có thể đọc tệp trong 24 giờ.
+secret-request-save = Lưu riêng tư
+secret-request-show = Hiện bí mật
+secret-request-hide = Ẩn bí mật
+secret-request-decline = Từ chối
+secret-request-save-failed = Không thể lưu riêng tư: { $error }
+chat-secret-pill-token = Token { $issuer }
+chat-secret-pill-private-key = Khóa riêng tư
+chat-secret-pill-secret = Bí mật
+chat-secret-card-kind = Được giữ riêng tư
+chat-secret-card-detail = Agent nhận được đường dẫn đến tệp riêng tư thay vì giá trị. Các lệnh của agent vẫn có thể đọc tệp này; tệp sẽ bị xóa sau 24 giờ.
+chat-secret-card-paste-as-text = Dán dưới dạng văn bản
+chat-secret-store-failed = Không thể giữ bí mật ở chế độ riêng tư nên chưa dán. Dán lại để dán dưới dạng văn bản thuần túy.
+chat-secret-paste-moved = Bản nháp đã thay đổi trong khi bí mật đang được lưu riêng tư nên chưa dán. Hãy dán lại.
+chat-paste-moved = Bản nháp đã thay đổi trong khi nội dung dán đang được kiểm tra nên chưa dán. Hãy dán lại.
+chat-secret-expired = Tệp chứa bí mật đó không còn nên không thể dán dưới dạng văn bản. Hãy dán lại.
+chat-artifact-annotate = Thêm chú thích
+right-sidebar-filter-files = Lọc tệp
+right-sidebar-collapse-all-folders = Thu gọn tất cả thư mục
+right-sidebar-reveal-open-file = Hiển thị tệp đang mở
+exit-save-failed-title = Không thể lưu trạng thái ứng dụng
+exit-save-failed-description = Trạng thái ứng dụng mới nhất chưa được lưu. { $error }. Hãy khắc phục vấn đề lưu trữ rồi thử lại, hoặc tiếp tục mà không lưu.
+exit-restart-without-saving = Khởi động lại mà không lưu
+exit-quit-without-saving = Thoát mà không lưu
+
+settings-experimental-resource-monitor-label = Trình theo dõi tài nguyên
+settings-experimental-resource-monitor-description = Hiện nút Tài nguyên trên thanh tiêu đề, kèm bộ nhớ và CPU của từng cây làm việc, tab và tiến trình trợ giúp.
+settings-search-section-resources = Tài nguyên
+settings-search-entry-appearance-resources-show-freeable-memory-label = Hiện bộ nhớ có thể giải phóng
+settings-search-entry-appearance-resources-show-freeable-memory-description = Hiện trên nút Tài nguyên lượng bộ nhớ sẽ được giải phóng nếu cho các tab nhàn rỗi ngủ, và tô màu nút khi Mac thiếu bộ nhớ.
+settings-section-resources = Tài nguyên
+chat-queued-waiting-to-steer = Đang chờ điều hướng
+chat-queued-action-no-longer-queued = Tin nhắn này không còn trong hàng đợi.
+chat-queued-steer-failed = Không thể điều hướng bằng tin nhắn này.
+chat-queued-change-failed = Không thể thay đổi tin nhắn này.
+changes-empty-detail = Các chỉnh sửa do bạn hoặc tác nhân thực hiện trong cây làm việc này sẽ hiện ở đây.
+changes-empty-turns = Chưa có lượt nào
+changes-empty-turns-detail = Khi một tác nhân thay đổi tệp, các tệp đó sẽ hiện ở đây dưới lượt đã thay đổi chúng.
+changes-empty-commits = Chưa có commit nào
+changes-empty-commits-detail = Các commit trên nhánh này sẽ hiện ở đây.
+changes-empty-all-viewed = Đã xem hết
+changes-empty-all-viewed-detail = Bạn đã mở mọi tệp đã thay đổi.
+review-delivery-prepared = Đã chuẩn bị trong { $target }
+review-delivery-sent = Đã gửi đến { $target }
+review-delivery-dispatched = Đã gửi đến { $target } ở chế độ nền
+review-delivery-a-chat = một cuộc trò chuyện
+review-delivery-a-terminal = một terminal
+review-location-whole-file = Toàn bộ tệp
+review-tooltip-more-lines =
+    { $count ->
+        [one] Thêm 1 dòng
+       *[other] Thêm { $count } dòng
+    }
+review-location-line = Dòng { $line }
+review-location-lines = Dòng { $start }–{ $end }
+review-pending-summary =
+    { $files ->
+        [one]
+            { $comments ->
+                [one] 1 bình luận
+               *[other] { $comments } bình luận
+            }
+       *[other] { $comments } bình luận trong { $files } tệp
+    }
+review-view-open = Đang mở
+review-view-done = Đã xong
+review-your-comments = Bình luận của bạn
+review-nothing-to-review = Không có gì để đánh giá
+review-nothing-to-review-detail = Bình luận bạn để lại trên diff và các luồng đánh giá của pull request sẽ hiện ở đây.
+review-review-changes = Đánh giá thay đổi
+review-comment-hint = hoặc chọn dòng trong bất kỳ diff nào để bình luận
+review-all-caught-up = Đã xử lý hết
+review-all-caught-up-detail = Không có gì đang chờ bạn.
+review-see-done = Xem những gì đã xong
+review-nothing-done = Chưa có gì xong
+review-nothing-done-detail = Bình luận bạn gửi và các luồng đã được giải quyết sẽ hiện ở đây.
+review-pull-request = Pull request #{ $number }
+review-pull-request-untitled = Pull request
+review-waiting-on-reviewers = Chưa có ai bình luận trên #{ $number }.
+review-resolved-on-pr = Đã giải quyết trên #{ $number }
+review-pr-refresh = Làm mới bình luận pull request
+review-pr-loading = Đang tải bình luận…
+review-pr-load-failed = Không thể tải bình luận pull request. Hãy làm mới để thử lại.
+review-pr-older-hidden = Các luồng cũ hơn không được hiển thị.
+review-pr-overview-truncated = Còn các luồng khác không được hiển thị ở đây.
+review-thread-resolve = Giải quyết
+review-thread-unresolve = Bỏ giải quyết
+review-thread-resolving = Đang giải quyết…
+review-thread-unresolving = Đang bỏ giải quyết…
+review-thread-update-failed = Không thể cập nhật. Hãy thử lại.
+review-thread-outdated = Đã lỗi thời
+review-thread-byline =
+    { $replies ->
+        [0] { $author } đã bình luận { $age }
+        [one] { $author } đã bình luận { $age }, 1 phản hồi
+       *[other] { $author } đã bình luận { $age }, { $replies } phản hồi
+    }
+checks-path-to-merge = Lộ trình hợp nhất
+checks-step-committed = Đã commit thay đổi
+checks-step-pushed = Đã đẩy
+checks-step-unpushed =
+    { $count ->
+        [one] { $count } commit cần đẩy
+       *[other] { $count } commit cần đẩy
+    }
+checks-step-review-open = { $kind } đang mở
+checks-step-checks = Kiểm tra
+checks-step-running = Đang chạy kiểm tra
+checks-behind-target =
+    { $count ->
+        [one] Chậm { $count } commit so với { $target }
+       *[other] Chậm { $count } commit so với { $target }
+    }
+right-panel-view-options = Tùy chọn hiển thị
+right-panel-view-changes = Thay đổi
+right-panel-view-gitignored-files = Tệp gitignored
+diff-viewed-toggle = Đã xem
+diff-since-viewed-note = { $agent } đã thay đổi tệp này sau khi bạn xem. Đang hiển thị các thay đổi kể từ lúc đó.
+diff-since-viewed-note-unattributed = Tệp này đã thay đổi sau khi bạn xem. Đang hiển thị các thay đổi kể từ lúc đó.
+diff-since-viewed-show-full = Hiện toàn bộ diff
+diff-turn-review-writing = Đang viết đánh giá…
+diff-turn-review-passed = đạt
+diff-turn-review-failed = không đạt
+diff-turn-review-not-checked = Chưa kiểm tra: { $what }
+diff-turn-review-more-checks = Thêm { $count }
+diff-turn-review-looks-good = Trông ổn
+diff-turn-review-comment-hint = Bình luận trên một dòng để yêu cầu thay đổi
+right-sidebar-new = Mới
+right-sidebar-show-comments = Hiện bình luận
+right-sidebar-hint-move = Di chuyển
+right-sidebar-hint-viewed = Đã xem
+right-sidebar-hint-next-unviewed = Tệp chưa xem tiếp theo
+right-sidebar-hint-open = Mở
+right-sidebar-commit-message = Thông điệp commit
+right-sidebar-writing-message = Đang viết thông điệp
+right-sidebar-write-message = Viết thông điệp
+right-sidebar-commit-file-count =
+    { $count ->
+        [one] 1 tệp
+       *[other] { $count } tệp
+    }
+right-sidebar-commit = Commit
+right-sidebar-commit-and-push = Commit và đẩy
+right-sidebar-amend-last-commit = Sửa commit gần nhất
+right-sidebar-committing = Đang commit
+right-sidebar-committed = Đã commit
+right-sidebar-push = Đẩy
+right-sidebar-unviewed = Chưa xem
+changes-file-count =
+    { $count ->
+        [one] 1 tệp
+       *[other] { $count } tệp
+    }
+right-sidebar-mark-all-viewed =
+    { $count ->
+        [one] Đánh dấu 1 tệp là đã xem
+       *[other] Đánh dấu cả { $count } tệp là đã xem
+    }
+right-sidebar-all-viewed = Đã xem tất cả tệp
+right-sidebar-viewed = Đã xem
+right-sidebar-changed-since-viewed = Đã thay đổi sau khi bạn xem
+right-sidebar-changed-since-viewed-by = { $agent } đã thay đổi tệp này sau khi bạn xem
+right-sidebar-changed-since-viewed-count =
+    { $count ->
+        [one] 1 tệp đã thay đổi sau khi bạn xem
+       *[other] { $count } tệp đã thay đổi sau khi bạn xem
+    }
+right-sidebar-view-all = Tất cả
+right-sidebar-view-turns = Lượt
+right-sidebar-turn-working = Đang làm việc
+right-sidebar-other-changes = Thay đổi khác
+right-sidebar-probable-file = Đã thay đổi trong lúc lượt này chạy
+right-sidebar-probable-file-detail = Các công cụ của lượt không báo cáo thay đổi này, nên có thể đây là chỉnh sửa của người khác. Sẽ được xác nhận khi lượt kết thúc.
+resources-title = Tài nguyên
+resources-search = Tìm tài nguyên hoặc dự án
+resources-search-tooltip = Tìm kiếm
+resources-remote = Từ xa
+resources-asleep = Đang ngủ
+resources-held-info = Màn hình và cuộc trò chuyện gần đây được giữ trong bộ nhớ của ứng dụng để cây làm việc này mở lại ngay, được tính trong “Ứng dụng” ở mục “Đang ngủ”. Màn hình được giải phóng sau khi ngủ 15 phút.
+resources-cpu = CPU
+resources-cpu-history = CPU trong một phút qua. Lịch sử được ghi lại khi Tài nguyên đang mở.
+resources-reclaim =
+    { $count ->
+        [one] 1 tab nhàn rỗi có thể ngủ và giải phóng khoảng { $memory }
+       *[other] { $count } tab nhàn rỗi có thể ngủ và giải phóng khoảng { $memory }
+    }
+resources-sleep-idle = Cho tab nhàn rỗi ngủ
+resources-freed = Đã giải phóng { $memory }
+resources-sleep = Ngủ
+resources-sleep-tooltip = Giải phóng các tiến trình của nó. Khi bạn mở lại, nó sẽ thức dậy cùng lịch sử.
+resources-wake = Đánh thức
+resources-stop = Dừng
+resources-stop-confirm = Dừng { $name }?
+resources-stop-consequence = Công việc đang chạy sẽ bị gián đoạn.
+resources-cancel = Hủy
+resources-exited = Đã thoát
+resources-exited-just-now = Vừa thoát
+resources-exited-minutes = Đã thoát { $minutes } phút trước
+resources-exited-hours = Đã thoát { $hours } giờ trước
+resources-cpu-row = { $percent }% CPU
+resources-origin-tab = Tab terminal
+resources-origin-launched = Được khởi chạy bởi { $tab }
+resources-origin-run-script = Script chạy
+resources-origin-panel = Terminal bảng điều khiển
+resources-origin-setup = Lệnh thiết lập
+resources-origin-git = Thao tác Git
+resources-origin-review = Đánh giá
+resources-activity-running = Đang chạy { $process }
+resources-activity-busy = Đang chạy
+resources-activity-idle = Nhàn rỗi
+resources-app = Ứng dụng
+resources-browser-services = Dịch vụ trình duyệt
+resources-browser-graphics = Đồ họa
+resources-browser-networking = Mạng
+resources-background = Tiến trình nền
+resources-background-pid = PID { $pid }
+resources-app-graphics = Đồ họa
+resources-app-graphics-info = Bề mặt cửa sổ và bộ nhớ GPU
+resources-app-held-for-reuse = Giữ để dùng lại
+resources-app-saved-wake = Đang ngủ
+resources-app-code-system = Mã và hệ thống
+resources-app-chats = Cuộc trò chuyện
+resources-app-chats-open = { $count } đang mở
+resources-app-chats-idle = { $count } nhàn rỗi
+resources-app-chats-history = Lịch sử trò chuyện
+resources-app-terminals = Terminal
+resources-app-terminals-count =
+    { $count ->
+        [one] 1 terminal
+       *[other] { $count } terminal
+    }
+resources-app-terminals-lines =
+    { $count ->
+        [one] 1 dòng
+       *[other] { $count } dòng
+    }
+resources-app-saved-count =
+    { $count ->
+        [one] 1 cây làm việc
+       *[other] { $count } cây làm việc
+    }
+resources-app-saved-info = Bộ nhớ giữ cho các cây làm việc đang ngủ để chúng mở lại ngay
+resources-app-background-count =
+    { $count ->
+        [one] 1 tiến trình
+       *[other] { $count } tiến trình
+    }
+resources-app-background-info = Git, lệnh trợ giúp và công cụ tác nhân do ứng dụng chạy mà không thuộc cây làm việc nào
+resources-app-background-brief = Lệnh ngắn
+resources-app-other-data = Dữ liệu
+resources-app-other-detail = Tăng theo số dự án và cây làm việc
+resources-app-held-for-reuse-detail = Bộ cấp phát giữ lại để dùng lại
+resources-app-code-system-detail = Mã chương trình và thư viện hệ thống
+resources-estimated = Ước tính
+resources-sleep-idle-chats = Cho cuộc trò chuyện nhàn rỗi ngủ
+resources-sleep-idle-chats-confirm =
+    { $count ->
+        [one] Cho 1 cuộc trò chuyện nhàn rỗi ngủ?
+       *[other] Cho { $count } cuộc trò chuyện nhàn rỗi ngủ?
+    }
+resources-frees-about = Giải phóng khoảng { $memory }
+resources-clear = Xóa
+resources-clear-confirm =
+    { $lines ->
+        [one] Xóa 1 dòng lịch sử cuộn?
+       *[other] Xóa { $lines } dòng lịch sử cuộn?
+    }
+resources-clear-consequence = Màn hình vẫn giữ nguyên.
+resources-clear-scrollback = Xóa lịch sử cuộn
+resources-clear-all-confirm =
+    { $count ->
+        [one] Xóa lịch sử cuộn trong 1 terminal?
+       *[other] Xóa lịch sử cuộn trong { $count } terminal?
+    }
+resources-chat-sleep-running = Đang chạy một lượt. Có thể ngủ khi lượt kết thúc.
+resources-chat-sleep-waiting = Đang chờ câu trả lời của bạn. Có thể ngủ sau khi bạn trả lời.
+resources-chat-sleep-unseen = Có phản hồi bạn chưa xem. Có thể ngủ sau khi bạn đọc.
+resources-chat-sleep-kept-ready = Được giữ sẵn để quay lại cây làm việc của nó nhanh chóng.
+resources-chat-sleep-on-screen = Đang hiển thị trên màn hình. Có thể ngủ khi không còn trong tầm nhìn.
+resources-chat-sleep-queued = Có tin nhắn đang xếp hàng. Có thể ngủ sau khi chúng được gửi.
+resources-chat-sleep-busy = Đang bận. Hãy thử lại sau giây lát.
+resources-info-title = { $total } được dùng vào đâu
+resources-info-summary = Ứng dụng, cùng mọi thứ nó đã khởi chạy cho bạn.
+resources-info-app = super.engineering
+resources-info-app-hint = Ứng dụng và các tiến trình trợ giúp nó chạy
+resources-info-agents-hint = Tác nhân của từng cuộc trò chuyện và các công cụ nó chạy
+resources-info-browser = Tab trình duyệt
+resources-info-browser-hint = Mỗi trang chạy trong tiến trình riêng
+resources-info-terminals-hint = Shell, script chạy và những gì chúng khởi chạy
+resources-info-remote = Chưa đo được cây làm việc từ xa.
+resources-pressure-warning = Bộ nhớ của Mac đang chịu áp lực. super.engineering dùng { $used } trên { $ram }.
+resources-pressure-warning-short = Bộ nhớ của Mac đang chịu áp lực.
+resources-pressure-critical = Bộ nhớ của Mac sắp cạn. super.engineering dùng { $used } trên { $ram }.
+resources-pressure-critical-others = Bộ nhớ của Mac sắp cạn, chủ yếu do các ứng dụng khác. super.engineering dùng { $used } trên { $ram }.
+resources-pressure-critical-short = Bộ nhớ của Mac sắp cạn.
+resources-thermal = Mac đang nóng và có thể chậm lại.
+resources-measurements-unavailable = Hiện không có số liệu bộ nhớ và CPU. Bạn vẫn có thể mở và quản lý tab.
+resources-loading = Đang tải tài nguyên…
+resources-empty = Không có tài nguyên phù hợp.
+resources-empty-all = Không có gì đang chạy.
+resources-empty-agents = Không có tác nhân nào đang chạy.
+resources-empty-browser = Không có tab trình duyệt nào đang mở.
+resources-empty-terminals = Không có terminal nào đang chạy.
+resources-tab-all = Tất cả
+resources-tab-agents = Tác nhân
+resources-tab-browser = Trình duyệt
+resources-tab-terminals = Terminal
+resources-fact-agents =
+    { $count ->
+        [one] tác nhân
+       *[other] tác nhân
+    }
+resources-fact-browser-tabs =
+    { $count ->
+        [one] tab trình duyệt
+       *[other] tab trình duyệt
+    }
+resources-fact-terminals =
+    { $count ->
+        [one] terminal
+       *[other] terminal
+    }
+resources-on-screen = Đang hiển thị trên màn hình nên vẫn thức
+resources-open = Mở
+resources-close = Đóng
+resources-close-confirm = Đóng { $name }?
+resources-close-consequence = Trang của nó sẽ đóng.
+resources-average-title = Trung bình mỗi tác nhân
+resources-average-each = Mỗi tác nhân
+resources-average-ten = 10 tác nhân
+resources-average-each-suffix = mỗi tác nhân
+resources-average-for-ten = cho 10 tác nhân
+resources-tree-more = +{ $count } nữa
+resources-app-item-detail = { $activity }, { $lines }
+resources-app-more-chats =
+    { $count ->
+        [one] Thêm 1 cuộc trò chuyện
+       *[other] Thêm { $count } cuộc trò chuyện
+    }
+resources-app-more-terminals =
+    { $count ->
+        [one] Thêm 1 terminal
+       *[other] Thêm { $count } terminal
+    }
+issue-report-check-submission = Kiểm tra việc gửi
+issue-report-submission-uncertain = Báo cáo này có thể đã có trên GitHub. Hãy kiểm tra việc gửi để tìm báo cáo; việc kiểm tra không bao giờ đăng lại. Nếu vẫn chưa tìm thấy, hãy đợi rồi kiểm tra lại, hoặc xem các issue của bạn trên GitHub trước khi bỏ bản nháp này.
+issue-report-discard-uncertain = Bỏ bản nháp (báo cáo có thể đã tồn tại)
+issue-report-draft-load-failed = Không thể đọc báo cáo đã lưu của bạn. Hãy khắc phục sự cố lưu trữ và khởi động lại ứng dụng trước khi gửi báo cáo khác.
+review-comment-edit-staged = Hãy gỡ bài đánh giá này khỏi khung soạn thảo trước khi chỉnh sửa.

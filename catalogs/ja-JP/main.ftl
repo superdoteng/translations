@@ -570,10 +570,7 @@ section-value-review-required = レビューが必要
 section-value-running = 実行中
 section-value-stopped = 停止
 section-value-working = 作業中
-toast-remove-from-app = { $app_name } から削除
-toast-browser-automation-disabled-title = エージェントがブラウザーを使用しようとしました
-toast-browser-automation-disabled = ブラウザーの自動操作がオフのため、エージェントのコマンドは拒否されました。エージェントがブラウザーのタブを読み取り、操作できるようにするには、設定 › 試験的 でオンにしてください。
-toast-open-experimental-settings = 設定を開く
+toast-remove-from-app = 削除
 validation-name-required = 名前が必要です
 welcome-clone-from-url = URL からクローン
 welcome-clone-from-url-description = リモートリポジトリをクローン
@@ -1276,8 +1273,6 @@ settings-experimental-remote-workspaces-label = リモートワークスペー�
 settings-experimental-remote-workspaces-description = SSH 経由でリモートマシン上にワークスペースを作成します。無効にしても、既存のリモートワークスペースは引き続き使用できます。
 settings-experimental-non-git-projects-label = Git を使用しないプロジェクト
 settings-experimental-non-git-projects-description = Git メタデータのないフォルダーを追加できるようにします。無効にしても、既存の通常フォルダープロジェクトは引き続き表示されます。
-settings-experimental-browser-automation-label = ブラウザーの自動操作
-settings-experimental-browser-automation-description = エージェントがブラウザー操作コマンドを使用できるようにします。ブラウザー操作には引き続きワークスペースの権限が必要です。
 settings-experimental-chat-artifacts-label = チャットのアーティファクト
 settings-experimental-chat-artifacts-description = エージェントが HTML ページを公開し、チャット内でライブ表示できるようにします。ページはサンドボックス内でオフラインで実行されます。
 settings-experimental-auto-compact-label = コンテキストウィンドウの上限到達時に Claude Code を自動圧縮
@@ -1440,6 +1435,8 @@ settings-search-entry-general-behavior-show-cmd-number-hints-on-cmd-hold-label =
 settings-search-entry-general-behavior-show-cmd-number-hints-on-cmd-hold-description = Command キーを 0.5 秒間押し続けると、ワークツリーまたはタブの番号付きショートカットを表示します。
 settings-search-entry-general-behavior-use-cmd-number-to-switch-tabs-label = Cmd+数字でタブを切り替える
 settings-search-entry-general-behavior-use-cmd-number-to-switch-tabs-description = Cmd+1～Cmd+9 でワークツリーを切り替える代わりに、アクティブなワークツリー内のタブを選択します。
+settings-search-entry-general-behavior-project-header-click-label = プロジェクト名のクリック
+settings-search-entry-general-behavior-project-header-click-description = サイドバーでプロジェクト名をクリックしたときの動作を選びます。名前の横の矢印は常に展開と折りたたみを行います。
 settings-search-entry-general-behavior-confirm-before-quitting-label = 終了前に確認
 settings-search-entry-general-behavior-confirm-before-quitting-description = Cmd+Q を押すかメニューから「終了」を選択したときに、確認メッセージを表示します。
 settings-search-entry-general-behavior-confirm-before-closing-a-running-tab-label = 実行中のタブを閉じる前に確認
@@ -1622,8 +1619,6 @@ settings-search-entry-experimental-feature-flags-non-git-projects-label = Git �
 settings-search-entry-experimental-feature-flags-non-git-projects-description = Git メタデータのないフォルダーを追加できるようにします。
 settings-search-entry-general-behavior-agent-orchestration-label = エージェントオーケストレーション
 settings-search-entry-general-behavior-agent-orchestration-description = エージェントがオーケストレーションコマンドを利用できるようにします。使用するたびに、引き続きあなたからの明示的かつ該当するリクエストが必要です。
-settings-search-entry-experimental-feature-flags-browser-automation-label = ブラウザーの自動操作
-settings-search-entry-experimental-feature-flags-browser-automation-description = エージェントがブラウザー操作コマンドを使用できるようにします。ブラウザー操作には引き続きワークスペースの権限が必要です。
 settings-search-entry-agents-session-context-session-context-for-agents-label = エージェントのセッション コンテキスト
 settings-search-entry-agents-session-context-session-context-for-agents-description = 新しいエージェントセッションに super.engineering のコンテキストを追加するか、コンテキストの自動挿入をオフにします。
 settings-search-entry-experimental-feature-flags-auto-compact-claude-code-on-context-window-limit-label = コンテキストウィンドウの上限到達時に Claude Code を自動圧縮
@@ -1957,8 +1952,6 @@ script-commands-more = ほか { $count } 件
 setup-not-configured = セットアップスクリプトが構成されていません
 review-submitted-reviews = 送信済みレビュー
 review-ai-questions = AI の質問
-review-no-comments = レビューコメントはまだありません
-review-select-lines-hint = 差分内の行を選択してレビューを開始します。
 sidebar-ssh = SSH
 shared-context-generate-ai-context = AI コンテキストを生成
 action-generate = 生成
@@ -1994,7 +1987,6 @@ review-add-to-fix-list = 修正リストに追加
 review-submit-replies = 返信を送信
 review-submit-from-tab = 「レビュー」タブから送信 →
 review-ai-findings = AI の指摘
-review-findings-triage-count = 要確認：{ $count }
 review-findings-to-triage = 確認が必要な AI の指摘：{ $count }
 review-finding-should-fix = 要修正
 review-finding-dismiss = 却下
@@ -2042,7 +2034,6 @@ context-output = 出力
 context-total-io = 合計 I/O
 context-input-effective = 実効入力
 profile-cli-default = CLI の既定値
-review-no-active-comments = アクティブなレビューコメントはありません。
 permission-tools = ツール
 permission-ask = 確認
 permission-yolo = YOLO
@@ -2096,9 +2087,10 @@ chat-thinking-in-progress = 思考中
 chat-thinking-count = 思考中（{ $count }）
 chat-thinking-summary = 思考中 · { $summary }
 chat-working-for = 作業中
-chat-agent-wait-caption = { $count ->
-   *[other] 報告が届くと { $model } が続行します
-}
+chat-agent-wait-caption =
+    { $count ->
+       *[other] 完了すると { $model } が続行します
+    }
 chat-worked-for = 作業時間：{ $duration }
 chat-worked = 作業済み
 plan-proposed = プラン提案済み
@@ -2152,7 +2144,6 @@ image-preview-load-failed = 画像を読み込めませんでした
 hosted-tab-unavailable = この機能を利用できないため、このタブを表示できません。
 file-tree-new-file = 新しいファイル
 file-tree-new-folder = 新しいフォルダー
-review-suggestion = 修正候補
 pr-merged = マージ済み
 pr-closed = クローズ済み
 pr-update-available = 更新があります
@@ -2216,9 +2207,6 @@ review-open-chat-first = 先にチャットまたはエージェントのター�
 review-no-pending-comments = 保留中のレビューコメントはありません
 review-no-enabled-chat-providers = 有効なチャットプロバイダーがありません
 review-no-enabled-agents = 有効なエージェントがありません
-review-comment-count = コメント：{ $count }
-review-review-count = レビュー：{ $count }
-review-awaiting-reply-count = 返信待ち：{ $count }
 review-file-count = ファイル：{ $count }
 settings-ai-codex-profile-directory-missing = Codex プロファイルディレクトリが見つかりません。このプロファイルを起動する前に作成してください。
 common-subagent = サブエージェント
@@ -2311,8 +2299,6 @@ target-branch-push-description = 新しく作成したターゲットブラン�
 toast-error = エラー
 toast-busy = 処理中
 toast-review = レビュー
-toast-review-comments-title = レビューコメント（{ $count }）
-toast-review-comments-message = 新しいレビューコメントが { $count } 件あります。最新：{ $latest }
 toast-update-branch-failed = ブランチの更新に失敗しました
 toast-keymap-error = キーマップエラー
 toast-keymap-load-failed = キーマップを読み込めませんでした：{ $error }
@@ -2489,8 +2475,6 @@ git-run-action-in-new-tab = アクションを新しいタブで実行
 git-run-action = アクションを実行
 right-panel-new-terminal = 新しいターミナル
 setup-stop-script = セットアップスクリプトを停止
-run-open-port = ポート { $port } を開く
-run-open-preview = プレビューを開く
 run-stop-script = 実行スクリプトを停止
 run-rerun-workspace = ワークスペースを再実行
 workspace-close-tab = タブを閉じる
@@ -2685,6 +2669,11 @@ sidebar-hide-primary-worktree = メインワークツリーを非表示
 sidebar-edit-section = 編集…
 sidebar-move-section-up = 上へ移動
 sidebar-move-section-down = 下へ移動
+sidebar-sort-projects-by = プロジェクトの並べ替え
+sidebar-sort-projects-name = 名前
+sidebar-sort-projects-path = パス
+sidebar-collapse-all-projects = すべてのプロジェクトを折りたたむ
+sidebar-expand-all-projects = すべてのプロジェクトを展開
 file-menu-open-in-terminal = ターミナルで開く
 shared-context-edit-projects = プロジェクトを編集…
 
@@ -2752,8 +2741,6 @@ shared-context-depth-simple-tooltip = README、マニフェスト、フォルダ
 shared-context-depth-thorough = 詳細
 shared-context-depth-thorough-summary = 最初に質問を行い、コードベースを分析してからワークスペースのガイダンスを生成します。
 shared-context-depth-thorough-tooltip = 確認事項を質問して目標を確認した後、コードを詳細に分析します。
-right-panel-show-gitignored-files = Git で無視されたファイルを表示
-right-panel-hide-gitignored-files = Git で無視されたファイルを非表示
 workspace-hold-command-for-chat-ui = ⌘ を押したままにするとチャット UI を開きます
 workspace-hold-command-for-terminal = ⌘ を押したままにするとターミナルを開きます
 tool-picker-no-matches = 一致する項目はありません
@@ -3046,6 +3033,12 @@ settings-orchestrated-worktrees-auto = 自動
 settings-orchestrated-worktrees-auto-description = エージェントがそこで作業中、またはあなたの対応が必要な間は開きます。
 settings-orchestrated-worktrees-collapsed = 折りたたむ
 settings-orchestrated-worktrees-collapsed-description = 自分で開くまで常に折りたたみます。
+settings-project-header-click-toggle = 展開/折りたたみ
+settings-project-header-click-toggle-description = プロジェクトのワークツリーを表示または非表示にします。
+settings-project-header-click-open-primary = プライマリワークツリーを開く
+settings-project-header-click-open-primary-description = プロジェクトのメインのチェックアウトを開きます。
+settings-project-header-click-auto = 自動
+settings-project-header-click-auto-description = プライマリワークツリーが唯一の場合は開き、それ以外は展開または折りたたみます。
 settings-orchestrated-worktrees-expanded = 展開する
 settings-orchestrated-worktrees-expanded-description = 常に開きます。
 settings-search-entry-appearance-layout-orchestrated-worktrees-description = チャットが作業を委任した作業ツリーを、サイドバーのそのチャットの下でどのように開くか選択します。
@@ -3710,7 +3703,6 @@ worktree-step-setup = セットアップを実行中
 
 worktree-step-opening-agent = { $agent } を開いています
 
-chat-waiting-on-agents = { $count } 個のエージェントを待機中…
 
 chat-shell-mode = シェルコマンド
 
@@ -3773,6 +3765,7 @@ chat-files-changed-shared = このターン中、別のチャットもこのワ�
 chat-files-changed-unattributed = このターン中、別のチャットもこのワークツリーで作業していました。薄く表示されたファイルはその作業中に変更されており、そのチャットによる変更の可能性があります。
 
 chat-files-changed-snapshot-failed = このターンのワークツリーのスナップショットを作成できなかったため、ツールが報告したファイルのみを表示します。
+chat-files-changed-snapshot-partial = このターンの一部のリポジトリのスナップショットを作成できなかったため、それらについてはツールが報告したファイルのみを表示します。
 
 palette-mode-all = すべて
 
@@ -4273,3 +4266,362 @@ issue-report-action-draft-agent = エージェントで下書き
 issue-report-action-copy-markdown = Markdown としてコピー
 
 issue-report-action-email = 非公開でメール送信
+
+browser-dialog-title = { $host } からのメッセージ
+browser-dialog-title-page = このページからのメッセージ
+section-rule-path = パスの glob パターン
+settings-search-entry-agents-providers-jcode-provider-label = jcode プロバイダー
+settings-search-entry-agents-providers-jcode-provider-description = jcode を有効にし、モデルと起動フラグを設定します。
+settings-ai-provider-jcode-description = jcode をチャットとターミナルのプロバイダーとして有効にします（jcode CLI `jcode` のインストールが必要です）。チャットでは jcode 自身の設定で許可されたすべてのツールが実行されます。jcode は実行前に承認を求めることができません。
+settings-keybinding-action-paste-as-secret = シークレットとして貼り付け
+clone-waiting-for-stop = クローン処理の停止を待っています…
+toast-review-comments = レビューコメント
+toast-report-issue = 報告
+toast-rex-session-display-failed = Rex セッションは作成されましたが、表示できませんでした
+toast-rex-enable-remote-control = Rex の設定 → Rex Server で Remote Control を有効にして、既存のセッションを選択してください。再度開くと別のセッションが作成されます。
+toast-rex-select-existing-session = Rex で既存のセッションを選択してください。再度開くと別のセッションが作成されます。
+toast-open-app-failed = 選択したアプリを開けませんでした
+toast-open-app-failed-message = アプリがインストールされ、利用可能なことを確認してください。「詳細」を展開するとエラーを確認できます。
+chat-forward = 転送
+chat-forward-search-placeholder = 転送先…
+chat-forward-no-chats = ほかに開いているチャットはありません
+chat-forward-failed-title = 転送できません
+chat-forward-failed-message = 転送先のチャットは利用できなくなったか、読み取り専用です。
+workspace-path-copied = パスをコピーしました
+workspace-link-copied = リンクをコピーしました
+workspace-copy-chat-link = チャットへのリンクをコピー
+workspace-chat-link-copy-failed = チャットへのリンクをコピーできませんでした
+workspace-chat-link-copied = チャットへのリンクをコピーしました
+run-app-on-phone = スマートフォンで開く
+run-app-scan-hint = 同じ Wi-Fi に接続したスマートフォンでスキャンしてください。
+palette-section-go-to = 移動
+palette-navigation-worktrees = { $count } 個のワークツリー
+secret-request-title = エージェントがシークレットを求めています
+secret-request-asked-by = 「{ $asker }」からの要求: { $label }
+secret-request-asked-by-agent = エージェントからの要求: { $label }
+secret-request-placeholder = シークレットを貼り付けるか入力してください
+secret-request-note = 非公開ファイルに保存され、チャットには含まれません。エージェントのコマンドは 24 時間読み取れます。
+secret-request-save = 非公開で保存
+secret-request-show = シークレットを表示
+secret-request-hide = シークレットを非表示
+secret-request-decline = 拒否
+secret-request-save-failed = 非公開で保存できませんでした: { $error }
+chat-secret-pill-token = { $issuer } トークン
+chat-secret-pill-private-key = 秘密鍵
+chat-secret-pill-secret = シークレット
+chat-secret-card-kind = 非公開で保持
+chat-secret-card-detail = 値の代わりに非公開ファイルのパスがエージェントに渡されます。エージェントのコマンドはそのファイルを読み取ることができ、ファイルは 24 時間後に削除されます。
+chat-secret-card-paste-as-text = テキストとして貼り付け
+chat-secret-store-failed = シークレットを非公開で保持できなかったため、貼り付けませんでした。もう一度貼り付けるとプレーンテキストとして貼り付けられます。
+chat-secret-paste-moved = シークレットを非公開で保持している間に下書きが変更されたため、貼り付けませんでした。もう一度貼り付けてください。
+chat-paste-moved = 貼り付け内容の確認中に下書きが変更されたため、貼り付けませんでした。もう一度貼り付けてください。
+chat-secret-expired = シークレットのファイルがなくなったため、テキストとして貼り付けられません。もう一度貼り付けてください。
+chat-artifact-annotate = 注釈を付ける
+right-sidebar-filter-files = ファイルを絞り込む
+right-sidebar-collapse-all-folders = すべてのフォルダーを折りたたむ
+right-sidebar-reveal-open-file = 開いているファイルを表示
+exit-save-failed-title = アプリの状態を保存できません
+exit-save-failed-description = 最新のアプリの状態が保存されていません。{ $error }。ストレージの問題を解決して再試行するか、保存せずに続行してください。
+exit-restart-without-saving = 保存せずに再起動
+exit-quit-without-saving = 保存せずに終了
+
+settings-experimental-resource-monitor-label = リソースモニター
+settings-experimental-resource-monitor-description = タイトルバーに「リソース」ボタンを表示し、ワークツリー、タブ、ヘルパープロセスごとのメモリと CPU を確認できるようにします。
+settings-search-section-resources = リソース
+settings-search-entry-appearance-resources-show-freeable-memory-label = 解放可能なメモリを表示
+settings-search-entry-appearance-resources-show-freeable-memory-description = アイドル状態のタブをスリープすると解放できるメモリ量を「リソース」ボタンに表示し、Mac のメモリが逼迫しているときはボタンに色を付けます。
+settings-section-resources = リソース
+chat-queued-waiting-to-steer = 方針変更を待機中
+chat-queued-action-no-longer-queued = このメッセージはもうキューにありません。
+chat-queued-steer-failed = このメッセージで方針を変更できませんでした。
+chat-queued-change-failed = このメッセージを変更できませんでした。
+changes-empty-detail = このワークツリーであなたやエージェントが加えた編集がここに表示されます。
+changes-empty-turns = ターンはまだありません
+changes-empty-turns-detail = エージェントがファイルを変更すると、そのファイルを変更したターンの下に表示されます。
+changes-empty-commits = コミットはまだありません
+changes-empty-commits-detail = このブランチのコミットがここに表示されます。
+changes-empty-all-viewed = すべて閲覧済み
+changes-empty-all-viewed-detail = 変更されたファイルをすべて開きました。
+review-delivery-prepared = { $target } に準備済み
+review-delivery-sent = { $target } に送信済み
+review-delivery-dispatched = バックグラウンドで { $target } に送信済み
+review-delivery-a-chat = チャット
+review-delivery-a-terminal = ターミナル
+review-location-whole-file = ファイル全体
+review-tooltip-more-lines =
+    { $count ->
+       *[other] 他 { $count } 行
+    }
+review-location-line = { $line } 行目
+review-location-lines = { $start }～{ $end } 行目
+review-pending-summary =
+    { $files ->
+        [1] コメント { $comments } 件
+       *[other] { $files } 個のファイルにコメント { $comments } 件
+    }
+review-view-open = 未対応
+review-view-done = 完了
+review-your-comments = あなたのコメント
+review-nothing-to-review = レビューするものはありません
+review-nothing-to-review-detail = 差分に残したコメントや、プルリクエストのレビュースレッドがここに表示されます。
+review-review-changes = 変更をレビュー
+review-comment-hint = または差分の行を選択してコメント
+review-all-caught-up = すべて対応済み
+review-all-caught-up-detail = 対応待ちの項目はありません。
+review-see-done = 完了した項目を見る
+review-nothing-done = 完了した項目はまだありません
+review-nothing-done-detail = 送信したコメントや解決済みのスレッドがここに表示されます。
+review-pull-request = プルリクエスト #{ $number }
+review-pull-request-untitled = プルリクエスト
+review-waiting-on-reviewers = #{ $number } にはまだ誰もコメントしていません。
+review-resolved-on-pr = #{ $number } で解決済み
+review-pr-refresh = プルリクエストのコメントを更新
+review-pr-loading = コメントを読み込み中…
+review-pr-load-failed = プルリクエストのコメントを読み込めませんでした。更新して再試行してください。
+review-pr-older-hidden = 古いスレッドは表示されません。
+review-pr-overview-truncated = ここに表示されていないスレッドがあります。
+review-thread-resolve = 解決
+review-thread-unresolve = 未解決に戻す
+review-thread-resolving = 解決中…
+review-thread-unresolving = 未解決に戻しています…
+review-thread-update-failed = 更新できませんでした。再試行してください。
+review-thread-outdated = 古い
+review-thread-byline =
+    { $replies ->
+        [0] { $author } が { $age }にコメント
+       *[other] { $author } が { $age }にコメント、返信 { $replies } 件
+    }
+checks-path-to-merge = マージまでの手順
+checks-step-committed = 変更をコミット済み
+checks-step-pushed = プッシュ済み
+checks-step-unpushed =
+    { $count ->
+       *[other] プッシュ待ちのコミット { $count } 件
+    }
+checks-step-review-open = { $kind } オープン中
+checks-step-checks = チェック
+checks-step-running = チェック実行中
+checks-behind-target =
+    { $count ->
+       *[other] { $target } より { $count } コミット遅れ
+    }
+right-panel-view-options = 表示オプション
+right-panel-view-changes = 変更
+right-panel-view-gitignored-files = Git で無視されたファイル
+diff-viewed-toggle = 閲覧済み
+diff-since-viewed-note = 閲覧後に { $agent } がこのファイルを変更しました。それ以降の変更を表示しています。
+diff-since-viewed-note-unattributed = 閲覧後にこのファイルが変更されました。それ以降の変更を表示しています。
+diff-since-viewed-show-full = 差分全体を表示
+diff-turn-review-writing = レビューを作成中…
+diff-turn-review-passed = 成功
+diff-turn-review-failed = 失敗
+diff-turn-review-not-checked = 未確認：{ $what }
+diff-turn-review-more-checks = 他 { $count } 件
+diff-turn-review-looks-good = 問題なし
+diff-turn-review-comment-hint = 行にコメントして変更を依頼
+right-sidebar-new = 新規
+right-sidebar-show-comments = コメントを表示
+right-sidebar-hint-move = 移動
+right-sidebar-hint-viewed = 閲覧済み
+right-sidebar-hint-next-unviewed = 次の未閲覧
+right-sidebar-hint-open = 開く
+right-sidebar-commit-message = コミットメッセージ
+right-sidebar-writing-message = メッセージを作成中
+right-sidebar-write-message = メッセージを作成
+right-sidebar-commit-file-count =
+    { $count ->
+       *[other] ファイル { $count } 個
+    }
+right-sidebar-commit = コミット
+right-sidebar-commit-and-push = コミットしてプッシュ
+right-sidebar-amend-last-commit = 直前のコミットを修正
+right-sidebar-committing = コミット中
+right-sidebar-committed = コミット済み
+right-sidebar-push = プッシュ
+right-sidebar-unviewed = 未閲覧
+changes-file-count =
+    { $count ->
+       *[other] ファイル { $count } 個
+    }
+right-sidebar-mark-all-viewed =
+    { $count ->
+        [1] 1 個のファイルを閲覧済みにする
+       *[other] { $count } 個のファイルをすべて閲覧済みにする
+    }
+right-sidebar-all-viewed = すべてのファイルを閲覧済み
+right-sidebar-viewed = 閲覧済み
+right-sidebar-changed-since-viewed = 閲覧後に変更あり
+right-sidebar-changed-since-viewed-by = 閲覧後に { $agent } が変更しました
+right-sidebar-changed-since-viewed-count =
+    { $count ->
+       *[other] 閲覧後に変更されたファイル { $count } 個
+    }
+right-sidebar-view-all = すべて
+right-sidebar-view-turns = ターン
+right-sidebar-turn-working = 作業中
+right-sidebar-other-changes = その他の変更
+right-sidebar-probable-file = このターンの実行中に変更
+right-sidebar-probable-file-detail = ツールから報告されていないため、他の人による編集の可能性があります。ターン終了時に確定します。
+resources-title = リソース
+resources-search = リソースまたはプロジェクトを検索
+resources-search-tooltip = 検索
+resources-remote = リモート
+resources-asleep = スリープ中
+resources-held-info = このワークツリーをすぐに再開できるよう、画面と最近のチャットをアプリのメモリに保持しています。「アプリ」の「スリープ中」に計上されます。画面はスリープから 15 分後に解放されます。
+resources-cpu = CPU
+resources-cpu-history = 直近 1 分間の CPU。履歴は「リソース」を開いている間に記録されます。
+resources-reclaim =
+    { $count ->
+       *[other] アイドル状態のタブ { $count } 個をスリープすると約 { $memory } を解放できます
+    }
+resources-sleep-idle = アイドルをスリープ
+resources-freed = { $memory } を解放しました
+resources-sleep = スリープ
+resources-sleep-tooltip = プロセスを解放します。開くと履歴を保ったまま再開します。
+resources-wake = 再開
+resources-stop = 停止
+resources-stop-confirm = { $name } を停止しますか？
+resources-stop-consequence = 実行中の作業は中断されます。
+resources-cancel = キャンセル
+resources-exited = 終了
+resources-exited-just-now = たった今終了
+resources-exited-minutes = { $minutes } 分前に終了
+resources-exited-hours = { $hours } 時間前に終了
+resources-cpu-row = CPU { $percent }%
+resources-origin-tab = ターミナルタブ
+resources-origin-launched = { $tab } から起動
+resources-origin-run-script = 実行スクリプト
+resources-origin-panel = パネルのターミナル
+resources-origin-setup = セットアップコマンド
+resources-origin-git = Git 操作
+resources-origin-review = レビュー
+resources-activity-running = { $process } を実行中
+resources-activity-busy = 実行中
+resources-activity-idle = アイドル
+resources-app = アプリ
+resources-browser-services = ブラウザーサービス
+resources-browser-graphics = グラフィックス
+resources-browser-networking = ネットワーク
+resources-background = バックグラウンドプロセス
+resources-background-pid = PID { $pid }
+resources-app-graphics = グラフィックス
+resources-app-graphics-info = ウィンドウのサーフェスと GPU メモリ
+resources-app-held-for-reuse = 再利用のため保持
+resources-app-saved-wake = スリープ中
+resources-app-code-system = コードとシステム
+resources-app-chats = チャット
+resources-app-chats-open = { $count } 件を表示中
+resources-app-chats-idle = { $count } 件がアイドル
+resources-app-chats-history = チャット履歴
+resources-app-terminals = ターミナル
+resources-app-terminals-count =
+    { $count ->
+       *[other] ターミナル { $count } 個
+    }
+resources-app-terminals-lines =
+    { $count ->
+       *[other] { $count } 行
+    }
+resources-app-saved-count =
+    { $count ->
+       *[other] ワークツリー { $count } 個
+    }
+resources-app-saved-info = スリープ中のワークツリーをすぐに再開できるよう保持しているメモリ
+resources-app-background-count =
+    { $count ->
+       *[other] プロセス { $count } 個
+    }
+resources-app-background-info = アプリが実行する、どのワークツリーにも属さない Git、ヘルパーコマンド、エージェントツール
+resources-app-background-brief = 短時間のコマンド
+resources-app-other-data = データ
+resources-app-other-detail = プロジェクトやワークツリーの数に応じて増加
+resources-app-held-for-reuse-detail = アロケーターが再利用のために保持
+resources-app-code-system-detail = プログラムコードとシステムライブラリ
+resources-estimated = 推定
+resources-sleep-idle-chats = アイドル状態のチャットをスリープ
+resources-sleep-idle-chats-confirm =
+    { $count ->
+       *[other] アイドル状態のチャット { $count } 件をスリープしますか？
+    }
+resources-frees-about = 約 { $memory } を解放
+resources-clear = クリア
+resources-clear-confirm =
+    { $lines ->
+       *[other] スクロールバックを { $lines } 行クリアしますか？
+    }
+resources-clear-consequence = 画面はそのまま残ります。
+resources-clear-scrollback = スクロールバックをクリア
+resources-clear-all-confirm =
+    { $count ->
+       *[other] { $count } 個のターミナルのスクロールバックをクリアしますか？
+    }
+resources-chat-sleep-running = ターンを実行中です。ターンが終わるとスリープできます。
+resources-chat-sleep-waiting = 回答を待っています。回答するとスリープできます。
+resources-chat-sleep-unseen = 未読の返信があります。読むとスリープできます。
+resources-chat-sleep-kept-ready = ワークツリーにすぐ戻れるよう待機させています。
+resources-chat-sleep-on-screen = 画面に表示中です。表示されなくなるとスリープできます。
+resources-chat-sleep-queued = キューにメッセージがあります。送信されるとスリープできます。
+resources-chat-sleep-busy = 現在処理中です。しばらくしてから再試行してください。
+resources-info-title = { $total } の内訳
+resources-info-summary = アプリと、アプリが起動したすべてのもの。
+resources-info-app = super.engineering
+resources-info-app-hint = アプリと、アプリが実行するヘルパープロセス
+resources-info-agents-hint = 各チャットのエージェントと、エージェントが実行するツール
+resources-info-browser = ブラウザータブ
+resources-info-browser-hint = 各ページは個別のプロセスで動作します
+resources-info-terminals-hint = シェル、実行スクリプト、およびそれらが起動したもの
+resources-info-remote = リモートワークツリーはまだ計測されません。
+resources-pressure-warning = Mac のメモリが逼迫しています。super.engineering は { $ram } のうち { $used } を使用しています。
+resources-pressure-warning-short = Mac のメモリが逼迫しています。
+resources-pressure-critical = Mac のメモリが極端に不足しています。super.engineering は { $ram } のうち { $used } を使用しています。
+resources-pressure-critical-others = Mac のメモリが極端に不足しています。主な原因は他のアプリです。super.engineering は { $ram } のうち { $used } を使用しています。
+resources-pressure-critical-short = Mac のメモリが極端に不足しています。
+resources-thermal = Mac の温度が上昇しており、動作が遅くなる可能性があります。
+resources-measurements-unavailable = 現在メモリと CPU の情報を取得できません。タブを開いたり管理したりすることはできます。
+resources-loading = リソースを読み込み中…
+resources-empty = 一致するリソースはありません。
+resources-empty-all = 実行中のものはありません。
+resources-empty-agents = 実行中のエージェントはありません。
+resources-empty-browser = 開いているブラウザータブはありません。
+resources-empty-terminals = 実行中のターミナルはありません。
+resources-tab-all = すべて
+resources-tab-agents = エージェント
+resources-tab-browser = ブラウザー
+resources-tab-terminals = ターミナル
+resources-fact-agents =
+    { $count ->
+       *[other] エージェント
+    }
+resources-fact-browser-tabs =
+    { $count ->
+       *[other] ブラウザータブ
+    }
+resources-fact-terminals =
+    { $count ->
+       *[other] ターミナル
+    }
+resources-on-screen = 画面に表示中のため、スリープしません
+resources-open = 開く
+resources-close = 閉じる
+resources-close-confirm = { $name } を閉じますか？
+resources-close-consequence = ページが閉じられます。
+resources-average-title = エージェントあたりの平均
+resources-average-each = 1 個あたり
+resources-average-ten = エージェント 10 個
+resources-average-each-suffix = ずつ
+resources-average-for-ten = 10 個分
+resources-tree-more = +{ $count } 件
+resources-app-item-detail = { $activity }、{ $lines }
+resources-app-more-chats =
+    { $count ->
+       *[other] さらにチャット { $count } 件
+    }
+resources-app-more-terminals =
+    { $count ->
+       *[other] さらにターミナル { $count } 個
+    }
+issue-report-check-submission = 送信状況を確認
+issue-report-submission-uncertain = このレポートはすでに GitHub にある可能性があります。送信状況を確認して探してください。確認しても再投稿されることはありません。まだ見つからない場合は、しばらく待ってから再確認するか、この下書きを破棄する前に GitHub の自分の Issue を確認してください。
+issue-report-discard-uncertain = 下書きを破棄（レポートがすでに存在する可能性があります）
+issue-report-draft-load-failed = 保存したレポートを読み取れませんでした。別のレポートを送信する前に、ストレージの問題を解決してアプリを再起動してください。
+review-comment-edit-staged = 編集する前に、このレビューを入力欄から削除してください。

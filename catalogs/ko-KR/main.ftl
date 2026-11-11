@@ -575,10 +575,7 @@ section-value-review-required = 리뷰 필요
 section-value-running = 실행 중
 section-value-stopped = 중지됨
 section-value-working = 작업 중
-toast-remove-from-app = { $app_name }에서 제거
-toast-browser-automation-disabled-title = 에이전트가 브라우저를 사용하려고 했습니다
-toast-browser-automation-disabled = 브라우저 자동화가 꺼져 있어 에이전트의 명령이 거부되었습니다. 에이전트가 브라우저 탭을 읽고 제어할 수 있도록 설정 › 실험 기능에서 켜세요.
-toast-open-experimental-settings = 설정 열기
+toast-remove-from-app = 제거
 validation-name-required = 이름이 필요합니다
 welcome-clone-from-url = URL에서 클론
 welcome-clone-from-url-description = 원격 저장소 클론
@@ -1138,8 +1135,6 @@ settings-experimental-non-git-projects-label = Git이 아닌 프로젝트
 settings-experimental-non-git-projects-description = Git 메타데이터가 없는 폴더도 추가할 수 있습니다. 이 기능을 꺼도 기존 일반 폴더 프로젝트는 계속 표시됩니다.
 settings-experimental-automations-label = 자동화
 settings-experimental-automations-description = 예약·이벤트 기반 자동화를 만듭니다. 초기 미리보기이며 아직 완전히 테스트되지 않았습니다.
-settings-experimental-browser-automation-label = 브라우저 자동화
-settings-experimental-browser-automation-description = 에이전트가 브라우저 제어 명령을 사용할 수 있게 합니다. 브라우저 동작에는 여전히 워크스페이스 권한이 필요합니다.
 settings-experimental-chat-artifacts-label = 채팅 아티팩트
 settings-experimental-chat-artifacts-description = 에이전트가 채팅에서 실시간으로 표시되는 HTML 페이지를 게시할 수 있게 합니다. 페이지는 샌드박스에서 오프라인으로 실행됩니다.
 settings-experimental-auto-compact-label = 컨텍스트 윈도우 한도 도달 시 Claude Code 자동 압축
@@ -1305,6 +1300,8 @@ settings-search-entry-general-behavior-show-cmd-number-hints-on-cmd-hold-label =
 settings-search-entry-general-behavior-show-cmd-number-hints-on-cmd-hold-description = Command 키를 0.5초 동안 누르고 있으면 워크트리나 탭의 번호 단축키를 표시합니다.
 settings-search-entry-general-behavior-use-cmd-number-to-switch-tabs-label = Cmd+숫자로 탭 전환
 settings-search-entry-general-behavior-use-cmd-number-to-switch-tabs-description = 워크트리를 전환하는 대신 Cmd+1~Cmd+9로 활성 워크트리의 탭을 선택합니다.
+settings-search-entry-general-behavior-project-header-click-label = 프로젝트 이름 클릭
+settings-search-entry-general-behavior-project-header-click-description = 사이드바에서 프로젝트 이름을 클릭할 때의 동작을 선택합니다. 이름 옆의 화살표는 항상 펼치고 접습니다.
 settings-search-entry-general-behavior-confirm-before-quitting-label = 종료 전에 확인
 settings-search-entry-general-behavior-confirm-before-quitting-description = Cmd+Q를 누르거나 메뉴에서 종료를 선택하면 확인 메시지를 표시합니다.
 settings-search-entry-general-behavior-confirm-before-closing-a-running-tab-label = 실행 중인 탭을 닫기 전에 확인
@@ -1499,8 +1496,6 @@ settings-search-entry-general-behavior-agent-orchestration-label = 에이전트 
 settings-search-entry-general-behavior-agent-orchestration-description = 에이전트가 오케스트레이션 명령을 사용할 수 있게 합니다. 사용할 때마다 여전히 사용자의 명시적인 요청이 필요합니다.
 settings-search-entry-experimental-feature-flags-automations-label = 자동화
 settings-search-entry-experimental-feature-flags-automations-description = 예약·이벤트 기반 자동화를 만듭니다. 초기 미리보기이며 아직 완전히 테스트되지 않았습니다.
-settings-search-entry-experimental-feature-flags-browser-automation-label = 브라우저 자동화
-settings-search-entry-experimental-feature-flags-browser-automation-description = 에이전트가 브라우저 제어 명령을 사용할 수 있게 합니다. 브라우저 동작에는 여전히 워크스페이스 권한이 필요합니다.
 settings-search-entry-agents-session-context-session-context-for-agents-label = 에이전트용 세션 컨텍스트
 settings-search-entry-agents-session-context-session-context-for-agents-description = 새 에이전트 세션에 super.engineering 컨텍스트를 추가하거나, 자동 추가를 끕니다.
 settings-search-entry-experimental-feature-flags-auto-compact-claude-code-on-context-window-limit-label = 컨텍스트 윈도우 한도 도달 시 Claude Code 자동 압축
@@ -2163,8 +2158,6 @@ script-commands-more = { $count }개 더
 setup-not-configured = 구성된 셋업 스크립트가 없습니다
 review-submitted-reviews = 제출된 리뷰
 review-ai-questions = AI 질문
-review-no-comments = 아직 리뷰 댓글이 없습니다
-review-select-lines-hint = diff에서 줄을 선택해 리뷰를 시작하세요.
 sidebar-ssh = SSH
 shared-context-generate-ai-context = AI 컨텍스트 생성
 action-generate = 생성
@@ -2197,7 +2190,6 @@ review-add-to-fix-list = 수정 목록에 추가
 review-submit-replies = 답글 제출
 review-submit-from-tab = 리뷰 탭에서 제출 →
 review-ai-findings = AI 발견 사항
-review-findings-triage-count = 분류 대기: { $count }
 review-findings-to-triage = 분류할 AI 발견 사항: { $count }
 review-finding-should-fix = 수정 필요
 review-finding-dismiss = 무시
@@ -2254,7 +2246,6 @@ chat-message-tokens-not-reported = 보고되지 않음
 context-total-io = 전체 I/O
 context-input-effective = 실효 입력
 profile-cli-default = CLI 기본값
-review-no-active-comments = 활성 리뷰 댓글이 없습니다.
 permission-tools = 도구
 permission-ask = 묻기
 permission-yolo = Yolo
@@ -2309,9 +2300,10 @@ chat-thinking-count = 생각 중 ({ $count })
 chat-thinking-summary = 생각 중 · { $summary }
 # Live duration is a separate RunTimerView entity, so this prefix cannot take a Fluent placeable.
 chat-working-for = 작업 시간
-chat-agent-wait-caption = { $count ->
-   *[other] 보고가 도착하면 { $model } 모델이 이어서 작업합니다
-}
+chat-agent-wait-caption =
+    { $count ->
+       *[other] 완료되면 { $model } 모델이 이어서 작업합니다
+    }
 chat-worked-for = { $duration } 동안 작업함
 chat-worked = 작업함
 chat-send-failed = 이 채팅으로 보낼 수 없습니다. 다시 보내 보세요.
@@ -2371,7 +2363,6 @@ image-preview-load-failed = 이미지를 불러오지 못했습니다
 hosted-tab-unavailable = 해당 기능을 사용할 수 없어 이 탭을 표시할 수 없습니다.
 file-tree-new-file = 새 파일
 file-tree-new-folder = 새 폴더
-review-suggestion = 제안
 pr-merged = 병합됨
 pr-closed = 닫힘
 pr-update-available = 업데이트 가능
@@ -2435,9 +2426,6 @@ review-open-chat-first = 먼저 채팅 또는 에이전트 터미널 탭을 여�
 review-no-pending-comments = 대기 중인 리뷰 댓글 없음
 review-no-enabled-chat-providers = 활성화된 채팅 제공자 없음
 review-no-enabled-agents = 활성화된 에이전트 없음
-review-comment-count = 댓글: { $count }
-review-review-count = 리뷰: { $count }
-review-awaiting-reply-count = 답글 대기: { $count }
 review-file-count = 파일: { $count }
 settings-ai-codex-profile-directory-missing = Codex 프로필 디렉터리를 찾을 수 없습니다. 이 프로필을 실행하기 전에 디렉터리를 만드세요.
 common-subagent = 서브에이전트
@@ -2536,8 +2524,6 @@ target-branch-push-description = 새로 만든 대상 브랜치를 origin에 푸
 toast-error = 오류
 toast-busy = 사용 중
 toast-review = 리뷰
-toast-review-comments-title = 리뷰 댓글 ({ $count })
-toast-review-comments-message = 새 리뷰 댓글 { $count }개. 최신: { $latest }
 toast-update-branch-failed = 브랜치 업데이트 실패
 toast-keymap-error = 키맵 오류
 toast-keymap-load-failed = 키맵을 불러오지 못했습니다: { $error }
@@ -2726,8 +2712,6 @@ git-run-action-in-new-tab = 새 탭에서 동작 실행
 git-run-action = 동작 실행
 right-panel-new-terminal = 새 터미널
 setup-stop-script = 셋업 스크립트 중지
-run-open-port = :{ $port } 열기
-run-open-preview = 미리보기 열기
 run-stop-script = 실행 스크립트 중지
 run-rerun-workspace = 워크스페이스 다시 실행
 workspace-close-tab = 탭 닫기
@@ -2905,6 +2889,11 @@ sidebar-hide-primary-worktree = 기본 워크트리 숨기기
 sidebar-edit-section = 편집…
 sidebar-move-section-up = 위로 이동
 sidebar-move-section-down = 아래로 이동
+sidebar-sort-projects-by = 프로젝트 정렬 기준
+sidebar-sort-projects-name = 이름
+sidebar-sort-projects-path = 경로
+sidebar-collapse-all-projects = 프로젝트 모두 접기
+sidebar-expand-all-projects = 프로젝트 모두 펼치기
 file-menu-open-in-terminal = 터미널에서 열기
 shared-context-edit-projects = 프로젝트 편집…
 history-load-backfill = 기록 불러오기 / 백필
@@ -2972,8 +2961,6 @@ shared-context-depth-simple-tooltip = 가벼운 스캔(README, 매니페스트, 
 shared-context-depth-thorough = 정밀
 shared-context-depth-thorough-summary = 먼저 인터뷰한 뒤 코드베이스를 분석하고 워크스페이스 가이드를 생성합니다.
 shared-context-depth-thorough-tooltip = 궁금한 점을 질문하고 목표를 확인한 뒤 코드를 더 깊이 살펴봅니다.
-right-panel-show-gitignored-files = gitignore된 파일 표시
-right-panel-hide-gitignored-files = gitignore된 파일 숨기기
 workspace-hold-command-for-chat-ui = ⌘을 누르고 있으면 채팅 UI
 workspace-hold-command-for-terminal = ⌘을 누르고 있으면 터미널
 tool-picker-no-matches = 일치하는 항목 없음
@@ -3306,6 +3293,12 @@ settings-orchestrated-worktrees-auto = 자동
 settings-orchestrated-worktrees-auto-description = 해당 워크트리의 에이전트가 작업 중이거나 사용자의 응답이 필요할 때 펼칩니다.
 settings-orchestrated-worktrees-collapsed = 접힘
 settings-orchestrated-worktrees-collapsed-description = 직접 펼치기 전까지 항상 접어 둡니다.
+settings-project-header-click-toggle = 펼치기/접기
+settings-project-header-click-toggle-description = 프로젝트의 워크트리를 표시하거나 숨깁니다.
+settings-project-header-click-open-primary = 기본 워크트리 열기
+settings-project-header-click-open-primary-description = 프로젝트의 기본 체크아웃을 엽니다.
+settings-project-header-click-auto = 자동
+settings-project-header-click-auto-description = 기본 워크트리가 유일하면 열고, 그렇지 않으면 펼치거나 접습니다.
 settings-orchestrated-worktrees-expanded = 펼침
 settings-orchestrated-worktrees-expanded-description = 항상 펼쳐 둡니다.
 settings-search-entry-appearance-layout-orchestrated-worktrees-description = 채팅이 작업을 맡긴 워크트리를 사이드바의 해당 채팅 아래에 펼칠지 접을지 선택합니다.
@@ -3663,7 +3656,6 @@ worktree-step-setup = 설정 실행 중
 
 worktree-step-opening-agent = { $agent } 여는 중
 
-chat-waiting-on-agents = 에이전트 { $count }개 대기 중…
 
 chat-shell-mode = 셸 명령
 
@@ -3726,6 +3718,7 @@ chat-files-changed-shared = 이 턴 동안 다른 채팅도 이 워크트리에�
 chat-files-changed-unattributed = 이 턴 동안 다른 채팅도 이 워크트리에서 작업했습니다. 흐리게 표시된 파일은 다른 채팅의 작업 중 변경되었으며 해당 채팅이 변경했을 수 있습니다.
 
 chat-files-changed-snapshot-failed = 이 턴의 워크트리 스냅샷을 만들 수 없어 도구에서 보고한 파일만 나열합니다.
+chat-files-changed-snapshot-partial = 이 턴의 일부 저장소 스냅샷을 만들 수 없어 해당 저장소는 도구에서 보고한 파일만 나열합니다.
 
 palette-mode-all = 전체
 
@@ -4226,3 +4219,362 @@ issue-report-action-draft-agent = 에이전트로 초안 작성
 issue-report-action-copy-markdown = Markdown으로 복사
 
 issue-report-action-email = 비공개 이메일로 보내기
+
+browser-dialog-title = { $host }의 메시지
+browser-dialog-title-page = 이 페이지의 메시지
+section-rule-path = 경로 glob 패턴
+settings-search-entry-agents-providers-jcode-provider-label = jcode 제공자
+settings-search-entry-agents-providers-jcode-provider-description = jcode를 활성화하고 모델과 실행 플래그를 설정합니다.
+settings-ai-provider-jcode-description = jcode를 채팅 및 터미널 제공자로 활성화합니다(jcode CLI `jcode` 설치 필요). 채팅에서는 jcode 자체 설정이 허용하는 모든 도구를 실행하며, jcode는 실행 전에 승인을 요청할 수 없습니다.
+settings-keybinding-action-paste-as-secret = 비밀 정보로 붙여넣기
+clone-waiting-for-stop = 복제 프로세스가 중지되기를 기다리는 중…
+toast-review-comments = 리뷰 댓글
+toast-report-issue = 신고
+toast-rex-session-display-failed = Rex 세션을 만들었지만 표시하지 못했습니다
+toast-rex-enable-remote-control = Rex 설정 → Rex Server에서 Remote Control을 활성화한 다음 기존 세션을 선택하세요. 다시 열면 다른 세션이 만들어집니다.
+toast-rex-select-existing-session = Rex에서 기존 세션을 선택하세요. 다시 열면 다른 세션이 만들어집니다.
+toast-open-app-failed = 선택한 앱을 열지 못했습니다
+toast-open-app-failed-message = 앱이 설치되어 있고 사용 가능한지 확인하세요. 자세히 보기를 펼치면 오류를 확인할 수 있습니다.
+chat-forward = 전달
+chat-forward-search-placeholder = 전달 대상…
+chat-forward-no-chats = 열려 있는 다른 채팅이 없습니다
+chat-forward-failed-title = 전달할 수 없음
+chat-forward-failed-message = 대상 채팅을 더 이상 사용할 수 없거나 읽기 전용입니다.
+workspace-path-copied = 경로 복사됨
+workspace-link-copied = 링크 복사됨
+workspace-copy-chat-link = 채팅 링크 복사
+workspace-chat-link-copy-failed = 채팅 링크를 복사하지 못했습니다
+workspace-chat-link-copied = 채팅 링크 복사됨
+run-app-on-phone = 휴대전화에서 열기
+run-app-scan-hint = 같은 Wi-Fi에 연결된 휴대전화로 스캔하세요.
+palette-section-go-to = 이동
+palette-navigation-worktrees = 워크트리 { $count }개
+secret-request-title = 에이전트가 비밀 정보를 요청합니다
+secret-request-asked-by = “{ $asker }”의 요청: { $label }
+secret-request-asked-by-agent = 에이전트의 요청: { $label }
+secret-request-placeholder = 비밀 정보를 붙여넣거나 입력하세요
+secret-request-note = 비공개 파일에 저장되며 채팅에 포함되지 않습니다. 에이전트의 명령은 24시간 동안 읽을 수 있습니다.
+secret-request-save = 비공개로 저장
+secret-request-show = 비밀 정보 표시
+secret-request-hide = 비밀 정보 숨기기
+secret-request-decline = 거절
+secret-request-save-failed = 비공개로 저장하지 못했습니다: { $error }
+chat-secret-pill-token = { $issuer } 토큰
+chat-secret-pill-private-key = 개인 키
+chat-secret-pill-secret = 비밀 정보
+chat-secret-card-kind = 비공개로 보관됨
+chat-secret-card-detail = 에이전트에는 값 대신 비공개 파일의 경로가 전달됩니다. 에이전트의 명령은 해당 파일을 읽을 수 있으며, 파일은 24시간 후 삭제됩니다.
+chat-secret-card-paste-as-text = 텍스트로 붙여넣기
+chat-secret-store-failed = 비밀 정보를 비공개로 보관하지 못해 붙여넣지 않았습니다. 다시 붙여넣으면 일반 텍스트로 붙여넣습니다.
+chat-secret-paste-moved = 비밀 정보를 비공개로 보관하는 동안 초안이 변경되어 붙여넣지 않았습니다. 다시 붙여넣으세요.
+chat-paste-moved = 붙여넣기 내용을 확인하는 동안 초안이 변경되어 붙여넣지 않았습니다. 다시 붙여넣으세요.
+chat-secret-expired = 비밀 정보 파일이 없어 텍스트로 붙여넣을 수 없습니다. 다시 붙여넣으세요.
+chat-artifact-annotate = 주석 달기
+right-sidebar-filter-files = 파일 필터링
+right-sidebar-collapse-all-folders = 모든 폴더 접기
+right-sidebar-reveal-open-file = 열린 파일 표시
+exit-save-failed-title = 앱 상태를 저장할 수 없음
+exit-save-failed-description = 최신 앱 상태가 저장되지 않았습니다. { $error }. 저장 공간 문제를 해결한 후 다시 시도하거나 저장하지 않고 계속하세요.
+exit-restart-without-saving = 저장하지 않고 다시 시작
+exit-quit-without-saving = 저장하지 않고 종료
+
+settings-experimental-resource-monitor-label = 리소스 모니터
+settings-experimental-resource-monitor-description = 제목 표시줄에 리소스 버튼을 표시하고, 워크트리, 탭, 헬퍼 프로세스별 메모리와 CPU를 보여 줍니다.
+settings-search-section-resources = 리소스
+settings-search-entry-appearance-resources-show-freeable-memory-label = 확보 가능한 메모리 표시
+settings-search-entry-appearance-resources-show-freeable-memory-description = 유휴 탭을 잠자기 상태로 전환하면 확보할 수 있는 메모리 양을 리소스 버튼에 표시하고, Mac의 메모리 사용량이 높으면 버튼에 색을 표시합니다.
+settings-section-resources = 리소스
+chat-queued-waiting-to-steer = 방향 전환 대기 중
+chat-queued-action-no-longer-queued = 이 메시지는 더 이상 대기열에 없습니다.
+chat-queued-steer-failed = 이 메시지로 방향을 전환하지 못했습니다.
+chat-queued-change-failed = 이 메시지를 변경하지 못했습니다.
+changes-empty-detail = 이 워크트리에서 사용자나 에이전트가 수정한 내용이 여기에 표시됩니다.
+changes-empty-turns = 아직 턴이 없습니다
+changes-empty-turns-detail = 에이전트가 파일을 변경하면 해당 파일을 변경한 턴 아래에 표시됩니다.
+changes-empty-commits = 아직 커밋이 없습니다
+changes-empty-commits-detail = 이 브랜치의 커밋이 여기에 표시됩니다.
+changes-empty-all-viewed = 모두 확인함
+changes-empty-all-viewed-detail = 변경된 파일을 모두 열어 봤습니다.
+review-delivery-prepared = { $target }에 준비됨
+review-delivery-sent = { $target }(으)로 보냄
+review-delivery-dispatched = 백그라운드에서 { $target }(으)로 보냄
+review-delivery-a-chat = 채팅
+review-delivery-a-terminal = 터미널
+review-location-whole-file = 파일 전체
+review-tooltip-more-lines =
+    { $count ->
+       *[other] { $count }줄 더 있음
+    }
+review-location-line = { $line }번 줄
+review-location-lines = { $start }–{ $end }번 줄
+review-pending-summary =
+    { $files ->
+        [1] 댓글 { $comments }개
+       *[other] 파일 { $files }개에 댓글 { $comments }개
+    }
+review-view-open = 열림
+review-view-done = 완료
+review-your-comments = 내 댓글
+review-nothing-to-review = 리뷰할 항목이 없습니다
+review-nothing-to-review-detail = diff에 남긴 댓글과 풀 리퀘스트의 리뷰 스레드가 여기에 표시됩니다.
+review-review-changes = 변경 사항 리뷰
+review-comment-hint = 또는 diff에서 줄을 선택해 댓글 달기
+review-all-caught-up = 모두 처리했습니다
+review-all-caught-up-detail = 처리를 기다리는 항목이 없습니다.
+review-see-done = 완료된 항목 보기
+review-nothing-done = 아직 완료된 항목이 없습니다
+review-nothing-done-detail = 보낸 댓글과 해결된 스레드가 여기에 표시됩니다.
+review-pull-request = 풀 리퀘스트 #{ $number }
+review-pull-request-untitled = 풀 리퀘스트
+review-waiting-on-reviewers = 아직 아무도 #{ $number }에 댓글을 달지 않았습니다.
+review-resolved-on-pr = #{ $number }에서 해결됨
+review-pr-refresh = 풀 리퀘스트 댓글 새로고침
+review-pr-loading = 댓글 불러오는 중…
+review-pr-load-failed = 풀 리퀘스트 댓글을 불러오지 못했습니다. 새로고침해서 다시 시도하세요.
+review-pr-older-hidden = 이전 스레드는 표시되지 않습니다.
+review-pr-overview-truncated = 일부 스레드는 여기에 표시되지 않습니다.
+review-thread-resolve = 해결
+review-thread-unresolve = 미해결로 표시
+review-thread-resolving = 해결하는 중…
+review-thread-unresolving = 미해결로 표시하는 중…
+review-thread-update-failed = 업데이트하지 못했습니다. 다시 시도하세요.
+review-thread-outdated = 오래됨
+review-thread-byline =
+    { $replies ->
+        [0] { $author }님이 { $age } 댓글 작성
+       *[other] { $author }님이 { $age } 댓글 작성, 답글 { $replies }개
+    }
+checks-path-to-merge = 병합까지 남은 단계
+checks-step-committed = 변경 사항 커밋됨
+checks-step-pushed = 푸시됨
+checks-step-unpushed =
+    { $count ->
+       *[other] 푸시할 커밋 { $count }개
+    }
+checks-step-review-open = { $kind } 열림
+checks-step-checks = 체크
+checks-step-running = 체크 실행 중
+checks-behind-target =
+    { $count ->
+       *[other] { $target }보다 커밋 { $count }개 뒤처짐
+    }
+right-panel-view-options = 보기 옵션
+right-panel-view-changes = 변경 사항
+right-panel-view-gitignored-files = gitignore된 파일
+diff-viewed-toggle = 확인함
+diff-since-viewed-note = 확인한 후 { $agent }이(가) 이 파일을 변경했습니다. 그 이후의 변경 사항을 표시합니다.
+diff-since-viewed-note-unattributed = 확인한 후 이 파일이 변경되었습니다. 그 이후의 변경 사항을 표시합니다.
+diff-since-viewed-show-full = 전체 diff 보기
+diff-turn-review-writing = 리뷰 작성 중…
+diff-turn-review-passed = 통과
+diff-turn-review-failed = 실패
+diff-turn-review-not-checked = 확인 안 됨: { $what }
+diff-turn-review-more-checks = { $count }개 더
+diff-turn-review-looks-good = 문제 없음
+diff-turn-review-comment-hint = 줄에 댓글을 달아 변경을 요청하세요
+right-sidebar-new = 신규
+right-sidebar-show-comments = 댓글 표시
+right-sidebar-hint-move = 이동
+right-sidebar-hint-viewed = 확인함
+right-sidebar-hint-next-unviewed = 다음 미확인 항목
+right-sidebar-hint-open = 열기
+right-sidebar-commit-message = 커밋 메시지
+right-sidebar-writing-message = 메시지 작성 중
+right-sidebar-write-message = 메시지 작성
+right-sidebar-commit-file-count =
+    { $count ->
+       *[other] 파일 { $count }개
+    }
+right-sidebar-commit = 커밋
+right-sidebar-commit-and-push = 커밋하고 푸시
+right-sidebar-amend-last-commit = 마지막 커밋 수정
+right-sidebar-committing = 커밋 중
+right-sidebar-committed = 커밋됨
+right-sidebar-push = 푸시
+right-sidebar-unviewed = 미확인
+changes-file-count =
+    { $count ->
+       *[other] 파일 { $count }개
+    }
+right-sidebar-mark-all-viewed =
+    { $count ->
+        [1] 파일 1개를 확인함으로 표시
+       *[other] 파일 { $count }개 모두 확인함으로 표시
+    }
+right-sidebar-all-viewed = 모든 파일 확인함
+right-sidebar-viewed = 확인함
+right-sidebar-changed-since-viewed = 확인한 후 변경됨
+right-sidebar-changed-since-viewed-by = 확인한 후 { $agent }이(가) 변경했습니다
+right-sidebar-changed-since-viewed-count =
+    { $count ->
+       *[other] 확인한 후 변경된 파일 { $count }개
+    }
+right-sidebar-view-all = 전체
+right-sidebar-view-turns = 턴
+right-sidebar-turn-working = 작업 중
+right-sidebar-other-changes = 기타 변경 사항
+right-sidebar-probable-file = 이 턴이 실행되는 동안 변경됨
+right-sidebar-probable-file-detail = 도구가 보고하지 않았으므로 다른 사람이 수정했을 수 있습니다. 턴이 끝나면 확정됩니다.
+resources-title = 리소스
+resources-search = 리소스 또는 프로젝트 검색
+resources-search-tooltip = 검색
+resources-remote = 원격
+resources-asleep = 잠자기 중
+resources-held-info = 이 워크트리를 바로 다시 열 수 있도록 화면과 최근 채팅을 앱 메모리에 보관하며, 앱 탭의 잠자기 중 항목에 포함됩니다. 화면은 잠자기 15분 후 해제됩니다.
+resources-cpu = CPU
+resources-cpu-history = 최근 1분간의 CPU입니다. 기록은 리소스를 열어 둔 동안 쌓입니다.
+resources-reclaim =
+    { $count ->
+       *[other] 유휴 탭 { $count }개를 잠자기 상태로 전환하면 약 { $memory }을(를) 확보할 수 있습니다
+    }
+resources-sleep-idle = 유휴 항목 잠자기
+resources-freed = { $memory } 확보함
+resources-sleep = 잠자기
+resources-sleep-tooltip = 프로세스를 해제합니다. 열면 기록을 유지한 채 다시 깨어납니다.
+resources-wake = 깨우기
+resources-stop = 중지
+resources-stop-confirm = { $name }을(를) 중지할까요?
+resources-stop-consequence = 실행 중인 작업이 중단됩니다.
+resources-cancel = 취소
+resources-exited = 종료됨
+resources-exited-just-now = 방금 종료됨
+resources-exited-minutes = { $minutes }분 전 종료됨
+resources-exited-hours = { $hours }시간 전 종료됨
+resources-cpu-row = CPU { $percent }%
+resources-origin-tab = 터미널 탭
+resources-origin-launched = { $tab }에서 시작됨
+resources-origin-run-script = 실행 스크립트
+resources-origin-panel = 패널 터미널
+resources-origin-setup = 셋업 명령
+resources-origin-git = Git 작업
+resources-origin-review = 리뷰
+resources-activity-running = { $process } 실행 중
+resources-activity-busy = 실행 중
+resources-activity-idle = 유휴
+resources-app = 앱
+resources-browser-services = 브라우저 서비스
+resources-browser-graphics = 그래픽
+resources-browser-networking = 네트워킹
+resources-background = 백그라운드 프로세스
+resources-background-pid = PID { $pid }
+resources-app-graphics = 그래픽
+resources-app-graphics-info = 창 서피스와 GPU 메모리
+resources-app-held-for-reuse = 재사용을 위해 보유
+resources-app-saved-wake = 잠자기 중
+resources-app-code-system = 코드 및 시스템
+resources-app-chats = 채팅
+resources-app-chats-open = { $count }개 열림
+resources-app-chats-idle = { $count }개 유휴
+resources-app-chats-history = 채팅 기록
+resources-app-terminals = 터미널
+resources-app-terminals-count =
+    { $count ->
+       *[other] 터미널 { $count }개
+    }
+resources-app-terminals-lines =
+    { $count ->
+       *[other] { $count }줄
+    }
+resources-app-saved-count =
+    { $count ->
+       *[other] 워크트리 { $count }개
+    }
+resources-app-saved-info = 잠자기 중인 워크트리를 바로 다시 열 수 있도록 보관하는 메모리
+resources-app-background-count =
+    { $count ->
+       *[other] 프로세스 { $count }개
+    }
+resources-app-background-info = 앱이 실행하며 어느 워크트리에도 속하지 않는 Git, 헬퍼 명령, 에이전트 도구
+resources-app-background-brief = 짧은 명령
+resources-app-other-data = 데이터
+resources-app-other-detail = 프로젝트와 워크트리 수에 따라 증가
+resources-app-held-for-reuse-detail = 할당자가 재사용을 위해 보유
+resources-app-code-system-detail = 프로그램 코드와 시스템 라이브러리
+resources-estimated = 추정치
+resources-sleep-idle-chats = 유휴 채팅 잠자기
+resources-sleep-idle-chats-confirm =
+    { $count ->
+       *[other] 유휴 채팅 { $count }개를 잠자기 상태로 전환할까요?
+    }
+resources-frees-about = 약 { $memory } 확보
+resources-clear = 지우기
+resources-clear-confirm =
+    { $lines ->
+       *[other] 스크롤백 { $lines }줄을 지울까요?
+    }
+resources-clear-consequence = 화면은 그대로 유지됩니다.
+resources-clear-scrollback = 스크롤백 지우기
+resources-clear-all-confirm =
+    { $count ->
+       *[other] 터미널 { $count }개의 스크롤백을 지울까요?
+    }
+resources-chat-sleep-running = 턴을 실행 중입니다. 턴이 끝나면 잠자기 상태로 전환할 수 있습니다.
+resources-chat-sleep-waiting = 답변을 기다리고 있습니다. 답변하면 잠자기 상태로 전환할 수 있습니다.
+resources-chat-sleep-unseen = 확인하지 않은 응답이 있습니다. 읽고 나면 잠자기 상태로 전환할 수 있습니다.
+resources-chat-sleep-kept-ready = 워크트리로 빠르게 돌아올 수 있도록 준비 상태로 유지합니다.
+resources-chat-sleep-on-screen = 화면에 표시되어 있습니다. 화면에서 벗어나면 잠자기 상태로 전환할 수 있습니다.
+resources-chat-sleep-queued = 대기 중인 메시지가 있습니다. 전송되면 잠자기 상태로 전환할 수 있습니다.
+resources-chat-sleep-busy = 지금은 사용 중입니다. 잠시 후 다시 시도하세요.
+resources-info-title = { $total } 사용 내역
+resources-info-summary = 앱과 앱이 시작한 모든 항목입니다.
+resources-info-app = super.engineering
+resources-info-app-hint = 앱과 앱이 실행하는 헬퍼 프로세스
+resources-info-agents-hint = 각 채팅의 에이전트와 에이전트가 실행하는 도구
+resources-info-browser = 브라우저 탭
+resources-info-browser-hint = 각 페이지는 별도의 프로세스에서 실행됩니다
+resources-info-terminals-hint = 셸, 실행 스크립트와 이들이 시작한 항목
+resources-info-remote = 원격 워크트리는 아직 측정하지 않습니다.
+resources-pressure-warning = Mac 메모리 사용량이 높습니다. super.engineering이 { $ram } 중 { $used }을(를) 사용하고 있습니다.
+resources-pressure-warning-short = Mac 메모리 사용량이 높습니다.
+resources-pressure-critical = Mac 메모리가 심각하게 부족합니다. super.engineering이 { $ram } 중 { $used }을(를) 사용하고 있습니다.
+resources-pressure-critical-others = Mac 메모리가 심각하게 부족하며, 대부분 다른 앱 때문입니다. super.engineering은 { $ram } 중 { $used }을(를) 사용하고 있습니다.
+resources-pressure-critical-short = Mac 메모리가 심각하게 부족합니다.
+resources-thermal = Mac이 과열되어 느려질 수 있습니다.
+resources-measurements-unavailable = 지금은 메모리와 CPU 정보를 확인할 수 없습니다. 탭을 열고 관리하는 것은 계속할 수 있습니다.
+resources-loading = 리소스 불러오는 중…
+resources-empty = 일치하는 리소스가 없습니다.
+resources-empty-all = 실행 중인 항목이 없습니다.
+resources-empty-agents = 실행 중인 에이전트가 없습니다.
+resources-empty-browser = 열린 브라우저 탭이 없습니다.
+resources-empty-terminals = 실행 중인 터미널이 없습니다.
+resources-tab-all = 전체
+resources-tab-agents = 에이전트
+resources-tab-browser = 브라우저
+resources-tab-terminals = 터미널
+resources-fact-agents =
+    { $count ->
+       *[other] 에이전트
+    }
+resources-fact-browser-tabs =
+    { $count ->
+       *[other] 브라우저 탭
+    }
+resources-fact-terminals =
+    { $count ->
+       *[other] 터미널
+    }
+resources-on-screen = 화면에 표시되어 있어 깨어 있는 상태로 유지됩니다
+resources-open = 열기
+resources-close = 닫기
+resources-close-confirm = { $name }을(를) 닫을까요?
+resources-close-consequence = 해당 페이지가 닫힙니다.
+resources-average-title = 에이전트당 평균
+resources-average-each = 개당
+resources-average-ten = 에이전트 10개
+resources-average-each-suffix = 씩
+resources-average-for-ten = 10개 기준
+resources-tree-more = +{ $count }개 더
+resources-app-item-detail = { $activity }, { $lines }
+resources-app-more-chats =
+    { $count ->
+       *[other] 채팅 { $count }개 더
+    }
+resources-app-more-terminals =
+    { $count ->
+       *[other] 터미널 { $count }개 더
+    }
+issue-report-check-submission = 제출 상태 확인
+issue-report-submission-uncertain = 이 보고서가 이미 GitHub에 있을 수 있습니다. 제출 상태를 확인하여 찾아보세요. 확인 시 다시 게시되지 않습니다. 아직 찾을 수 없다면 잠시 기다린 후 다시 확인하거나, 이 초안을 삭제하기 전에 GitHub에서 본인의 이슈를 검토하세요.
+issue-report-discard-uncertain = 초안 삭제 (보고서가 이미 있을 수 있음)
+issue-report-draft-load-failed = 저장된 보고서를 읽을 수 없습니다. 다른 보고서를 제출하기 전에 저장소 문제를 해결하고 앱을 다시 시작하세요.
+review-comment-edit-staged = 편집하기 전에 입력창에서 이 리뷰를 제거하세요.

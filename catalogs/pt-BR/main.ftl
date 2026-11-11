@@ -563,10 +563,7 @@ section-value-review-required = Revisão necessária
 section-value-running = Corrida
 section-value-stopped = Parou
 section-value-working = Funcionamento
-toast-remove-from-app = Remover de { $app_name }
-toast-browser-automation-disabled-title = Um agente tentou usar o navegador
-toast-browser-automation-disabled = A automação do navegador está desativada, então o comando do agente foi recusado. Ative-a em Ajustes › Experimental para permitir que agentes leiam e controlem as abas do seu navegador.
-toast-open-experimental-settings = Abrir Ajustes
+toast-remove-from-app = Remover
 validation-name-required = O nome é necessário
 welcome-clone-from-url = Clone de URL
 welcome-clone-from-url-description = Clone um repositório remoto
@@ -1116,8 +1113,6 @@ script-commands-more = Mais { $count }
 setup-not-configured = Nenhum script de configuração configurado
 review-submitted-reviews = Avaliações enviadas
 review-ai-questions = AI perguntas
-review-no-comments = Ainda não houve comentários de avaliação
-review-select-lines-hint = Selecione linhas no diferencial para iniciar uma revisão.
 sidebar-ssh = SSH
 shared-context-generate-ai-context = Gerar AI Contexto
 action-generate = Gerar
@@ -1153,7 +1148,6 @@ review-add-to-fix-list = Adicionar à Lista de Correções
 review-submit-replies = Enviar Respostas
 review-submit-from-tab = Envie pela aba de Revisão →
 review-ai-findings = AI apontamentos
-review-findings-triage-count = A triar: { $count }
 review-findings-to-triage = Apontamentos de AI a triar: { $count }
 review-finding-should-fix = Corrigir
 review-finding-dismiss = Descartar
@@ -1190,7 +1184,6 @@ context-output = Produção
 context-total-io = Total I/O
 context-input-effective = Entrada eficaz
 profile-cli-default = CLI padrão
-review-no-active-comments = Sem comentários ativos de avaliação.
 permission-tools = Ferramentas
 permission-ask = Pergunte
 permission-yolo = Yolo
@@ -1244,10 +1237,11 @@ chat-thinking-in-progress = Pensando…
 chat-thinking-count = Pensando ({ $count })
 chat-thinking-summary = Pensando · { $summary }
 chat-working-for = Trabalhando por
-chat-agent-wait-caption = { $count ->
-    [one] { $model } continua quando o agente responder
-   *[other] { $model } continua quando os agentes responderem
-}
+chat-agent-wait-caption =
+    { $count ->
+        [one] { $model } continua quando terminar
+       *[other] { $model } continua quando terminarem
+    }
 chat-worked-for = Trabalhou por { $duration }
 chat-worked = Trabalhou
 plan-proposed = PLANO PROPOSTO
@@ -1294,7 +1288,6 @@ image-preview-load-failed = Falhou ao carregar a imagem
 hosted-tab-unavailable = Não é possível mostrar esta aba porque o recurso dela não está disponível.
 file-tree-new-file = Novo Arquivo
 file-tree-new-folder = Nova Pasta
-review-suggestion = Sugestão
 pr-merged = Fusão
 pr-closed = Fechado
 pr-update-available = Atualização disponível
@@ -1399,8 +1392,6 @@ target-branch-push-description = Escolha se quer empurrar o novo ramo de alvo cr
 toast-error = Erro
 toast-busy = Ocupado
 toast-review = Análise
-toast-review-comments-title = Comentários de revisão ({ $count })
-toast-review-comments-message = { $count } comentários sobre novas avaliações. Mais recente: { $latest }
 toast-update-branch-failed = Branch de atualização falhou
 toast-keymap-error = Erro de keymap
 toast-keymap-load-failed = Não carregou o keymap: { $error }
@@ -1557,9 +1548,6 @@ review-no-pending-comments = Sem comentários pendentes sobre avaliações
 review-no-enabled-chat-providers = Sem provedores de chat habilitados
 review-no-enabled-agents = Sem agentes habilitados
 
-review-comment-count = Comentários: { $count }
-review-review-count = Críticas: { $count }
-review-awaiting-reply-count = Aguardando respostas: { $count }
 review-file-count = Arquivos: { $count }
 
 settings-ai-codex-profile-directory-missing = Codex diretório de perfil não encontrado. Crie-o antes de lançar este perfil.
@@ -1753,6 +1741,8 @@ settings-search-entry-general-behavior-show-cmd-number-hints-on-cmd-hold-label =
 settings-search-entry-general-behavior-show-cmd-number-hints-on-cmd-hold-description = Segure o Command por 0,5 segundos para mostrar atalhos numerados para árvores de trabalho ou tabulações.
 settings-search-entry-general-behavior-use-cmd-number-to-switch-tabs-label = Use Cmd+número para trocar de abas
 settings-search-entry-general-behavior-use-cmd-number-to-switch-tabs-description = Use Cmd+1 a Cmd+9 para selecionar abas na árvore de trabalho ativa em vez de trocar de árvore de trabalho.
+settings-search-entry-general-behavior-project-header-click-label = Ao clicar no nome de um projeto
+settings-search-entry-general-behavior-project-header-click-description = Escolha o que acontece ao clicar no nome de um projeto na barra lateral. A seta ao lado do nome sempre expande e recolhe.
 settings-search-entry-general-behavior-confirm-before-quitting-label = Confirme antes de pedir demissão
 settings-search-entry-general-behavior-confirm-before-quitting-description = Mostre um prompt de confirmação ao apertar Cmd+Q ou escolher Sair no menu.
 settings-search-entry-general-behavior-confirm-before-closing-a-running-tab-label = Confirme antes de fechar uma aba em andamento
@@ -2190,8 +2180,6 @@ git-run-action-in-new-tab = Executar ação na nova aba
 git-run-action = Ação de corrida
 right-panel-new-terminal = Novo terminal
 setup-stop-script = Script de parada de configuração
-run-open-port = Aberto :{ $port }
-run-open-preview = Prévia aberta
 run-stop-script = Script de parar e executar
 run-rerun-workspace = Reexecute o espaço de trabalho
 workspace-close-tab = Fechar aba
@@ -2387,6 +2375,11 @@ sidebar-hide-primary-worktree = Ocultar árvore de trabalho primária
 sidebar-edit-section = Edit...
 sidebar-move-section-up = Avance
 sidebar-move-section-down = Desça
+sidebar-sort-projects-by = Ordenar projetos por
+sidebar-sort-projects-name = Nome
+sidebar-sort-projects-path = Caminho
+sidebar-collapse-all-projects = Recolher todos os projetos
+sidebar-expand-all-projects = Expandir todos os projetos
 file-menu-open-in-terminal = Abrir no Terminal
 shared-context-edit-projects = Editar projetos...
 history-load-backfill = Histórico de Carga / Preenchimento
@@ -2687,8 +2680,6 @@ shared-context-depth-simple-tooltip = Configuração rápida com varredura leve 
 shared-context-depth-thorough = Completo
 shared-context-depth-thorough-summary = Faça a entrevista primeiro, depois analise o código antes de gerar orientações para o workspace.
 shared-context-depth-thorough-tooltip = Faz perguntas esclarecedoras, confirma objetivos e depois faz uma passagem mais detalhada do código.
-right-panel-show-gitignored-files = Mostrar arquivos gitignorados
-right-panel-hide-gitignored-files = Ocultar arquivos ignorados no git
 workspace-hold-command-for-chat-ui = Segure ⌘ para a interface do chat
 workspace-hold-command-for-terminal = Segure ⌘ para o Terminal
 tool-picker-no-matches = Nenhum resultado
@@ -2995,6 +2986,12 @@ settings-orchestrated-worktrees-auto = Auto
 settings-orchestrated-worktrees-auto-description = Aberto enquanto um agente estiver trabalhando nele ou precisar de você.
 settings-orchestrated-worktrees-collapsed = Recolhido
 settings-orchestrated-worktrees-collapsed-description = Sempre recolhido até você abrir.
+settings-project-header-click-toggle = Expandir/recolher
+settings-project-header-click-toggle-description = Mostra ou oculta as worktrees do projeto.
+settings-project-header-click-open-primary = Abrir worktree principal
+settings-project-header-click-open-primary-description = Abre o checkout principal do projeto.
+settings-project-header-click-auto = Automático
+settings-project-header-click-auto-description = Abre a worktree principal quando ela é a única; caso contrário, expande ou recolhe.
 settings-orchestrated-worktrees-expanded = Expandido
 settings-orchestrated-worktrees-expanded-description = Sempre aberto.
 settings-search-entry-appearance-layout-orchestrated-worktrees-description = Escolha como as árvores de trabalho às quais um chat delegou tarefas são abertas abaixo dele na barra lateral.
@@ -3334,8 +3331,6 @@ settings-remote-key-remove-revoke = Revogar em { $host }
 settings-remote-key-remove-title = Remover a chave de { $host }?
 settings-experimental-automations-label = Automações
 settings-experimental-automations-description = Crie automações agendadas e baseadas em eventos. Prévia inicial, ainda não totalmente testada.
-settings-experimental-browser-automation-label = Automação do navegador
-settings-experimental-browser-automation-description = Permite comandos de controle do navegador aos agentes. As ações ainda exigem permissão do espaço de trabalho.
 settings-experimental-chat-artifacts-label = Artefatos do chat
 settings-experimental-chat-artifacts-description = Permite que os agentes publiquem páginas HTML exibidas ao vivo no chat. As páginas são executadas offline em uma sandbox.
 settings-search-section-typography = Tipografia
@@ -3398,8 +3393,6 @@ settings-search-entry-experimental-feature-flags-workspace-mentions-label = Men�
 settings-search-entry-experimental-feature-flags-workspace-mentions-description = Mencione scripts, terminais, árvores de trabalho, chats e agentes com @ no chat.
 settings-search-entry-experimental-feature-flags-automations-label = Automações
 settings-search-entry-experimental-feature-flags-automations-description = Crie automações agendadas e baseadas em eventos. Prévia inicial, ainda não totalmente testada.
-settings-search-entry-experimental-feature-flags-browser-automation-label = Automação do navegador
-settings-search-entry-experimental-feature-flags-browser-automation-description = Permite comandos de controle do navegador aos agentes. As ações ainda exigem permissão do espaço de trabalho.
 settings-search-entry-agents-session-context-session-context-for-agents-label = Contexto da sessão para agentes
 settings-search-entry-agents-session-context-session-context-for-agents-description = Adicione contexto do super.engineering às novas sessões de agentes ou desative a injeção ambiente.
 settings-section-typography = Tipografia
@@ -3724,10 +3717,6 @@ worktree-step-creating-branch = Criando branch
 worktree-step-naming = Definindo o nome a partir da sua tarefa
 worktree-step-setup = Executando a configuração
 worktree-step-opening-agent = Abrindo { $agent }
-chat-waiting-on-agents = { $count ->
-    [one] Aguardando { $count } agente…
-   *[other] Aguardando { $count } agentes…
-}
 chat-shell-mode = Comando de shell
 chat-shell-mode-detail = Executa neste espaço de trabalho. Use Adicionar à conversa no resultado para mostrá-lo ao agente.
 chat-shell-add-to-chat = Adicionar à conversa
@@ -3768,6 +3757,7 @@ chat-diff-unchanged-lines = { $count ->
 chat-files-changed-shared = Outra conversa estava trabalhando neste worktree durante este turno. Um arquivo alterado pelas duas conversas mostra as alterações de ambas.
 chat-files-changed-unattributed = Outra conversa estava trabalhando neste worktree durante este turno. Os arquivos esmaecidos mudaram enquanto ela trabalhava e podem ser alterações dela.
 chat-files-changed-snapshot-failed = Não foi possível criar um snapshot do worktree deste turno; apenas os arquivos relatados por suas ferramentas são listados.
+chat-files-changed-snapshot-partial = Não foi possível criar um snapshot de alguns repositórios deste turno; para eles, apenas os arquivos relatados por suas ferramentas são listados.
 palette-mode-all = Tudo
 palette-mode-conversations = Conversas
 palette-search-all = Pesquisar agentes, worktrees, comandos, arquivos…
@@ -4043,3 +4033,389 @@ issue-report-actions-private = Privado
 issue-report-action-draft-agent = Redigir com um agente
 issue-report-action-copy-markdown = Copiar como Markdown
 issue-report-action-email = Enviar por e-mail privado
+
+browser-dialog-title = { $host } diz
+browser-dialog-title-page = Esta página diz
+section-rule-path = Padrão glob do caminho
+settings-search-entry-agents-providers-jcode-provider-label = Provedor jcode
+settings-search-entry-agents-providers-jcode-provider-description = Ative o jcode e configure seus modelos e opções de inicialização.
+settings-ai-provider-jcode-description = Ative o jcode como provedor de chat e terminal (requer a CLI do jcode `jcode` instalada). Os chats executam todas as ferramentas permitidas pela configuração do jcode; o jcode não pode pedir aprovação antes.
+settings-keybinding-action-paste-as-secret = Colar como segredo
+clone-waiting-for-stop = Aguardando o processo de clonagem parar…
+toast-review-comments = Revisar comentários
+toast-report-issue = Relatar
+toast-rex-session-display-failed = Sessão do Rex criada, mas não foi possível exibi-la
+toast-rex-enable-remote-control = Ative Remote Control em Rex Settings → Rex Server e selecione a sessão existente. Abrir novamente cria outra sessão.
+toast-rex-select-existing-session = Selecione a sessão existente no Rex. Abrir novamente cria outra sessão.
+toast-open-app-failed = Não foi possível abrir o aplicativo selecionado
+toast-open-app-failed-message = Verifique se o aplicativo está instalado e disponível. Expanda Detalhes para ver o erro.
+chat-forward = Encaminhar
+chat-forward-search-placeholder = Encaminhar para…
+chat-forward-no-chats = Nenhum outro chat aberto
+chat-forward-failed-title = Não foi possível encaminhar
+chat-forward-failed-message = O chat de destino não está mais disponível ou é somente leitura.
+workspace-path-copied = Caminho copiado
+workspace-link-copied = Link copiado
+workspace-copy-chat-link = Copiar link do chat
+workspace-chat-link-copy-failed = Não foi possível copiar o link do chat
+workspace-chat-link-copied = Link do chat copiado
+run-app-on-phone = Abrir no celular
+run-app-scan-hint = Escaneie com um celular na mesma rede Wi-Fi.
+palette-section-go-to = Ir para
+palette-navigation-worktrees = { $count ->
+    [one] { $count } árvore de trabalho
+   *[other] { $count } árvores de trabalho
+}
+secret-request-title = Um agente está solicitando um segredo
+secret-request-asked-by = “{ $asker }” solicita: { $label }
+secret-request-asked-by-agent = Um agente solicita: { $label }
+secret-request-placeholder = Cole ou digite o segredo
+secret-request-note = Salvo em um arquivo privado e mantido fora do chat. Os comandos do agente podem lê-lo por 24 horas.
+secret-request-save = Salvar em privado
+secret-request-show = Mostrar segredo
+secret-request-hide = Ocultar segredo
+secret-request-decline = Recusar
+secret-request-save-failed = Não foi possível salvar em privado: { $error }
+chat-secret-pill-token = Token de { $issuer }
+chat-secret-pill-private-key = Chave privada
+chat-secret-pill-secret = Segredo
+chat-secret-card-kind = Mantido em privado
+chat-secret-card-detail = Seu agente recebe o caminho de um arquivo privado em vez do valor. Os comandos dele ainda podem ler o arquivo, que é excluído após 24 horas.
+chat-secret-card-paste-as-text = Colar como texto
+chat-secret-store-failed = Não foi possível manter o segredo em privado, então ele não foi colado. Cole novamente para inserir como texto simples.
+chat-secret-paste-moved = O rascunho mudou enquanto o segredo era salvo em privado, então ele não foi colado. Cole novamente.
+chat-paste-moved = O rascunho mudou enquanto o conteúdo a colar era verificado, então ele não foi colado. Cole novamente.
+chat-secret-expired = O arquivo desse segredo não existe mais, então ele não pode ser colado como texto. Cole novamente.
+chat-artifact-annotate = Anotar
+right-sidebar-filter-files = Filtrar arquivos
+right-sidebar-collapse-all-folders = Recolher todas as pastas
+right-sidebar-reveal-open-file = Mostrar arquivo aberto
+exit-save-failed-title = Não foi possível salvar o estado do aplicativo
+exit-save-failed-description = O estado mais recente do aplicativo não foi salvo. { $error }. Corrija o problema de armazenamento e tente novamente ou continue sem salvar.
+exit-restart-without-saving = Reiniciar sem salvar
+exit-quit-without-saving = Sair sem salvar
+
+settings-experimental-resource-monitor-label = Monitor de recursos
+settings-experimental-resource-monitor-description = Mostra o botão Recursos na barra de título, com memória e CPU de cada árvore de trabalho, aba e processo auxiliar.
+settings-search-section-resources = Recursos
+settings-search-entry-appearance-resources-show-freeable-memory-label = Mostrar memória liberável
+settings-search-entry-appearance-resources-show-freeable-memory-description = Mostra no botão Recursos quanta memória seria liberada ao suspender abas ociosas e o destaca em cor quando o Mac está com pouca memória.
+settings-section-resources = Recursos
+chat-queued-waiting-to-steer = Aguardando para redirecionar
+chat-queued-action-no-longer-queued = Esta mensagem não está mais na fila.
+chat-queued-steer-failed = Não foi possível redirecionar com esta mensagem.
+chat-queued-change-failed = Não foi possível alterar esta mensagem.
+changes-empty-detail = As edições feitas por você ou pelos seus agentes nesta árvore de trabalho aparecem aqui.
+changes-empty-turns = Nenhum turno ainda
+changes-empty-turns-detail = Quando um agente altera arquivos, eles aparecem aqui sob o turno que os alterou.
+changes-empty-commits = Nenhum commit ainda
+changes-empty-commits-detail = Os commits deste branch aparecem aqui.
+changes-empty-all-viewed = Tudo visto
+changes-empty-all-viewed-detail = Você abriu todos os arquivos alterados.
+review-delivery-prepared = Preparado em { $target }
+review-delivery-sent = Enviado para { $target }
+review-delivery-dispatched = Enviado para { $target } em segundo plano
+review-delivery-a-chat = um chat
+review-delivery-a-terminal = um terminal
+review-location-whole-file = Arquivo inteiro
+review-tooltip-more-lines =
+    { $count ->
+        [one] Mais { $count } linha
+       *[other] Mais { $count } linhas
+    }
+review-location-line = Linha { $line }
+review-location-lines = Linhas { $start }–{ $end }
+review-pending-summary =
+    { $files ->
+        [one]
+            { $comments ->
+                [one] { $comments } comentário
+               *[other] { $comments } comentários
+            }
+       *[other] { $comments } comentários em { $files } arquivos
+    }
+review-view-open = Abertos
+review-view-done = Concluídos
+review-your-comments = Seus comentários
+review-nothing-to-review = Nada para revisar
+review-nothing-to-review-detail = Os comentários que você deixa em um diff e os tópicos de revisão do seu pull request aparecem aqui.
+review-review-changes = Revisar alterações
+review-comment-hint = ou selecione linhas em qualquer diff para comentar
+review-all-caught-up = Tudo em dia
+review-all-caught-up-detail = Nada está esperando por você.
+review-see-done = Ver o que foi concluído
+review-nothing-done = Nada concluído ainda
+review-nothing-done-detail = Os comentários que você envia e os tópicos resolvidos aparecem aqui.
+review-pull-request = Pull request #{ $number }
+review-pull-request-untitled = Pull request
+review-waiting-on-reviewers = Ninguém comentou em #{ $number } ainda.
+review-resolved-on-pr = Resolvido em #{ $number }
+review-pr-refresh = Atualizar comentários do pull request
+review-pr-loading = Carregando comentários…
+review-pr-load-failed = Não foi possível carregar os comentários do pull request. Atualize para tentar novamente.
+review-pr-older-hidden = Tópicos mais antigos não são exibidos.
+review-pr-overview-truncated = Outros tópicos não são exibidos aqui.
+review-thread-resolve = Resolver
+review-thread-unresolve = Reabrir
+review-thread-resolving = Resolvendo…
+review-thread-unresolving = Reabrindo…
+review-thread-update-failed = Não foi possível atualizar. Tente novamente.
+review-thread-outdated = Desatualizado
+review-thread-byline =
+    { $replies ->
+        [0] { $author } comentou { $age }
+        [one] { $author } comentou { $age }, 1 resposta
+       *[other] { $author } comentou { $age }, { $replies } respostas
+    }
+checks-path-to-merge = Caminho até o merge
+checks-step-committed = Alterações com commit
+checks-step-pushed = Push feito
+checks-step-unpushed =
+    { $count ->
+        [one] { $count } commit para enviar
+       *[other] { $count } commits para enviar
+    }
+checks-step-review-open = { $kind } aberto
+checks-step-checks = Verificações
+checks-step-running = Verificações em execução
+checks-behind-target =
+    { $count ->
+        [one] { $count } commit atrás de { $target }
+       *[other] { $count } commits atrás de { $target }
+    }
+right-panel-view-options = Opções de exibição
+right-panel-view-changes = Alterações
+right-panel-view-gitignored-files = Arquivos ignorados pelo Git
+diff-viewed-toggle = Visto
+diff-since-viewed-note = { $agent } alterou isto depois que você viu. Mostrando as alterações desde então.
+diff-since-viewed-note-unattributed = Este arquivo mudou depois que você o viu. Mostrando as alterações desde então.
+diff-since-viewed-show-full = Mostrar diff completo
+diff-turn-review-writing = Escrevendo a revisão…
+diff-turn-review-passed = aprovado
+diff-turn-review-failed = falhou
+diff-turn-review-not-checked = Não verificado: { $what }
+diff-turn-review-more-checks = Mais { $count }
+diff-turn-review-looks-good = Parece bom
+diff-turn-review-comment-hint = Comente em uma linha para pedir alterações
+right-sidebar-new = Novo
+right-sidebar-show-comments = Mostrar comentários
+right-sidebar-hint-move = Mover
+right-sidebar-hint-viewed = Visto
+right-sidebar-hint-next-unviewed = Próximo não visto
+right-sidebar-hint-open = Abrir
+right-sidebar-commit-message = Mensagem do commit
+right-sidebar-writing-message = Escrevendo uma mensagem
+right-sidebar-write-message = Escrever uma mensagem
+right-sidebar-commit-file-count =
+    { $count ->
+        [one] { $count } arquivo
+       *[other] { $count } arquivos
+    }
+right-sidebar-commit = Commit
+right-sidebar-commit-and-push = Commit e push
+right-sidebar-amend-last-commit = Corrigir último commit
+right-sidebar-committing = Fazendo commit
+right-sidebar-committed = Commit feito
+right-sidebar-push = Push
+right-sidebar-unviewed = Não visto
+changes-file-count =
+    { $count ->
+        [one] { $count } arquivo
+       *[other] { $count } arquivos
+    }
+right-sidebar-mark-all-viewed =
+    { $count ->
+        [one] Marcar { $count } arquivo como visto
+       *[other] Marcar todos os { $count } arquivos como vistos
+    }
+right-sidebar-all-viewed = Todos os arquivos vistos
+right-sidebar-viewed = Visto
+right-sidebar-changed-since-viewed = Alterado desde que você viu
+right-sidebar-changed-since-viewed-by = { $agent } alterou isto desde que você viu
+right-sidebar-changed-since-viewed-count =
+    { $count ->
+        [one] { $count } arquivo alterado desde que você viu
+       *[other] { $count } arquivos alterados desde que você viu
+    }
+right-sidebar-view-all = Tudo
+right-sidebar-view-turns = Turnos
+right-sidebar-turn-working = Trabalhando
+right-sidebar-other-changes = Outras alterações
+right-sidebar-probable-file = Alterado durante este turno
+right-sidebar-probable-file-detail = Não foi informado pelas ferramentas do turno, então pode ser uma edição de outra pessoa. Confirmado quando o turno terminar.
+resources-title = Recursos
+resources-search = Pesquisar recursos ou projetos
+resources-search-tooltip = Pesquisar
+resources-remote = Remoto
+resources-asleep = Suspenso
+resources-held-info = Telas e o chat recente mantidos na memória do app para que esta árvore de trabalho reabra na hora, contados em App, em Suspenso. As telas são liberadas após 15 minutos em suspensão.
+resources-cpu = CPU
+resources-cpu-history = CPU no último minuto. O histórico se forma enquanto Recursos está aberto.
+resources-reclaim =
+    { $count ->
+        [one] { $count } aba ociosa pode ser suspensa e liberar cerca de { $memory }
+       *[other] { $count } abas ociosas podem ser suspensas e liberar cerca de { $memory }
+    }
+resources-sleep-idle = Suspender ociosas
+resources-freed = { $memory } liberados
+resources-sleep = Suspender
+resources-sleep-tooltip = Libera os processos. Reativa com o histórico quando você abrir.
+resources-wake = Reativar
+resources-stop = Parar
+resources-stop-confirm = Parar { $name }?
+resources-stop-consequence = O trabalho em andamento será interrompido.
+resources-cancel = Cancelar
+resources-exited = Encerrado
+resources-exited-just-now = Encerrado agora mesmo
+resources-exited-minutes = Encerrado há { $minutes } min
+resources-exited-hours = Encerrado há { $hours } h
+resources-cpu-row = { $percent }% de CPU
+resources-origin-tab = Aba de terminal
+resources-origin-launched = Iniciado por { $tab }
+resources-origin-run-script = Script de execução
+resources-origin-panel = Terminal do painel
+resources-origin-setup = Comando de configuração
+resources-origin-git = Ação do Git
+resources-origin-review = Revisão
+resources-activity-running = Executando { $process }
+resources-activity-busy = Em execução
+resources-activity-idle = Ocioso
+resources-app = App
+resources-browser-services = Serviços do navegador
+resources-browser-graphics = Gráficos
+resources-browser-networking = Rede
+resources-background = Processos em segundo plano
+resources-background-pid = PID { $pid }
+resources-app-graphics = Gráficos
+resources-app-graphics-info = Superfícies de janela e memória da GPU
+resources-app-held-for-reuse = Reservado para reutilização
+resources-app-saved-wake = Suspenso
+resources-app-code-system = Código e sistema
+resources-app-chats = Chats
+resources-app-chats-open = { $count } abertos
+resources-app-chats-idle = { $count } ociosos
+resources-app-chats-history = Histórico de chats
+resources-app-terminals = Terminais
+resources-app-terminals-count =
+    { $count ->
+        [one] { $count } terminal
+       *[other] { $count } terminais
+    }
+resources-app-terminals-lines =
+    { $count ->
+        [one] { $count } linha
+       *[other] { $count } linhas
+    }
+resources-app-saved-count =
+    { $count ->
+        [one] { $count } árvore de trabalho
+       *[other] { $count } árvores de trabalho
+    }
+resources-app-saved-info = Memória mantida para árvores de trabalho suspensas, para que reabram na hora
+resources-app-background-count =
+    { $count ->
+        [one] { $count } processo
+       *[other] { $count } processos
+    }
+resources-app-background-info = Git, comandos auxiliares e ferramentas de agentes que o app executa e que não pertencem a nenhuma árvore de trabalho
+resources-app-background-brief = Comandos rápidos
+resources-app-other-data = Dados
+resources-app-other-detail = Cresce com projetos e árvores de trabalho
+resources-app-held-for-reuse-detail = Mantido pelo alocador para reutilização
+resources-app-code-system-detail = Código do programa e bibliotecas do sistema
+resources-estimated = Estimado
+resources-sleep-idle-chats = Suspender chats ociosos
+resources-sleep-idle-chats-confirm =
+    { $count ->
+        [one] Suspender { $count } chat ocioso?
+       *[other] Suspender { $count } chats ociosos?
+    }
+resources-frees-about = Libera cerca de { $memory }
+resources-clear = Limpar
+resources-clear-confirm =
+    { $lines ->
+        [one] Limpar { $lines } linha do histórico?
+       *[other] Limpar { $lines } linhas do histórico?
+    }
+resources-clear-consequence = A tela permanece.
+resources-clear-scrollback = Limpar histórico
+resources-clear-all-confirm =
+    { $count ->
+        [one] Limpar o histórico de { $count } terminal?
+       *[other] Limpar o histórico de { $count } terminais?
+    }
+resources-chat-sleep-running = Executando um turno. Pode ser suspenso quando o turno terminar.
+resources-chat-sleep-waiting = Aguardando sua resposta. Pode ser suspenso depois que você responder.
+resources-chat-sleep-unseen = Tem uma resposta que você ainda não viu. Pode ser suspenso depois que você ler.
+resources-chat-sleep-kept-ready = Mantido pronto para um retorno rápido à árvore de trabalho.
+resources-chat-sleep-on-screen = Na tela. Pode ser suspenso quando sair de vista.
+resources-chat-sleep-queued = Há mensagens na fila. Pode ser suspenso depois que forem enviadas.
+resources-chat-sleep-busy = Ocupado agora. Tente novamente em instantes.
+resources-info-title = Para onde vão { $total }
+resources-info-summary = O app e tudo o que ele iniciou para você.
+resources-info-app = super.engineering
+resources-info-app-hint = O app e os processos auxiliares que ele executa
+resources-info-agents-hint = O agente de cada chat e as ferramentas que ele executa
+resources-info-browser = Abas do navegador
+resources-info-browser-hint = Cada página é executada em um processo próprio
+resources-info-terminals-hint = Shells, scripts de execução e o que eles iniciaram
+resources-info-remote = Árvores de trabalho remotas ainda não são medidas.
+resources-pressure-warning = O Mac está com pouca memória. O super.engineering usa { $used } de { $ram }.
+resources-pressure-warning-short = O Mac está com pouca memória.
+resources-pressure-critical = A memória do Mac está criticamente baixa. O super.engineering usa { $used } de { $ram }.
+resources-pressure-critical-others = A memória do Mac está criticamente baixa, principalmente por causa de outros apps. O super.engineering usa { $used } de { $ram }.
+resources-pressure-critical-short = A memória do Mac está criticamente baixa.
+resources-thermal = O Mac está esquentando e pode ficar mais lento.
+resources-measurements-unavailable = Memória e CPU estão indisponíveis no momento. Você ainda pode abrir e gerenciar abas.
+resources-loading = Carregando recursos…
+resources-empty = Nenhum recurso correspondente.
+resources-empty-all = Nada em execução.
+resources-empty-agents = Nenhum agente em execução.
+resources-empty-browser = Nenhuma aba do navegador aberta.
+resources-empty-terminals = Nenhum terminal em execução.
+resources-tab-all = Tudo
+resources-tab-agents = Agentes
+resources-tab-browser = Navegador
+resources-tab-terminals = Terminais
+resources-fact-agents =
+    { $count ->
+        [one] agente
+       *[other] agentes
+    }
+resources-fact-browser-tabs =
+    { $count ->
+        [one] aba do navegador
+       *[other] abas do navegador
+    }
+resources-fact-terminals =
+    { $count ->
+        [one] terminal
+       *[other] terminais
+    }
+resources-on-screen = Na tela, então continua ativo
+resources-open = Abrir
+resources-close = Fechar
+resources-close-confirm = Fechar { $name }?
+resources-close-consequence = A página será fechada.
+resources-average-title = Média por agente
+resources-average-each = Cada
+resources-average-ten = 10 agentes
+resources-average-each-suffix = cada
+resources-average-for-ten = para 10
+resources-tree-more = +{ $count } outros
+resources-app-item-detail = { $activity }, { $lines }
+resources-app-more-chats =
+    { $count ->
+        [one] Mais { $count } chat
+       *[other] Mais { $count } chats
+    }
+resources-app-more-terminals =
+    { $count ->
+        [one] Mais { $count } terminal
+       *[other] Mais { $count } terminais
+    }
+issue-report-check-submission = Verificar envio
+issue-report-submission-uncertain = Este relatório pode já estar no GitHub. Verifique o envio para encontrá-lo; a verificação nunca publica novamente. Se ainda não for encontrado, aguarde e verifique de novo, ou revise suas issues no GitHub antes de descartar este rascunho.
+issue-report-discard-uncertain = Descartar rascunho (o relatório pode já existir)
+issue-report-draft-load-failed = Não foi possível ler seu relatório salvo. Resolva o problema de armazenamento e reinicie o aplicativo antes de enviar outro relatório.
+review-comment-edit-staged = Remova esta revisão do compositor antes de editá-la.
