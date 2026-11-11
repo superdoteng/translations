@@ -4107,3 +4107,26 @@ exit-save-failed-title = Impossible d’enregistrer l’état de l’application
 exit-save-failed-description = Le dernier état de votre application n’a pas été enregistré. { $error }. Corrigez le problème de stockage et réessayez, ou continuez sans enregistrer.
 exit-restart-without-saving = Redémarrer sans enregistrer
 exit-quit-without-saving = Quitter sans enregistrer
+
+chat-notice-mcp-quiet = Masquer les alertes
+chat-notice-mcp-unquiet = Rétablir les alertes
+chat-notice-mcp-quiet-tooltip = Ne plus mentionner ce serveur lorsqu’il ne fonctionne pas. Il démarre toujours et ses outils restent disponibles. Les véritables erreurs déclenchent toujours un avertissement.
+chat-notice-mcp-unquiet-tooltip = Mentionner à nouveau ce serveur lorsqu’il ne fonctionne pas
+chat-notice-mcp-retry = Recharger les serveurs MCP
+chat-notice-mcp-retry-tooltip = Recharger tous les serveurs MCP configurés
+chat-notice-mcp-edit-config = Modifier la configuration
+chat-notice-mcp-edit-config-tooltip = Ouvrir le fichier de configuration qui définit ce serveur
+chat-notice-mcp-disable = Désactiver
+chat-notice-mcp-disable-tooltip = Désactiver ce serveur dans la configuration du fournisseur. Ses outils ne seront plus disponibles.
+chat-notice-mcp-disable-confirm = Désactiver le serveur MCP { $name } ?
+chat-notice-mcp-disable-confirm-detail = Ses outils ne seront disponibles qu’après sa réactivation. Dans Paramètres > Agents > Serveurs MCP Codex, choisissez Actualiser, puis Activer ou Modifier la configuration. Pour masquer uniquement ce message, choisissez Masquer les alertes.
+settings-mcp-quieted-servers = Serveurs MCP Codex
+settings-mcp-quieted-servers-caption = Ces serveurs ne sont pas mentionnés dans le chat lorsqu’ils ne fonctionnent pas. Ils démarrent toujours et leurs outils restent disponibles.
+chat-notice-mcp-offline-count = { $count ->
+    [one] 1 serveur MCP ne fonctionne pas
+   *[other] { $count } serveurs MCP ne fonctionnent pas
+    }
+settings-mcp-config-caption = Serveurs MCP Codex — profil et arbre de travail sélectionnés. Actualisez la liste pour trouver les serveurs désactivés. L’activation prend effet dans les nouveaux chats.
+settings-mcp-config-loading = Lecture de la configuration Codex…
+settings-mcp-config-refresh = Actualiser les serveurs MCP Codex
+settings-mcp-config-enable = Activer

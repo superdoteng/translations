@@ -4299,3 +4299,26 @@ exit-save-failed-title = অ্যাপের অবস্থা সংরক�
 exit-save-failed-description = আপনার অ্যাপের সর্বশেষ অবস্থা সংরক্ষিত হয়নি। { $error }। স্টোরেজের সমস্যা ঠিক করে আবার চেষ্টা করুন অথবা সংরক্ষণ না করেই চালিয়ে যান।
 exit-restart-without-saving = সংরক্ষণ না করে পুনরায় চালু করুন
 exit-quit-without-saving = সংরক্ষণ না করে প্রস্থান করুন
+
+chat-notice-mcp-quiet = বিজ্ঞপ্তি লুকান
+chat-notice-mcp-unquiet = বিজ্ঞপ্তি আবার দেখান
+chat-notice-mcp-quiet-tooltip = এই সার্ভার চালু না থাকলে সেটির কথা আর জানাবেন না। সার্ভার চালু করার চেষ্টা চলবে এবং এর টুল উপলভ্য থাকবে। প্রকৃত ত্রুটির জন্য সতর্কতা দেখানো হবে।
+chat-notice-mcp-unquiet-tooltip = এই সার্ভার চালু না থাকলে সেটির কথা আবার জানান
+chat-notice-mcp-retry = MCP সার্ভার পুনরায় লোড করুন
+chat-notice-mcp-retry-tooltip = কনফিগার করা সব MCP সার্ভার পুনরায় লোড করুন
+chat-notice-mcp-edit-config = কনফিগারেশন সম্পাদনা করুন
+chat-notice-mcp-edit-config-tooltip = এই সার্ভার সংজ্ঞায়িত করা কনফিগারেশন ফাইল খুলুন
+chat-notice-mcp-disable = নিষ্ক্রিয় করুন
+chat-notice-mcp-disable-tooltip = প্রদানকারীর কনফিগারেশনে এই সার্ভার নিষ্ক্রিয় করুন। এর টুল আর উপলভ্য থাকবে না।
+chat-notice-mcp-disable-confirm = MCP সার্ভার { $name } নিষ্ক্রিয় করবেন?
+chat-notice-mcp-disable-confirm-detail = আবার সক্রিয় না করা পর্যন্ত এর টুল উপলভ্য থাকবে না। সেটিংস > এজেন্ট > Codex MCP সার্ভার-এ রিফ্রেশ করুন বেছে নিন, তারপর সক্রিয় করুন বা কনফিগারেশন সম্পাদনা করুন বেছে নিন। শুধু এই বার্তা লুকাতে বিজ্ঞপ্তি লুকান ব্যবহার করুন।
+settings-mcp-quieted-servers = Codex MCP সার্ভার
+settings-mcp-quieted-servers-caption = এই সার্ভারগুলো চালু না থাকলে চ্যাটে সেগুলোর কথা জানানো হয় না। সার্ভার চালু করার চেষ্টা চলতে থাকে এবং টুল উপলভ্য থাকে।
+chat-notice-mcp-offline-count = { $count ->
+    [one] ১টি MCP সার্ভার চলছে না
+   *[other] { $count }টি MCP সার্ভার চলছে না
+    }
+settings-mcp-config-caption = Codex MCP সার্ভার — নির্বাচিত প্রোফাইল ও ওয়ার্কট্রি। নিষ্ক্রিয় সার্ভার খুঁজতে রিফ্রেশ করুন। সক্রিয় করার পরিবর্তন নতুন চ্যাটে কার্যকর হয়।
+settings-mcp-config-loading = Codex কনফিগারেশন পড়া হচ্ছে…
+settings-mcp-config-refresh = Codex MCP সার্ভার রিফ্রেশ করুন
+settings-mcp-config-enable = সক্রিয় করুন
