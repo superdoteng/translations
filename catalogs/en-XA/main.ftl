@@ -1116,8 +1116,6 @@ script-commands-more = [!! { $count } ṁôŕë !!]
 setup-not-configured = [!! Ñô šëţüþ šçŕïþţ çôñƒïĝüŕëđ !!]
 review-submitted-reviews = [!! Šüþṁïţţëđ ŕëṽïëŵš !!]
 review-ai-questions = [!! AI qüëšţïôñš !!]
-review-no-comments = [!! Ñô ŕëṽïëŵ çôṁṁëñţš ÿëţ !!]
-review-select-lines-hint = [!! Šëľëçţ ľïñëš ïñ ţħë đïƒƒ ţô šţàŕţ à ŕëṽïëŵ. !!]
 sidebar-ssh = [!! SSH !!]
 shared-context-generate-ai-context = [!! Ĝëñëŕàţë AI Çôñţëẋţ !!]
 action-generate = [!! Ĝëñëŕàţë !!]
@@ -1154,7 +1152,6 @@ review-add-to-fix-list = [!! Àđđ ţô Ƒïẋ Ŀïšţ !!]
 review-submit-replies = [!! Šüþṁïţ Ŕëþľïëš !!]
 review-submit-from-tab = [!! Šüþṁïţ ƒŕôṁ ţħë Ŕëṽïëŵ ţàþ → !!]
 review-ai-findings = [!! ÀÏ fïñdïñĝš !!]
-review-findings-triage-count = [!! Ţô ţŕïàĝë: { $count } !!]
 review-findings-to-triage = [!! ÀÏ fïñdïñĝš ţô ţŕïàĝë: { $count } !!]
 review-finding-should-fix = [!! Šhôüľd fïx !!]
 review-finding-dismiss = [!! Dïšmïšš !!]
@@ -1208,7 +1205,6 @@ context-output = [!! Ôüţþüţ !!]
 context-total-io = [!! Ţôţàľ Ï/Ô !!]
 context-input-effective = [!! Ïñþüţ ëƒƒëçţïṽë !!]
 profile-cli-default = [!! CLI đëƒàüľţ !!]
-review-no-active-comments = [!! Ñô àçţïṽë ŕëṽïëŵ çôṁṁëñţš. !!]
 permission-tools = [!! Ţôôľš !!]
 permission-ask = [!! Àšķ !!]
 permission-yolo = [!! Ÿôľô !!]
@@ -1266,8 +1262,8 @@ chat-thinking-summary = [!! Ṫḧïṅḳïṅġ · { $summary } !!]
 chat-working-for = [!! Ŵôŕķïñĝ ƒôŕ !!]
 chat-agent-wait-caption =
     { $count ->
-        [one] [!! { $model } çôñţïñüëš ŵħëñ ïţ ŕëþôŕţš ƀàçķ !!]
-       *[other] [!! { $model } çôñţïñüëš ŵħëñ ţħëÿ ŕëþôŕţ ƀàçķ !!]
+        [one] [!! { $model } çôñţïñüëš ŵħëñ ïţ ƒïñïšħëš !!]
+       *[other] [!! { $model } çôñţïñüëš ŵħëñ ţħëÿ ƒïñïšħ !!]
     }
 chat-worked-for = [!! Ŵôŕķëđ ƒôŕ { $duration } !!]
 chat-worked = [!! Ŵôŕķëđ !!]
@@ -1326,7 +1322,6 @@ image-preview-load-failed = [!! Ƒàïľëđ ţô ľôàđ ïṁàĝë !!]
 hosted-tab-unavailable = [!! Ţĥïš ţàƀ çàñ’ţ ƀë šĥôŵñ ƀëçàûšë ïţš ƒëàţûŕë ïšñ’ţ àṽàïľàƀľë. !!]
 file-tree-new-file = [!! Ñëŵ Ƒïľë !!]
 file-tree-new-folder = [!! Ñëŵ Ƒôľđëŕ !!]
-review-suggestion = [!! šüĝĝëšţïôñ !!]
 pr-merged = [!! Ṁëŕĝëđ !!]
 pr-closed = [!! Çľôšëđ !!]
 pr-update-available = [!! Üþđàţë àṽàïľàþľë !!]
@@ -1590,9 +1585,6 @@ review-no-pending-comments = [!! Ñô þëñđïñĝ ŕëṽïëŵ çôṁṁë�
 review-no-enabled-chat-providers = [!! Ñô ëñàþľëđ çħàţ þŕôṽïđëŕš !!]
 review-no-enabled-agents = [!! Ñô ëñàþľëđ àĝëñţš !!]
 
-review-comment-count = [!! Çôṁṁëñţš: { $count } !!]
-review-review-count = [!! Ŕëṽïëŵš: { $count } !!]
-review-awaiting-reply-count = [!! Àŵàïţïñĝ ŕëþľïëš: { $count } !!]
 review-file-count = [!! Ƒïľëš: { $count } !!]
 
 settings-ai-codex-profile-directory-missing = [!! Codex þŕôƒïľë đïŕëçţôŕÿ ñôţ ƒôüñđ. Çŕëàţë ïţ þëƒôŕë ľàüñçħïñĝ ţħïš þŕôƒïľë. !!]
@@ -2789,8 +2781,6 @@ shared-context-depth-simple-tooltip = [!! Ƒàšţ šëţüþ ŵïţħ ľïĝħ�
 shared-context-depth-thorough = [!! Ţħôŕôüĝħ !!]
 shared-context-depth-thorough-summary = [!! Ïñţëŕṽïëŵ ƒïŕšţ, ţħëñ àñàľÿžë ţħë çôđëþàšë þëƒôŕë ĝëñëŕàţïñĝ ŵôŕķšþàçë ĝüïđàñçë. !!]
 shared-context-depth-thorough-tooltip = [!! Àšķš çľàŕïƒÿïñĝ qüëšţïôñš, çôñƒïŕṁš ĝôàľš, ţħëñ đôëš à đëëþëŕ çôđë þàšš. !!]
-right-panel-show-gitignored-files = [!! Šħôŵ ĝïţïĝñôŕëđ ƒïľëš !!]
-right-panel-hide-gitignored-files = [!! Ħïđë ĝïţïĝñôŕëđ ƒïľëš !!]
 workspace-hold-command-for-chat-ui = [!! Ħôľđ ⌘ ƒôŕ Çħàţ ÜÏ !!]
 workspace-hold-command-for-terminal = [!! Ħôľđ ⌘ ƒôŕ Ţëŕṁïñàľ !!]
 tool-picker-no-matches = [!! Ñô ṁàţçħëš !!]
@@ -4543,6 +4533,325 @@ exit-save-failed-description = [!! Ÿôüŕ ľàţëšţ àþþ šţàţë ħà�
 exit-restart-without-saving = [!! Ŕëšţàŕţ ŵïţħôüţ šàṽïñĝ !!]
 exit-quit-without-saving = [!! Qüïţ ŵïţħôüţ šàṽïñĝ !!]
 
+settings-experimental-resource-monitor-label = [!! Ŕëšôüŕçë ṁôñïţôŕ !!]
+settings-experimental-resource-monitor-description = [!! Šħôŵ ţħë Ŕëšôüŕçëš ƀüţţôñ ïñ ţħë ţïţľëƀàŕ, ŵïţħ ṁëṁôŕÿ àñđ ÇÞÜ ƒôŕ ëàçħ ŵôŕķţŕëë, ţàƀ, àñđ ħëľþëŕ þŕôçëšš. !!]
+settings-search-section-resources = [!! Ŕëšôüŕçëš !!]
+settings-search-entry-appearance-resources-show-freeable-memory-label = [!! Šħôŵ ƒŕëëàƀľë ṁëṁôŕÿ !!]
+settings-search-entry-appearance-resources-show-freeable-memory-description = [!! Šħôŵ ħôŵ ṁüçħ ṁëṁôŕÿ šľëëþïñĝ ïđľë ţàƀš ŵôüľđ ƒŕëë ôñ ţħë Ŕëšôüŕçëš ƀüţţôñ, àñđ çôľôŕ ïţ ŵħëñ ÿôüŕ Ṁàç ïš üñđëŕ ṁëṁôŕÿ þŕëššüŕë. !!]
+settings-section-resources = [!! Ŕëšôüŕçëš !!]
+chat-queued-waiting-to-steer = [!! Ŵàïţïñĝ ţô šţëëŕ !!]
+chat-queued-action-no-longer-queued = [!! Ţħïš ṁëššàĝë ïš ñô ľôñĝëŕ qüëüëđ. !!]
+chat-queued-steer-failed = [!! Çôüľđñ'ţ šţëëŕ ţħïš ṁëššàĝë. !!]
+chat-queued-change-failed = [!! Çôüľđñ'ţ çħàñĝë ţħïš ṁëššàĝë. !!]
+changes-empty-detail = [!! Ëđïţš ÿôü ôŕ ÿôüŕ àĝëñţš ṁàķë ïñ ţħïš ŵôŕķţŕëë šħôŵ üþ ħëŕë. !!]
+changes-empty-turns = [!! Ñô ţüŕñš ÿëţ !!]
+changes-empty-turns-detail = [!! Ŵħëñ àñ àĝëñţ çħàñĝëš ƒïľëš, ţħëÿ šħôŵ üþ ħëŕë üñđëŕ ţħë ţüŕñ ţħàţ çħàñĝëđ ţħëṁ. !!]
+changes-empty-commits = [!! Ñô çôṁṁïţš ÿëţ !!]
+changes-empty-commits-detail = [!! Çôṁṁïţš ôñ ţħïš ƀŕàñçħ šħôŵ üþ ħëŕë. !!]
+changes-empty-all-viewed = [!! Àľľ ṽïëŵëđ !!]
+changes-empty-all-viewed-detail = [!! Ÿôü’ṽë ôþëñëđ ëṽëŕÿ çħàñĝëđ ƒïľë. !!]
+review-delivery-prepared = [!! Þŕëþàŕëđ ïñ { $target } !!]
+review-delivery-sent = [!! Šëñţ ţô { $target } !!]
+review-delivery-dispatched = [!! Šëñţ ţô { $target } ïñ ţħë ƀàçķĝŕôüñđ !!]
+review-delivery-a-chat = [!! à çħàţ !!]
+review-delivery-a-terminal = [!! à ţëŕṁïñàľ !!]
+review-location-whole-file = [!! Ŵħôľë ƒïľë !!]
+review-tooltip-more-lines =
+    { $count ->
+        [one] [!! 1 ṁôŕë ľïñë !!]
+       *[other] [!! { $count } ṁôŕë ľïñëš !!]
+    }
+review-location-line = [!! Ľïñë { $line } !!]
+review-location-lines = [!! Ľïñëš { $start }–{ $end } !!]
+review-pending-summary =
+    { $files ->
+        [one]
+            { $comments ->
+                [one] [!! 1 çôṁṁëñţ !!]
+               *[other] [!! { $comments } çôṁṁëñţš !!]
+            }
+       *[other] [!! { $comments } çôṁṁëñţš ïñ { $files } ƒïľëš !!]
+    }
+review-view-open = [!! Ôþëñ !!]
+review-view-done = [!! Đôñë !!]
+review-your-comments = [!! Ÿôüŕ çôṁṁëñţš !!]
+review-nothing-to-review = [!! Ñôţħïñĝ ţô ŕëṽïëŵ !!]
+review-nothing-to-review-detail = [!! Çôṁṁëñţš ÿôü ľëàṽë ôñ à đïƒƒ, àñđ ÿôüŕ þüľľ ŕëqüëšţ’š ŕëṽïëŵ ţħŕëàđš, šħôŵ üþ ħëŕë. !!]
+review-review-changes = [!! Ŕëṽïëŵ çħàñĝëš !!]
+review-comment-hint = [!! ôŕ šëľëçţ ľïñëš ïñ àñÿ đïƒƒ ţô çôṁṁëñţ !!]
+review-all-caught-up = [!! Àľľ çàüĝħţ üþ !!]
+review-all-caught-up-detail = [!! Ñôţħïñĝ ïš ŵàïţïñĝ ôñ ÿôü. !!]
+review-see-done = [!! Šëë ŵħàţ’š đôñë !!]
+review-nothing-done = [!! Ñôţħïñĝ đôñë ÿëţ !!]
+review-nothing-done-detail = [!! Çôṁṁëñţš ÿôü šëñđ àñđ ţħŕëàđš ţħàţ ĝëţ ŕëšôľṽëđ šħôŵ üþ ħëŕë. !!]
+review-pull-request = [!! Þüľľ ŕëqüëšţ #{ $number } !!]
+review-pull-request-untitled = [!! Þüľľ ŕëqüëšţ !!]
+review-waiting-on-reviewers = [!! Ñôƀôđÿ ħàš çôṁṁëñţëđ ôñ #{ $number } ÿëţ. !!]
+review-resolved-on-pr = [!! Ŕëšôľṽëđ ôñ #{ $number } !!]
+review-pr-refresh = [!! Ŕëƒŕëšħ þüľľ ŕëqüëšţ çôṁṁëñţš !!]
+review-pr-loading = [!! Ľôàđïñĝ çôṁṁëñţš… !!]
+review-pr-load-failed = [!! Çôüľđñ’ţ ľôàđ þüľľ ŕëqüëšţ çôṁṁëñţš. Ŕëƒŕëšħ ţô ţŕÿ àĝàïñ. !!]
+review-pr-older-hidden = [!! Ôľđëŕ ţħŕëàđš àŕëñ’ţ šħôŵñ. !!]
+review-pr-overview-truncated = [!! Ṁôŕë ţħŕëàđš àŕëñ’ţ šħôŵñ ħëŕë. !!]
+review-thread-resolve = [!! Ŕëšôľṽë !!]
+review-thread-unresolve = [!! Üñŕëšôľṽë !!]
+review-thread-resolving = [!! Ŕëšôľṽïñĝ… !!]
+review-thread-unresolving = [!! Üñŕëšôľṽïñĝ… !!]
+review-thread-update-failed = [!! Çôüľđñ’ţ üþđàţë. Ţŕÿ àĝàïñ. !!]
+review-thread-outdated = [!! Ôüţđàţëđ !!]
+review-thread-byline =
+    { $replies ->
+        [0] [!! { $author } çôṁṁëñţëđ { $age } !!]
+        [one] [!! { $author } çôṁṁëñţëđ { $age }, 1 ŕëþľÿ !!]
+       *[other] [!! { $author } çôṁṁëñţëđ { $age }, { $replies } ŕëþľïëš !!]
+    }
+checks-path-to-merge = [!! Þàţħ ţô ṁëŕĝë !!]
+checks-step-committed = [!! Çħàñĝëš çôṁṁïţţëđ !!]
+checks-step-pushed = [!! Þüšħëđ !!]
+checks-step-unpushed =
+    { $count ->
+        [one] [!! { $count } çôṁṁïţ ţô þüšħ !!]
+       *[other] [!! { $count } çôṁṁïţš ţô þüšħ !!]
+    }
+checks-step-review-open = [!! { $kind } ôþëñ !!]
+checks-step-checks = [!! Çħëçķš !!]
+checks-step-running = [!! Çħëçķš ŕüññïñĝ !!]
+checks-behind-target =
+    { $count ->
+        [one] [!! { $count } çôṁṁïţ ƀëħïñđ { $target } !!]
+       *[other] [!! { $count } çôṁṁïţš ƀëħïñđ { $target } !!]
+    }
+right-panel-view-options = [!! Ṽïëŵ ôþţïôñš !!]
+right-panel-view-changes = [!! Çħàñĝëš !!]
+right-panel-view-gitignored-files = [!! Ĝïţïĝñôŕëđ ƒïľëš !!]
+diff-viewed-toggle = [!! Ṽïëŵëđ !!]
+diff-since-viewed-note = [!! { $agent } çħàñĝëđ ţħïš àƒţëŕ ÿôü ṽïëŵëđ ïţ. Šħôŵïñĝ çħàñĝëš šïñçë ţħëñ. !!]
+diff-since-viewed-note-unattributed = [!! Ţħïš ƒïľë çħàñĝëđ àƒţëŕ ÿôü ṽïëŵëđ ïţ. Šħôŵïñĝ çħàñĝëš šïñçë ţħëñ. !!]
+diff-since-viewed-show-full = [!! Šħôŵ ƒüľľ đïƒƒ !!]
+diff-turn-review-writing = [!! Ŵŕïţïñĝ ţħë ŕëṽïëŵ… !!]
+diff-turn-review-passed = [!! þàššëđ !!]
+diff-turn-review-failed = [!! ƒàïľëđ !!]
+diff-turn-review-not-checked = [!! Ñôţ çħëçķëđ: { $what } !!]
+diff-turn-review-more-checks = [!! { $count } ṁôŕë !!]
+diff-turn-review-looks-good = [!! Ľôôķš ĝôôđ !!]
+diff-turn-review-comment-hint = [!! Çôṁṁëñţ ôñ à ľïñë ţô àšķ ƒôŕ çħàñĝëš !!]
+right-sidebar-new = [!! Ñëŵ !!]
+right-sidebar-show-comments = [!! Šħôŵ çôṁṁëñţš !!]
+right-sidebar-hint-move = [!! Ṁôṽë !!]
+right-sidebar-hint-viewed = [!! Ṽïëŵëđ !!]
+right-sidebar-hint-next-unviewed = [!! Ñëxţ üñṽïëŵëđ !!]
+right-sidebar-hint-open = [!! Ôþëñ !!]
+right-sidebar-commit-message = [!! Çôṁṁïţ ṁëššàĝë !!]
+right-sidebar-writing-message = [!! Ŵŕïţïñĝ à ṁëššàĝë !!]
+right-sidebar-write-message = [!! Ŵŕïţë à ṁëššàĝë !!]
+right-sidebar-commit-file-count =
+    { $count ->
+        [one] [!! 1 ƒïľë !!]
+       *[other] [!! { $count } ƒïľëš !!]
+    }
+right-sidebar-commit = [!! Çôṁṁïţ !!]
+right-sidebar-commit-and-push = [!! Çôṁṁïţ àñđ þüšħ !!]
+right-sidebar-amend-last-commit = [!! Àṁëñđ ľàšţ çôṁṁïţ !!]
+right-sidebar-committing = [!! Çôṁṁïţţïñĝ !!]
+right-sidebar-committed = [!! Çôṁṁïţţëđ !!]
+right-sidebar-push = [!! Þüšħ !!]
+right-sidebar-unviewed = [!! Üñṽïëŵëđ !!]
+changes-file-count =
+    { $count ->
+        [one] [!! 1 ƒïľë !!]
+       *[other] [!! { $count } ƒïľëš !!]
+    }
+right-sidebar-mark-all-viewed =
+    { $count ->
+        [one] [!! Ṁàŕķ 1 ƒïľë ṽïëŵëđ !!]
+       *[other] [!! Ṁàŕķ àľľ { $count } ƒïľëš ṽïëŵëđ !!]
+    }
+right-sidebar-all-viewed = [!! Àľľ ƒïľëš ṽïëŵëđ !!]
+right-sidebar-viewed = [!! Ṽïëŵëđ !!]
+right-sidebar-changed-since-viewed = [!! Çħàñĝëđ šïñçë ÿôü ṽïëŵëđ ïţ !!]
+right-sidebar-changed-since-viewed-by = [!! { $agent } çħàñĝëđ ţħïš šïñçë ÿôü ṽïëŵëđ ïţ !!]
+right-sidebar-changed-since-viewed-count =
+    { $count ->
+        [one] [!! 1 ƒïľë çħàñĝëđ šïñçë ÿôü ṽïëŵëđ ïţ !!]
+       *[other] [!! { $count } ƒïľëš çħàñĝëđ šïñçë ÿôü ṽïëŵëđ ţħëṁ !!]
+    }
+right-sidebar-view-all = [!! Àľľ !!]
+right-sidebar-view-turns = [!! Ţüŕñš !!]
+right-sidebar-turn-working = [!! Ŵôŕķïñĝ !!]
+right-sidebar-other-changes = [!! Ôţħëŕ çħàñĝëš !!]
+right-sidebar-probable-file = [!! Çħàñĝëđ ŵħïľë ţħïš ţüŕñ ŕàñ !!]
+right-sidebar-probable-file-detail = [!! Ñôţ ŕëþôŕţëđ ƀÿ ïţš ţôôľš, šô ïţ çôüľđ ƀë šôṁëôñë ëľšë'š ëđïţ. Çôñƒïŕṁëđ ŵħëñ ţħë ţüŕñ ëñđš. !!]
+resources-title = [!! Ŕëšôüŕçëš !!]
+resources-search = [!! Šëàŕçħ ŕëšôüŕçëš ôŕ þŕôĵëçţš !!]
+resources-search-tooltip = [!! Šëàŕçħ !!]
+resources-remote = [!! Ŕëṁôţë !!]
+resources-asleep = [!! Àšľëëþ !!]
+resources-held-info = [!! Šçŕëëñš àñđ ŕëçëñţ çħàţ ķëþţ ïñ ţħë àþþ'š ṁëṁôŕÿ šô ţħïš ŵôŕķţŕëë ŕëôþëñš ïñšţàñţľÿ, çôüñţëđ ïñ Àþþ üñđëŕ Àšľëëþ. Šçŕëëñš àŕë ŕëľëàšëđ àƒţëŕ 15 ṁïñüţëš àšľëëþ. !!]
+resources-cpu = [!! ÇÞÜ !!]
+resources-cpu-history = [!! ÇÞÜ ôṽëŕ ţħë ľàšţ ṁïñüţë. Ħïšţôŕÿ ƀüïľđš ŵħïľë Ŕëšôüŕçëš ïš ôþëñ. !!]
+resources-reclaim =
+    { $count ->
+        [one] [!! 1 ïđľë ţàƀ çàñ šľëëþ àñđ ƒŕëë àƀôüţ { $memory } !!]
+       *[other] [!! { $count } ïđľë ţàƀš çàñ šľëëþ àñđ ƒŕëë àƀôüţ { $memory } !!]
+    }
+resources-sleep-idle = [!! Šľëëþ ïđľë !!]
+resources-freed = [!! Fŕëëđ { $memory } !!]
+resources-sleep = [!! Šľëëþ !!]
+resources-sleep-tooltip = [!! Fŕëëš ïţš þŕôçëššëš. Ïţ ŵàķëš ŵïţħ ïţš ħïšţôŕÿ ŵħëñ ÿôü ôþëñ ïţ. !!]
+resources-wake = [!! Ŵàķë !!]
+resources-stop = [!! Šţôþ !!]
+resources-stop-confirm = [!! Šţôþ { $name }? !!]
+resources-stop-consequence = [!! Ŕüññïñĝ ŵôŕķ ŵïľľ ƀë ïñţëŕŕüþţëđ. !!]
+resources-cancel = [!! Çàñçëľ !!]
+resources-exited = [!! Ëxïţëđ !!]
+resources-exited-just-now = [!! Ëxïţëđ ĵüšţ ñôŵ !!]
+resources-exited-minutes = [!! Ëxïţëđ { $minutes } ṁïñ àĝô !!]
+resources-exited-hours = [!! Ëxïţëđ { $hours } ħ àĝô !!]
+resources-cpu-row = [!! { $percent }% ÇÞÜ !!]
+resources-origin-tab = [!! Ţëŕṁïñàľ ţàƀ !!]
+resources-origin-launched = [!! Šţàŕţëđ ƀÿ { $tab } !!]
+resources-origin-run-script = [!! Ŕüñ šçŕïþţ !!]
+resources-origin-panel = [!! Þàñëľ ţëŕṁïñàľ !!]
+resources-origin-setup = [!! Šëţüþ çôṁṁàñđ !!]
+resources-origin-git = [!! Ĝïţ àçţïôñ !!]
+resources-origin-review = [!! Ŕëṽïëŵ !!]
+resources-activity-running = [!! Ŕüññïñĝ { $process } !!]
+resources-activity-busy = [!! Ŕüññïñĝ !!]
+resources-activity-idle = [!! Ïđľë !!]
+resources-app = [!! Àþþ !!]
+resources-browser-services = [!! Ɓŕôŵšëŕ šëŕṽïçëš !!]
+resources-browser-graphics = [!! Ĝŕàþħïçš !!]
+resources-browser-networking = [!! Ñëţŵôŕķïñĝ !!]
+resources-background = [!! Ɓàçķĝŕôüñđ þŕôçëššëš !!]
+resources-background-pid = [!! ÞÏĐ { $pid } !!]
+resources-app-graphics = [!! Ĝŕàþħïçš !!]
+resources-app-graphics-info = [!! Ŵïñđôŵ šüŕƒàçëš àñđ ĜÞÜ ṁëṁôŕÿ !!]
+resources-app-held-for-reuse = [!! Ħëľđ ƒôŕ ŕëüšë !!]
+resources-app-saved-wake = [!! Àšľëëþ !!]
+resources-app-code-system = [!! Çôđë àñđ šÿšţëṁ !!]
+resources-app-chats = [!! Çħàţš !!]
+resources-app-chats-open = [!! { $count } ôþëñ !!]
+resources-app-chats-idle = [!! { $count } ïđľë !!]
+resources-app-chats-history = [!! Çħàţ ħïšţôŕÿ !!]
+resources-app-terminals = [!! Ţëŕṁïñàľš !!]
+resources-app-terminals-count =
+    { $count ->
+        [one] [!! 1 ţëŕṁïñàľ !!]
+       *[other] [!! { $count } ţëŕṁïñàľš !!]
+    }
+resources-app-terminals-lines =
+    { $count ->
+        [one] [!! 1 ľïñë !!]
+       *[other] [!! { $count } ľïñëš !!]
+    }
+resources-app-saved-count =
+    { $count ->
+        [one] [!! 1 ŵôŕķţŕëë !!]
+       *[other] [!! { $count } ŵôŕķţŕëëš !!]
+    }
+resources-app-saved-info = [!! Ṁëṁôŕÿ ķëþţ ƒôŕ šľëëþïñĝ ŵôŕķţŕëëš šô ţħëÿ ŕëôþëñ ïñšţàñţľÿ !!]
+resources-app-background-count =
+    { $count ->
+        [one] [!! 1 þŕôçëšš !!]
+       *[other] [!! { $count } þŕôçëššëš !!]
+    }
+resources-app-background-info = [!! Ĝïţ, ħëľþëŕ çôṁṁàñđš àñđ àĝëñţ ţôôľš ţħë àþþ ŕüñš ţħàţ ñô ŵôŕķţŕëë ôŵñš !!]
+resources-app-background-brief = [!! Ɓŕïëƒ çôṁṁàñđš !!]
+resources-app-other-data = [!! Đàţà !!]
+resources-app-other-detail = [!! Ĝŕôŵš ŵïţħ þŕôĵëçţš àñđ ŵôŕķţŕëëš !!]
+resources-app-held-for-reuse-detail = [!! Ķëþţ ƀÿ ţħë àľľôçàţôŕ ƒôŕ ŕëüšë !!]
+resources-app-code-system-detail = [!! Þŕôĝŕàṁ çôđë àñđ šÿšţëṁ ľïƀŕàŕïëš !!]
+resources-estimated = [!! Ëšţïṁàţëđ !!]
+resources-sleep-idle-chats = [!! Šľëëþ ïđľë çħàţš !!]
+resources-sleep-idle-chats-confirm =
+    { $count ->
+        [one] [!! Šľëëþ 1 ïđľë çħàţ? !!]
+       *[other] [!! Šľëëþ { $count } ïđľë çħàţš? !!]
+    }
+resources-frees-about = [!! Fŕëëš àƀôüţ { $memory } !!]
+resources-clear = [!! Çľëàŕ !!]
+resources-clear-confirm =
+    { $lines ->
+        [one] [!! Çľëàŕ 1 ľïñë ôƒ šçŕôľľƀàçķ? !!]
+       *[other] [!! Çľëàŕ { $lines } ľïñëš ôƒ šçŕôľľƀàçķ? !!]
+    }
+resources-clear-consequence = [!! Ţħë šçŕëëñ šţàÿš. !!]
+resources-clear-scrollback = [!! Çľëàŕ šçŕôľľƀàçķ !!]
+resources-clear-all-confirm =
+    { $count ->
+        [one] [!! Çľëàŕ šçŕôľľƀàçķ ïñ 1 ţëŕṁïñàľ? !!]
+       *[other] [!! Çľëàŕ šçŕôľľƀàçķ ïñ { $count } ţëŕṁïñàľš? !!]
+    }
+resources-chat-sleep-running = [!! Ŕüññïñĝ à ţüŕñ. Ïţ çàñ šľëëþ ŵħëñ ţħë ţüŕñ ëñđš. !!]
+resources-chat-sleep-waiting = [!! Ŵàïţïñĝ ƒôŕ ÿôüŕ àñšŵëŕ. Ïţ çàñ šľëëþ ôñçë ÿôü àñšŵëŕ. !!]
+resources-chat-sleep-unseen = [!! Ħàš à ŕëþľÿ ÿôü ħàṽëñ'ţ šëëñ. Ïţ çàñ šľëëþ ôñçë ÿôü'ṽë ŕëàđ ïţ. !!]
+resources-chat-sleep-kept-ready = [!! Ķëþţ ŕëàđÿ ƒôŕ à qüïçķ ŕëţüŕñ ţô ïţš ŵôŕķţŕëë. !!]
+resources-chat-sleep-on-screen = [!! Ôñ šçŕëëñ. Ïţ çàñ šľëëþ ôñçë ïţ ïš ôüţ ôƒ ṽïëŵ. !!]
+resources-chat-sleep-queued = [!! Ṁëššàĝëš àŕë qüëüëđ. Ïţ çàñ šľëëþ ôñçë ţħëÿ àŕë šëñţ. !!]
+resources-chat-sleep-busy = [!! Ɓüšÿ ŕïĝħţ ñôŵ. Ţŕÿ àĝàïñ ïñ à ṁôṁëñţ. !!]
+resources-info-title = [!! Ŵħëŕë { $total } ĝôëš !!]
+resources-info-summary = [!! Ţħë àþþ, þľüš ëṽëŕÿţħïñĝ ïţ šţàŕţëđ ƒôŕ ÿôü. !!]
+resources-info-app = [!! šüþëŕ.ëñĝïñëëŕïñĝ !!]
+resources-info-app-hint = [!! Ţħë àþþ àñđ ţħë ħëľþëŕ þŕôçëššëš ïţ ŕüñš !!]
+resources-info-agents-hint = [!! Ëàçħ çħàţ'š àĝëñţ àñđ ţħë ţôôľš ïţ ŕüñš !!]
+resources-info-browser = [!! Ɓŕôŵšëŕ ţàƀš !!]
+resources-info-browser-hint = [!! Ëàçħ þàĝë ŕüñš ïñ ïţš ôŵñ þŕôçëšš !!]
+resources-info-terminals-hint = [!! Šħëľľš, ŕüñ šçŕïþţš àñđ ŵħàţ ţħëÿ šţàŕţëđ !!]
+resources-info-remote = [!! Ŕëṁôţë ŵôŕķţŕëëš àŕë ñôţ ṁëàšüŕëđ ÿëţ. !!]
+resources-pressure-warning = [!! Ṁàç ṁëṁôŕÿ ïš üñđëŕ þŕëššüŕë. šüþëŕ.ëñĝïñëëŕïñĝ üšëš { $used } ôƒ { $ram }. !!]
+resources-pressure-warning-short = [!! Ṁàç ṁëṁôŕÿ ïš üñđëŕ þŕëššüŕë. !!]
+resources-pressure-critical = [!! Ṁàç ṁëṁôŕÿ ïš çŕïţïçàľľÿ ľôŵ. šüþëŕ.ëñĝïñëëŕïñĝ üšëš { $used } ôƒ { $ram }. !!]
+resources-pressure-critical-others = [!! Ṁàç ṁëṁôŕÿ ïš çŕïţïçàľľÿ ľôŵ, ṁôšţľÿ ƒŕôṁ ôţħëŕ àþþš. šüþëŕ.ëñĝïñëëŕïñĝ üšëš { $used } ôƒ { $ram }. !!]
+resources-pressure-critical-short = [!! Ṁàç ṁëṁôŕÿ ïš çŕïţïçàľľÿ ľôŵ. !!]
+resources-thermal = [!! Ṁàç ïš ŕüññïñĝ ħôţ àñđ ṁàÿ šľôŵ đôŵñ. !!]
+resources-measurements-unavailable = [!! Ṁëṁôŕÿ àñđ ÇÞÜ àŕë üñàṽàïľàƀľë ŕïĝħţ ñôŵ. Ÿôü çàñ šţïľľ ôþëñ àñđ ṁàñàĝë ţàƀš. !!]
+resources-loading = [!! Ľôàđïñĝ ŕëšôüŕçëš… !!]
+resources-empty = [!! Ñô ṁàţçħïñĝ ŕëšôüŕçëš. !!]
+resources-empty-all = [!! Ñôţħïñĝ ŕüññïñĝ. !!]
+resources-empty-agents = [!! Ñô àĝëñţš ŕüññïñĝ. !!]
+resources-empty-browser = [!! Ñô ƀŕôŵšëŕ ţàƀš ôþëñ. !!]
+resources-empty-terminals = [!! Ñô ţëŕṁïñàľš ŕüññïñĝ. !!]
+resources-tab-all = [!! Àľľ !!]
+resources-tab-agents = [!! Àĝëñţš !!]
+resources-tab-browser = [!! Ɓŕôŵšëŕ !!]
+resources-tab-terminals = [!! Ţëŕṁïñàľš !!]
+resources-fact-agents =
+    { $count ->
+        [one] [!! àĝëñţ !!]
+       *[other] [!! àĝëñţš !!]
+    }
+resources-fact-browser-tabs =
+    { $count ->
+        [one] [!! ƀŕôŵšëŕ ţàƀ !!]
+       *[other] [!! ƀŕôŵšëŕ ţàƀš !!]
+    }
+resources-fact-terminals =
+    { $count ->
+        [one] [!! ţëŕṁïñàľ !!]
+       *[other] [!! ţëŕṁïñàľš !!]
+    }
+resources-on-screen = [!! Ôñ šçŕëëñ, šô ïţ šţàÿš àŵàķë !!]
+resources-open = [!! Ôþëñ !!]
+resources-close = [!! Çľôšë !!]
+resources-close-confirm = [!! Çľôšë { $name }? !!]
+resources-close-consequence = [!! Ïţš þàĝë çľôšëš. !!]
+resources-average-title = [!! Àṽëŕàĝë þëŕ àĝëñţ !!]
+resources-average-each = [!! Ëàçħ !!]
+resources-average-ten = [!! 10 àĝëñţš !!]
+resources-average-each-suffix = [!! ëàçħ !!]
+resources-average-for-ten = [!! ƒôŕ 10 !!]
+resources-tree-more = [!! +{ $count } ṁôŕë !!]
+resources-app-item-detail = [!! { $activity }, { $lines } !!]
+resources-app-more-chats =
+    { $count ->
+        [one] [!! 1 ṁôŕë çħàţ !!]
+       *[other] [!! { $count } ṁôŕë çħàţš !!]
+    }
+resources-app-more-terminals =
+    { $count ->
+        [one] [!! 1 ṁôŕë ţëŕṁïñàľ !!]
+       *[other] [!! { $count } ṁôŕë ţëŕṁïñàľš !!]
+    }
 issue-report-check-submission = [!! Çħëçķ šüþṁïššïôñ !!]
 issue-report-submission-uncertain = [!! Ţħïš ŕëþôŕţ ṁàÿ àľŕëàđÿ þë ôñ GïţĦüþ. Çħëçķ šüþṁïššïôñ ţô ƒïñđ ïţ; çħëçķïñĝ ñëṽëŕ þôšţš àĝàïñ. Ïƒ ïţ ïš ñôţ ƒôüñđ ÿëţ, ŵàïţ àñđ çħëçķ àĝàïñ, ôŕ ŕëṽïëŵ ÿôüŕ GïţĦüþ ïššüëš þëƒôŕë đïšçàŕđïñĝ ţħïš đŕàƒţ. !!]
 issue-report-discard-uncertain = [!! Đïšçàŕđ đŕàƒţ (ŕëþôŕţ ṁàÿ àľŕëàđÿ ëẋïšţ) !!]
