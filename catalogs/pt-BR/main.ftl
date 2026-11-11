@@ -4104,4 +4104,8 @@ exit-save-failed-description = O estado mais recente do aplicativo não foi salv
 exit-restart-without-saving = Reiniciar sem salvar
 exit-quit-without-saving = Sair sem salvar
 
+issue-report-check-submission = Verificar envio
+issue-report-submission-uncertain = Este relatório pode já estar no GitHub. Verifique o envio para encontrá-lo; a verificação nunca publica novamente. Se ainda não for encontrado, aguarde e verifique de novo, ou revise suas issues no GitHub antes de descartar este rascunho.
+issue-report-discard-uncertain = Descartar rascunho (o relatório pode já existir)
+issue-report-draft-load-failed = Não foi possível ler seu relatório salvo. Resolva o problema de armazenamento e reinicie o aplicativo antes de enviar outro relatório.
 review-comment-edit-staged = Remova esta revisão do compositor antes de editá-la.

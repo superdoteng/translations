@@ -4284,4 +4284,8 @@ exit-save-failed-description = 最新的应用状态尚未保存。{ $error }。
 exit-restart-without-saving = 不保存并重启
 exit-quit-without-saving = 不保存并退出
 
+issue-report-check-submission = 检查提交状态
+issue-report-submission-uncertain = 此报告可能已在 GitHub 上。请检查提交状态以查找它；检查绝不会再次发布。如果暂时未找到，请稍候再检查，或在丢弃此草稿前查看你在 GitHub 上的议题。
+issue-report-discard-uncertain = 丢弃草稿（报告可能已存在）
+issue-report-draft-load-failed = 无法读取你保存的报告。请解决存储问题并重新启动应用，然后再提交其他报告。
 review-comment-edit-staged = 请先将此审查从输入区移除，再进行编辑。

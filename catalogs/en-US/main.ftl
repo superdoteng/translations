@@ -4787,4 +4787,8 @@ exit-save-failed-description = Your latest app state has not been saved. { $erro
 exit-restart-without-saving = Restart without saving
 exit-quit-without-saving = Quit without saving
 
+issue-report-check-submission = Check submission
+issue-report-submission-uncertain = This report may already be on GitHub. Check submission to find it; checking never posts again. If it is not found yet, wait and check again, or review your GitHub issues before discarding this draft.
+issue-report-discard-uncertain = Discard draft (report may already exist)
+issue-report-draft-load-failed = Could not read your saved report. Resolve the storage problem and restart the app before submitting another report.
 review-comment-edit-staged = Remove this review from the composer before editing.

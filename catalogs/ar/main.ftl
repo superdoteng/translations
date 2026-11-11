@@ -4321,4 +4321,8 @@ exit-save-failed-description = لم تُحفظ أحدث حالة للتطبيق.
 exit-restart-without-saving = إعادة التشغيل دون حفظ
 exit-quit-without-saving = إنهاء دون حفظ
 
+issue-report-check-submission = التحقق من الإرسال
+issue-report-submission-uncertain = قد يكون هذا البلاغ موجودًا بالفعل على GitHub. تحقق من الإرسال للعثور عليه؛ لا يؤدي التحقق إلى نشره مجددًا أبدًا. إذا لم تجده بعد، فانتظر وتحقق مرة أخرى، أو راجع بلاغاتك على GitHub قبل تجاهل هذه المسودة.
+issue-report-discard-uncertain = تجاهل المسودة (قد يكون البلاغ موجودًا بالفعل)
+issue-report-draft-load-failed = تعذرت قراءة بلاغك المحفوظ. عالج مشكلة التخزين وأعد تشغيل التطبيق قبل إرسال بلاغ آخر.
 review-comment-edit-staged = أزل هذه المراجعة من مربع الكتابة قبل التعديل.

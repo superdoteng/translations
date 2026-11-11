@@ -3963,4 +3963,8 @@ exit-save-failed-description = Status aplikasi terbaru belum disimpan. { $error 
 exit-restart-without-saving = Mulai ulang tanpa menyimpan
 exit-quit-without-saving = Keluar tanpa menyimpan
 
+issue-report-check-submission = Periksa pengiriman
+issue-report-submission-uncertain = Laporan ini mungkin sudah ada di GitHub. Periksa pengiriman untuk menemukannya; pemeriksaan tidak pernah memposting ulang. Jika belum ditemukan, tunggu dan periksa lagi, atau tinjau issue GitHub Anda sebelum membuang draf ini.
+issue-report-discard-uncertain = Buang draf (laporan mungkin sudah ada)
+issue-report-draft-load-failed = Tidak dapat membaca laporan tersimpan Anda. Atasi masalah penyimpanan dan mulai ulang aplikasi sebelum mengirim laporan lain.
 review-comment-edit-staged = Hapus ulasan ini dari kolom penulisan sebelum mengeditnya.

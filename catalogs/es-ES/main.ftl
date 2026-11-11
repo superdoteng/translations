@@ -4105,4 +4105,8 @@ exit-save-failed-description = No se ha guardado el estado más reciente de la a
 exit-restart-without-saving = Reiniciar sin guardar
 exit-quit-without-saving = Salir sin guardar
 
+issue-report-check-submission = Comprobar envío
+issue-report-submission-uncertain = Este informe podría estar ya en GitHub. Comprueba el envío para encontrarlo; la comprobación nunca vuelve a publicarlo. Si aún no se encuentra, espera y compruébalo de nuevo, o revisa tus incidencias de GitHub antes de descartar este borrador.
+issue-report-discard-uncertain = Descartar borrador (el informe podría existir ya)
+issue-report-draft-load-failed = No se ha podido leer tu informe guardado. Resuelve el problema de almacenamiento y reinicia la aplicación antes de enviar otro informe.
 review-comment-edit-staged = Quita esta revisión del compositor antes de editarla.
