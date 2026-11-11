@@ -4176,3 +4176,28 @@ exit-save-failed-title = Не удалось сохранить состояни
 exit-save-failed-description = Последнее состояние приложения не сохранено. { $error }. Устраните проблему с хранилищем и повторите попытку или продолжите без сохранения.
 exit-restart-without-saving = Перезапустить без сохранения
 exit-quit-without-saving = Выйти без сохранения
+
+chat-notice-mcp-quiet = Скрывать уведомления
+chat-notice-mcp-unquiet = Показывать уведомления
+chat-notice-mcp-quiet-tooltip = Не упоминать этот сервер, когда он не запущен. Он по-прежнему будет запускаться, а его инструменты останутся доступны. Настоящие ошибки по-прежнему вызывают предупреждения.
+chat-notice-mcp-unquiet-tooltip = Снова упоминать этот сервер, когда он не запущен
+chat-notice-mcp-retry = Перезагрузить серверы MCP
+chat-notice-mcp-retry-tooltip = Перезагрузить все настроенные серверы MCP
+chat-notice-mcp-edit-config = Изменить конфигурацию
+chat-notice-mcp-edit-config-tooltip = Открыть файл конфигурации, в котором определён этот сервер
+chat-notice-mcp-disable = Отключить
+chat-notice-mcp-disable-tooltip = Отключить этот сервер в конфигурации провайдера. Его инструменты станут недоступны.
+chat-notice-mcp-disable-confirm = Отключить сервер MCP { $name }?
+chat-notice-mcp-disable-confirm-detail = Его инструменты будут недоступны, пока вы не включите его снова. В разделе Настройки > Агенты > Серверы MCP Codex выберите Обновить, затем Включить или Изменить конфигурацию. Чтобы скрыть только это сообщение, выберите Скрывать уведомления.
+settings-mcp-quieted-servers = Серверы MCP Codex
+settings-mcp-quieted-servers-caption = Эти серверы не упоминаются в чате, когда не запущены. Они по-прежнему запускаются, а их инструменты остаются доступны.
+chat-notice-mcp-offline-count = { $count ->
+    [one] { $count } сервер MCP не запущен
+    [few] { $count } сервера MCP не запущены
+    [many] { $count } серверов MCP не запущены
+   *[other] { $count } сервера MCP не запущены
+    }
+settings-mcp-config-caption = Серверы MCP Codex — выбранные профиль и рабочее дерево. Обновите список, чтобы найти отключённые серверы. Включение действует в новых чатах.
+settings-mcp-config-loading = Чтение конфигурации Codex…
+settings-mcp-config-refresh = Обновить серверы MCP Codex
+settings-mcp-config-enable = Включить

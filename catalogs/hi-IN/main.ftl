@@ -4055,3 +4055,26 @@ exit-save-failed-title = ऐप की स्थिति सहेजी नह
 exit-save-failed-description = आपके ऐप की नवीनतम स्थिति सहेजी नहीं गई है। { $error }। स्टोरेज की समस्या ठीक करके फिर से कोशिश करें या सहेजे बिना जारी रखें।
 exit-restart-without-saving = सहेजे बिना पुनः शुरू करें
 exit-quit-without-saving = सहेजे बिना बंद करें
+
+chat-notice-mcp-quiet = सूचनाएँ छिपाएँ
+chat-notice-mcp-unquiet = सूचनाएँ फिर दिखाएँ
+chat-notice-mcp-quiet-tooltip = यह सर्वर न चल रहा हो तो उसका उल्लेख न करें। इसे शुरू करने की कोशिश होती रहेगी और इसके टूल उपलब्ध रहेंगे। वास्तविक विफलताओं पर चेतावनी फिर भी दिखेगी।
+chat-notice-mcp-unquiet-tooltip = यह सर्वर न चल रहा हो तो उसका फिर उल्लेख करें
+chat-notice-mcp-retry = MCP सर्वर फिर लोड करें
+chat-notice-mcp-retry-tooltip = सभी कॉन्फ़िगर किए गए MCP सर्वर फिर लोड करें
+chat-notice-mcp-edit-config = कॉन्फ़िगरेशन संपादित करें
+chat-notice-mcp-edit-config-tooltip = इस सर्वर को परिभाषित करने वाली कॉन्फ़िगरेशन फ़ाइल खोलें
+chat-notice-mcp-disable = अक्षम करें
+chat-notice-mcp-disable-tooltip = प्रदाता के कॉन्फ़िगरेशन में यह सर्वर अक्षम करें। इसके टूल उपलब्ध नहीं रहेंगे।
+chat-notice-mcp-disable-confirm = MCP सर्वर { $name } अक्षम करें?
+chat-notice-mcp-disable-confirm-detail = फिर से सक्षम करने तक इसके टूल उपलब्ध नहीं होंगे। सेटिंग्स > एजेंट > Codex MCP सर्वर में रीफ़्रेश करें चुनें, फिर सक्षम करें या कॉन्फ़िगरेशन संपादित करें चुनें। केवल यह संदेश छिपाने के लिए सूचनाएँ छिपाएँ का उपयोग करें।
+settings-mcp-quieted-servers = Codex MCP सर्वर
+settings-mcp-quieted-servers-caption = ये सर्वर न चल रहे हों तो चैट में इनका उल्लेख नहीं होता। इन्हें शुरू करने की कोशिश होती रहती है और इनके टूल उपलब्ध रहते हैं।
+chat-notice-mcp-offline-count = { $count ->
+    [one] 1 MCP सर्वर नहीं चल रहा है
+   *[other] { $count } MCP सर्वर नहीं चल रहे हैं
+    }
+settings-mcp-config-caption = Codex MCP सर्वर — चुनी गई प्रोफ़ाइल और वर्कट्री। अक्षम सर्वर खोजने के लिए रीफ़्रेश करें। सक्षम करना नई चैट में प्रभावी होता है।
+settings-mcp-config-loading = Codex कॉन्फ़िगरेशन पढ़ा जा रहा है…
+settings-mcp-config-refresh = Codex MCP सर्वर रीफ़्रेश करें
+settings-mcp-config-enable = सक्षम करें

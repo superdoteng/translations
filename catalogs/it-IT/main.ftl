@@ -4109,3 +4109,26 @@ exit-save-failed-title = Impossibile salvare lo stato dell’app
 exit-save-failed-description = L’ultimo stato dell’app non è stato salvato. { $error }. Risolvi il problema di archiviazione e riprova, oppure continua senza salvare.
 exit-restart-without-saving = Riavvia senza salvare
 exit-quit-without-saving = Esci senza salvare
+
+chat-notice-mcp-quiet = Silenzia avvisi
+chat-notice-mcp-unquiet = Ripristina avvisi
+chat-notice-mcp-quiet-tooltip = Non menzionare più questo server quando non è in esecuzione. Continuerà ad avviarsi e i suoi strumenti resteranno disponibili. Gli errori effettivi continueranno a generare avvisi.
+chat-notice-mcp-unquiet-tooltip = Menziona di nuovo questo server quando non è in esecuzione
+chat-notice-mcp-retry = Ricarica server MCP
+chat-notice-mcp-retry-tooltip = Ricarica tutti i server MCP configurati
+chat-notice-mcp-edit-config = Modifica configurazione
+chat-notice-mcp-edit-config-tooltip = Apri il file di configurazione che definisce questo server
+chat-notice-mcp-disable = Disattiva
+chat-notice-mcp-disable-tooltip = Disattiva questo server nella configurazione del fornitore. I suoi strumenti non saranno più disponibili.
+chat-notice-mcp-disable-confirm = Disattivare il server MCP { $name }?
+chat-notice-mcp-disable-confirm-detail = I suoi strumenti non saranno disponibili finché non lo riattivi. In Impostazioni > Agenti > Server MCP di Codex, scegli Aggiorna, poi Attiva o Modifica configurazione. Per nascondere solo questo messaggio, usa Silenzia avvisi.
+settings-mcp-quieted-servers = Server MCP di Codex
+settings-mcp-quieted-servers-caption = Questi server non vengono menzionati nella chat quando non sono in esecuzione. Continuano ad avviarsi e i loro strumenti restano disponibili.
+chat-notice-mcp-offline-count = { $count ->
+    [one] 1 server MCP non è in esecuzione
+   *[other] { $count } server MCP non sono in esecuzione
+    }
+settings-mcp-config-caption = Server MCP di Codex — profilo e albero di lavoro selezionati. Aggiorna l’elenco per trovare i server disattivati. L’attivazione ha effetto nelle nuove chat.
+settings-mcp-config-loading = Lettura della configurazione di Codex…
+settings-mcp-config-refresh = Aggiorna server MCP di Codex
+settings-mcp-config-enable = Attiva

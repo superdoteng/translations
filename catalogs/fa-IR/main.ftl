@@ -3981,3 +3981,26 @@ exit-save-failed-title = ذخیرهٔ وضعیت برنامه ممکن نیست
 exit-save-failed-description = آخرین وضعیت برنامه ذخیره نشده است. { $error }. پس از رفع مشکل فضای ذخیره‌سازی دوباره تلاش کنید، یا بدون ذخیره ادامه دهید.
 exit-restart-without-saving = راه‌اندازی دوباره بدون ذخیره
 exit-quit-without-saving = خروج بدون ذخیره
+
+chat-notice-mcp-quiet = پنهان کردن اعلان‌ها
+chat-notice-mcp-unquiet = نمایش دوبارهٔ اعلان‌ها
+chat-notice-mcp-quiet-tooltip = وقتی این سرور در حال اجرا نیست، دیگر به آن اشاره نکنید. تلاش برای راه‌اندازی آن ادامه دارد و ابزارهایش در دسترس می‌مانند. خطاهای واقعی همچنان هشدار نشان می‌دهند.
+chat-notice-mcp-unquiet-tooltip = وقتی این سرور در حال اجرا نیست، دوباره به آن اشاره کنید
+chat-notice-mcp-retry = بارگذاری دوبارهٔ سرورهای MCP
+chat-notice-mcp-retry-tooltip = بارگذاری دوبارهٔ همهٔ سرورهای MCP پیکربندی‌شده
+chat-notice-mcp-edit-config = ویرایش پیکربندی
+chat-notice-mcp-edit-config-tooltip = باز کردن فایل پیکربندی‌ای که این سرور را تعریف می‌کند
+chat-notice-mcp-disable = غیرفعال کردن
+chat-notice-mcp-disable-tooltip = غیرفعال کردن این سرور در پیکربندی ارائه‌دهنده. ابزارهای آن دیگر در دسترس نخواهند بود.
+chat-notice-mcp-disable-confirm = سرور MCP ‏{ $name } غیرفعال شود؟
+chat-notice-mcp-disable-confirm-detail = تا زمانی که دوباره آن را فعال نکنید، ابزارهایش در دسترس نخواهند بود. در تنظیمات > عوامل > سرورهای MCP در Codex، ابتدا تازه‌سازی و سپس فعال کردن یا ویرایش پیکربندی را انتخاب کنید. برای پنهان کردن فقط این پیام، از پنهان کردن اعلان‌ها استفاده کنید.
+settings-mcp-quieted-servers = سرورهای MCP در Codex
+settings-mcp-quieted-servers-caption = وقتی این سرورها در حال اجرا نیستند، در گفتگو به آن‌ها اشاره نمی‌شود. تلاش برای راه‌اندازی آن‌ها ادامه دارد و ابزارهایشان در دسترس می‌مانند.
+chat-notice-mcp-offline-count = { $count ->
+    [one] { $count } سرور MCP در حال اجرا نیست
+   *[other] { $count } سرور MCP در حال اجرا نیستند
+    }
+settings-mcp-config-caption = سرورهای MCP در Codex — پروفایل و درخت کار انتخاب‌شده. برای یافتن سرورهای غیرفعال، فهرست را تازه‌سازی کنید. فعال‌سازی در گفتگوهای جدید اعمال می‌شود.
+settings-mcp-config-loading = در حال خواندن پیکربندی Codex…
+settings-mcp-config-refresh = تازه‌سازی سرورهای MCP در Codex
+settings-mcp-config-enable = فعال کردن
