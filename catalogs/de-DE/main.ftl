@@ -4083,3 +4083,8 @@ exit-save-failed-title = App-Zustand konnte nicht gespeichert werden
 exit-save-failed-description = Dein letzter App-Zustand wurde nicht gespeichert. { $error }. Behebe das Speicherproblem und versuche es erneut oder fahre ohne Speichern fort.
 exit-restart-without-saving = Ohne Speichern neu starten
 exit-quit-without-saving = Ohne Speichern beenden
+
+issue-report-check-submission = Übermittlung prüfen
+issue-report-submission-uncertain = Dieser Bericht ist möglicherweise bereits auf GitHub. Prüfe die Übermittlung, um ihn zu finden; dabei wird er niemals erneut veröffentlicht. Wenn er noch nicht gefunden wird, warte und prüfe erneut oder sieh dir deine GitHub-Issues an, bevor du diesen Entwurf verwirfst.
+issue-report-discard-uncertain = Entwurf verwerfen (Bericht existiert möglicherweise bereits)
+issue-report-draft-load-failed = Dein gespeicherter Bericht konnte nicht gelesen werden. Behebe das Speicherproblem und starte die App neu, bevor du einen weiteren Bericht übermittelst.

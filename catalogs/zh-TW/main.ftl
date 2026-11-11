@@ -4283,3 +4283,8 @@ exit-save-failed-title = 無法儲存應用程式狀態
 exit-save-failed-description = 最新的應用程式狀態尚未儲存。{ $error }。請修復儲存問題後重試，或不儲存並繼續。
 exit-restart-without-saving = 不儲存並重新啟動
 exit-quit-without-saving = 不儲存並結束
+
+issue-report-check-submission = 檢查提交狀態
+issue-report-submission-uncertain = 此報告可能已在 GitHub 上。請檢查提交狀態以尋找報告；檢查絕不會再次發布。如果暫時找不到，請稍候再檢查，或在捨棄此草稿前查看你在 GitHub 上的議題。
+issue-report-discard-uncertain = 捨棄草稿（報告可能已存在）
+issue-report-draft-load-failed = 無法讀取你儲存的報告。請解決儲存問題並重新啟動應用程式，再提交其他報告。

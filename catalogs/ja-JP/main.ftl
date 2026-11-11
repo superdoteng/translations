@@ -4333,3 +4333,8 @@ exit-save-failed-title = アプリの状態を保存できません
 exit-save-failed-description = 最新のアプリの状態が保存されていません。{ $error }。ストレージの問題を解決して再試行するか、保存せずに続行してください。
 exit-restart-without-saving = 保存せずに再起動
 exit-quit-without-saving = 保存せずに終了
+
+issue-report-check-submission = 送信状況を確認
+issue-report-submission-uncertain = このレポートはすでに GitHub にある可能性があります。送信状況を確認して探してください。確認しても再投稿されることはありません。まだ見つからない場合は、しばらく待ってから再確認するか、この下書きを破棄する前に GitHub の自分の Issue を確認してください。
+issue-report-discard-uncertain = 下書きを破棄（レポートがすでに存在する可能性があります）
+issue-report-draft-load-failed = 保存したレポートを読み取れませんでした。別のレポートを送信する前に、ストレージの問題を解決してアプリを再起動してください。
