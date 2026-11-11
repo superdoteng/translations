@@ -4055,3 +4055,13 @@ exit-save-failed-title = ऐप की स्थिति सहेजी नह
 exit-save-failed-description = आपके ऐप की नवीनतम स्थिति सहेजी नहीं गई है। { $error }। स्टोरेज की समस्या ठीक करके फिर से कोशिश करें या सहेजे बिना जारी रखें।
 exit-restart-without-saving = सहेजे बिना पुनः शुरू करें
 exit-quit-without-saving = सहेजे बिना बंद करें
+
+chat-usage-resume-enable = उपलब्ध होने पर फिर शुरू करें
+chat-usage-resume-delay = विलंब: { $hours } घंटे (बदलें)
+chat-usage-resume-retry = फिर प्रयास: हर { $minutes } मिनट (बदलें)
+chat-usage-resume-next = फिर शुरू करने का अगला प्रयास { $deadline } पर
+chat-usage-resume-checking = उपलब्धता जाँची जा रही है
+chat-usage-resume-status = { $state } · { $attempts } प्रयास · { $expiry } पर समाप्त
+chat-usage-resume-due = अब समय हो गया है
+chat-usage-resume-countdown = { $hours } घंटे { $minutes } मिनट में
+chat-usage-resume-notification = उपयोग सीमा तक पहुँचने के बाद सत्र फिर शुरू हुआ

@@ -4299,3 +4299,13 @@ exit-save-failed-title = অ্যাপের অবস্থা সংরক�
 exit-save-failed-description = আপনার অ্যাপের সর্বশেষ অবস্থা সংরক্ষিত হয়নি। { $error }। স্টোরেজের সমস্যা ঠিক করে আবার চেষ্টা করুন অথবা সংরক্ষণ না করেই চালিয়ে যান।
 exit-restart-without-saving = সংরক্ষণ না করে পুনরায় চালু করুন
 exit-quit-without-saving = সংরক্ষণ না করে প্রস্থান করুন
+
+chat-usage-resume-enable = উপলব্ধ হলে আবার শুরু করুন
+chat-usage-resume-delay = বিলম্ব: { $hours } ঘণ্টা (পরিবর্তন)
+chat-usage-resume-retry = আবার চেষ্টা: { $minutes } মিনিট (পরিবর্তন)
+chat-usage-resume-next = পরবর্তী পুনরারম্ভের চেষ্টা { $deadline }-এ
+chat-usage-resume-checking = উপলব্ধতা যাচাই করা হচ্ছে
+chat-usage-resume-status = { $state } · { $attempts } বার চেষ্টা · মেয়াদ শেষ { $expiry }-এ
+chat-usage-resume-due = এখনই সময়
+chat-usage-resume-countdown = { $hours } ঘণ্টা { $minutes } মিনিট পরে
+chat-usage-resume-notification = ব্যবহারের সীমায় পৌঁছানোর পর সেশন আবার শুরু হয়েছে

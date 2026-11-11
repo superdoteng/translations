@@ -3962,3 +3962,13 @@ exit-save-failed-title = Không thể lưu trạng thái ứng dụng
 exit-save-failed-description = Trạng thái ứng dụng mới nhất chưa được lưu. { $error }. Hãy khắc phục vấn đề lưu trữ rồi thử lại, hoặc tiếp tục mà không lưu.
 exit-restart-without-saving = Khởi động lại mà không lưu
 exit-quit-without-saving = Thoát mà không lưu
+
+chat-usage-resume-enable = Tiếp tục khi khả dụng
+chat-usage-resume-delay = Chờ: { $hours } giờ (thay đổi)
+chat-usage-resume-retry = Thử lại mỗi { $minutes } phút (thay đổi)
+chat-usage-resume-next = Lần thử tiếp tục tiếp theo lúc { $deadline }
+chat-usage-resume-checking = Đang kiểm tra tính khả dụng
+chat-usage-resume-status = { $state } · { $attempts } lần thử · hết hạn lúc { $expiry }
+chat-usage-resume-due = Đã đến giờ
+chat-usage-resume-countdown = sau { $hours } giờ { $minutes } phút
+chat-usage-resume-notification = Đã tiếp tục phiên sau khi đạt giới hạn sử dụng

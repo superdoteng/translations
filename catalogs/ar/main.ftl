@@ -4320,3 +4320,13 @@ exit-save-failed-title = تعذّر حفظ حالة التطبيق
 exit-save-failed-description = لم تُحفظ أحدث حالة للتطبيق. { $error }. أعد المحاولة بعد إصلاح مشكلة التخزين، أو تابع دون حفظ.
 exit-restart-without-saving = إعادة التشغيل دون حفظ
 exit-quit-without-saving = إنهاء دون حفظ
+
+chat-usage-resume-enable = الاستئناف عند التوفر
+chat-usage-resume-delay = التأخير: { $hours } س (تغيير)
+chat-usage-resume-retry = إعادة المحاولة: { $minutes } د (تغيير)
+chat-usage-resume-next = محاولة الاستئناف التالية عند { $deadline }
+chat-usage-resume-checking = جارٍ التحقق من التوفر
+chat-usage-resume-status = { $state } · عدد المحاولات: { $attempts } · تنتهي عند { $expiry }
+chat-usage-resume-due = حان الوقت الآن
+chat-usage-resume-countdown = خلال { $hours } س و{ $minutes } د
+chat-usage-resume-notification = استؤنفت الجلسة بعد بلوغ حد الاستخدام

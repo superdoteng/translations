@@ -3962,3 +3962,13 @@ exit-save-failed-title = Tidak dapat menyimpan status aplikasi
 exit-save-failed-description = Status aplikasi terbaru belum disimpan. { $error }. Coba lagi setelah memperbaiki penyimpanan, atau lanjutkan tanpa menyimpan.
 exit-restart-without-saving = Mulai ulang tanpa menyimpan
 exit-quit-without-saving = Keluar tanpa menyimpan
+
+chat-usage-resume-enable = Lanjutkan saat tersedia
+chat-usage-resume-delay = Tunda: { $hours } jam (ubah)
+chat-usage-resume-retry = Coba lagi: setiap { $minutes } menit (ubah)
+chat-usage-resume-next = Percobaan melanjutkan berikutnya pada { $deadline }
+chat-usage-resume-checking = Memeriksa ketersediaan
+chat-usage-resume-status = { $state } · { $attempts } percobaan · kedaluwarsa pada { $expiry }
+chat-usage-resume-due = Waktunya sekarang
+chat-usage-resume-countdown = dalam { $hours } jam { $minutes } menit
+chat-usage-resume-notification = Sesi dilanjutkan setelah mencapai batas penggunaan

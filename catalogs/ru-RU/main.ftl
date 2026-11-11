@@ -4176,3 +4176,13 @@ exit-save-failed-title = Не удалось сохранить состояни
 exit-save-failed-description = Последнее состояние приложения не сохранено. { $error }. Устраните проблему с хранилищем и повторите попытку или продолжите без сохранения.
 exit-restart-without-saving = Перезапустить без сохранения
 exit-quit-without-saving = Выйти без сохранения
+
+chat-usage-resume-enable = Продолжить, когда станет доступно
+chat-usage-resume-delay = Задержка: { $hours } ч (изменить)
+chat-usage-resume-retry = Повторять каждые { $minutes } мин (изменить)
+chat-usage-resume-next = Следующая попытка продолжения: { $deadline }
+chat-usage-resume-checking = Проверка доступности
+chat-usage-resume-status = { $state } · попыток: { $attempts } · срок действия до { $expiry }
+chat-usage-resume-due = Время наступило
+chat-usage-resume-countdown = через { $hours } ч { $minutes } мин
+chat-usage-resume-notification = Сеанс продолжен после достижения лимита использования

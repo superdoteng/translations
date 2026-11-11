@@ -4333,3 +4333,13 @@ exit-save-failed-title = アプリの状態を保存できません
 exit-save-failed-description = 最新のアプリの状態が保存されていません。{ $error }。ストレージの問題を解決して再試行するか、保存せずに続行してください。
 exit-restart-without-saving = 保存せずに再起動
 exit-quit-without-saving = 保存せずに終了
+
+chat-usage-resume-enable = 利用可能になったら再開
+chat-usage-resume-delay = 待機: { $hours }時間（変更）
+chat-usage-resume-retry = 再試行: { $minutes }分ごと（変更）
+chat-usage-resume-next = 次の再開試行: { $deadline }
+chat-usage-resume-checking = 利用可能か確認中
+chat-usage-resume-status = { $state } · 試行回数: { $attempts } · 有効期限: { $expiry }
+chat-usage-resume-due = 予定時刻になりました
+chat-usage-resume-countdown = { $hours }時間{ $minutes }分後
+chat-usage-resume-notification = 使用量の上限に達したセッションを再開しました

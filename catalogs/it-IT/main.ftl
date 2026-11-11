@@ -4109,3 +4109,13 @@ exit-save-failed-title = Impossibile salvare lo stato dell’app
 exit-save-failed-description = L’ultimo stato dell’app non è stato salvato. { $error }. Risolvi il problema di archiviazione e riprova, oppure continua senza salvare.
 exit-restart-without-saving = Riavvia senza salvare
 exit-quit-without-saving = Esci senza salvare
+
+chat-usage-resume-enable = Riprendi quando disponibile
+chat-usage-resume-delay = Attesa: { $hours } ore (modifica)
+chat-usage-resume-retry = Riprova ogni { $minutes } min (modifica)
+chat-usage-resume-next = Prossimo tentativo di ripresa alle { $deadline }
+chat-usage-resume-checking = Verifica della disponibilità
+chat-usage-resume-status = { $state } · { $attempts } tentativi · scade alle { $expiry }
+chat-usage-resume-due = È il momento
+chat-usage-resume-countdown = tra { $hours } ore e { $minutes } min
+chat-usage-resume-notification = Sessione ripresa dopo il raggiungimento del limite di utilizzo

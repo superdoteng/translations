@@ -4283,3 +4283,13 @@ exit-save-failed-title = 無法儲存應用程式狀態
 exit-save-failed-description = 最新的應用程式狀態尚未儲存。{ $error }。請修復儲存問題後重試，或不儲存並繼續。
 exit-restart-without-saving = 不儲存並重新啟動
 exit-quit-without-saving = 不儲存並結束
+
+chat-usage-resume-enable = 可用時繼續
+chat-usage-resume-delay = 等待：{ $hours } 小時（變更）
+chat-usage-resume-retry = 每 { $minutes } 分鐘重試（變更）
+chat-usage-resume-next = 下次嘗試繼續的時間：{ $deadline }
+chat-usage-resume-checking = 正在檢查可用性
+chat-usage-resume-status = { $state } · 已嘗試 { $attempts } 次 · 到期時間：{ $expiry }
+chat-usage-resume-due = 已到預定時間
+chat-usage-resume-countdown = { $hours } 小時 { $minutes } 分鐘後
+chat-usage-resume-notification = 達到使用限額的工作階段已繼續

@@ -4378,3 +4378,13 @@ exit-save-failed-title = ایپ کی حالت محفوظ نہیں ہو سکی
 exit-save-failed-description = آپ کی ایپ کی تازہ ترین حالت محفوظ نہیں ہوئی۔ { $error }۔ اسٹوریج کا مسئلہ ٹھیک کرنے کے بعد دوبارہ کوشش کریں، یا محفوظ کیے بغیر جاری رکھیں۔
 exit-restart-without-saving = محفوظ کیے بغیر دوبارہ شروع کریں
 exit-quit-without-saving = محفوظ کیے بغیر بند کریں
+
+chat-usage-resume-enable = دستیاب ہونے پر دوبارہ شروع کریں
+chat-usage-resume-delay = تاخیر: { $hours } گھنٹے (تبدیل کریں)
+chat-usage-resume-retry = دوبارہ کوشش: ہر { $minutes } منٹ (تبدیل کریں)
+chat-usage-resume-next = دوبارہ شروع کرنے کی اگلی کوشش { $deadline } پر
+chat-usage-resume-checking = دستیابی کی جانچ ہو رہی ہے
+chat-usage-resume-status = { $state } · { $attempts } کوششیں · میعاد { $expiry } پر ختم
+chat-usage-resume-due = اب وقت ہو گیا ہے
+chat-usage-resume-countdown = { $hours } گھنٹے { $minutes } منٹ میں
+chat-usage-resume-notification = استعمال کی حد تک پہنچنے کے بعد سیشن دوبارہ شروع ہو گیا
