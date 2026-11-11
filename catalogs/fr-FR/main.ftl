@@ -4112,3 +4112,4 @@ issue-report-check-submission = Vérifier l’envoi
 issue-report-submission-uncertain = Ce rapport se trouve peut-être déjà sur GitHub. Vérifiez l’envoi pour le retrouver ; cette vérification ne le publie jamais à nouveau. S’il reste introuvable, patientez et réessayez, ou consultez vos tickets GitHub avant d’abandonner ce brouillon.
 issue-report-discard-uncertain = Abandonner le brouillon (le rapport existe peut-être déjà)
 issue-report-draft-load-failed = Impossible de lire votre rapport enregistré. Résolvez le problème de stockage et redémarrez l’application avant d’envoyer un autre rapport.
+review-comment-edit-staged = Retirez cette revue de la zone de saisie avant de la modifier.

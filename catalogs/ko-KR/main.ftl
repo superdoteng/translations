@@ -4291,3 +4291,4 @@ issue-report-check-submission = 제출 상태 확인
 issue-report-submission-uncertain = 이 보고서가 이미 GitHub에 있을 수 있습니다. 제출 상태를 확인하여 찾아보세요. 확인 시 다시 게시되지 않습니다. 아직 찾을 수 없다면 잠시 기다린 후 다시 확인하거나, 이 초안을 삭제하기 전에 GitHub에서 본인의 이슈를 검토하세요.
 issue-report-discard-uncertain = 초안 삭제 (보고서가 이미 있을 수 있음)
 issue-report-draft-load-failed = 저장된 보고서를 읽을 수 없습니다. 다른 보고서를 제출하기 전에 저장소 문제를 해결하고 앱을 다시 시작하세요.
+review-comment-edit-staged = 편집하기 전에 입력창에서 이 리뷰를 제거하세요.
