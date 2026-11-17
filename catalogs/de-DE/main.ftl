@@ -1566,7 +1566,7 @@ settings-remote-background-auth-description = Der Hintergrund-Refresh benötigt 
 settings-remote-ssh-auth-label = SSH Authentifizierung
 settings-remote-ssh-auth-description = Benutze SSH Schlüssel mit deinem System-SSH-Agenten oder macOS Schlüsselanhänger. Fernerneuerungen im Hintergrund fragen niemals nach Passwörtern.
 settings-remote-cli-label = { $app_name } CLI
-settings-remote-cli-description = Installiere oder aktualisiere die `sc` CLI auf dem Host. Powers sind Git Updates, Agentenbenachrichtigungen und automatischer Zweigstellenbenennung aktiv.
+settings-remote-cli-description = Installiere oder aktualisiere die `se` CLI auf dem Host. Powers sind Git Updates, Agentenbenachrichtigungen und automatischer Zweigstellenbenennung aktiv.
 settings-remote-cli-auto-update-label = Halten Sie CLI automatisch auf dem neuesten Stand
 settings-remote-cli-auto-update-description = Installiere und aktualisiere die CLI auf diesem Host, ohne zu fragen, wenn sie fehlt oder veraltet ist. Wenn deaktiviert, wirst du aufgefordert und kannst den oben genannten Button benutzen.
 settings-remote-cli-installing = Installieren...
@@ -3130,7 +3130,7 @@ browser-annotation-composer-blocked = Bei fokussiertem Unteragentenprotokoll kö
 browser-consent-title = Dürfen Agenten den Browser in „{ $workspace_name }“ steuern?
 browser-consent-asked-by-agent = Ein Agent
 browser-consent-asked-by-worktree = Ein Agent, der in „{ $caller_label }“ arbeitet
-browser-consent-description = { $asked_by } möchte sc browser { $spelling } im Browser-Tab dieses Arbeitsbereichs ausführen. Die Freigabe erlaubt allen Agenten dieses Arbeitsbereichs dauerhaft, auf jeder geöffneten Seite zu klicken, zu tippen, zu navigieren und Skripte auszuführen, auch in angemeldeten Sitzungen. Das gilt für diesen und alle künftigen act-Befehle. Die meisten Lesebefehle benötigen keine Freigabe, das Lesen von Cookie-Werten jedoch schon. Die Erlaubnis bleibt für den Arbeitsbereich bestehen und kann jederzeit in den Einstellungen widerrufen werden.
+browser-consent-description = { $asked_by } möchte se browser { $spelling } im Browser-Tab dieses Arbeitsbereichs ausführen. Die Freigabe erlaubt allen Agenten dieses Arbeitsbereichs dauerhaft, auf jeder geöffneten Seite zu klicken, zu tippen, zu navigieren und Skripte auszuführen, auch in angemeldeten Sitzungen. Das gilt für diesen und alle künftigen act-Befehle. Die meisten Lesebefehle benötigen keine Freigabe, das Lesen von Cookie-Werten jedoch schon. Die Erlaubnis bleibt für den Arbeitsbereich bestehen und kann jederzeit in den Einstellungen widerrufen werden.
 browser-new-chats = Neuer Chat
 palette-no-matching-files-index-incomplete = Keine passenden Dateien (Index unvollständig: Dieser Arbeitsbaum überschreitet das Dateiscanlimit)
 update-ready-title = Update bereit
@@ -4277,7 +4277,6 @@ resources-exited-just-now = Gerade beendet
 resources-exited-minutes = Vor { $minutes } Min. beendet
 resources-exited-hours = Vor { $hours } Std. beendet
 resources-cpu-row = { $percent } % CPU
-resources-cpu-split = App { $app } % · Gestartet { $launched } %
 resources-origin-tab = Terminal-Tab
 resources-origin-launched = Gestartet von { $tab }
 resources-origin-run-script = Run-Skript
@@ -4299,26 +4298,6 @@ resources-app-graphics-info = Fensteroberflächen und GPU-Speicher
 resources-app-held-for-reuse = Zur Wiederverwendung gehalten
 resources-app-saved-wake = Im Ruhezustand
 resources-app-code-system = Code und System
-resources-app-chats = Chats
-resources-app-chats-open = { $count } offen
-resources-app-chats-idle = { $count } inaktiv
-resources-app-chats-history = Chatverlauf
-resources-app-terminals = Terminals
-resources-app-terminals-count =
-    { $count ->
-        [one] 1 Terminal
-       *[other] { $count } Terminals
-    }
-resources-app-terminals-lines =
-    { $count ->
-        [one] 1 Zeile
-       *[other] { $count } Zeilen
-    }
-resources-app-saved-count =
-    { $count ->
-        [one] 1 Worktree
-       *[other] { $count } Worktrees
-    }
 resources-app-saved-info = Arbeitsspeicher für Worktrees im Ruhezustand, damit sie sofort wieder öffnen
 resources-app-background-count =
     { $count ->
@@ -4332,7 +4311,6 @@ resources-app-other-detail = Wächst mit Projekten und Worktrees
 resources-app-held-for-reuse-detail = Vom Allocator zur Wiederverwendung gehalten
 resources-app-code-system-detail = Programmcode und Systembibliotheken
 resources-estimated = Geschätzt
-resources-sleep-idle-chats = Inaktive Chats in Ruhezustand
 resources-sleep-idle-chats-confirm =
     { $count ->
         [one] 1 inaktiven Chat in den Ruhezustand versetzen?
@@ -4346,12 +4324,6 @@ resources-clear-confirm =
        *[other] { $lines } Zeilen des Rücklaufs löschen?
     }
 resources-clear-consequence = Der Bildschirminhalt bleibt erhalten.
-resources-clear-scrollback = Rücklauf leeren
-resources-clear-all-confirm =
-    { $count ->
-        [one] Rücklauf in 1 Terminal leeren?
-       *[other] Rücklauf in { $count } Terminals leeren?
-    }
 resources-chat-sleep-running = Führt gerade einen Turn aus. Kann nach dem Ende des Turns in den Ruhezustand wechseln.
 resources-chat-sleep-waiting = Wartet auf deine Antwort. Kann nach deiner Antwort in den Ruhezustand wechseln.
 resources-chat-sleep-unseen = Hat eine Antwort, die du noch nicht gesehen hast. Kann in den Ruhezustand wechseln, sobald du sie gelesen hast.
@@ -4385,51 +4357,21 @@ resources-tab-all = Alle
 resources-tab-agents = Agenten
 resources-tab-browser = Browser
 resources-tab-terminals = Terminals
-resources-fact-agents =
-    { $count ->
-        [one] Agent
-       *[other] Agenten
-    }
-resources-fact-browser-tabs =
-    { $count ->
-        [one] Browser-Tab
-       *[other] Browser-Tabs
-    }
-resources-fact-terminals =
-    { $count ->
-        [one] Terminal
-       *[other] Terminals
-    }
 resources-on-screen = Auf dem Bildschirm, bleibt daher aktiv
 resources-open = Öffnen
 resources-close = Schließen
 resources-close-confirm = { $name } schließen?
 resources-close-consequence = Die Seite wird geschlossen.
 resources-average-title = Durchschnitt pro Agent
-resources-average-each = Je Agent
-resources-average-ten = 10 Agenten
-resources-average-each-suffix = je
-resources-average-for-ten = für 10
 resources-tree-more = +{ $count } weitere
-resources-app-item-detail = { $activity }, { $lines }
-resources-app-more-chats =
-    { $count ->
-        [one] 1 weiterer Chat
-       *[other] { $count } weitere Chats
-    }
-resources-app-more-terminals =
-    { $count ->
-        [one] 1 weiteres Terminal
-       *[other] { $count } weitere Terminals
-    }
 issue-report-check-submission = Übermittlung prüfen
 issue-report-submission-uncertain = Dieser Bericht ist möglicherweise bereits auf GitHub. Prüfe die Übermittlung, um ihn zu finden; dabei wird er niemals erneut veröffentlicht. Wenn er noch nicht gefunden wird, warte und prüfe erneut oder sieh dir deine GitHub-Issues an, bevor du diesen Entwurf verwirfst.
 issue-report-discard-uncertain = Entwurf verwerfen (Bericht existiert möglicherweise bereits)
 issue-report-draft-load-failed = Dein gespeicherter Bericht konnte nicht gelesen werden. Behebe das Speicherproblem und starte die App neu, bevor du einen weiteren Bericht übermittelst.
 review-comment-edit-staged = Entferne dieses Review aus dem Eingabebereich, bevor du es bearbeitest.
 
-chat-edit-failed-draft-conflict = Behalte oder lösche deinen aktuellen Entwurf, bevor du die fehlgeschlagene Nachricht bearbeitest.
 chat-edit-skill-as-text = Skill als Text bearbeiten
+chat-edit-failed-draft-conflict = Behalte oder lösche deinen aktuellen Entwurf, bevor du die fehlgeschlagene Nachricht bearbeitest.
 
 chat-notice-mcp-disable = Deaktivieren
 chat-notice-mcp-disable-confirm = MCP-Server { $name } deaktivieren?

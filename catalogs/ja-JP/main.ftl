@@ -145,7 +145,7 @@ browser-annotation-composer-blocked = サブエージェントのトランスク
 browser-consent-title = 「{ $workspace_name }」でエージェントによるブラウザー操作を許可しますか？
 browser-consent-asked-by-agent = エージェント
 browser-consent-asked-by-worktree = 「{ $caller_label }」で作業中のエージェント
-browser-consent-description = { $asked_by } が、このワークスペースのブラウザータブで sc browser { $spelling } を実行しようとしています。許可すると、この操作だけでなく今後のすべての act コマンドについて、このワークスペース内の全エージェントが、サインイン済みのセッションを含む開いているページでクリック、入力、ページ移動、スクリプト実行を行えるようになります。ほとんどの読み取り専用コマンドには承認は不要ですが、Cookie 値の読み取りには承認が必要です。この許可はワークスペースに保持され、設定からいつでも取り消せます。
+browser-consent-description = { $asked_by } が、このワークスペースのブラウザータブで se browser { $spelling } を実行しようとしています。許可すると、この操作だけでなく今後のすべての act コマンドについて、このワークスペース内の全エージェントが、サインイン済みのセッションを含む開いているページでクリック、入力、ページ移動、スクリプト実行を行えるようになります。ほとんどの読み取り専用コマンドには承認は不要ですが、Cookie 値の読み取りには承認が必要です。この許可はワークスペースに保持され、設定からいつでも取り消せます。
 browser-back = 戻る
 browser-forward = 進む
 browser-reload = リロード
@@ -893,11 +893,11 @@ settings-ai-starting-mode-label = 開始モード
 settings-ai-starting-mode-description = 新しいチャットタブとターミナルタブが開始する権限モードです。各チャットのモードは入力欄から切り替えられます。
 settings-ai-session-context-section = セッションコンテキスト
 settings-ai-agent-session-context-label = エージェントのセッションコンテキスト
-settings-ai-agent-session-context-description = super.engineering は、エージェントがアプリの sc CLI を安全に検出して使用できるよう、セッションにコンテキストを追加できます。
+settings-ai-agent-session-context-description = super.engineering は、エージェントがアプリの se CLI を安全に検出して使用できるよう、セッションにコンテキストを追加できます。
 settings-ai-agent-session-context-standard-label = 標準
 settings-ai-agent-session-context-standard-description = エージェントに標準の super.engineering CLI およびオーケストレーションのルーティング手順を提供します。
 settings-ai-agent-session-context-off-label = オフ
-settings-ai-agent-session-context-off-description = オフの間はセッションコンテキストを自動追加しません。レビューやワークツリーのタスク引き継ぎなど明示的な操作には影響せず、sc コマンドの安全制約も引き続き適用されます。
+settings-ai-agent-session-context-off-description = オフの間はセッションコンテキストを自動追加しません。レビューやワークツリーのタスク引き継ぎなど明示的な操作には影響せず、se コマンドの安全制約も引き続き適用されます。
 settings-ai-checking-connection = 接続を確認中
 settings-ai-check-connection = 接続を確認
 settings-ai-creating-profile-directory = プロファイルディレクトリを作成中。
@@ -1209,7 +1209,7 @@ settings-remote-background-auth-description = バックグラウンド更新に�
 settings-remote-ssh-auth-label = SSH 認証
 settings-remote-ssh-auth-description = システムの ssh-agent または macOS のキーチェーンで SSH キーを使用します。バックグラウンドでのリモート更新時にパスワードは要求されません。
 settings-remote-cli-label = { $app_name } CLI
-settings-remote-cli-description = ホストに `sc` CLI をインストールまたは更新します。Git のリアルタイム更新、エージェント通知、ブランチ名の自動生成に使用します。
+settings-remote-cli-description = ホストに `se` CLI をインストールまたは更新します。Git のリアルタイム更新、エージェント通知、ブランチ名の自動生成に使用します。
 settings-remote-cli-auto-update-label = CLI を自動的に最新の状態に保つ
 settings-remote-cli-auto-update-description = このホストの CLI が未インストールまたは古い場合に、確認せずインストールまたは更新します。無効にすると確認が表示され、上のボタンから手動で実行できます。
 settings-remote-cli-installing = インストール中…
@@ -1404,7 +1404,7 @@ settings-dynamic-search-ssh-target-description = { $workspace } のリモート 
 settings-dynamic-search-ssh-auth-label = SSH 認証
 settings-dynamic-search-ssh-auth-description = { $workspace } の SSH キーと接続設定です。
 settings-dynamic-search-remote-cli-label = super.engineering CLI
-settings-dynamic-search-remote-cli-description = { $workspace } にリモートの sc CLI をインストールまたは更新します。
+settings-dynamic-search-remote-cli-description = { $workspace } にリモートの se CLI をインストールまたは更新します。
 settings-dynamic-search-host-details-label = ホスト詳細
 settings-dynamic-search-host-details-description = { $workspace } で検出されたホスト情報：{ $facts }。
 settings-dynamic-search-provider-profiles-label = { $provider } プロファイル
@@ -4515,7 +4515,6 @@ resources-exited-just-now = たった今終了
 resources-exited-minutes = { $minutes } 分前に終了
 resources-exited-hours = { $hours } 時間前に終了
 resources-cpu-row = CPU { $percent }%
-resources-cpu-split = アプリ { $app }% · 起動済み { $launched }%
 resources-origin-tab = ターミナルタブ
 resources-origin-launched = { $tab } から起動
 resources-origin-run-script = 実行スクリプト
@@ -4537,23 +4536,6 @@ resources-app-graphics-info = ウィンドウのサーフェスと GPU メモリ
 resources-app-held-for-reuse = 再利用のため保持
 resources-app-saved-wake = スリープ中
 resources-app-code-system = コードとシステム
-resources-app-chats = チャット
-resources-app-chats-open = { $count } 件を表示中
-resources-app-chats-idle = { $count } 件がアイドル
-resources-app-chats-history = チャット履歴
-resources-app-terminals = ターミナル
-resources-app-terminals-count =
-    { $count ->
-       *[other] ターミナル { $count } 個
-    }
-resources-app-terminals-lines =
-    { $count ->
-       *[other] { $count } 行
-    }
-resources-app-saved-count =
-    { $count ->
-       *[other] ワークツリー { $count } 個
-    }
 resources-app-saved-info = スリープ中のワークツリーをすぐに再開できるよう保持しているメモリ
 resources-app-background-count =
     { $count ->
@@ -4566,7 +4548,6 @@ resources-app-other-detail = プロジェクトやワークツリーの数に応
 resources-app-held-for-reuse-detail = アロケーターが再利用のために保持
 resources-app-code-system-detail = プログラムコードとシステムライブラリ
 resources-estimated = 推定
-resources-sleep-idle-chats = アイドル状態のチャットをスリープ
 resources-sleep-idle-chats-confirm =
     { $count ->
        *[other] アイドル状態のチャット { $count } 件をスリープしますか？
@@ -4578,11 +4559,6 @@ resources-clear-confirm =
        *[other] スクロールバックを { $lines } 行クリアしますか？
     }
 resources-clear-consequence = 画面はそのまま残ります。
-resources-clear-scrollback = スクロールバックをクリア
-resources-clear-all-confirm =
-    { $count ->
-       *[other] { $count } 個のターミナルのスクロールバックをクリアしますか？
-    }
 resources-chat-sleep-running = ターンを実行中です。ターンが終わるとスリープできます。
 resources-chat-sleep-waiting = 回答を待っています。回答するとスリープできます。
 resources-chat-sleep-unseen = 未読の返信があります。読むとスリープできます。
@@ -4616,46 +4592,21 @@ resources-tab-all = すべて
 resources-tab-agents = エージェント
 resources-tab-browser = ブラウザー
 resources-tab-terminals = ターミナル
-resources-fact-agents =
-    { $count ->
-       *[other] エージェント
-    }
-resources-fact-browser-tabs =
-    { $count ->
-       *[other] ブラウザータブ
-    }
-resources-fact-terminals =
-    { $count ->
-       *[other] ターミナル
-    }
 resources-on-screen = 画面に表示中のため、スリープしません
 resources-open = 開く
 resources-close = 閉じる
 resources-close-confirm = { $name } を閉じますか？
 resources-close-consequence = ページが閉じられます。
 resources-average-title = エージェントあたりの平均
-resources-average-each = 1 個あたり
-resources-average-ten = エージェント 10 個
-resources-average-each-suffix = ずつ
-resources-average-for-ten = 10 個分
 resources-tree-more = +{ $count } 件
-resources-app-item-detail = { $activity }、{ $lines }
-resources-app-more-chats =
-    { $count ->
-       *[other] さらにチャット { $count } 件
-    }
-resources-app-more-terminals =
-    { $count ->
-       *[other] さらにターミナル { $count } 個
-    }
 issue-report-check-submission = 送信状況を確認
 issue-report-submission-uncertain = このレポートはすでに GitHub にある可能性があります。送信状況を確認して探してください。確認しても再投稿されることはありません。まだ見つからない場合は、しばらく待ってから再確認するか、この下書きを破棄する前に GitHub の自分の Issue を確認してください。
 issue-report-discard-uncertain = 下書きを破棄（レポートがすでに存在する可能性があります）
 issue-report-draft-load-failed = 保存したレポートを読み取れませんでした。別のレポートを送信する前に、ストレージの問題を解決してアプリを再起動してください。
 review-comment-edit-staged = 編集する前に、このレビューを入力欄から削除してください。
 
-chat-edit-failed-draft-conflict = 失敗したメッセージを編集する前に、現在の下書きを保存するか消去してください。
 chat-edit-skill-as-text = スキルをテキストとして編集
+chat-edit-failed-draft-conflict = 失敗したメッセージを編集する前に、現在の下書きを保存するか消去してください。
 
 chat-notice-mcp-disable = 無効にする
 chat-notice-mcp-disable-confirm = MCP サーバー { $name } を無効にしますか？

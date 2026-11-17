@@ -1604,7 +1604,7 @@ settings-remote-background-auth-description = [!! Ɓàçķĝŕôüñđ ŕëƒŕ�
 settings-remote-ssh-auth-label = [!! SSH àüţħëñţïçàţïôñ !!]
 settings-remote-ssh-auth-description = [!! Üšë SSH ķëÿš ŵïţħ ÿôüŕ šÿšţëṁ ššħ-àĝëñţ ôŕ macOS Ķëÿçħàïñ. Ɓàçķĝŕôüñđ ŕëṁôţë ŕëƒŕëšħëš ñëṽëŕ àšķ ƒôŕ þàššŵôŕđš. !!]
 settings-remote-cli-label = [!! { $app_name } CLI !!]
-settings-remote-cli-description = [!! Ïñšţàľľ ôŕ üþđàţë ţħë `sc` CLI ôñ ţħë ħôšţ. Þôŵëŕš ľïṽë Git üþđàţëš, àĝëñţ ñôţïƒïçàţïôñš, àñđ àüţôṁàţïç þŕàñçħ ñàṁïñĝ. !!]
+settings-remote-cli-description = [!! Ïñšţàľľ ôŕ üþđàţë ţħë `se` CLI ôñ ţħë ħôšţ. Þôŵëŕš ľïṽë Git üþđàţëš, àĝëñţ ñôţïƒïçàţïôñš, àñđ àüţôṁàţïç þŕàñçħ ñàṁïñĝ. !!]
 settings-remote-cli-auto-update-label = [!! Ķëëþ CLI üþ ţô đàţë àüţôṁàţïçàľľÿ !!]
 settings-remote-cli-auto-update-description = [!! Ïñšţàľľ àñđ üþđàţë ţħë CLI ôñ ţħïš ħôšţ ŵïţħôüţ àšķïñĝ ŵħëñ ïţ'š ṁïššïñĝ ôŕ ôüţđàţëđ. Ïƒ đïšàþľëđ, ÿôü'ľľ þë þŕôṁþţëđ àñđ çàñ üšë ţħë þüţţôñ àþôṽë. !!]
 settings-remote-cli-installing = [!! Ïñšţàľľïñĝ... !!]
@@ -3094,7 +3094,7 @@ browser-consent-asked-by-agent = [!! Àñ àĝëñţ !!]
 
 browser-consent-asked-by-worktree = [!! Àñ àĝëñţ ŵôŕķïñĝ ïñ “{ $caller_label }” !!]
 
-browser-consent-description = [!! { $asked_by } àšķëđ ţô ŕüñ sc browser { $spelling } ïñ ţħïš ŵôŕķšþàçë'š þŕôŵšëŕ ţàþ. Àľľôŵïñĝ ĝŕàñţš ëṽëŕÿ àĝëñţ ïñ ţħïš ŵôŕķšþàçë šţàñđïñĝ þëŕṁïššïôñ — ƒôŕ ţħïš àñđ ëṽëŕÿ ƒüţüŕë act çôṁṁàñđ, ñôţ ĵüšţ ţħïš ôñë — ţô çľïçķ, ţÿþë, ñàṽïĝàţë, àñđ ŕüñ šçŕïþţš ôñ ŵħàţëṽëŕ þàĝë ïš ôþëñ, ïñçľüđïñĝ šïĝñëđ-ïñ šëššïôñš. Ṁôšţ ŕëàđ-ôñľÿ çôṁṁàñđš đô ñôţ ñëëđ àþþŕôṽàľ, þüţ ŕëàđïñĝ çôôķïë ṽàľüëš đôëš. Ţħïš þëŕšïšţš ƒôŕ ţħë ŵôŕķšþàçë àñđ çàñ þë ŕëṽôķëđ àñÿţïṁë ïñ Šëţţïñĝš. !!]
+browser-consent-description = [!! { $asked_by } àšķëđ ţô ŕüñ se browser { $spelling } ïñ ţħïš ŵôŕķšþàçë'š þŕôŵšëŕ ţàþ. Àľľôŵïñĝ ĝŕàñţš ëṽëŕÿ àĝëñţ ïñ ţħïš ŵôŕķšþàçë šţàñđïñĝ þëŕṁïššïôñ — ƒôŕ ţħïš àñđ ëṽëŕÿ ƒüţüŕë act çôṁṁàñđ, ñôţ ĵüšţ ţħïš ôñë — ţô çľïçķ, ţÿþë, ñàṽïĝàţë, àñđ ŕüñ šçŕïþţš ôñ ŵħàţëṽëŕ þàĝë ïš ôþëñ, ïñçľüđïñĝ šïĝñëđ-ïñ šëššïôñš. Ṁôšţ ŕëàđ-ôñľÿ çôṁṁàñđš đô ñôţ ñëëđ àþþŕôṽàľ, þüţ ŕëàđïñĝ çôôķïë ṽàľüëš đôëš. Ţħïš þëŕšïšţš ƒôŕ ţħë ŵôŕķšþàçë àñđ çàñ þë ŕëṽôķëđ àñÿţïṁë ïñ Šëţţïñĝš. !!]
 
 browser-new-chats = [!! Ñëŵ çħàţ !!]
 
@@ -4735,7 +4735,6 @@ resources-exited-just-now = [!! Ëxïţëđ ĵüšţ ñôŵ !!]
 resources-exited-minutes = [!! Ëxïţëđ { $minutes } ṁïñ àĝô !!]
 resources-exited-hours = [!! Ëxïţëđ { $hours } ħ àĝô !!]
 resources-cpu-row = [!! { $percent }% ÇÞÜ !!]
-resources-cpu-split = [!! Àþþ { $app }% · Ľàüñçħëđ { $launched }% !!]
 resources-origin-tab = [!! Ţëŕṁïñàľ ţàƀ !!]
 resources-origin-launched = [!! Šţàŕţëđ ƀÿ { $tab } !!]
 resources-origin-run-script = [!! Ŕüñ šçŕïþţ !!]
@@ -4757,26 +4756,6 @@ resources-app-graphics-info = [!! Ŵïñđôŵ šüŕƒàçëš àñđ ĜÞÜ �
 resources-app-held-for-reuse = [!! Ħëľđ ƒôŕ ŕëüšë !!]
 resources-app-saved-wake = [!! Àšľëëþ !!]
 resources-app-code-system = [!! Çôđë àñđ šÿšţëṁ !!]
-resources-app-chats = [!! Çħàţš !!]
-resources-app-chats-open = [!! { $count } ôþëñ !!]
-resources-app-chats-idle = [!! { $count } ïđľë !!]
-resources-app-chats-history = [!! Çħàţ ħïšţôŕÿ !!]
-resources-app-terminals = [!! Ţëŕṁïñàľš !!]
-resources-app-terminals-count =
-    { $count ->
-        [one] [!! 1 ţëŕṁïñàľ !!]
-       *[other] [!! { $count } ţëŕṁïñàľš !!]
-    }
-resources-app-terminals-lines =
-    { $count ->
-        [one] [!! 1 ľïñë !!]
-       *[other] [!! { $count } ľïñëš !!]
-    }
-resources-app-saved-count =
-    { $count ->
-        [one] [!! 1 ŵôŕķţŕëë !!]
-       *[other] [!! { $count } ŵôŕķţŕëëš !!]
-    }
 resources-app-saved-info = [!! Ṁëṁôŕÿ ķëþţ ƒôŕ šľëëþïñĝ ŵôŕķţŕëëš šô ţħëÿ ŕëôþëñ ïñšţàñţľÿ !!]
 resources-app-background-count =
     { $count ->
@@ -4790,7 +4769,6 @@ resources-app-other-detail = [!! Ĝŕôŵš ŵïţħ þŕôĵëçţš àñđ ŵ�
 resources-app-held-for-reuse-detail = [!! Ķëþţ ƀÿ ţħë àľľôçàţôŕ ƒôŕ ŕëüšë !!]
 resources-app-code-system-detail = [!! Þŕôĝŕàṁ çôđë àñđ šÿšţëṁ ľïƀŕàŕïëš !!]
 resources-estimated = [!! Ëšţïṁàţëđ !!]
-resources-sleep-idle-chats = [!! Šľëëþ ïđľë çħàţš !!]
 resources-sleep-idle-chats-confirm =
     { $count ->
         [one] [!! Šľëëþ 1 ïđľë çħàţ? !!]
@@ -4804,12 +4782,6 @@ resources-clear-confirm =
        *[other] [!! Çľëàŕ { $lines } ľïñëš ôƒ šçŕôľľƀàçķ? !!]
     }
 resources-clear-consequence = [!! Ţħë šçŕëëñ šţàÿš. !!]
-resources-clear-scrollback = [!! Çľëàŕ šçŕôľľƀàçķ !!]
-resources-clear-all-confirm =
-    { $count ->
-        [one] [!! Çľëàŕ šçŕôľľƀàçķ ïñ 1 ţëŕṁïñàľ? !!]
-       *[other] [!! Çľëàŕ šçŕôľľƀàçķ ïñ { $count } ţëŕṁïñàľš? !!]
-    }
 resources-chat-sleep-running = [!! Ŕüññïñĝ à ţüŕñ. Ïţ çàñ šľëëþ ŵħëñ ţħë ţüŕñ ëñđš. !!]
 resources-chat-sleep-waiting = [!! Ŵàïţïñĝ ƒôŕ ÿôüŕ àñšŵëŕ. Ïţ çàñ šľëëþ ôñçë ÿôü àñšŵëŕ. !!]
 resources-chat-sleep-unseen = [!! Ħàš à ŕëþľÿ ÿôü ħàṽëñ'ţ šëëñ. Ïţ çàñ šľëëþ ôñçë ÿôü'ṽë ŕëàđ ïţ. !!]
@@ -4843,51 +4815,21 @@ resources-tab-all = [!! Àľľ !!]
 resources-tab-agents = [!! Àĝëñţš !!]
 resources-tab-browser = [!! Ɓŕôŵšëŕ !!]
 resources-tab-terminals = [!! Ţëŕṁïñàľš !!]
-resources-fact-agents =
-    { $count ->
-        [one] [!! àĝëñţ !!]
-       *[other] [!! àĝëñţš !!]
-    }
-resources-fact-browser-tabs =
-    { $count ->
-        [one] [!! ƀŕôŵšëŕ ţàƀ !!]
-       *[other] [!! ƀŕôŵšëŕ ţàƀš !!]
-    }
-resources-fact-terminals =
-    { $count ->
-        [one] [!! ţëŕṁïñàľ !!]
-       *[other] [!! ţëŕṁïñàľš !!]
-    }
 resources-on-screen = [!! Ôñ šçŕëëñ, šô ïţ šţàÿš àŵàķë !!]
 resources-open = [!! Ôþëñ !!]
 resources-close = [!! Çľôšë !!]
 resources-close-confirm = [!! Çľôšë { $name }? !!]
 resources-close-consequence = [!! Ïţš þàĝë çľôšëš. !!]
 resources-average-title = [!! Àṽëŕàĝë þëŕ àĝëñţ !!]
-resources-average-each = [!! Ëàçħ !!]
-resources-average-ten = [!! 10 àĝëñţš !!]
-resources-average-each-suffix = [!! ëàçħ !!]
-resources-average-for-ten = [!! ƒôŕ 10 !!]
 resources-tree-more = [!! +{ $count } ṁôŕë !!]
-resources-app-item-detail = [!! { $activity }, { $lines } !!]
-resources-app-more-chats =
-    { $count ->
-        [one] [!! 1 ṁôŕë çħàţ !!]
-       *[other] [!! { $count } ṁôŕë çħàţš !!]
-    }
-resources-app-more-terminals =
-    { $count ->
-        [one] [!! 1 ṁôŕë ţëŕṁïñàľ !!]
-       *[other] [!! { $count } ṁôŕë ţëŕṁïñàľš !!]
-    }
 issue-report-check-submission = [!! Çħëçķ šüþṁïššïôñ !!]
 issue-report-submission-uncertain = [!! Ţħïš ŕëþôŕţ ṁàÿ àľŕëàđÿ þë ôñ GïţĦüþ. Çħëçķ šüþṁïššïôñ ţô ƒïñđ ïţ; çħëçķïñĝ ñëṽëŕ þôšţš àĝàïñ. Ïƒ ïţ ïš ñôţ ƒôüñđ ÿëţ, ŵàïţ àñđ çħëçķ àĝàïñ, ôŕ ŕëṽïëŵ ÿôüŕ GïţĦüþ ïššüëš þëƒôŕë đïšçàŕđïñĝ ţħïš đŕàƒţ. !!]
 issue-report-discard-uncertain = [!! Đïšçàŕđ đŕàƒţ (ŕëþôŕţ ṁàÿ àľŕëàđÿ ëẋïšţ) !!]
 issue-report-draft-load-failed = [!! Çôüľđ ñôţ ŕëàđ ÿôüŕ šàṽëđ ŕëþôŕţ. Ŕëšôľṽë ţħë šţôŕàĝë þŕôþľëṁ àñđ ŕëšţàŕţ ţħë àþþ þëƒôŕë šüþṁïţţïñĝ àñôţħëŕ ŕëþôŕţ. !!]
 review-comment-edit-staged = [!! Ŕëṁôṽë ţħïš ŕëṽïëŵ ƒŕôṁ ţħë çôṁþôšëŕ ƀëƒôŕë ëđïţïñĝ. !!]
 
-chat-edit-failed-draft-conflict = [!! Ķëëþ ôŕ çľëàŕ ÿôüŕ çüŕŕëñţ đŕàƒţ bëƒôŕë ëđïţïñĝ ţħë ƒàïľëđ ṁëššàĝë. !!]
 chat-edit-skill-as-text = [!! Ëđïţ ŵïţħ šķïľľ àš ţëẋţ !!]
+chat-edit-failed-draft-conflict = [!! Ķëëþ ôŕ çľëàŕ ÿôüŕ çüŕŕëñţ đŕàƒţ bëƒôŕë ëđïţïñĝ ţħë ƒàïľëđ ṁëššàĝë. !!]
 
 chat-notice-mcp-disable = [!! Đïšàƀľë !!]
 chat-notice-mcp-disable-confirm = [!! Đïšàƀľë MCP šëŕṽëŕ { $name }? !!]

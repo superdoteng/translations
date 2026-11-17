@@ -1562,7 +1562,7 @@ settings-remote-background-auth-description = ব্যাকগ্রাউন�
 settings-remote-ssh-auth-label = SSH প্রমাণীকরণ
 settings-remote-ssh-auth-description = আপনার সিস্টেম এসএসএইচ-এজেন্ট বা macOS কীচেইন দিয়ে SSH কীগুলি ব্যবহার করুন। ব্যাকগ্রাউন্ড রিমোট রিফ্রেশ কখনও পাসওয়ার্ড জিজ্ঞাসা করে না।
 settings-remote-cli-label = { $app_name } CLI
-settings-remote-cli-description = হোস্টে `sc` CLI ইনস্টল বা আপডেট করুন। আপডেট, এজেন্ট বিজ্ঞপ্তি এবং স্বয়ংক্রিয় শাখার নামকরণের Git পাওয়ার লাইভ।
+settings-remote-cli-description = হোস্টে `se` CLI ইনস্টল বা আপডেট করুন। আপডেট, এজেন্ট বিজ্ঞপ্তি এবং স্বয়ংক্রিয় শাখার নামকরণের Git পাওয়ার লাইভ।
 settings-remote-cli-auto-update-label = CLI স্বয়ংক্রিয়ভাবে আপ টু ডেট রাখুন
 settings-remote-cli-auto-update-description = এই হোস্টটি অনুপস্থিত বা পুরানো কখন তা জিজ্ঞাসা না করেই এই হোস্টে CLI ইনস্টল করুন এবং আপডেট করুন। অক্ষম করা হলে, আপনাকে অনুরোধ জানানো হবে এবং উপরের বোতামটি ব্যবহার করতে পারেন।
 settings-remote-cli-installing = ইনস্টল করা হচ্ছে...
@@ -2987,7 +2987,7 @@ browser-annotation-composer-blocked = সাবএজেন্টের কথ�
 browser-consent-title = “{ $workspace_name }”-এ এজেন্টদের ব্রাউজার নিয়ন্ত্রণ করতে দেবেন?
 browser-consent-asked-by-agent = একজন এজেন্ট
 browser-consent-asked-by-worktree = “{ $caller_label }”-এ কাজ করা একজন এজেন্ট
-browser-consent-description = { $asked_by } এই ওয়ার্কস্পেসের ব্রাউজার ট্যাবে sc browser { $spelling } চালাতে চেয়েছে। অনুমতি দিলে এই ওয়ার্কস্পেসের প্রতিটি এজেন্ট এই কমান্ড ও ভবিষ্যতের সব act কমান্ডের জন্য স্থায়ী অনুমতি পাবে—শুধু এই একটির জন্য নয়—যেকোনো খোলা পৃষ্ঠায় ক্লিক, টাইপ, নেভিগেট এবং স্ক্রিপ্ট চালানোর, সাইন ইন করা সেশনেও। শুধু পড়ার বেশিরভাগ কমান্ডের অনুমোদন লাগে না, তবে কুকির মান পড়তে লাগে। এই অনুমতি ওয়ার্কস্পেসের জন্য সংরক্ষিত থাকে এবং সেটিংস থেকে যেকোনো সময় প্রত্যাহার করা যায়।
+browser-consent-description = { $asked_by } এই ওয়ার্কস্পেসের ব্রাউজার ট্যাবে se browser { $spelling } চালাতে চেয়েছে। অনুমতি দিলে এই ওয়ার্কস্পেসের প্রতিটি এজেন্ট এই কমান্ড ও ভবিষ্যতের সব act কমান্ডের জন্য স্থায়ী অনুমতি পাবে—শুধু এই একটির জন্য নয়—যেকোনো খোলা পৃষ্ঠায় ক্লিক, টাইপ, নেভিগেট এবং স্ক্রিপ্ট চালানোর, সাইন ইন করা সেশনেও। শুধু পড়ার বেশিরভাগ কমান্ডের অনুমোদন লাগে না, তবে কুকির মান পড়তে লাগে। এই অনুমতি ওয়ার্কস্পেসের জন্য সংরক্ষিত থাকে এবং সেটিংস থেকে যেকোনো সময় প্রত্যাহার করা যায়।
 browser-new-chats = নতুন চ্যাট
 palette-no-matching-files-index-incomplete = কোনো মিলে যাওয়া ফাইল নেই (সূচি অসম্পূর্ণ: এই ওয়ার্কট্রি ফাইল স্ক্যানের সীমা ছাড়িয়েছে)
 update-ready-title = আপডেট প্রস্তুত
@@ -3202,11 +3202,11 @@ settings-ai-run-with-column = যা দিয়ে চালাবেন
 settings-ai-branch-naming-rule = নামকরণের নিয়ম
 settings-ai-session-context-section = সেশনের প্রসঙ্গ
 settings-ai-agent-session-context-label = এজেন্টদের জন্য সেশনের প্রসঙ্গ
-settings-ai-agent-session-context-description = super.engineering এজেন্ট সেশনে প্রসঙ্গ যোগ করতে পারে যাতে এজেন্টরা অ্যাপের sc CLI খুঁজে নিরাপদে ব্যবহার করতে পারে।
+settings-ai-agent-session-context-description = super.engineering এজেন্ট সেশনে প্রসঙ্গ যোগ করতে পারে যাতে এজেন্টরা অ্যাপের se CLI খুঁজে নিরাপদে ব্যবহার করতে পারে।
 settings-ai-agent-session-context-standard-label = সাধারণ
 settings-ai-agent-session-context-standard-description = এজেন্টরা super.engineering-এর সাধারণ CLI ও অর্কেস্ট্রেশন রাউটিং নির্দেশনা পায়।
 settings-ai-agent-session-context-off-label = বন্ধ
-settings-ai-agent-session-context-off-description = বন্ধ থাকলে সেশনে স্বয়ংক্রিয় প্রসঙ্গ যোগ হয় না। পর্যালোচনা ও ওয়ার্কট্রির কাজ হস্তান্তরের মতো সরাসরি কাজ অপরিবর্তিত থাকে, এবং sc কমান্ডের সুরক্ষা নিয়ম প্রযোজ্য থাকে।
+settings-ai-agent-session-context-off-description = বন্ধ থাকলে সেশনে স্বয়ংক্রিয় প্রসঙ্গ যোগ হয় না। পর্যালোচনা ও ওয়ার্কট্রির কাজ হস্তান্তরের মতো সরাসরি কাজ অপরিবর্তিত থাকে, এবং se কমান্ডের সুরক্ষা নিয়ম প্রযোজ্য থাকে।
 settings-remote-key-install-action = কী ইনস্টল করুন
 settings-remote-key-install-authorize = { $host }-এ এটি অনুমোদন করুন
 settings-remote-key-install-body = { $app_name } এই ওয়ার্কস্পেসের জন্য আলাদা SSH কী তৈরি করবে।
@@ -4493,7 +4493,6 @@ resources-exited-just-now = এইমাত্র বন্ধ হয়েছ�
 resources-exited-minutes = { $minutes } মিনিট আগে বন্ধ হয়েছে
 resources-exited-hours = { $hours } ঘণ্টা আগে বন্ধ হয়েছে
 resources-cpu-row = { $percent }% CPU
-resources-cpu-split = অ্যাপ { $app }% · চালু করা { $launched }%
 resources-origin-tab = টার্মিনাল ট্যাব
 resources-origin-launched = { $tab } চালু করেছে
 resources-origin-run-script = রান স্ক্রিপ্ট
@@ -4515,26 +4514,6 @@ resources-app-graphics-info = উইন্ডো সারফেস ও GPU ম�
 resources-app-held-for-reuse = পুনর্ব্যবহারের জন্য রাখা
 resources-app-saved-wake = ঘুমন্ত
 resources-app-code-system = কোড ও সিস্টেম
-resources-app-chats = চ্যাট
-resources-app-chats-open = { $count }টি খোলা
-resources-app-chats-idle = { $count }টি নিষ্ক্রিয়
-resources-app-chats-history = চ্যাটের ইতিহাস
-resources-app-terminals = টার্মিনাল
-resources-app-terminals-count =
-    { $count ->
-        [one] 1টি টার্মিনাল
-       *[other] { $count }টি টার্মিনাল
-    }
-resources-app-terminals-lines =
-    { $count ->
-        [one] 1টি লাইন
-       *[other] { $count }টি লাইন
-    }
-resources-app-saved-count =
-    { $count ->
-        [one] 1টি ওয়ার্কট্রি
-       *[other] { $count }টি ওয়ার্কট্রি
-    }
 resources-app-saved-info = ঘুমন্ত ওয়ার্কট্রিগুলো যেন সঙ্গে সঙ্গে আবার খোলে, সেজন্য রাখা মেমরি
 resources-app-background-count =
     { $count ->
@@ -4548,7 +4527,6 @@ resources-app-other-detail = প্রকল্প ও ওয়ার্কট�
 resources-app-held-for-reuse-detail = অ্যালোকেটর পুনর্ব্যবহারের জন্য রেখেছে
 resources-app-code-system-detail = প্রোগ্রাম কোড ও সিস্টেম লাইব্রেরি
 resources-estimated = আনুমানিক
-resources-sleep-idle-chats = নিষ্ক্রিয় চ্যাট ঘুম পাড়ান
 resources-sleep-idle-chats-confirm =
     { $count ->
         [one] 1টি নিষ্ক্রিয় চ্যাট ঘুম পাড়াবেন?
@@ -4562,12 +4540,6 @@ resources-clear-confirm =
        *[other] স্ক্রলব্যাকের { $lines }টি লাইন মুছবেন?
     }
 resources-clear-consequence = স্ক্রিন যেমন আছে থাকবে।
-resources-clear-scrollback = স্ক্রলব্যাক মুছুন
-resources-clear-all-confirm =
-    { $count ->
-        [one] 1টি টার্মিনালের স্ক্রলব্যাক মুছবেন?
-       *[other] { $count }টি টার্মিনালের স্ক্রলব্যাক মুছবেন?
-    }
 resources-chat-sleep-running = একটি টার্ন চলছে। টার্ন শেষ হলে এটি ঘুমাতে পারবে।
 resources-chat-sleep-waiting = আপনার উত্তরের অপেক্ষায় আছে। উত্তর দিলে এটি ঘুমাতে পারবে।
 resources-chat-sleep-unseen = এমন একটি উত্তর আছে যা আপনি দেখেননি। পড়ে নিলে এটি ঘুমাতে পারবে।
@@ -4601,51 +4573,21 @@ resources-tab-all = সব
 resources-tab-agents = এজেন্ট
 resources-tab-browser = ব্রাউজার
 resources-tab-terminals = টার্মিনাল
-resources-fact-agents =
-    { $count ->
-        [one] এজেন্ট
-       *[other] এজেন্ট
-    }
-resources-fact-browser-tabs =
-    { $count ->
-        [one] ব্রাউজার ট্যাব
-       *[other] ব্রাউজার ট্যাব
-    }
-resources-fact-terminals =
-    { $count ->
-        [one] টার্মিনাল
-       *[other] টার্মিনাল
-    }
 resources-on-screen = স্ক্রিনে আছে, তাই জেগে থাকে
 resources-open = খুলুন
 resources-close = বন্ধ করুন
 resources-close-confirm = { $name } বন্ধ করবেন?
 resources-close-consequence = এর পেজ বন্ধ হয়ে যাবে।
 resources-average-title = এজেন্টপ্রতি গড়
-resources-average-each = প্রতিটি
-resources-average-ten = 10টি এজেন্ট
-resources-average-each-suffix = করে
-resources-average-for-ten = 10টির জন্য
 resources-tree-more = আরও +{ $count }
-resources-app-item-detail = { $activity }, { $lines }
-resources-app-more-chats =
-    { $count ->
-        [one] আরও 1টি চ্যাট
-       *[other] আরও { $count }টি চ্যাট
-    }
-resources-app-more-terminals =
-    { $count ->
-        [one] আরও 1টি টার্মিনাল
-       *[other] আরও { $count }টি টার্মিনাল
-    }
 issue-report-check-submission = জমা দেওয়া হয়েছে কি না দেখুন
 issue-report-submission-uncertain = এই প্রতিবেদনটি ইতিমধ্যেই GitHub-এ থাকতে পারে। এটি খুঁজতে জমা দেওয়া হয়েছে কি না দেখুন; এই যাচাই কখনো আবার পোস্ট করে না। এখনো খুঁজে না পেলে অপেক্ষা করে আবার দেখুন, অথবা এই খসড়া বাতিল করার আগে GitHub-এ আপনার ইস্যুগুলো পর্যালোচনা করুন।
 issue-report-discard-uncertain = খসড়া বাতিল করুন (প্রতিবেদনটি ইতিমধ্যেই থাকতে পারে)
 issue-report-draft-load-failed = আপনার সংরক্ষিত প্রতিবেদন পড়া যায়নি। আরেকটি প্রতিবেদন জমা দেওয়ার আগে স্টোরেজের সমস্যা সমাধান করে অ্যাপটি পুনরায় চালু করুন।
 review-comment-edit-staged = সম্পাদনার আগে লেখার জায়গা থেকে এই পর্যালোচনাটি সরান।
 
-chat-edit-failed-draft-conflict = ব্যর্থ বার্তাটি সম্পাদনার আগে বর্তমান খসড়াটি সংরক্ষণ করুন বা মুছে ফেলুন।
 chat-edit-skill-as-text = স্কিলটি পাঠ্য হিসেবে সম্পাদনা করুন
+chat-edit-failed-draft-conflict = ব্যর্থ বার্তাটি সম্পাদনার আগে বর্তমান খসড়াটি সংরক্ষণ করুন বা মুছে ফেলুন।
 
 chat-notice-mcp-disable = নিষ্ক্রিয় করুন
 chat-notice-mcp-disable-confirm = MCP সার্ভার { $name } নিষ্ক্রিয় করবেন?

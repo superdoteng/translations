@@ -1578,7 +1578,7 @@ settings-remote-background-auth-description = Для фонового обнов
 settings-remote-ssh-auth-label = SSH аутентификация
 settings-remote-ssh-auth-description = Используйте SSH ключи с вашим системным ssh-агентом или macOS Keychain. Фоновые удалённые обновления никогда не запрашивают пароли.
 settings-remote-cli-label = { $app_name } CLI
-settings-remote-cli-description = Установите или обновите `sc` CLI на хосте. Полномочия живут Git обновления, уведомления агентов и автоматическое наименование ветвей.
+settings-remote-cli-description = Установите или обновите `se` CLI на хосте. Полномочия живут Git обновления, уведомления агентов и автоматическое наименование ветвей.
 settings-remote-cli-auto-update-label = Держите CLI в актуальном состоянии автоматически
 settings-remote-cli-auto-update-description = Установите и обновите CLI на этом хосте, не спрашивая, когда он отсутствует или устарел. Если отключено, вам будет предложено, и вы сможете использовать кнопку выше.
 settings-remote-cli-installing = Установка...
@@ -3114,7 +3114,7 @@ browser-annotation-composer-blocked = Нельзя добавлять аннот
 browser-consent-title = Разрешить агентам управлять браузером в «{ $workspace_name }»?
 browser-consent-asked-by-agent = Агент
 browser-consent-asked-by-worktree = Агент, работающий в «{ $caller_label }»
-browser-consent-description = { $asked_by } запросил запуск sc browser { $spelling } во вкладке браузера этого рабочего пространства. Разрешение даст всем агентам пространства постоянное право — для этой и всех будущих команд act — нажимать, вводить текст, переходить по страницам и выполнять скрипты на любой открытой странице, включая сеансы с выполненным входом. Большинство команд только для чтения не требуют одобрения, но чтение значений cookie требует. Разрешение сохраняется для рабочего пространства; его можно отозвать в Настройках в любое время.
+browser-consent-description = { $asked_by } запросил запуск se browser { $spelling } во вкладке браузера этого рабочего пространства. Разрешение даст всем агентам пространства постоянное право — для этой и всех будущих команд act — нажимать, вводить текст, переходить по страницам и выполнять скрипты на любой открытой странице, включая сеансы с выполненным входом. Большинство команд только для чтения не требуют одобрения, но чтение значений cookie требует. Разрешение сохраняется для рабочего пространства; его можно отозвать в Настройках в любое время.
 palette-no-matching-files-index-incomplete = Нет подходящих файлов (индекс неполон: рабочее дерево превышает лимит сканирования файлов)
 update-ready-title = Обновление готово
 update-ready-restart = Перезапустить
@@ -3342,11 +3342,11 @@ settings-ai-run-with-column = Запускать с
 settings-ai-branch-naming-rule = Правило именования
 settings-ai-session-context-section = Контекст сеанса
 settings-ai-agent-session-context-label = Контекст сеанса для агентов
-settings-ai-agent-session-context-description = super.engineering может добавлять контекст в сеансы агентов, чтобы они могли найти и безопасно использовать CLI sc приложения.
+settings-ai-agent-session-context-description = super.engineering может добавлять контекст в сеансы агентов, чтобы они могли найти и безопасно использовать CLI se приложения.
 settings-ai-agent-session-context-standard-label = Стандартный
 settings-ai-agent-session-context-standard-description = Агенты получают стандартные инструкции CLI super.engineering и маршрутизации оркестрации.
 settings-ai-agent-session-context-off-label = Выключено
-settings-ai-agent-session-context-off-description = При выключении фоновый контекст сеанса не добавляется. Явные действия, например проверки и передача задач рабочим деревьям, не затрагиваются; ограничения команд sc остаются в силе.
+settings-ai-agent-session-context-off-description = При выключении фоновый контекст сеанса не добавляется. Явные действия, например проверки и передача задач рабочим деревьям, не затрагиваются; ограничения команд se остаются в силе.
 settings-remote-key-install-action = Установить ключ
 settings-remote-key-install-authorize = Авторизовать на { $host }
 settings-remote-key-install-body = { $app_name } создаст отдельный SSH-ключ для этого рабочего пространства.
@@ -4396,7 +4396,6 @@ resources-exited-just-now = Только что завершён
 resources-exited-minutes = Завершён { $minutes } мин назад
 resources-exited-hours = Завершён { $hours } ч назад
 resources-cpu-row = CPU { $percent }%
-resources-cpu-split = Приложение { $app }% · Запущенные { $launched }%
 resources-origin-tab = Вкладка терминала
 resources-origin-launched = Запущено из { $tab }
 resources-origin-run-script = Скрипт запуска
@@ -4418,32 +4417,6 @@ resources-app-graphics-info = Поверхности окон и память GP
 resources-app-held-for-reuse = Удержано для повторного использования
 resources-app-saved-wake = Спящие
 resources-app-code-system = Код и система
-resources-app-chats = Чаты
-resources-app-chats-open = Открыто: { $count }
-resources-app-chats-idle = Бездействует: { $count }
-resources-app-chats-history = История чатов
-resources-app-terminals = Терминалы
-resources-app-terminals-count =
-    { $count ->
-        [one] { $count } терминал
-        [few] { $count } терминала
-        [many] { $count } терминалов
-       *[other] { $count } терминала
-    }
-resources-app-terminals-lines =
-    { $count ->
-        [one] { $count } строка
-        [few] { $count } строки
-        [many] { $count } строк
-       *[other] { $count } строки
-    }
-resources-app-saved-count =
-    { $count ->
-        [one] { $count } рабочее дерево
-        [few] { $count } рабочих дерева
-        [many] { $count } рабочих деревьев
-       *[other] { $count } рабочего дерева
-    }
 resources-app-saved-info = Память, которую приложение держит для спящих рабочих деревьев, чтобы они открывались мгновенно
 resources-app-background-count =
     { $count ->
@@ -4459,7 +4432,6 @@ resources-app-other-detail = Растёт с числом проектов и р
 resources-app-held-for-reuse-detail = Удерживается аллокатором для повторного использования
 resources-app-code-system-detail = Код программы и системные библиотеки
 resources-estimated = Оценка
-resources-sleep-idle-chats = Усыпить бездействующие чаты
 resources-sleep-idle-chats-confirm =
     { $count ->
         [one] Усыпить { $count } бездействующий чат?
@@ -4477,12 +4449,6 @@ resources-clear-confirm =
        *[other] Очистить { $lines } строки истории прокрутки?
     }
 resources-clear-consequence = Экран останется.
-resources-clear-scrollback = Очистить историю прокрутки
-resources-clear-all-confirm =
-    { $count ->
-        [one] Очистить историю прокрутки в { $count } терминале?
-       *[other] Очистить историю прокрутки в { $count } терминалах?
-    }
 resources-chat-sleep-running = Выполняется ход. Чат можно усыпить, когда ход завершится.
 resources-chat-sleep-waiting = Ждёт вашего ответа. Чат можно усыпить, когда вы ответите.
 resources-chat-sleep-unseen = Есть непрочитанный ответ. Чат можно усыпить, когда вы его прочтёте.
@@ -4516,61 +4482,21 @@ resources-tab-all = Все
 resources-tab-agents = Агенты
 resources-tab-browser = Браузер
 resources-tab-terminals = Терминалы
-resources-fact-agents =
-    { $count ->
-        [one] агент
-        [few] агента
-        [many] агентов
-       *[other] агента
-    }
-resources-fact-browser-tabs =
-    { $count ->
-        [one] вкладка браузера
-        [few] вкладки браузера
-        [many] вкладок браузера
-       *[other] вкладки браузера
-    }
-resources-fact-terminals =
-    { $count ->
-        [one] терминал
-        [few] терминала
-        [many] терминалов
-       *[other] терминала
-    }
 resources-on-screen = На экране, поэтому не засыпает
 resources-open = Открыть
 resources-close = Закрыть
 resources-close-confirm = Закрыть { $name }?
 resources-close-consequence = Страница закроется.
 resources-average-title = В среднем на агента
-resources-average-each = На каждого
-resources-average-ten = 10 агентов
-resources-average-each-suffix = на каждого
-resources-average-for-ten = на 10
 resources-tree-more = Ещё { $count }
-resources-app-item-detail = { $activity }, { $lines }
-resources-app-more-chats =
-    { $count ->
-        [one] Ещё { $count } чат
-        [few] Ещё { $count } чата
-        [many] Ещё { $count } чатов
-       *[other] Ещё { $count } чата
-    }
-resources-app-more-terminals =
-    { $count ->
-        [one] Ещё { $count } терминал
-        [few] Ещё { $count } терминала
-        [many] Ещё { $count } терминалов
-       *[other] Ещё { $count } терминала
-    }
 issue-report-check-submission = Проверить отправку
 issue-report-submission-uncertain = Этот отчёт, возможно, уже есть на GitHub. Проверьте отправку, чтобы найти его; проверка никогда не публикует отчёт повторно. Если он пока не найден, подождите и проверьте снова или просмотрите свои задачи на GitHub, прежде чем удалять этот черновик.
 issue-report-discard-uncertain = Удалить черновик (отчёт, возможно, уже существует)
 issue-report-draft-load-failed = Не удалось прочитать сохранённый отчёт. Устраните проблему с хранилищем и перезапустите приложение, прежде чем отправлять другой отчёт.
 review-comment-edit-staged = Чтобы изменить это ревью, сначала уберите его из поля ввода.
 
-chat-edit-failed-draft-conflict = Сохраните или очистите текущий черновик, прежде чем редактировать сообщение, отправка которого завершилась ошибкой.
 chat-edit-skill-as-text = Редактировать навык как текст
+chat-edit-failed-draft-conflict = Сохраните или очистите текущий черновик, прежде чем редактировать сообщение, отправка которого завершилась ошибкой.
 
 chat-notice-mcp-disable = Отключить
 chat-notice-mcp-disable-confirm = Отключить сервер MCP { $name }?

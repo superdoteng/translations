@@ -1560,7 +1560,7 @@ settings-remote-background-auth-description = Làm mới nền cần xác thực
 settings-remote-ssh-auth-label = xác thực SSH
 settings-remote-ssh-auth-description = Sử dụng khóa SSH với ssh-agent hệ thống hoặc macOS Keychain của bạn. Làm mới nền từ xa không bao giờ yêu cầu mật khẩu.
 settings-remote-cli-label = { $app_name } CLI
-settings-remote-cli-description = Cài đặt hoặc cập nhật `sc` CLI trên máy chủ. Hỗ trợ cập nhật Git trực tiếp, thông báo agent và tự động đặt tên nhánh.
+settings-remote-cli-description = Cài đặt hoặc cập nhật `se` CLI trên máy chủ. Hỗ trợ cập nhật Git trực tiếp, thông báo agent và tự động đặt tên nhánh.
 settings-remote-cli-auto-update-label = Giữ CLI luôn được cập nhật tự động
 settings-remote-cli-auto-update-description = Cài đặt và cập nhật CLI trên máy chủ này mà không hỏi khi nó bị thiếu hoặc lỗi thời. Nếu bị vô hiệu hóa, bạn sẽ được nhắc và có thể sử dụng nút phía trên.
 settings-remote-cli-installing = Đang cài đặt...
@@ -2985,7 +2985,7 @@ browser-annotation-composer-blocked = Không thể thêm chú thích khi đang t
 browser-consent-title = Cho phép tác nhân điều khiển trình duyệt trong “{ $workspace_name }”?
 browser-consent-asked-by-agent = Một tác nhân
 browser-consent-asked-by-worktree = Một tác nhân đang làm việc trong “{ $caller_label }”
-browser-consent-description = { $asked_by } yêu cầu chạy sc browser { $spelling } trong thẻ trình duyệt của không gian làm việc này. Việc cho phép cấp quyền thường trực cho mọi tác nhân trong không gian làm việc — cho lệnh act này và mọi lệnh act sau này — để nhấp, nhập, điều hướng và chạy tập lệnh trên bất kỳ trang nào đang mở, kể cả phiên đã đăng nhập. Hầu hết lệnh chỉ đọc không cần phê duyệt, nhưng việc đọc giá trị cookie thì có. Quyền này được lưu cho không gian làm việc và có thể thu hồi bất cứ lúc nào trong Cài đặt.
+browser-consent-description = { $asked_by } yêu cầu chạy se browser { $spelling } trong thẻ trình duyệt của không gian làm việc này. Việc cho phép cấp quyền thường trực cho mọi tác nhân trong không gian làm việc — cho lệnh act này và mọi lệnh act sau này — để nhấp, nhập, điều hướng và chạy tập lệnh trên bất kỳ trang nào đang mở, kể cả phiên đã đăng nhập. Hầu hết lệnh chỉ đọc không cần phê duyệt, nhưng việc đọc giá trị cookie thì có. Quyền này được lưu cho không gian làm việc và có thể thu hồi bất cứ lúc nào trong Cài đặt.
 browser-new-chats = Cuộc trò chuyện mới
 palette-no-matching-files-index-incomplete = Không có tệp phù hợp (chỉ mục chưa đầy đủ: cây làm việc này vượt quá giới hạn quét tệp)
 update-ready-title = Bản cập nhật đã sẵn sàng
@@ -3193,11 +3193,11 @@ settings-ai-run-with-column = Chạy bằng
 settings-ai-branch-naming-rule = Quy tắc đặt tên
 settings-ai-session-context-section = Ngữ cảnh phiên
 settings-ai-agent-session-context-label = Ngữ cảnh phiên cho tác nhân
-settings-ai-agent-session-context-description = super.engineering có thể thêm ngữ cảnh vào phiên tác nhân để tác nhân tìm và sử dụng CLI sc của ứng dụng an toàn.
+settings-ai-agent-session-context-description = super.engineering có thể thêm ngữ cảnh vào phiên tác nhân để tác nhân tìm và sử dụng CLI se của ứng dụng an toàn.
 settings-ai-agent-session-context-standard-label = Tiêu chuẩn
 settings-ai-agent-session-context-standard-description = Tác nhân nhận hướng dẫn CLI super.engineering và định tuyến điều phối tiêu chuẩn.
 settings-ai-agent-session-context-off-label = Tắt
-settings-ai-agent-session-context-off-description = Không thêm ngữ cảnh phiên ngầm khi chọn Tắt. Các hành động rõ ràng như đánh giá và bàn giao tác vụ cây làm việc không bị ảnh hưởng; các giới hạn lệnh sc vẫn áp dụng.
+settings-ai-agent-session-context-off-description = Không thêm ngữ cảnh phiên ngầm khi chọn Tắt. Các hành động rõ ràng như đánh giá và bàn giao tác vụ cây làm việc không bị ảnh hưởng; các giới hạn lệnh se vẫn áp dụng.
 settings-remote-key-install-action = Cài khóa
 settings-remote-key-install-authorize = Cấp quyền trên { $host }
 settings-remote-key-install-body = { $app_name } sẽ tạo khóa SSH riêng cho không gian làm việc này.
@@ -4156,7 +4156,6 @@ resources-exited-just-now = Vừa thoát
 resources-exited-minutes = Đã thoát { $minutes } phút trước
 resources-exited-hours = Đã thoát { $hours } giờ trước
 resources-cpu-row = { $percent }% CPU
-resources-cpu-split = Ứng dụng { $app }% · Đã khởi chạy { $launched }%
 resources-origin-tab = Tab terminal
 resources-origin-launched = Được khởi chạy bởi { $tab }
 resources-origin-run-script = Script chạy
@@ -4178,26 +4177,6 @@ resources-app-graphics-info = Bề mặt cửa sổ và bộ nhớ GPU
 resources-app-held-for-reuse = Giữ để dùng lại
 resources-app-saved-wake = Đang ngủ
 resources-app-code-system = Mã và hệ thống
-resources-app-chats = Cuộc trò chuyện
-resources-app-chats-open = { $count } đang mở
-resources-app-chats-idle = { $count } nhàn rỗi
-resources-app-chats-history = Lịch sử trò chuyện
-resources-app-terminals = Terminal
-resources-app-terminals-count =
-    { $count ->
-        [one] 1 terminal
-       *[other] { $count } terminal
-    }
-resources-app-terminals-lines =
-    { $count ->
-        [one] 1 dòng
-       *[other] { $count } dòng
-    }
-resources-app-saved-count =
-    { $count ->
-        [one] 1 cây làm việc
-       *[other] { $count } cây làm việc
-    }
 resources-app-saved-info = Bộ nhớ giữ cho các cây làm việc đang ngủ để chúng mở lại ngay
 resources-app-background-count =
     { $count ->
@@ -4211,7 +4190,6 @@ resources-app-other-detail = Tăng theo số dự án và cây làm việc
 resources-app-held-for-reuse-detail = Bộ cấp phát giữ lại để dùng lại
 resources-app-code-system-detail = Mã chương trình và thư viện hệ thống
 resources-estimated = Ước tính
-resources-sleep-idle-chats = Cho cuộc trò chuyện nhàn rỗi ngủ
 resources-sleep-idle-chats-confirm =
     { $count ->
         [one] Cho 1 cuộc trò chuyện nhàn rỗi ngủ?
@@ -4225,12 +4203,6 @@ resources-clear-confirm =
        *[other] Xóa { $lines } dòng lịch sử cuộn?
     }
 resources-clear-consequence = Màn hình vẫn giữ nguyên.
-resources-clear-scrollback = Xóa lịch sử cuộn
-resources-clear-all-confirm =
-    { $count ->
-        [one] Xóa lịch sử cuộn trong 1 terminal?
-       *[other] Xóa lịch sử cuộn trong { $count } terminal?
-    }
 resources-chat-sleep-running = Đang chạy một lượt. Có thể ngủ khi lượt kết thúc.
 resources-chat-sleep-waiting = Đang chờ câu trả lời của bạn. Có thể ngủ sau khi bạn trả lời.
 resources-chat-sleep-unseen = Có phản hồi bạn chưa xem. Có thể ngủ sau khi bạn đọc.
@@ -4264,51 +4236,21 @@ resources-tab-all = Tất cả
 resources-tab-agents = Tác nhân
 resources-tab-browser = Trình duyệt
 resources-tab-terminals = Terminal
-resources-fact-agents =
-    { $count ->
-        [one] tác nhân
-       *[other] tác nhân
-    }
-resources-fact-browser-tabs =
-    { $count ->
-        [one] tab trình duyệt
-       *[other] tab trình duyệt
-    }
-resources-fact-terminals =
-    { $count ->
-        [one] terminal
-       *[other] terminal
-    }
 resources-on-screen = Đang hiển thị trên màn hình nên vẫn thức
 resources-open = Mở
 resources-close = Đóng
 resources-close-confirm = Đóng { $name }?
 resources-close-consequence = Trang của nó sẽ đóng.
 resources-average-title = Trung bình mỗi tác nhân
-resources-average-each = Mỗi tác nhân
-resources-average-ten = 10 tác nhân
-resources-average-each-suffix = mỗi tác nhân
-resources-average-for-ten = cho 10 tác nhân
 resources-tree-more = +{ $count } nữa
-resources-app-item-detail = { $activity }, { $lines }
-resources-app-more-chats =
-    { $count ->
-        [one] Thêm 1 cuộc trò chuyện
-       *[other] Thêm { $count } cuộc trò chuyện
-    }
-resources-app-more-terminals =
-    { $count ->
-        [one] Thêm 1 terminal
-       *[other] Thêm { $count } terminal
-    }
 issue-report-check-submission = Kiểm tra việc gửi
 issue-report-submission-uncertain = Báo cáo này có thể đã có trên GitHub. Hãy kiểm tra việc gửi để tìm báo cáo; việc kiểm tra không bao giờ đăng lại. Nếu vẫn chưa tìm thấy, hãy đợi rồi kiểm tra lại, hoặc xem các issue của bạn trên GitHub trước khi bỏ bản nháp này.
 issue-report-discard-uncertain = Bỏ bản nháp (báo cáo có thể đã tồn tại)
 issue-report-draft-load-failed = Không thể đọc báo cáo đã lưu của bạn. Hãy khắc phục sự cố lưu trữ và khởi động lại ứng dụng trước khi gửi báo cáo khác.
 review-comment-edit-staged = Hãy gỡ bài đánh giá này khỏi khung soạn thảo trước khi chỉnh sửa.
 
-chat-edit-failed-draft-conflict = Lưu hoặc xóa bản nháp hiện tại trước khi chỉnh sửa tin nhắn bị lỗi.
 chat-edit-skill-as-text = Chỉnh sửa kỹ năng dưới dạng văn bản
+chat-edit-failed-draft-conflict = Lưu hoặc xóa bản nháp hiện tại trước khi chỉnh sửa tin nhắn bị lỗi.
 
 chat-notice-mcp-disable = Vô hiệu hóa
 chat-notice-mcp-disable-confirm = Vô hiệu hóa máy chủ MCP { $name }?

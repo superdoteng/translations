@@ -147,7 +147,7 @@ browser-annotation-composer-blocked = 聚焦于子智能体对话记录时无法
 browser-consent-title = 允许智能体控制“{ $workspace_name }”中的浏览器吗？
 browser-consent-asked-by-agent = 某个智能体
 browser-consent-asked-by-worktree = 在“{ $caller_label }”中工作的智能体
-browser-consent-description = { $asked_by } 请求在此工作区的浏览器标签页中运行 sc browser { $spelling }。允许后，此工作区内的每个智能体都将持续获得权限——不仅针对本次操作，而是针对本次及以后的每个 act 命令——可在当前打开的任何页面上点击、输入、导航和运行脚本，包括已登录的会话。大多数只读命令无需批准，但读取 Cookie 值需要批准。此权限会为该工作区保留，可随时在“设置”中撤销。
+browser-consent-description = { $asked_by } 请求在此工作区的浏览器标签页中运行 se browser { $spelling }。允许后，此工作区内的每个智能体都将持续获得权限——不仅针对本次操作，而是针对本次及以后的每个 act 命令——可在当前打开的任何页面上点击、输入、导航和运行脚本，包括已登录的会话。大多数只读命令无需批准，但读取 Cookie 值需要批准。此权限会为该工作区保留，可随时在“设置”中撤销。
 browser-back = 返回
 browser-forward = 前进
 browser-reload = 重新加载
@@ -886,11 +886,11 @@ settings-ai-starting-mode-label = 起始模式
 settings-ai-starting-mode-description = 新聊天和终端标签页启动时使用的权限模式。每个聊天都可以在输入区切换模式。
 settings-ai-session-context-section = 会话上下文
 settings-ai-agent-session-context-label = 智能体的会话上下文
-settings-ai-agent-session-context-description = super.engineering 可以向智能体会话添加上下文，以便智能体找到并安全使用应用的 sc CLI。
+settings-ai-agent-session-context-description = super.engineering 可以向智能体会话添加上下文，以便智能体找到并安全使用应用的 se CLI。
 settings-ai-agent-session-context-standard-label = 标准
 settings-ai-agent-session-context-standard-description = 智能体会收到标准的 super.engineering CLI 和编排路由说明。
 settings-ai-agent-session-context-off-label = 关闭
-settings-ai-agent-session-context-off-description = 关闭时不会添加隐式会话上下文。审查和工作树任务交接等显式操作不受影响，sc 命令的防护规则仍然适用。
+settings-ai-agent-session-context-off-description = 关闭时不会添加隐式会话上下文。审查和工作树任务交接等显式操作不受影响，se 命令的防护规则仍然适用。
 settings-ai-checking-connection = 正在检查连接
 settings-ai-check-connection = 检查连接
 settings-ai-creating-profile-directory = 正在创建配置文件目录。
@@ -1565,7 +1565,7 @@ settings-remote-background-auth-description = 后台刷新需要无密码认证�
 settings-remote-ssh-auth-label = SSH 认证
 settings-remote-ssh-auth-description = 将 SSH 密钥与系统 ssh-agent 或 macOS 钥匙串搭配使用。后台远程刷新绝不会询问密码。
 settings-remote-cli-label = { $app_name } CLI
-settings-remote-cli-description = 在主机上安装或更新 `sc` CLI，以支持实时 Git 更新、智能体通知和自动分支命名。
+settings-remote-cli-description = 在主机上安装或更新 `se` CLI，以支持实时 Git 更新、智能体通知和自动分支命名。
 settings-remote-cli-auto-update-label = 自动保持 CLI 为最新版本
 settings-remote-cli-auto-update-description = 当此主机上缺少 CLI 或版本过旧时，无需询问即可安装和更新。如果禁用，系统会提示你，你也可使用上方的按钮。
 settings-remote-cli-installing = 正在安装…
@@ -1713,7 +1713,7 @@ settings-dynamic-search-ssh-target-description = { $workspace } 的远程 SSH �
 settings-dynamic-search-ssh-auth-label = SSH 认证
 settings-dynamic-search-ssh-auth-description = { $workspace } 的 SSH 密钥和连接设置。
 settings-dynamic-search-remote-cli-label = super.engineering CLI
-settings-dynamic-search-remote-cli-description = 为 { $workspace } 安装或更新远程 sc CLI。
+settings-dynamic-search-remote-cli-description = 为 { $workspace } 安装或更新远程 se CLI。
 settings-dynamic-search-host-details-label = 主机详情
 settings-dynamic-search-host-details-description = 为 { $workspace } 探测到的主机信息：{ $facts }。
 settings-dynamic-search-provider-profiles-label = { $provider } 配置文件
@@ -4465,7 +4465,6 @@ resources-exited-just-now = 刚刚退出
 resources-exited-minutes = { $minutes } 分钟前退出
 resources-exited-hours = { $hours } 小时前退出
 resources-cpu-row = CPU { $percent }%
-resources-cpu-split = 应用 { $app }% · 已启动 { $launched }%
 resources-origin-tab = 终端标签页
 resources-origin-launched = 由 { $tab } 启动
 resources-origin-run-script = 运行脚本
@@ -4487,23 +4486,6 @@ resources-app-graphics-info = 窗口表面和 GPU 内存
 resources-app-held-for-reuse = 保留以供复用
 resources-app-saved-wake = 已休眠
 resources-app-code-system = 代码和系统
-resources-app-chats = 聊天
-resources-app-chats-open = { $count } 个已打开
-resources-app-chats-idle = { $count } 个空闲
-resources-app-chats-history = 聊天记录
-resources-app-terminals = 终端
-resources-app-terminals-count =
-    { $count ->
-       *[other] { $count } 个终端
-    }
-resources-app-terminals-lines =
-    { $count ->
-       *[other] { $count } 行
-    }
-resources-app-saved-count =
-    { $count ->
-       *[other] { $count } 个工作树
-    }
 resources-app-saved-info = 为已休眠的工作树保留的内存，以便立即重新打开
 resources-app-background-count =
     { $count ->
@@ -4516,7 +4498,6 @@ resources-app-other-detail = 随项目和工作树增多而增长
 resources-app-held-for-reuse-detail = 由分配器保留以供复用
 resources-app-code-system-detail = 程序代码和系统库
 resources-estimated = 估算
-resources-sleep-idle-chats = 休眠空闲聊天
 resources-sleep-idle-chats-confirm =
     { $count ->
        *[other] 要休眠 { $count } 个空闲聊天吗？
@@ -4528,11 +4509,6 @@ resources-clear-confirm =
        *[other] 要清除 { $lines } 行回滚内容吗？
     }
 resources-clear-consequence = 屏幕内容会保留。
-resources-clear-scrollback = 清除回滚内容
-resources-clear-all-confirm =
-    { $count ->
-       *[other] 要清除 { $count } 个终端的回滚内容吗？
-    }
 resources-chat-sleep-running = 正在进行一轮对话，结束后即可休眠。
 resources-chat-sleep-waiting = 正在等待你的回答，回答后即可休眠。
 resources-chat-sleep-unseen = 有你尚未查看的回复，阅读后即可休眠。
@@ -4566,46 +4542,21 @@ resources-tab-all = 全部
 resources-tab-agents = 智能体
 resources-tab-browser = 浏览器
 resources-tab-terminals = 终端
-resources-fact-agents =
-    { $count ->
-       *[other] 个智能体
-    }
-resources-fact-browser-tabs =
-    { $count ->
-       *[other] 个浏览器标签页
-    }
-resources-fact-terminals =
-    { $count ->
-       *[other] 个终端
-    }
 resources-on-screen = 正在屏幕上显示，因此保持唤醒
 resources-open = 打开
 resources-close = 关闭
 resources-close-confirm = 要关闭 { $name } 吗？
 resources-close-consequence = 其页面将关闭。
 resources-average-title = 每个智能体的平均值
-resources-average-each = 单个
-resources-average-ten = 10 个智能体
-resources-average-each-suffix = 每个
-resources-average-for-ten = 10 个合计
 resources-tree-more = +{ $count } 个
-resources-app-item-detail = { $activity }，{ $lines }
-resources-app-more-chats =
-    { $count ->
-       *[other] 还有 { $count } 个聊天
-    }
-resources-app-more-terminals =
-    { $count ->
-       *[other] 还有 { $count } 个终端
-    }
 issue-report-check-submission = 检查提交状态
 issue-report-submission-uncertain = 此报告可能已在 GitHub 上。请检查提交状态以查找它；检查绝不会再次发布。如果暂时未找到，请稍候再检查，或在丢弃此草稿前查看你在 GitHub 上的议题。
 issue-report-discard-uncertain = 丢弃草稿（报告可能已存在）
 issue-report-draft-load-failed = 无法读取你保存的报告。请解决存储问题并重新启动应用，然后再提交其他报告。
 review-comment-edit-staged = 请先将此审查从输入区移除，再进行编辑。
 
-chat-edit-failed-draft-conflict = 编辑失败的消息前，请先保存或清空当前草稿。
 chat-edit-skill-as-text = 将技能作为文本编辑
+chat-edit-failed-draft-conflict = 编辑失败的消息前，请先保存或清空当前草稿。
 
 chat-notice-mcp-disable = 禁用
 chat-notice-mcp-disable-confirm = 禁用 MCP 服务器 { $name }？

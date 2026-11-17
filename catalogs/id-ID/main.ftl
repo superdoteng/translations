@@ -1560,7 +1560,7 @@ settings-remote-background-auth-description = Penyegaran latar belakang memerluk
 settings-remote-ssh-auth-label = Autentikasi SSH
 settings-remote-ssh-auth-description = Gunakan kunci SSH dengan agen ssh sistem Anda atau macOS Keychain. Refresh jarak jauh latar belakang tidak pernah meminta kata sandi.
 settings-remote-cli-label = { $app_name } CLI
-settings-remote-cli-description = Instal atau perbarui `sc` CLI di host. Kekuatan live Git pembaruan, notifikasi agen, dan penamaan cabang otomatis.
+settings-remote-cli-description = Instal atau perbarui `se` CLI di host. Kekuatan live Git pembaruan, notifikasi agen, dan penamaan cabang otomatis.
 settings-remote-cli-auto-update-label = Pastikan CLI selalu diperbarui secara otomatis
 settings-remote-cli-auto-update-description = Instal dan perbarui CLI pada host ini tanpa menanyakan kapan sudah hilang atau sudah usang. Jika dinonaktifkan, Anda akan diminta dan dapat menggunakan tombol di atas.
 settings-remote-cli-installing = Menginstal...
@@ -1705,7 +1705,7 @@ settings-dynamic-search-ssh-target-description = Tujuan SSH jarak jauh untuk { $
 settings-dynamic-search-ssh-auth-label = Autentikasi SSH
 settings-dynamic-search-ssh-auth-description = SSH pengaturan tombol / koneksi untuk { $workspace }.
 settings-dynamic-search-remote-cli-label = CLI superkonduktor
-settings-dynamic-search-remote-cli-description = Instal atau perbarui CLI remote sc untuk { $workspace }.
+settings-dynamic-search-remote-cli-description = Instal atau perbarui CLI remote se untuk { $workspace }.
 settings-dynamic-search-host-details-label = Detail Tuan Rumah
 settings-dynamic-search-host-details-description = Fakta pembawa acara yang diselidiki untuk { $workspace }: { $facts }.
 settings-dynamic-search-provider-profiles-label = Profil { $provider }
@@ -2985,7 +2985,7 @@ browser-annotation-composer-blocked = Tidak dapat menambah anotasi saat transkri
 browser-consent-title = Izinkan agen mengendalikan browser di “{ $workspace_name }”?
 browser-consent-asked-by-agent = Seorang agen
 browser-consent-asked-by-worktree = Agen yang bekerja di “{ $caller_label }”
-browser-consent-description = { $asked_by } meminta untuk menjalankan sc browser { $spelling } di tab browser ruang kerja ini. Mengizinkan memberi semua agen di ruang kerja ini izin tetap — untuk perintah act ini dan semua perintah act mendatang — untuk mengeklik, mengetik, menavigasi, dan menjalankan skrip di halaman yang terbuka, termasuk sesi yang sudah login. Sebagian besar perintah hanya-baca tidak perlu persetujuan, tetapi membaca nilai cookie memerlukannya. Izin ini disimpan untuk ruang kerja dan dapat dicabut kapan saja di Pengaturan.
+browser-consent-description = { $asked_by } meminta untuk menjalankan se browser { $spelling } di tab browser ruang kerja ini. Mengizinkan memberi semua agen di ruang kerja ini izin tetap — untuk perintah act ini dan semua perintah act mendatang — untuk mengeklik, mengetik, menavigasi, dan menjalankan skrip di halaman yang terbuka, termasuk sesi yang sudah login. Sebagian besar perintah hanya-baca tidak perlu persetujuan, tetapi membaca nilai cookie memerlukannya. Izin ini disimpan untuk ruang kerja dan dapat dicabut kapan saja di Pengaturan.
 browser-new-chats = Obrolan baru
 palette-no-matching-files-index-incomplete = Tidak ada file yang cocok (indeks belum lengkap: worktree ini melebihi batas pemindaian file)
 update-ready-title = Pembaruan siap
@@ -3193,11 +3193,11 @@ settings-ai-run-with-column = Jalankan dengan
 settings-ai-branch-naming-rule = Aturan penamaan
 settings-ai-session-context-section = Konteks sesi
 settings-ai-agent-session-context-label = Konteks sesi untuk agen
-settings-ai-agent-session-context-description = super.engineering dapat menambahkan konteks ke sesi agen agar agen dapat menemukan dan memakai CLI sc aplikasi dengan aman.
+settings-ai-agent-session-context-description = super.engineering dapat menambahkan konteks ke sesi agen agar agen dapat menemukan dan memakai CLI se aplikasi dengan aman.
 settings-ai-agent-session-context-standard-label = Standar
 settings-ai-agent-session-context-standard-description = Agen menerima petunjuk CLI super.engineering dan perutean orkestrasi standar.
 settings-ai-agent-session-context-off-label = Nonaktif
-settings-ai-agent-session-context-off-description = Tidak ada konteks sesi latar yang ditambahkan saat Nonaktif dipilih. Tindakan eksplisit seperti tinjauan dan penyerahan tugas worktree tidak terpengaruh, dan pembatas perintah sc tetap berlaku.
+settings-ai-agent-session-context-off-description = Tidak ada konteks sesi latar yang ditambahkan saat Nonaktif dipilih. Tindakan eksplisit seperti tinjauan dan penyerahan tugas worktree tidak terpengaruh, dan pembatas perintah se tetap berlaku.
 settings-remote-key-install-action = Pasang kunci
 settings-remote-key-install-authorize = Otorisasi di { $host }
 settings-remote-key-install-body = { $app_name } akan membuat kunci SSH khusus untuk ruang kerja ini.
@@ -4156,7 +4156,6 @@ resources-exited-just-now = Baru saja keluar
 resources-exited-minutes = Keluar { $minutes } mnt lalu
 resources-exited-hours = Keluar { $hours } jam lalu
 resources-cpu-row = CPU { $percent }%
-resources-cpu-split = Aplikasi { $app }% · Diluncurkan { $launched }%
 resources-origin-tab = Tab terminal
 resources-origin-launched = Dimulai oleh { $tab }
 resources-origin-run-script = Skrip Run
@@ -4178,26 +4177,6 @@ resources-app-graphics-info = Permukaan jendela dan memori GPU
 resources-app-held-for-reuse = Disimpan untuk dipakai ulang
 resources-app-saved-wake = Tertidur
 resources-app-code-system = Kode dan sistem
-resources-app-chats = Chat
-resources-app-chats-open = { $count } terbuka
-resources-app-chats-idle = { $count } menganggur
-resources-app-chats-history = Riwayat chat
-resources-app-terminals = Terminal
-resources-app-terminals-count =
-    { $count ->
-        [one] { $count } terminal
-       *[other] { $count } terminal
-    }
-resources-app-terminals-lines =
-    { $count ->
-        [one] { $count } baris
-       *[other] { $count } baris
-    }
-resources-app-saved-count =
-    { $count ->
-        [one] { $count } worktree
-       *[other] { $count } worktree
-    }
 resources-app-saved-info = Memori yang disimpan untuk worktree yang tertidur agar terbuka kembali seketika
 resources-app-background-count =
     { $count ->
@@ -4211,7 +4190,6 @@ resources-app-other-detail = Bertambah seiring proyek dan worktree
 resources-app-held-for-reuse-detail = Disimpan oleh alokator untuk dipakai ulang
 resources-app-code-system-detail = Kode program dan pustaka sistem
 resources-estimated = Perkiraan
-resources-sleep-idle-chats = Tidurkan chat yang menganggur
 resources-sleep-idle-chats-confirm =
     { $count ->
         [one] Tidurkan { $count } chat yang menganggur?
@@ -4225,12 +4203,6 @@ resources-clear-confirm =
        *[other] Bersihkan { $lines } baris riwayat gulir?
     }
 resources-clear-consequence = Layar tetap seperti semula.
-resources-clear-scrollback = Bersihkan riwayat gulir
-resources-clear-all-confirm =
-    { $count ->
-        [one] Bersihkan riwayat gulir di { $count } terminal?
-       *[other] Bersihkan riwayat gulir di { $count } terminal?
-    }
 resources-chat-sleep-running = Sedang menjalankan giliran. Dapat ditidurkan setelah giliran berakhir.
 resources-chat-sleep-waiting = Menunggu jawaban Anda. Dapat ditidurkan setelah Anda menjawab.
 resources-chat-sleep-unseen = Ada balasan yang belum Anda lihat. Dapat ditidurkan setelah Anda membacanya.
@@ -4264,51 +4236,21 @@ resources-tab-all = Semua
 resources-tab-agents = Agen
 resources-tab-browser = Browser
 resources-tab-terminals = Terminal
-resources-fact-agents =
-    { $count ->
-        [one] agen
-       *[other] agen
-    }
-resources-fact-browser-tabs =
-    { $count ->
-        [one] tab browser
-       *[other] tab browser
-    }
-resources-fact-terminals =
-    { $count ->
-        [one] terminal
-       *[other] terminal
-    }
 resources-on-screen = Ada di layar, jadi tetap terjaga
 resources-open = Buka
 resources-close = Tutup
 resources-close-confirm = Tutup { $name }?
 resources-close-consequence = Halamannya akan ditutup.
 resources-average-title = Rata-rata per agen
-resources-average-each = Masing-masing
-resources-average-ten = 10 agen
-resources-average-each-suffix = masing-masing
-resources-average-for-ten = untuk 10
 resources-tree-more = +{ $count } lagi
-resources-app-item-detail = { $activity }, { $lines }
-resources-app-more-chats =
-    { $count ->
-        [one] { $count } chat lagi
-       *[other] { $count } chat lagi
-    }
-resources-app-more-terminals =
-    { $count ->
-        [one] { $count } terminal lagi
-       *[other] { $count } terminal lagi
-    }
 issue-report-check-submission = Periksa pengiriman
 issue-report-submission-uncertain = Laporan ini mungkin sudah ada di GitHub. Periksa pengiriman untuk menemukannya; pemeriksaan tidak pernah memposting ulang. Jika belum ditemukan, tunggu dan periksa lagi, atau tinjau issue GitHub Anda sebelum membuang draf ini.
 issue-report-discard-uncertain = Buang draf (laporan mungkin sudah ada)
 issue-report-draft-load-failed = Tidak dapat membaca laporan tersimpan Anda. Atasi masalah penyimpanan dan mulai ulang aplikasi sebelum mengirim laporan lain.
 review-comment-edit-staged = Hapus ulasan ini dari kolom penulisan sebelum mengeditnya.
 
-chat-edit-failed-draft-conflict = Simpan atau hapus draf saat ini sebelum mengedit pesan yang gagal.
 chat-edit-skill-as-text = Edit dengan skill sebagai teks
+chat-edit-failed-draft-conflict = Simpan atau hapus draf saat ini sebelum mengedit pesan yang gagal.
 
 chat-notice-mcp-disable = Nonaktifkan
 chat-notice-mcp-disable-confirm = Nonaktifkan server MCP { $name }?

@@ -1566,7 +1566,7 @@ settings-remote-background-auth-description = רענון רקע דורש אימ�
 settings-remote-ssh-auth-label = אימות SSH
 settings-remote-ssh-auth-description = השתמש במפתחות SSH עם סוכן ה-ssh של המערכת שלך או macOS Keychain. רענון רקע מרחוק אף פעם לא מבקש סיסמאות.
 settings-remote-cli-label = { $app_name } CLI
-settings-remote-cli-description = התקן או עדכן את `sc` CLI על המארח. Powers Git עדכונים, התראות לסוכנים, ושמות אוטומטיים לסניפים.
+settings-remote-cli-description = התקן או עדכן את `se` CLI על המארח. Powers Git עדכונים, התראות לסוכנים, ושמות אוטומטיים לסניפים.
 settings-remote-cli-auto-update-label = שמור על CLI מעודכן אוטומטית
 settings-remote-cli-auto-update-description = התקן ועדכן את CLI על המארח הזה בלי לשאול כשהוא חסר או מיושן. אם מושבתים, תבקשו ממך ותוכל להשתמש בכפתור למעלה.
 settings-remote-cli-installing = מתקין...
@@ -3076,7 +3076,7 @@ browser-annotation-composer-blocked = לא ניתן להוסיף הערות כש
 browser-consent-title = לאפשר לסוכנים לשלוט בדפדפן ב־״{ $workspace_name }״?
 browser-consent-asked-by-agent = סוכן
 browser-consent-asked-by-worktree = סוכן שעובד ב־״{ $caller_label }״
-browser-consent-description = { $asked_by } ביקש להריץ ⁨sc browser { $spelling }⁩ בכרטיסיית הדפדפן של סביבת העבודה. האישור מעניק לכל סוכן בסביבת העבודה הרשאה קבועה — לפקודה הזו ולכל פקודות act בעתיד, ולא רק לזו — ללחוץ, להקליד, לנווט ולהריץ סקריפטים בכל דף פתוח, כולל חיבורים לחשבונות. רוב פקודות הקריאה בלבד אינן דורשות אישור, אך קריאת ערכי עוגיות כן דורשת אישור. ההרשאה נשמרת לסביבת העבודה וניתנת לביטול בכל עת בהגדרות.
+browser-consent-description = { $asked_by } ביקש להריץ ⁨se browser { $spelling }⁩ בכרטיסיית הדפדפן של סביבת העבודה. האישור מעניק לכל סוכן בסביבת העבודה הרשאה קבועה — לפקודה הזו ולכל פקודות act בעתיד, ולא רק לזו — ללחוץ, להקליד, לנווט ולהריץ סקריפטים בכל דף פתוח, כולל חיבורים לחשבונות. רוב פקודות הקריאה בלבד אינן דורשות אישור, אך קריאת ערכי עוגיות כן דורשת אישור. ההרשאה נשמרת לסביבת העבודה וניתנת לביטול בכל עת בהגדרות.
 browser-new-chats = צ׳אט חדש
 palette-no-matching-files-index-incomplete = אין קבצים תואמים (האינדקס חלקי: ה־Worktree הזה חורג ממגבלת סריקת הקבצים)
 update-ready-title = העדכון מוכן
@@ -3298,11 +3298,11 @@ settings-ai-run-with-column = הרץ עם
 settings-ai-branch-naming-rule = כלל מתן שמות
 settings-ai-session-context-section = הקשר סשן
 settings-ai-agent-session-context-label = הקשר סשן לסוכנים
-settings-ai-agent-session-context-description = super.engineering יכול להוסיף הקשר לסשנים של סוכנים כדי שיוכלו למצוא את ה־CLI של היישום, sc, ולהשתמש בו בבטחה.
+settings-ai-agent-session-context-description = super.engineering יכול להוסיף הקשר לסשנים של סוכנים כדי שיוכלו למצוא את ה־CLI של היישום, se, ולהשתמש בו בבטחה.
 settings-ai-agent-session-context-standard-label = רגיל
 settings-ai-agent-session-context-standard-description = הסוכנים מקבלים את הוראות ה־CLI וניתוב התזמור הרגילות של super.engineering.
 settings-ai-agent-session-context-off-label = כבוי
-settings-ai-agent-session-context-off-description = כשכבוי, לא נוסף הקשר סשן אוטומטי. פעולות מפורשות כמו סקירות והעברת משימות Worktree אינן מושפעות, וכללי ההגנה של פקודות sc עדיין חלים.
+settings-ai-agent-session-context-off-description = כשכבוי, לא נוסף הקשר סשן אוטומטי. פעולות מפורשות כמו סקירות והעברת משימות Worktree אינן מושפעות, וכללי ההגנה של פקודות se עדיין חלים.
 settings-remote-key-install-action = התקן מפתח
 settings-remote-key-install-authorize = אשר אותו ב־⁨{ $host }⁩
 settings-remote-key-install-body = { $app_name } ייצור מפתח SSH ייעודי לסביבת העבודה הזו.
@@ -4326,7 +4326,6 @@ resources-exited-just-now = יצא הרגע
 resources-exited-minutes = יצא לפני { $minutes } דק׳
 resources-exited-hours = יצא לפני { $hours } שע׳
 resources-cpu-row = { $percent }% CPU
-resources-cpu-split = אפליקציה { $app }% · שהופעלו { $launched }%
 resources-origin-tab = לשונית טרמינל
 resources-origin-launched = הופעל על ידי { $tab }
 resources-origin-run-script = סקריפט ריצה
@@ -4348,29 +4347,6 @@ resources-app-graphics-info = משטחי חלונות וזיכרון GPU
 resources-app-held-for-reuse = שמור לשימוש חוזר
 resources-app-saved-wake = במצב שינה
 resources-app-code-system = קוד ומערכת
-resources-app-chats = צ׳אטים
-resources-app-chats-open = { $count } פתוחים
-resources-app-chats-idle = { $count } לא פעילים
-resources-app-chats-history = היסטוריית צ׳אטים
-resources-app-terminals = טרמינלים
-resources-app-terminals-count =
-    { $count ->
-        [one] טרמינל אחד
-        [two] שני טרמינלים
-       *[other] { $count } טרמינלים
-    }
-resources-app-terminals-lines =
-    { $count ->
-        [one] שורה אחת
-        [two] שתי שורות
-       *[other] { $count } שורות
-    }
-resources-app-saved-count =
-    { $count ->
-        [one] עץ עבודה אחד
-        [two] שני עצי עבודה
-       *[other] { $count } עצי עבודה
-    }
 resources-app-saved-info = זיכרון שנשמר לעצי עבודה במצב שינה כדי שייפתחו מחדש מיד
 resources-app-background-count =
     { $count ->
@@ -4385,7 +4361,6 @@ resources-app-other-detail = גדל עם הפרויקטים ועצי העבוד�
 resources-app-held-for-reuse-detail = נשמר על ידי מקצה הזיכרון לשימוש חוזר
 resources-app-code-system-detail = קוד התוכנה וספריות המערכת
 resources-estimated = משוער
-resources-sleep-idle-chats = השכבת צ׳אטים לא פעילים
 resources-sleep-idle-chats-confirm =
     { $count ->
         [one] להעביר צ׳אט לא פעיל אחד למצב שינה?
@@ -4401,13 +4376,6 @@ resources-clear-confirm =
        *[other] לנקות { $lines } שורות מהיסטוריית הגלילה?
     }
 resources-clear-consequence = המסך נשאר.
-resources-clear-scrollback = ניקוי היסטוריית הגלילה
-resources-clear-all-confirm =
-    { $count ->
-        [one] לנקות את היסטוריית הגלילה בטרמינל אחד?
-        [two] לנקות את היסטוריית הגלילה בשני טרמינלים?
-       *[other] לנקות את היסטוריית הגלילה ב־{ $count } טרמינלים?
-    }
 resources-chat-sleep-running = מריץ תור. יוכל לעבור למצב שינה כשהתור יסתיים.
 resources-chat-sleep-waiting = ממתין לתשובתך. יוכל לעבור למצב שינה אחרי שתענה.
 resources-chat-sleep-unseen = יש בו תשובה שעוד לא ראית. יוכל לעבור למצב שינה אחרי שתקרא אותה.
@@ -4441,53 +4409,21 @@ resources-tab-all = הכול
 resources-tab-agents = סוכנים
 resources-tab-browser = דפדפן
 resources-tab-terminals = טרמינלים
-resources-fact-agents =
-    { $count ->
-        [one] סוכן
-       *[other] סוכנים
-    }
-resources-fact-browser-tabs =
-    { $count ->
-        [one] לשונית דפדפן
-       *[other] לשוניות דפדפן
-    }
-resources-fact-terminals =
-    { $count ->
-        [one] טרמינל
-       *[other] טרמינלים
-    }
 resources-on-screen = מוצג על המסך, לכן נשאר ער
 resources-open = פתיחה
 resources-close = סגירה
 resources-close-confirm = לסגור את { $name }?
 resources-close-consequence = הדף שלו ייסגר.
 resources-average-title = ממוצע לסוכן
-resources-average-each = לכל אחד
-resources-average-ten = 10 סוכנים
-resources-average-each-suffix = לכל אחד
-resources-average-for-ten = ל־10
 resources-tree-more = +{ $count } נוספים
-resources-app-item-detail = { $activity }, { $lines }
-resources-app-more-chats =
-    { $count ->
-        [one] עוד צ׳אט אחד
-        [two] עוד שני צ׳אטים
-       *[other] עוד { $count } צ׳אטים
-    }
-resources-app-more-terminals =
-    { $count ->
-        [one] עוד טרמינל אחד
-        [two] עוד שני טרמינלים
-       *[other] עוד { $count } טרמינלים
-    }
 issue-report-check-submission = בדיקת השליחה
 issue-report-submission-uncertain = ייתכן שהדיווח הזה כבר נמצא ב-GitHub. בדקו את השליחה כדי למצוא אותו; הבדיקה לעולם אינה מפרסמת שוב. אם הוא עדיין לא נמצא, המתינו ובדקו שוב, או עיינו בבעיות שלכם ב-GitHub לפני השלכת הטיוטה הזו.
 issue-report-discard-uncertain = השלכת הטיוטה (ייתכן שהדיווח כבר קיים)
 issue-report-draft-load-failed = לא ניתן לקרוא את הדיווח השמור שלכם. פתרו את בעיית האחסון והפעילו מחדש את היישום לפני שליחת דיווח נוסף.
 review-comment-edit-staged = יש להסיר את הסקירה הזו מתיבת הכתיבה לפני העריכה.
 
-chat-edit-failed-draft-conflict = יש לשמור או לנקות את הטיוטה הנוכחית לפני עריכת ההודעה שנכשלה.
 chat-edit-skill-as-text = עריכה עם המיומנות כטקסט
+chat-edit-failed-draft-conflict = יש לשמור או לנקות את הטיוטה הנוכחית לפני עריכת ההודעה שנכשלה.
 
 chat-notice-mcp-disable = השבתה
 chat-notice-mcp-disable-confirm = להשבית את שרת ה־MCP ‏{ $name }?

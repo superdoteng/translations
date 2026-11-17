@@ -143,7 +143,7 @@ browser-annotation-composer-blocked = 서브에이전트 대화 기록을 보고
 browser-consent-title = “{ $workspace_name }”에서 에이전트가 브라우저를 제어하도록 허용할까요?
 browser-consent-asked-by-agent = 에이전트
 browser-consent-asked-by-worktree = “{ $caller_label }”에서 작업 중인 에이전트
-browser-consent-description = { $asked_by }이(가) 이 워크스페이스의 브라우저 탭에서 sc browser { $spelling } 실행을 요청했습니다. 허용하면 이 명령뿐 아니라 앞으로의 모든 act 명령에 대해 이 워크스페이스의 모든 에이전트에게 상시 권한이 부여되어, 로그인된 세션을 포함해 열려 있는 어떤 페이지에서든 클릭, 입력, 이동, 스크립트 실행을 할 수 있습니다. 대부분의 읽기 전용 명령은 승인이 필요 없지만, 쿠키 값을 읽으려면 승인이 필요합니다. 이 권한은 워크스페이스에 계속 유지되며 설정에서 언제든 취소할 수 있습니다.
+browser-consent-description = { $asked_by }이(가) 이 워크스페이스의 브라우저 탭에서 se browser { $spelling } 실행을 요청했습니다. 허용하면 이 명령뿐 아니라 앞으로의 모든 act 명령에 대해 이 워크스페이스의 모든 에이전트에게 상시 권한이 부여되어, 로그인된 세션을 포함해 열려 있는 어떤 페이지에서든 클릭, 입력, 이동, 스크립트 실행을 할 수 있습니다. 대부분의 읽기 전용 명령은 승인이 필요 없지만, 쿠키 값을 읽으려면 승인이 필요합니다. 이 권한은 워크스페이스에 계속 유지되며 설정에서 언제든 취소할 수 있습니다.
 browser-back = 뒤로
 browser-forward = 앞으로
 browser-reload = 새로고침
@@ -1028,11 +1028,11 @@ settings-ai-starting-mode-label = 시작 모드
 settings-ai-starting-mode-description = 새 채팅 및 터미널 탭이 시작되는 권한 모드입니다. 각 채팅은 입력창에서 모드를 바꿀 수 있습니다.
 settings-ai-session-context-section = 세션 컨텍스트
 settings-ai-agent-session-context-label = 에이전트용 세션 컨텍스트
-settings-ai-agent-session-context-description = super.engineering은 에이전트가 앱의 sc CLI를 찾아 안전하게 쓰도록 세션에 컨텍스트를 추가할 수 있습니다.
+settings-ai-agent-session-context-description = super.engineering은 에이전트가 앱의 se CLI를 찾아 안전하게 쓰도록 세션에 컨텍스트를 추가할 수 있습니다.
 settings-ai-agent-session-context-standard-label = 표준
 settings-ai-agent-session-context-standard-description = 에이전트가 표준 super.engineering CLI와 오케스트레이션 라우팅 안내를 받습니다.
 settings-ai-agent-session-context-off-label = 끔
-settings-ai-agent-session-context-off-description = 끔 상태에서는 세션 컨텍스트가 자동으로 추가되지 않습니다. 리뷰나 워크트리 작업 인계 같은 명시적 동작에는 영향이 없으며, sc 명령 가드레일도 계속 적용됩니다.
+settings-ai-agent-session-context-off-description = 끔 상태에서는 세션 컨텍스트가 자동으로 추가되지 않습니다. 리뷰나 워크트리 작업 인계 같은 명시적 동작에는 영향이 없으며, se 명령 가드레일도 계속 적용됩니다.
 settings-ai-checking-connection = 연결 확인 중
 settings-ai-check-connection = 연결 확인
 settings-ai-creating-profile-directory = 프로필 디렉터리를 만드는 중.
@@ -1065,7 +1065,7 @@ settings-remote-background-auth-description = 백그라운드 새로고침에는
 settings-remote-ssh-auth-label = SSH 인증
 settings-remote-ssh-auth-description = 시스템 ssh-agent 또는 macOS 키체인과 함께 SSH 키를 사용하세요. 백그라운드 원격 새로고침은 비밀번호를 묻지 않습니다.
 settings-remote-cli-label = { $app_name } CLI
-settings-remote-cli-description = 호스트에 `sc` CLI를 설치하거나 업데이트합니다. 실시간 Git 업데이트, 에이전트 알림, 자동 브랜치 이름 지정에 사용됩니다.
+settings-remote-cli-description = 호스트에 `se` CLI를 설치하거나 업데이트합니다. 실시간 Git 업데이트, 에이전트 알림, 자동 브랜치 이름 지정에 사용됩니다.
 settings-remote-cli-auto-update-label = CLI를 자동으로 최신 상태로 유지
 settings-remote-cli-auto-update-description = 이 호스트에 CLI가 없거나 오래된 경우 묻지 않고 설치 및 업데이트합니다. 끄면 확인 메시지가 표시되며, 위 버튼을 사용할 수 있습니다.
 settings-remote-cli-installing = 설치 중…
@@ -1269,7 +1269,7 @@ settings-dynamic-search-ssh-target-description = { $workspace }의 원격 SSH �
 settings-dynamic-search-ssh-auth-label = SSH 인증
 settings-dynamic-search-ssh-auth-description = { $workspace }의 SSH 키 / 연결 설정.
 settings-dynamic-search-remote-cli-label = super.engineering CLI
-settings-dynamic-search-remote-cli-description = { $workspace }의 원격 sc CLI를 설치하거나 업데이트합니다.
+settings-dynamic-search-remote-cli-description = { $workspace }의 원격 se CLI를 설치하거나 업데이트합니다.
 settings-dynamic-search-host-details-label = 호스트 정보
 settings-dynamic-search-host-details-description = { $workspace }에서 확인한 호스트 정보: { $facts }.
 settings-dynamic-search-provider-profiles-label = { $provider } 프로필
@@ -4468,7 +4468,6 @@ resources-exited-just-now = 방금 종료됨
 resources-exited-minutes = { $minutes }분 전 종료됨
 resources-exited-hours = { $hours }시간 전 종료됨
 resources-cpu-row = CPU { $percent }%
-resources-cpu-split = 앱 { $app }% · 실행됨 { $launched }%
 resources-origin-tab = 터미널 탭
 resources-origin-launched = { $tab }에서 시작됨
 resources-origin-run-script = 실행 스크립트
@@ -4490,23 +4489,6 @@ resources-app-graphics-info = 창 서피스와 GPU 메모리
 resources-app-held-for-reuse = 재사용을 위해 보유
 resources-app-saved-wake = 잠자기 중
 resources-app-code-system = 코드 및 시스템
-resources-app-chats = 채팅
-resources-app-chats-open = { $count }개 열림
-resources-app-chats-idle = { $count }개 유휴
-resources-app-chats-history = 채팅 기록
-resources-app-terminals = 터미널
-resources-app-terminals-count =
-    { $count ->
-       *[other] 터미널 { $count }개
-    }
-resources-app-terminals-lines =
-    { $count ->
-       *[other] { $count }줄
-    }
-resources-app-saved-count =
-    { $count ->
-       *[other] 워크트리 { $count }개
-    }
 resources-app-saved-info = 잠자기 중인 워크트리를 바로 다시 열 수 있도록 보관하는 메모리
 resources-app-background-count =
     { $count ->
@@ -4519,7 +4501,6 @@ resources-app-other-detail = 프로젝트와 워크트리 수에 따라 증가
 resources-app-held-for-reuse-detail = 할당자가 재사용을 위해 보유
 resources-app-code-system-detail = 프로그램 코드와 시스템 라이브러리
 resources-estimated = 추정치
-resources-sleep-idle-chats = 유휴 채팅 잠자기
 resources-sleep-idle-chats-confirm =
     { $count ->
        *[other] 유휴 채팅 { $count }개를 잠자기 상태로 전환할까요?
@@ -4531,11 +4512,6 @@ resources-clear-confirm =
        *[other] 스크롤백 { $lines }줄을 지울까요?
     }
 resources-clear-consequence = 화면은 그대로 유지됩니다.
-resources-clear-scrollback = 스크롤백 지우기
-resources-clear-all-confirm =
-    { $count ->
-       *[other] 터미널 { $count }개의 스크롤백을 지울까요?
-    }
 resources-chat-sleep-running = 턴을 실행 중입니다. 턴이 끝나면 잠자기 상태로 전환할 수 있습니다.
 resources-chat-sleep-waiting = 답변을 기다리고 있습니다. 답변하면 잠자기 상태로 전환할 수 있습니다.
 resources-chat-sleep-unseen = 확인하지 않은 응답이 있습니다. 읽고 나면 잠자기 상태로 전환할 수 있습니다.
@@ -4569,46 +4545,21 @@ resources-tab-all = 전체
 resources-tab-agents = 에이전트
 resources-tab-browser = 브라우저
 resources-tab-terminals = 터미널
-resources-fact-agents =
-    { $count ->
-       *[other] 에이전트
-    }
-resources-fact-browser-tabs =
-    { $count ->
-       *[other] 브라우저 탭
-    }
-resources-fact-terminals =
-    { $count ->
-       *[other] 터미널
-    }
 resources-on-screen = 화면에 표시되어 있어 깨어 있는 상태로 유지됩니다
 resources-open = 열기
 resources-close = 닫기
 resources-close-confirm = { $name }을(를) 닫을까요?
 resources-close-consequence = 해당 페이지가 닫힙니다.
 resources-average-title = 에이전트당 평균
-resources-average-each = 개당
-resources-average-ten = 에이전트 10개
-resources-average-each-suffix = 씩
-resources-average-for-ten = 10개 기준
 resources-tree-more = +{ $count }개 더
-resources-app-item-detail = { $activity }, { $lines }
-resources-app-more-chats =
-    { $count ->
-       *[other] 채팅 { $count }개 더
-    }
-resources-app-more-terminals =
-    { $count ->
-       *[other] 터미널 { $count }개 더
-    }
 issue-report-check-submission = 제출 상태 확인
 issue-report-submission-uncertain = 이 보고서가 이미 GitHub에 있을 수 있습니다. 제출 상태를 확인하여 찾아보세요. 확인 시 다시 게시되지 않습니다. 아직 찾을 수 없다면 잠시 기다린 후 다시 확인하거나, 이 초안을 삭제하기 전에 GitHub에서 본인의 이슈를 검토하세요.
 issue-report-discard-uncertain = 초안 삭제 (보고서가 이미 있을 수 있음)
 issue-report-draft-load-failed = 저장된 보고서를 읽을 수 없습니다. 다른 보고서를 제출하기 전에 저장소 문제를 해결하고 앱을 다시 시작하세요.
 review-comment-edit-staged = 편집하기 전에 입력창에서 이 리뷰를 제거하세요.
 
-chat-edit-failed-draft-conflict = 실패한 메시지를 편집하기 전에 현재 초안을 저장하거나 지우세요.
 chat-edit-skill-as-text = 스킬을 텍스트로 편집
+chat-edit-failed-draft-conflict = 실패한 메시지를 편집하기 전에 현재 초안을 저장하거나 지우세요.
 
 chat-notice-mcp-disable = 비활성화
 chat-notice-mcp-disable-confirm = MCP 서버 { $name }을(를) 비활성화할까요?

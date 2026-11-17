@@ -1566,7 +1566,7 @@ settings-remote-background-auth-description = Le rafraîchissement en arrière-p
 settings-remote-ssh-auth-label = Authentification SSH
 settings-remote-ssh-auth-description = Utilisez SSH clés avec votre agent ssh système ou macOS porte-clés. Les rafraîchissements à distance en arrière-plan ne demandent jamais de mots de passe.
 settings-remote-cli-label = { $app_name } CLI
-settings-remote-cli-description = Installez ou mettez à jour le `sc` CLI sur l’hôte. Powers Git mises à jour en direct, notifications aux agents et nommage automatique des branches.
+settings-remote-cli-description = Installez ou mettez à jour le `se` CLI sur l’hôte. Powers Git mises à jour en direct, notifications aux agents et nommage automatique des branches.
 settings-remote-cli-auto-update-label = Tenez CLI automatiquement à jour
 settings-remote-cli-auto-update-description = Installez et mettez à jour le CLI sur cet hôte sans demander s’il manque ou est obsolète. Si la désactivation est désactivée, on vous invitera et pourrez utiliser le bouton ci-dessus.
 settings-remote-cli-installing = Installation...
@@ -3154,7 +3154,7 @@ browser-annotation-composer-blocked = Impossible d’ajouter des annotations lor
 browser-consent-title = Autoriser les agents à contrôler le navigateur dans « { $workspace_name } » ?
 browser-consent-asked-by-agent = Un agent
 browser-consent-asked-by-worktree = Un agent travaillant dans « { $caller_label } »
-browser-consent-description = { $asked_by } souhaite exécuter sc browser { $spelling } dans l’onglet du navigateur de cet espace de travail. L’autorisation permet durablement à tous ses agents de cliquer, saisir, naviguer et exécuter des scripts sur toute page ouverte, y compris les sessions connectées. Elle couvre cette commande act et toutes les suivantes. La plupart des commandes en lecture seule ne nécessitent pas d’approbation, contrairement à la lecture des valeurs des cookies. Cette autorisation persiste pour l’espace de travail et peut être révoquée à tout moment dans les paramètres.
+browser-consent-description = { $asked_by } souhaite exécuter se browser { $spelling } dans l’onglet du navigateur de cet espace de travail. L’autorisation permet durablement à tous ses agents de cliquer, saisir, naviguer et exécuter des scripts sur toute page ouverte, y compris les sessions connectées. Elle couvre cette commande act et toutes les suivantes. La plupart des commandes en lecture seule ne nécessitent pas d’approbation, contrairement à la lecture des valeurs des cookies. Cette autorisation persiste pour l’espace de travail et peut être révoquée à tout moment dans les paramètres.
 browser-new-chats = Nouvelle discussion
 palette-no-matching-files-index-incomplete = Aucun fichier correspondant (index incomplet : cet arbre de travail dépasse la limite d’analyse des fichiers)
 update-ready-title = Mise à jour prête
@@ -3343,10 +3343,10 @@ settings-ai-run-with-column = Exécuter avec
 settings-ai-branch-naming-rule = Règle de nommage
 settings-ai-session-context-section = Contexte de session
 settings-ai-agent-session-context-label = Contexte de session pour les agents
-settings-ai-agent-session-context-description = super.engineering peut ajouter du contexte aux sessions pour que les agents trouvent et utilisent sa CLI sc en toute sécurité.
+settings-ai-agent-session-context-description = super.engineering peut ajouter du contexte aux sessions pour que les agents trouvent et utilisent sa CLI se en toute sécurité.
 settings-ai-agent-session-context-standard-label = Standard
 settings-ai-agent-session-context-standard-description = Les agents reçoivent les instructions standard de la CLI super.engineering et du routage d’orchestration.
-settings-ai-agent-session-context-off-description = Lorsque cette option est désactivée, aucun contexte ambiant n’est ajouté. Les actions explicites, comme les revues et les transferts de tâches aux arbres de travail, restent inchangées ; les protections des commandes sc s’appliquent toujours.
+settings-ai-agent-session-context-off-description = Lorsque cette option est désactivée, aucun contexte ambiant n’est ajouté. Les actions explicites, comme les revues et les transferts de tâches aux arbres de travail, restent inchangées ; les protections des commandes se s’appliquent toujours.
 settings-remote-key-install-action = Installer la clé
 settings-remote-key-install-authorize = L’autoriser sur { $host }
 settings-remote-key-install-body = { $app_name } créera une clé SSH dédiée à cet espace de travail.
@@ -4301,7 +4301,6 @@ resources-exited-just-now = Terminé à l’instant
 resources-exited-minutes = Terminé il y a { $minutes } min
 resources-exited-hours = Terminé il y a { $hours } h
 resources-cpu-row = { $percent } % CPU
-resources-cpu-split = App { $app } % · Lancés { $launched } %
 resources-origin-tab = Onglet de terminal
 resources-origin-launched = Lancé par { $tab }
 resources-origin-run-script = Script d’exécution
@@ -4323,26 +4322,6 @@ resources-app-graphics-info = Surfaces des fenêtres et mémoire GPU
 resources-app-held-for-reuse = Réservé pour réutilisation
 resources-app-saved-wake = En veille
 resources-app-code-system = Code et système
-resources-app-chats = Chats
-resources-app-chats-open = Ouverts : { $count }
-resources-app-chats-idle = Inactifs : { $count }
-resources-app-chats-history = Historique des chats
-resources-app-terminals = Terminaux
-resources-app-terminals-count =
-    { $count ->
-        [one] 1 terminal
-       *[other] { $count } terminaux
-    }
-resources-app-terminals-lines =
-    { $count ->
-        [one] 1 ligne
-       *[other] { $count } lignes
-    }
-resources-app-saved-count =
-    { $count ->
-        [one] 1 worktree
-       *[other] { $count } worktrees
-    }
 resources-app-saved-info = Mémoire conservée pour les worktrees en veille afin qu’ils se rouvrent instantanément
 resources-app-background-count =
     { $count ->
@@ -4356,7 +4335,6 @@ resources-app-other-detail = Augmente avec les projets et les worktrees
 resources-app-held-for-reuse-detail = Conservé par l’allocateur pour réutilisation
 resources-app-code-system-detail = Code du programme et bibliothèques système
 resources-estimated = Estimé
-resources-sleep-idle-chats = Mettre en veille les chats inactifs
 resources-sleep-idle-chats-confirm =
     { $count ->
         [one] Mettre en veille 1 chat inactif ?
@@ -4370,12 +4348,6 @@ resources-clear-confirm =
        *[other] Effacer { $lines } lignes d’historique ?
     }
 resources-clear-consequence = L’écran reste affiché.
-resources-clear-scrollback = Effacer l’historique
-resources-clear-all-confirm =
-    { $count ->
-        [one] Effacer l’historique de 1 terminal ?
-       *[other] Effacer l’historique de { $count } terminaux ?
-    }
 resources-chat-sleep-running = Tour en cours. Il pourra être mis en veille à la fin du tour.
 resources-chat-sleep-waiting = En attente de votre réponse. Il pourra être mis en veille une fois que vous aurez répondu.
 resources-chat-sleep-unseen = Contient une réponse que vous n’avez pas vue. Il pourra être mis en veille une fois que vous l’aurez lue.
@@ -4409,51 +4381,21 @@ resources-tab-all = Tout
 resources-tab-agents = Agents
 resources-tab-browser = Navigateur
 resources-tab-terminals = Terminaux
-resources-fact-agents =
-    { $count ->
-        [one] agent
-       *[other] agents
-    }
-resources-fact-browser-tabs =
-    { $count ->
-        [one] onglet de navigateur
-       *[other] onglets de navigateur
-    }
-resources-fact-terminals =
-    { $count ->
-        [one] terminal
-       *[other] terminaux
-    }
 resources-on-screen = À l’écran, donc il reste actif
 resources-open = Ouvrir
 resources-close = Fermer
 resources-close-confirm = Fermer { $name } ?
 resources-close-consequence = Sa page se ferme.
 resources-average-title = Moyenne par agent
-resources-average-each = Par agent
-resources-average-ten = 10 agents
-resources-average-each-suffix = chacun
-resources-average-for-ten = pour 10
 resources-tree-more = +{ $count } de plus
-resources-app-item-detail = { $activity }, { $lines }
-resources-app-more-chats =
-    { $count ->
-        [one] 1 chat de plus
-       *[other] { $count } chats de plus
-    }
-resources-app-more-terminals =
-    { $count ->
-        [one] 1 terminal de plus
-       *[other] { $count } terminaux de plus
-    }
 issue-report-check-submission = Vérifier l’envoi
 issue-report-submission-uncertain = Ce rapport se trouve peut-être déjà sur GitHub. Vérifiez l’envoi pour le retrouver ; cette vérification ne le publie jamais à nouveau. S’il reste introuvable, patientez et réessayez, ou consultez vos tickets GitHub avant d’abandonner ce brouillon.
 issue-report-discard-uncertain = Abandonner le brouillon (le rapport existe peut-être déjà)
 issue-report-draft-load-failed = Impossible de lire votre rapport enregistré. Résolvez le problème de stockage et redémarrez l’application avant d’envoyer un autre rapport.
 review-comment-edit-staged = Retirez cette revue de la zone de saisie avant de la modifier.
 
-chat-edit-failed-draft-conflict = Conservez ou effacez votre brouillon actuel avant de modifier le message en échec.
 chat-edit-skill-as-text = Modifier avec la compétence en texte
+chat-edit-failed-draft-conflict = Conservez ou effacez votre brouillon actuel avant de modifier le message en échec.
 
 chat-notice-mcp-disable = Désactiver
 chat-notice-mcp-disable-confirm = Désactiver le serveur MCP { $name } ?

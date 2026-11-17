@@ -1562,7 +1562,7 @@ settings-remote-background-auth-description = تازه سازی پس زمینه 
 settings-remote-ssh-auth-label = احراز هویت SSH
 settings-remote-ssh-auth-description = از کلیدهای SSH با عامل ssh سیستم یا macOS جاکلیدی استفاده کنید. تازه سازی های ریموت پس زمینه هرگز رمز عبور نمی خواهند.
 settings-remote-cli-label = { $app_name } CLI
-settings-remote-cli-description = این `sc` CLI را روی میزبان نصب یا به روزرسانی کنید. پاورز به صورت زنده Git به روزرسانی ها، اعلان های نمایندگان و نام گذاری خودکار شاخه ها را انجام می دهد.
+settings-remote-cli-description = این `se` CLI را روی میزبان نصب یا به روزرسانی کنید. پاورز به صورت زنده Git به روزرسانی ها، اعلان های نمایندگان و نام گذاری خودکار شاخه ها را انجام می دهد.
 settings-remote-cli-auto-update-label = CLI را به صورت خودکار به روز نگه دارید
 settings-remote-cli-auto-update-description = CLI را روی این میزبان نصب و به روزرسانی کنید بدون اینکه بپرسید چه زمانی گم شده یا قدیمی است. اگر غیرفعال شود، از شما خواسته می شود و می توانید از دکمه بالا استفاده کنید.
 settings-remote-cli-installing = در حال نصب...
@@ -2987,7 +2987,7 @@ browser-annotation-composer-blocked = وقتی رونوشت زیرعامل در 
 browser-consent-title = به عامل‌ها اجازه می‌دهید مرورگر «{ $workspace_name }» را کنترل کنند؟
 browser-consent-asked-by-agent = یک عامل
 browser-consent-asked-by-worktree = عاملی که در «{ $caller_label }» کار می‌کند
-browser-consent-description = { $asked_by } درخواست اجرای ⁨sc browser { $spelling }⁩ را در زبانهٔ مرورگر این فضای کاری داده است. با موافقت شما، همهٔ عامل‌های این فضای کاری برای این فرمان و تمام فرمان‌های act آینده، نه فقط این مورد، اجازهٔ دائمی کلیک، تایپ، پیمایش و اجرای اسکریپت در هر صفحهٔ باز، از جمله نشست‌های واردشده به حساب، خواهند داشت. بیشتر فرمان‌های فقط‌خواندنی به تأیید نیاز ندارند، اما خواندن مقادیر کوکی نیاز دارد. این اجازه برای فضای کاری ذخیره می‌شود و هر زمان از تنظیمات قابل لغو است.
+browser-consent-description = { $asked_by } درخواست اجرای ⁨se browser { $spelling }⁩ را در زبانهٔ مرورگر این فضای کاری داده است. با موافقت شما، همهٔ عامل‌های این فضای کاری برای این فرمان و تمام فرمان‌های act آینده، نه فقط این مورد، اجازهٔ دائمی کلیک، تایپ، پیمایش و اجرای اسکریپت در هر صفحهٔ باز، از جمله نشست‌های واردشده به حساب، خواهند داشت. بیشتر فرمان‌های فقط‌خواندنی به تأیید نیاز ندارند، اما خواندن مقادیر کوکی نیاز دارد. این اجازه برای فضای کاری ذخیره می‌شود و هر زمان از تنظیمات قابل لغو است.
 browser-new-chats = گفت‌وگوی جدید
 palette-no-matching-files-index-incomplete = فایل منطبقی نیست (نمایه ناقص است: این ورک‌تری از سقف پویش فایل فراتر می‌رود)
 update-ready-title = به‌روزرسانی آماده است
@@ -3202,11 +3202,11 @@ settings-ai-run-with-column = اجرا با
 settings-ai-branch-naming-rule = قاعدهٔ نام‌گذاری
 settings-ai-session-context-section = زمینهٔ نشست
 settings-ai-agent-session-context-label = زمینهٔ نشست برای عامل‌ها
-settings-ai-agent-session-context-description = super.engineering می‌تواند به نشست‌های عامل‌ها زمینه اضافه کند تا CLI برنامه با نام sc را پیدا و با ایمنی استفاده کنند.
+settings-ai-agent-session-context-description = super.engineering می‌تواند به نشست‌های عامل‌ها زمینه اضافه کند تا CLI برنامه با نام se را پیدا و با ایمنی استفاده کنند.
 settings-ai-agent-session-context-standard-label = استاندارد
 settings-ai-agent-session-context-standard-description = عامل‌ها دستورالعمل‌های استاندارد CLI و مسیریابی هماهنگ‌سازی super.engineering را دریافت می‌کنند.
 settings-ai-agent-session-context-off-label = خاموش
-settings-ai-agent-session-context-off-description = در حالت خاموش، زمینهٔ ضمنی به نشست اضافه نمی‌شود. کارهای صریح، مانند بازبینی و واگذاری کار ورک‌تری، تغییری نمی‌کنند و محدودیت‌های فرمان sc همچنان اعمال می‌شوند.
+settings-ai-agent-session-context-off-description = در حالت خاموش، زمینهٔ ضمنی به نشست اضافه نمی‌شود. کارهای صریح، مانند بازبینی و واگذاری کار ورک‌تری، تغییری نمی‌کنند و محدودیت‌های فرمان se همچنان اعمال می‌شوند.
 settings-remote-key-install-action = نصب کلید
 settings-remote-key-install-authorize = مجاز کردن آن در ⁨{ $host }⁩
 settings-remote-key-install-body = { $app_name } برای این فضای کاری یک کلید SSH اختصاصی می‌سازد.
@@ -4175,7 +4175,6 @@ resources-exited-just-now = همین حالا خارج شد
 resources-exited-minutes = { $minutes } دقیقه پیش خارج شد
 resources-exited-hours = { $hours } ساعت پیش خارج شد
 resources-cpu-row = { $percent }٪ CPU
-resources-cpu-split = برنامه { $app }٪ · اجراشده‌ها { $launched }٪
 resources-origin-tab = زبانهٔ ترمینال
 resources-origin-launched = اجراشده توسط { $tab }
 resources-origin-run-script = اسکریپت اجرا
@@ -4197,26 +4196,6 @@ resources-app-graphics-info = سطوح پنجره و حافظهٔ GPU
 resources-app-held-for-reuse = نگه‌داشته برای استفادهٔ دوباره
 resources-app-saved-wake = در خواب
 resources-app-code-system = کد و سیستم
-resources-app-chats = گفت‌وگوها
-resources-app-chats-open = { $count } باز
-resources-app-chats-idle = { $count } بیکار
-resources-app-chats-history = تاریخچهٔ گفت‌وگو
-resources-app-terminals = ترمینال‌ها
-resources-app-terminals-count =
-    { $count ->
-        [one] ۱ ترمینال
-       *[other] { $count } ترمینال
-    }
-resources-app-terminals-lines =
-    { $count ->
-        [one] ۱ خط
-       *[other] { $count } خط
-    }
-resources-app-saved-count =
-    { $count ->
-        [one] ۱ ورک‌تری
-       *[other] { $count } ورک‌تری
-    }
 resources-app-saved-info = حافظه‌ای که برای ورک‌تری‌های در خواب نگه داشته می‌شود تا فوراً دوباره باز شوند
 resources-app-background-count =
     { $count ->
@@ -4230,7 +4209,6 @@ resources-app-other-detail = با پروژه‌ها و ورک‌تری‌ها ب
 resources-app-held-for-reuse-detail = تخصیص‌دهندهٔ حافظه برای استفادهٔ دوباره نگه داشته است
 resources-app-code-system-detail = کد برنامه و کتابخانه‌های سیستم
 resources-estimated = تخمینی
-resources-sleep-idle-chats = خواباندن گفت‌وگوهای بیکار
 resources-sleep-idle-chats-confirm =
     { $count ->
         [one] ۱ گفت‌وگوی بیکار خوابانده شود؟
@@ -4244,12 +4222,6 @@ resources-clear-confirm =
        *[other] { $lines } خط از تاریخچهٔ پیمایش پاک شود؟
     }
 resources-clear-consequence = صفحه باقی می‌ماند.
-resources-clear-scrollback = پاک کردن تاریخچهٔ پیمایش
-resources-clear-all-confirm =
-    { $count ->
-        [one] تاریخچهٔ پیمایش در ۱ ترمینال پاک شود؟
-       *[other] تاریخچهٔ پیمایش در { $count } ترمینال پاک شود؟
-    }
 resources-chat-sleep-running = در حال اجرای یک نوبت است. با پایان نوبت می‌تواند بخوابد.
 resources-chat-sleep-waiting = منتظر پاسخ شماست. پس از پاسخ شما می‌تواند بخوابد.
 resources-chat-sleep-unseen = پاسخی دارد که هنوز ندیده‌اید. پس از خواندن آن می‌تواند بخوابد.
@@ -4283,51 +4255,21 @@ resources-tab-all = همه
 resources-tab-agents = عامل‌ها
 resources-tab-browser = مرورگر
 resources-tab-terminals = ترمینال‌ها
-resources-fact-agents =
-    { $count ->
-        [one] عامل
-       *[other] عامل
-    }
-resources-fact-browser-tabs =
-    { $count ->
-        [one] زبانهٔ مرورگر
-       *[other] زبانهٔ مرورگر
-    }
-resources-fact-terminals =
-    { $count ->
-        [one] ترمینال
-       *[other] ترمینال
-    }
 resources-on-screen = روی صفحه است، پس بیدار می‌ماند
 resources-open = باز کردن
 resources-close = بستن
 resources-close-confirm = { $name } بسته شود؟
 resources-close-consequence = صفحهٔ آن بسته می‌شود.
 resources-average-title = میانگین برای هر عامل
-resources-average-each = هر کدام
-resources-average-ten = ۱۰ عامل
-resources-average-each-suffix = برای هر کدام
-resources-average-for-ten = برای ۱۰
 resources-tree-more = +{ $count } مورد دیگر
-resources-app-item-detail = { $activity }، { $lines }
-resources-app-more-chats =
-    { $count ->
-        [one] ۱ گفت‌وگوی دیگر
-       *[other] { $count } گفت‌وگوی دیگر
-    }
-resources-app-more-terminals =
-    { $count ->
-        [one] ۱ ترمینال دیگر
-       *[other] { $count } ترمینال دیگر
-    }
 issue-report-check-submission = بررسی ارسال
 issue-report-submission-uncertain = ممکن است این گزارش از قبل در GitHub باشد. برای یافتن آن، ارسال را بررسی کنید؛ بررسی هرگز دوباره آن را منتشر نمی‌کند. اگر هنوز پیدا نشد، صبر کنید و دوباره بررسی کنید، یا پیش از دور انداختن این پیش‌نویس، مسئله‌های خود را در GitHub مرور کنید.
 issue-report-discard-uncertain = دور انداختن پیش‌نویس (ممکن است گزارش از قبل وجود داشته باشد)
 issue-report-draft-load-failed = خواندن گزارش ذخیره‌شدهٔ شما ممکن نشد. پیش از ارسال گزارشی دیگر، مشکل ذخیره‌سازی را برطرف کنید و برنامه را دوباره راه‌اندازی کنید.
 review-comment-edit-staged = پیش از ویرایش، این بررسی را از کادر نوشتن بردارید.
 
-chat-edit-failed-draft-conflict = پیش از ویرایش پیام ناموفق، پیش‌نویس فعلی را نگه دارید یا پاک کنید.
 chat-edit-skill-as-text = ویرایش مهارت به‌صورت متن
+chat-edit-failed-draft-conflict = پیش از ویرایش پیام ناموفق، پیش‌نویس فعلی را نگه دارید یا پاک کنید.
 
 chat-notice-mcp-disable = غیرفعال کردن
 chat-notice-mcp-disable-confirm = سرور MCP ‏{ $name } غیرفعال شود؟

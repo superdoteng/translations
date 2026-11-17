@@ -1561,7 +1561,7 @@ settings-remote-background-auth-description = Arka plan yenilemesi için şifres
 settings-remote-ssh-auth-label = SSH doğrulama
 settings-remote-ssh-auth-description = SSH anahtarları sistem ssh-agent veya macOS Keychain ile kullanın. Arka planda uzaktan yenilemeler asla şifre istemez.
 settings-remote-cli-label = { $app_name } CLI
-settings-remote-cli-description = Sunucuya `sc` CLI kur veya güncelle. Güçler canlı Git güncellemeleri, ajan bildirimleri ve otomatik şube adlandırmasını sağlar.
+settings-remote-cli-description = Sunucuya `se` CLI kur veya güncelle. Güçler canlı Git güncellemeleri, ajan bildirimleri ve otomatik şube adlandırmasını sağlar.
 settings-remote-cli-auto-update-label = CLI otomatik olarak güncel tutun
 settings-remote-cli-auto-update-description = Bu CLI bu ana bilgisayara ne zaman eksik veya eski olduğunu sormadan kurup güncelleyin. Devre dışı bırakılırsa, yukarıdaki butonu kullanabileceğiniz için sorulacaksınız.
 settings-remote-cli-installing = Kurulum...
@@ -2986,7 +2986,7 @@ browser-annotation-composer-blocked = Bir alt ajan dökümü odaktayken açıkla
 browser-consent-title = Ajanların “{ $workspace_name }” içindeki tarayıcıyı kontrol etmesine izin verilsin mi?
 browser-consent-asked-by-agent = Bir ajan
 browser-consent-asked-by-worktree = “{ $caller_label }” içinde çalışan bir ajan
-browser-consent-description = { $asked_by }, bu çalışma alanının tarayıcı sekmesinde sc browser { $spelling } çalıştırmak istedi. İzin vermek, bu çalışma alanındaki tüm ajanlara yalnızca bu komut için değil, gelecekteki tüm act komutları için de açık sayfada tıklama, yazma, gezinme ve betik çalıştırma yetkisi verir; oturum açılmış sayfalar da buna dahildir. Salt okunur komutların çoğu onay gerektirmez, ancak çerez değerlerini okumak gerektirir. Bu izin çalışma alanı için saklanır ve Ayarlar'dan her zaman kaldırılabilir.
+browser-consent-description = { $asked_by }, bu çalışma alanının tarayıcı sekmesinde se browser { $spelling } çalıştırmak istedi. İzin vermek, bu çalışma alanındaki tüm ajanlara yalnızca bu komut için değil, gelecekteki tüm act komutları için de açık sayfada tıklama, yazma, gezinme ve betik çalıştırma yetkisi verir; oturum açılmış sayfalar da buna dahildir. Salt okunur komutların çoğu onay gerektirmez, ancak çerez değerlerini okumak gerektirir. Bu izin çalışma alanı için saklanır ve Ayarlar'dan her zaman kaldırılabilir.
 browser-new-chats = Yeni sohbet
 palette-no-matching-files-index-incomplete = Eşleşen dosya yok (dizin eksik: bu çalışma ağacı dosya tarama sınırını aşıyor)
 update-ready-title = Güncelleme hazır
@@ -3201,11 +3201,11 @@ settings-ai-run-with-column = Şununla çalıştır
 settings-ai-branch-naming-rule = Adlandırma kuralı
 settings-ai-session-context-section = Oturum bağlamı
 settings-ai-agent-session-context-label = Ajanlar için oturum bağlamı
-settings-ai-agent-session-context-description = super.engineering, ajanların uygulamanın sc CLI aracını bulup güvenle kullanabilmesi için ajan oturumlarına bağlam ekleyebilir.
+settings-ai-agent-session-context-description = super.engineering, ajanların uygulamanın se CLI aracını bulup güvenle kullanabilmesi için ajan oturumlarına bağlam ekleyebilir.
 settings-ai-agent-session-context-standard-label = Standart
 settings-ai-agent-session-context-standard-description = Ajanlar standart super.engineering CLI ve orkestrasyon yönlendirme yönergelerini alır.
 settings-ai-agent-session-context-off-label = Kapalı
-settings-ai-agent-session-context-off-description = Kapalı seçiliyken arka planda oturum bağlamı eklenmez. İncelemeler ve çalışma ağacı görev devirleri gibi açık eylemler etkilenmez; sc komut korumaları geçerli kalır.
+settings-ai-agent-session-context-off-description = Kapalı seçiliyken arka planda oturum bağlamı eklenmez. İncelemeler ve çalışma ağacı görev devirleri gibi açık eylemler etkilenmez; se komut korumaları geçerli kalır.
 settings-remote-key-install-action = Anahtar yükle
 settings-remote-key-install-authorize = { $host } üzerinde yetkilendir
 settings-remote-key-install-body = { $app_name }, bu çalışma alanına özel bir SSH anahtarı oluşturacak.
@@ -4195,7 +4195,6 @@ resources-exited-just-now = Az önce çıktı
 resources-exited-minutes = { $minutes } dk önce çıktı
 resources-exited-hours = { $hours } sa önce çıktı
 resources-cpu-row = %{ $percent } CPU
-resources-cpu-split = Uygulama %{ $app } · Başlatılanlar %{ $launched }
 resources-origin-tab = Terminal sekmesi
 resources-origin-launched = Başlatan: { $tab }
 resources-origin-run-script = Çalıştırma betiği
@@ -4217,26 +4216,6 @@ resources-app-graphics-info = Pencere yüzeyleri ve GPU belleği
 resources-app-held-for-reuse = Yeniden kullanım için ayrılan
 resources-app-saved-wake = Uykuda
 resources-app-code-system = Kod ve sistem
-resources-app-chats = Sohbetler
-resources-app-chats-open = { $count } açık
-resources-app-chats-idle = { $count } boşta
-resources-app-chats-history = Sohbet geçmişi
-resources-app-terminals = Terminaller
-resources-app-terminals-count =
-    { $count ->
-        [one] { $count } terminal
-       *[other] { $count } terminal
-    }
-resources-app-terminals-lines =
-    { $count ->
-        [one] { $count } satır
-       *[other] { $count } satır
-    }
-resources-app-saved-count =
-    { $count ->
-        [one] { $count } çalışma ağacı
-       *[other] { $count } çalışma ağacı
-    }
 resources-app-saved-info = Uykudaki çalışma ağaçlarının anında yeniden açılması için tutulan bellek
 resources-app-background-count =
     { $count ->
@@ -4250,7 +4229,6 @@ resources-app-other-detail = Projeler ve çalışma ağaçlarıyla birlikte büy
 resources-app-held-for-reuse-detail = Ayırıcı tarafından yeniden kullanım için tutulur
 resources-app-code-system-detail = Program kodu ve sistem kitaplıkları
 resources-estimated = Tahmini
-resources-sleep-idle-chats = Boştaki sohbetleri uyut
 resources-sleep-idle-chats-confirm =
     { $count ->
         [one] Boştaki { $count } sohbet uyutulsun mu?
@@ -4264,12 +4242,6 @@ resources-clear-confirm =
        *[other] Kaydırma geçmişindeki { $lines } satır temizlensin mi?
     }
 resources-clear-consequence = Ekran olduğu gibi kalır.
-resources-clear-scrollback = Kaydırma geçmişini temizle
-resources-clear-all-confirm =
-    { $count ->
-        [one] { $count } terminalin kaydırma geçmişi temizlensin mi?
-       *[other] { $count } terminalin kaydırma geçmişi temizlensin mi?
-    }
 resources-chat-sleep-running = Bir tur çalışıyor. Tur bittiğinde uyutulabilir.
 resources-chat-sleep-waiting = Yanıtınızı bekliyor. Yanıt verdiğinizde uyutulabilir.
 resources-chat-sleep-unseen = Görmediğiniz bir yanıt var. Okuduğunuzda uyutulabilir.
@@ -4303,51 +4275,21 @@ resources-tab-all = Tümü
 resources-tab-agents = Ajanlar
 resources-tab-browser = Tarayıcı
 resources-tab-terminals = Terminaller
-resources-fact-agents =
-    { $count ->
-        [one] ajan
-       *[other] ajan
-    }
-resources-fact-browser-tabs =
-    { $count ->
-        [one] tarayıcı sekmesi
-       *[other] tarayıcı sekmesi
-    }
-resources-fact-terminals =
-    { $count ->
-        [one] terminal
-       *[other] terminal
-    }
 resources-on-screen = Ekranda olduğu için uyanık kalır
 resources-open = Aç
 resources-close = Kapat
 resources-close-confirm = { $name } kapatılsın mı?
 resources-close-consequence = Sayfası kapanır.
 resources-average-title = Ajan başına ortalama
-resources-average-each = Her biri
-resources-average-ten = 10 ajan
-resources-average-each-suffix = her biri
-resources-average-for-ten = 10 için
 resources-tree-more = +{ $count } daha
-resources-app-item-detail = { $activity }, { $lines }
-resources-app-more-chats =
-    { $count ->
-        [one] { $count } sohbet daha
-       *[other] { $count } sohbet daha
-    }
-resources-app-more-terminals =
-    { $count ->
-        [one] { $count } terminal daha
-       *[other] { $count } terminal daha
-    }
 issue-report-check-submission = Gönderimi kontrol et
 issue-report-submission-uncertain = Bu rapor zaten GitHub’da olabilir. Bulmak için gönderimi kontrol edin; kontrol işlemi asla yeniden paylaşım yapmaz. Henüz bulunamazsa bekleyip tekrar kontrol edin veya bu taslağı silmeden önce GitHub’daki sorunlarınızı gözden geçirin.
 issue-report-discard-uncertain = Taslağı sil (rapor zaten mevcut olabilir)
 issue-report-draft-load-failed = Kaydedilmiş raporunuz okunamadı. Başka bir rapor göndermeden önce depolama sorununu giderin ve uygulamayı yeniden başlatın.
 review-comment-edit-staged = Düzenlemeden önce bu incelemeyi yazma alanından kaldırın.
 
-chat-edit-failed-draft-conflict = Başarısız mesajı düzenlemeden önce mevcut taslağınızı saklayın veya temizleyin.
 chat-edit-skill-as-text = Beceriyi metin olarak düzenle
+chat-edit-failed-draft-conflict = Başarısız mesajı düzenlemeden önce mevcut taslağınızı saklayın veya temizleyin.
 
 chat-notice-mcp-disable = Devre dışı bırak
 chat-notice-mcp-disable-confirm = { $name } MCP sunucusu devre dışı bırakılsın mı?

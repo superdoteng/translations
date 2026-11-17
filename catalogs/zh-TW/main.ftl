@@ -147,7 +147,7 @@ browser-annotation-composer-blocked = 聚焦於子代理程式的對話記錄時
 browser-consent-title = 允許代理程式控制「{ $workspace_name }」中的瀏覽器嗎？
 browser-consent-asked-by-agent = 某個代理程式
 browser-consent-asked-by-worktree = 在「{ $caller_label }」中工作的代理程式
-browser-consent-description = { $asked_by } 要求在此工作區的瀏覽器分頁中執行 sc browser { $spelling }。允許後，此工作區內的每個代理程式都將持續擁有權限——不只針對這次操作，而是針對這次及未來的每個 act 指令——可在目前開啟的任何頁面上按一下、輸入、導覽及執行指令碼，包含已登入的工作階段。大多數唯讀指令不需核准，但讀取 Cookie 值時需要核准。此權限會為該工作區保留，可隨時在「設定」中撤銷。
+browser-consent-description = { $asked_by } 要求在此工作區的瀏覽器分頁中執行 se browser { $spelling }。允許後，此工作區內的每個代理程式都將持續擁有權限——不只針對這次操作，而是針對這次及未來的每個 act 指令——可在目前開啟的任何頁面上按一下、輸入、導覽及執行指令碼，包含已登入的工作階段。大多數唯讀指令不需核准，但讀取 Cookie 值時需要核准。此權限會為該工作區保留，可隨時在「設定」中撤銷。
 browser-back = 返回
 browser-forward = 前進
 browser-reload = 重新載入
@@ -886,11 +886,11 @@ settings-ai-starting-mode-label = 起始模式
 settings-ai-starting-mode-description = 新聊天與終端機分頁開啟時使用的權限模式。每個聊天都能在輸入區切換模式。
 settings-ai-session-context-section = 工作階段上下文
 settings-ai-agent-session-context-label = 代理程式工作階段上下文
-settings-ai-agent-session-context-description = super.engineering 可將上下文加入代理程式工作階段，讓代理程式能找到並安全使用應用程式的 sc CLI。
+settings-ai-agent-session-context-description = super.engineering 可將上下文加入代理程式工作階段，讓代理程式能找到並安全使用應用程式的 se CLI。
 settings-ai-agent-session-context-standard-label = 標準
 settings-ai-agent-session-context-standard-description = 代理程式會收到標準的 super.engineering CLI 與編排路由說明。
 settings-ai-agent-session-context-off-label = 關閉
-settings-ai-agent-session-context-off-description = 關閉時不會加入隱含的工作階段上下文。審查與工作樹任務交接等明確操作不受影響，sc 指令的防護規則仍然適用。
+settings-ai-agent-session-context-off-description = 關閉時不會加入隱含的工作階段上下文。審查與工作樹任務交接等明確操作不受影響，se 指令的防護規則仍然適用。
 settings-ai-checking-connection = 正在檢查連線
 settings-ai-check-connection = 檢查連線
 settings-ai-creating-profile-directory = 正在建立設定檔目錄。
@@ -1565,7 +1565,7 @@ settings-remote-background-auth-description = 背景更新需要無密碼驗證�
 settings-remote-ssh-auth-label = SSH 驗證
 settings-remote-ssh-auth-description = 將 SSH 金鑰與系統 ssh-agent 或 macOS 鑰匙圈搭配使用。背景遠端更新絕不會詢問密碼。
 settings-remote-cli-label = { $app_name } CLI
-settings-remote-cli-description = 在主機上安裝或更新 `sc` CLI，以支援即時 Git 更新、代理程式通知與自動分支命名。
+settings-remote-cli-description = 在主機上安裝或更新 `se` CLI，以支援即時 Git 更新、代理程式通知與自動分支命名。
 settings-remote-cli-auto-update-label = 自動保持 CLI 為最新版本
 settings-remote-cli-auto-update-description = 當此主機上缺少 CLI 或版本過舊時，無需詢問即可安裝與更新。若停用，系統會提示你，你也可使用上方按鈕。
 settings-remote-cli-installing = 正在安裝…
@@ -1713,7 +1713,7 @@ settings-dynamic-search-ssh-target-description = { $workspace } 的遠端 SSH �
 settings-dynamic-search-ssh-auth-label = SSH 驗證
 settings-dynamic-search-ssh-auth-description = { $workspace } 的 SSH 金鑰和連線設定。
 settings-dynamic-search-remote-cli-label = super.engineering CLI
-settings-dynamic-search-remote-cli-description = 為 { $workspace } 安裝或更新遠端 sc CLI。
+settings-dynamic-search-remote-cli-description = 為 { $workspace } 安裝或更新遠端 se CLI。
 settings-dynamic-search-host-details-label = 主機詳細資料
 settings-dynamic-search-host-details-description = 針對 { $workspace } 偵測到的主機資訊：{ $facts }。
 settings-dynamic-search-provider-profiles-label = { $provider } 設定檔
@@ -4465,7 +4465,6 @@ resources-exited-just-now = 剛剛結束
 resources-exited-minutes = { $minutes } 分鐘前結束
 resources-exited-hours = { $hours } 小時前結束
 resources-cpu-row = CPU { $percent }%
-resources-cpu-split = 應用程式 { $app }% · 已啟動 { $launched }%
 resources-origin-tab = 終端機分頁
 resources-origin-launched = 由 { $tab } 啟動
 resources-origin-run-script = 執行指令碼
@@ -4487,23 +4486,6 @@ resources-app-graphics-info = 視窗表面與 GPU 記憶體
 resources-app-held-for-reuse = 保留以供重複使用
 resources-app-saved-wake = 已休眠
 resources-app-code-system = 程式碼與系統
-resources-app-chats = 聊天
-resources-app-chats-open = { $count } 個已開啟
-resources-app-chats-idle = { $count } 個閒置
-resources-app-chats-history = 聊天記錄
-resources-app-terminals = 終端機
-resources-app-terminals-count =
-    { $count ->
-       *[other] { $count } 個終端機
-    }
-resources-app-terminals-lines =
-    { $count ->
-       *[other] { $count } 行
-    }
-resources-app-saved-count =
-    { $count ->
-       *[other] { $count } 個工作樹
-    }
 resources-app-saved-info = 為已休眠的工作樹保留的記憶體，以便立即重新開啟
 resources-app-background-count =
     { $count ->
@@ -4516,7 +4498,6 @@ resources-app-other-detail = 隨專案和工作樹增加而成長
 resources-app-held-for-reuse-detail = 由配置器保留以供重複使用
 resources-app-code-system-detail = 程式碼與系統程式庫
 resources-estimated = 估計值
-resources-sleep-idle-chats = 休眠閒置聊天
 resources-sleep-idle-chats-confirm =
     { $count ->
        *[other] 要休眠 { $count } 個閒置聊天嗎？
@@ -4528,11 +4509,6 @@ resources-clear-confirm =
        *[other] 要清除 { $lines } 行回捲內容嗎？
     }
 resources-clear-consequence = 畫面內容會保留。
-resources-clear-scrollback = 清除回捲內容
-resources-clear-all-confirm =
-    { $count ->
-       *[other] 要清除 { $count } 個終端機的回捲內容嗎？
-    }
 resources-chat-sleep-running = 正在進行一輪對話，結束後即可休眠。
 resources-chat-sleep-waiting = 正在等待你的回答，回答後即可休眠。
 resources-chat-sleep-unseen = 有你尚未查看的回覆，閱讀後即可休眠。
@@ -4566,46 +4542,21 @@ resources-tab-all = 全部
 resources-tab-agents = 代理程式
 resources-tab-browser = 瀏覽器
 resources-tab-terminals = 終端機
-resources-fact-agents =
-    { $count ->
-       *[other] 個代理程式
-    }
-resources-fact-browser-tabs =
-    { $count ->
-       *[other] 個瀏覽器分頁
-    }
-resources-fact-terminals =
-    { $count ->
-       *[other] 個終端機
-    }
 resources-on-screen = 正在畫面上顯示，因此保持喚醒
 resources-open = 開啟
 resources-close = 關閉
 resources-close-confirm = 要關閉 { $name } 嗎？
 resources-close-consequence = 其頁面將會關閉。
 resources-average-title = 每個代理程式的平均值
-resources-average-each = 單個
-resources-average-ten = 10 個代理程式
-resources-average-each-suffix = 每個
-resources-average-for-ten = 10 個合計
 resources-tree-more = +{ $count } 個
-resources-app-item-detail = { $activity }，{ $lines }
-resources-app-more-chats =
-    { $count ->
-       *[other] 還有 { $count } 個聊天
-    }
-resources-app-more-terminals =
-    { $count ->
-       *[other] 還有 { $count } 個終端機
-    }
 issue-report-check-submission = 檢查提交狀態
 issue-report-submission-uncertain = 此報告可能已在 GitHub 上。請檢查提交狀態以尋找報告；檢查絕不會再次發布。如果暫時找不到，請稍候再檢查，或在捨棄此草稿前查看你在 GitHub 上的議題。
 issue-report-discard-uncertain = 捨棄草稿（報告可能已存在）
 issue-report-draft-load-failed = 無法讀取你儲存的報告。請解決儲存問題並重新啟動應用程式，再提交其他報告。
 review-comment-edit-staged = 請先將此審查從輸入區移除，再進行編輯。
 
-chat-edit-failed-draft-conflict = 編輯失敗的訊息前，請先儲存或清空目前的草稿。
 chat-edit-skill-as-text = 將技能作為文字編輯
+chat-edit-failed-draft-conflict = 編輯失敗的訊息前，請先儲存或清空目前的草稿。
 
 chat-notice-mcp-disable = 停用
 chat-notice-mcp-disable-confirm = 停用 MCP 伺服器 { $name }？

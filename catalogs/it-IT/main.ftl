@@ -1565,7 +1565,7 @@ settings-remote-background-auth-description = L'aggiornamento in background rich
 settings-remote-ssh-auth-label = SSH autenticazione
 settings-remote-ssh-auth-description = Usa SSH chiavi con il tuo agente ssh di sistema o macOS portachiavi. Gli aggiornamenti remoti in background non richiedono mai password.
 settings-remote-cli-label = { $app_name } CLI
-settings-remote-cli-description = Installa o aggiorna il `sc` CLI sull'host. I poteri sono attivi Git aggiornamenti, notifiche agli agenti e denominazione automatica dei branch.
+settings-remote-cli-description = Installa o aggiorna il `se` CLI sull'host. I poteri sono attivi Git aggiornamenti, notifiche agli agenti e denominazione automatica dei branch.
 settings-remote-cli-auto-update-label = Tieni CLI aggiornato automaticamente
 settings-remote-cli-auto-update-description = Installa e aggiorna il CLI su questo host senza chiedere se manca o è obsoleto. Se disabilitato, ti verrà avvisato un messaggio e potrai usare il pulsante sopra.
 settings-remote-cli-installing = Installando...
@@ -3156,7 +3156,7 @@ browser-annotation-composer-blocked = Impossibile aggiungere annotazioni mentre 
 browser-consent-title = Consentire agli agenti di controllare il browser in «{ $workspace_name }»?
 browser-consent-asked-by-agent = Un agente
 browser-consent-asked-by-worktree = Un agente che lavora in «{ $caller_label }»
-browser-consent-description = { $asked_by } ha chiesto di eseguire sc browser { $spelling } nella scheda del browser di questo spazio di lavoro. L’autorizzazione consente stabilmente a tutti i suoi agenti di fare clic, digitare, navigare ed eseguire script su qualsiasi pagina aperta, comprese le sessioni con accesso effettuato. Vale per questo comando act e tutti quelli futuri. La maggior parte dei comandi di sola lettura non richiede approvazione, ma la lettura dei valori dei cookie sì. L’autorizzazione persiste per lo spazio di lavoro ed è revocabile in qualsiasi momento nelle impostazioni.
+browser-consent-description = { $asked_by } ha chiesto di eseguire se browser { $spelling } nella scheda del browser di questo spazio di lavoro. L’autorizzazione consente stabilmente a tutti i suoi agenti di fare clic, digitare, navigare ed eseguire script su qualsiasi pagina aperta, comprese le sessioni con accesso effettuato. Vale per questo comando act e tutti quelli futuri. La maggior parte dei comandi di sola lettura non richiede approvazione, ma la lettura dei valori dei cookie sì. L’autorizzazione persiste per lo spazio di lavoro ed è revocabile in qualsiasi momento nelle impostazioni.
 browser-new-chats = Nuova chat
 palette-no-matching-files-index-incomplete = Nessun file corrispondente (indice incompleto: questo albero di lavoro supera il limite di scansione dei file)
 update-ready-title = Aggiornamento pronto
@@ -3345,10 +3345,10 @@ settings-ai-run-with-column = Esegui con
 settings-ai-branch-naming-rule = Regola di denominazione
 settings-ai-session-context-section = Contesto di sessione
 settings-ai-agent-session-context-label = Contesto di sessione per gli agenti
-settings-ai-agent-session-context-description = super.engineering può aggiungere contesto alle sessioni affinché gli agenti trovino e usino in sicurezza la CLI sc dell’app.
+settings-ai-agent-session-context-description = super.engineering può aggiungere contesto alle sessioni affinché gli agenti trovino e usino in sicurezza la CLI se dell’app.
 settings-ai-agent-session-context-standard-label = Standard
 settings-ai-agent-session-context-standard-description = Gli agenti ricevono le istruzioni standard della CLI super.engineering e dell’instradamento dell’orchestrazione.
-settings-ai-agent-session-context-off-description = Se disattivato, non viene aggiunto contesto ambientale alla sessione. Azioni esplicite come revisioni e passaggi di attività agli alberi di lavoro restano invariate; le protezioni dei comandi sc restano valide.
+settings-ai-agent-session-context-off-description = Se disattivato, non viene aggiunto contesto ambientale alla sessione. Azioni esplicite come revisioni e passaggi di attività agli alberi di lavoro restano invariate; le protezioni dei comandi se restano valide.
 settings-remote-key-install-action = Installa chiave
 settings-remote-key-install-authorize = Autorizzala su { $host }
 settings-remote-key-install-body = { $app_name } creerà una chiave SSH dedicata per questo spazio di lavoro.
@@ -4303,7 +4303,6 @@ resources-exited-just-now = Terminato poco fa
 resources-exited-minutes = Terminato { $minutes } min fa
 resources-exited-hours = Terminato { $hours } h fa
 resources-cpu-row = { $percent }% CPU
-resources-cpu-split = App { $app }% · Avviati { $launched }%
 resources-origin-tab = Scheda terminale
 resources-origin-launched = Avviato da { $tab }
 resources-origin-run-script = Script di esecuzione
@@ -4325,26 +4324,6 @@ resources-app-graphics-info = Superfici delle finestre e memoria GPU
 resources-app-held-for-reuse = Trattenuta per il riuso
 resources-app-saved-wake = In sospensione
 resources-app-code-system = Codice e sistema
-resources-app-chats = Chat
-resources-app-chats-open = Aperte: { $count }
-resources-app-chats-idle = Inattive: { $count }
-resources-app-chats-history = Cronologia chat
-resources-app-terminals = Terminali
-resources-app-terminals-count =
-    { $count ->
-        [one] 1 terminale
-       *[other] { $count } terminali
-    }
-resources-app-terminals-lines =
-    { $count ->
-        [one] 1 riga
-       *[other] { $count } righe
-    }
-resources-app-saved-count =
-    { $count ->
-        [one] 1 worktree
-       *[other] { $count } worktree
-    }
 resources-app-saved-info = Memoria conservata per i worktree sospesi, così si riaprono all’istante
 resources-app-background-count =
     { $count ->
@@ -4358,7 +4337,6 @@ resources-app-other-detail = Cresce con progetti e worktree
 resources-app-held-for-reuse-detail = Trattenuta dall’allocatore per il riuso
 resources-app-code-system-detail = Codice del programma e librerie di sistema
 resources-estimated = Stimato
-resources-sleep-idle-chats = Sospendi chat inattive
 resources-sleep-idle-chats-confirm =
     { $count ->
         [one] Sospendere 1 chat inattiva?
@@ -4372,12 +4350,6 @@ resources-clear-confirm =
        *[other] Cancellare { $lines } righe della cronologia?
     }
 resources-clear-consequence = Lo schermo resta invariato.
-resources-clear-scrollback = Cancella cronologia
-resources-clear-all-confirm =
-    { $count ->
-        [one] Cancellare la cronologia di 1 terminale?
-       *[other] Cancellare la cronologia di { $count } terminali?
-    }
 resources-chat-sleep-running = Sta eseguendo un turno. Potrà essere sospesa al termine del turno.
 resources-chat-sleep-waiting = In attesa della tua risposta. Potrà essere sospesa dopo che avrai risposto.
 resources-chat-sleep-unseen = Ha una risposta che non hai visto. Potrà essere sospesa dopo che l’avrai letta.
@@ -4411,51 +4383,21 @@ resources-tab-all = Tutti
 resources-tab-agents = Agenti
 resources-tab-browser = Browser
 resources-tab-terminals = Terminali
-resources-fact-agents =
-    { $count ->
-        [one] agente
-       *[other] agenti
-    }
-resources-fact-browser-tabs =
-    { $count ->
-        [one] scheda del browser
-       *[other] schede del browser
-    }
-resources-fact-terminals =
-    { $count ->
-        [one] terminale
-       *[other] terminali
-    }
 resources-on-screen = Sullo schermo, quindi resta attiva
 resources-open = Apri
 resources-close = Chiudi
 resources-close-confirm = Chiudere { $name }?
 resources-close-consequence = La sua pagina si chiude.
 resources-average-title = Media per agente
-resources-average-each = Per agente
-resources-average-ten = 10 agenti
-resources-average-each-suffix = ciascuno
-resources-average-for-ten = per 10
 resources-tree-more = +{ $count } altri
-resources-app-item-detail = { $activity }, { $lines }
-resources-app-more-chats =
-    { $count ->
-        [one] 1 altra chat
-       *[other] altre { $count } chat
-    }
-resources-app-more-terminals =
-    { $count ->
-        [one] 1 altro terminale
-       *[other] altri { $count } terminali
-    }
 issue-report-check-submission = Verifica invio
 issue-report-submission-uncertain = Questa segnalazione potrebbe essere già su GitHub. Verifica l’invio per trovarla; la verifica non la pubblica mai di nuovo. Se non viene ancora trovata, attendi e verifica di nuovo, oppure controlla le tue issue su GitHub prima di eliminare questa bozza.
 issue-report-discard-uncertain = Elimina bozza (la segnalazione potrebbe già esistere)
 issue-report-draft-load-failed = Impossibile leggere la segnalazione salvata. Risolvi il problema di archiviazione e riavvia l’app prima di inviare un’altra segnalazione.
 review-comment-edit-staged = Rimuovi questa revisione dal compositore prima di modificarla.
 
-chat-edit-failed-draft-conflict = Conserva o cancella la bozza attuale prima di modificare il messaggio non riuscito.
 chat-edit-skill-as-text = Modifica con la skill come testo
+chat-edit-failed-draft-conflict = Conserva o cancella la bozza attuale prima di modificare il messaggio non riuscito.
 
 chat-notice-mcp-disable = Disattiva
 chat-notice-mcp-disable-confirm = Disattivare il server MCP { $name }?

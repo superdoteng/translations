@@ -1565,7 +1565,7 @@ settings-remote-background-auth-description = بیک گراؤنڈ ریفریش �
 settings-remote-ssh-auth-label = SSH تصدیق
 settings-remote-ssh-auth-description = اپنے سسٹم ایس ایس ایچ ایجنٹ یا macOS کی چین کے ساتھ SSH کیز استعمال کریں۔ بیک گراؤنڈ ریموٹ ریفریشز میں کبھی پاس ورڈز نہیں مانگتے۔
 settings-remote-cli-label = { $app_name } CLI
-settings-remote-cli-description = ہوسٹ پر `sc` CLI انسٹال یا اپ ڈیٹ کریں۔ پاورز اپ ڈیٹس، ایجنٹ نوٹیفیکیشنز، اور خودکار برانچ ناموں کے Git زندہ ہیں۔
+settings-remote-cli-description = ہوسٹ پر `se` CLI انسٹال یا اپ ڈیٹ کریں۔ پاورز اپ ڈیٹس، ایجنٹ نوٹیفیکیشنز، اور خودکار برانچ ناموں کے Git زندہ ہیں۔
 settings-remote-cli-auto-update-label = CLI کو خودکار طور پر اپ ڈیٹ رکھیں
 settings-remote-cli-auto-update-description = اس ہوسٹ پر CLI کو بغیر پوچھے انسٹال اور اپ ڈیٹ کریں جب یہ غائب یا پرانا ہو۔ اگر آپ کو غیر فعال کر دیا جائے تو آپ کو پرامپٹ ملے گا اور آپ اوپر دیے گئے بٹن کا استعمال کر سکتے ہیں۔
 settings-remote-cli-installing = انسٹال کر رہا ہوں...
@@ -3045,7 +3045,7 @@ browser-annotation-composer-blocked = جب ذیلی ایجنٹ کی گفتگو �
 browser-consent-title = کیا ایجنٹس کو ”{ $workspace_name }“ میں براؤزر کنٹرول کرنے دیں؟
 browser-consent-asked-by-agent = ایک ایجنٹ
 browser-consent-asked-by-worktree = ”{ $caller_label }“ میں کام کرنے والا ایجنٹ
-browser-consent-description = { $asked_by } نے اس ورک اسپیس کے براؤزر ٹیب میں ⁨sc browser { $spelling }⁩ چلانے کی درخواست کی ہے۔ اجازت دینے سے اس ورک اسپیس کے ہر ایجنٹ کو اس اور آئندہ ہر act کمانڈ کے لیے، صرف اس کمانڈ کے لیے نہیں، مستقل اجازت مل جاتی ہے کہ کسی بھی کھلے صفحے پر کلک، ٹائپ، نیویگیٹ اور اسکرپٹ چلائے، بشمول ان سیشنز کے جن میں آپ سائن اِن ہیں۔ صرف پڑھنے والی زیادہ تر کمانڈز کو منظوری درکار نہیں، مگر کوکیز کی قدریں پڑھنے کے لیے منظوری ضروری ہے۔ یہ اجازت ورک اسپیس کے لیے محفوظ رہتی ہے اور ترتیبات میں کسی بھی وقت واپس لی جا سکتی ہے۔
+browser-consent-description = { $asked_by } نے اس ورک اسپیس کے براؤزر ٹیب میں ⁨se browser { $spelling }⁩ چلانے کی درخواست کی ہے۔ اجازت دینے سے اس ورک اسپیس کے ہر ایجنٹ کو اس اور آئندہ ہر act کمانڈ کے لیے، صرف اس کمانڈ کے لیے نہیں، مستقل اجازت مل جاتی ہے کہ کسی بھی کھلے صفحے پر کلک، ٹائپ، نیویگیٹ اور اسکرپٹ چلائے، بشمول ان سیشنز کے جن میں آپ سائن اِن ہیں۔ صرف پڑھنے والی زیادہ تر کمانڈز کو منظوری درکار نہیں، مگر کوکیز کی قدریں پڑھنے کے لیے منظوری ضروری ہے۔ یہ اجازت ورک اسپیس کے لیے محفوظ رہتی ہے اور ترتیبات میں کسی بھی وقت واپس لی جا سکتی ہے۔
 browser-new-chats = نئی چیٹ
 palette-no-matching-files-index-incomplete = کوئی مماثل فائل نہیں (انڈیکس نامکمل: یہ ورک ٹری فائل اسکین کی حد سے بڑا ہے)
 update-ready-title = اپ ڈیٹ تیار ہے
@@ -3260,11 +3260,11 @@ settings-ai-run-with-column = اس کے ساتھ چلائیں
 settings-ai-branch-naming-rule = نام رکھنے کا اصول
 settings-ai-session-context-section = سیشن کا سیاق
 settings-ai-agent-session-context-label = ایجنٹس کے لیے سیشن کا سیاق
-settings-ai-agent-session-context-description = super.engineering ایجنٹ سیشنز میں سیاق شامل کر سکتا ہے تاکہ ایجنٹس ایپ کی sc CLI تلاش کر کے محفوظ طور پر استعمال کریں۔
+settings-ai-agent-session-context-description = super.engineering ایجنٹ سیشنز میں سیاق شامل کر سکتا ہے تاکہ ایجنٹس ایپ کی se CLI تلاش کر کے محفوظ طور پر استعمال کریں۔
 settings-ai-agent-session-context-standard-label = معیاری
 settings-ai-agent-session-context-standard-description = ایجنٹس کو super.engineering کی معیاری CLI اور آرکیسٹریشن روٹنگ ہدایات ملتی ہیں۔
 settings-ai-agent-session-context-off-label = بند
-settings-ai-agent-session-context-off-description = بند ہونے پر سیشن کا خودکار سیاق شامل نہیں ہوتا۔ جائزوں اور ورک ٹری کے کام کی حوالگی جیسی واضح کارروائیاں متاثر نہیں ہوتیں، اور sc کمانڈ کے حفاظتی اصول لاگو رہتے ہیں۔
+settings-ai-agent-session-context-off-description = بند ہونے پر سیشن کا خودکار سیاق شامل نہیں ہوتا۔ جائزوں اور ورک ٹری کے کام کی حوالگی جیسی واضح کارروائیاں متاثر نہیں ہوتیں، اور se کمانڈ کے حفاظتی اصول لاگو رہتے ہیں۔
 settings-remote-key-install-action = کلید انسٹال کریں
 settings-remote-key-install-authorize = ⁨{ $host }⁩ پر اسے مجاز بنائیں
 settings-remote-key-install-body = { $app_name } اس ورک اسپیس کے لیے مخصوص SSH کلید بنائے گا۔
@@ -4572,7 +4572,6 @@ resources-exited-just-now = ابھی بند ہوا
 resources-exited-minutes = { $minutes } منٹ پہلے بند ہوا
 resources-exited-hours = { $hours } گھنٹے پہلے بند ہوا
 resources-cpu-row = { $percent }% CPU
-resources-cpu-split = ایپ { $app }% · لانچ کردہ { $launched }%
 resources-origin-tab = ٹرمینل ٹیب
 resources-origin-launched = { $tab } نے شروع کیا
 resources-origin-run-script = رن اسکرپٹ
@@ -4594,26 +4593,6 @@ resources-app-graphics-info = ونڈو سرفیسز اور GPU میموری
 resources-app-held-for-reuse = دوبارہ استعمال کے لیے محفوظ
 resources-app-saved-wake = سوئے ہوئے
 resources-app-code-system = کوڈ اور سسٹم
-resources-app-chats = چیٹس
-resources-app-chats-open = { $count } کھلی
-resources-app-chats-idle = { $count } غیر فعال
-resources-app-chats-history = چیٹ ہسٹری
-resources-app-terminals = ٹرمینلز
-resources-app-terminals-count =
-    { $count ->
-        [one] 1 ٹرمینل
-       *[other] { $count } ٹرمینلز
-    }
-resources-app-terminals-lines =
-    { $count ->
-        [one] 1 لائن
-       *[other] { $count } لائنیں
-    }
-resources-app-saved-count =
-    { $count ->
-        [one] 1 ورک ٹری
-       *[other] { $count } ورک ٹریز
-    }
 resources-app-saved-info = سوئے ہوئے ورک ٹریز کے لیے رکھی گئی میموری تاکہ وہ فوراً دوبارہ کھلیں
 resources-app-background-count =
     { $count ->
@@ -4627,7 +4606,6 @@ resources-app-other-detail = پروجیکٹس اور ورک ٹریز کے سات
 resources-app-held-for-reuse-detail = ایلوکیٹر نے دوبارہ استعمال کے لیے رکھی ہے
 resources-app-code-system-detail = پروگرام کوڈ اور سسٹم لائبریریاں
 resources-estimated = تخمینی
-resources-sleep-idle-chats = غیر فعال چیٹس سلائیں
 resources-sleep-idle-chats-confirm =
     { $count ->
         [one] 1 غیر فعال چیٹ سلائیں؟
@@ -4641,12 +4619,6 @@ resources-clear-confirm =
        *[other] پچھلی سطروں کی { $lines } لائنیں صاف کریں؟
     }
 resources-clear-consequence = اسکرین برقرار رہتی ہے۔
-resources-clear-scrollback = پچھلی سطریں صاف کریں
-resources-clear-all-confirm =
-    { $count ->
-        [one] 1 ٹرمینل میں پچھلی سطریں صاف کریں؟
-       *[other] { $count } ٹرمینلز میں پچھلی سطریں صاف کریں؟
-    }
 resources-chat-sleep-running = ایک باری چل رہی ہے۔ باری ختم ہونے پر یہ سو سکتی ہے۔
 resources-chat-sleep-waiting = آپ کے جواب کا انتظار ہے۔ آپ کے جواب دینے کے بعد یہ سو سکتی ہے۔
 resources-chat-sleep-unseen = اس میں ایک جواب ہے جو آپ نے نہیں دیکھا۔ آپ کے پڑھنے کے بعد یہ سو سکتی ہے۔
@@ -4680,51 +4652,21 @@ resources-tab-all = سب
 resources-tab-agents = ایجنٹس
 resources-tab-browser = براؤزر
 resources-tab-terminals = ٹرمینلز
-resources-fact-agents =
-    { $count ->
-        [one] ایجنٹ
-       *[other] ایجنٹس
-    }
-resources-fact-browser-tabs =
-    { $count ->
-        [one] براؤزر ٹیب
-       *[other] براؤزر ٹیبز
-    }
-resources-fact-terminals =
-    { $count ->
-        [one] ٹرمینل
-       *[other] ٹرمینلز
-    }
 resources-on-screen = اسکرین پر ہے، اس لیے جاگتا رہتا ہے
 resources-open = کھولیں
 resources-close = بند کریں
 resources-close-confirm = { $name } بند کریں؟
 resources-close-consequence = اس کا صفحہ بند ہو جائے گا۔
 resources-average-title = فی ایجنٹ اوسط
-resources-average-each = ہر ایک
-resources-average-ten = 10 ایجنٹس
-resources-average-each-suffix = فی کس
-resources-average-for-ten = 10 کے لیے
 resources-tree-more = +{ $count } مزید
-resources-app-item-detail = { $activity }، { $lines }
-resources-app-more-chats =
-    { $count ->
-        [one] 1 مزید چیٹ
-       *[other] { $count } مزید چیٹس
-    }
-resources-app-more-terminals =
-    { $count ->
-        [one] 1 مزید ٹرمینل
-       *[other] { $count } مزید ٹرمینلز
-    }
 issue-report-check-submission = ارسال کی جانچ کریں
 issue-report-submission-uncertain = ممکن ہے یہ رپورٹ پہلے ہی GitHub پر موجود ہو۔ اسے تلاش کرنے کے لیے ارسال کی جانچ کریں؛ جانچ کبھی دوبارہ پوسٹ نہیں کرتی۔ اگر ابھی نہ ملے تو انتظار کر کے دوبارہ جانچ کریں، یا اس مسودے کو حذف کرنے سے پہلے GitHub پر اپنے مسائل کا جائزہ لیں۔
 issue-report-discard-uncertain = مسودہ حذف کریں (رپورٹ پہلے ہی موجود ہو سکتی ہے)
 issue-report-draft-load-failed = آپ کی محفوظ کردہ رپورٹ پڑھی نہیں جا سکی۔ دوسری رپورٹ بھیجنے سے پہلے اسٹوریج کا مسئلہ حل کریں اور ایپ دوبارہ شروع کریں۔
 review-comment-edit-staged = ترمیم سے پہلے اس جائزے کو کمپوزر سے ہٹائیں۔
 
-chat-edit-failed-draft-conflict = ناکام پیغام میں ترمیم کرنے سے پہلے موجودہ مسودہ محفوظ کریں یا صاف کریں۔
 chat-edit-skill-as-text = اسکل کو متن کے طور پر ترمیم کریں
+chat-edit-failed-draft-conflict = ناکام پیغام میں ترمیم کرنے سے پہلے موجودہ مسودہ محفوظ کریں یا صاف کریں۔
 
 chat-notice-mcp-disable = غیر فعال کریں
 chat-notice-mcp-disable-confirm = MCP سرور { $name } کو غیر فعال کریں؟

@@ -1582,7 +1582,7 @@ settings-remote-background-auth-description = تحديث الخلفية يحتا
 settings-remote-ssh-auth-label = SSH المصادقة
 settings-remote-ssh-auth-description = استخدم SSH المفاتيح مع وكيل ssh في النظام أو macOS سلسلة المفاتيح. تحديثات الخلفية عن بعد لا تطلب كلمات المرور أبدا.
 settings-remote-cli-label = { $app_name } CLI
-settings-remote-cli-description = قم بتثبيت أو تحديث `sc` CLI على المضيف. Powers تبث Git التحديثات، وإشعارات الوكلاء، وتسمية الفروع تلقائيا.
+settings-remote-cli-description = قم بتثبيت أو تحديث `se` CLI على المضيف. Powers تبث Git التحديثات، وإشعارات الوكلاء، وتسمية الفروع تلقائيا.
 settings-remote-cli-auto-update-label = حافظ على تحديث CLI تلقائيا
 settings-remote-cli-auto-update-description = قم بتثبيت وتحديث CLI على هذا المضيف دون أن تسأل إذا كان مفقودا أو قديما. إذا تم تعطيله، سيتم الاستفسار منك ويمكنك استخدام الزر أعلاه.
 settings-remote-cli-installing = جاري التركيب...
@@ -3202,7 +3202,7 @@ browser-annotation-composer-blocked = لا يمكن إضافة تعليقات ت
 browser-consent-title = السماح للوكلاء بالتحكم في المتصفح في «{ $workspace_name }»؟
 browser-consent-asked-by-agent = وكيل
 browser-consent-asked-by-worktree = وكيل يعمل في «{ $caller_label }»
-browser-consent-description = طلب { $asked_by } تشغيل ⁨sc browser { $spelling }⁩ في علامة تبويب المتصفح لمساحة العمل هذه. تمنح الموافقة جميع وكلاء مساحة العمل إذنًا دائمًا — لهذا الأمر وكل أوامر act المستقبلية، وليس لهذا الأمر وحده — للنقر والكتابة والتنقل وتشغيل النصوص البرمجية على أي صفحة مفتوحة، بما فيها الجلسات المسجّل دخولها. لا تحتاج معظم أوامر القراءة فقط إلى موافقة، لكن قراءة قيم ملفات تعريف الارتباط تحتاج إليها. يبقى الإذن محفوظًا لمساحة العمل ويمكن سحبه في أي وقت من الإعدادات.
+browser-consent-description = طلب { $asked_by } تشغيل ⁨se browser { $spelling }⁩ في علامة تبويب المتصفح لمساحة العمل هذه. تمنح الموافقة جميع وكلاء مساحة العمل إذنًا دائمًا — لهذا الأمر وكل أوامر act المستقبلية، وليس لهذا الأمر وحده — للنقر والكتابة والتنقل وتشغيل النصوص البرمجية على أي صفحة مفتوحة، بما فيها الجلسات المسجّل دخولها. لا تحتاج معظم أوامر القراءة فقط إلى موافقة، لكن قراءة قيم ملفات تعريف الارتباط تحتاج إليها. يبقى الإذن محفوظًا لمساحة العمل ويمكن سحبه في أي وقت من الإعدادات.
 browser-new-chats = محادثة جديدة
 palette-no-matching-files-index-incomplete = لا توجد ملفات مطابقة (الفهرس غير مكتمل: تتجاوز شجرة العمل حد فحص الملفات)
 update-ready-title = التحديث جاهز
@@ -3445,11 +3445,11 @@ settings-ai-run-with-column = التشغيل باستخدام
 settings-ai-branch-naming-rule = قاعدة التسمية
 settings-ai-session-context-section = سياق الجلسة
 settings-ai-agent-session-context-label = سياق الجلسة للوكلاء
-settings-ai-agent-session-context-description = يمكن لـsuper.engineering إضافة سياق إلى جلسات الوكلاء ليساعدهم على العثور على واجهة sc CLI للتطبيق واستخدامها بأمان.
+settings-ai-agent-session-context-description = يمكن لـsuper.engineering إضافة سياق إلى جلسات الوكلاء ليساعدهم على العثور على واجهة se CLI للتطبيق واستخدامها بأمان.
 settings-ai-agent-session-context-standard-label = قياسي
 settings-ai-agent-session-context-standard-description = يتلقى الوكلاء تعليمات super.engineering القياسية لواجهة CLI وتوجيه التنسيق.
 settings-ai-agent-session-context-off-label = معطّل
-settings-ai-agent-session-context-off-description = لا يُضاف سياق جلسة ضمني أثناء التعطيل. لا تتأثر الإجراءات الصريحة مثل المراجعات وتسليم مهام أشجار العمل، وتظل ضوابط أوامر sc سارية.
+settings-ai-agent-session-context-off-description = لا يُضاف سياق جلسة ضمني أثناء التعطيل. لا تتأثر الإجراءات الصريحة مثل المراجعات وتسليم مهام أشجار العمل، وتظل ضوابط أوامر se سارية.
 settings-remote-key-install-action = تثبيت المفتاح
 settings-remote-key-install-authorize = التصريح به على ⁨{ $host }⁩
 settings-remote-key-install-body = سينشئ { $app_name } مفتاح SSH مخصصًا لمساحة العمل هذه.
@@ -4552,7 +4552,6 @@ resources-exited-just-now = انتهى للتو
 resources-exited-minutes = انتهى قبل { $minutes } د
 resources-exited-hours = انتهى قبل { $hours } س
 resources-cpu-row = CPU { $percent }%
-resources-cpu-split = التطبيق { $app }% · المُشغَّلة { $launched }%
 resources-origin-tab = تبويب طرفية
 resources-origin-launched = بدأه { $tab }
 resources-origin-run-script = سكربت التشغيل
@@ -4574,38 +4573,6 @@ resources-app-graphics-info = أسطح النوافذ وذاكرة GPU
 resources-app-held-for-reuse = محجوزة لإعادة الاستخدام
 resources-app-saved-wake = في وضع السكون
 resources-app-code-system = الشيفرة والنظام
-resources-app-chats = المحادثات
-resources-app-chats-open = { $count } مفتوحة
-resources-app-chats-idle = { $count } خاملة
-resources-app-chats-history = سجل المحادثات
-resources-app-terminals = الطرفيات
-resources-app-terminals-count =
-    { $count ->
-        [zero] لا طرفيات
-        [one] طرفية واحدة
-        [two] طرفيتان
-        [few] { $count } طرفيات
-        [many] { $count } طرفيةً
-       *[other] { $count } طرفية
-    }
-resources-app-terminals-lines =
-    { $count ->
-        [zero] لا أسطر
-        [one] سطر واحد
-        [two] سطران
-        [few] { $count } أسطر
-        [many] { $count } سطرًا
-       *[other] { $count } سطر
-    }
-resources-app-saved-count =
-    { $count ->
-        [zero] لا أشجار عمل
-        [one] شجرة عمل واحدة
-        [two] شجرتا عمل
-        [few] { $count } أشجار عمل
-        [many] { $count } شجرة عمل
-       *[other] { $count } شجرة عمل
-    }
 resources-app-saved-info = ذاكرة محفوظة لأشجار العمل النائمة ليُعاد فتحها فورًا
 resources-app-background-count =
     { $count ->
@@ -4623,7 +4590,6 @@ resources-app-other-detail = تزداد مع المشاريع وأشجار ال�
 resources-app-held-for-reuse-detail = يحتفظ بها مخصّص الذاكرة لإعادة الاستخدام
 resources-app-code-system-detail = شيفرة البرنامج ومكتبات النظام
 resources-estimated = تقديري
-resources-sleep-idle-chats = تنويم المحادثات الخاملة
 resources-sleep-idle-chats-confirm =
     { $count ->
         [one] تنويم محادثة خاملة واحدة؟
@@ -4643,15 +4609,6 @@ resources-clear-confirm =
        *[other] مسح { $lines } سطر من سجل التمرير؟
     }
 resources-clear-consequence = تبقى الشاشة كما هي.
-resources-clear-scrollback = مسح سجل التمرير
-resources-clear-all-confirm =
-    { $count ->
-        [one] مسح سجل التمرير في طرفية واحدة؟
-        [two] مسح سجل التمرير في طرفيتين؟
-        [few] مسح سجل التمرير في { $count } طرفيات؟
-        [many] مسح سجل التمرير في { $count } طرفيةً؟
-       *[other] مسح سجل التمرير في { $count } طرفية؟
-    }
 resources-chat-sleep-running = تشغّل دورًا. يمكن تنويمها عند انتهاء الدور.
 resources-chat-sleep-waiting = بانتظار إجابتك. يمكن تنويمها بعد أن تجيب.
 resources-chat-sleep-unseen = فيها رد لم تره. يمكن تنويمها بعد أن تقرأه.
@@ -4685,66 +4642,21 @@ resources-tab-all = الكل
 resources-tab-agents = الوكلاء
 resources-tab-browser = المتصفح
 resources-tab-terminals = الطرفيات
-resources-fact-agents =
-    { $count ->
-        [one] وكيل
-        [two] وكيلان
-        [few] وكلاء
-        [many] وكيلًا
-       *[other] وكيل
-    }
-resources-fact-browser-tabs =
-    { $count ->
-        [one] تبويب متصفح
-        [two] تبويبا متصفح
-        [few] تبويبات متصفح
-        [many] تبويب متصفح
-       *[other] تبويب متصفح
-    }
-resources-fact-terminals =
-    { $count ->
-        [one] طرفية
-        [two] طرفيتان
-        [few] طرفيات
-        [many] طرفيةً
-       *[other] طرفية
-    }
 resources-on-screen = معروض على الشاشة، لذا يبقى نشطًا
 resources-open = فتح
 resources-close = إغلاق
 resources-close-confirm = إغلاق { $name }؟
 resources-close-consequence = ستُغلق صفحته.
 resources-average-title = المتوسط لكل وكيل
-resources-average-each = لكل وكيل
-resources-average-ten = 10 وكلاء
-resources-average-each-suffix = لكل منها
-resources-average-for-ten = لـ 10
 resources-tree-more = +{ $count } أخرى
-resources-app-item-detail = { $activity }، { $lines }
-resources-app-more-chats =
-    { $count ->
-        [one] محادثة أخرى واحدة
-        [two] محادثتان أخريان
-        [few] { $count } محادثات أخرى
-        [many] { $count } محادثةً أخرى
-       *[other] { $count } محادثة أخرى
-    }
-resources-app-more-terminals =
-    { $count ->
-        [one] طرفية أخرى واحدة
-        [two] طرفيتان أخريان
-        [few] { $count } طرفيات أخرى
-        [many] { $count } طرفيةً أخرى
-       *[other] { $count } طرفية أخرى
-    }
 issue-report-check-submission = التحقق من الإرسال
 issue-report-submission-uncertain = قد يكون هذا البلاغ موجودًا بالفعل على GitHub. تحقق من الإرسال للعثور عليه؛ لا يؤدي التحقق إلى نشره مجددًا أبدًا. إذا لم تجده بعد، فانتظر وتحقق مرة أخرى، أو راجع بلاغاتك على GitHub قبل تجاهل هذه المسودة.
 issue-report-discard-uncertain = تجاهل المسودة (قد يكون البلاغ موجودًا بالفعل)
 issue-report-draft-load-failed = تعذرت قراءة بلاغك المحفوظ. عالج مشكلة التخزين وأعد تشغيل التطبيق قبل إرسال بلاغ آخر.
 review-comment-edit-staged = أزل هذه المراجعة من مربع الكتابة قبل التعديل.
 
-chat-edit-failed-draft-conflict = احتفظ بمسودتك الحالية أو امسحها قبل تعديل الرسالة التي فشل إرسالها.
 chat-edit-skill-as-text = تعديل المهارة كنص
+chat-edit-failed-draft-conflict = احتفظ بمسودتك الحالية أو امسحها قبل تعديل الرسالة التي فشل إرسالها.
 
 chat-notice-mcp-disable = تعطيل
 chat-notice-mcp-disable-confirm = هل تريد تعطيل خادم MCP ‏{ $name }؟

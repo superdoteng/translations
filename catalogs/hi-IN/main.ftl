@@ -1565,7 +1565,7 @@ settings-remote-background-auth-description = बैकग्राउंड र
 settings-remote-ssh-auth-label = प्रमाणीकरण SSH
 settings-remote-ssh-auth-description = अपने सिस्टम ssh-agent या macOS Keychain के साथ SSH कुंजियों का उपयोग करें। बैकग्राउंड रिमोट रिफ्रेश कभी भी पासवर्ड नहीं मांगते हैं।
 settings-remote-cli-label = { $app_name } CLI
-settings-remote-cli-description = होस्ट पर `sc` CLI स्थापित करें या अद्यतन करें। शक्तियां अपडेट, एजेंट सूचनाएं और स्वचालित शाखा नामकरण Git लाइव रहती हैं।
+settings-remote-cli-description = होस्ट पर `se` CLI स्थापित करें या अद्यतन करें। शक्तियां अपडेट, एजेंट सूचनाएं और स्वचालित शाखा नामकरण Git लाइव रहती हैं।
 settings-remote-cli-auto-update-label = CLI स्वचालित रूप से अद्यतित रखें
 settings-remote-cli-auto-update-description = इस होस्ट पर CLI को स्थापित करें और अपडेट करें, बिना यह पूछे कि यह कब गायब है या पुराना है। यदि अक्षम किया गया है, तो आपको संकेत दिया जाएगा और आप ऊपर दिए गए बटन का उपयोग कर सकते हैं।
 settings-remote-cli-installing = स्थापित करना...
@@ -1710,7 +1710,7 @@ settings-dynamic-search-ssh-target-description = { $workspace } के लिए
 settings-dynamic-search-ssh-auth-label = प्रमाणीकरण SSH
 settings-dynamic-search-ssh-auth-description = { $workspace } के लिए SSH कुंजी/कनेक्शन सेटिंग्स।
 settings-dynamic-search-remote-cli-label = सुपरकंडक्टर CLI
-settings-dynamic-search-remote-cli-description = { $workspace } के लिए दूरस्थ sc CLI स्थापित करें या अद्यतन करें।
+settings-dynamic-search-remote-cli-description = { $workspace } के लिए दूरस्थ se CLI स्थापित करें या अद्यतन करें।
 settings-dynamic-search-host-details-label = होस्ट विवरण
 settings-dynamic-search-host-details-description = { $workspace } के लिए जांच किए गए मेजबान तथ्य: { $facts }।
 settings-dynamic-search-provider-profiles-label = { $provider } प्रोफाइल
@@ -3039,7 +3039,7 @@ browser-annotation-composer-blocked = उप-एजेंट की प्रत
 browser-consent-title = “{ $workspace_name }” में एजेंटों को ब्राउज़र नियंत्रित करने दें?
 browser-consent-asked-by-agent = एक एजेंट
 browser-consent-asked-by-worktree = “{ $caller_label }” में काम कर रहा एजेंट
-browser-consent-description = { $asked_by } ने इस कार्यक्षेत्र के ब्राउज़र टैब में sc browser { $spelling } चलाने का अनुरोध किया है। अनुमति देने पर इस कार्यक्षेत्र के हर एजेंट को इस और आगे के सभी act कमांड के लिए खुली हुई किसी भी वेबसाइट पर क्लिक करने, टाइप करने, नेविगेट करने और स्क्रिप्ट चलाने की स्थायी अनुमति मिलेगी, जिनमें साइन इन किए हुए सत्र भी शामिल हैं। केवल पढ़ने वाले ज़्यादातर कमांड को स्वीकृति नहीं चाहिए, लेकिन कुकी के मान पढ़ने के लिए चाहिए। यह अनुमति कार्यक्षेत्र के लिए सहेजी जाती है और सेटिंग्स में कभी भी रद्द की जा सकती है।
+browser-consent-description = { $asked_by } ने इस कार्यक्षेत्र के ब्राउज़र टैब में se browser { $spelling } चलाने का अनुरोध किया है। अनुमति देने पर इस कार्यक्षेत्र के हर एजेंट को इस और आगे के सभी act कमांड के लिए खुली हुई किसी भी वेबसाइट पर क्लिक करने, टाइप करने, नेविगेट करने और स्क्रिप्ट चलाने की स्थायी अनुमति मिलेगी, जिनमें साइन इन किए हुए सत्र भी शामिल हैं। केवल पढ़ने वाले ज़्यादातर कमांड को स्वीकृति नहीं चाहिए, लेकिन कुकी के मान पढ़ने के लिए चाहिए। यह अनुमति कार्यक्षेत्र के लिए सहेजी जाती है और सेटिंग्स में कभी भी रद्द की जा सकती है।
 browser-new-chats = नई चैट
 palette-no-matching-files-index-incomplete = कोई फ़ाइल मेल नहीं खाती (इंडेक्स अधूरा है: यह वर्कट्री फ़ाइल स्कैन सीमा से बड़ी है)
 update-ready-title = अपडेट तैयार है
@@ -3254,11 +3254,11 @@ settings-ai-run-with-column = इसके साथ चलाएँ
 settings-ai-branch-naming-rule = नामकरण नियम
 settings-ai-session-context-section = सत्र संदर्भ
 settings-ai-agent-session-context-label = एजेंटों के लिए सत्र संदर्भ
-settings-ai-agent-session-context-description = super.engineering एजेंट सत्रों में संदर्भ जोड़ सकता है ताकि एजेंट ऐप का sc CLI ढूँढकर सुरक्षित रूप से इस्तेमाल कर सकें।
+settings-ai-agent-session-context-description = super.engineering एजेंट सत्रों में संदर्भ जोड़ सकता है ताकि एजेंट ऐप का se CLI ढूँढकर सुरक्षित रूप से इस्तेमाल कर सकें।
 settings-ai-agent-session-context-standard-label = मानक
 settings-ai-agent-session-context-standard-description = एजेंटों को मानक super.engineering CLI और ऑर्केस्ट्रेशन रूटिंग निर्देश मिलते हैं।
 settings-ai-agent-session-context-off-label = बंद
-settings-ai-agent-session-context-off-description = बंद रहने पर पृष्ठभूमि सत्र संदर्भ नहीं जुड़ता। समीक्षा और वर्कट्री कार्य सौंपने जैसी स्पष्ट कार्रवाइयों पर असर नहीं पड़ता, और sc कमांड के सुरक्षा नियम लागू रहते हैं।
+settings-ai-agent-session-context-off-description = बंद रहने पर पृष्ठभूमि सत्र संदर्भ नहीं जुड़ता। समीक्षा और वर्कट्री कार्य सौंपने जैसी स्पष्ट कार्रवाइयों पर असर नहीं पड़ता, और se कमांड के सुरक्षा नियम लागू रहते हैं।
 settings-remote-key-install-action = कुंजी इंस्टॉल करें
 settings-remote-key-install-authorize = { $host } पर अधिकृत करें
 settings-remote-key-install-body = { $app_name } इस कार्यक्षेत्र के लिए अलग SSH कुंजी बनाएगा।
@@ -4249,7 +4249,6 @@ resources-exited-just-now = अभी-अभी बंद हुआ
 resources-exited-minutes = { $minutes } मिनट पहले बंद हुआ
 resources-exited-hours = { $hours } घंटे पहले बंद हुआ
 resources-cpu-row = { $percent }% CPU
-resources-cpu-split = ऐप { $app }% · लॉन्च किए गए { $launched }%
 resources-origin-tab = टर्मिनल टैब
 resources-origin-launched = { $tab } द्वारा शुरू किया गया
 resources-origin-run-script = रन स्क्रिप्ट
@@ -4271,26 +4270,6 @@ resources-app-graphics-info = विंडो सतहें और GPU मे�
 resources-app-held-for-reuse = दोबारा उपयोग के लिए रखी गई
 resources-app-saved-wake = स्लीप में
 resources-app-code-system = कोड और सिस्टम
-resources-app-chats = चैट
-resources-app-chats-open = { $count } खुली
-resources-app-chats-idle = { $count } निष्क्रिय
-resources-app-chats-history = चैट इतिहास
-resources-app-terminals = टर्मिनल
-resources-app-terminals-count =
-    { $count ->
-        [one] 1 टर्मिनल
-       *[other] { $count } टर्मिनल
-    }
-resources-app-terminals-lines =
-    { $count ->
-        [one] 1 पंक्ति
-       *[other] { $count } पंक्तियाँ
-    }
-resources-app-saved-count =
-    { $count ->
-        [one] 1 वर्कट्री
-       *[other] { $count } वर्कट्री
-    }
 resources-app-saved-info = स्लीप में पड़ी वर्कट्री के लिए रखी गई मेमोरी, ताकि वे तुरंत फिर से खुलें
 resources-app-background-count =
     { $count ->
@@ -4304,7 +4283,6 @@ resources-app-other-detail = प्रोजेक्ट और वर्कट�
 resources-app-held-for-reuse-detail = एलोकेटर द्वारा दोबारा उपयोग के लिए रखी गई
 resources-app-code-system-detail = प्रोग्राम कोड और सिस्टम लाइब्रेरी
 resources-estimated = अनुमानित
-resources-sleep-idle-chats = निष्क्रिय चैट स्लीप करें
 resources-sleep-idle-chats-confirm =
     { $count ->
         [one] 1 निष्क्रिय चैट को स्लीप करें?
@@ -4318,12 +4296,6 @@ resources-clear-confirm =
        *[other] स्क्रॉलबैक की { $lines } पंक्तियाँ साफ़ करें?
     }
 resources-clear-consequence = स्क्रीन बनी रहती है।
-resources-clear-scrollback = स्क्रॉलबैक साफ़ करें
-resources-clear-all-confirm =
-    { $count ->
-        [one] 1 टर्मिनल का स्क्रॉलबैक साफ़ करें?
-       *[other] { $count } टर्मिनल का स्क्रॉलबैक साफ़ करें?
-    }
 resources-chat-sleep-running = टर्न चल रहा है। टर्न खत्म होने पर इसे स्लीप किया जा सकता है।
 resources-chat-sleep-waiting = आपके जवाब की प्रतीक्षा है। जवाब देने के बाद इसे स्लीप किया जा सकता है।
 resources-chat-sleep-unseen = इसमें एक जवाब है जो आपने नहीं देखा। पढ़ लेने के बाद इसे स्लीप किया जा सकता है।
@@ -4357,51 +4329,21 @@ resources-tab-all = सभी
 resources-tab-agents = एजेंट
 resources-tab-browser = ब्राउज़र
 resources-tab-terminals = टर्मिनल
-resources-fact-agents =
-    { $count ->
-        [one] एजेंट
-       *[other] एजेंट
-    }
-resources-fact-browser-tabs =
-    { $count ->
-        [one] ब्राउज़र टैब
-       *[other] ब्राउज़र टैब
-    }
-resources-fact-terminals =
-    { $count ->
-        [one] टर्मिनल
-       *[other] टर्मिनल
-    }
 resources-on-screen = स्क्रीन पर है, इसलिए जागा रहता है
 resources-open = खोलें
 resources-close = बंद करें
 resources-close-confirm = { $name } को बंद करें?
 resources-close-consequence = इसका पेज बंद हो जाएगा।
 resources-average-title = प्रति एजेंट औसत
-resources-average-each = प्रति एजेंट
-resources-average-ten = 10 एजेंट
-resources-average-each-suffix = प्रति एजेंट
-resources-average-for-ten = 10 के लिए
 resources-tree-more = +{ $count } और
-resources-app-item-detail = { $activity }, { $lines }
-resources-app-more-chats =
-    { $count ->
-        [one] 1 और चैट
-       *[other] { $count } और चैट
-    }
-resources-app-more-terminals =
-    { $count ->
-        [one] 1 और टर्मिनल
-       *[other] { $count } और टर्मिनल
-    }
 issue-report-check-submission = सबमिशन जाँचें
 issue-report-submission-uncertain = यह रिपोर्ट GitHub पर पहले से मौजूद हो सकती है। इसे खोजने के लिए सबमिशन जाँचें; जाँच करने से यह कभी दोबारा पोस्ट नहीं होती। अगर यह अभी नहीं मिलती है, तो प्रतीक्षा करके फिर से जाँचें, या इस ड्राफ़्ट को हटाने से पहले GitHub पर अपने इश्यू देखें।
 issue-report-discard-uncertain = ड्राफ़्ट हटाएँ (रिपोर्ट पहले से मौजूद हो सकती है)
 issue-report-draft-load-failed = आपकी सहेजी गई रिपोर्ट पढ़ी नहीं जा सकी। दूसरी रिपोर्ट सबमिट करने से पहले स्टोरेज की समस्या हल करें और ऐप को पुनः शुरू करें।
 review-comment-edit-staged = संपादित करने से पहले इस समीक्षा को कंपोज़र से हटाएँ।
 
-chat-edit-failed-draft-conflict = असफल संदेश संपादित करने से पहले मौजूदा ड्राफ़्ट को सहेजें या मिटाएँ।
 chat-edit-skill-as-text = स्किल को टेक्स्ट के रूप में संपादित करें
+chat-edit-failed-draft-conflict = असफल संदेश संपादित करने से पहले मौजूदा ड्राफ़्ट को सहेजें या मिटाएँ।
 
 chat-notice-mcp-disable = अक्षम करें
 chat-notice-mcp-disable-confirm = MCP सर्वर { $name } अक्षम करें?
