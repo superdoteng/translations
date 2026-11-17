@@ -4427,3 +4427,6 @@ issue-report-submission-uncertain = Dieser Bericht ist möglicherweise bereits a
 issue-report-discard-uncertain = Entwurf verwerfen (Bericht existiert möglicherweise bereits)
 issue-report-draft-load-failed = Dein gespeicherter Bericht konnte nicht gelesen werden. Behebe das Speicherproblem und starte die App neu, bevor du einen weiteren Bericht übermittelst.
 review-comment-edit-staged = Entferne dieses Review aus dem Eingabebereich, bevor du es bearbeitest.
+
+chat-edit-failed-draft-conflict = Behalte oder lösche deinen aktuellen Entwurf, bevor du die fehlgeschlagene Nachricht bearbeitest.
+chat-edit-skill-as-text = Skill als Text bearbeiten

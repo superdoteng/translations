@@ -4742,3 +4742,6 @@ issue-report-submission-uncertain = قد يكون هذا البلاغ موجود
 issue-report-discard-uncertain = تجاهل المسودة (قد يكون البلاغ موجودًا بالفعل)
 issue-report-draft-load-failed = تعذرت قراءة بلاغك المحفوظ. عالج مشكلة التخزين وأعد تشغيل التطبيق قبل إرسال بلاغ آخر.
 review-comment-edit-staged = أزل هذه المراجعة من مربع الكتابة قبل التعديل.
+
+chat-edit-failed-draft-conflict = احتفظ بمسودتك الحالية أو امسحها قبل تعديل الرسالة التي فشل إرسالها.
+chat-edit-skill-as-text = تعديل المهارة كنص

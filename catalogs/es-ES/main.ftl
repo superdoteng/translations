@@ -4448,3 +4448,6 @@ issue-report-submission-uncertain = Este informe podría estar ya en GitHub. Com
 issue-report-discard-uncertain = Descartar borrador (el informe podría existir ya)
 issue-report-draft-load-failed = No se ha podido leer tu informe guardado. Resuelve el problema de almacenamiento y reinicia la aplicación antes de enviar otro informe.
 review-comment-edit-staged = Quita esta revisión del compositor antes de editarla.
+
+chat-edit-failed-draft-conflict = Conserva o borra el borrador actual antes de editar el mensaje fallido.
+chat-edit-skill-as-text = Editar con la habilidad como texto

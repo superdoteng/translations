@@ -4653,3 +4653,6 @@ issue-report-submission-uncertain = このレポートはすでに GitHub にあ
 issue-report-discard-uncertain = 下書きを破棄（レポートがすでに存在する可能性があります）
 issue-report-draft-load-failed = 保存したレポートを読み取れませんでした。別のレポートを送信する前に、ストレージの問題を解決してアプリを再起動してください。
 review-comment-edit-staged = 編集する前に、このレビューを入力欄から削除してください。
+
+chat-edit-failed-draft-conflict = 失敗したメッセージを編集する前に、現在の下書きを保存するか消去してください。
+chat-edit-skill-as-text = スキルをテキストとして編集

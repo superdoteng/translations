@@ -4306,3 +4306,6 @@ issue-report-submission-uncertain = Báo cáo này có thể đã có trên GitH
 issue-report-discard-uncertain = Bỏ bản nháp (báo cáo có thể đã tồn tại)
 issue-report-draft-load-failed = Không thể đọc báo cáo đã lưu của bạn. Hãy khắc phục sự cố lưu trữ và khởi động lại ứng dụng trước khi gửi báo cáo khác.
 review-comment-edit-staged = Hãy gỡ bài đánh giá này khỏi khung soạn thảo trước khi chỉnh sửa.
+
+chat-edit-failed-draft-conflict = Lưu hoặc xóa bản nháp hiện tại trước khi chỉnh sửa tin nhắn bị lỗi.
+chat-edit-skill-as-text = Chỉnh sửa kỹ năng dưới dạng văn bản

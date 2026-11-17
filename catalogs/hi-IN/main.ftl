@@ -4399,3 +4399,6 @@ issue-report-submission-uncertain = यह रिपोर्ट GitHub पर �
 issue-report-discard-uncertain = ड्राफ़्ट हटाएँ (रिपोर्ट पहले से मौजूद हो सकती है)
 issue-report-draft-load-failed = आपकी सहेजी गई रिपोर्ट पढ़ी नहीं जा सकी। दूसरी रिपोर्ट सबमिट करने से पहले स्टोरेज की समस्या हल करें और ऐप को पुनः शुरू करें।
 review-comment-edit-staged = संपादित करने से पहले इस समीक्षा को कंपोज़र से हटाएँ।
+
+chat-edit-failed-draft-conflict = असफल संदेश संपादित करने से पहले मौजूदा ड्राफ़्ट को सहेजें या मिटाएँ।
+chat-edit-skill-as-text = स्किल को टेक्स्ट के रूप में संपादित करें

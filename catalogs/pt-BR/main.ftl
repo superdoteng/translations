@@ -4447,3 +4447,6 @@ issue-report-submission-uncertain = Este relatório pode já estar no GitHub. Ve
 issue-report-discard-uncertain = Descartar rascunho (o relatório pode já existir)
 issue-report-draft-load-failed = Não foi possível ler seu relatório salvo. Resolva o problema de armazenamento e reinicie o aplicativo antes de enviar outro relatório.
 review-comment-edit-staged = Remova esta revisão do compositor antes de editá-la.
+
+chat-edit-failed-draft-conflict = Salve ou limpe o rascunho atual antes de editar a mensagem que falhou.
+chat-edit-skill-as-text = Editar com a habilidade como texto

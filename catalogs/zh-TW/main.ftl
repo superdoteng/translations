@@ -4603,3 +4603,6 @@ issue-report-submission-uncertain = 此報告可能已在 GitHub 上。請檢查
 issue-report-discard-uncertain = 捨棄草稿（報告可能已存在）
 issue-report-draft-load-failed = 無法讀取你儲存的報告。請解決儲存問題並重新啟動應用程式，再提交其他報告。
 review-comment-edit-staged = 請先將此審查從輸入區移除，再進行編輯。
+
+chat-edit-failed-draft-conflict = 編輯失敗的訊息前，請先儲存或清空目前的草稿。
+chat-edit-skill-as-text = 將技能作為文字編輯
