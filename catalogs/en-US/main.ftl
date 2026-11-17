@@ -5137,6 +5137,9 @@ issue-report-discard-uncertain = Discard draft (report may already exist)
 issue-report-draft-load-failed = Could not read your saved report. Resolve the storage problem and restart the app before submitting another report.
 review-comment-edit-staged = Remove this review from the composer before editing.
 
+chat-edit-failed-draft-conflict = Keep or clear your current draft before editing the failed message.
+chat-edit-skill-as-text = Edit with skill as text
+
 chat-notice-mcp-disable = Disable
 chat-notice-mcp-disable-confirm = Disable MCP server { $name }?
 chat-notice-mcp-disable-confirm-detail = Its tools won't be available until you enable it again. In Settings > Agents > Codex MCP servers, select Refresh, then Enable or Edit config. To only hide this message, use Quiet instead.

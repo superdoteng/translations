@@ -4400,6 +4400,9 @@ issue-report-discard-uncertain = ड्राफ़्ट हटाएँ (र�
 issue-report-draft-load-failed = आपकी सहेजी गई रिपोर्ट पढ़ी नहीं जा सकी। दूसरी रिपोर्ट सबमिट करने से पहले स्टोरेज की समस्या हल करें और ऐप को पुनः शुरू करें।
 review-comment-edit-staged = संपादित करने से पहले इस समीक्षा को कंपोज़र से हटाएँ।
 
+chat-edit-failed-draft-conflict = असफल संदेश संपादित करने से पहले मौजूदा ड्राफ़्ट को सहेजें या मिटाएँ।
+chat-edit-skill-as-text = स्किल को टेक्स्ट के रूप में संपादित करें
+
 chat-notice-mcp-disable = अक्षम करें
 chat-notice-mcp-disable-confirm = MCP सर्वर { $name } अक्षम करें?
 chat-notice-mcp-disable-confirm-detail = फिर से सक्षम करने तक इसके टूल उपलब्ध नहीं होंगे। सेटिंग्स > एजेंट > Codex MCP सर्वर में रीफ़्रेश करें चुनें, फिर सक्षम करें या कॉन्फ़िगरेशन संपादित करें चुनें। केवल यह संदेश छिपाने के लिए सूचनाएँ छिपाएँ का उपयोग करें।

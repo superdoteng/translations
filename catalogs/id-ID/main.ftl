@@ -4307,6 +4307,9 @@ issue-report-discard-uncertain = Buang draf (laporan mungkin sudah ada)
 issue-report-draft-load-failed = Tidak dapat membaca laporan tersimpan Anda. Atasi masalah penyimpanan dan mulai ulang aplikasi sebelum mengirim laporan lain.
 review-comment-edit-staged = Hapus ulasan ini dari kolom penulisan sebelum mengeditnya.
 
+chat-edit-failed-draft-conflict = Simpan atau hapus draf saat ini sebelum mengedit pesan yang gagal.
+chat-edit-skill-as-text = Edit dengan skill sebagai teks
+
 chat-notice-mcp-disable = Nonaktifkan
 chat-notice-mcp-disable-confirm = Nonaktifkan server MCP { $name }?
 chat-notice-mcp-disable-confirm-detail = Alatnya tidak tersedia sampai Anda mengaktifkannya kembali. Di Pengaturan > Agen > Server MCP Codex, pilih Segarkan, lalu Aktifkan atau Edit konfigurasi. Untuk hanya menyembunyikan pesan ini, gunakan Sembunyikan pemberitahuan.

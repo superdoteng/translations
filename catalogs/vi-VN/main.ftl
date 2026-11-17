@@ -4307,6 +4307,9 @@ issue-report-discard-uncertain = Bỏ bản nháp (báo cáo có thể đã tồ
 issue-report-draft-load-failed = Không thể đọc báo cáo đã lưu của bạn. Hãy khắc phục sự cố lưu trữ và khởi động lại ứng dụng trước khi gửi báo cáo khác.
 review-comment-edit-staged = Hãy gỡ bài đánh giá này khỏi khung soạn thảo trước khi chỉnh sửa.
 
+chat-edit-failed-draft-conflict = Lưu hoặc xóa bản nháp hiện tại trước khi chỉnh sửa tin nhắn bị lỗi.
+chat-edit-skill-as-text = Chỉnh sửa kỹ năng dưới dạng văn bản
+
 chat-notice-mcp-disable = Vô hiệu hóa
 chat-notice-mcp-disable-confirm = Vô hiệu hóa máy chủ MCP { $name }?
 chat-notice-mcp-disable-confirm-detail = Các công cụ sẽ không khả dụng cho đến khi bạn bật lại máy chủ. Trong Cài đặt > Đại lý > Máy chủ MCP Codex, chọn Làm mới, rồi chọn Bật hoặc Sửa cấu hình. Để chỉ ẩn thông báo này, hãy dùng Ẩn thông báo.

@@ -4743,6 +4743,9 @@ issue-report-discard-uncertain = تجاهل المسودة (قد يكون الب
 issue-report-draft-load-failed = تعذرت قراءة بلاغك المحفوظ. عالج مشكلة التخزين وأعد تشغيل التطبيق قبل إرسال بلاغ آخر.
 review-comment-edit-staged = أزل هذه المراجعة من مربع الكتابة قبل التعديل.
 
+chat-edit-failed-draft-conflict = احتفظ بمسودتك الحالية أو امسحها قبل تعديل الرسالة التي فشل إرسالها.
+chat-edit-skill-as-text = تعديل المهارة كنص
+
 chat-notice-mcp-disable = تعطيل
 chat-notice-mcp-disable-confirm = هل تريد تعطيل خادم MCP ‏{ $name }؟
 chat-notice-mcp-disable-confirm-detail = لن تتاح أدواته حتى تفعّله مجددًا. في الإعدادات > الوكلاء > خوادم MCP في Codex، اختر تحديث، ثم تفعيل أو تحرير الإعدادات. لإخفاء هذه الرسالة فقط، استخدم كتم التنبيهات.

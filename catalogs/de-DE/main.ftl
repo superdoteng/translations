@@ -4428,6 +4428,9 @@ issue-report-discard-uncertain = Entwurf verwerfen (Bericht existiert möglicher
 issue-report-draft-load-failed = Dein gespeicherter Bericht konnte nicht gelesen werden. Behebe das Speicherproblem und starte die App neu, bevor du einen weiteren Bericht übermittelst.
 review-comment-edit-staged = Entferne dieses Review aus dem Eingabebereich, bevor du es bearbeitest.
 
+chat-edit-failed-draft-conflict = Behalte oder lösche deinen aktuellen Entwurf, bevor du die fehlgeschlagene Nachricht bearbeitest.
+chat-edit-skill-as-text = Skill als Text bearbeiten
+
 chat-notice-mcp-disable = Deaktivieren
 chat-notice-mcp-disable-confirm = MCP-Server { $name } deaktivieren?
 chat-notice-mcp-disable-confirm-detail = Seine Werkzeuge sind erst wieder verfügbar, wenn du ihn aktivierst. Wähle unter Einstellungen > Agenten > Codex-MCP-Server zunächst Aktualisieren und dann Aktivieren oder Konfiguration bearbeiten. Um nur diese Meldung auszublenden, wähle Hinweise ausblenden.

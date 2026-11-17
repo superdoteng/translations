@@ -4723,6 +4723,9 @@ issue-report-discard-uncertain = مسودہ حذف کریں (رپورٹ پہلے
 issue-report-draft-load-failed = آپ کی محفوظ کردہ رپورٹ پڑھی نہیں جا سکی۔ دوسری رپورٹ بھیجنے سے پہلے اسٹوریج کا مسئلہ حل کریں اور ایپ دوبارہ شروع کریں۔
 review-comment-edit-staged = ترمیم سے پہلے اس جائزے کو کمپوزر سے ہٹائیں۔
 
+chat-edit-failed-draft-conflict = ناکام پیغام میں ترمیم کرنے سے پہلے موجودہ مسودہ محفوظ کریں یا صاف کریں۔
+chat-edit-skill-as-text = اسکل کو متن کے طور پر ترمیم کریں
+
 chat-notice-mcp-disable = غیر فعال کریں
 chat-notice-mcp-disable-confirm = MCP سرور { $name } کو غیر فعال کریں؟
 chat-notice-mcp-disable-confirm-detail = دوبارہ فعال کرنے تک اس کے ٹولز دستیاب نہیں ہوں گے۔ ترتیبات > ایجنٹس > Codex MCP سرورز میں تازہ کریں منتخب کریں، پھر فعال کریں یا ترتیب میں ترمیم کریں منتخب کریں۔ صرف یہ پیغام چھپانے کے لیے اطلاعات چھپائیں استعمال کریں۔

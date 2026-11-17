@@ -4449,6 +4449,9 @@ issue-report-discard-uncertain = Descartar borrador (el informe podría existir 
 issue-report-draft-load-failed = No se ha podido leer tu informe guardado. Resuelve el problema de almacenamiento y reinicia la aplicación antes de enviar otro informe.
 review-comment-edit-staged = Quita esta revisión del compositor antes de editarla.
 
+chat-edit-failed-draft-conflict = Conserva o borra el borrador actual antes de editar el mensaje fallido.
+chat-edit-skill-as-text = Editar con la habilidad como texto
+
 chat-notice-mcp-disable = Desactivar
 chat-notice-mcp-disable-confirm = ¿Desactivar el servidor MCP { $name }?
 chat-notice-mcp-disable-confirm-detail = Sus herramientas no estarán disponibles hasta que lo actives de nuevo. En Configuración > Agentes > Servidores MCP de Codex, selecciona Actualizar y después Activar o Editar configuración. Para ocultar solo este mensaje, usa Silenciar avisos.

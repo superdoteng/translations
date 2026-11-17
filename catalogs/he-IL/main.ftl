@@ -4486,6 +4486,9 @@ issue-report-discard-uncertain = השלכת הטיוטה (ייתכן שהדיו�
 issue-report-draft-load-failed = לא ניתן לקרוא את הדיווח השמור שלכם. פתרו את בעיית האחסון והפעילו מחדש את היישום לפני שליחת דיווח נוסף.
 review-comment-edit-staged = יש להסיר את הסקירה הזו מתיבת הכתיבה לפני העריכה.
 
+chat-edit-failed-draft-conflict = יש לשמור או לנקות את הטיוטה הנוכחית לפני עריכת ההודעה שנכשלה.
+chat-edit-skill-as-text = עריכה עם המיומנות כטקסט
+
 chat-notice-mcp-disable = השבתה
 chat-notice-mcp-disable-confirm = להשבית את שרת ה־MCP ‏{ $name }?
 chat-notice-mcp-disable-confirm-detail = הכלים שלו לא יהיו זמינים עד להפעלתו מחדש. בהגדרות > סוכנים > שרתי MCP של Codex, יש לבחור רענון ואז הפעלה או עריכת תצורה. כדי להסתיר רק את ההודעה הזאת, יש להשתמש בהסתרת התראות.

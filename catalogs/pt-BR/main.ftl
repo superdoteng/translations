@@ -4448,6 +4448,9 @@ issue-report-discard-uncertain = Descartar rascunho (o relatório pode já exist
 issue-report-draft-load-failed = Não foi possível ler seu relatório salvo. Resolva o problema de armazenamento e reinicie o aplicativo antes de enviar outro relatório.
 review-comment-edit-staged = Remova esta revisão do compositor antes de editá-la.
 
+chat-edit-failed-draft-conflict = Salve ou limpe o rascunho atual antes de editar a mensagem que falhou.
+chat-edit-skill-as-text = Editar com a habilidade como texto
+
 chat-notice-mcp-disable = Desativar
 chat-notice-mcp-disable-confirm = Desativar o servidor MCP { $name }?
 chat-notice-mcp-disable-confirm-detail = Suas ferramentas não estarão disponíveis até você ativá-lo novamente. Em Configurações > Agentes > Servidores MCP do Codex, selecione Atualizar e depois Ativar ou Editar configuração. Para ocultar apenas esta mensagem, use Silenciar avisos.

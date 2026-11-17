@@ -4346,6 +4346,9 @@ issue-report-discard-uncertain = Taslağı sil (rapor zaten mevcut olabilir)
 issue-report-draft-load-failed = Kaydedilmiş raporunuz okunamadı. Başka bir rapor göndermeden önce depolama sorununu giderin ve uygulamayı yeniden başlatın.
 review-comment-edit-staged = Düzenlemeden önce bu incelemeyi yazma alanından kaldırın.
 
+chat-edit-failed-draft-conflict = Başarısız mesajı düzenlemeden önce mevcut taslağınızı saklayın veya temizleyin.
+chat-edit-skill-as-text = Beceriyi metin olarak düzenle
+
 chat-notice-mcp-disable = Devre dışı bırak
 chat-notice-mcp-disable-confirm = { $name } MCP sunucusu devre dışı bırakılsın mı?
 chat-notice-mcp-disable-confirm-detail = Yeniden etkinleştirene kadar araçları kullanılamaz. Ayarlar > Ajanlar > Codex MCP sunucuları bölümünde Yenile’yi, ardından Etkinleştir veya Yapılandırmayı düzenle’yi seçin. Yalnızca bu mesajı gizlemek için Uyarıları gizle’yi kullanın.

@@ -4607,6 +4607,9 @@ issue-report-discard-uncertain = 초안 삭제 (보고서가 이미 있을 수 �
 issue-report-draft-load-failed = 저장된 보고서를 읽을 수 없습니다. 다른 보고서를 제출하기 전에 저장소 문제를 해결하고 앱을 다시 시작하세요.
 review-comment-edit-staged = 편집하기 전에 입력창에서 이 리뷰를 제거하세요.
 
+chat-edit-failed-draft-conflict = 실패한 메시지를 편집하기 전에 현재 초안을 저장하거나 지우세요.
+chat-edit-skill-as-text = 스킬을 텍스트로 편집
+
 chat-notice-mcp-disable = 비활성화
 chat-notice-mcp-disable-confirm = MCP 서버 { $name }을(를) 비활성화할까요?
 chat-notice-mcp-disable-confirm-detail = 다시 활성화할 때까지 해당 도구를 사용할 수 없습니다. 설정 > 에이전트 > Codex MCP 서버에서 새로 고침을 선택한 다음 활성화 또는 설정 편집을 선택하세요. 이 메시지만 숨기려면 알림 숨기기를 사용하세요.

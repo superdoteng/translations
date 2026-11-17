@@ -4654,6 +4654,9 @@ issue-report-discard-uncertain = 下書きを破棄（レポートがすでに�
 issue-report-draft-load-failed = 保存したレポートを読み取れませんでした。別のレポートを送信する前に、ストレージの問題を解決してアプリを再起動してください。
 review-comment-edit-staged = 編集する前に、このレビューを入力欄から削除してください。
 
+chat-edit-failed-draft-conflict = 失敗したメッセージを編集する前に、現在の下書きを保存するか消去してください。
+chat-edit-skill-as-text = スキルをテキストとして編集
+
 chat-notice-mcp-disable = 無効にする
 chat-notice-mcp-disable-confirm = MCP サーバー { $name } を無効にしますか？
 chat-notice-mcp-disable-confirm-detail = 再び有効にするまで、このサーバーのツールは利用できません。設定 > エージェント > Codex MCP サーバーで「更新」を選び、続いて「有効にする」または「設定を編集」を選んでください。このメッセージだけを非表示にする場合は「通知を非表示」を使ってください。

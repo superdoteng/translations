@@ -4604,6 +4604,9 @@ issue-report-discard-uncertain = 丢弃草稿（报告可能已存在）
 issue-report-draft-load-failed = 无法读取你保存的报告。请解决存储问题并重新启动应用，然后再提交其他报告。
 review-comment-edit-staged = 请先将此审查从输入区移除，再进行编辑。
 
+chat-edit-failed-draft-conflict = 编辑失败的消息前，请先保存或清空当前草稿。
+chat-edit-skill-as-text = 将技能作为文本编辑
+
 chat-notice-mcp-disable = 禁用
 chat-notice-mcp-disable-confirm = 禁用 MCP 服务器 { $name }？
 chat-notice-mcp-disable-confirm-detail = 重新启用此服务器后，其工具才会恢复可用。请前往设置 > 智能体 > Codex MCP 服务器，选择刷新，再选择启用或编辑配置。如果只想隐藏此消息，请使用隐藏提示。

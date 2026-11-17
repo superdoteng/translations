@@ -4454,6 +4454,9 @@ issue-report-discard-uncertain = Elimina bozza (la segnalazione potrebbe già es
 issue-report-draft-load-failed = Impossibile leggere la segnalazione salvata. Risolvi il problema di archiviazione e riavvia l’app prima di inviare un’altra segnalazione.
 review-comment-edit-staged = Rimuovi questa revisione dal compositore prima di modificarla.
 
+chat-edit-failed-draft-conflict = Conserva o cancella la bozza attuale prima di modificare il messaggio non riuscito.
+chat-edit-skill-as-text = Modifica con la skill come testo
+
 chat-notice-mcp-disable = Disattiva
 chat-notice-mcp-disable-confirm = Disattivare il server MCP { $name }?
 chat-notice-mcp-disable-confirm-detail = I suoi strumenti non saranno disponibili finché non lo riattivi. In Impostazioni > Agenti > Server MCP di Codex, scegli Aggiorna, poi Attiva o Modifica configurazione. Per nascondere solo questo messaggio, usa Silenzia avvisi.
