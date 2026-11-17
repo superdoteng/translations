@@ -813,24 +813,24 @@ settings-repository-project-icon-label = 專案圖示
 settings-repository-project-icon-description = 可選擇自動產生的頭像、不顯示圖示、縮寫、符號、表情符號、圖片或網站 favicon。
 settings-repository-scripts-section = 指令碼
 settings-repository-scripts-description = 每一列會在同一個 shell 中依序執行，並在首次失敗時停止。每個儲存庫都可透過 .super.engineering/config.json 覆寫指令碼設定。
-settings-repository-issues-section = 議題
-settings-repository-issues-description = 從議題開始工作：在命令選擇區的「議題」中選擇一個，就會為它建立工作樹。
+settings-repository-issues-section = 問題
+settings-repository-issues-description = 從問題開始工作：在命令選擇區的「問題」中選擇一個，就會為它建立工作樹。
 settings-repository-issues-github-label = GitHub
-settings-repository-issues-no-github = 此專案並未託管在 GitHub 上。你仍可新增其他 GitHub 儲存庫或 Linear 的議題。
+settings-repository-issues-no-github = 此專案並未託管在 GitHub 上。你仍可新增其他 GitHub 儲存庫或 Linear 的問題。
 settings-repository-issues-gh-missing-title = 尚未安裝 GitHub CLI
-settings-repository-issues-gh-missing-description = super.engineering 透過 GitHub CLI（gh）列出 GitHub 議題。
+settings-repository-issues-gh-missing-description = super.engineering 透過 GitHub CLI（gh）列出 GitHub 問題。
 settings-repository-issues-gh-install = 安裝 GitHub CLI
 settings-repository-issues-gh-signed-out-title = 尚未登入 { $host }
 settings-repository-issues-gh-signed-out-description = 請在終端機中執行以下指令，然後再檢查一次：
 settings-repository-issues-gh-copy-command = 複製指令
 settings-repository-issues-check-again = 再檢查一次
 settings-repository-issues-own-label = 此儲存庫
-settings-repository-issues-own-description = 來自 { $repository } 的議題。
-settings-repository-issues-own-description-generic = 來自此專案 GitHub 儲存庫的議題。
+settings-repository-issues-own-description = 來自 { $repository } 的問題。
+settings-repository-issues-own-description-generic = 來自此專案 GitHub 儲存庫的問題。
 settings-repository-issues-labels-caption = 僅限標籤
 settings-repository-issues-labels-placeholder = 任何標籤
 settings-repository-issues-open-count = { $count } 個未關閉
-settings-repository-issues-open-count-filtered = { $count } 個含這些標籤的未關閉議題
+settings-repository-issues-open-count-filtered = { $count } 個含這些標籤的未關閉問題
 settings-repository-issues-linear-status = 連結 Linear 以列出此團隊
 settings-repository-issues-add-placeholder = 新增其他儲存庫：owner/repo 或 GitHub 連結
 settings-repository-issues-add = 新增
@@ -841,18 +841,18 @@ settings-repository-issues-add-host = 只能新增 github.com 和此儲存庫所
 settings-repository-issues-add-linear-not-connected = 連結 Linear 以新增團隊。
 settings-repository-issues-add-unknown-team = 沒有使用該代碼的 Linear 團隊。
 settings-repository-issues-add-loading = 仍在載入…
-settings-repository-issues-disabled = 此儲存庫已在 GitHub 上關閉議題功能
+settings-repository-issues-disabled = 此儲存庫已在 GitHub 上關閉問題功能
 settings-repository-issues-untrusted-host = 未列出：僅允許 github.com 和此儲存庫所在的主機
 settings-repository-issues-linear-label = Linear
 settings-repository-issues-linear-connect-title = 連結 Linear
-settings-repository-issues-linear-description = 在此專案中列出某個 Linear 團隊的議題。使用個人 API 金鑰，並保存在你的鑰匙圈中。
+settings-repository-issues-linear-description = 在此專案中列出某個 Linear 團隊的問題。使用個人 API 金鑰，並保存在你的鑰匙圈中。
 settings-repository-issues-linear-key-rejected = Linear 已不再接受儲存的金鑰。請中斷連結，再使用新金鑰重新連結。
 settings-repository-issues-linear-key-placeholder = 2 · 貼上金鑰
 settings-repository-issues-linear-create-key = 1 · 在 Linear 中建立金鑰
 settings-repository-issues-linear-connect = 連結
 settings-repository-issues-linear-connecting = 正在連結…
 settings-repository-issues-linear-disconnect = 中斷連結
-settings-repository-issues-linear-add-team = 新增團隊，以在此專案中列出其議題：
+settings-repository-issues-linear-add-team = 新增團隊，以在此專案中列出其問題：
 settings-repository-issues-linear-no-teams = 此金鑰看不到任何 Linear 團隊。
 settings-repository-issues-linear-connected = 已以 { $viewer } 身分連結 · { $organization }
 settings-repository-issues-linear-connected-pending = 已連結
@@ -1527,11 +1527,11 @@ toast-state-file-quarantined = 無法載入 { $file }，已重設為預設值。
 toast-state-file-write-blocked = 無法安全載入 { $file }。在檔案問題解決之前，變更不會儲存。
 toast-notification = 通知
 toast-cannot-create-worktree = 無法建立工作樹
-toast-issue-no-source = 此專案沒有議題來源。
+toast-issue-no-source = 此專案沒有問題來源。
 toast-issue-branch-taken = 分支 { $branch } 已為 { $issue } 簽出。
-toast-issue-untrusted-host = 無法開啟 { $host } 上的議題：僅允許 github.com 和此專案本身的主機。
-toast-issue-linear-not-connected = 請在「設定 → 專案 → 此專案 → 議題」中連結 Linear，以開啟 Linear 議題。
-toast-issues-shared-workspace = 多儲存庫工作區尚不支援議題。
+toast-issue-untrusted-host = 無法開啟 { $host } 上的問題：僅允許 github.com 和此專案本身的主機。
+toast-issue-linear-not-connected = 請在「設定 → 專案 → 此專案 → 問題」中連結 Linear，以開啟 Linear 問題。
+toast-issues-shared-workspace = 多儲存庫工作區尚不支援問題。
 toast-create-worktree-failed = 建立工作樹失敗
 toast-delete-worktree-failed = 刪除工作樹失敗
 toast-delete-child-worktree-failed = 未能刪除子工作樹
@@ -1835,7 +1835,7 @@ settings-search-section-custom-commands = 自訂指令
 settings-search-section-prompt-templates = 提示詞範本
 settings-search-section-repository = 儲存庫
 settings-search-section-scripts = 指令碼
-settings-search-section-issues = 議題
+settings-search-section-issues = 問題
 settings-search-section-ai = AI
 settings-search-section-remote-ssh = 遠端 SSH
 settings-dynamic-search-project-root-label = 根路徑
@@ -1856,8 +1856,8 @@ settings-dynamic-search-teardown-scripts-label = 刪除時指令碼
 settings-dynamic-search-teardown-scripts-description = 已為 { $project } 設定 { $count } 個刪除時指令碼。
 settings-dynamic-search-post-cleanup-scripts-label = 清理後指令碼
 settings-dynamic-search-post-cleanup-scripts-description = 已為 { $project } 設定 { $count } 個清理後指令碼。
-settings-dynamic-search-project-issues-label = 議題
-settings-dynamic-search-project-issues-description = 從 { $project } 中的 GitHub 或 Linear 議題開始工作。
+settings-dynamic-search-project-issues-label = 問題
+settings-dynamic-search-project-issues-description = 從 { $project } 中的 GitHub 或 Linear 問題開始工作。
 settings-dynamic-search-project-ai-tier-label = AI 層級
 settings-dynamic-search-project-ai-tier-description = { $project } 的預設新增動作與層級設定。
 settings-dynamic-search-ssh-target-label = SSH 目標
@@ -2245,7 +2245,7 @@ settings-keybinding-action-notifications-dismiss = 佇列：關閉所選項目
 settings-keybinding-action-notifications-remove-current-chat = 佇列：移除目前的聊天
 settings-keybinding-action-open-default-app = 在預設應用程式中開啟
 settings-keybinding-action-settings = 設定
-settings-keybinding-action-open-issue-settings = 議題來源（GitHub、Linear）…
+settings-keybinding-action-open-issue-settings = 問題來源（GitHub、Linear）…
 settings-keybinding-action-run = 執行操作
 settings-keybinding-action-run-new-tab = 在新分頁執行動作
 settings-keybinding-action-increase-app-zoom = 放大應用程式介面
@@ -2354,9 +2354,9 @@ attachment-viewer-info-dimensions = 尺寸
 attachment-viewer-info-length = 長度
 attachment-viewer-info-size = 大小
 sidebar-view-review-request = 檢視 { $kind }
-sidebar-open-issue = 開啟議題
-sidebar-copy-issue-link = 複製議題連結
-sidebar-unlink-issue = 取消連結議題
+sidebar-open-issue = 開啟問題
+sidebar-copy-issue-link = 複製問題連結
+sidebar-unlink-issue = 取消連結問題
 sidebar-main-working-copy = 主要工作副本
 git-copy-full-sha = 複製完整 SHA
 git-release-command-for-short-sha = 放開 ⌘ 以複製短 SHA
@@ -2906,7 +2906,7 @@ settings-keybinding-action-palette-tabs = 命令選擇區：分頁
 settings-keybinding-action-palette-files = 命令選擇區：檔案
 settings-keybinding-action-palette-commands = 命令選擇區：指令
 settings-keybinding-action-palette-conversations = 命令選擇區：對話
-settings-keybinding-action-palette-issues = 命令選擇區：議題
+settings-keybinding-action-palette-issues = 命令選擇區：問題
 settings-keybinding-action-palette-pull-requests = 命令選擇區：提取要求
 settings-keybinding-action-enhance-prompt = 潤飾提示詞
 settings-keybinding-action-close-selected-tab = 關閉選取分頁
@@ -4104,7 +4104,7 @@ palette-action-switch-worktree = 切換到工作樹
 
 palette-action-search-inside = 在此工作樹內搜尋
 
-palette-action-open-pr = 開啟提取請求 #{ $number }
+palette-action-open-pr = 開啟提取要求 #{ $number }
 
 palette-action-copy-worktree-path = 複製工作樹路徑
 
@@ -4132,21 +4132,21 @@ palette-action-start-with = 使用 { $provider } 啟動
 
 palette-mode-pull-requests = { $forge ->
     [gitlab] 合併請求
-   *[other] 提取請求
+   *[other] 提取要求
 }
 
 palette-mode-branch-from = 建立分支自
 
 palette-search-pull-requests = { $forge ->
     [gitlab] 搜尋合併請求，或貼上連結…
-   *[other] 搜尋提取請求，或貼上連結…
+   *[other] 搜尋提取要求，或貼上連結…
 }
 
 palette-search-branch-from = 建立分支自…
 
 palette-section-pull-requests = { $forge ->
     [gitlab] 合併請求
-   *[other] 提取請求
+   *[other] 提取要求
 }
 
 palette-section-with-worktree = 已有工作樹
@@ -4161,40 +4161,40 @@ palette-section-yours = 你的
 
 palette-section-open-review-requests = { $forge ->
     [gitlab] 未關閉的合併請求
-   *[other] 未關閉的提取請求
+   *[other] 未關閉的提取要求
 }
 
 palette-loading-pull-requests = { $forge ->
     [gitlab] 正在載入合併請求…
-   *[other] 正在載入提取請求…
+   *[other] 正在載入提取要求…
 }
 
 palette-no-open-pull-requests = { $forge ->
     [gitlab] 沒有未關閉的合併請求
-   *[other] 沒有未關閉的提取請求
+   *[other] 沒有未關閉的提取要求
 }
-palette-mode-issues = 議題
-palette-section-issues = 議題
-palette-search-issues = 搜尋議題，或貼上連結…
+palette-mode-issues = 問題
+palette-section-issues = 問題
+palette-search-issues = 搜尋問題，或貼上連結…
 palette-section-in-progress = 進行中
 palette-section-assigned-to-you = 指派給你
 palette-section-open-issues = 未關閉
 palette-section-done = 已完成
-palette-loading-issues = 正在載入議題…
-palette-no-open-issues = 沒有未關閉的議題
+palette-loading-issues = 正在載入問題…
+palette-no-open-issues = 沒有未關閉的問題
 palette-section-needs-setup = 需要設定
-palette-issue-setup-gh-missing = 安裝 GitHub CLI 以列出 GitHub 議題
-palette-issue-setup-gh-signed-out = 登入 { $host } 以列出其議題
+palette-issue-setup-gh-missing = 安裝 GitHub CLI 以列出 GitHub 問題
+palette-issue-setup-gh-signed-out = 登入 { $host } 以列出其問題
 palette-issue-setup-linear-key-rejected = 重新連結 Linear：已不再接受儲存的金鑰
 palette-issue-setup-linear-not-connected = 連結 Linear 以列出 { $team }
 palette-issue-setup-other = { $source }：{ $message }
 palette-issue-setup-opens-install = 開啟安裝頁面
 palette-issue-setup-copies-login = 複製 { $command }
-palette-issue-setup-opens-sources = 開啟議題來源
+palette-issue-setup-opens-sources = 開啟問題來源
 palette-issue-setup-connect-linear = 連結 Linear 或新增其他儲存庫…
 palette-issue-setup-add-linear-team = 為此專案新增 Linear 團隊…
-palette-issue-setup-sources = 議題來源…
-palette-issue-reference = 議題 { $reference }
+palette-issue-setup-sources = 問題來源…
+palette-issue-reference = 問題 { $reference }
 palette-issue-no-description = 沒有說明
 palette-issue-assigned-to = 已指派給 { $names }
 palette-issue-opened-by = 由 { $name } 建立
@@ -4247,14 +4247,14 @@ palette-no-branch-named = 沒有名為“{ $query }”的分支
 
 palette-search-new-worktree = { $forge ->
     [gitlab] 輸入分支名稱、描述任務或貼上合併請求
-   *[other] 輸入分支名稱、描述任務或貼上提取請求
+   *[other] 輸入分支名稱、描述任務或貼上提取要求
 }
 
 palette-search-new-worktree-no-forge = 輸入分支名稱或描述任務
 
 palette-action-open-review-request = { $forge ->
     [gitlab] 開啟合併請求 !{ $number }
-   *[other] 開啟提取請求 #{ $number }
+   *[other] 開啟提取要求 #{ $number }
 }
 
 palette-action-create-and-start = 建立並啟動 { $provider }
@@ -4271,12 +4271,12 @@ palette-loading-branches = 正在載入分支…
 
 palette-no-open-pull-request = { $forge ->
     [gitlab] 沒有未關閉的合併請求
-   *[other] 沒有未關閉的提取請求
+   *[other] 沒有未關閉的提取要求
 }
 
 palette-pull-request-number = { $forge ->
     [gitlab] 合併請求 !{ $number }
-   *[other] 提取請求 #{ $number }
+   *[other] 提取要求 #{ $number }
 }
 
 palette-new-worktree-in = 在 { $project } 中新建工作樹
@@ -4498,7 +4498,7 @@ issue-report-similar-bugs = 類似報告
 
 issue-report-similar-features = 類似請求
 
-issue-report-destination = { $repo } 中的公開議題
+issue-report-destination = { $repo } 中的公開問題
 
 issue-report-signed-out = 登入 GitHub CLI 後即可在此提交
 
@@ -4923,7 +4923,7 @@ resources-close-consequence = 其頁面將會關閉。
 resources-average-title = 每個代理程式的平均值
 resources-tree-more = +{ $count } 個
 issue-report-check-submission = 檢查提交狀態
-issue-report-submission-uncertain = 此報告可能已在 GitHub 上。請檢查提交狀態以尋找報告；檢查絕不會再次發布。如果暫時找不到，請稍候再檢查，或在捨棄此草稿前查看你在 GitHub 上的議題。
+issue-report-submission-uncertain = 此報告可能已在 GitHub 上。請檢查提交狀態以尋找報告；檢查絕不會再次發布。如果暫時找不到，請稍候再檢查，或在捨棄此草稿前查看你在 GitHub 上的問題。
 issue-report-discard-uncertain = 捨棄草稿（報告可能已存在）
 issue-report-draft-load-failed = 無法讀取你儲存的報告。請解決儲存問題並重新啟動應用程式，再提交其他報告。
 review-comment-edit-staged = 請先將此審查從輸入區移除，再進行編輯。
@@ -4952,9 +4952,9 @@ extension-approval-source-local = 你的設定要求在執行任何擴充功能�
 extension-approval-asks = 它要求
 extension-approval-allow = 允許
 extension-permission-none = 僅顯示自己的檢視，不做其他事
-extension-permission-app-read = 讀取你的工作區、工作樹、代理程式、Git 狀態和議題
+extension-permission-app-read = 讀取你的工作區、工作樹、代理程式、Git 狀態和問題
 extension-permission-app-ui = 變更視窗顯示的內容並發送通知
-extension-permission-app-write = 變更工作樹、分支和提交，並在審查和議題中留言
+extension-permission-app-write = 變更工作樹、分支和提交，並在審查和問題中留言
 extension-permission-agents = 啟動代理程式、傳送訊息給它們並停止它們
 extension-permission-storage = 保存自己的資料
 extension-permission-network = 連上網際網路
