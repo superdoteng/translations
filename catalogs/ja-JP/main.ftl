@@ -4656,3 +4656,23 @@ review-comment-edit-staged = 編集する前に、このレビューを入力欄
 
 chat-edit-failed-draft-conflict = 失敗したメッセージを編集する前に、現在の下書きを保存するか消去してください。
 chat-edit-skill-as-text = スキルをテキストとして編集
+
+chat-notice-mcp-disable = 無効にする
+chat-notice-mcp-disable-confirm = MCP サーバー { $name } を無効にしますか？
+chat-notice-mcp-disable-confirm-detail = 再び有効にするまで、このサーバーのツールは利用できません。設定 > エージェント > Codex MCP サーバーで「更新」を選び、続いて「有効にする」または「設定を編集」を選んでください。このメッセージだけを非表示にする場合は「通知を非表示」を使ってください。
+chat-notice-mcp-disable-tooltip = プロバイダーの設定でこのサーバーを無効にします。ツールは利用できなくなります。
+chat-notice-mcp-edit-config = 設定を編集
+chat-notice-mcp-edit-config-tooltip = このサーバーを定義している設定ファイルを開きます
+chat-notice-mcp-offline-count = { $count } 台の MCP サーバーが動作していません
+chat-notice-mcp-quiet = 通知を非表示
+chat-notice-mcp-quiet-tooltip = このサーバーが動作していないときに通知しません。起動は引き続き試みられ、ツールも利用できます。実際の障害については引き続き警告します。
+chat-notice-mcp-retry = MCP サーバーを再読み込み
+chat-notice-mcp-retry-tooltip = 設定済みのすべての MCP サーバーを再読み込みします
+chat-notice-mcp-unquiet = 通知を再表示
+chat-notice-mcp-unquiet-tooltip = このサーバーが動作していないときに再び通知します
+settings-mcp-config-caption = Codex MCP サーバー — 選択中のプロファイルとワークツリー。無効なサーバーを探すには更新してください。有効化は新しいチャットに適用されます。
+settings-mcp-config-enable = 有効にする
+settings-mcp-config-loading = Codex の設定を読み込み中…
+settings-mcp-config-refresh = Codex MCP サーバーを更新
+settings-mcp-quieted-servers = Codex MCP サーバー
+settings-mcp-quieted-servers-caption = これらのサーバーが動作していないときはチャットに通知しません。起動は引き続き試みられ、ツールも利用できます。

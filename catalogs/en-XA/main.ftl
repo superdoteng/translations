@@ -4888,3 +4888,27 @@ review-comment-edit-staged = [!! Ŕëṁôṽë ţħïš ŕëṽïëŵ ƒŕôṁ
 
 chat-edit-failed-draft-conflict = [!! Ķëëþ ôŕ çľëàŕ ÿôüŕ çüŕŕëñţ đŕàƒţ bëƒôŕë ëđïţïñĝ ţħë ƒàïľëđ ṁëššàĝë. !!]
 chat-edit-skill-as-text = [!! Ëđïţ ŵïţħ šķïľľ àš ţëẋţ !!]
+
+chat-notice-mcp-disable = [!! Đïšàƀľë !!]
+chat-notice-mcp-disable-confirm = [!! Đïšàƀľë MCP šëŕṽëŕ { $name }? !!]
+chat-notice-mcp-disable-confirm-detail = [!! Ïţš ţôôľš ŵôñ'ţ ƀë àṽàïľàƀľë üñţïľ ÿôü ëñàƀľë ïţ àĝàïñ. Ïñ Šëţţïñĝš > Àĝëñţš > Codex MCP šëŕṽëŕš, šëľëçţ Ŕëƒŕëšħ, ţħëñ Ëñàƀľë ôŕ Ëđïţ çôñƒïĝ. Ţô ôñľÿ ħïđë ţħïš ṁëššàĝë, üšë Qüïëţ ïñšţëàđ. !!]
+chat-notice-mcp-disable-tooltip = [!! Ţüŕñ ţħïš šëŕṽëŕ ôƒƒ ïñ ţħë þŕôṽïđëŕ'š çôñƒïĝ. Ïţš ţôôľš šţôþ ƀëïñĝ àṽàïľàƀľë. !!]
+chat-notice-mcp-edit-config = [!! Ëđïţ çôñƒïĝ !!]
+chat-notice-mcp-edit-config-tooltip = [!! Ôþëñ ţħë çôñƒïĝ ƒïľë ţħàţ đëƒïñëš ţħïš šëŕṽëŕ !!]
+chat-notice-mcp-offline-count =
+    { $count ->
+        [one] [!! 1 MCP šëŕṽëŕ ïšñ'ţ ŕüññïñĝ !!]
+       *[other] [!! { $count } MCP šëŕṽëŕš àŕëñ'ţ ŕüññïñĝ !!]
+    }
+chat-notice-mcp-quiet = [!! Qüïëţ !!]
+chat-notice-mcp-quiet-tooltip = [!! Šţôþ ṁëñţïôñïñĝ ţħïš šëŕṽëŕ ŵħëñ ïţ ïšñ'ţ ŕüññïñĝ. Ïţ šţïľľ šţàŕţš àñđ ķëëþš ïţš ţôôľš, àñđ ŕëàľ ƒàïľüŕëš šţïľľ ŵàŕñ. !!]
+chat-notice-mcp-retry = [!! Ŕëľôàđ MCP šëŕṽëŕš !!]
+chat-notice-mcp-retry-tooltip = [!! Ŕëľôàđ àľľ çôñƒïĝüŕëđ MCP šëŕṽëŕš !!]
+chat-notice-mcp-unquiet = [!! Üñqüïëţ !!]
+chat-notice-mcp-unquiet-tooltip = [!! Ṁëñţïôñ ţħïš šëŕṽëŕ àĝàïñ ŵħëñ ïţ ïšñ'ţ ŕüññïñĝ !!]
+settings-mcp-config-caption = [!! Codex MCP šëŕṽëŕš — šëľëçţëđ þŕôƒïľë àñđ ŵôŕķţŕëë. Ŕëƒŕëšħ ţô ƒïñđ đïšàƀľëđ šëŕṽëŕš. Ëñàƀľë ţàķëš ëƒƒëçţ ïñ ñëŵ çħàţš. !!]
+settings-mcp-config-enable = [!! Ëñàƀľë !!]
+settings-mcp-config-loading = [!! Ŕëàđïñĝ Codex çôñƒïĝüŕàţïôñ… !!]
+settings-mcp-config-refresh = [!! Ŕëƒŕëšħ Codex MCP šëŕṽëŕš !!]
+settings-mcp-quieted-servers = [!! Codex MCP šëŕṽëŕš !!]
+settings-mcp-quieted-servers-caption = [!! Ţħëšë šëŕṽëŕš àŕëñ'ţ ṁëñţïôñëđ ïñ çħàţ ŵħëñ ţħëÿ àŕëñ'ţ ŕüññïñĝ. Ţħëÿ šţïľľ šţàŕţ àñđ ķëëþ ţħëïŕ ţôôľš. !!]

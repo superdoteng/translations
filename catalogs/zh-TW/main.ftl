@@ -4606,3 +4606,23 @@ review-comment-edit-staged = 請先將此審查從輸入區移除，再進行編
 
 chat-edit-failed-draft-conflict = 編輯失敗的訊息前，請先儲存或清空目前的草稿。
 chat-edit-skill-as-text = 將技能作為文字編輯
+
+chat-notice-mcp-disable = 停用
+chat-notice-mcp-disable-confirm = 停用 MCP 伺服器 { $name }？
+chat-notice-mcp-disable-confirm-detail = 重新啟用此伺服器後，其工具才會恢復可用。請前往設定 > 代理程式 > Codex MCP 伺服器，選擇重新整理，再選擇啟用或編輯設定。若只想隱藏此訊息，請使用隱藏提示。
+chat-notice-mcp-disable-tooltip = 在服務供應商的設定中停用此伺服器。其工具將不再可用。
+chat-notice-mcp-edit-config = 編輯設定
+chat-notice-mcp-edit-config-tooltip = 開啟定義此伺服器的設定檔
+chat-notice-mcp-offline-count = { $count } 個 MCP 伺服器未執行
+chat-notice-mcp-quiet = 隱藏提示
+chat-notice-mcp-quiet-tooltip = 此伺服器未執行時不再提示。仍會嘗試啟動它，其工具仍可使用；實際故障仍會顯示警告。
+chat-notice-mcp-retry = 重新載入 MCP 伺服器
+chat-notice-mcp-retry-tooltip = 重新載入所有已設定的 MCP 伺服器
+chat-notice-mcp-unquiet = 恢復提示
+chat-notice-mcp-unquiet-tooltip = 此伺服器未執行時恢復提示
+settings-mcp-config-caption = Codex MCP 伺服器 — 目前選取的設定檔與工作樹。重新整理以尋找已停用的伺服器。啟用操作會在新聊天中生效。
+settings-mcp-config-enable = 啟用
+settings-mcp-config-loading = 正在讀取 Codex 設定…
+settings-mcp-config-refresh = 重新整理 Codex MCP 伺服器
+settings-mcp-quieted-servers = Codex MCP 伺服器
+settings-mcp-quieted-servers-caption = 這些伺服器未執行時不會在聊天中提示。仍會嘗試啟動它們，其工具仍可使用。

@@ -4430,3 +4430,26 @@ review-comment-edit-staged = Entferne dieses Review aus dem Eingabebereich, bevo
 
 chat-edit-failed-draft-conflict = Behalte oder lösche deinen aktuellen Entwurf, bevor du die fehlgeschlagene Nachricht bearbeitest.
 chat-edit-skill-as-text = Skill als Text bearbeiten
+
+chat-notice-mcp-disable = Deaktivieren
+chat-notice-mcp-disable-confirm = MCP-Server { $name } deaktivieren?
+chat-notice-mcp-disable-confirm-detail = Seine Werkzeuge sind erst wieder verfügbar, wenn du ihn aktivierst. Wähle unter Einstellungen > Agenten > Codex-MCP-Server zunächst Aktualisieren und dann Aktivieren oder Konfiguration bearbeiten. Um nur diese Meldung auszublenden, wähle Hinweise ausblenden.
+chat-notice-mcp-disable-tooltip = Diesen Server in der Konfiguration des Anbieters deaktivieren. Seine Werkzeuge sind dann nicht mehr verfügbar.
+chat-notice-mcp-edit-config = Konfiguration bearbeiten
+chat-notice-mcp-edit-config-tooltip = Die Konfigurationsdatei öffnen, in der dieser Server definiert ist
+chat-notice-mcp-offline-count = { $count ->
+    [one] 1 MCP-Server läuft nicht
+   *[other] { $count } MCP-Server laufen nicht
+    }
+chat-notice-mcp-quiet = Hinweise ausblenden
+chat-notice-mcp-quiet-tooltip = Diesen Server nicht mehr erwähnen, wenn er nicht läuft. Er wird weiterhin gestartet und seine Werkzeuge bleiben verfügbar. Echte Fehler werden weiterhin als Warnung angezeigt.
+chat-notice-mcp-retry = MCP-Server neu laden
+chat-notice-mcp-retry-tooltip = Alle konfigurierten MCP-Server neu laden
+chat-notice-mcp-unquiet = Hinweise wieder anzeigen
+chat-notice-mcp-unquiet-tooltip = Diesen Server wieder erwähnen, wenn er nicht läuft
+settings-mcp-config-caption = Codex-MCP-Server — ausgewähltes Profil und ausgewählter Arbeitsbaum. Aktualisiere die Liste, um deaktivierte Server zu finden. Die Aktivierung gilt für neue Chats.
+settings-mcp-config-enable = Aktivieren
+settings-mcp-config-loading = Codex-Konfiguration wird gelesen…
+settings-mcp-config-refresh = Codex-MCP-Server aktualisieren
+settings-mcp-quieted-servers = Codex-MCP-Server
+settings-mcp-quieted-servers-caption = Diese Server werden im Chat nicht erwähnt, wenn sie nicht laufen. Sie werden weiterhin gestartet und ihre Werkzeuge bleiben verfügbar.

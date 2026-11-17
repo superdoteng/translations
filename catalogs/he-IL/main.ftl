@@ -4488,3 +4488,27 @@ review-comment-edit-staged = יש להסיר את הסקירה הזו מתיבת
 
 chat-edit-failed-draft-conflict = יש לשמור או לנקות את הטיוטה הנוכחית לפני עריכת ההודעה שנכשלה.
 chat-edit-skill-as-text = עריכה עם המיומנות כטקסט
+
+chat-notice-mcp-disable = השבתה
+chat-notice-mcp-disable-confirm = להשבית את שרת ה־MCP ‏{ $name }?
+chat-notice-mcp-disable-confirm-detail = הכלים שלו לא יהיו זמינים עד להפעלתו מחדש. בהגדרות > סוכנים > שרתי MCP של Codex, יש לבחור רענון ואז הפעלה או עריכת תצורה. כדי להסתיר רק את ההודעה הזאת, יש להשתמש בהסתרת התראות.
+chat-notice-mcp-disable-tooltip = השבתת השרת הזה בתצורת הספק. הכלים שלו לא יהיו זמינים עוד.
+chat-notice-mcp-edit-config = עריכת תצורה
+chat-notice-mcp-edit-config-tooltip = פתיחת קובץ התצורה שמגדיר את השרת הזה
+chat-notice-mcp-offline-count = { $count ->
+    [one] שרת MCP אחד אינו פועל
+    [two] שני שרתי MCP אינם פועלים
+   *[other] { $count } שרתי MCP אינם פועלים
+    }
+chat-notice-mcp-quiet = הסתרת התראות
+chat-notice-mcp-quiet-tooltip = להפסיק להזכיר את השרת הזה כשאינו פועל. עדיין ייעשה ניסיון להפעיל אותו והכלים שלו יישארו זמינים. תקלות אמיתיות עדיין יוצגו כאזהרות.
+chat-notice-mcp-retry = טעינה מחדש של שרתי MCP
+chat-notice-mcp-retry-tooltip = טעינה מחדש של כל שרתי ה־MCP המוגדרים
+chat-notice-mcp-unquiet = הצגת התראות מחדש
+chat-notice-mcp-unquiet-tooltip = להזכיר שוב את השרת הזה כשאינו פועל
+settings-mcp-config-caption = שרתי MCP של Codex — הפרופיל ועץ העבודה שנבחרו. יש לרענן כדי למצוא שרתים מושבתים. ההפעלה תחול בשיחות חדשות.
+settings-mcp-config-enable = הפעלה
+settings-mcp-config-loading = קריאת תצורת Codex…
+settings-mcp-config-refresh = רענון שרתי MCP של Codex
+settings-mcp-quieted-servers = שרתי MCP של Codex
+settings-mcp-quieted-servers-caption = השרתים האלה אינם מוזכרים בשיחה כשאינם פועלים. עדיין נעשים ניסיונות להפעיל אותם והכלים שלהם נשארים זמינים.

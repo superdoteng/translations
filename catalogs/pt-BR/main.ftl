@@ -4450,3 +4450,26 @@ review-comment-edit-staged = Remova esta revisão do compositor antes de editá-
 
 chat-edit-failed-draft-conflict = Salve ou limpe o rascunho atual antes de editar a mensagem que falhou.
 chat-edit-skill-as-text = Editar com a habilidade como texto
+
+chat-notice-mcp-disable = Desativar
+chat-notice-mcp-disable-confirm = Desativar o servidor MCP { $name }?
+chat-notice-mcp-disable-confirm-detail = Suas ferramentas não estarão disponíveis até você ativá-lo novamente. Em Configurações > Agentes > Servidores MCP do Codex, selecione Atualizar e depois Ativar ou Editar configuração. Para ocultar apenas esta mensagem, use Silenciar avisos.
+chat-notice-mcp-disable-tooltip = Desativar este servidor na configuração do provedor. Suas ferramentas deixarão de estar disponíveis.
+chat-notice-mcp-edit-config = Editar configuração
+chat-notice-mcp-edit-config-tooltip = Abrir o arquivo de configuração que define este servidor
+chat-notice-mcp-offline-count = { $count ->
+    [one] 1 servidor MCP não está em execução
+   *[other] { $count } servidores MCP não estão em execução
+    }
+chat-notice-mcp-quiet = Silenciar avisos
+chat-notice-mcp-quiet-tooltip = Parar de mencionar este servidor quando ele não estiver em execução. Ele continuará iniciando e suas ferramentas continuarão disponíveis. Falhas reais ainda gerarão avisos.
+chat-notice-mcp-retry = Recarregar servidores MCP
+chat-notice-mcp-retry-tooltip = Recarregar todos os servidores MCP configurados
+chat-notice-mcp-unquiet = Restaurar avisos
+chat-notice-mcp-unquiet-tooltip = Voltar a mencionar este servidor quando ele não estiver em execução
+settings-mcp-config-caption = Servidores MCP do Codex — perfil e árvore de trabalho selecionados. Atualize a lista para encontrar servidores desativados. A ativação vale para novos chats.
+settings-mcp-config-enable = Ativar
+settings-mcp-config-loading = Lendo a configuração do Codex…
+settings-mcp-config-refresh = Atualizar servidores MCP do Codex
+settings-mcp-quieted-servers = Servidores MCP do Codex
+settings-mcp-quieted-servers-caption = Esses servidores não são mencionados no chat quando não estão em execução. Eles continuam iniciando e suas ferramentas continuam disponíveis.

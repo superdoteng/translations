@@ -5139,3 +5139,26 @@ review-comment-edit-staged = Remove this review from the composer before editing
 
 chat-edit-failed-draft-conflict = Keep or clear your current draft before editing the failed message.
 chat-edit-skill-as-text = Edit with skill as text
+
+chat-notice-mcp-disable = Disable
+chat-notice-mcp-disable-confirm = Disable MCP server { $name }?
+chat-notice-mcp-disable-confirm-detail = Its tools won't be available until you enable it again. In Settings > Agents > Codex MCP servers, select Refresh, then Enable or Edit config. To only hide this message, use Quiet instead.
+chat-notice-mcp-disable-tooltip = Turn this server off in the provider's config. Its tools stop being available.
+chat-notice-mcp-edit-config = Edit config
+chat-notice-mcp-edit-config-tooltip = Open the config file that defines this server
+chat-notice-mcp-offline-count = { $count ->
+    [one] 1 MCP server isn't running
+   *[other] { $count } MCP servers aren't running
+    }
+chat-notice-mcp-quiet = Quiet
+chat-notice-mcp-quiet-tooltip = Stop mentioning this server when it isn't running. It still starts and keeps its tools, and real failures still warn.
+chat-notice-mcp-retry = Reload MCP servers
+chat-notice-mcp-retry-tooltip = Reload all configured MCP servers
+chat-notice-mcp-unquiet = Unquiet
+chat-notice-mcp-unquiet-tooltip = Mention this server again when it isn't running
+settings-mcp-config-caption = Codex MCP servers — selected profile and worktree. Refresh to find disabled servers. Enable takes effect in new chats.
+settings-mcp-config-enable = Enable
+settings-mcp-config-loading = Reading Codex configuration…
+settings-mcp-config-refresh = Refresh Codex MCP servers
+settings-mcp-quieted-servers = Codex MCP servers
+settings-mcp-quieted-servers-caption = These servers aren't mentioned in chat when they aren't running. They still start and keep their tools.

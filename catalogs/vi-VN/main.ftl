@@ -4309,3 +4309,23 @@ review-comment-edit-staged = Hãy gỡ bài đánh giá này khỏi khung soạn
 
 chat-edit-failed-draft-conflict = Lưu hoặc xóa bản nháp hiện tại trước khi chỉnh sửa tin nhắn bị lỗi.
 chat-edit-skill-as-text = Chỉnh sửa kỹ năng dưới dạng văn bản
+
+chat-notice-mcp-disable = Vô hiệu hóa
+chat-notice-mcp-disable-confirm = Vô hiệu hóa máy chủ MCP { $name }?
+chat-notice-mcp-disable-confirm-detail = Các công cụ sẽ không khả dụng cho đến khi bạn bật lại máy chủ. Trong Cài đặt > Đại lý > Máy chủ MCP Codex, chọn Làm mới, rồi chọn Bật hoặc Sửa cấu hình. Để chỉ ẩn thông báo này, hãy dùng Ẩn thông báo.
+chat-notice-mcp-disable-tooltip = Vô hiệu hóa máy chủ này trong cấu hình của nhà cung cấp. Các công cụ của máy chủ sẽ không còn khả dụng.
+chat-notice-mcp-edit-config = Sửa cấu hình
+chat-notice-mcp-edit-config-tooltip = Mở tệp cấu hình định nghĩa máy chủ này
+chat-notice-mcp-offline-count = { $count } máy chủ MCP không chạy
+chat-notice-mcp-quiet = Ẩn thông báo
+chat-notice-mcp-quiet-tooltip = Không nhắc đến máy chủ này khi máy chủ không chạy. Máy chủ vẫn được khởi chạy và các công cụ vẫn khả dụng. Các lỗi thực sự vẫn hiện cảnh báo.
+chat-notice-mcp-retry = Tải lại máy chủ MCP
+chat-notice-mcp-retry-tooltip = Tải lại tất cả máy chủ MCP đã cấu hình
+chat-notice-mcp-unquiet = Hiện lại thông báo
+chat-notice-mcp-unquiet-tooltip = Nhắc lại máy chủ này khi máy chủ không chạy
+settings-mcp-config-caption = Máy chủ MCP Codex — hồ sơ và cây làm việc đã chọn. Làm mới để tìm máy chủ bị vô hiệu hóa. Việc bật có hiệu lực trong các cuộc trò chuyện mới.
+settings-mcp-config-enable = Bật
+settings-mcp-config-loading = Đang đọc cấu hình Codex…
+settings-mcp-config-refresh = Làm mới máy chủ MCP Codex
+settings-mcp-quieted-servers = Máy chủ MCP Codex
+settings-mcp-quieted-servers-caption = Các máy chủ này không được nhắc đến trong cuộc trò chuyện khi không chạy. Chúng vẫn được khởi chạy và các công cụ vẫn khả dụng.
