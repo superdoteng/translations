@@ -4306,3 +4306,6 @@ issue-report-submission-uncertain = Laporan ini mungkin sudah ada di GitHub. Per
 issue-report-discard-uncertain = Buang draf (laporan mungkin sudah ada)
 issue-report-draft-load-failed = Tidak dapat membaca laporan tersimpan Anda. Atasi masalah penyimpanan dan mulai ulang aplikasi sebelum mengirim laporan lain.
 review-comment-edit-staged = Hapus ulasan ini dari kolom penulisan sebelum mengeditnya.
+
+chat-edit-failed-draft-conflict = Simpan atau hapus draf saat ini sebelum mengedit pesan yang gagal.
+chat-edit-skill-as-text = Edit dengan skill sebagai teks

@@ -4722,3 +4722,6 @@ issue-report-submission-uncertain = ممکن ہے یہ رپورٹ پہلے ہی 
 issue-report-discard-uncertain = مسودہ حذف کریں (رپورٹ پہلے ہی موجود ہو سکتی ہے)
 issue-report-draft-load-failed = آپ کی محفوظ کردہ رپورٹ پڑھی نہیں جا سکی۔ دوسری رپورٹ بھیجنے سے پہلے اسٹوریج کا مسئلہ حل کریں اور ایپ دوبارہ شروع کریں۔
 review-comment-edit-staged = ترمیم سے پہلے اس جائزے کو کمپوزر سے ہٹائیں۔
+
+chat-edit-failed-draft-conflict = ناکام پیغام میں ترمیم کرنے سے پہلے موجودہ مسودہ محفوظ کریں یا صاف کریں۔
+chat-edit-skill-as-text = اسکل کو متن کے طور پر ترمیم کریں

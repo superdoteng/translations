@@ -4345,3 +4345,6 @@ issue-report-submission-uncertain = Bu rapor zaten GitHub’da olabilir. Bulmak 
 issue-report-discard-uncertain = Taslağı sil (rapor zaten mevcut olabilir)
 issue-report-draft-load-failed = Kaydedilmiş raporunuz okunamadı. Başka bir rapor göndermeden önce depolama sorununu giderin ve uygulamayı yeniden başlatın.
 review-comment-edit-staged = Düzenlemeden önce bu incelemeyi yazma alanından kaldırın.
+
+chat-edit-failed-draft-conflict = Başarısız mesajı düzenlemeden önce mevcut taslağınızı saklayın veya temizleyin.
+chat-edit-skill-as-text = Beceriyi metin olarak düzenle

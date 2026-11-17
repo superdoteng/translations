@@ -4485,3 +4485,6 @@ issue-report-submission-uncertain = ייתכן שהדיווח הזה כבר נמ
 issue-report-discard-uncertain = השלכת הטיוטה (ייתכן שהדיווח כבר קיים)
 issue-report-draft-load-failed = לא ניתן לקרוא את הדיווח השמור שלכם. פתרו את בעיית האחסון והפעילו מחדש את היישום לפני שליחת דיווח נוסף.
 review-comment-edit-staged = יש להסיר את הסקירה הזו מתיבת הכתיבה לפני העריכה.
+
+chat-edit-failed-draft-conflict = יש לשמור או לנקות את הטיוטה הנוכחית לפני עריכת ההודעה שנכשלה.
+chat-edit-skill-as-text = עריכה עם המיומנות כטקסט

@@ -4325,3 +4325,6 @@ issue-report-submission-uncertain = ممکن است این گزارش از قب�
 issue-report-discard-uncertain = دور انداختن پیش‌نویس (ممکن است گزارش از قبل وجود داشته باشد)
 issue-report-draft-load-failed = خواندن گزارش ذخیره‌شدهٔ شما ممکن نشد. پیش از ارسال گزارشی دیگر، مشکل ذخیره‌سازی را برطرف کنید و برنامه را دوباره راه‌اندازی کنید.
 review-comment-edit-staged = پیش از ویرایش، این بررسی را از کادر نوشتن بردارید.
+
+chat-edit-failed-draft-conflict = پیش از ویرایش پیام ناموفق، پیش‌نویس فعلی را نگه دارید یا پاک کنید.
+chat-edit-skill-as-text = ویرایش مهارت به‌صورت متن

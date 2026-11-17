@@ -5136,3 +5136,6 @@ issue-report-submission-uncertain = This report may already be on GitHub. Check 
 issue-report-discard-uncertain = Discard draft (report may already exist)
 issue-report-draft-load-failed = Could not read your saved report. Resolve the storage problem and restart the app before submitting another report.
 review-comment-edit-staged = Remove this review from the composer before editing.
+
+chat-edit-failed-draft-conflict = Keep or clear your current draft before editing the failed message.
+chat-edit-skill-as-text = Edit with skill as text

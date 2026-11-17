@@ -4885,3 +4885,6 @@ issue-report-submission-uncertain = [!! Ţħïš ŕëþôŕţ ṁàÿ àľŕëà
 issue-report-discard-uncertain = [!! Đïšçàŕđ đŕàƒţ (ŕëþôŕţ ṁàÿ àľŕëàđÿ ëẋïšţ) !!]
 issue-report-draft-load-failed = [!! Çôüľđ ñôţ ŕëàđ ÿôüŕ šàṽëđ ŕëþôŕţ. Ŕëšôľṽë ţħë šţôŕàĝë þŕôþľëṁ àñđ ŕëšţàŕţ ţħë àþþ þëƒôŕë šüþṁïţţïñĝ àñôţħëŕ ŕëþôŕţ. !!]
 review-comment-edit-staged = [!! Ŕëṁôṽë ţħïš ŕëṽïëŵ ƒŕôṁ ţħë çôṁþôšëŕ ƀëƒôŕë ëđïţïñĝ. !!]
+
+chat-edit-failed-draft-conflict = [!! Ķëëþ ôŕ çľëàŕ ÿôüŕ çüŕŕëñţ đŕàƒţ bëƒôŕë ëđïţïñĝ ţħë ƒàïľëđ ṁëššàĝë. !!]
+chat-edit-skill-as-text = [!! Ëđïţ ŵïţħ šķïľľ àš ţëẋţ !!]

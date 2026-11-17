@@ -4606,3 +4606,6 @@ issue-report-submission-uncertain = 이 보고서가 이미 GitHub에 있을 수
 issue-report-discard-uncertain = 초안 삭제 (보고서가 이미 있을 수 있음)
 issue-report-draft-load-failed = 저장된 보고서를 읽을 수 없습니다. 다른 보고서를 제출하기 전에 저장소 문제를 해결하고 앱을 다시 시작하세요.
 review-comment-edit-staged = 편집하기 전에 입력창에서 이 리뷰를 제거하세요.
+
+chat-edit-failed-draft-conflict = 실패한 메시지를 편집하기 전에 현재 초안을 저장하거나 지우세요.
+chat-edit-skill-as-text = 스킬을 텍스트로 편집

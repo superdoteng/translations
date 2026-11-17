@@ -4453,3 +4453,6 @@ issue-report-submission-uncertain = Questa segnalazione potrebbe essere già su 
 issue-report-discard-uncertain = Elimina bozza (la segnalazione potrebbe già esistere)
 issue-report-draft-load-failed = Impossibile leggere la segnalazione salvata. Risolvi il problema di archiviazione e riavvia l’app prima di inviare un’altra segnalazione.
 review-comment-edit-staged = Rimuovi questa revisione dal compositore prima di modificarla.
+
+chat-edit-failed-draft-conflict = Conserva o cancella la bozza attuale prima di modificare il messaggio non riuscito.
+chat-edit-skill-as-text = Modifica con la skill come testo

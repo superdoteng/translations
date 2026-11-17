@@ -4451,3 +4451,6 @@ issue-report-submission-uncertain = Ce rapport se trouve peut-être déjà sur G
 issue-report-discard-uncertain = Abandonner le brouillon (le rapport existe peut-être déjà)
 issue-report-draft-load-failed = Impossible de lire votre rapport enregistré. Résolvez le problème de stockage et redémarrez l’application avant d’envoyer un autre rapport.
 review-comment-edit-staged = Retirez cette revue de la zone de saisie avant de la modifier.
+
+chat-edit-failed-draft-conflict = Conservez ou effacez votre brouillon actuel avant de modifier le message en échec.
+chat-edit-skill-as-text = Modifier avec la compétence en texte
