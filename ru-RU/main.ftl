@@ -4571,3 +4571,28 @@ review-comment-edit-staged = Чтобы изменить это ревью, сн
 
 chat-edit-failed-draft-conflict = Сохраните или очистите текущий черновик, прежде чем редактировать сообщение, отправка которого завершилась ошибкой.
 chat-edit-skill-as-text = Редактировать навык как текст
+
+chat-notice-mcp-disable = Отключить
+chat-notice-mcp-disable-confirm = Отключить сервер MCP { $name }?
+chat-notice-mcp-disable-confirm-detail = Его инструменты будут недоступны, пока вы не включите его снова. В разделе Настройки > Агенты > Серверы MCP Codex выберите Обновить, затем Включить или Изменить конфигурацию. Чтобы скрыть только это сообщение, выберите Скрывать уведомления.
+chat-notice-mcp-disable-tooltip = Отключить этот сервер в конфигурации провайдера. Его инструменты станут недоступны.
+chat-notice-mcp-edit-config = Изменить конфигурацию
+chat-notice-mcp-edit-config-tooltip = Открыть файл конфигурации, в котором определён этот сервер
+chat-notice-mcp-offline-count = { $count ->
+    [one] { $count } сервер MCP не запущен
+    [few] { $count } сервера MCP не запущены
+    [many] { $count } серверов MCP не запущены
+   *[other] { $count } сервера MCP не запущены
+    }
+chat-notice-mcp-quiet = Скрывать уведомления
+chat-notice-mcp-quiet-tooltip = Не упоминать этот сервер, когда он не запущен. Он по-прежнему будет запускаться, а его инструменты останутся доступны. Настоящие ошибки по-прежнему вызывают предупреждения.
+chat-notice-mcp-retry = Перезагрузить серверы MCP
+chat-notice-mcp-retry-tooltip = Перезагрузить все настроенные серверы MCP
+chat-notice-mcp-unquiet = Показывать уведомления
+chat-notice-mcp-unquiet-tooltip = Снова упоминать этот сервер, когда он не запущен
+settings-mcp-config-caption = Серверы MCP Codex — выбранные профиль и рабочее дерево. Обновите список, чтобы найти отключённые серверы. Включение действует в новых чатах.
+settings-mcp-config-enable = Включить
+settings-mcp-config-loading = Чтение конфигурации Codex…
+settings-mcp-config-refresh = Обновить серверы MCP Codex
+settings-mcp-quieted-servers = Серверы MCP Codex
+settings-mcp-quieted-servers-caption = Эти серверы не упоминаются в чате, когда не запущены. Они по-прежнему запускаются, а их инструменты остаются доступны.

@@ -4725,3 +4725,26 @@ review-comment-edit-staged = ترمیم سے پہلے اس جائزے کو کم�
 
 chat-edit-failed-draft-conflict = ناکام پیغام میں ترمیم کرنے سے پہلے موجودہ مسودہ محفوظ کریں یا صاف کریں۔
 chat-edit-skill-as-text = اسکل کو متن کے طور پر ترمیم کریں
+
+chat-notice-mcp-disable = غیر فعال کریں
+chat-notice-mcp-disable-confirm = MCP سرور { $name } کو غیر فعال کریں؟
+chat-notice-mcp-disable-confirm-detail = دوبارہ فعال کرنے تک اس کے ٹولز دستیاب نہیں ہوں گے۔ ترتیبات > ایجنٹس > Codex MCP سرورز میں تازہ کریں منتخب کریں، پھر فعال کریں یا ترتیب میں ترمیم کریں منتخب کریں۔ صرف یہ پیغام چھپانے کے لیے اطلاعات چھپائیں استعمال کریں۔
+chat-notice-mcp-disable-tooltip = فراہم کنندہ کی ترتیب میں یہ سرور غیر فعال کریں۔ اس کے ٹولز دستیاب نہیں رہیں گے۔
+chat-notice-mcp-edit-config = ترتیب میں ترمیم کریں
+chat-notice-mcp-edit-config-tooltip = اس سرور کی تعریف کرنے والی ترتیب کی فائل کھولیں
+chat-notice-mcp-offline-count = { $count ->
+    [one] ایک MCP سرور نہیں چل رہا
+   *[other] { $count } MCP سرور نہیں چل رہے
+    }
+chat-notice-mcp-quiet = اطلاعات چھپائیں
+chat-notice-mcp-quiet-tooltip = یہ سرور نہ چل رہا ہو تو اس کا ذکر نہ کریں۔ اسے شروع کرنے کی کوشش جاری رہے گی اور اس کے ٹولز دستیاب رہیں گے۔ اصل خرابیوں پر انتباہ اب بھی دکھائی دے گا۔
+chat-notice-mcp-retry = MCP سرورز دوبارہ لوڈ کریں
+chat-notice-mcp-retry-tooltip = تمام تشکیل شدہ MCP سرورز دوبارہ لوڈ کریں
+chat-notice-mcp-unquiet = اطلاعات دوبارہ دکھائیں
+chat-notice-mcp-unquiet-tooltip = یہ سرور نہ چل رہا ہو تو اس کا دوبارہ ذکر کریں
+settings-mcp-config-caption = Codex MCP سرورز — منتخب پروفائل اور ورک ٹری۔ غیر فعال سرورز تلاش کرنے کے لیے تازہ کریں۔ فعال کرنا نئی چیٹس پر لاگو ہوتا ہے۔
+settings-mcp-config-enable = فعال کریں
+settings-mcp-config-loading = Codex کی ترتیب پڑھی جا رہی ہے…
+settings-mcp-config-refresh = Codex MCP سرورز تازہ کریں
+settings-mcp-quieted-servers = Codex MCP سرورز
+settings-mcp-quieted-servers-caption = یہ سرورز نہ چل رہے ہوں تو چیٹ میں ان کا ذکر نہیں ہوتا۔ انہیں شروع کرنے کی کوشش جاری رہتی ہے اور ان کے ٹولز دستیاب رہتے ہیں۔

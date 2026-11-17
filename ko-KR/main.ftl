@@ -4609,3 +4609,23 @@ review-comment-edit-staged = 편집하기 전에 입력창에서 이 리뷰를 �
 
 chat-edit-failed-draft-conflict = 실패한 메시지를 편집하기 전에 현재 초안을 저장하거나 지우세요.
 chat-edit-skill-as-text = 스킬을 텍스트로 편집
+
+chat-notice-mcp-disable = 비활성화
+chat-notice-mcp-disable-confirm = MCP 서버 { $name }을(를) 비활성화할까요?
+chat-notice-mcp-disable-confirm-detail = 다시 활성화할 때까지 해당 도구를 사용할 수 없습니다. 설정 > 에이전트 > Codex MCP 서버에서 새로 고침을 선택한 다음 활성화 또는 설정 편집을 선택하세요. 이 메시지만 숨기려면 알림 숨기기를 사용하세요.
+chat-notice-mcp-disable-tooltip = 제공자 설정에서 이 서버를 비활성화합니다. 해당 도구를 더 이상 사용할 수 없습니다.
+chat-notice-mcp-edit-config = 설정 편집
+chat-notice-mcp-edit-config-tooltip = 이 서버를 정의하는 설정 파일을 엽니다
+chat-notice-mcp-offline-count = MCP 서버 { $count }개가 실행 중이 아닙니다
+chat-notice-mcp-quiet = 알림 숨기기
+chat-notice-mcp-quiet-tooltip = 이 서버가 실행 중이 아닐 때 알리지 않습니다. 서버 시작은 계속 시도하며 도구도 유지됩니다. 실제 오류는 계속 경고합니다.
+chat-notice-mcp-retry = MCP 서버 다시 로드
+chat-notice-mcp-retry-tooltip = 구성된 모든 MCP 서버를 다시 로드합니다
+chat-notice-mcp-unquiet = 알림 다시 표시
+chat-notice-mcp-unquiet-tooltip = 이 서버가 실행 중이 아닐 때 다시 알립니다
+settings-mcp-config-caption = Codex MCP 서버 — 선택한 프로필 및 워크트리. 비활성화된 서버를 찾으려면 새로 고침을 선택하세요. 활성화는 새 채팅에 적용됩니다.
+settings-mcp-config-enable = 활성화
+settings-mcp-config-loading = Codex 설정 읽는 중…
+settings-mcp-config-refresh = Codex MCP 서버 새로 고침
+settings-mcp-quieted-servers = Codex MCP 서버
+settings-mcp-quieted-servers-caption = 이 서버들이 실행 중이 아닐 때 채팅에 알리지 않습니다. 서버 시작은 계속 시도하며 도구도 유지됩니다.

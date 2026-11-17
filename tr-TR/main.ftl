@@ -4348,3 +4348,23 @@ review-comment-edit-staged = Düzenlemeden önce bu incelemeyi yazma alanından 
 
 chat-edit-failed-draft-conflict = Başarısız mesajı düzenlemeden önce mevcut taslağınızı saklayın veya temizleyin.
 chat-edit-skill-as-text = Beceriyi metin olarak düzenle
+
+chat-notice-mcp-disable = Devre dışı bırak
+chat-notice-mcp-disable-confirm = { $name } MCP sunucusu devre dışı bırakılsın mı?
+chat-notice-mcp-disable-confirm-detail = Yeniden etkinleştirene kadar araçları kullanılamaz. Ayarlar > Ajanlar > Codex MCP sunucuları bölümünde Yenile’yi, ardından Etkinleştir veya Yapılandırmayı düzenle’yi seçin. Yalnızca bu mesajı gizlemek için Uyarıları gizle’yi kullanın.
+chat-notice-mcp-disable-tooltip = Bu sunucuyu sağlayıcının yapılandırmasında devre dışı bırak. Araçları artık kullanılamaz.
+chat-notice-mcp-edit-config = Yapılandırmayı düzenle
+chat-notice-mcp-edit-config-tooltip = Bu sunucuyu tanımlayan yapılandırma dosyasını aç
+chat-notice-mcp-offline-count = { $count } MCP sunucusu çalışmıyor
+chat-notice-mcp-quiet = Uyarıları gizle
+chat-notice-mcp-quiet-tooltip = Bu sunucu çalışmıyorken ondan söz etme. Sunucu başlatılmaya devam eder ve araçları kullanılabilir kalır. Gerçek hatalar yine uyarı gösterir.
+chat-notice-mcp-retry = MCP sunucularını yeniden yükle
+chat-notice-mcp-retry-tooltip = Yapılandırılmış tüm MCP sunucularını yeniden yükle
+chat-notice-mcp-unquiet = Uyarıları geri aç
+chat-notice-mcp-unquiet-tooltip = Bu sunucu çalışmıyorken ondan yeniden söz et
+settings-mcp-config-caption = Codex MCP sunucuları — seçili profil ve çalışma ağacı. Devre dışı sunucuları bulmak için yenileyin. Etkinleştirme yeni sohbetlerde geçerli olur.
+settings-mcp-config-enable = Etkinleştir
+settings-mcp-config-loading = Codex yapılandırması okunuyor…
+settings-mcp-config-refresh = Codex MCP sunucularını yenile
+settings-mcp-quieted-servers = Codex MCP sunucuları
+settings-mcp-quieted-servers-caption = Bu sunucular çalışmıyorken sohbette anılmaz. Başlatılmaya devam ederler ve araçları kullanılabilir kalır.

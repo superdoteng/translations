@@ -4745,3 +4745,30 @@ review-comment-edit-staged = أزل هذه المراجعة من مربع الك
 
 chat-edit-failed-draft-conflict = احتفظ بمسودتك الحالية أو امسحها قبل تعديل الرسالة التي فشل إرسالها.
 chat-edit-skill-as-text = تعديل المهارة كنص
+
+chat-notice-mcp-disable = تعطيل
+chat-notice-mcp-disable-confirm = هل تريد تعطيل خادم MCP ‏{ $name }؟
+chat-notice-mcp-disable-confirm-detail = لن تتاح أدواته حتى تفعّله مجددًا. في الإعدادات > الوكلاء > خوادم MCP في Codex، اختر تحديث، ثم تفعيل أو تحرير الإعدادات. لإخفاء هذه الرسالة فقط، استخدم كتم التنبيهات.
+chat-notice-mcp-disable-tooltip = تعطيل هذا الخادم في إعدادات الموفّر. لن تعود أدواته متاحة.
+chat-notice-mcp-edit-config = تحرير الإعدادات
+chat-notice-mcp-edit-config-tooltip = فتح ملف الإعدادات الذي يعرّف هذا الخادم
+chat-notice-mcp-offline-count = { $count ->
+    [zero] لا توجد خوادم MCP متوقفة
+    [one] خادم MCP واحد غير مشغّل
+    [two] خادما MCP غير مشغّلين
+    [few] { $count } خوادم MCP غير مشغّلة
+    [many] { $count } خادم MCP غير مشغّل
+   *[other] { $count } من خوادم MCP غير مشغّلة
+    }
+chat-notice-mcp-quiet = كتم التنبيهات
+chat-notice-mcp-quiet-tooltip = عدم ذكر هذا الخادم عندما لا يكون قيد التشغيل. ستستمر محاولة تشغيله وستظل أدواته متاحة، وستظل الأعطال الفعلية تُظهر تحذيرًا.
+chat-notice-mcp-retry = إعادة تحميل خوادم MCP
+chat-notice-mcp-retry-tooltip = إعادة تحميل جميع خوادم MCP المُهيأة
+chat-notice-mcp-unquiet = إظهار التنبيهات
+chat-notice-mcp-unquiet-tooltip = ذكر هذا الخادم مجددًا عندما لا يكون قيد التشغيل
+settings-mcp-config-caption = خوادم MCP في Codex — الملف الشخصي وشجرة العمل المحددان. حدّث القائمة للعثور على الخوادم المعطّلة. يسري التفعيل في المحادثات الجديدة.
+settings-mcp-config-enable = تفعيل
+settings-mcp-config-loading = جارٍ قراءة إعدادات Codex…
+settings-mcp-config-refresh = تحديث خوادم MCP في Codex
+settings-mcp-quieted-servers = خوادم MCP في Codex
+settings-mcp-quieted-servers-caption = لا تُذكر هذه الخوادم في المحادثة عندما لا تكون قيد التشغيل. تستمر محاولة تشغيلها وتظل أدواتها متاحة.
