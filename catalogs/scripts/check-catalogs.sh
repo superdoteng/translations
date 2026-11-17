@@ -28,6 +28,7 @@ message_ids() {
 
 message_variables() {
   awk '
+    /^#/ { next }  # Comments mention variables without using them.
     /^[A-Za-z][A-Za-z0-9_-]*[[:space:]]*=/ { message_id = $1 }
     {
       line = $0
