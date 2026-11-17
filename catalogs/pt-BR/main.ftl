@@ -292,8 +292,8 @@ action-mark-unread = Marcar como não lido
 action-mark-read = Marcar como lido
 workspace-menu-change-icon = Ícone de Mudança...
 action-delete = Excluir
-theme-target-background = Contexto
-theme-target-accent = Sotaque
+theme-target-background = Plano de fundo
+theme-target-accent = Acento
 theme-target-highlight = Destaque
 theme-target-selection = Seleção
 project-pinned = Fixado
@@ -1773,7 +1773,7 @@ settings-extensions-trust-ask-all = Sempre
 settings-extensions-trust-all = Nunca
 settings-extensions-approvals-label = Extensões aprovadas
 settings-extensions-approvals-count = { $count ->
-    [one] 1 extensão pode executar sem perguntar
+    [one] { $count } extensão pode executar sem perguntar
    *[other] { $count } extensões podem executar sem perguntar
 }
 settings-extensions-forget = Esquecer aprovações
@@ -2168,7 +2168,7 @@ settings-ai-dispatch-reuse-prepare = Aba de reutilização (preparar)
 settings-ai-dispatch-reuse-submit = Aba de reutilização (enviar)
 settings-ai-dispatch-new-prepare = Nova aba (preparar)
 settings-ai-dispatch-new-submit = Nova aba (enviar)
-settings-ai-dispatch-background = Contexto
+settings-ai-dispatch-background = Segundo plano
 settings-ai-dispatch-reuse = Aba de reutilização
 settings-ai-dispatch-new = Nova aba
 settings-ai-mixed = Misto
@@ -2460,7 +2460,7 @@ theme-selected-thumbs-tooltip = Como a aba selecionada, o segmento do interrupto
 theme-selection-strength = Intensidade
 theme-selection-strength-tooltip = O quanto a aparência selecionada é forte.
 theme-selection-tinted = Tingido
-theme-selection-light = Leve
+theme-selection-light = Claro
 theme-selection-solid = Sólido
 theme-selection-subtle = Sutil
 theme-sample-used-for = Usado em
@@ -4173,8 +4173,8 @@ palette-issue-no-description = Sem descrição
 palette-issue-assigned-to = Atribuída a { $names }
 palette-issue-opened-by = Aberta por { $name }
 palette-issue-earlier-comments-hidden = Comentários anteriores não são mostrados
-palette-action-create-worktree-only = Só criar worktree
-palette-action-link-to-this-worktree = Vincular a este worktree
+palette-action-create-worktree-only = Criar apenas a árvore de trabalho
+palette-action-link-to-this-worktree = Vincular a esta árvore de trabalho
 palette-action-open-in-browser = Abrir no navegador
 palette-action-copy-key = Copiar chave
 palette-action-copy-branch-name = Copiar nome do branch
@@ -4446,7 +4446,7 @@ saved-secret-picker-body = O agente recebe um arquivo privado com ele, nunca o v
 saved-secret-picker-insert = Inserir
 saved-secret-picker-empty = Nenhum segredo salvo para este projeto ainda
 saved-secret-picker-empty-detail = Salve um pelo botão Salvar… de um segredo colado, quando um agente pedir, ou em Configurações → Segredos.
-saved-secret-picker-move = Mover
+saved-secret-picker-move = Navegar pela lista
 saved-secret-picker-add = Adicionar um segredo salvo…
 chat-secret-pill-token = Token de { $issuer }
 chat-secret-pill-private-key = Chave privada
@@ -4666,7 +4666,7 @@ resources-browser-services = Serviços do navegador
 resources-other-agents = Outros agentes
 resources-idle-chats =
     { $count ->
-        [one] 1 chat ocioso
+        [one] { $count } chat ocioso
        *[other] { $count } chats ociosos
     }
 resources-browser-graphics = Gráficos
@@ -4739,22 +4739,22 @@ resources-tab-browser = Navegador
 resources-tab-terminals = Terminais
 resources-count-chats =
     { $count ->
-        [one] 1 chat aberto
+        [one] { $count } chat aberto
        *[other] { $count } chats abertos
     }
 resources-count-agents =
     { $count ->
-        [one] 1 agente em execução
+        [one] { $count } agente em execução
        *[other] { $count } agentes em execução
     }
 resources-count-browser-tabs =
     { $count ->
-        [one] 1 aba do navegador
+        [one] { $count } aba do navegador
        *[other] { $count } abas do navegador
     }
 resources-count-terminals =
     { $count ->
-        [one] 1 terminal
+        [one] { $count } terminal
        *[other] { $count } terminais
     }
 resources-on-screen = Na tela, então continua ativo

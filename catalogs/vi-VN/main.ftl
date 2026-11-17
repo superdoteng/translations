@@ -289,9 +289,9 @@ action-mark-unread = Đánh dấu là chưa đọc
 action-mark-read = Đánh dấu là đã đọc
 workspace-menu-change-icon = Biểu tượng thay đổi...
 action-delete = Xóa
-theme-target-background = Bối cảnh
-theme-target-accent = Giọng địa phương
-theme-target-highlight = Điểm nổi bật
+theme-target-background = Nền
+theme-target-accent = Màu nhấn
+theme-target-highlight = Màu tô sáng
 theme-target-selection = Mục chọn
 project-pinned = đã ghim
 project-no-worktrees-found = Không tìm thấy cây làm việc
@@ -737,7 +737,7 @@ settings-keybindings-scope-files-tooltip = Hoạt động trong cây Tệp ở b
 settings-keybindings-scope-command-palette = Bảng lệnh
 settings-keybindings-scope-command-palette-tooltip = Hoạt động khi bảng lệnh hoặc một bộ chọn khác đang mở.
 settings-keybindings-scope-queue = Hàng đợi
-settings-keybindings-scope-queue-tooltip = Hoạt động khi danh sách Hàng đợi đang được tập trung.
+settings-keybindings-scope-queue-tooltip = Có tác dụng khi danh sách Hàng đợi đang nhận đầu vào từ bàn phím.
 settings-keybindings-scope-rich-text = Văn bản định dạng
 settings-keybindings-scope-rich-text-tooltip = Hoạt động trong các ô văn bản có định dạng, như ô nhập tin nhắn trò chuyện và bình luận đánh giá.
 settings-keybindings-scope-attachment-viewer = Trình xem tệp đính kèm
@@ -1462,7 +1462,7 @@ focus-card-close = Đóng cuộc trò chuyện
 focus-card-no-chats = Không có cuộc trò chuyện nào đang mở
 focus-close-title =
     { $count ->
-        [one] Đóng tab của cuộc trò chuyện này?
+        [1] Đóng tab của cuộc trò chuyện này?
        *[other] Đóng { $count } tab trò chuyện?
     }
 focus-close-description = Các cuộc trò chuyện vẫn nằm trong lịch sử. Cuộc trò chuyện đang chạy sẽ được giữ mở.
@@ -1766,7 +1766,7 @@ settings-extensions-trust-ask-all = Luôn luôn
 settings-extensions-trust-all = Không bao giờ
 settings-extensions-approvals-label = Tiện ích mở rộng đã phê duyệt
 settings-extensions-approvals-count = { $count ->
-    [one] 1 tiện ích mở rộng có thể chạy mà không cần hỏi
+    [1] 1 tiện ích mở rộng có thể chạy mà không cần hỏi
    *[other] { $count } tiện ích mở rộng có thể chạy mà không cần hỏi
 }
 settings-extensions-forget = Quên các phê duyệt
@@ -2161,7 +2161,7 @@ settings-ai-dispatch-reuse-prepare = Thẻ Tái sử dụng (chuẩn bị)
 settings-ai-dispatch-reuse-submit = Thẻ Tái sử dụng (gửi)
 settings-ai-dispatch-new-prepare = Tab mới (chuẩn bị)
 settings-ai-dispatch-new-submit = Tab mới (gửi)
-settings-ai-dispatch-background = Bối cảnh
+settings-ai-dispatch-background = Chạy nền
 settings-ai-dispatch-reuse = Thẻ Tái sử dụng
 settings-ai-dispatch-new = Tab mới
 settings-ai-mixed = Hỗn hợp
@@ -2880,11 +2880,11 @@ settings-keybinding-action-toggle-ignored-files = Chuyển đổi các tệp b�
 settings-keybinding-action-open-in-editor = Mở trong Trình chỉnh sửa
 settings-keybinding-action-open-worktree-pr = Mở Worktree PR / MR
 settings-keybinding-action-editor-picker-back = Trình chọn biên tập quay lại
-settings-keybinding-action-palette-global = Bảng màu: Chế độ Toàn cục
-settings-keybinding-action-palette-worktrees = Bảng màu: Cây làm việc
-settings-keybinding-action-palette-tabs = Bảng màu: Tab
-settings-keybinding-action-palette-files = Bảng màu: Tệp
-settings-keybinding-action-palette-commands = Bảng màu: Lệnh
+settings-keybinding-action-palette-global = Bảng lệnh: Chế độ Toàn cục
+settings-keybinding-action-palette-worktrees = Bảng lệnh: Cây làm việc
+settings-keybinding-action-palette-tabs = Bảng lệnh: Tab
+settings-keybinding-action-palette-files = Bảng lệnh: Tệp
+settings-keybinding-action-palette-commands = Bảng lệnh: Lệnh
 settings-keybinding-action-palette-conversations = Bảng lệnh: Cuộc trò chuyện
 settings-keybinding-action-palette-issues = Bảng lệnh: Issue
 settings-keybinding-action-palette-pull-requests = Bảng lệnh: Pull request
@@ -4305,7 +4305,7 @@ saved-secret-picker-body = Tác nhân nhận một tệp riêng tư chứa bí m
 saved-secret-picker-insert = Chèn
 saved-secret-picker-empty = Chưa có bí mật nào được lưu cho dự án này
 saved-secret-picker-empty-detail = Lưu một bí mật từ nút Lưu… của bí mật đã dán, khi tác nhân yêu cầu, hoặc trong Cài đặt → Bí mật.
-saved-secret-picker-move = Di chuyển
+saved-secret-picker-move = Chuyển mục
 saved-secret-picker-add = Thêm bí mật đã lưu…
 chat-secret-pill-token = Token { $issuer }
 chat-secret-pill-private-key = Khóa riêng tư
@@ -4525,7 +4525,7 @@ resources-browser-services = Dịch vụ trình duyệt
 resources-other-agents = Tác nhân khác
 resources-idle-chats =
     { $count ->
-        [one] 1 cuộc trò chuyện nhàn rỗi
+        [1] 1 cuộc trò chuyện nhàn rỗi
        *[other] { $count } cuộc trò chuyện nhàn rỗi
     }
 resources-browser-graphics = Đồ họa
@@ -4598,17 +4598,17 @@ resources-tab-browser = Trình duyệt
 resources-tab-terminals = Terminal
 resources-count-chats =
     { $count ->
-        [one] 1 cuộc trò chuyện đang mở
+        [1] 1 cuộc trò chuyện đang mở
        *[other] { $count } cuộc trò chuyện đang mở
     }
 resources-count-agents =
     { $count ->
-        [one] 1 tác nhân đang chạy
+        [1] 1 tác nhân đang chạy
        *[other] { $count } tác nhân đang chạy
     }
 resources-count-browser-tabs =
     { $count ->
-        [one] 1 tab trình duyệt
+        [1] 1 tab trình duyệt
        *[other] { $count } tab trình duyệt
     }
 resources-count-terminals =

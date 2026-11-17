@@ -1462,7 +1462,7 @@ focus-card-close = Tutup chat
 focus-card-no-chats = Tidak ada chat terbuka
 focus-close-title =
     { $count ->
-        [one] Tutup tab chat ini?
+        [1] Tutup tab chat ini?
        *[other] Tutup { $count } tab chat?
     }
 focus-close-description = Percakapan tetap ada di riwayat. Chat yang sedang berjalan dibiarkan terbuka.
@@ -1767,7 +1767,7 @@ settings-extensions-trust-all = Tidak pernah
 settings-extensions-approvals-label = Ekstensi yang disetujui
 settings-extensions-approvals-count =
     { $count ->
-        [one] 1 ekstensi boleh berjalan tanpa bertanya
+        [1] 1 ekstensi boleh berjalan tanpa bertanya
        *[other] { $count } ekstensi boleh berjalan tanpa bertanya
     }
 settings-extensions-forget = Lupakan persetujuan
@@ -2442,7 +2442,7 @@ theme-selected-thumbs-tooltip = Tampilan tab, segmen sakelar, dan tombol alih ak
 theme-selection-strength = Kekuatan
 theme-selection-strength-tooltip = Seberapa kuat tampilan terpilih.
 theme-selection-tinted = Berwarna
-theme-selection-light = Ringan
+theme-selection-light = Terang
 theme-selection-solid = Solid
 theme-selection-subtle = Halus
 theme-sample-used-for = Digunakan untuk
@@ -4526,7 +4526,7 @@ resources-browser-services = Layanan browser
 resources-other-agents = Agen lain
 resources-idle-chats =
     { $count ->
-        [one] 1 chat menganggur
+        [1] 1 chat menganggur
        *[other] { $count } chat menganggur
     }
 resources-browser-graphics = Grafis
@@ -4599,22 +4599,22 @@ resources-tab-browser = Browser
 resources-tab-terminals = Terminal
 resources-count-chats =
     { $count ->
-        [one] 1 chat terbuka
+        [1] 1 chat terbuka
        *[other] { $count } chat terbuka
     }
 resources-count-agents =
     { $count ->
-        [one] 1 agen berjalan
+        [1] 1 agen berjalan
        *[other] { $count } agen berjalan
     }
 resources-count-browser-tabs =
     { $count ->
-        [one] 1 tab browser
+        [1] 1 tab browser
        *[other] { $count } tab browser
     }
 resources-count-terminals =
     { $count ->
-        [one] 1 terminal
+        [1] 1 terminal
        *[other] { $count } terminal
     }
 resources-on-screen = Ada di layar, jadi tetap terjaga

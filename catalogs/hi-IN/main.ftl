@@ -108,8 +108,8 @@ file-save = सहेजें
 file-preview = पूर्वसमीक्षा
 file-open-in = में खोलें...
 chat-empty-title = { $provider } साथ चैट करें
-chat-start-work-before = इसमें आप क्या बनाना चाहते हैं:
-chat-start-work-after = ?
+chat-start-work-before = आप
+chat-start-work-after = में क्या बनाना चाहते हैं?
 chat-greeting-morning = सुप्रभात{ $name }।
 chat-greeting-afternoon = शुभ अपराह्न{ $name }।
 chat-greeting-evening = शुभ संध्या{ $name }।
@@ -291,8 +291,8 @@ action-mark-read = पठित के रूप में चिह्नित
 workspace-menu-change-icon = आइकन बदलें...
 action-delete = मिटाना
 theme-target-background = पृष्ठभूमि
-theme-target-accent = उच्चारण
-theme-target-highlight = मुख्य आकर्षण
+theme-target-accent = एक्सेंट
+theme-target-highlight = हाइलाइट
 theme-target-selection = चयन
 project-pinned = पिन किया गया
 project-no-worktrees-found = कोई वर्कट्री नहीं मिला
@@ -1684,7 +1684,7 @@ settings-remote-background-auth-description = बैकग्राउंड र
 settings-remote-ssh-auth-label = प्रमाणीकरण SSH
 settings-remote-ssh-auth-description = अपने सिस्टम ssh-agent या macOS Keychain के साथ SSH कुंजियों का उपयोग करें। बैकग्राउंड रिमोट रिफ्रेश कभी भी पासवर्ड नहीं मांगते हैं।
 settings-remote-cli-label = { $app_name } CLI
-settings-remote-cli-description = होस्ट पर `se` CLI स्थापित करें या अद्यतन करें। शक्तियां अपडेट, एजेंट सूचनाएं और स्वचालित शाखा नामकरण Git लाइव रहती हैं।
+settings-remote-cli-description = होस्ट पर `se` CLI इंस्टॉल या अपडेट करें। इससे Git के लाइव अपडेट, एजेंट की सूचनाएँ और शाखाओं का अपने आप नामकरण संभव होता है।
 settings-remote-cli-auto-update-label = CLI स्वचालित रूप से अद्यतित रखें
 settings-remote-cli-auto-update-description = इस होस्ट पर CLI को स्थापित करें और अपडेट करें, बिना यह पूछे कि यह कब गायब है या पुराना है। यदि अक्षम किया गया है, तो आपको संकेत दिया जाएगा और आप ऊपर दिए गए बटन का उपयोग कर सकते हैं।
 settings-remote-cli-installing = स्थापित करना...
@@ -1771,7 +1771,7 @@ settings-extensions-trust-ask-all = हमेशा
 settings-extensions-trust-all = कभी नहीं
 settings-extensions-approvals-label = अनुमोदित एक्सटेंशन
 settings-extensions-approvals-count = { $count ->
-    [one] 1 एक्सटेंशन बिना पूछे चल सकता है
+    [one] { $count } एक्सटेंशन बिना पूछे चल सकता है
    *[other] { $count } एक्सटेंशन बिना पूछे चल सकते हैं
 }
 settings-extensions-forget = अनुमोदन भूल जाएँ
@@ -2415,8 +2415,8 @@ theme-close-tooltip = बंद करें (Esc)। आपके बदला�
 theme-mode-tooltip = लाइट और डार्क दोनों के अपने रंग होते हैं। चुनें कि आप किसे संपादित कर रहे हैं।
 theme-background-tooltip = विंडो का रंग, जो साइडबार और ऊपर-नीचे की पट्टियों के लिए उपयोग होता है।
 theme-accent-tooltip = चुनी गई या चालू चीज़ों को चिह्नित करता है: बटन, स्विच, वर्तमान पंक्ति और टैब।
-theme-highlight-tooltip = चुने गए टेक्स्ट, खोज मिलान और लिंक को रंगता है। जब तक आप कोई रंग न चुनें, उच्चारण का अनुसरण करता है।
-theme-selection-tooltip = चुनी गई पंक्ति, टैब और स्विच कैसे दिखते हैं, और उनमें उच्चारण कितना गहरा है।
+theme-highlight-tooltip = चुने हुए टेक्स्ट, खोज में मिले अंशों और लिंक का रंग तय करता है। जब तक आप कोई रंग नहीं चुनते, एक्सेंट रंग इस्तेमाल होता है।
+theme-selection-tooltip = चुनी हुई पंक्ति, टैब और स्विच कैसे दिखते हैं और उनमें एक्सेंट रंग कितना उभरता है।
 theme-background-description = विंडो स्वयं: साइडबार और पट्टियाँ।
 theme-accent-description = जो चुना गया या चालू है: बटन, स्विच, वर्तमान पंक्ति।
 theme-highlight-description = चुना गया टेक्स्ट, खोज मिलान और लिंक।
@@ -2431,8 +2431,8 @@ theme-eyedropper-tooltip = अपनी स्क्रीन पर कही�
 theme-hex-tooltip = hex रंग टाइप या पेस्ट करें।
 theme-gradient-tooltip = विंडो पर दो पृष्ठभूमि रंगों को मिलाएँ। कैनवास पर हर एक का अपना हैंडल होता है।
 theme-gradient-direction = ग्रेडिएंट की दिशा बदलें।
-theme-accent-auto-tooltip = चालू: ऐप आपकी पृष्ठभूमि से मेल खाता उच्चारण चुनता है। कोई रंग चुनने पर यह बंद हो जाता है।
-theme-highlight-auto-tooltip = चालू: मुख्य आकर्षण आपके उच्चारण का अनुसरण करता है। कोई रंग चुनने पर यह बंद हो जाता है।
+theme-accent-auto-tooltip = चालू होने पर ऐप आपकी पृष्ठभूमि से मेल खाता एक्सेंट रंग चुनता है। कोई रंग चुनने पर यह विकल्प बंद हो जाता है।
+theme-highlight-auto-tooltip = चालू होने पर हाइलाइट का रंग एक्सेंट रंग से मेल खाता है। कोई रंग चुनने पर यह विकल्प बंद हो जाता है।
 theme-swatches-tooltip = प्रीसेट और आपके अन्य कार्यक्षेत्रों के रंग।
 theme-group-sidebar-bars = साइडबार और पट्टियाँ
 theme-group-content = सामग्री
@@ -4398,7 +4398,7 @@ saved-secret-picker-body = एजेंट को इसे रखने वा�
 saved-secret-picker-insert = डालें
 saved-secret-picker-empty = इस परियोजना के लिए अभी तक कोई सहेजी गई गोपनीय जानकारी नहीं
 saved-secret-picker-empty-detail = पेस्ट की गई गोपनीय जानकारी के सहेजें… बटन से, एजेंट के माँगने पर, या सेटिंग्स → गोपनीय जानकारी में एक सहेजें।
-saved-secret-picker-move = ले जाएँ
+saved-secret-picker-move = चयन बदलें
 saved-secret-picker-add = सहेजी गई गोपनीय जानकारी जोड़ें…
 chat-secret-pill-token = { $issuer } टोकन
 chat-secret-pill-private-key = निजी कुंजी
@@ -4618,7 +4618,7 @@ resources-browser-services = ब्राउज़र सेवाएँ
 resources-other-agents = अन्य एजेंट
 resources-idle-chats =
     { $count ->
-        [one] 1 निष्क्रिय चैट
+        [one] { $count } निष्क्रिय चैट
        *[other] { $count } निष्क्रिय चैट
     }
 resources-browser-graphics = ग्राफ़िक्स
@@ -4691,22 +4691,22 @@ resources-tab-browser = ब्राउज़र
 resources-tab-terminals = टर्मिनल
 resources-count-chats =
     { $count ->
-        [one] 1 चैट खुली
+        [one] { $count } चैट खुली
        *[other] { $count } चैट खुली
     }
 resources-count-agents =
     { $count ->
-        [one] 1 एजेंट चल रहा है
+        [one] { $count } एजेंट चल रहा है
        *[other] { $count } एजेंट चल रहे हैं
     }
 resources-count-browser-tabs =
     { $count ->
-        [one] 1 ब्राउज़र टैब
+        [one] { $count } ब्राउज़र टैब
        *[other] { $count } ब्राउज़र टैब
     }
 resources-count-terminals =
     { $count ->
-        [one] 1 टर्मिनल
+        [one] { $count } टर्मिनल
        *[other] { $count } टर्मिनल
     }
 resources-on-screen = स्क्रीन पर है, इसलिए जागा रहता है

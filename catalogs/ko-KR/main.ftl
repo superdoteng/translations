@@ -1288,7 +1288,7 @@ settings-extensions-trust-ask-all = 항상
 settings-extensions-trust-all = 안 함
 settings-extensions-approvals-label = 승인된 확장 프로그램
 settings-extensions-approvals-count = { $count ->
-    [one] 확장 프로그램 1개를 묻지 않고 실행할 수 있습니다
+    [1] 확장 프로그램 1개를 묻지 않고 실행할 수 있습니다
    *[other] 확장 프로그램 { $count }개를 묻지 않고 실행할 수 있습니다
 }
 settings-extensions-forget = 승인 기록 지우기
@@ -2671,7 +2671,7 @@ focus-card-close = 채팅 닫기
 focus-card-no-chats = 열린 채팅 없음
 focus-close-title =
     { $count ->
-        [one] 이 채팅 탭을 닫을까요?
+        [1] 이 채팅 탭을 닫을까요?
        *[other] 채팅 탭 { $count }개를 닫을까요?
     }
 focus-close-description = 대화는 기록에 남습니다. 실행 중인 채팅은 열린 상태로 유지됩니다.
@@ -4837,7 +4837,7 @@ resources-browser-services = 브라우저 서비스
 resources-other-agents = 기타 에이전트
 resources-idle-chats =
     { $count ->
-        [one] 유휴 채팅 1개
+        [1] 유휴 채팅 1개
        *[other] 유휴 채팅 { $count }개
     }
 resources-browser-graphics = 그래픽
@@ -4907,22 +4907,22 @@ resources-tab-browser = 브라우저
 resources-tab-terminals = 터미널
 resources-count-chats =
     { $count ->
-        [one] 열린 채팅 1개
+        [1] 열린 채팅 1개
        *[other] 열린 채팅 { $count }개
     }
 resources-count-agents =
     { $count ->
-        [one] 실행 중인 에이전트 1개
+        [1] 실행 중인 에이전트 1개
        *[other] 실행 중인 에이전트 { $count }개
     }
 resources-count-browser-tabs =
     { $count ->
-        [one] 브라우저 탭 1개
+        [1] 브라우저 탭 1개
        *[other] 브라우저 탭 { $count }개
     }
 resources-count-terminals =
     { $count ->
-        [one] 터미널 1개
+        [1] 터미널 1개
        *[other] 터미널 { $count }개
     }
 resources-on-screen = 화면에 표시되어 있어 깨어 있는 상태로 유지됩니다
