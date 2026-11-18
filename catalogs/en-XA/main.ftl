@@ -4001,6 +4001,11 @@ settings-ai-free-predictions-label = [!! Þŕëđïçţ ƒŕôṁ ţħïš ŵô�
 settings-ai-free-predictions-description = [!! Çôṁþľëţë çħàñĝëđ ƒïľëš, çħàţš, šçŕïþţš, ŵôŕķţŕëëš, ÞŔš, àñđ ţëŕṁïñàľš àš ÿôü ţÿþë. Šüĝĝëšţ ţħë ŕëþľÿ'š ôƒƒëŕëđ ñëẋţ šţëþ, à ƒàïľïñĝ çħëçķ, ôŕ ñëŵ ŕëṽïëŵ çôṁṁëñţš. Ñô ţôķëñš. !!]
 settings-ai-model-predictions-label = [!! Àšķ ÿôüŕ ṁôđëľ ŵħëñ üñšüŕë !!]
 settings-ai-model-predictions-description = [!! Ŵħëñ ţħë ŕëþľÿ àñđ ŵôŕķţŕëë šüĝĝëšţ ñôţħïñĝ, Çľàüđë ôŕ Çôđëẋ þŕëđïçţš ÿôüŕ ñëẋţ ṁëššàĝë ƒŕôṁ ţħë çôñṽëŕšàţïôñ. Üšëš à ľïţţľë ôƒ ÿôüŕ þľàñ, ñëṽëŕ ŵħïľë ÿôü ţÿþë, àñđ þàüšëš ñëàŕ ÿôüŕ þľàñ'š ľïṁïţ. !!]
+settings-ai-prediction-spend-asked = [!! Àšķëđ !!]
+settings-ai-prediction-spend-accepted = [!! Àççëþţëđ !!]
+settings-ai-prediction-spend-tokens = [!! Ţôķëñš !!]
+settings-ai-prediction-spend-cost = [!! Çôšţ !!]
+settings-ai-prediction-spend-note = [!! Ŀàšţ 7 đàÿš àţ ÀÞÏ þŕïçëš. ≈ Çľàüđë đôëšñ'ţ ŕëþôŕţ þŕëđïçţïôñ ţôķëñš, šô ïţš ƒïĝüŕëš àŕë ëšţïṁàţëđ. !!]
 
 settings-ai-provider-fx-description = [!! Ëñàþľë fx çħàţ àñđ ţëŕṁïñàľ šüþþôŕţ (ŕëʠüïŕëš fx CLI `fx` ïñšţàľľëđ). !!]
 
