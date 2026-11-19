@@ -4143,7 +4143,7 @@ palette-action-start-in = { $worktree }에서 시작
 
 palette-action-group-another-agent = 다른 에이전트
 
-palette-action-start-with = { $provider }로 시작
+palette-action-start-with = { $provider }에서 시작
 
 palette-mode-pull-requests = { $forge ->
     [gitlab] 머지 리퀘스트
@@ -4671,9 +4671,9 @@ settings-search-section-resources = 리소스
 settings-search-entry-appearance-resources-show-freeable-memory-label = 확보 가능한 메모리 표시
 settings-search-entry-appearance-resources-show-freeable-memory-description = 유휴 탭을 잠자기 상태로 전환하면 확보할 수 있는 메모리 양을 리소스 버튼에 표시하고, Mac의 메모리 사용량이 높으면 버튼에 색을 표시합니다.
 settings-section-resources = 리소스
-chat-queued-waiting-to-steer = 방향 전환 대기 중
+chat-queued-waiting-to-steer = 바로 보내기 대기 중
 chat-queued-action-no-longer-queued = 이 메시지는 더 이상 대기열에 없습니다.
-chat-queued-steer-failed = 이 메시지로 방향을 전환하지 못했습니다.
+chat-queued-steer-failed = 이 메시지를 바로 보내지 못했습니다.
 chat-queued-change-failed = 이 메시지를 변경하지 못했습니다.
 changes-empty-detail = 이 워크트리에서 사용자나 에이전트가 수정한 내용이 여기에 표시됩니다.
 changes-empty-turns = 아직 턴이 없습니다
@@ -4945,7 +4945,7 @@ resources-tree-more = +{ $count }개 더
 issue-report-check-submission = 제출 상태 확인
 issue-report-submission-uncertain = 이 보고서가 이미 GitHub에 있을 수 있습니다. 제출 상태를 확인하여 찾아보세요. 확인 시 다시 게시되지 않습니다. 아직 찾을 수 없다면 잠시 기다린 후 다시 확인하거나, 이 초안을 삭제하기 전에 GitHub에서 본인의 이슈를 검토하세요.
 issue-report-discard-uncertain = 초안 삭제 (보고서가 이미 있을 수 있음)
-issue-report-draft-load-failed = 저장된 보고서를 읽을 수 없습니다. 다른 보고서를 제출하기 전에 저장소 문제를 해결하고 앱을 다시 시작하세요.
+issue-report-draft-load-failed = 저장된 보고서를 읽을 수 없습니다. 다른 보고서를 제출하기 전에 저장 공간 문제를 해결하고 앱을 다시 시작하세요.
 review-comment-edit-staged = 편집하기 전에 입력창에서 이 리뷰를 제거하세요.
 
 chat-edit-skill-as-text = 스킬을 텍스트로 편집
