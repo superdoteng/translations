@@ -108,6 +108,8 @@ file-save = Сохранить
 file-preview = Превью
 file-open-in = Открой...
 chat-empty-title = Общайтесь с { $provider }
+chat-start-work-before = Что вы хотите создать в
+chat-start-work-after = ?
 chat-greeting-morning = Доброе утро{ $name }.
 chat-greeting-afternoon = Добрый день{ $name }.
 chat-greeting-evening = Добрый вечер{ $name }.
@@ -295,12 +297,10 @@ action-mark-unread = Отметить как непрочитанное
 action-mark-read = Отметить как прочитанное
 workspace-menu-change-icon = Иконка смены...
 action-delete = Удалить
-theme-customize-title = Настройка темы
-theme-target-background = Предыстория
+theme-target-background = Фон
 theme-target-accent = Акцент
-theme-target-highlight = Основные моменты
-theme-intensity = Интенсивность
-action-reset = Сброс
+theme-target-highlight = Подсветка
+theme-target-selection = Выделение
 project-pinned = Удержано
 project-no-worktrees-found = Рабочих деревьев не найдено
 project-loading-merge-options = Загрузка опций слияния
@@ -385,9 +385,15 @@ common-welcome-to-app = Добро пожаловать в { $app_name }
 notification-close-chat-running = Остановите чат, прежде чем закрывать его вкладку
 notification-dismiss = Уведомление об отклонении
 notification-dismiss-below = Скрыть всё ниже
+notification-dismiss-chat = Скрыть уведомления этого чата
 notification-dismiss-worktree = Скрыть уведомления этого рабочего дерева
 notification-empty-all = Нет сообщений
 notification-empty-queue = Очередь свободна
+notification-group-by-chat = Группировать по чатам
+notification-group-by-feature = Группировать по функциям
+notification-group-chat = Чат
+notification-group-feature = Функция
+notification-group-header = Группировать по
 notification-agents-running =
     { $count ->
         [one] Выполняется { $count } агент
@@ -422,6 +428,7 @@ notification-shortcut-send-advance = Отправьте своё сообщен�
 notification-shortcut-send-unread = Отправьте текущий чат в очередь как непрочитанный
 notification-shortcut-source-chat = Перейдите в исходный чат
 notification-shortcut-toggle-all = Развернуть или свернуть всё на этой странице
+notification-shortcut-toggle-grouping = Группировать карточки по функциям или по чатам
 notification-shortcut-toggle-preview = Показать или скрыть предпросмотр разговора
 notification-shortcut-undo-dismissal = Отменить последнее скрытие
 notification-shortcuts-from-anywhere = Откуда угодно
@@ -433,6 +440,7 @@ notification-view-open = Открыто
 notification-view-ready = Готово
 notification-view-running = Бег
 onboarding-install-link = Установка ↗
+onboarding-view-on-github-link = Открыть на GitHub ↗
 common-back = Назад
 common-hide = Скрыть
 onboarding-bypass-codex-note = Codex также работает без своей песочницы.
@@ -475,6 +483,7 @@ onboarding-preview-reply = Готово. Тест теперь ждёт кноп
 welcome-add-project-subtitle = Добавьте проект, чтобы запустить первого агента.
 welcome-setup-summary = Новые чаты используют { $harness } с { $model }.
 welcome-change-in-settings = Изменить в настройках
+welcome-optional = Необязательно
 onboarding-terminal = Терминал
 project-modal-display-name = Отобразное имя
 project-modal-rename-title = Проект переименования
@@ -640,6 +649,7 @@ settings-category-appearance = Внешний вид
 settings-category-notifications = Уведомления
 settings-category-command-palette = Палитра команд
 settings-category-privacy = Конфиденциальность
+settings-category-secrets = Секреты
 settings-category-worktrees = Рабочие деревья
 settings-category-general-description = Основное поведение приложения и ярлыки.
 settings-category-agents-description = Маршрутизация провайдера, шаблоны запросов и правила выполнения для каждого действия агента.
@@ -651,6 +661,7 @@ settings-category-appearance-description = Визуальные предпочт
 settings-category-notifications-description = Поведение предупреждения и настройка звука.
 settings-category-command-palette-description = Выберите источники, которые появляются в палитре команд.
 settings-category-privacy-description = Анонимное управление телеметрией использования.
+settings-category-secrets-description = Секреты в системной связке ключей, которые могут использовать агенты.
 settings-category-worktrees-description = По умолчанию для действий жизненного цикла рабочего дерева.
 settings-category-devices = Устройства
 settings-mobile-push-desktop-idle-label = Уведомлять телефон после бездействия
@@ -722,6 +733,29 @@ settings-keybindings-escape-cancel = Esc cancel
 settings-keybindings-disabled = Отключение
 settings-keybindings-disabled-tooltip = Этот ярлык отключён.
 settings-keybindings-remove = Удалить
+settings-keybindings-reset = Сбросить
+settings-keybindings-scope-chat = Чат
+settings-keybindings-scope-chat-tooltip = Работает во вкладке чата, включая поле ввода сообщения.
+settings-keybindings-scope-terminal = Терминал
+settings-keybindings-scope-terminal-tooltip = Работает, когда терминал в фокусе, включая панель поиска.
+settings-keybindings-scope-file-editor = Редактор файлов
+settings-keybindings-scope-file-editor-tooltip = Работает в файле, открытом в редакторе, включая панель поиска.
+settings-keybindings-scope-diff = Дифф
+settings-keybindings-scope-diff-tooltip = Работает в просмотре диффа, включая панель поиска.
+settings-keybindings-scope-browser = Браузер
+settings-keybindings-scope-browser-tooltip = Работает во вкладке браузера, включая панель поиска на странице.
+settings-keybindings-scope-changes = Изменения
+settings-keybindings-scope-changes-tooltip = Работает в списке «Изменения» на правой панели.
+settings-keybindings-scope-files = Файлы
+settings-keybindings-scope-files-tooltip = Работает в дереве «Файлы» на правой панели.
+settings-keybindings-scope-command-palette = Палитра команд
+settings-keybindings-scope-command-palette-tooltip = Работает, пока открыта палитра команд или другой список выбора.
+settings-keybindings-scope-queue = Очередь
+settings-keybindings-scope-queue-tooltip = Работает, когда список «Очередь» в фокусе.
+settings-keybindings-scope-rich-text = Форматированный текст
+settings-keybindings-scope-rich-text-tooltip = Работает в полях с форматированием, например в поле сообщения чата и комментариях ревью.
+settings-keybindings-scope-attachment-viewer = Просмотр вложений
+settings-keybindings-scope-attachment-viewer-tooltip = Работает при просмотре вложения, например изображения.
 settings-keybindings-enabled = Включено
 settings-keybindings-enabled-tooltip = Этот ярлык включён.
 settings-keybindings-edit-in-shortcuts = Редактировать в ярлыках
@@ -774,6 +808,50 @@ settings-repository-project-icon-label = Иконка проекта
 settings-repository-project-icon-description = Выберите автоматический аватар, без иконки, инициалы, символ, эмодзи, изображение или фавикон на сайте.
 settings-repository-scripts-section = Сценарии
 settings-repository-scripts-description = Строки выполняются по порядку в одной оболочке и останавливаются при первой ошибке. Переопределите настройки скриптов для каждого репозитория через .super.engineering/config.json.
+settings-repository-issues-section = Проблемы
+settings-repository-issues-description = Начинайте работу с проблемы: выберите её в разделе «Проблемы» палитры команд, и для неё будет создано рабочее дерево.
+settings-repository-issues-github-label = GitHub
+settings-repository-issues-no-github = Этот проект размещён не на GitHub. Вы всё равно можете добавить проблемы из другого репозитория GitHub или из Linear.
+settings-repository-issues-gh-missing-title = GitHub CLI не установлен
+settings-repository-issues-gh-missing-description = super.engineering получает проблемы GitHub через GitHub CLI (gh).
+settings-repository-issues-gh-install = Установить GitHub CLI
+settings-repository-issues-gh-signed-out-title = Вход в { $host } не выполнен
+settings-repository-issues-gh-signed-out-description = Выполните это в терминале и проверьте снова:
+settings-repository-issues-gh-copy-command = Копировать команду
+settings-repository-issues-check-again = Проверить снова
+settings-repository-issues-own-label = Этот репозиторий
+settings-repository-issues-own-description = Проблемы из { $repository }.
+settings-repository-issues-own-description-generic = Проблемы из репозитория GitHub этого проекта.
+settings-repository-issues-labels-caption = Только метки
+settings-repository-issues-labels-placeholder = Любая метка
+settings-repository-issues-open-count = Открыто: { $count }
+settings-repository-issues-open-count-filtered = Открыто с этими метками: { $count }
+settings-repository-issues-linear-status = Подключите Linear, чтобы показать проблемы этой команды
+settings-repository-issues-add-placeholder = Добавить ещё репозиторий: owner/repo или ссылка GitHub
+settings-repository-issues-add = Добавить
+settings-repository-issues-add-invalid = Укажите репозиторий GitHub в виде owner/repo, host/owner/repo или ссылки.
+settings-repository-issues-add-duplicate = Этот репозиторий уже в списке.
+settings-repository-issues-add-own = Собственный репозиторий проекта уже включён.
+settings-repository-issues-add-host = Можно добавить только github.com и хост этого репозитория.
+settings-repository-issues-add-linear-not-connected = Подключите Linear, чтобы добавить команду.
+settings-repository-issues-add-unknown-team = Команды Linear с таким ключом нет.
+settings-repository-issues-add-loading = Ещё загружается…
+settings-repository-issues-disabled = Проблемы отключены для этого репозитория на GitHub
+settings-repository-issues-untrusted-host = Не показано: разрешены только github.com и хост этого репозитория
+settings-repository-issues-linear-label = Linear
+settings-repository-issues-linear-connect-title = Подключить Linear
+settings-repository-issues-linear-description = Показывает проблемы команды Linear в этом проекте. Использует личный API-ключ, хранящийся в вашей связке ключей.
+settings-repository-issues-linear-key-rejected = Linear больше не принимает сохранённый ключ. Отключитесь и подключитесь снова с новым ключом.
+settings-repository-issues-linear-key-placeholder = 2 · Вставьте ключ
+settings-repository-issues-linear-create-key = 1 · Создайте ключ в Linear
+settings-repository-issues-linear-connect = Подключить
+settings-repository-issues-linear-connecting = Подключение…
+settings-repository-issues-linear-disconnect = Отключить
+settings-repository-issues-linear-add-team = Добавьте команду, чтобы показывать её проблемы в этом проекте:
+settings-repository-issues-linear-no-teams = С этим ключом не видно ни одной команды Linear.
+settings-repository-issues-linear-connected = Подключено как { $viewer } · { $organization }
+settings-repository-issues-linear-connected-pending = Подключено
+settings-repository-issues-linear-connected-env = Подключено через LINEAR_API_KEY
 settings-repository-ai-section = AI
 settings-repository-ai-tier-label = Уровень
 settings-repository-ai-tier-description = Переопределяет глобальный уровень для этого проекта.
@@ -958,6 +1036,9 @@ settings-section-automatic-naming = Автоматическое наимено�
 settings-theme-system = Система
 settings-theme-light = Свет
 settings-theme-dark = Тёмная
+settings-contrast-system = Системная
+settings-contrast-standard = Стандартная
+settings-contrast-more = Повышенная
 settings-tab-placement-top = Верх
 settings-tab-placement-bottom = Дно
 settings-tab-placement-left = Налево
@@ -1381,6 +1462,30 @@ risk-initialize-large-folder-message = { $warning } Это создаст { $git
 risk-initialize-git-title = Инициализировать Git?
 risk-initialize-git-message = Это создаст { $git_path } и сделает выбранную папку Git репозиторием. { $app_name } буду использовать этот Git репозиторий для отслеживания ветвей и создания рабочих деревьев.
 sidebar-projects = Проекты
+focus-page-all-workspaces = Все рабочие пространства
+focus-page-empty = Нет открытых чатов
+focus-page-active-empty = Ничего не требует вашего внимания
+focus-page-new = Новая функция
+focus-section-active = Активные
+focus-section-working = Выполняются
+focus-section-open = Открытые
+focus-sort-header = Сортировать функции по
+focus-sort-header-chats = Сортировать чаты по
+focus-sort-last-user-message = Последнее сообщение пользователя
+focus-sort-activity = Активность
+focus-card-dismiss = Скрыть
+focus-card-close = Закрыть чаты
+focus-card-no-chats = Нет открытых чатов
+focus-close-title =
+    { $count ->
+        [one] Закрыть { $count } вкладку чата?
+        [few] Закрыть { $count } вкладки чатов?
+        [many] Закрыть { $count } вкладок чатов?
+       *[other] Закрыть { $count } вкладки чатов?
+    }
+focus-close-description = Беседы останутся в истории. Выполняющиеся чаты останутся открытыми.
+focus-mode-show-focus = Показать фокус
+focus-mode-show-worktrees = Показать рабочие деревья
 sort-recent-activity = Недавняя деятельность
 sort-most-activity = Основная активность
 sort-last-user-message = Последнее сообщение пользователя
@@ -1409,6 +1514,11 @@ toast-state-file-quarantined = Не удалось загрузить { $file },
 toast-state-file-write-blocked = Не удалось безопасно сохранить исходный файл { $file }. Изменения не будут сохраняться, пока проблема с файлом не будет устранена.
 toast-notification = Уведомление
 toast-cannot-create-worktree = Не могу создать рабочее дерево
+toast-issue-no-source = У этого проекта нет источника проблем.
+toast-issue-branch-taken = Ветка { $branch } уже извлечена для { $issue }.
+toast-issue-untrusted-host = Проблемы на { $host } нельзя открыть: разрешены только github.com и собственный хост проекта.
+toast-issue-linear-not-connected = Подключите Linear в Настройки → Проекты → этот проект → Проблемы, чтобы открывать проблемы Linear.
+toast-issues-shared-workspace = Проблемы пока не поддерживаются в рабочих пространствах с несколькими репозиториями.
 toast-create-worktree-failed = Создание рабочего дерева не удалось
 toast-delete-worktree-failed = Не удалось удалить рабочее дерево
 toast-delete-child-worktree-failed = Не удалось удалить дочернее рабочее дерево
@@ -1469,8 +1579,19 @@ toast-cli-unavailable-naming-fallback = CLI всё ещё устанавлива
 toast-git-already-initialized = Git уже инициализован.
 toast-git-initialized = Git инициализация
 toast-git-initialization-failed = Git инициализация не удалась
+toast-forge-cli-recommended = Рекомендуется { $cli }
+toast-github-cli-recommended-message = Установите GitHub CLI (`gh`), чтобы управлять pull request и проверками для { $project } здесь. После установки выполните `gh auth login`.
+toast-gitlab-cli-recommended-message = Установите GitLab CLI (`glab`), чтобы управлять merge request и пайплайнами для { $project } здесь. После установки выполните `glab auth login`.
 toast-gitlab-cli-required = GitLab CLI обязательным
 toast-gitlab-cli-required-message = Установите GitLab CLI (`glab`) для использования GitLab запросов слияния.
+toast-review-request-opened-in-browser = { $forge } открыт в браузере
+toast-github-cli-browser-fallback-message = Установите GitHub CLI (`gh`), чтобы создавать pull request здесь. После установки выполните `gh auth login`.
+toast-gitlab-cli-browser-fallback-message = Установите GitLab CLI (`glab`), чтобы создавать merge request здесь. После установки выполните `glab auth login`.
+toast-bitbucket-cli-browser-fallback-message = Чтобы создавать pull request здесь, можно установить `bkt` — сторонний CLI, не связанный с Atlassian. { $app_name } никогда не видит ваш токен.
+toast-forge-cli-signed-out-message = Войдите с помощью `{ $command }`, чтобы в следующий раз обойтись без браузера.
+toast-forge-cli-not-set-up-message = { $cli } не настроен на этом Mac.
+toast-github-login-required = Требуется вход в GitHub
+toast-github-login-required-message = Выполните `gh auth login`, чтобы использовать pull request GitHub.
 toast-gitlab-login-required = GitLab требуется вход
 toast-gitlab-login-required-message = Запустите `glab auth login`, чтобы использовать GitLab merge requests.
 toast-bitbucket-cli-required = Требуется Bitbucket CLI
@@ -1578,7 +1699,7 @@ settings-remote-background-auth-description = Для фонового обнов
 settings-remote-ssh-auth-label = SSH аутентификация
 settings-remote-ssh-auth-description = Используйте SSH ключи с вашим системным ssh-агентом или macOS Keychain. Фоновые удалённые обновления никогда не запрашивают пароли.
 settings-remote-cli-label = { $app_name } CLI
-settings-remote-cli-description = Установите или обновите `sc` CLI на хосте. Полномочия живут Git обновления, уведомления агентов и автоматическое наименование ветвей.
+settings-remote-cli-description = Установите или обновите `se` CLI на хосте. Полномочия живут Git обновления, уведомления агентов и автоматическое наименование ветвей.
 settings-remote-cli-auto-update-label = Держите CLI в актуальном состоянии автоматически
 settings-remote-cli-auto-update-description = Установите и обновите CLI на этом хосте, не спрашивая, когда он отсутствует или устарел. Если отключено, вам будет предложено, и вы сможете использовать кнопку выше.
 settings-remote-cli-installing = Установка...
@@ -1610,6 +1731,8 @@ settings-experimental-auto-compact-label = Автоматическое сжат
 settings-experimental-auto-compact-description = Если ход Claude Code не удаётся из-за превышения контекстного окна модели, автоматически запустите /compact и повторно отправьте последнее сообщение. Полезно для бэкендов без 1M-контекста (например, GLM5.1), где Claude Code CLAUDE_CODE_AUTO_COMPACT_WINDOW не срабатывает в режиме -p.
 settings-experimental-review-label = Обзор
 settings-experimental-review-description = Запускайте диспетчеры проверки в терминалах безголового провайдера и ведите AI историю задач.
+settings-experimental-focus-mode-label = Режим фокуса
+settings-experimental-focus-mode-description = Добавляет на левую боковую панель страницу фокуса с карточками чатов в очереди, выполняющихся и открытых, а также кнопку в заголовке окна для перехода к ней.
 settings-storage-conversation-label = Хранение разговоров
 settings-storage-status-label = Статус
 settings-storage-analyze = Анализ
@@ -1645,6 +1768,37 @@ settings-diagnostics-bundle-description = Создайте архив подде
 settings-diagnostics-helper-status-label = Codex статус помощника
 settings-diagnostics-status-label = Статус диагностики
 settings-privacy-telemetry-heading = Телеметрия
+settings-extensions-heading = Расширения
+settings-category-extensions = Расширения
+settings-category-extensions-description = Представления, созданные вами и агентами, и когда им нужно одобрение.
+settings-extensions-build-label = Создать расширение
+settings-extensions-build-description = Опишите представление, и агент создаст его вместе с вами рядом с живым превью.
+settings-extensions-opens-tab = Открывается во вкладке
+settings-extensions-opens-pane = Открывается рядом с работой
+settings-extensions-opens-dialog = Открывается в диалоге
+settings-extensions-opens-sidebar = Открывается на боковой панели
+settings-extensions-empty = Создайте расширение кнопкой выше: опишите его в чате с агентом рядом с живым превью.
+settings-extensions-approval-heading = Одобрение
+settings-extensions-trust-label = Спрашивать перед запуском
+settings-extensions-trust-description = Расширения, созданные вами или агентами, запускаются сразу. Расширения из репозитория запускают чужой код, поэтому сначала спрашивают.
+settings-extensions-trust-ask-imported = Общие
+settings-extensions-trust-ask-all = Всегда
+settings-extensions-trust-all = Никогда
+settings-extensions-approvals-label = Одобренные расширения
+settings-extensions-approvals-count = { $count ->
+    [one] { $count } расширение может запускаться без вопроса
+    [few] { $count } расширения могут запускаться без вопроса
+    [many] { $count } расширений могут запускаться без вопроса
+   *[other] { $count } расширения могут запускаться без вопроса
+}
+settings-extensions-forget = Сбросить одобрения
+settings-secrets-heading = Сохранённые секреты
+settings-secrets-intro-label = Сохранённые секреты
+settings-secrets-intro-description = API-ключи, токены и пароли в системной связке ключей. Вставьте секрет в чат или выберите его, когда агент попросит; агенты получают закрытый файл, а не само значение.
+settings-secrets-add = Добавить секрет
+settings-secrets-replace = Заменить значение
+settings-secrets-empty = Сохраните секрет кнопкой «Сохранить…» у вставленного секрета, по запросу агента или через «Добавить секрет».
+settings-secrets-empty-title = Сохранённых секретов пока нет
 settings-privacy-share-label = Обмен анонимными данными об использовании
 settings-privacy-share-description = Это помогает нам понять, как используется super.engineering, и расставлять приоритеты для улучшений. Никакие личные данные, данные проекта или содержимое файлов никогда не покидают ваш компьютер.
 settings-privacy-what-we-send-description = Случайный идентификатор установки, случайный идентификатор сессии приложения, версия приложения, канал обновлений, название и версия операционной системы, архитектура CPU, временные метки начала и окончания сессии и её продолжительность, а также событие ежедневной активности при запуске или при первом последующем фокусе/вводе в приложении за каждые сутки по UTC. При отключении телеметрия прекращается без отправки последнего события отказа. Идентификатор установки сохраняется на устройстве и используется повторно при повторном включении телеметрии; состояние сессии удаляется.
@@ -1682,6 +1836,7 @@ settings-search-section-per-type-overrides = Перенастройки по т�
 settings-search-section-shortcuts = Короткие пути
 settings-search-section-sources = Источники
 settings-search-section-telemetry = Телеметрия
+settings-search-section-saved-secrets = Сохранённые секреты
 settings-search-section-feature-flags = Флаги особенностей
 settings-search-section-location = Расположение
 settings-search-section-cleanup = Очистка
@@ -1696,6 +1851,7 @@ settings-search-section-custom-commands = Пользовательские ко�
 settings-search-section-prompt-templates = Шаблоны запросов
 settings-search-section-repository = Репозиторий
 settings-search-section-scripts = Сценарии
+settings-search-section-issues = Проблемы
 settings-search-section-ai = AI
 settings-search-section-remote-ssh = Удалённые SSH
 settings-dynamic-search-project-root-label = Путь корня
@@ -1716,6 +1872,8 @@ settings-dynamic-search-teardown-scripts-label = Разборка сценари
 settings-dynamic-search-teardown-scripts-description = { $count } скрипты для разбора, настроенные для { $project }.
 settings-dynamic-search-post-cleanup-scripts-label = Скрипты после очистки
 settings-dynamic-search-post-cleanup-scripts-description = { $count } скрипты после очистки, настроенные для { $project }.
+settings-dynamic-search-project-issues-label = Проблемы
+settings-dynamic-search-project-issues-description = Начинайте работу с проблемы GitHub или Linear в { $project }.
 settings-dynamic-search-project-ai-tier-label = AI уровень
 settings-dynamic-search-project-ai-tier-description = Стандартные настройки добавления и уровней для { $project }.
 settings-dynamic-search-ssh-target-label = SSH цель
@@ -1788,6 +1946,8 @@ settings-search-entry-general-diagnostics-diagnostics-status-label = Стату�
 settings-search-entry-general-diagnostics-diagnostics-status-description = Текущий статус генерации диагностических пакетов.
 settings-search-entry-appearance-theme-theme-label = Тема
 settings-search-entry-appearance-theme-theme-description = Совпадение системы внешний вид или режим Force Light/Dark.
+settings-search-entry-appearance-theme-contrast-label = Контрастность
+settings-search-entry-appearance-theme-contrast-description = Повышает контрастность текста и границ. «Системная» следует настройке «Увеличить контраст» вашей ОС.
 settings-search-entry-appearance-theme-customize-theme-label = Настройка темы
 settings-search-entry-appearance-theme-customize-theme-description = Откройте кастомизатор темы рабочего пространства.
 settings-search-entry-appearance-theme-app-icon-label = Иконка приложения
@@ -1884,6 +2044,8 @@ settings-search-entry-palette-sources-show-breadcrumbs-label = Покажи хл
 settings-search-entry-palette-sources-show-breadcrumbs-description = Отрендерить рабочее пространство/проект в строках вкладок и рабочих деревьев.
 settings-search-entry-privacy-telemetry-share-anonymous-usage-data-label = Обмен анонимными данными об использовании
 settings-search-entry-privacy-telemetry-share-anonymous-usage-data-description = Это помогает нам понять, как используется super.engineering, и расставлять приоритеты для улучшений.
+settings-search-entry-secrets-saved-secrets-label = Сохранённые секреты
+settings-search-entry-secrets-saved-secrets-description = API-ключи, токены и пароли в системной связке ключей для всех проектов или одного.
 settings-search-entry-experimental-feature-flags-shared-context-workspaces-label = Рабочие пространства с общим контекстом
 settings-search-entry-experimental-feature-flags-shared-context-workspaces-description = Разрешить выбирать родительские папки, которые расширяются в дочерние репозитории для рабочих пространств, работающих с общим контекстом.
 settings-search-entry-experimental-feature-flags-remote-workspaces-label = Удалённые рабочие пространства
@@ -1896,6 +2058,8 @@ settings-search-entry-experimental-feature-flags-auto-compact-claude-code-on-con
 settings-search-entry-experimental-feature-flags-auto-compact-claude-code-on-context-window-limit-description = Автоматически запускайте /compact и повторно отправляйте, когда Claude Code превышает окно контекста.
 settings-search-entry-experimental-feature-flags-review-label = Обзор
 settings-search-entry-experimental-feature-flags-review-description = Запускайте диспетчерские переписки в терминалах безголового провайдера и ведите AI историю задач.
+settings-search-entry-experimental-feature-flags-resource-monitor-label = Монитор ресурсов
+settings-search-entry-experimental-feature-flags-resource-monitor-description = Показывает кнопку «Ресурсы» в заголовке окна с памятью и CPU каждого рабочего дерева, вкладки и вспомогательного процесса.
 settings-search-entry-worktrees-location-default-worktree-root-label = Корень рабочего дерева по умолчанию
 settings-search-entry-worktrees-location-default-worktree-root-description = Каталог по умолчанию для новых рабочих деревьев проектов. Пустое использует ~/.super.engineering/worktree<project-name>/.
 settings-search-entry-worktrees-cleanup-delete-local-branch-label = Удалить локальную ветку
@@ -1956,6 +2120,8 @@ settings-search-entry-agents-providers-gemini-provider-label = Gemini прова
 settings-search-entry-agents-providers-gemini-provider-description = Включите Gemini и настройте его модели и флаги запуска.
 settings-search-entry-agents-providers-kiro-provider-label = Поставщик Kiro
 settings-search-entry-agents-providers-kiro-provider-description = Включите Kiro, настройте его модели и флаги запуска.
+settings-search-entry-agents-providers-traecli-provider-label = Провайдер TRAE CLI
+settings-search-entry-agents-providers-traecli-provider-description = Включите TRAE CLI и настройте флаги запуска.
 settings-search-entry-agents-providers-opencode-provider-label = OpenCode провайдер
 settings-search-entry-agents-providers-opencode-provider-description = Включите OpenCode и настройте его модели и флаги запуска.
 settings-search-entry-agents-providers-copilot-provider-label = Copilot провайдер
@@ -1992,6 +2158,10 @@ settings-search-entry-commands-prompt-templates-fix-comments-prompt-label = За
 settings-search-entry-commands-prompt-templates-fix-comments-prompt-description = Шаблон запроса для действий «Исправить комментарии».
 settings-search-entry-commands-prompt-templates-fix-changes-prompt-label = Запрос исправления изменений
 settings-search-entry-commands-prompt-templates-fix-changes-prompt-description = Шаблон запроса для действий «Исправить изменения».
+settings-search-entry-extensions-build-label = Создать расширение
+settings-search-entry-extensions-build-description = Опишите представление, и агент создаст его вместе с вами.
+settings-search-entry-extensions-approval-label = Спрашивать перед запуском
+settings-search-entry-extensions-approval-description = Когда расширениям нужно ваше одобрение перед запуском.
 settings-ai-untitled-command = Безымянное командование
 settings-ai-no-command-yet = Пока нет приказа
 settings-ai-command-name-placeholder = Название команды
@@ -2013,7 +2183,7 @@ settings-ai-dispatch-reuse-prepare = Вкладка повторного исп�
 settings-ai-dispatch-reuse-submit = Вкладка повторного использования (отправить)
 settings-ai-dispatch-new-prepare = Новая вкладка (подготовить)
 settings-ai-dispatch-new-submit = Новая вкладка (отправить)
-settings-ai-dispatch-background = Предыстория
+settings-ai-dispatch-background = В фоне
 settings-ai-dispatch-reuse = Вкладка повторного использования
 settings-ai-dispatch-new = Новая вкладка
 settings-ai-mixed = Смешанные
@@ -2037,6 +2207,7 @@ settings-ai-provider-gemini-legacy-description = Включите устарев
 settings-ai-provider-kiro-description = Включите Kiro как провайдера терминала (требуется установка kiro-cli).
 settings-ai-provider-copilot-description = Включите Copilot как поставщика терминала (требуется установка GitHub Copilot CLI).
 settings-ai-provider-factory-description = Включите Factory Droid как провайдера терминала (требуется CLI `droid` установка Factory Droid).
+settings-ai-provider-traecli-description = Включить TRAE CLI как терминальный провайдер (нужны TRAE CLI 2.0 `traecli` и план TRAE Enterprise с доступом к CLI).
 settings-ai-profile = Профиль
 settings-ai-profile-description = Локальный CLI профиль, использованный при запуске этого провайдера.
 settings-ai-provider-command-override-description = Переопределяет исполняемый файл, используемый для запуска этого провайдера (например, обёртку типа 'headroom wrap claude'). Заканчивайте с бинарным именем провайдера, чтобы сохранить активную интеграцию super.engineering.
@@ -2069,6 +2240,7 @@ settings-keybinding-action-notifications-jump-latest = Очередь: пере�
 settings-keybinding-action-notifications-add-chat = Очередь: добавить текущий чат как непрочитанный
 settings-keybinding-action-notifications-toggle-unread = Очередь: переключить «непрочитано» у выбранного
 settings-keybinding-action-notifications-toggle-preview = Очередь: показать или скрыть предпросмотр
+settings-keybinding-action-notifications-toggle-grouping = Очередь: группировать по функциям или чатам
 settings-keybinding-action-notifications-close-chat = Очередь: закрыть вкладку выбранного чата
 settings-keybinding-action-notifications-toggle-all = Очередь: развернуть или свернуть все карточки
 settings-keybinding-action-notifications-mark-oldest = Очередь: отложить самое старое непрочитанное и перейти к новейшему
@@ -2079,6 +2251,7 @@ settings-keybinding-action-notifications-dismiss = Очередь: скрыть 
 settings-keybinding-action-notifications-remove-current-chat = Очередь: удалить текущий чат
 settings-keybinding-action-open-default-app = Открыть в приложении по умолчанию
 settings-keybinding-action-settings = Места действия
+settings-keybinding-action-open-issue-settings = Источники проблем (GitHub, Linear)…
 settings-keybinding-action-run = Бег в экшн
 settings-keybinding-action-run-new-tab = Запустить действие в новой вкладке
 settings-keybinding-action-increase-app-zoom = Увеличить масштаб приложения
@@ -2137,6 +2310,7 @@ chat-enhance-prompt-mention-error = ИИ изменил упоминание ф�
 chat-enhance-prompt-provider-error = Настроенный поставщик для улучшения запросов недоступен.
 shortcut-sequence-then = { $first } тогда { $second }
 chat-attach-files = Прикрепить файлы
+chat-prompt-suggestion-tab-hint = tab
 chat-change-profile = Профиль изменения
 chat-copy-command = Копировать команду
 chat-copy-output = Копирование вывода
@@ -2186,6 +2360,9 @@ attachment-viewer-info-dimensions = Размеры
 attachment-viewer-info-length = Длительность
 attachment-viewer-info-size = Размер
 sidebar-view-review-request = Смотреть { $kind }
+sidebar-open-issue = Открыть проблему
+sidebar-copy-issue-link = Копировать ссылку на проблему
+sidebar-unlink-issue = Отвязать проблему
 sidebar-main-working-copy = Основная рабочая копия
 git-copy-full-sha = Копировать полный SHA
 git-release-command-for-short-sha = Релиз ⌘ для короткого SHA
@@ -2253,15 +2430,84 @@ workspace-new-tab-with-provider = Новая вкладка с провайде�
 workspace-add-split-pane = Разделить панель
 workspace-add-split-view = Разделить вид
 workspace-choose-app = Выбрать приложение
-theme-copy-from-dark = Копия из Dark
-theme-copy-from-light = Копия от Light
-theme-copy-from-background = Копия с фона
-theme-copy-from-accent = Копия с Accent
-theme-alpha = Альфа
+theme-picker-title = Тема
+theme-menu-tooltip = Скопируйте или вставьте тему, задайте тему по умолчанию или сбросьте её.
+theme-close-tooltip = Закрыть (Esc). Изменения сохранятся.
+theme-mode-tooltip = У светлой и тёмной темы свои цвета. Выберите, какую вы редактируете.
+theme-background-tooltip = Цвет окна для боковой панели и верхней и нижней панелей.
+theme-accent-tooltip = Отмечает выбранное или включённое: кнопки, переключатели, текущую строку и вкладку.
+theme-highlight-tooltip = Цвет выделенного текста, совпадений поиска и ссылок. Следует акценту, пока вы не выберете свой.
+theme-selection-tooltip = Как выглядят выбранная строка, вкладка и переключатель и насколько сильно в них виден акцент.
+theme-background-description = Само окно: боковая панель и панели.
+theme-accent-description = Выбранное или включённое: кнопки, переключатели, текущая строка.
+theme-highlight-description = Выделенный текст, совпадения поиска и ссылки.
+theme-selection-description = Как выглядит выбранное.
+theme-status-solid = Сплошной
+theme-status-custom = Свой
+theme-gradient = Градиент
+theme-auto = Авто
+theme-canvas-background-tooltip = Слева направо — оттенок, сверху вниз — яркость. Предлагаются только цвета, с которыми текст остаётся читаемым.
+theme-canvas-accent-tooltip = Слева направо — оттенок, сверху вниз — от светлого к насыщенному.
+theme-eyedropper-tooltip = Взять цвет из любой точки экрана.
+theme-hex-tooltip = Введите или вставьте цвет в формате hex.
+theme-gradient-tooltip = Смешивает два цвета фона по окну. У каждого свой маркер на холсте.
+theme-gradient-direction = Изменить направление градиента.
+theme-accent-auto-tooltip = Вкл.: приложение подбирает акцент под ваш фон. Выбор цвета отключает это.
+theme-highlight-auto-tooltip = Вкл.: для подсветки используется акцентный цвет. Если выбрать другой цвет, настройка отключится.
+theme-swatches-tooltip = Пресеты и цвета из других рабочих пространств.
+theme-group-sidebar-bars = Боковая панель и панели
+theme-group-content = Содержимое
+theme-color-strength = Насыщенность цвета
+theme-color-strength-tooltip = Сколько вашего цвета берут боковая панель и панели. Низкое значение оставляет их почти нейтрально-серыми. Двойной щелчок возвращает значение по умолчанию.
+theme-opacity = Непрозрачность
+theme-sidebar-opacity-tooltip = Меньшее значение позволяет рабочему столу просвечивать сквозь боковую панель и панели. Двойной щелчок возвращает значение по умолчанию.
+theme-tint = Оттенок
+theme-tint-tooltip = Сколько цвета фона переходит в основную область содержимого. Двойной щелчок возвращает значение по умолчанию.
+theme-brightness = Яркость
+theme-brightness-tooltip = Насколько тёмная область содержимого. В крайнем левом положении — чистый чёрный. Двойной щелчок возвращает значение по умолчанию.
+theme-brightness-black = Чёрный
+theme-content-opacity-tooltip = Меньшее значение позволяет тонированному стеклу окна просвечивать сквозь область содержимого. Двойной щелчок возвращает значение по умолчанию.
 theme-prominence = Значимость
-theme-saved = Сохранено
-theme-save-light = Тема «Сохранить свет»
-theme-save-dark = Тема «Сохранить тьму»
+theme-prominence-tooltip = Насколько сильно этот цвет окрашивает выбранные строки и активные состояния. Двойной щелчок возвращает значение по умолчанию.
+theme-slider-percent = { $percent }%
+theme-selected-rows = Выбранные строки
+theme-selected-rows-hint = боковая панель, списки, меню
+theme-selected-rows-tooltip = Как выглядит выбранная строка на боковой панели, в списках и меню.
+theme-selected-thumbs = Вкладки и переключатели
+theme-selected-thumbs-hint = вкладки, сегменты, переключатели
+theme-selected-thumbs-tooltip = Как выглядят выбранная вкладка, сегмент и активный переключатель.
+theme-selection-strength = Сила
+theme-selection-strength-tooltip = Насколько заметен вид выбранного.
+theme-selection-tinted = Тонированный
+theme-selection-light = Светлый
+theme-selection-solid = Сплошной
+theme-selection-subtle = Мягкий
+theme-sample-used-for = Используется для
+theme-sample-button = Создать PR
+theme-sample-row = feat/surface-ladder
+theme-sample-preview = Превью
+theme-preview-row-main = main
+theme-preview-row-fix = fix/login-loop
+theme-preview-tab-files = Файлы
+theme-preview-tab-changes = Изменения
+theme-preview-tab-review = Ревью
+theme-preview-segment-all = Все
+theme-preview-segment-turns = Ходы
+theme-preview-segment-commits = Коммиты
+theme-sample-highlight = Откройте { $link }, { $selection } и { $match }.
+theme-sample-link = документацию
+theme-sample-selection = выделенный текст
+theme-sample-match = совпадение поиска
+theme-undo-changes = Отменить изменения
+theme-undo-changes-tooltip = Вернуть тему к состоянию на момент открытия.
+theme-done = Готово
+theme-copy-theme = Копировать тему
+theme-paste-theme = Вставить тему
+theme-copy-light-to-dark = Скопировать цвета светлой темы в тёмную
+theme-copy-dark-to-light = Скопировать цвета тёмной темы в светлую
+theme-make-default = Сделать темой по умолчанию
+theme-make-default-description = Используется в рабочих пространствах без своей темы
+theme-reset-to-default = Сбросить до моей темы по умолчанию
 section-open-prs = Открытые PR / MR
 section-draft-prs = Черновики PR / MR
 section-merged-prs = Объединённые PR / MR
@@ -2634,6 +2880,7 @@ settings-keybinding-action-paste = Паста
 settings-keybinding-action-copy = Принято
 settings-keybinding-action-toggle-right-panel = Переключение правой панели
 settings-keybinding-action-toggle-left-sidebar = Переключить левую боковую панель
+settings-keybinding-action-toggle-focus-mode = Переключить режим фокуса
 settings-keybinding-action-toggle-both-sidebars = Переключите обе боковые панели
 settings-keybinding-action-new-worktree = Новое рабочее дерево
 settings-keybinding-action-new-worktree-from = Новое рабочее дерево из
@@ -2702,6 +2949,10 @@ settings-keybinding-action-palette-worktrees = Палитра: Рабочие д
 settings-keybinding-action-palette-tabs = Палитра: Вкладки
 settings-keybinding-action-palette-files = Палитра: Файлы
 settings-keybinding-action-palette-commands = Палитра: Команды
+settings-keybinding-action-palette-conversations = Палитра: Беседы
+settings-keybinding-action-palette-issues = Палитра: Проблемы
+settings-keybinding-action-palette-pull-requests = Палитра: Pull request
+settings-keybinding-action-enhance-prompt = Улучшить запрос
 settings-keybinding-action-close-selected-tab = Закрыть выбранную вкладку
 settings-keybinding-action-select-next = Выберите «Следующий»
 settings-keybinding-action-select-previous = Выберите Предыдущее
@@ -3114,7 +3365,7 @@ browser-annotation-composer-blocked = Нельзя добавлять аннот
 browser-consent-title = Разрешить агентам управлять браузером в «{ $workspace_name }»?
 browser-consent-asked-by-agent = Агент
 browser-consent-asked-by-worktree = Агент, работающий в «{ $caller_label }»
-browser-consent-description = { $asked_by } запросил запуск sc browser { $spelling } во вкладке браузера этого рабочего пространства. Разрешение даст всем агентам пространства постоянное право — для этой и всех будущих команд act — нажимать, вводить текст, переходить по страницам и выполнять скрипты на любой открытой странице, включая сеансы с выполненным входом. Большинство команд только для чтения не требуют одобрения, но чтение значений cookie требует. Разрешение сохраняется для рабочего пространства; его можно отозвать в Настройках в любое время.
+browser-consent-description = { $asked_by } запросил запуск se browser { $spelling } во вкладке браузера этого рабочего пространства. Разрешение даст всем агентам пространства постоянное право — для этой и всех будущих команд act — нажимать, вводить текст, переходить по страницам и выполнять скрипты на любой открытой странице, включая сеансы с выполненным входом. Большинство команд только для чтения не требуют одобрения, но чтение значений cookie требует. Разрешение сохраняется для рабочего пространства; его можно отозвать в Настройках в любое время.
 palette-no-matching-files-index-incomplete = Нет подходящих файлов (индекс неполон: рабочее дерево превышает лимит сканирования файлов)
 update-ready-title = Обновление готово
 update-ready-restart = Перезапустить
@@ -3342,11 +3593,11 @@ settings-ai-run-with-column = Запускать с
 settings-ai-branch-naming-rule = Правило именования
 settings-ai-session-context-section = Контекст сеанса
 settings-ai-agent-session-context-label = Контекст сеанса для агентов
-settings-ai-agent-session-context-description = super.engineering может добавлять контекст в сеансы агентов, чтобы они могли найти и безопасно использовать CLI sc приложения.
+settings-ai-agent-session-context-description = super.engineering может добавлять контекст в сеансы агентов, чтобы они могли найти и безопасно использовать CLI se приложения.
 settings-ai-agent-session-context-standard-label = Стандартный
 settings-ai-agent-session-context-standard-description = Агенты получают стандартные инструкции CLI super.engineering и маршрутизации оркестрации.
 settings-ai-agent-session-context-off-label = Выключено
-settings-ai-agent-session-context-off-description = При выключении фоновый контекст сеанса не добавляется. Явные действия, например проверки и передача задач рабочим деревьям, не затрагиваются; ограничения команд sc остаются в силе.
+settings-ai-agent-session-context-off-description = При выключении фоновый контекст сеанса не добавляется. Явные действия, например проверки и передача задач рабочим деревьям, не затрагиваются; ограничения команд se остаются в силе.
 settings-remote-key-install-action = Установить ключ
 settings-remote-key-install-authorize = Авторизовать на { $host }
 settings-remote-key-install-body = { $app_name } создаст отдельный SSH-ключ для этого рабочего пространства.
@@ -3362,6 +3613,9 @@ settings-remote-key-remove-revoke = Отозвать доступ на { $host }
 settings-remote-key-remove-title = Удалить ключ с { $host }?
 settings-experimental-automations-label = Автоматизации
 settings-experimental-automations-description = Создавайте автоматизации по расписанию и событиям. Ранняя версия, ещё не полностью проверена.
+settings-experimental-extensions-label = Расширения
+settings-experimental-extensions-description = Создавайте представления вместе с агентом и открывайте их как вкладки, панели и диалоги. Ранняя версия, ещё не полностью протестирована. Применяется после перезапуска.
+settings-experimental-extensions-restart = Перезапустите super.engineering, чтобы применить изменение.
 settings-experimental-chat-artifacts-label = Артефакты чата
 settings-experimental-chat-artifacts-description = Позволяет агентам публиковать HTML-страницы, которые отображаются в чате в реальном времени. Страницы работают офлайн в песочнице.
 settings-search-section-typography = Типографика
@@ -3427,6 +3681,8 @@ settings-search-entry-experimental-feature-flags-workspace-mentions-label = Уп
 settings-search-entry-experimental-feature-flags-workspace-mentions-description = Упоминайте скрипты, терминалы, рабочие деревья, чаты и агентов через @ в чате.
 settings-search-entry-experimental-feature-flags-automations-label = Автоматизации
 settings-search-entry-experimental-feature-flags-automations-description = Создавайте автоматизации по расписанию и событиям. Ранняя версия, ещё не полностью проверена.
+settings-search-entry-experimental-feature-flags-extensions-label = Расширения
+settings-search-entry-experimental-feature-flags-extensions-description = Создавайте представления вместе с агентом и открывайте их как вкладки, панели и диалоги. Применяется после перезапуска.
 settings-search-entry-agents-session-context-session-context-for-agents-label = Контекст сеанса для агентов
 settings-search-entry-agents-session-context-session-context-for-agents-description = Добавляйте контекст super.engineering в новые сеансы агентов или отключите фоновое добавление.
 settings-section-typography = Типографика
@@ -3481,6 +3737,17 @@ settings-ai-follows-session-default = Следует настройкам сеа
 settings-ai-model-routing = Маршрутизация моделей
 settings-ai-model-routing-description = Выберите модели, профили и уровни мышления по умолчанию или настройте их для отдельных действий.
 settings-ai-manage-routing = Открыть маршрутизацию
+settings-ai-predictions-label = Предсказания
+settings-ai-predictions-description = Ваше следующее сообщение, написанное до того, как вы начнёте печатать: из ответа, из того, что нужно рабочему дереву, или от вашей модели. Нажмите Tab, чтобы принять, затем Enter, чтобы отправить.
+settings-ai-free-predictions-label = Предсказывать по рабочему дереву
+settings-ai-free-predictions-description = Дополняет изменённые файлы, чаты, скрипты, рабочие деревья, PR и терминалы при вводе. Предлагает следующий шаг из ответа, упавшую проверку или новые комментарии ревью. Без токенов.
+settings-ai-model-predictions-label = Спрашивать модель, если неясно
+settings-ai-model-predictions-description = Если ответ и рабочее дерево ничего не подсказывают, Claude или Codex предсказывает ваше следующее сообщение по беседе. Расходует немного лимита плана, никогда во время ввода, и приостанавливается у предела плана.
+settings-ai-prediction-spend-asked = Запрошено
+settings-ai-prediction-spend-accepted = Принято
+settings-ai-prediction-spend-tokens = Токены
+settings-ai-prediction-spend-cost = Стоимость
+settings-ai-prediction-spend-note = Последние 7 дней по ценам API. ≈ Claude не сообщает количество токенов для предсказаний, поэтому его показатели оценочные.
 settings-ai-provider-fx-description = Включить поддержку чата и терминала fx (требуется установленный CLI fx `fx`).
 workspace-fx-remote-history-unsupported = Удалённые терминалы FX пока не поддерживают историю и возобновление сеансов.
 settings-keybinding-action-rename-selected-entry = Переименовать выбранный элемент
@@ -3516,6 +3783,8 @@ chat-time-yesterday = Вчера { $time }
 chat-permission-fallback = Режим { $mode } недоступен для { $model } на этом аккаунте.
 chat-permission-fallback-asks = { $provider } будет спрашивать перед действиями.
 chat-permission-fallback-uses = { $provider } вместо этого использует { $mode }.
+chat-prediction-paused = Предсказания Codex приостановлены после необычного всплеска запросов.
+chat-prediction-paused-resume = Возобновить
 chat-steer-hold-waiting = { $provider } пока не может принять указание во время работы.
 chat-steer-hold-waiting-detail = Сообщение скорректирует работу, как только это станет возможно, или отправится после этого хода.
 chat-steer-refused = Не удалось скорректировать работу.
@@ -3625,8 +3894,10 @@ reasoning-effort-high-short = Высокий
 reasoning-effort-extra-high-short = Оч. выс
 reasoning-effort-max-short = Макс
 reasoning-effort-ultra-short = Ультра
-theme-set-as-default-tooltip = Сделать темой по умолчанию
 theme-restore-builtin-default = Восстановить встроенную
+theme-share-copied = Скопировано
+theme-share-pasted = Вставлено
+theme-share-invalid = В буфере обмена нет темы
 sidebar-rename-feature-label = Переименовать метку функции…
 sidebar-rename-branch = Переименовать ветку…
 palette-command-archive-codex-threads-for-deleted-worktrees = Архивировать обсуждения Codex для удалённых рабочих деревьев
@@ -3954,6 +4225,37 @@ palette-no-open-pull-requests = { $forge ->
     [gitlab] Нет открытых merge requests
    *[other] Нет открытых pull requests
 }
+palette-mode-issues = Проблемы
+palette-section-issues = Проблемы
+palette-search-issues = Поиск проблем или вставьте ссылку…
+palette-section-in-progress = В работе
+palette-section-assigned-to-you = Назначены вам
+palette-section-open-issues = Открытые
+palette-section-done = Готово
+palette-loading-issues = Загрузка проблем…
+palette-no-open-issues = Нет открытых проблем
+palette-section-needs-setup = Требуется настройка
+palette-issue-setup-gh-missing = Установите GitHub CLI, чтобы показывать проблемы GitHub
+palette-issue-setup-gh-signed-out = Войдите в { $host }, чтобы показывать его проблемы
+palette-issue-setup-linear-key-rejected = Переподключите Linear: сохранённый ключ больше не принимается
+palette-issue-setup-linear-not-connected = Подключите Linear, чтобы показать { $team }
+palette-issue-setup-other = { $source }: { $message }
+palette-issue-setup-opens-install = Открывает страницу установки
+palette-issue-setup-copies-login = Копирует { $command }
+palette-issue-setup-opens-sources = Открывает источники проблем
+palette-issue-setup-connect-linear = Подключить Linear или добавить другой репозиторий…
+palette-issue-setup-add-linear-team = Добавить команду Linear в этот проект…
+palette-issue-setup-sources = Источники проблем…
+palette-issue-reference = Проблема { $reference }
+palette-issue-no-description = Нет описания
+palette-issue-assigned-to = Назначена: { $names }
+palette-issue-opened-by = Открыл(а): { $name }
+palette-issue-earlier-comments-hidden = Более ранние комментарии не показаны
+palette-action-create-worktree-only = Только создать рабочее дерево
+palette-action-link-to-this-worktree = Привязать к этому рабочему дереву
+palette-action-open-in-browser = Открыть в браузере
+palette-action-copy-key = Копировать ключ
+palette-action-copy-branch-name = Копировать имя ветки
 palette-footer-check-out = Переключиться
 palette-footer-create = Создать
 palette-footer-choose = Выбрать
@@ -4107,7 +4409,7 @@ issue-report-fact-app = Приложение { $version }
 issue-report-fact-system = Сведения о системе
 issue-report-similar-bugs = Похожие отчёты
 issue-report-similar-features = Похожие запросы
-issue-report-destination = Публичная задача в { $repo }
+issue-report-destination = Публичная проблема в { $repo }
 issue-report-signed-out = Войдите в GitHub CLI, чтобы отправить отсюда
 issue-report-match-open = #{ $number } уже открыта
 issue-report-match-votes = { $count ->
@@ -4123,7 +4425,7 @@ issue-report-open-issue = Открыть #{ $number }
 issue-report-sending = Отправка…
 issue-report-send-failed = Не удалось отправить. Ваш черновик сохранён.
 issue-report-vote-failed = Не удалось обновить ваш голос. Попробуйте ещё раз.
-issue-report-filed = Создана задача #{ $number }
+issue-report-filed = Создана проблема #{ $number }
 issue-report-added = Добавлено в #{ $number }
 issue-report-upvoted = Голос за #{ $number } добавлен
 issue-report-copied = Отчёт скопирован
@@ -4139,6 +4441,7 @@ settings-search-entry-agents-providers-jcode-provider-label = Провайдер
 settings-search-entry-agents-providers-jcode-provider-description = Включите jcode и настройте его модели и параметры запуска.
 settings-ai-provider-jcode-description = Включить jcode как провайдер чата и терминала (требуется установленный CLI jcode `jcode`). В чатах запускаются все инструменты, разрешённые собственной конфигурацией jcode; jcode не может предварительно запросить разрешение.
 settings-keybinding-action-paste-as-secret = Вставить как секрет
+settings-keybinding-action-insert-saved-secret = Вставить сохранённый секрет…
 clone-waiting-for-stop = Ожидание остановки процесса клонирования…
 toast-review-comments = Просмотреть комментарии
 toast-report-issue = Сообщить
@@ -4176,12 +4479,68 @@ secret-request-show = Показать секрет
 secret-request-hide = Скрыть секрет
 secret-request-decline = Отклонить
 secret-request-save-failed = Не удалось сохранить приватно: { $error }
+secret-request-for-project = Для { $project }
+secret-request-answer-with = Ответить с помощью
+secret-request-type-new = Ввести новое значение
+secret-request-type-new-detail = Вставьте или введите его ниже
+secret-request-no-saved = Для этого проекта пока нет сохранённых секретов. Включите «Запомнить», чтобы сохранить этот.
+secret-request-use-suggested = Использовать сохранённый { $name }
+secret-request-suggested = Рекомендуется
+secret-request-remember = Запомнить как сохранённый секрет
+saved-secret-save-title = Сохранить секрет
+saved-secret-rename-title = Переименовать секрет
+saved-secret-replace-title = Заменить значение
+saved-secret-delete-title = Удалить секрет
+saved-secret-save = Сохранить
+saved-secret-replace = Заменить
+saved-secret-save-pill-body = Сохранённые секреты хранятся в системной связке ключей, поэтому их можно передавать агентам в любом чате без повторной вставки.
+saved-secret-save-typed-body = Сохранено в системной связке ключей. Агенты получают закрытый файл с ним, только когда вы его выбираете.
+saved-secret-delete-body = Удалить { $name } из связки ключей? Агенты, уже получившие его, сохранят свою копию до истечения срока.
+saved-secret-replace-body = С этого момента агенты получают новое значение. Уже выданные копии сохраняют старое до истечения срока.
+saved-secret-name-label = Имя
+saved-secret-name-placeholder = OPENAI_API_KEY
+saved-secret-name-hint = Буквы, цифры и подчёркивания, как у переменной окружения
+saved-secret-saved-as = Сохранено как
+saved-secret-value-label = Значение
+saved-secret-value-empty = Введите значение секрета.
+saved-secret-scope-label = Использовать в
+saved-secret-scope-project = Этот проект ({ $project })
+saved-secret-scope-global = Все проекты
+saved-secret-scope-removed-project = Удалённый проект
+saved-secret-name-empty = Задайте имя секрета.
+saved-secret-name-too-long = Имя может содержать до 64 символов.
+saved-secret-name-invalid = Используйте буквы, цифры и подчёркивания, начиная с буквы.
+saved-secret-name-looks-like-secret = Это похоже на секрет, а не на имя. Введите для него имя.
+saved-secret-name-taken = Сохранённый секрет с таким именем здесь уже есть. Сохраните снова, чтобы заменить его значение.
+saved-secret-name-in-use = Сохранённый секрет с таким именем здесь уже есть.
+saved-secret-name-is-value = Это имя содержит сам секрет. Введите имя, которое его описывает.
+saved-secret-ambiguous = В связке ключей несколько записей для этого секрета. Удалите его в Настройки → Секреты и сохраните снова.
+saved-secret-name-taken-in-request = Сохранённый секрет с таким именем здесь уже есть. Выберите другое имя или используйте сохранённый.
+saved-secret-not-found = Этого сохранённого секрета больше нет. Возможно, его удалили из связки ключей.
+saved-secret-keyring-unavailable = Системная связка ключей недоступна. Для сохранённых секретов нужна Связка ключей macOS или хранилище Secret Service, например GNOME Keyring или KWallet.
+saved-secret-keyring-locked = Связка ключей заблокирована. Разблокируйте её и повторите попытку.
+saved-secret-keyring-canceled = Запрос связки ключей был закрыт или отклонён.
+saved-secret-keyring-failed = Не удалось использовать связку ключей: { $error }
+saved-secret-remember-failed = Агент получил секрет, но сохранить его не удалось
+saved-secret-loading = Чтение сохранённых секретов…
+saved-secret-picker-title = Вставить сохранённый секрет
+saved-secret-picker-body = Агент получает закрытый файл с ним, а не само значение.
+saved-secret-picker-insert = Вставить
+saved-secret-picker-empty = Для этого проекта пока нет сохранённых секретов
+saved-secret-picker-empty-detail = Сохраните секрет кнопкой «Сохранить…» у вставленного секрета, по запросу агента или в Настройки → Секреты.
+saved-secret-picker-move = Выбрать другой секрет
+saved-secret-picker-add = Добавить сохранённый секрет…
 chat-secret-pill-token = Токен { $issuer }
 chat-secret-pill-private-key = Приватный ключ
 chat-secret-pill-secret = Секрет
 chat-secret-card-kind = Сохранено приватно
 chat-secret-card-detail = Ваш агент получает путь к приватному файлу вместо значения. Его команды по-прежнему могут читать файл, который удаляется через 24 часа.
 chat-secret-card-paste-as-text = Вставить как текст
+chat-secret-card-save = Сохранить…
+chat-saved-secret-unavailable = Не удалось прочитать сохранённый секрет из связки ключей, поэтому ничего не вставлено.
+chat-saved-secret-store-failed = Не удалось сохранить секрет закрытым, поэтому он не вставлен.
+chat-saved-secret-not-inserted = В этот черновик сейчас нельзя вставить секрет, поэтому ничего не вставлено.
+chat-secret-save-unavailable = Этот чат ещё не подключён, поэтому его секрет нельзя сохранить. Повторите попытку чуть позже.
 chat-secret-store-failed = Не удалось сохранить секрет приватно, поэтому он не был вставлен. Вставьте его ещё раз, чтобы вставить как обычный текст.
 chat-secret-paste-moved = Черновик изменился во время приватного сохранения секрета, поэтому секрет не был вставлен. Вставьте его ещё раз.
 chat-paste-moved = Черновик изменился во время проверки вставляемого содержимого, поэтому оно не было вставлено. Вставьте его ещё раз.
@@ -4302,6 +4661,7 @@ checks-behind-target =
 right-panel-view-options = Параметры вида
 right-panel-view-changes = Изменения
 right-panel-view-gitignored-files = Файлы из .gitignore
+right-panel-view-compact-folders = Компактные папки
 diff-viewed-toggle = Просмотрено
 diff-since-viewed-note = { $agent } изменил это после вашего просмотра. Показаны изменения с того момента.
 diff-since-viewed-note-unattributed = Файл изменился после вашего просмотра. Показаны изменения с того момента.
@@ -4364,9 +4724,9 @@ right-sidebar-changed-since-viewed-count =
 right-sidebar-view-all = Все
 right-sidebar-view-turns = Ходы
 right-sidebar-turn-working = В работе
+right-sidebar-turn-open-chat = Открыть чат на этом ходе
 right-sidebar-other-changes = Другие изменения
-right-sidebar-probable-file = Изменён во время этого хода
-right-sidebar-probable-file-detail = Инструменты хода об этом не сообщали, поэтому это может быть чужая правка. Подтвердится, когда ход завершится.
+right-sidebar-probable-caption = Возможно, из этого хода
 resources-title = Ресурсы
 resources-search = Поиск ресурсов или проектов
 resources-search-tooltip = Поиск
@@ -4396,7 +4756,9 @@ resources-exited-just-now = Только что завершён
 resources-exited-minutes = Завершён { $minutes } мин назад
 resources-exited-hours = Завершён { $hours } ч назад
 resources-cpu-row = CPU { $percent }%
-resources-cpu-split = Приложение { $app }% · Запущенные { $launched }%
+resources-split-app = Приложение
+resources-cpu-split = Само приложение { $app }%, ваша работа { $work }%
+resources-tree-chat = Чат
 resources-origin-tab = Вкладка терминала
 resources-origin-launched = Запущено из { $tab }
 resources-origin-run-script = Скрипт запуска
@@ -4409,6 +4771,14 @@ resources-activity-busy = Выполняется
 resources-activity-idle = Бездействует
 resources-app = Приложение
 resources-browser-services = Службы браузера
+resources-other-agents = Другие агенты
+resources-idle-chats =
+    { $count ->
+        [one] { $count } бездействующий чат
+        [few] { $count } бездействующих чата
+        [many] { $count } бездействующих чатов
+       *[other] { $count } бездействующего чата
+    }
 resources-browser-graphics = Графика
 resources-browser-networking = Сеть
 resources-background = Фоновые процессы
@@ -4418,32 +4788,6 @@ resources-app-graphics-info = Поверхности окон и память GP
 resources-app-held-for-reuse = Удержано для повторного использования
 resources-app-saved-wake = Спящие
 resources-app-code-system = Код и система
-resources-app-chats = Чаты
-resources-app-chats-open = Открыто: { $count }
-resources-app-chats-idle = Бездействует: { $count }
-resources-app-chats-history = История чатов
-resources-app-terminals = Терминалы
-resources-app-terminals-count =
-    { $count ->
-        [one] { $count } терминал
-        [few] { $count } терминала
-        [many] { $count } терминалов
-       *[other] { $count } терминала
-    }
-resources-app-terminals-lines =
-    { $count ->
-        [one] { $count } строка
-        [few] { $count } строки
-        [many] { $count } строк
-       *[other] { $count } строки
-    }
-resources-app-saved-count =
-    { $count ->
-        [one] { $count } рабочее дерево
-        [few] { $count } рабочих дерева
-        [many] { $count } рабочих деревьев
-       *[other] { $count } рабочего дерева
-    }
 resources-app-saved-info = Память, которую приложение держит для спящих рабочих деревьев, чтобы они открывались мгновенно
 resources-app-background-count =
     { $count ->
@@ -4459,7 +4803,6 @@ resources-app-other-detail = Растёт с числом проектов и р
 resources-app-held-for-reuse-detail = Удерживается аллокатором для повторного использования
 resources-app-code-system-detail = Код программы и системные библиотеки
 resources-estimated = Оценка
-resources-sleep-idle-chats = Усыпить бездействующие чаты
 resources-sleep-idle-chats-confirm =
     { $count ->
         [one] Усыпить { $count } бездействующий чат?
@@ -4477,12 +4820,6 @@ resources-clear-confirm =
        *[other] Очистить { $lines } строки истории прокрутки?
     }
 resources-clear-consequence = Экран останется.
-resources-clear-scrollback = Очистить историю прокрутки
-resources-clear-all-confirm =
-    { $count ->
-        [one] Очистить историю прокрутки в { $count } терминале?
-       *[other] Очистить историю прокрутки в { $count } терминалах?
-    }
 resources-chat-sleep-running = Выполняется ход. Чат можно усыпить, когда ход завершится.
 resources-chat-sleep-waiting = Ждёт вашего ответа. Чат можно усыпить, когда вы ответите.
 resources-chat-sleep-unseen = Есть непрочитанный ответ. Чат можно усыпить, когда вы его прочтёте.
@@ -4516,26 +4853,33 @@ resources-tab-all = Все
 resources-tab-agents = Агенты
 resources-tab-browser = Браузер
 resources-tab-terminals = Терминалы
-resources-fact-agents =
+resources-count-chats =
     { $count ->
-        [one] агент
-        [few] агента
-        [many] агентов
-       *[other] агента
+        [one] Открыт { $count } чат
+        [few] Открыто { $count } чата
+        [many] Открыто { $count } чатов
+       *[other] Открыто { $count } чата
     }
-resources-fact-browser-tabs =
+resources-count-agents =
     { $count ->
-        [one] вкладка браузера
-        [few] вкладки браузера
-        [many] вкладок браузера
-       *[other] вкладки браузера
+        [one] Запущен { $count } агент
+        [few] Запущено { $count } агента
+        [many] Запущено { $count } агентов
+       *[other] Запущено { $count } агента
     }
-resources-fact-terminals =
+resources-count-browser-tabs =
     { $count ->
-        [one] терминал
-        [few] терминала
-        [many] терминалов
-       *[other] терминала
+        [one] { $count } вкладка браузера
+        [few] { $count } вкладки браузера
+        [many] { $count } вкладок браузера
+       *[other] { $count } вкладки браузера
+    }
+resources-count-terminals =
+    { $count ->
+        [one] { $count } терминал
+        [few] { $count } терминала
+        [many] { $count } терминалов
+       *[other] { $count } терминала
     }
 resources-on-screen = На экране, поэтому не засыпает
 resources-open = Открыть
@@ -4543,28 +4887,119 @@ resources-close = Закрыть
 resources-close-confirm = Закрыть { $name }?
 resources-close-consequence = Страница закроется.
 resources-average-title = В среднем на агента
-resources-average-each = На каждого
-resources-average-ten = 10 агентов
-resources-average-each-suffix = на каждого
-resources-average-for-ten = на 10
 resources-tree-more = Ещё { $count }
-resources-app-item-detail = { $activity }, { $lines }
-resources-app-more-chats =
-    { $count ->
-        [one] Ещё { $count } чат
-        [few] Ещё { $count } чата
-        [many] Ещё { $count } чатов
-       *[other] Ещё { $count } чата
-    }
-resources-app-more-terminals =
-    { $count ->
-        [one] Ещё { $count } терминал
-        [few] Ещё { $count } терминала
-        [many] Ещё { $count } терминалов
-       *[other] Ещё { $count } терминала
-    }
 issue-report-check-submission = Проверить отправку
-issue-report-submission-uncertain = Этот отчёт, возможно, уже есть на GitHub. Проверьте отправку, чтобы найти его; проверка никогда не публикует отчёт повторно. Если он пока не найден, подождите и проверьте снова или просмотрите свои задачи на GitHub, прежде чем удалять этот черновик.
+issue-report-submission-uncertain = Этот отчёт, возможно, уже есть на GitHub. Проверьте отправку, чтобы найти его; проверка никогда не публикует отчёт повторно. Если он пока не найден, подождите и проверьте снова или просмотрите свои проблемы на GitHub, прежде чем удалять этот черновик.
 issue-report-discard-uncertain = Удалить черновик (отчёт, возможно, уже существует)
 issue-report-draft-load-failed = Не удалось прочитать сохранённый отчёт. Устраните проблему с хранилищем и перезапустите приложение, прежде чем отправлять другой отчёт.
 review-comment-edit-staged = Чтобы изменить это ревью, сначала уберите его из поля ввода.
+
+chat-edit-skill-as-text = Редактировать навык как текст
+chat-edit-failed-draft-conflict = Сохраните или очистите текущий черновик, прежде чем редактировать сообщение, отправка которого завершилась ошибкой.
+
+chat-notice-mcp-disable = Отключить
+chat-notice-mcp-disable-confirm = Отключить сервер MCP { $name }?
+chat-notice-mcp-disable-confirm-detail = Его инструменты будут недоступны, пока вы не включите его снова. В разделе Настройки > Агенты > Серверы MCP Codex выберите Обновить, затем Включить или Изменить конфигурацию. Чтобы скрыть только это сообщение, выберите Скрывать уведомления.
+chat-notice-mcp-disable-tooltip = Отключить этот сервер в конфигурации провайдера. Его инструменты станут недоступны.
+chat-notice-mcp-edit-config = Изменить конфигурацию
+chat-notice-mcp-edit-config-tooltip = Открыть файл конфигурации, в котором определён этот сервер
+chat-notice-mcp-offline-count = { $count ->
+    [one] { $count } сервер MCP не запущен
+    [few] { $count } сервера MCP не запущены
+    [many] { $count } серверов MCP не запущены
+   *[other] { $count } сервера MCP не запущены
+    }
+chat-notice-mcp-quiet = Скрывать уведомления
+chat-notice-mcp-quiet-tooltip = Не упоминать этот сервер, когда он не запущен. Он по-прежнему будет запускаться, а его инструменты останутся доступны. Настоящие ошибки по-прежнему вызывают предупреждения.
+chat-notice-mcp-retry = Перезагрузить серверы MCP
+chat-notice-mcp-retry-tooltip = Перезагрузить все настроенные серверы MCP
+chat-notice-mcp-unquiet = Показывать уведомления
+chat-notice-mcp-unquiet-tooltip = Снова упоминать этот сервер, когда он не запущен
+settings-mcp-config-caption = Серверы MCP Codex — выбранные профиль и рабочее дерево. Обновите список, чтобы найти отключённые серверы. Включение действует в новых чатах.
+settings-mcp-config-enable = Включить
+extension-approval-title = Разрешить { $name }?
+extension-approval-source-shared = Оно поставляется с репозиторием в { $path }, поэтому запускает чужой код.
+extension-approval-source-local = В ваших настройках задано спрашивать перед запуском любого расширения.
+extension-approval-asks = Оно запрашивает
+extension-approval-allow = Разрешить
+extension-permission-none = Показывать своё представление, и только
+extension-permission-app-read = Читать рабочие пространства, рабочие деревья, агентов, статус git и проблемы
+extension-permission-app-ui = Менять содержимое окна и отправлять уведомления
+extension-permission-app-write = Менять рабочие деревья, ветки и коммиты, комментировать ревью и проблемы
+extension-permission-agents = Запускать, отправлять сообщения и останавливать агентов
+extension-permission-storage = Хранить свои данные
+extension-permission-network = Подключаться к интернету
+extension-permission-exec = Запускать программы от вашего имени
+extension-permission-clipboard = Копировать текст в буфер обмена
+extension-failed-title = Не удалось запустить { $name }
+extension-failed-hint = Исправьте ошибку и сохраните; представление перезагрузится само.
+extension-fix-with-ai = Исправить с AI
+extension-html-unsupported = HTML-расширения доступны в macOS.
+extension-open-failed = Не удалось открыть расширение
+extension-command-failed = Команда расширения не выполнилась
+extension-palette-open = Расширения › { $name }
+extension-palette-open-split = Расширения › { $name } в разделённом виде
+extension-palette-open-sidebar = Расширения › { $name } на боковой панели
+extension-palette-command = Расширения › { $name } › { $command }
+extension-chrome-tooltip = Расширения
+extension-new = Новое расширение
+extension-manage = Управление расширениями…
+extension-popover-empty-title = Расширений пока нет
+extension-popover-empty = Опишите представление в чате, и агент создаст его прямо рядом с вами.
+extension-sheet-subtitle = Представления, которые вы создаёте с агентом
+extension-open = Открыть
+extension-open-split = Открыть в разделённом виде
+extension-open-sidebar = Открыть на боковой панели
+sidebar-extension-close = Закрыть
+sidebar-extension-keep = Оставить на всех боковых панелях
+extension-edit-with-ai = Изменить с AI
+extension-change-icon = Сменить значок…
+extension-icon-automatic = Автоматически
+extension-show-folder = Показать папку
+extension-revoke = Отозвать одобрение
+extension-delete = Удалить
+extension-delete-confirm = Подтвердить удаление
+extension-scope-global = Везде
+extension-scope-workspace = Это рабочее пространство
+extension-scope-project = Этот проект
+extension-scope-shared = Общее с репозиторием
+extension-scope-workspace-short = Пространство
+extension-scope-project-short = Проект
+extension-scope-shared-short = Репо
+extension-intro-title = Что должно делать ваше расширение?
+extension-intro-body = Опишите представление, и агент создаст его рядом с этим чатом, где видно, как оно обретает форму. Расширения могут показывать агентов, рабочие деревья и состояние git, выполнять команды, загружать данные из сети и хранить свои заметки.
+extension-intro-placeholder = Опишите расширение…
+extension-intro-edit-title = Что изменить в { $name }?
+extension-intro-edit-body = Сначала агент читает код расширения. Представление рядом с чатом перезагружается при каждом сохранении.
+extension-intro-edit-placeholder = Опишите изменение…
+extension-fix-draft = Расширение показывает эту ошибку. Найди причину и исправь её:
+extension-edit-polish = Доработать дизайн
+extension-edit-polish-prompt = Доработай внешний вид: более чёткая иерархия, единообразные отступы и цвета, которые хорошо смотрятся и в светлой, и в тёмной теме.
+extension-edit-fix = Исправить ошибки
+extension-edit-fix-prompt = Проверь расширение и его логи, затем исправь все найденные ошибки и предупреждения.
+extension-edit-feature = Добавить функцию
+extension-edit-feature-prompt = Добавь функцию:{" "}
+extension-builder-needs-worktree = Сначала откройте рабочее дерево, чтобы у агента был чат для работы.
+extension-example-agent-board = Канбан агентов
+extension-example-agent-board-prompt = Канбан-доска всех агентов в этом рабочем пространстве с четырьмя колонками в таком порядке: «Нужен я» (просит разрешения или ждёт ответа), «Работает», «Завершён» (остановился, пока я не смотрел) и «Бездействует». Карточки перемещаются сами при каждом изменении состояния агента, поэтому перетаскивать их не нужно. На каждой карточке — имя агента, провайдер и модель, последнее, что он сказал, и сколько времени он находится в колонке. В «Нужен я» первыми идут те, кто ждёт дольше всех; в остальных колонках — последние изменения. Карточка в «Нужен я» показывает, о чём спрашивает агент, и я могу ответить прямо с карточки, если агент это позволяет. Агенты, запущенные другим агентом, складываются под его карточкой. Щелчок по карточке открывает её чат, а её меню позволяет отправить агенту сообщение или остановить его после подтверждения. Заголовки колонок показывают количество, «Бездействует» изначально свёрнута, а доска обновляется по событиям агентов, а не опросом.
+extension-example-pr-queue = Очередь PR
+extension-example-pr-queue-prompt = Мои открытые pull request во всех проектах приложения, сгруппированные по проектам, со статусом ревью и проверок, сначала самые старые. Щелчок открывает pull request.
+extension-example-scratchpad = Блокнот
+extension-example-scratchpad-prompt = Блокнот для заметок на боковой панели. В нём список моих заметок, сначала новые, с поиском и кнопкой «Новая заметка». При открытии заметки показывается многострочный редактор, который сохраняет текст по мере ввода, а первая строка служит заголовком. Заметки можно закреплять сверху и удалять, и они сохраняются между сеансами.
+extension-example-script-runner = Запуск скриптов
+extension-example-script-runner-prompt = Кнопки для скриптов запуска этого проекта, которые показывают, выполняется ли каждый, и транслируют его последний вывод.
+settings-category-chat = Чат
+settings-category-chat-description = Поле ввода, предсказания и отображение бесед для всех провайдеров.
+settings-search-section-predictions = Предсказания
+settings-section-composer = Поле ввода
+settings-search-section-composer = Поле ввода
+settings-search-entry-experimental-feature-flags-ghost-composer-label = Предсказание следующего сообщения
+settings-search-entry-experimental-feature-flags-ghost-composer-description = Предлагает следующее сообщение призрачным текстом и дополняет имена при вводе. Tab принимает. Тонкая настройка — в Чат › Предсказания.
+settings-search-entry-experimental-feature-flags-prediction-inspector-label = Инспектор предсказаний
+settings-search-entry-experimental-feature-flags-prediction-inspector-description = Показывает закреплённое окно с живыми источниками предсказаний, ранжированием и доступностью для активного чата. Не отправляет запросов к модели.
+prediction-inspector-title = Инспектор предсказаний
+prediction-inspector-copy = Копировать снимок
+settings-mcp-config-loading = Чтение конфигурации Codex…
+settings-mcp-config-refresh = Обновить серверы MCP Codex
+settings-mcp-quieted-servers = Серверы MCP Codex
+settings-mcp-quieted-servers-caption = Эти серверы не упоминаются в чате, когда не запущены. Они по-прежнему запускаются, а их инструменты остаются доступны.
