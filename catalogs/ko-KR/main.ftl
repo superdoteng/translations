@@ -2651,7 +2651,7 @@ risk-add-large-folder-message = { $path }에는 최상위 항목이 { $count }�
 risk-cannot-add-above-home-title = 홈 폴더의 상위 폴더는 추가할 수 없음
 risk-cannot-add-above-home-message = { $path }에는 홈 폴더가 포함되어 있습니다. 대신 홈 폴더나 그 안의 폴더를 선택하세요.
 risk-create-worktree-home-title = 홈 폴더에서 워크트리를 만들까요?
-risk-create-worktree-home-message = 선택한 경로({ $path })는 홈 폴더이며 이미 Git 저장소입니다. 여기에서 워크트리를 만들면 개인 파일이나 시스템 관련 파일이 대량으로 추적될 수 있습니다.
+risk-create-worktree-home-message = { $path } 경로는 홈 폴더이며 이미 Git 저장소입니다. 여기에서 워크트리를 만들면 개인 파일이나 시스템 관련 파일이 대량으로 추적될 수 있습니다.
 risk-cannot-initialize-here-title = 여기에서는 Git을 초기화할 수 없음
 risk-cannot-initialize-here-message = 선택한 경로({ $path })는 { $location }입니다. { $app_name }은 예약된 시스템 폴더에 Git 메타데이터를 만들지 않습니다.
 risk-cannot-initialize-home-title = 홈 폴더에서는 Git을 초기화할 수 없음
@@ -3629,7 +3629,7 @@ agent-row-count = { $count ->
 }
 agent-row-id-tooltip = 에이전트 ID { $id }
 agent-row-show-all = 모두 보기
-agent-row-unnamed-wait = 서브에이전트
+agent-row-unnamed-wait = 시작한 에이전트
 subagent-status-done = { $time } 만에 완료
 subagent-status-failed = { $time } 후 실패
 subagent-status-interrupted = { $time } 후 중지
