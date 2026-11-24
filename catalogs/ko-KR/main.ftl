@@ -92,7 +92,7 @@ review-comment-add-to-review = 리뷰에 추가
 action-cancel = 취소
 action-add = 추가
 review-comment-not-found = 댓글을 찾을 수 없습니다
-diff-no-changes-file-preview = (변경 없음 — 파일 미리보기)
+diff-no-changes-file-preview = (변경 사항 없음 — 파일 미리보기)
 status-loading = 불러오는 중…
 diff-file-type-not-supported = 지원하지 않는 파일 형식
 diff-hunks-load-failed = diff hunk를 불러오지 못했습니다
@@ -4081,7 +4081,7 @@ palette-suggest-files-changed = 파일 { $count }개 변경됨
 
 palette-current = 현재
 
-palette-empty-scope = “{ $query }”와 일치하는 { $scope } 없음
+palette-empty-scope = “{ $query }”에 해당하는 { $scope } 없음
 
 palette-empty-recent = 아직 최근 항목이 없습니다
 
@@ -4111,7 +4111,7 @@ palette-actions = 작업
 
 palette-actions-search = 작업 검색…
 
-palette-actions-no-match = “{ $query }”와 일치하는 작업 없음
+palette-actions-no-match = “{ $query }”에 해당하는 작업 없음
 
 palette-action-open = 열기
 
@@ -4372,7 +4372,7 @@ bookmarks-empty-title = 다시 읽고 싶은 답변을 보관하세요
 
 bookmarks-empty-hint = 답변 위에 포인터를 올리고 북마크를 클릭하세요. 모든 채팅에서 저장한 답변이 여기에 모입니다.
 
-bookmarks-no-matches = “{ $query }”와 일치하는 북마크 없음
+bookmarks-no-matches = “{ $query }”에 해당하는 북마크 없음
 
 bookmarks-untitled-response = 제목 없는 답변
 
@@ -4943,9 +4943,9 @@ resources-close-consequence = 해당 페이지가 닫힙니다.
 resources-average-title = 에이전트당 평균
 resources-tree-more = +{ $count }개 더
 issue-report-check-submission = 제출 상태 확인
-issue-report-submission-uncertain = 이 보고서가 이미 GitHub에 있을 수 있습니다. 제출 상태를 확인하여 찾아보세요. 확인 시 다시 게시되지 않습니다. 아직 찾을 수 없다면 잠시 기다린 후 다시 확인하거나, 이 초안을 삭제하기 전에 GitHub에서 본인의 이슈를 검토하세요.
-issue-report-discard-uncertain = 초안 삭제 (보고서가 이미 있을 수 있음)
-issue-report-draft-load-failed = 저장된 보고서를 읽을 수 없습니다. 다른 보고서를 제출하기 전에 저장 공간 문제를 해결하고 앱을 다시 시작하세요.
+issue-report-submission-uncertain = 이 신고가 이미 GitHub에 있을 수 있습니다. 제출 상태를 확인하여 찾아보세요. 확인 시 다시 게시되지 않습니다. 아직 찾을 수 없다면 잠시 기다린 후 다시 확인하거나, 이 초안을 삭제하기 전에 GitHub에서 본인의 이슈를 검토하세요.
+issue-report-discard-uncertain = 초안 삭제 (신고가 이미 있을 수 있음)
+issue-report-draft-load-failed = 저장된 신고 내용을 읽을 수 없습니다. 다른 신고를 제출하기 전에 저장 공간 문제를 해결하고 앱을 다시 시작하세요.
 review-comment-edit-staged = 편집하기 전에 입력창에서 이 리뷰를 제거하세요.
 
 chat-edit-skill-as-text = 스킬을 텍스트로 편집
