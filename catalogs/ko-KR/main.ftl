@@ -3629,7 +3629,7 @@ agent-row-count = { $count ->
 }
 agent-row-id-tooltip = 에이전트 ID { $id }
 agent-row-show-all = 모두 보기
-agent-row-unnamed-wait = 시작한 에이전트
+agent-row-unnamed-wait = 이 채팅이 시작한 에이전트
 subagent-status-done = { $time } 만에 완료
 subagent-status-failed = { $time } 후 실패
 subagent-status-interrupted = { $time } 후 중지
