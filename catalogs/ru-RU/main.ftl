@@ -614,6 +614,8 @@ workspace-remote-machine-description = Создайте пустое рабоч�
 workspace-remove-projects-branches-blocked = Сначала удаляйте из этих ветвей, потом попробуйте снова.
 workspace-rename-title = Переименовать Workspace
 workspace-shared-context = Общий контекст
+workspace-shared-context-description = Общий контекст для нескольких проектов в одном рабочем пространстве.
+workspace-shared-context-detail = Подходит для координации между репозиториями и общих изменений интерфейсов.
 workspace-ssh-target = SSH цель
 workspace-update-projects-title = Обновление проектов рабочего пространства
 workspace-update-projects-tooltip = Обновление проектов рабочих пространств
@@ -1184,6 +1186,7 @@ common-all = Все
 review-resolved-count = Решено ({ $count })
 right-panel-setup = Настройка
 action-stop = Стой
+action-resume = Возобновить
 right-panel-terminal = Терминал
 setup-run = Настройка запуска
 setup-empty-title = Добавить скрипт настройки
@@ -1287,6 +1290,7 @@ permission-approve-for-me = Одобрять за меня
 permission-full-access = Полный доступ
 permission-auto-review = Автопроверка
 permission-always-approve = Всегда одобрять
+permission-smart = Умный
 permission-smart-auto = Умный авто
 permission-run-everything = Выполнять всё
 permission-cli-settings = Настройки CLI
@@ -1332,6 +1336,35 @@ chat-agent-wait-caption =
         [many] { $model } продолжит, когда все завершатся
        *[other] { $model } продолжит, когда все завершатся
     }
+chat-agent-wait-needs-input = { $count ->
+    [1] { $agent } ждёт вас
+    [one] { $count } агент ждёт вас
+    [few] { $count } агента ждут вас
+    [many] { $count } агентов ждут вас
+   *[other] { $count } агента ждут вас
+}
+chat-stop-waiting-agents = { $count ->
+    [1] Остановить 1 агента
+    [one] Остановить { $count } агента
+    [few] Остановить { $count } агента
+    [many] Остановить { $count } агентов
+   *[other] Остановить { $count } агента
+}
+chat-stop-waiting-agents-remote = { $count ->
+    [1] Остановить 1 агента (в другом рабочем дереве)
+   *[other] { $remote ->
+        [1] Остановить агентов: { $count } (1 в другом рабочем дереве)
+        [one] Остановить агентов: { $count } ({ $remote } в других рабочих деревьях)
+        [few] Остановить агентов: { $count } ({ $remote } в других рабочих деревьях)
+        [many] Остановить агентов: { $count } ({ $remote } в других рабочих деревьях)
+       *[other] Остановить агентов: { $count } ({ $remote } в других рабочих деревьях)
+    }
+}
+chat-agent-wait-paused = Приостановлено
+chat-agent-wait-paused-both = Приостановлено · завершено: { $finished }, работают: { $working }
+chat-agent-wait-paused-finished = Приостановлено · завершено: { $finished }
+chat-agent-wait-paused-working = Приостановлено · работают: { $working }
+chat-background-work-wait-caption = { $model } продолжит, когда фоновая работа завершится
 chat-worked-for = Работал { $duration }
 chat-worked = Работал
 plan-proposed = ПРЕДЛОЖЕННЫЙ ПЛАН
@@ -1462,28 +1495,50 @@ risk-initialize-git-title = Инициализировать Git?
 risk-initialize-git-message = Это создаст { $git_path } и сделает выбранную папку Git репозиторием. { $app_name } буду использовать этот Git репозиторий для отслеживания ветвей и создания рабочих деревьев.
 sidebar-projects = Проекты
 focus-page-all-workspaces = Все рабочие пространства
-focus-page-empty = Нет открытых чатов
-focus-page-active-empty = Ничего не требует вашего внимания
+focus-page-empty = Верстак пуст
+focus-page-empty-filtered = Нет подходящих элементов
 focus-page-new = Новая функция
-focus-section-active = Активные
-focus-section-working = Выполняются
-focus-section-open = Открытые
-focus-sort-header = Сортировать функции по
-focus-sort-header-chats = Сортировать чаты по
-focus-sort-last-user-message = Последнее сообщение пользователя
-focus-sort-activity = Активность
-focus-card-dismiss = Скрыть
-focus-card-close = Закрыть чаты
-focus-card-no-chats = Нет открытых чатов
-focus-close-title =
-    { $count ->
-        [one] Закрыть { $count } вкладку чата?
-        [few] Закрыть { $count } вкладки чатов?
-        [many] Закрыть { $count } вкладок чатов?
-       *[other] Закрыть { $count } вкладки чатов?
-    }
-focus-close-description = Беседы останутся в истории. Выполняющиеся чаты останутся открытыми.
-focus-mode-show-focus = Показать фокус
+focus-section-active = Верстак
+focus-section-pinned = Закреплённые
+focus-section-settled = Готово
+focus-done-empty = Пока ничего не готово
+focus-status-approval = Нужно одобрение
+focus-status-review = Готово
+focus-action-pin = Закрепить
+focus-action-unpin = Открепить
+focus-action-settle = Отметить как готовое
+focus-action-settle-below = Отметить всё ниже как готовое
+focus-action-settle-all = Отметить всё как готовое
+focus-action-add-to-workbench = Добавить на Верстак
+focus-action-mark-done-in-workbench = Отметить как готовое на Верстаке
+focus-action-restore = Вернуть на Верстак
+focus-notice-chat-added = Чат добавлен на Верстак
+focus-notice-chat-marked-done = Отмечено как готовое на Верстаке
+focus-notice-chat-removed = Чат убран с Верстака
+focus-options-filter = Фильтр
+focus-options-display = Вид
+focus-scope-all = Все рабочие пространства и проекты
+focus-scope-all-projects = Все проекты
+focus-scope-search-placeholder = Фильтр рабочих пространств или проектов...
+focus-scope-only = Только
+focus-scope-reset = Сбросить
+focus-scope-clear = Очистить фильтр
+focus-scope-n-projects = Проектов: { $count }
+focus-scope-n-workspaces = Рабочих пространств: { $count }
+focus-scope-no-matches = Нет подходящих проектов
+focus-options-show-header = Показывать как
+focus-options-worktrees = Рабочие деревья
+focus-options-chats = Отдельные чаты
+focus-options-layout-header = Макет
+focus-options-flat = Списком (по давности)
+focus-options-by-project = Группировать по проектам
+focus-options-window-header = Активные за
+focus-shared-badge = Общий
+focus-shared-all-repos = Все репозитории
+focus-shared-repos-header = Дочерние репозитории
+focus-shared-add-repo = Добавить
+workspace-chrome-more-tools = Другие инструменты
+focus-mode-show-focus = Показать Верстак
 focus-mode-show-worktrees = Показать рабочие деревья
 sort-recent-activity = Недавняя деятельность
 sort-most-activity = Основная активность
@@ -1554,7 +1609,6 @@ toast-check-git-identity = Проверьте Git имя пользовател�
 toast-worktree-already-creating = Уже создаётся рабочее дерево.
 toast-primary-worktree-stays-on-top = Основное рабочее дерево остаётся на вершине
 toast-primary-worktree-cannot-reorder = Основное рабочее дерево нельзя перестроить. Чтобы скрыть его, кликните правой кнопкой мыши и выберите «Скрыть основное рабочее дерево».
-toast-enable-shared-context-workspaces = Включите экспериментальные > рабочие пространства общего контекста для использования рабочих пространств.
 toast-workspace-setup-error = Ошибка настройки рабочего пространства
 toast-create-shared-context-symlinks-failed = Не удалось создать символические ссылки с общим контекстом: { $error }
 toast-create-branch-group-failed = Не удалось создать группу филиалов: { $error }
@@ -1714,8 +1768,6 @@ settings-search-no-results = Никакие настройки не совпад
 settings-search-results-summary = Результаты: { $result_count } · Категории: { $category_count }
 settings-search-hidden-results = Дополнительные совпадения: { $count } — продолжайте вводить, чтобы сузить поиск.
 settings-experimental-heading = Экспериментальные
-settings-experimental-shared-context-label = Рабочие пространства с общим контекстом
-settings-experimental-shared-context-description = Разрешить выбирать родительские папки, которые расширяются в дочерние репозитории для рабочих пространств, работающих с общим контекстом.
 settings-experimental-remote-workspaces-label = Удалённые рабочие пространства
 settings-experimental-remote-workspaces-description = Создайте рабочие пространства, которые будут работать на удалённом компьютере SSH. Существующие удалённые рабочие пространства продолжают работать, когда они отключаются.
 settings-experimental-non-git-projects-label = Проекты вне Git
@@ -1724,8 +1776,8 @@ settings-experimental-auto-compact-label = Автоматическое сжат
 settings-experimental-auto-compact-description = Если ход Claude Code не удаётся из-за превышения контекстного окна модели, автоматически запустите /compact и повторно отправьте последнее сообщение. Полезно для бэкендов без 1M-контекста (например, GLM5.1), где Claude Code CLAUDE_CODE_AUTO_COMPACT_WINDOW не срабатывает в режиме -p.
 settings-experimental-review-label = Обзор
 settings-experimental-review-description = Запускайте диспетчеры проверки в терминалах безголового провайдера и ведите AI историю задач.
-settings-experimental-focus-mode-label = Режим фокуса
-settings-experimental-focus-mode-description = Добавляет на левую боковую панель страницу фокуса с карточками чатов в очереди, выполняющихся и открытых, а также кнопку в заголовке окна для перехода к ней.
+settings-experimental-focus-mode-label = Верстак
+settings-experimental-focus-mode-description = Добавляет на левую боковую панель общий для всех рабочих пространств Верстак, где активные рабочие деревья и чаты остаются, пока вы не отметите их как готовые, а также кнопку в заголовке окна для перехода к нему.
 settings-storage-conversation-label = Хранение разговоров
 settings-storage-status-label = Статус
 settings-storage-analyze = Анализ
@@ -1788,10 +1840,39 @@ settings-extensions-approvals-count = { $count ->
 settings-extensions-forget = Сбросить одобрения
 settings-secrets-heading = Сохранённые секреты
 settings-secrets-intro-label = Сохранённые секреты
+settings-secrets-intro-detail = Хранятся в системной связке ключей, пока вы их не удалите. Вставляйте поддерживаемые ключи и токены в любой чат или выбирайте любой сохранённый секрет, когда агент его запрашивает.
 settings-secrets-add = Добавить секрет
 settings-secrets-replace = Заменить значение
 settings-secrets-empty = Сохраните секрет кнопкой «Сохранить…» у вставленного секрета, по запросу агента или через «Добавить секрет».
 settings-secrets-empty-title = Сохранённых секретов пока нет
+settings-secrets-safety-heading = Что защищено, а что нет
+settings-secrets-safety-use-label = Агенты могут использовать всё, что вы им даёте
+settings-secrets-safety-use-description = Даже секрет, который агент не может прочитать, можно использовать в течение 24 часов для всего, что разрешает ключ. Выдавайте ключи с ограниченным доступом, которые можно отозвать.
+settings-secrets-safety-held-label = Секреты, которые хранит super.engineering
+settings-secrets-safety-held-description = Для поддерживаемых SSH-ключей и токенов доступа к API приложение держит значение в памяти и использует его за агента — агент никогда не видит секрет.
+settings-secrets-safety-held-point-ssh = Закрытые SSH-ключи попадают в собственный SSH-агент приложения: агент запускает ssh или git, а подпись ставит приложение. Другие агенты и приложения, запущенные от вашего имени, тоже могут подписывать им, но не могут скопировать ключ. Ключи, защищённые парольной фразой, и ключи неподдерживаемых форматов можно передать только файлом.
+settings-secrets-safety-held-point-http = Поддерживаемые токены доступа GitHub, GitLab, OpenAI, Anthropic, Hugging Face, npm, DigitalOcean, SendGrid, Slack, Stripe и Linear работают через se secret http: запросы идут только по HTTPS на хосты этого сервиса (без перенаправлений), а токен скрывается в ответах. Для GitHub и GitLab вы подтверждаете публичный сервис перед первым использованием. Таким инструментам, как gh, SDK, учётным данным самостоятельно размещённых сервисов, URL вебхуков и токенам обновления нужен читаемый файл.
+settings-secrets-safety-held-point-dig = Это не даёт передать агенту само значение, но не остановит настойчивого агента, работающего от вашего имени. super.engineering очищает буфер обмена после того, как вы вставите или сохраните секрет, но агент или менеджер буфера обмена может прочитать его раньше или изменить настройки вашей оболочки, чтобы перехватить секрет, который вы введёте позже.
+settings-secrets-safety-held-point-restart = Хранимые секреты остаются в памяти — никогда не записываются на диск — и забываются при выходе из приложения. Релизные сборки для macOS и Linux не дают другим приложениям, запущенным от вашего имени, читать память приложения.
+settings-secrets-safety-held-point-ssh-hosts = На SSH-хостах хранимые ключи и токены никогда не покидают этот компьютер — запросы отправляются отсюда. Пока идёт сеанс, другие программы на хосте могут подписывать через перенаправленный агент, но не могут скопировать ключ.
+settings-secrets-safety-readable-label = Секреты, которые агент может прочитать
+settings-secrets-safety-readable-description = Вставленные значения, которые super.engineering не может хранить (или вставленные в команду !), и секреты, которые вы явно разрешили агенту прочитать, на 24 часа помещаются в закрытый файл. Сохранённые секреты, вставленные в чат, никогда не передаются читаемым файлом.
+settings-secrets-safety-file-point-readable = Агент читает его из закрытого файла. Другие приложения, запущенные от вашего имени, тоже могут прочитать этот файл.
+settings-secrets-safety-file-point-expiry = Через 24 часа агент теряет доступ. Если он ещё нужен, выдайте секрет снова. Сохранённые секреты остаются сохранёнными.
+settings-secrets-safety-file-point-cleanup = Если компьютер перезагрузится раньше, файл может остаться дольше.
+settings-secrets-safety-file-point-revoke = Отзыв доступа не отзывает сам ключ и не удаляет копии, сделанные агентом.
+settings-secrets-safety-file-point-unrecognized = Вставленные секреты перехватываются, только если они распознаны. Для всего остального нажмите правой кнопкой мыши и выберите «Вставить как секрет».
+settings-secrets-safety-keyring-label = Сохранённые секреты
+settings-secrets-safety-keyring-description = Хранятся в системной связке ключей, пока вы их не удалите, чтобы их можно было использовать снова без повторной вставки.
+settings-secrets-safety-keyring-point-already-given = Удаление или замена секрета не влияет на агентов, которым вы его уже выдали.
+settings-secrets-safety-keyring-point-mac-prompt = На Mac другие приложения могут прочитать сохранённый секрет, только если вы это разрешите. Если Keychain спрашивает, разрешить ли другой программе использовать секрет super.engineering, выберите «Запретить».
+settings-secrets-safety-keyring-point-linux = В Linux любое приложение, запущенное от вашего имени, включая агентов, может прочитать все сохранённые секреты.
+settings-secrets-safety-output-label = Скрытие секретов в выводе команд
+settings-secrets-safety-output-description = Для секретов, переданных читаемым файлом: по возможности, в последних версиях Claude Code и в выводе локальной оболочки, который вы добавляете в сообщение. Другие агенты видят выведенные секреты.
+settings-secrets-safety-output-point-window = Работает только в течение 24 часов, пока у агента есть секрет.
+settings-secrets-safety-output-point-misses = Не срабатывает для неудачных команд, закодированных или частичных копий и значений короче 8 символов.
+settings-secrets-safety-output-point-fails-open = Если проверка завершается ошибкой или по тайм-ауту, вывод проходит без изменений.
+settings-secrets-safety-output-point-leftovers = Значение всё ещё может оставаться в других хуках, телеметрии, истории оболочки, журналах и файлах.
 settings-privacy-share-label = Обмен анонимными данными об использовании
 settings-privacy-share-description = Это помогает нам понять, как используется super.engineering, и расставлять приоритеты для улучшений. Никакие личные данные, данные проекта или содержимое файлов никогда не покидают ваш компьютер.
 settings-privacy-what-we-send-description = Случайный идентификатор установки, случайный идентификатор сессии приложения, версия приложения, канал обновлений, название и версия операционной системы, архитектура CPU, временные метки начала и окончания сессии и её продолжительность, а также событие ежедневной активности при запуске или при первом последующем фокусе/вводе в приложении за каждые сутки по UTC. При отключении телеметрия прекращается без отправки последнего события отказа. Идентификатор установки сохраняется на устройстве и используется повторно при повторном включении телеметрии; состояние сессии удаляется.
@@ -1830,6 +1911,7 @@ settings-search-section-shortcuts = Короткие пути
 settings-search-section-sources = Источники
 settings-search-section-telemetry = Телеметрия
 settings-search-section-saved-secrets = Сохранённые секреты
+settings-search-section-secrets-safety = Что защищено, а что нет
 settings-search-section-feature-flags = Флаги особенностей
 settings-search-section-location = Расположение
 settings-search-section-cleanup = Очистка
@@ -1907,6 +1989,8 @@ settings-search-entry-general-behavior-project-header-click-label = Нажати
 settings-search-entry-general-behavior-project-header-click-description = Выберите, что происходит при нажатии на имя проекта на боковой панели. Стрелка рядом с именем всегда разворачивает и сворачивает.
 settings-search-entry-general-behavior-confirm-before-quitting-label = Проверьте перед увольнением
 settings-search-entry-general-behavior-confirm-before-quitting-description = Покажите подсказку подтверждения при нажатии Cmd+Q или выберите Выйти из меню.
+settings-search-entry-general-behavior-keep-running-when-the-window-closes-label = Продолжать работу после закрытия окна
+settings-search-entry-general-behavior-keep-running-when-the-window-closes-description = Чаты, агенты и автоматизации продолжают работать в фоне. Нажмите на значок в Dock, чтобы вернуть окно.
 settings-search-entry-general-behavior-confirm-before-closing-a-running-tab-label = Проверьте перед закрытием вкладки
 settings-search-entry-general-behavior-confirm-before-closing-a-running-tab-description = Показывайте запрос подтверждения при закрытии вкладки, у которой всё ещё работает агент или терминал.
 settings-search-entry-general-behavior-open-links-in-the-in-app-browser-label = Открывать ссылки во встроенном браузере
@@ -1941,6 +2025,8 @@ settings-search-entry-appearance-theme-theme-label = Тема
 settings-search-entry-appearance-theme-theme-description = Совпадение системы внешний вид или режим Force Light/Dark.
 settings-search-entry-appearance-theme-contrast-label = Контрастность
 settings-search-entry-appearance-theme-contrast-description = Повышает контрастность текста и границ. «Системная» следует настройке «Увеличить контраст» вашей ОС.
+settings-search-entry-appearance-theme-syntax-colors-label = Цвета синтаксиса
+settings-search-entry-appearance-theme-syntax-colors-description = Цветовая палитра для кода в диффах, файлах, чате и редакторе. Автоматически следует светлой или тёмной теме.
 settings-search-entry-appearance-theme-customize-theme-label = Настройка темы
 settings-search-entry-appearance-theme-customize-theme-description = Откройте кастомизатор темы рабочего пространства.
 settings-search-entry-appearance-theme-app-icon-label = Иконка приложения
@@ -2025,6 +2111,8 @@ settings-search-entry-palette-sources-keyboard-shortcut-label = Клавишны
 settings-search-entry-palette-sources-keyboard-shortcut-description = Откройте палитру команд с помощью настроенного ярлыка.
 settings-search-entry-palette-sources-show-files-label = Файлы шоу
 settings-search-entry-palette-sources-show-files-description = Включайте файлы рабочего пространства в палитру.
+settings-search-entry-palette-sources-show-files-in-all-label = Показывать файлы во «Всё»
+settings-search-entry-palette-sources-show-files-in-all-description = Показывать подходящие файлы рабочего пространства внизу списка «Всё». Режим «Файлы» не меняется.
 settings-search-entry-palette-sources-show-worktrees-label = Деревья показаний
 settings-search-entry-palette-sources-show-worktrees-description = Добавьте рабочие деревья git, чтобы можно было переключать или фокусировать их из палитры.
 settings-search-entry-palette-sources-show-tabs-label = Вкладки показа
@@ -2039,8 +2127,8 @@ settings-search-entry-privacy-telemetry-share-anonymous-usage-data-label = Об�
 settings-search-entry-privacy-telemetry-share-anonymous-usage-data-description = Это помогает нам понять, как используется super.engineering, и расставлять приоритеты для улучшений.
 settings-search-entry-secrets-saved-secrets-label = Сохранённые секреты
 settings-search-entry-secrets-saved-secrets-description = API-ключи, токены и пароли в системной связке ключей для всех проектов или одного.
-settings-search-entry-experimental-feature-flags-shared-context-workspaces-label = Рабочие пространства с общим контекстом
-settings-search-entry-experimental-feature-flags-shared-context-workspaces-description = Разрешить выбирать родительские папки, которые расширяются в дочерние репозитории для рабочих пространств, работающих с общим контекстом.
+settings-search-entry-secrets-safety-label = Что защищено, а что нет
+settings-search-entry-secrets-safety-description = Что получают агенты, где хранятся секреты и что может утечь.
 settings-search-entry-experimental-feature-flags-remote-workspaces-label = Удалённые рабочие пространства
 settings-search-entry-experimental-feature-flags-remote-workspaces-description = Создавайте рабочие пространства, которые будут работать на удалённом компьютере SSH. Существующие удалённые рабочие пространства продолжают работать, когда они отключаются.
 settings-search-entry-experimental-feature-flags-non-git-projects-label = Проекты вне Git
@@ -2304,6 +2392,11 @@ chat-enhance-prompt-provider-error = Настроенный поставщик �
 shortcut-sequence-then = { $first } тогда { $second }
 chat-attach-files = Прикрепить файлы
 chat-prompt-suggestion-tab-hint = tab
+chat-add-menu-tooltip = Добавить файлы, контекст и секреты
+chat-add-menu-search-placeholder = Добавить файлы, агентов, вкладки или секреты…
+chat-add-menu-files = Файлы и изображения…
+chat-add-menu-browser-tabs = Вкладки браузера
+chat-add-menu-paste-as-secret = Вставить как секрет
 chat-change-profile = Профиль изменения
 chat-copy-command = Копировать команду
 chat-copy-output = Копирование вывода
@@ -2426,6 +2519,13 @@ workspace-add-split-pane = Разделить панель
 workspace-add-split-view = Разделить вид
 workspace-choose-app = Выбрать приложение
 theme-picker-title = Тема
+theme-sync-modes = Синхронизировать светлую и тёмную
+theme-sync-on = Изменения применяются к обеим.
+theme-sync-replaces-dark = При включении цвета тёмной темы заменятся цветами светлой.
+theme-sync-replaces-light = При включении цвета светлой темы заменятся цветами тёмной.
+theme-colors-for-both = Цвета для светлой и тёмной
+theme-colors-for-light = Цвета для светлой
+theme-colors-for-dark = Цвета для тёмной
 theme-menu-tooltip = Скопируйте или вставьте тему, задайте тему по умолчанию или сбросьте её.
 theme-close-tooltip = Закрыть (Esc)
 theme-link-on-tooltip = Светлая и тёмная темы связаны. Нажмите, чтобы разъединить их.
@@ -2434,12 +2534,14 @@ theme-link-off-dark-tooltip = Светлая и тёмная темы разде
 theme-status-solid = Сплошной
 theme-status-custom = Свой
 theme-gradient = Градиент
+theme-direction = Направление
 theme-auto = Авто
 theme-eyedropper-tooltip = Взять цвет из любой точки экрана.
 theme-hex = Hex
 theme-hex-adjusted = Скорректирован, чтобы текст оставался читаемым
 theme-hex-invalid = Это не шестнадцатеричный цвет
 theme-adjust = Настроить
+theme-advanced = Дополнительно
 theme-slider-reset-hint = Дважды щёлкните ползунок, чтобы сбросить его.
 theme-adjust-summary-background = Цвет { $color }%   Стекло { $glass }%
 theme-adjust-summary-prominence = Значимость { $prominence }%
@@ -2447,6 +2549,21 @@ theme-brightness-sidebar-note = Задаётся цветом выше
 theme-chip-current = Текущий
 theme-chip-pick = Взять
 theme-chip-workspace-tooltip = Из вашего рабочего пространства { $name }
+theme-chip-glade = Поляна
+theme-chip-white = Белый
+theme-chip-black = Чёрный
+theme-chip-stone = Камень
+theme-chip-slate = Сланец
+theme-chip-mint = Мята
+theme-chip-sky = Небо
+theme-chip-peach = Персик
+theme-chip-lilac = Сирень
+theme-chip-mist = Туман
+theme-chip-aurora = Сияние
+theme-chip-dawn = Рассвет
+theme-chip-gild = Позолота
+theme-chip-tropic = Тропики
+theme-chip-opal = Опал
 theme-chip-sakura = Сакура
 theme-chip-ember = Угли
 theme-chip-honey = Мёд
@@ -2462,7 +2579,7 @@ theme-accent-auto-tooltip = Вкл.: приложение подбирает а�
 theme-highlight-auto-tooltip = Вкл.: для подсветки используется акцентный цвет. Если выбрать другой цвет, настройка отключится.
 theme-group-sidebar = Боковая панель
 theme-group-content = Содержимое
-theme-color-strength = Цвет
+theme-color-strength = Интенсивность
 theme-opacity = Стекло
 theme-tint = Оттенок
 theme-brightness = Яркость
@@ -2552,6 +2669,8 @@ git-action-fix-comments = Исправьте комментарии
 git-action-fix-changes = Исправление изменений
 git-action-failing-context = ({ $count } не работает)
 git-action-checking = Проверка
+git-review-status-unavailable = Статус { $kind } недоступен
+git-review-next-retry = Следующая попытка в { $time }
 git-action-no-changes = Нет изменений
 git-action-prepared = Готово
 git-action-creating = Создание
@@ -2567,6 +2686,11 @@ git-action-marking-ready = Маркировка готова
 git-action-merging = Слияние
 git-action-deleting = Удаление
 git-action-preparing-review-request = Подготовка { $kind }
+git-issue-closes-on-merge = Создание { $kind } закроет её при слиянии
+git-issue-checking-status = Проверка статуса
+git-issue-status-unavailable = Не удалось проверить её статус
+git-issue-status-connect-linear = Подключите Linear, чтобы видеть её статус
+git-issue-assignee-you = Вы
 git-status-ready = Готовы
 git-status-mergeable = Слияние
 git-status-no-conflicts = Конфликтов нет.
@@ -2651,6 +2775,9 @@ palette-footer-back = Назад
 palette-action-restore = Восстановление
 sidebar-rename-worktree-label = Переименуйте лейбл worktree...
 group-branch-rename-title = Переименовать ветку
+secret-http-confirm-title = Этот токен выдан публичным сервисом { $issuer }?
+secret-http-confirm-hosts = Токен заканчивается на { $ending }. Разрешите агентам, которые его используют, отправлять его на { $hosts }, пока срок его действия не истечёт. Нажмите «Отмена», если токен принадлежит другой установке.
+secret-http-confirm-allow = Разрешить эти хосты
 group-branch-rename-subtitle = { $count ->
     [one] Переименовывает ветку в 1 репозитории
    *[other] Переименовывает ветку во всех репозиториях ({ $count })
@@ -2877,7 +3004,7 @@ settings-keybinding-action-paste = Паста
 settings-keybinding-action-copy = Принято
 settings-keybinding-action-toggle-right-panel = Переключение правой панели
 settings-keybinding-action-toggle-left-sidebar = Переключить левую боковую панель
-settings-keybinding-action-toggle-focus-mode = Переключить режим фокуса
+settings-keybinding-action-toggle-focus-mode = Переключить Верстак
 settings-keybinding-action-toggle-both-sidebars = Переключите обе боковые панели
 settings-keybinding-action-new-worktree = Новое рабочее дерево
 settings-keybinding-action-new-worktree-from = Новое рабочее дерево из
@@ -3094,6 +3221,10 @@ usage-popover-resets-at = Сброс { $time }
 usage-popover-window-left = { $window }: осталось
 usage-popover-updating = Обновление…
 usage-popover-retry = Повторить
+usage-popover-check-usage = Проверить использование
+usage-meter-manual-refresh = Обновление вручную
+usage-popover-manual-prompt = Использование { $provider } не загружается автоматически. Обновите, чтобы проверить текущие лимиты.
+usage-antigravity-manual-info = Antigravity не сообщает квоту плана через ACP. Обновление локально запускает `agy -p /usage` и `agy -p /credits`, чтобы проверить текущие лимиты и кредиты.
 usage-popover-accounts = Аккаунты
 
 usage-graph-on-pace = По графику
@@ -3359,10 +3490,16 @@ chat-reloading-pi-resources = Перезагрузка ресурсов Pi...
 file-menu-rename = Переименовать
 browser-annotation-destination-unavailable = Этот адресат аннотаций больше недоступен
 browser-annotation-composer-blocked = Нельзя добавлять аннотации, пока выбрана стенограмма субагента
+terminal-selection-destination-unavailable = Этот чат больше недоступен
+terminal-selection-composer-blocked = Этот чат сейчас не может принять выделение из терминала
+terminal-selection-no-destination = Откройте вкладку чата или включите AI-провайдера, чтобы отправить выделение
+terminal-selection-too-large = Выделите меньше вывода терминала, чтобы отправить его в чат
+terminal-selection-send-to-chat = Отправить в чат
+terminal-selection-new-chat = Новый чат
 browser-consent-title = Разрешить агентам управлять браузером в «{ $workspace_name }»?
 browser-consent-asked-by-agent = Агент
 browser-consent-asked-by-worktree = Агент, работающий в «{ $caller_label }»
-browser-consent-description = { $asked_by } запросил запуск se browser { $spelling } во вкладке браузера этого рабочего пространства. Разрешение даст всем агентам пространства постоянное право — для этой и всех будущих команд act — нажимать, вводить текст, переходить по страницам и выполнять скрипты на любой открытой странице, включая сеансы с выполненным входом. Большинство команд только для чтения не требуют одобрения, но чтение значений cookie требует. Разрешение сохраняется для рабочего пространства; его можно отозвать в Настройках в любое время.
+browser-consent-description = { $asked_by } запросил запуск se browser { $spelling } во вкладке браузера этого рабочего пространства. Разрешение даст всем агентам этого рабочего пространства постоянное право — для этой и всех будущих команд act, а не только для этой, — нажимать, вводить текст, переходить по страницам и выполнять скрипты на любой открытой странице, включая сеансы с выполненным входом. Большинству команд только для чтения одобрение не нужно, но для чтения значений cookie оно требуется. Разрешение сохраняется для рабочего пространства, и его можно отозвать в любое время в разделе Настройки › Браузер › Управление агентами.
 palette-no-matching-files-index-incomplete = Нет подходящих файлов (индекс неполон: рабочее дерево превышает лимит сканирования файлов)
 update-ready-title = Обновление готово
 update-ready-restart = Перезапустить
@@ -3753,6 +3890,7 @@ worktree-preparing = Подготовка рабочего дерева…
 chat-queued-until-worktree-ready = Отправится, когда будет готово
 chat-delivery-unconfirmed = Доставка не подтверждена
 chat-delivery-unconfirmed-retry = Перед повтором проверьте разговор: возможно, сообщение уже доставлено.
+chat-writing-equation = Рисую уравнение…
 chat-answer-pending-delivery = Ожидает доставки
 input-recommended-by = Рекомендовано агентом { $agent }
 input-drawer-waiting = { $agent } ждёт вас
@@ -4144,6 +4282,7 @@ palette-footer-branches = Ветки
 palette-section-use-query-with = Использовать «{ $query }» с
 palette-ask-agent-new-chat = Новый чат { $provider }
 palette-search-conversation-history = Поиск по истории бесед
+palette-file-search-jump = Поиск файлов
 palette-suggest-review-comments = { $count ->
     [one] { $count } комментарий к проверке
     [few] { $count } комментария к проверке
@@ -4283,6 +4422,10 @@ palette-action-open-review-request = { $forge ->
 }
 palette-action-create-and-start = Создать и запустить { $provider }
 palette-search-projects = Выбрать проект
+palette-quick-create-current = Текущий
+palette-quick-create-shared-context = Общий контекст
+palette-quick-create-hint = Нажмите { $shortcut } или начните вводить для фильтрации
+palette-quick-create-options = Параметры
 palette-mode-projects = Проекты
 palette-section-branches = Ветки
 palette-section-look-up = Найти
@@ -4435,7 +4578,11 @@ browser-dialog-title-page = Эта страница сообщает
 section-rule-path = Glob-шаблон пути
 settings-search-entry-agents-providers-jcode-provider-label = Провайдер jcode
 settings-search-entry-agents-providers-jcode-provider-description = Включите jcode и настройте его модели и параметры запуска.
+settings-search-entry-agents-providers-devin-provider-label = Провайдер Devin
+settings-search-entry-agents-providers-devin-provider-description = Включите Devin и настройте его модели и флаги запуска.
 settings-ai-provider-jcode-description = Включить jcode как провайдер чата и терминала (требуется установленный CLI jcode `jcode`). В чатах запускаются все инструменты, разрешённые собственной конфигурацией jcode; jcode не может предварительно запросить разрешение.
+settings-ai-provider-devin-description = Включить поддержку чата и терминала Devin (требуется установленный Devin CLI `devin`). Для статуса терминала в Devin регистрируется локальный плагин хуков super.engineering.
+workspace-devin-remote-lifecycle-unsupported = Удалённые терминалы Devin пока не сообщают текущий статус и не возобновляют сеансы.
 settings-keybinding-action-paste-as-secret = Вставить как секрет
 settings-keybinding-action-insert-saved-secret = Вставить сохранённый секрет…
 clone-waiting-for-stop = Ожидание остановки процесса клонирования…
@@ -4469,9 +4616,17 @@ secret-request-title = Агент запрашивает секрет
 secret-request-asked-by = «{ $asker }» запрашивает: { $label }
 secret-request-asked-by-agent = Агент запрашивает: { $label }
 secret-request-placeholder = Вставьте или введите секрет
+secret-request-detail-held = super.engineering хранит его и использует за агента, который не может его прочитать. Срок действия — 24 часа.
+secret-request-detail-unprotectable = super.engineering не может использовать такое значение за агента. Чтобы всё равно передать его, разрешите агенту его прочитать.
+secret-request-detail-readable = Команды агента смогут читать, выводить или отправлять его в течение 24 часов.
+secret-request-let-agent-read = Разрешить агенту прочитать
+secret-request-needs-readable = super.engineering не может использовать это значение за агента. Разрешите агенту прочитать его или откажите.
+secret-request-use = Использовать секрет
+secret-request-save-and-use = Сохранить и использовать
 secret-request-show = Показать секрет
 secret-request-hide = Скрыть секрет
 secret-request-decline = Отклонить
+secret-request-use-failed = Не удалось использовать секрет: { $error }
 secret-request-for-project = Для { $project }
 secret-request-answer-with = Ответить с помощью
 secret-request-type-new = Ввести новое значение
@@ -4486,6 +4641,10 @@ saved-secret-replace-title = Заменить значение
 saved-secret-delete-title = Удалить секрет
 saved-secret-save = Сохранить
 saved-secret-replace = Заменить
+saved-secret-save-pill-detail = Хранится в системной связке ключей, пока вы его не удалите, поэтому его можно использовать в любом чате.
+saved-secret-save-typed-detail = Хранится в системной связке ключей, пока вы его не удалите. Агенты получают его, только когда вы его им даёте.
+saved-secret-delete-detail = Удалить { $name } из связки ключей? Агенты, которым вы его уже выдали, сохранят доступ до конца своих 24 часов.
+saved-secret-replace-detail = Агенты, которым вы его уже выдали, сохранят старое значение до конца своих 24 часов.
 saved-secret-name-label = Имя
 saved-secret-name-placeholder = OPENAI_API_KEY
 saved-secret-name-hint = Буквы, цифры и подчёркивания, как у переменной окружения
@@ -4513,6 +4672,7 @@ saved-secret-keyring-failed = Не удалось использовать св�
 saved-secret-remember-failed = Агент получил секрет, но сохранить его не удалось
 saved-secret-loading = Чтение сохранённых секретов…
 saved-secret-picker-title = Вставить сохранённый секрет
+saved-secret-picker-detail = Агент может использовать поддерживаемые учётные данные в течение 24 часов, а приложение держит их значение в тайне.
 saved-secret-picker-insert = Вставить
 saved-secret-picker-empty = Для этого проекта пока нет сохранённых секретов
 saved-secret-picker-empty-detail = Сохраните секрет кнопкой «Сохранить…» у вставленного секрета, по запросу агента или в Настройки → Секреты.
@@ -4521,10 +4681,13 @@ saved-secret-picker-add = Добавить сохранённый секрет�
 chat-secret-pill-token = Токен { $issuer }
 chat-secret-pill-private-key = Приватный ключ
 chat-secret-pill-secret = Секрет
+chat-secret-card-status = Не попадает в чат
+chat-secret-card-note-held = super.engineering хранит его и использует за агента, который не может его прочитать, в течение 24 часов.
+chat-secret-card-note-readable = Команды агента могут читать его в течение 24 часов.
 chat-secret-card-paste-as-text = Вставить как текст
 chat-secret-card-save = Сохранить…
 chat-saved-secret-unavailable = Не удалось прочитать сохранённый секрет из связки ключей, поэтому ничего не вставлено.
-chat-saved-secret-store-failed = Не удалось сохранить секрет закрытым, поэтому он не вставлен.
+chat-saved-secret-store-failed = Не удалось вставить этот сохранённый секрет закрыто. Чтобы дать агенту доступ на чтение, используйте окно запроса секрета.
 chat-saved-secret-not-inserted = В этот черновик сейчас нельзя вставить секрет, поэтому ничего не вставлено.
 chat-secret-save-unavailable = Этот чат ещё не подключён, поэтому его секрет нельзя сохранить. Повторите попытку чуть позже.
 chat-secret-store-failed = Не удалось сохранить секрет приватно, поэтому он не был вставлен. Вставьте его ещё раз, чтобы вставить как обычный текст.
@@ -4535,6 +4698,27 @@ chat-artifact-annotate = Добавить аннотацию
 right-sidebar-filter-files = Фильтровать файлы
 right-sidebar-collapse-all-folders = Свернуть все папки
 right-sidebar-reveal-open-file = Показать открытый файл
+changes-to-review = На проверку
+changes-all-viewed = Всё просмотрено
+changes-conflict-count = { $count ->
+    [one] { $count } конфликт
+    [few] { $count } конфликта
+    [many] { $count } конфликтов
+   *[other] { $count } конфликта
+}
+changes-row-renamed-from = из { $name }
+changes-row-now-executable = теперь исполняемый
+changes-row-no-longer-executable = больше не исполняемый
+changes-row-now-symlink = теперь символическая ссылка
+changes-row-now-file = теперь файл
+changes-row-now-submodule = теперь подмодуль
+changes-row-staged = в индексе
+changes-row-conflict = конфликт
+changes-row-lockfile = lock-файл, { $counts }
+changes-row-since-viewed = С тех пор { $since }, всего { $total }
+changes-add-to-chat = Добавить в чат
+changes-add-to-chat-no-chat = Откройте чат, чтобы добавить в него файлы
+changes-add-to-chat-subagent-focused = Нельзя добавлять файлы, пока выбран транскрипт субагента
 exit-save-failed-title = Не удалось сохранить состояние приложения
 exit-save-failed-description = Последнее состояние приложения не сохранено. { $error }. Устраните проблему с хранилищем и повторите попытку или продолжите без сохранения.
 exit-restart-without-saving = Перезапустить без сохранения
@@ -4556,7 +4740,11 @@ changes-empty-turns-detail = Когда агент меняет файлы, он
 changes-empty-commits = Коммитов пока нет
 changes-empty-commits-detail = Здесь появятся коммиты этой ветки.
 changes-empty-all-viewed = Всё просмотрено
-changes-empty-all-viewed-detail = Вы открыли все изменённые файлы.
+changes-empty-all-marked-viewed-detail = Вы отметили все изменённые файлы как просмотренные.
+changes-shared-no-worktrees = Пока нет рабочих деревьев
+changes-shared-no-worktrees-detail = Изменения появятся здесь, когда агент начнёт работу в репозитории.
+changes-no-git = Нет репозитория Git
+changes-no-git-detail = Инициализируйте Git, чтобы видеть здесь изменения.
 review-delivery-prepared = Подготовлено: { $target }
 review-delivery-sent = Отправлено: { $target }
 review-delivery-dispatched = Отправлено в фоне: { $target }
@@ -4681,7 +4869,6 @@ right-sidebar-amend-last-commit = Исправить последний комм
 right-sidebar-committing = Создание коммита
 right-sidebar-committed = Закоммичено
 right-sidebar-push = Push
-right-sidebar-unviewed = Не просмотрено
 changes-file-count =
     { $count ->
         [one] { $count } файл
@@ -4744,6 +4931,7 @@ resources-exited-hours = Завершён { $hours } ч назад
 resources-cpu-row = CPU { $percent }%
 resources-split-app = Приложение
 resources-cpu-split = Само приложение { $app }%, ваша работа { $work }%
+resources-cpu-split-extensions = Само приложение { $app }%, расширения { $extensions }%, ваша работа { $work }%
 resources-tree-chat = Чат
 resources-origin-tab = Вкладка терминала
 resources-origin-launched = Запущено из { $tab }
@@ -4821,6 +5009,7 @@ resources-info-agents-hint = Агент каждого чата и запуск�
 resources-info-browser = Вкладки браузера
 resources-info-browser-hint = Каждая страница работает в отдельном процессе
 resources-info-terminals-hint = Оболочки, скрипты запуска и всё, что они запустили
+resources-info-extensions-hint = Встроенные расширения, их среды выполнения, веб-страницы и запускаемые ими команды
 resources-info-remote = Удалённые рабочие деревья пока не измеряются.
 resources-pressure-warning = Памяти Mac не хватает. super.engineering использует { $used } из { $ram }.
 resources-pressure-warning-short = Памяти Mac не хватает.
@@ -4835,10 +5024,12 @@ resources-empty-all = Ничего не запущено.
 resources-empty-agents = Нет запущенных агентов.
 resources-empty-browser = Нет открытых вкладок браузера.
 resources-empty-terminals = Нет запущенных терминалов.
+resources-empty-extensions = Расширения не загружены.
 resources-tab-all = Все
 resources-tab-agents = Агенты
 resources-tab-browser = Браузер
 resources-tab-terminals = Терминалы
+resources-tab-extensions = Расширения
 resources-count-chats =
     { $count ->
         [one] Открыт { $count } чат
@@ -4867,6 +5058,37 @@ resources-count-terminals =
         [many] { $count } терминалов
        *[other] { $count } терминала
     }
+resources-count-extensions =
+    { $count ->
+        [one] Загружено { $count } расширение
+        [few] Загружено { $count } расширения
+        [many] Загружено { $count } расширений
+       *[other] Загружено { $count } расширения
+    }
+resources-reload = Перезагрузить
+resources-ext-throttled = Ограничено
+resources-ext-throttled-tooltip = { $ms } мс в главном потоке за последнюю минуту (задержано команд: { $delayed })
+resources-ext-views =
+    { $count ->
+        [one] { $count } представление
+        [few] { $count } представления
+        [many] { $count } представлений
+       *[other] { $count } представления
+    }
+resources-ext-web = Веб
+resources-ext-main-thread = Главный поток
+resources-ext-main-thread-ms = { $ms } мс/мин
+resources-ext-throttled-detail = { $ms } мс/мин · задержано: { $delayed }
+resources-ext-js-runtime = Среда выполнения JavaScript
+resources-ext-web-page = Веб-страница
+resources-ext-stop-consequence =
+    { $count ->
+        [one] Закроет { $count } представление и остановит его среду выполнения.
+        [few] Закроет { $count } представления и остановит его среду выполнения.
+        [many] Закроет { $count } представлений и остановит его среду выполнения.
+       *[other] Закроет { $count } представления и остановит его среду выполнения.
+    }
+resources-ext-stop-consequence-none = Остановит его среду выполнения.
 resources-on-screen = На экране, поэтому не засыпает
 resources-open = Открыть
 resources-close = Закрыть
@@ -4922,6 +5144,7 @@ extension-failed-hint = Исправьте ошибку и сохраните; �
 extension-fix-with-ai = Исправить с AI
 extension-html-unsupported = HTML-расширения доступны в macOS.
 extension-open-failed = Не удалось открыть расширение
+extension-delete-failed = Не удалось удалить расширение
 extension-command-failed = Команда расширения не выполнилась
 extension-palette-open = Расширения › { $name }
 extension-palette-open-split = Расширения › { $name } в разделённом виде
@@ -4937,11 +5160,42 @@ extension-open = Открыть
 extension-open-split = Открыть в разделённом виде
 extension-open-sidebar = Открыть на боковой панели
 sidebar-extension-close = Закрыть
-sidebar-extension-keep = Оставить на всех боковых панелях
+sidebar-extension-header = Держать на боковой панели
+sidebar-extension-scope-worktree = Только это рабочее дерево
+sidebar-extension-pin = Закрепить на боковой панели
+sidebar-extension-unpin = Открепить от боковой панели
+extension-persistent-tab-pin = Закрепить как постоянную вкладку
+extension-persistent-tab-unpin = Открепить постоянную вкладку
+extension-persistent-tab-header = Держать постоянной в
+extension-persistent-tab-scope-worktree = Только это рабочее дерево (обычная вкладка)
+extension-persistent-tab-scope-project = Проект · { $name }
+extension-persistent-tab-scope-workspace = Рабочее пространство · { $name }
+extension-persistent-tab-scope-global = Глобально (все рабочие пространства)
+extension-persistent-tab-tooltip-hint = Нажмите правой кнопкой, чтобы выбрать область
+extension-persistent-tab-move-sidebar = Переместить на боковую панель
+extension-persistent-tab-pop-out = Открепить (плавающее окно)
+extension-persistent-tab-more = Другие постоянные вкладки
+extension-persistent-tab-section = Постоянные
+extension-placement-default = По умолчанию
+extension-placement-persistent-tab = Постоянная вкладка
+extension-placement-sidebar = Боковая панель
+extension-persistent-scope-workspaces = Рабочие пространства
+extension-persistent-scope-projects = Проекты
 extension-edit-with-ai = Изменить с AI
 extension-window-move-to-tab = Переместить во вкладку
 extension-change-icon = Сменить значок…
 extension-icon-automatic = Автоматически
+extension-annotate = Аннотировать
+extension-annotate-hint = Нажмите на то, что нужно изменить
+extension-annotate-count = { $count ->
+    [one] { $count } комментарий
+    [few] { $count } комментария
+    [many] { $count } комментариев
+   *[other] { $count } комментария
+}
+extension-annotate-placeholder = Что нужно изменить?
+extension-annotate-add = Добавить комментарий
+extension-annotate-remove = Удалить
 extension-show-folder = Показать папку
 extension-revoke = Отозвать одобрение
 extension-delete = Удалить
@@ -4986,6 +5240,23 @@ settings-search-entry-experimental-feature-flags-prediction-inspector-label = И
 settings-search-entry-experimental-feature-flags-prediction-inspector-description = Показывает закреплённое окно с живыми источниками предсказаний, ранжированием и доступностью для активного чата. Не отправляет запросов к модели.
 prediction-inspector-title = Инспектор предсказаний
 prediction-inspector-copy = Копировать снимок
+settings-sidebar-group-app = Приложение
+settings-category-browser = Браузер
+settings-category-browser-description = Маршрутизация ссылок, память вкладок и доступ агентов к браузеру.
+settings-section-links = Ссылки
+settings-search-section-links = Ссылки
+settings-section-tabs = Вкладки
+settings-search-section-tabs = Вкладки
+settings-section-agent-control = Управление агентами
+settings-search-section-agent-control = Управление агентами
+settings-section-usage-meter = Индикатор использования
+settings-search-section-usage-meter = Индикатор использования
+settings-browser-agent-control-intro = Большинство команд se browser только для чтения работают без одобрения, кроме чтения cookie и тел сетевых ответов. Включение для рабочего пространства даёт агентам постоянное право нажимать, вводить текст, переходить по страницам, выполнять скрипты и читать cookie во вкладках браузера этого рабочего пространства, пока разрешение не отозвано.
+settings-browser-agent-control-empty = Пока нет рабочих пространств.
+settings-browser-agent-control-workspace-description = Разрешить агентам управлять вкладками браузера в { $workspace }.
+settings-search-entry-browser-agent-control-allow-agents-to-control-the-browser-label = Разрешить агентам управлять браузером
+settings-search-entry-browser-agent-control-allow-agents-to-control-the-browser-description = Выберите, в каких рабочих пространствах агенты получают постоянное право нажимать, вводить текст, переходить по страницам и выполнять скрипты во вкладках браузера.
+settings-search-entry-mobile-mobile-access-mobile-access-description = Включите мобильный доступ, чтобы сопряжённые телефоны могли подключаться к этому Mac.
 settings-mcp-config-loading = Чтение конфигурации Codex…
 settings-mcp-config-refresh = Обновить серверы MCP Codex
 settings-mcp-quieted-servers = Серверы MCP Codex

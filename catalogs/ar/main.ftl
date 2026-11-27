@@ -608,6 +608,8 @@ workspace-remote-machine-description = أنشئ مساحة عمل فارغة ل�
 workspace-remove-projects-branches-blocked = احذف من تلك الفروع أولاً، ثم حاول مرة أخرى.
 workspace-rename-title = إعادة تسمية مساحة العمل
 workspace-shared-context = السياق المشترك
+workspace-shared-context-description = شارك السياق بين عدة مشاريع في مساحة عمل واحدة.
+workspace-shared-context-detail = الأنسب للتنسيق بين المستودعات وتغييرات الواجهات المشتركة.
 workspace-ssh-target = SSH الهدف
 workspace-update-projects-title = تحديث مشاريع مساحة العمل
 workspace-update-projects-tooltip = تحديث مشاريع مساحة العمل
@@ -1186,6 +1188,7 @@ common-all = الجميع
 review-resolved-count = تم الحل ({ $count })
 right-panel-setup = الإعداد
 action-stop = إيقاف
+action-resume = استئناف
 right-panel-terminal = المحطة
 setup-run = إعداد الركض
 setup-empty-title = إضافة سكربت إعداد
@@ -1289,6 +1292,7 @@ permission-approve-for-me = وافق نيابةً عني
 permission-full-access = وصول كامل
 permission-auto-review = مراجعة تلقائية
 permission-always-approve = وافق دائمًا
+permission-smart = ذكي
 permission-smart-auto = تلقائي ذكي
 permission-run-everything = شغّل كل شيء
 permission-cli-settings = إعدادات CLI
@@ -1334,6 +1338,39 @@ chat-agent-wait-caption =
         [two] يتابع { $model } عندما ينتهيان
        *[other] يتابع { $model } عندما ينتهون
     }
+chat-agent-wait-needs-input = { $count ->
+    [zero] لا وكلاء يحتاجون إليك
+    [one] { $agent } يحتاج إليك
+    [two] وكيلان يحتاجان إليك
+    [few] { $count } وكلاء يحتاجون إليك
+    [many] { $count } وكيلًا يحتاجون إليك
+   *[other] { $count } وكيل يحتاجون إليك
+}
+chat-stop-waiting-agents = { $count ->
+    [zero] إيقاف { $count } وكيل
+    [one] إيقاف وكيل واحد
+    [two] إيقاف وكيلين
+    [few] إيقاف { $count } وكلاء
+    [many] إيقاف { $count } وكيلًا
+   *[other] إيقاف { $count } وكيل
+}
+chat-stop-waiting-agents-remote = { $count ->
+    [one] إيقاف وكيل واحد (في شجرة عمل أخرى)
+    [two] { $remote ->
+        [one] إيقاف وكيلين (أحدهما في شجرة عمل أخرى)
+       *[other] إيقاف وكيلين (كلاهما في أشجار عمل أخرى)
+    }
+   *[other] { $remote ->
+        [one] إيقاف { $count } من الوكلاء (أحدهم في شجرة عمل أخرى)
+        [two] إيقاف { $count } من الوكلاء (اثنان منهم في أشجار عمل أخرى)
+       *[other] إيقاف { $count } من الوكلاء ({ $remote } منهم في أشجار عمل أخرى)
+    }
+}
+chat-agent-wait-paused = متوقف مؤقتًا
+chat-agent-wait-paused-both = متوقف مؤقتًا · المنتهية: { $finished }، قيد العمل: { $working }
+chat-agent-wait-paused-finished = متوقف مؤقتًا · المنتهية: { $finished }
+chat-agent-wait-paused-working = متوقف مؤقتًا · قيد العمل: { $working }
+chat-background-work-wait-caption = يتابع { $model } عند انتهاء العمل في الخلفية
 chat-worked-for = عمل لمدة { $duration }
 chat-worked = عمل
 plan-proposed = الخطة المقترحة
@@ -1464,30 +1501,50 @@ risk-initialize-git-title = تهيئة Git؟
 risk-initialize-git-message = هذا سينشئ { $git_path } ويجعل المجلد المحدد مستودعا Git. سيستخدم { $app_name } ذلك المستودع Git لتمكين تتبع الفروع وإنشاء شجرة.
 sidebar-projects = المشاريع
 focus-page-all-workspaces = كل مساحات العمل
-focus-page-empty = لا توجد محادثات مفتوحة
-focus-page-active-empty = لا شيء يحتاج إليك
+focus-page-empty = منضدة العمل فارغة
+focus-page-empty-filtered = لا عناصر مطابقة
 focus-page-new = ميزة جديدة
-focus-section-active = نشطة
-focus-section-working = قيد التشغيل
-focus-section-open = مفتوحة
-focus-sort-header = ترتيب الميزات حسب
-focus-sort-header-chats = ترتيب المحادثات حسب
-focus-sort-last-user-message = آخر رسالة من المستخدم
-focus-sort-activity = النشاط
-focus-card-dismiss = تجاهل
-focus-card-close = إغلاق المحادثات
-focus-card-no-chats = لا توجد محادثات مفتوحة
-focus-close-title =
-    { $count ->
-        [zero] إغلاق { $count } علامة تبويب للمحادثات؟
-        [one] إغلاق علامة تبويب هذه المحادثة؟
-        [two] إغلاق علامتَي تبويب لمحادثتين؟
-        [few] إغلاق { $count } علامات تبويب للمحادثات؟
-        [many] إغلاق { $count } علامة تبويب للمحادثات؟
-       *[other] إغلاق { $count } علامة تبويب للمحادثات؟
-    }
-focus-close-description = تبقى المحادثات في السجل. وتبقى المحادثات الجارية مفتوحة.
-focus-mode-show-focus = إظهار التركيز
+focus-section-active = منضدة العمل
+focus-section-pinned = المثبّتة
+focus-section-settled = المُنجزة
+focus-done-empty = لا شيء مُنجز بعد
+focus-status-approval = بحاجة إلى موافقة
+focus-status-review = جاهز
+focus-action-pin = تثبيت
+focus-action-unpin = إلغاء التثبيت
+focus-action-settle = تحديد كمُنجز
+focus-action-settle-below = تحديد كل ما بالأسفل كمُنجز
+focus-action-settle-all = تحديد الكل كمُنجز
+focus-action-add-to-workbench = إضافة إلى منضدة العمل
+focus-action-mark-done-in-workbench = تحديد كمُنجز في منضدة العمل
+focus-action-restore = استعادة إلى منضدة العمل
+focus-notice-chat-added = أُضيفت المحادثة إلى منضدة العمل
+focus-notice-chat-marked-done = حُدّدت كمُنجزة في منضدة العمل
+focus-notice-chat-removed = أُزيلت المحادثة من منضدة العمل
+focus-options-filter = تصفية
+focus-options-display = العرض
+focus-scope-all = كل مساحات العمل والمشاريع
+focus-scope-all-projects = كل المشاريع
+focus-scope-search-placeholder = تصفية مساحات العمل أو المشاريع...
+focus-scope-only = فقط
+focus-scope-reset = إعادة تعيين
+focus-scope-clear = مسح عامل التصفية
+focus-scope-n-projects = المشاريع: { $count }
+focus-scope-n-workspaces = مساحات العمل: { $count }
+focus-scope-no-matches = لا مشاريع مطابقة
+focus-options-show-header = العرض كـ
+focus-options-worktrees = أشجار العمل
+focus-options-chats = محادثات فردية
+focus-options-layout-header = التصميم
+focus-options-flat = مسطّح (حسب الأحدث)
+focus-options-by-project = التجميع حسب المشروع
+focus-options-window-header = نشطة خلال
+focus-shared-badge = مشتركة
+focus-shared-all-repos = كل المستودعات
+focus-shared-repos-header = المستودعات الفرعية
+focus-shared-add-repo = إضافة
+workspace-chrome-more-tools = أدوات أخرى
+focus-mode-show-focus = إظهار منضدة العمل
 focus-mode-show-worktrees = إظهار أشجار العمل
 sort-recent-activity = النشاط الأخير
 sort-most-activity = معظم الأنشطة
@@ -1558,7 +1615,6 @@ toast-check-git-identity = تحقق من اسم المستخدم Git وبريد�
 toast-worktree-already-creating = يتم بالفعل إنشاء شجرة عمل.
 toast-primary-worktree-stays-on-top = شجرة العمل الأساسية تبقى في القمة
 toast-primary-worktree-cannot-reorder = لا يمكن إعادة ترتيب شجرة العمل الأساسية. لإخفاء ذلك، انقر بزر الفأرة الأيمن واختر "إخفاء شجرة العمل الأساسية".
-toast-enable-shared-context-workspaces = تمكين مساحات العمل التجريبية > المشتركة للسياق لاستخدام مساحات السياق المشترك.
 toast-workspace-setup-error = خطأ إعداد مساحة العمل
 toast-create-shared-context-symlinks-failed = فشل في إنشاء روابط رمزية في السياق المشترك: { $error }
 toast-create-branch-group-failed = فشل في إنشاء مجموعة الفرع: { $error }
@@ -1720,8 +1776,6 @@ settings-search-no-results = لا توجد إعدادات تطابق "{ $query }
 settings-search-results-summary = النتائج: { $result_count } · التصنيفات: { $category_count }
 settings-search-hidden-results = تطابقات إضافية: { $count } — استمر في الكتابة لتضييق نطاق بحثك.
 settings-experimental-heading = تجريبي
-settings-experimental-shared-context-label = مساحات العمل المشتركة للسياق
-settings-experimental-shared-context-description = السماح باختيار مجلدات الأب التي تتوسع إلى مستودعات فرعية لمساحات عمل السياق المشتركة.
 settings-experimental-remote-workspaces-label = مساحات العمل البعيدة
 settings-experimental-remote-workspaces-description = أنشئ مساحات عمل تعيش على جهاز عن بعد عبر SSH. تستمر مساحات العمل البعيدة الحالية في العمل عند تعطيلها.
 settings-experimental-non-git-projects-label = مشاريع غير Git
@@ -1730,8 +1784,8 @@ settings-experimental-auto-compact-label = Claude Code الدمج التلقائ
 settings-experimental-auto-compact-description = عندما يفشل دور Claude Code لأن نافذة سياق النموذج قد تجاوزت، قم تلقائيا بتشغيل /compact وإعادة إرسال رسالتك الأخيرة. مفيد للخلفيات غير ذات السياق 1M (مثل GLM5.1) حيث لا يعمل CLAUDE_CODE_AUTO_COMPACT_WINDOW Claude Code في وضع -p.
 settings-experimental-review-label = مراجعة
 settings-experimental-review-description = شغل عمليات المراجعة في محطات مزود الخدمة بدون رأس واحتفظ بسجل مهام AI.
-settings-experimental-focus-mode-label = وضع التركيز
-settings-experimental-focus-mode-description = يضيف صفحة التركيز إلى الشريط الجانبي الأيسر، وتعرض محادثاتك المنتظرة والجارية والمفتوحة كبطاقات، مع زر في شريط العنوان للتبديل إليها.
+settings-experimental-focus-mode-label = منضدة العمل
+settings-experimental-focus-mode-description = يضيف عرض «منضدة العمل» الشامل لكل مساحات العمل إلى الشريط الجانبي الأيسر لتتبّع أشجار العمل والمحادثات النشطة حتى تحددها كمُنجزة، مع زر في شريط العنوان للتبديل إليه.
 settings-storage-conversation-label = تخزين المحادثات
 settings-storage-status-label = الحالة
 settings-storage-analyze = تحليل
@@ -1796,10 +1850,39 @@ settings-extensions-approvals-count = { $count ->
 settings-extensions-forget = إلغاء الموافقات
 settings-secrets-heading = الأسرار المحفوظة
 settings-secrets-intro-label = الأسرار المحفوظة
+settings-secrets-intro-detail = تُحفظ في سلسلة مفاتيح النظام حتى تحذفها. أدرج المفاتيح ورموز الوصول المدعومة في أي محادثة، أو اختر أي سر محفوظ عندما يطلب وكيل.
 settings-secrets-add = إضافة سر
 settings-secrets-replace = استبدال القيمة
 settings-secrets-empty = احفظ واحدًا من زر «حفظ…» لسرٍّ ملصق، أو عندما يطلب وكيل، أو عبر «إضافة سر».
 settings-secrets-empty-title = لا توجد أسرار محفوظة بعد
+settings-secrets-safety-heading = ما المحمي، وما غير المحمي
+settings-secrets-safety-use-label = يمكن للوكلاء استخدام أي شيء تعطيهم إياه
+settings-secrets-safety-use-description = حتى السر الذي لا يستطيع الوكيل قراءته يمكن استخدامه لأي شيء يسمح به المفتاح، لمدة 24 ساعة. أعطِ مفاتيح بصلاحيات محدودة يمكنك إلغاؤها.
+settings-secrets-safety-held-label = أسرار يحتفظ بها super.engineering
+settings-secrets-safety-held-description = بالنسبة لمفاتيح SSH ورموز الوصول إلى API المدعومة، يحتفظ التطبيق بالقيمة في الذاكرة ويستخدمها نيابةً عن الوكيل — لا يرى الوكيل السر أبدًا.
+settings-secrets-safety-held-point-ssh = تذهب مفاتيح SSH الخاصة إلى وكيل SSH الخاص بالتطبيق: يشغّل الوكيل ⁨ssh⁩ أو ⁨git⁩، ويتولى التطبيق التوقيع. يمكن للوكلاء والتطبيقات الأخرى التي تعمل باسمك التوقيع به أيضًا، لكن لا يمكنها نسخ المفتاح. المفاتيح المحمية بعبارة مرور وصيغ المفاتيح غير المدعومة لا يمكن تقديمها إلا كملف.
+settings-secrets-safety-held-point-http = تعمل رموز الوصول المدعومة من GitHub وGitLab وOpenAI وAnthropic وHugging Face وnpm وDigitalOcean وSendGrid وSlack وStripe وLinear عبر ⁨se secret http⁩: تُرسل الطلبات عبر HTTPS فقط إلى مضيفي تلك الخدمة (دون إعادة توجيه) ويُخفى الرمز في الردود. بالنسبة إلى GitHub وGitLab، تؤكد الخدمة العامة قبل أول استخدام. أما أدوات مثل ⁨gh⁩ وحزم SDK وبيانات الاعتماد المستضافة ذاتيًا وعناوين URL لخطافات الويب ورموز التحديث فتحتاج إلى ملف قابل للقراءة بدلًا من ذلك.
+settings-secrets-safety-held-point-dig = يمنع هذا تسليم القيمة إلى الوكيل، لكنه لا يمنع وكيلًا مُصرًّا يعمل باسمك. يمسح super.engineering الحافظة بعد أن تلصق سرًا أو تحفظه، لكن قد يقرؤه وكيل أو مدير حافظة قبل ذلك، أو يغيّر إعدادات الصدفة لديك لالتقاط سر تكتبه لاحقًا.
+settings-secrets-safety-held-point-restart = تبقى الأسرار المحتفظ بها في الذاكرة — ولا تُكتب على القرص أبدًا — وتُنسى عند إنهاء التطبيق. تمنع الإصدارات الرسمية على macOS وLinux التطبيقات الأخرى التي تعمل باسمك من قراءة ذاكرة التطبيق.
+settings-secrets-safety-held-point-ssh-hosts = على مضيفي SSH، لا تغادر المفاتيح والرموز المحتفظ بها هذا الكمبيوتر أبدًا — تخرج الطلبات من هنا. أثناء تشغيل الجلسة، يمكن للبرامج الأخرى على المضيف التوقيع باستخدام الوكيل المُمرَّر، لكن لا يمكنها نسخ المفتاح.
+settings-secrets-safety-readable-label = أسرار يمكن للوكيل قراءتها
+settings-secrets-safety-readable-description = القيم الملصقة التي لا يستطيع super.engineering الاحتفاظ بها (أو الملصقة في أمر ⁨!⁩)، والأسرار التي تسمح للوكيل صراحةً بقراءتها، توضع في ملف خاص لمدة 24 ساعة. الأسرار المحفوظة المُدرجة في المحادثة لا تُقدَّم أبدًا كملف قابل للقراءة.
+settings-secrets-safety-file-point-readable = يقرؤه الوكيل من ملف خاص. يمكن للتطبيقات الأخرى التي تعمل باسمك قراءة ذلك الملف أيضًا.
+settings-secrets-safety-file-point-expiry = بعد 24 ساعة يفقد الوكيل الوصول. أعطه إياه مجددًا إن كان لا يزال يحتاج إليه. تبقى الأسرار المحفوظة محفوظة.
+settings-secrets-safety-file-point-cleanup = إذا أُعيد تشغيل الكمبيوتر قبل ذلك، فقد يبقى الملف مدة أطول.
+settings-secrets-safety-file-point-revoke = سحب الوصول لا يُلغي المفتاح ولا يزيل النسخ التي صنعها الوكيل.
+settings-secrets-safety-file-point-unrecognized = لا تُلتقط الأسرار الملصقة إلا عند التعرّف عليها. انقر بزر الماوس الأيمن واختر «لصق كسرّ» لأي شيء لا يُتعرّف عليه.
+settings-secrets-safety-keyring-label = الأسرار المحفوظة
+settings-secrets-safety-keyring-description = تُحفظ في سلسلة مفاتيح النظام حتى تحذفها، لتتمكن من إعادة استخدامها دون لصقها مجددًا.
+settings-secrets-safety-keyring-point-already-given = حذف سر أو استبداله لا يؤثر في الوكلاء الذين أعطيتهم إياه سابقًا.
+settings-secrets-safety-keyring-point-mac-prompt = على Mac، لا يمكن للتطبيقات الأخرى قراءة سر محفوظ إلا إذا سمحت بذلك. إذا طلبت نافذة Keychain السماح لبرنامج آخر باستخدام سر من super.engineering، فاختر «رفض».
+settings-secrets-safety-keyring-point-linux = على Linux، يمكن لأي تطبيق يعمل باسمك، بما في ذلك الوكلاء، قراءة كل سر محفوظ.
+settings-secrets-safety-output-label = إخفاء الأسرار في مخرجات الأوامر
+settings-secrets-safety-output-description = للأسرار المقدّمة كملف قابل للقراءة: بأفضل جهد، في إصدارات Claude Code الحديثة وفي مخرجات الصدفة المحلية التي تضيفها إلى رسالة. يرى الوكلاء الآخرون الأسرار المطبوعة.
+settings-secrets-safety-output-point-window = يعمل فقط خلال الـ 24 ساعة التي يملك فيها الوكيل السر.
+settings-secrets-safety-output-point-misses = لا يلتقط الأوامر الفاشلة، ولا النسخ المرمّزة أو الجزئية، ولا القيم الأقصر من 8 أحرف.
+settings-secrets-safety-output-point-fails-open = إذا فشل الفحص أو انتهت مهلته، تمر المخرجات دون تغيير.
+settings-secrets-safety-output-point-leftovers = لا يزال بإمكان الخطافات الأخرى والقياس عن بُعد وسجل الصدفة والسجلات والملفات الاحتفاظ بالقيمة.
 settings-privacy-share-label = مشاركة بيانات الاستخدام المجهولة
 settings-privacy-share-description = يساعدنا على فهم كيفية استخدام super.engineering وإعطاء الأولوية للتحسينات. لا تغادر أي بيانات شخصية أو بيانات مشروع أو محتويات ملفات جهازك أبدا.
 settings-privacy-what-we-send-description = معرّف عشوائي لكل تثبيت، ومعرّف جلسة تطبيق عشوائي، وإصدار التطبيق، وقناة التحديث، واسم نظام التشغيل وإصداره، وبنية المعالج CPU، وطوابع زمنية لبدء الجلسة وانتهائها ومدتها، وحدث نشاط يومي عند الإطلاق أو عند أول تركيز/إدخال لاحق في التطبيق في كل يوم UTC. يؤدي إيقاف هذا الخيار إلى إيقاف إرسال بيانات القياس دون إرسال حدث إلغاء اشتراك أخير. يبقى معرّف التثبيت على جهازك ويُعاد استخدامه إذا فعّلت القياس مجددًا؛ وتُحذف حالة الجلسة.
@@ -1838,6 +1921,7 @@ settings-search-section-shortcuts = اختصارات
 settings-search-section-sources = المصادر
 settings-search-section-telemetry = القياس عن بعد
 settings-search-section-saved-secrets = الأسرار المحفوظة
+settings-search-section-secrets-safety = ما المحمي، وما غير المحمي
 settings-search-section-feature-flags = أعلام الميزة
 settings-search-section-location = الموقع
 settings-search-section-cleanup = التنظيف
@@ -1915,6 +1999,8 @@ settings-search-entry-general-behavior-project-header-click-label = النقر �
 settings-search-entry-general-behavior-project-header-click-description = اختر ما يحدث عند النقر على اسم مشروع في الشريط الجانبي. السهم بجوار الاسم يوسّع ويطوي دائمًا.
 settings-search-entry-general-behavior-confirm-before-quitting-label = تأكد قبل الاستقالة
 settings-search-entry-general-behavior-confirm-before-quitting-description = عرض نافذة تأكيد عند الضغط على Cmd+Q أو اختيار الخروج من القائمة.
+settings-search-entry-general-behavior-keep-running-when-the-window-closes-label = الاستمرار في العمل عند إغلاق النافذة
+settings-search-entry-general-behavior-keep-running-when-the-window-closes-description = تستمر المحادثات والوكلاء والأتمتة في العمل في الخلفية. انقر أيقونة التطبيق في Dock لإعادة النافذة.
 settings-search-entry-general-behavior-confirm-before-closing-a-running-tab-label = تأكد قبل إغلاق تبويب جاري
 settings-search-entry-general-behavior-confirm-before-closing-a-running-tab-description = عرض نافذة تأكيد عند إغلاق تبويب لا يزال الوكيل أو الطرفية فيه يعمل.
 settings-search-entry-general-behavior-open-links-in-the-in-app-browser-label = فتح الروابط في المتصفح داخل التطبيق
@@ -1949,6 +2035,8 @@ settings-search-entry-appearance-theme-theme-label = الموضوع
 settings-search-entry-appearance-theme-theme-description = مطابقة مظهر النظام أو وضع الإضاءة والظلام القسري.
 settings-search-entry-appearance-theme-contrast-label = التباين
 settings-search-entry-appearance-theme-contrast-description = زيادة تباين النص والحدود. يتبع خيار «النظام» إعداد «زيادة التباين» في نظام التشغيل.
+settings-search-entry-appearance-theme-syntax-colors-label = ألوان الصياغة البرمجية
+settings-search-entry-appearance-theme-syntax-colors-description = لوحة ألوان الشيفرة في الفروقات والملفات والمحادثة والمحرر. تتبع الوضع الفاتح/الداكن تلقائيًا.
 settings-search-entry-appearance-theme-customize-theme-label = تخصيص الموضوع
 settings-search-entry-appearance-theme-customize-theme-description = افتح أداة تخصيص قالب مساحة العمل.
 settings-search-entry-appearance-theme-app-icon-label = أيقونة التطبيق
@@ -2033,6 +2121,8 @@ settings-search-entry-palette-sources-keyboard-shortcut-label = اختصار ل�
 settings-search-entry-palette-sources-keyboard-shortcut-description = افتح لوحة الأوامر باستخدام الاختصار المكون.
 settings-search-entry-palette-sources-show-files-label = عرض الملفات
 settings-search-entry-palette-sources-show-files-description = أدرج ملفات مساحة العمل في لوحة الألوان.
+settings-search-entry-palette-sources-show-files-in-all-label = إظهار الملفات في «الكل»
+settings-search-entry-palette-sources-show-files-in-all-description = عرض ملفات مساحة العمل المطابقة أسفل قائمة «الكل». لا يتأثر وضع «الملفات».
 settings-search-entry-palette-sources-show-worktrees-label = أشجار العمل العرضية
 settings-search-entry-palette-sources-show-worktrees-description = أضف أشجار عمل git حتى تتمكن من التبديل أو التركيز عليها من لوحة اللوحة.
 settings-search-entry-palette-sources-show-tabs-label = علامات التبويب
@@ -2047,8 +2137,8 @@ settings-search-entry-privacy-telemetry-share-anonymous-usage-data-label = مش�
 settings-search-entry-privacy-telemetry-share-anonymous-usage-data-description = يساعدنا على فهم كيفية استخدام super.engineering وإعطاء الأولوية للتحسينات.
 settings-search-entry-secrets-saved-secrets-label = الأسرار المحفوظة
 settings-search-entry-secrets-saved-secrets-description = مفاتيح API والرموز المميزة وكلمات المرور المحفوظة في سلسلة مفاتيح النظام لكل المشاريع أو لمشروع واحد.
-settings-search-entry-experimental-feature-flags-shared-context-workspaces-label = مساحات العمل المشتركة للسياق
-settings-search-entry-experimental-feature-flags-shared-context-workspaces-description = السماح باختيار مجلدات الأب التي تتوسع إلى مستودعات فرعية لمساحات عمل السياق المشتركة.
+settings-search-entry-secrets-safety-label = ما المحمي، وما غير المحمي
+settings-search-entry-secrets-safety-description = ما يحصل عليه الوكلاء، وأين تُحفظ الأسرار، وما الذي قد يتسرّب.
 settings-search-entry-experimental-feature-flags-remote-workspaces-label = مساحات العمل البعيدة
 settings-search-entry-experimental-feature-flags-remote-workspaces-description = أنشئ مساحات عمل تعمل على جهاز بعيد عبر SSH. تستمر مساحات العمل البعيدة الحالية في العمل عند تعطيلها.
 settings-search-entry-experimental-feature-flags-non-git-projects-label = مشاريع غير Git
@@ -2312,6 +2402,11 @@ chat-enhance-prompt-provider-error = موفّر تحسين المطالبات ا
 shortcut-sequence-then = { $first } then { $second }
 chat-attach-files = إرفاق الملفات
 chat-prompt-suggestion-tab-hint = tab
+chat-add-menu-tooltip = إضافة ملفات وسياق وأسرار
+chat-add-menu-search-placeholder = إضافة ملفات أو وكلاء أو علامات تبويب أو أسرار…
+chat-add-menu-files = ملفات وصور…
+chat-add-menu-browser-tabs = علامات تبويب المتصفح
+chat-add-menu-paste-as-secret = لصق كسرّ
 chat-change-profile = تغيير الملف الشخصي
 chat-copy-command = أمر النسخ
 chat-copy-output = مخرجات النسخ
@@ -2399,8 +2494,8 @@ setup-stop-script = سكريبت إيقاف الإعداد
 run-stop-script = إيقاف البرنامج النصي
 run-rerun-workspace = إعادة تشغيل مساحة العمل
 workspace-close-tab = إغلاق التبويب
-workspace-expand-tab-rail = توسيع شريط التبويبات
-workspace-collapse-tab-rail = طي شريط التبويبات
+workspace-expand-tab-rail = توسيع شريط علامات التبويب
+workspace-collapse-tab-rail = طي شريط علامات التبويب
 workspace-launched-agents-header = الوكلاء الذين تم تشغيلهم
 workspace-launched-by = بدأه { $tab_title }
 workspace-open-launched-tab = فتح كعلامة تبويب
@@ -2430,6 +2525,13 @@ workspace-add-split-pane = تقسيم الجزء
 workspace-add-split-view = تقسيم العرض
 workspace-choose-app = اختر التطبيق
 theme-picker-title = السمة
+theme-sync-modes = مزامنة الفاتح والداكن
+theme-sync-on = تنطبق التغييرات على كليهما.
+theme-sync-replaces-dark = التفعيل يستبدل ألوان الداكن بألوان الفاتح.
+theme-sync-replaces-light = التفعيل يستبدل ألوان الفاتح بألوان الداكن.
+theme-colors-for-both = ألوان الفاتح والداكن
+theme-colors-for-light = ألوان الفاتح
+theme-colors-for-dark = ألوان الداكن
 theme-menu-tooltip = انسخ سمة أو الصقها، أو عيّن سمتك الافتراضية، أو أعد التعيين.
 theme-close-tooltip = إغلاق (Esc)
 theme-link-on-tooltip = الوضعان الفاتح والداكن متطابقان. انقر لفصلهما.
@@ -2438,12 +2540,14 @@ theme-link-off-dark-tooltip = الوضعان الفاتح والداكن منف�
 theme-status-solid = خالص
 theme-status-custom = مخصص
 theme-gradient = تدرج
+theme-direction = الاتجاه
 theme-auto = تلقائي
 theme-eyedropper-tooltip = اختر لونًا من أي مكان على شاشتك.
 theme-hex = Hex
 theme-hex-adjusted = عُدِّل ليبقى النص مقروءًا
 theme-hex-invalid = ليس لونًا سداسيًا عشريًا
 theme-adjust = ضبط
+theme-advanced = متقدم
 theme-slider-reset-hint = انقر نقرًا مزدوجًا على شريط التمرير لإعادة تعيينه.
 theme-adjust-summary-background = اللون { $color }%   الزجاج { $glass }%
 theme-adjust-summary-prominence = البروز { $prominence }%
@@ -2451,6 +2555,21 @@ theme-brightness-sidebar-note = يحدده اللون أعلاه
 theme-chip-current = الحالي
 theme-chip-pick = انتقاء
 theme-chip-workspace-tooltip = من مساحة العمل { $name }
+theme-chip-glade = مرج
+theme-chip-white = أبيض
+theme-chip-black = أسود
+theme-chip-stone = حجر
+theme-chip-slate = أردواز
+theme-chip-mint = نعناع
+theme-chip-sky = سماء
+theme-chip-peach = خوخ
+theme-chip-lilac = ليلك
+theme-chip-mist = ضباب
+theme-chip-aurora = شفق
+theme-chip-dawn = فجر
+theme-chip-gild = تذهيب
+theme-chip-tropic = استوائي
+theme-chip-opal = أوبال
 theme-chip-sakura = ساكورا
 theme-chip-ember = جمر
 theme-chip-honey = عسل
@@ -2466,7 +2585,7 @@ theme-accent-auto-tooltip = مفعّل: يختار التطبيق لونًا ب�
 theme-highlight-auto-tooltip = مفعّل: يتبع لون التمييز اللونَ البارز. اختيار لون يوقف هذا الخيار.
 theme-group-sidebar = الشريط الجانبي
 theme-group-content = المحتوى
-theme-color-strength = اللون
+theme-color-strength = الشدة
 theme-opacity = الزجاج
 theme-tint = الصبغة
 theme-brightness = السطوع
@@ -2556,6 +2675,8 @@ git-action-fix-comments = إصلاح التعليقات
 git-action-fix-changes = تغييرات الإصلاح
 git-action-failing-context = ({ $count } فشل)
 git-action-checking = التحقق
+git-review-status-unavailable = حالة { $kind } غير متاحة
+git-review-next-retry = المحاولة التالية في { $time }
 git-action-no-changes = لا توجد تغييرات
 git-action-prepared = مستعد
 git-action-creating = الإبداع
@@ -2571,6 +2692,11 @@ git-action-marking-ready = العلامة جاهزة
 git-action-merging = الاندماج
 git-action-deleting = الحذف
 git-action-preparing-review-request = التحضير { $kind }
+git-issue-closes-on-merge = سيُغلقها إنشاء { $kind } عند الدمج
+git-issue-checking-status = جارٍ التحقق من الحالة
+git-issue-status-unavailable = تعذّر التحقق من حالتها
+git-issue-status-connect-linear = اربط Linear لترى حالتها
+git-issue-assignee-you = أنت
 git-status-ready = جاهز
 git-status-mergeable = قابل للدمج
 git-status-no-conflicts = لا توجد تعارضات
@@ -2679,6 +2805,9 @@ palette-footer-back = رجوع
 palette-action-restore = الاستعادة
 sidebar-rename-worktree-label = أعد تسمية تسمية شجرة العمل...
 group-branch-rename-title = إعادة تسمية الفرع
+secret-http-confirm-title = هل أصدرت خدمة { $issuer } العامة هذا الرمز؟
+secret-http-confirm-hosts = ينتهي الرمز بـ ⁨{ $ending }⁩. اسمح للوكلاء الذين يستخدمونه بإرساله إلى ⁨{ $hosts }⁩ حتى تنتهي صلاحيته. ألغِ إذا كان الرمز يخص تثبيتًا آخر.
+secret-http-confirm-allow = السماح بهؤلاء المضيفين
 group-branch-rename-subtitle = { $count ->
     [one] يعيد تسمية الفرع في مستودع واحد
    *[other] يعيد تسمية الفرع في جميع المستودعات ({ $count })
@@ -3026,7 +3155,7 @@ settings-keybinding-action-paste = لصق
 settings-keybinding-action-copy = نسخ
 settings-keybinding-action-toggle-right-panel = إظهار أو إخفاء اللوحة اليمنى
 settings-keybinding-action-toggle-left-sidebar = إظهار أو إخفاء الشريط الجانبي الأيسر
-settings-keybinding-action-toggle-focus-mode = تبديل وضع التركيز
+settings-keybinding-action-toggle-focus-mode = تبديل منضدة العمل
 settings-keybinding-action-toggle-both-sidebars = إظهار أو إخفاء الشريطين الجانبيين
 settings-keybinding-action-new-worktree = إنشاء شجرة عمل جديدة
 settings-keybinding-action-new-worktree-from = إنشاء شجرة عمل جديدة من
@@ -3163,6 +3292,10 @@ usage-popover-resets-at = يُعاد التعيين { $time }
 usage-popover-window-left = المتبقي من { $window }
 usage-popover-updating = جارٍ التحديث…
 usage-popover-retry = أعد المحاولة
+usage-popover-check-usage = التحقق من الاستخدام
+usage-meter-manual-refresh = تحديث يدوي
+usage-popover-manual-prompt = لا يُجلب استخدام { $provider } تلقائيًا. حدّث للتحقق من حدودك الحالية.
+usage-antigravity-manual-info = لا يُبلغ Antigravity عن حصة الخطة عبر ACP. يشغّل التحديث ⁨`agy -p /usage`⁩ و⁨`agy -p /credits`⁩ محليًا للتحقق من حدودك ورصيدك الحاليين.
 usage-popover-accounts = الحسابات
 
 usage-graph-on-pace = ضمن الوتيرة
@@ -3451,10 +3584,16 @@ file-menu-rename = إعادة تسمية
 browser-send-annotations-to-new-chat = إرسال التعليقات التوضيحية إلى محادثة جديدة مع { $provider }
 browser-annotation-destination-unavailable = وجهة التعليقات التوضيحية هذه لم تعد متاحة
 browser-annotation-composer-blocked = لا يمكن إضافة تعليقات توضيحية أثناء التركيز على سجل وكيل فرعي
+terminal-selection-destination-unavailable = لم تعد تلك المحادثة متاحة
+terminal-selection-composer-blocked = لا يمكن لهذه المحادثة قبول تحديدات الطرفية الآن
+terminal-selection-no-destination = افتح علامة تبويب محادثة أو فعّل مزوّد AI لإرسال التحديد
+terminal-selection-too-large = حدّد قدرًا أقل من مخرجات الطرفية لإرسالها إلى محادثة
+terminal-selection-send-to-chat = إرسال إلى المحادثة
+terminal-selection-new-chat = محادثة جديدة
 browser-consent-title = السماح للوكلاء بالتحكم في المتصفح في «{ $workspace_name }»؟
 browser-consent-asked-by-agent = وكيل
 browser-consent-asked-by-worktree = وكيل يعمل في «{ $caller_label }»
-browser-consent-description = طلب { $asked_by } تشغيل ⁨se browser { $spelling }⁩ في علامة تبويب المتصفح لمساحة العمل هذه. تمنح الموافقة جميع وكلاء مساحة العمل إذنًا دائمًا — لهذا الأمر وكل أوامر ⁨act⁩ المستقبلية، وليس لهذا الأمر وحده — للنقر والكتابة والتنقل وتشغيل النصوص البرمجية على أي صفحة مفتوحة، بما فيها الجلسات المسجّل دخولها. لا تحتاج معظم أوامر القراءة فقط إلى موافقة، لكن قراءة قيم ملفات تعريف الارتباط تحتاج إليها. يبقى الإذن محفوظًا لمساحة العمل ويمكن سحبه في أي وقت من الإعدادات.
+browser-consent-description = طلب { $asked_by } تشغيل ⁨se browser { $spelling }⁩ في علامة تبويب المتصفح لمساحة العمل هذه. تمنح الموافقة جميع وكلاء مساحة العمل إذنًا دائمًا — لهذا الأمر وكل أوامر ⁨act⁩ المستقبلية، وليس لهذا الأمر وحده — للنقر والكتابة والتنقل وتشغيل النصوص البرمجية على أي صفحة مفتوحة، بما فيها الجلسات المسجّل دخولها. لا تحتاج معظم أوامر القراءة فقط إلى موافقة، لكن قراءة قيم ملفات تعريف الارتباط تحتاج إليها. يبقى الإذن محفوظًا لمساحة العمل ويمكن سحبه في أي وقت من الإعدادات › المتصفح › تحكم الوكلاء.
 browser-new-chats = محادثة جديدة
 palette-no-matching-files-index-incomplete = لا توجد ملفات مطابقة (الفهرس غير مكتمل: تتجاوز شجرة العمل حد فحص الملفات)
 update-ready-title = التحديث جاهز
@@ -3862,6 +4001,7 @@ worktree-preparing = جارٍ تجهيز شجرة العمل…
 chat-queued-until-worktree-ready = يُرسَل عند الاستعداد
 chat-delivery-unconfirmed = التسليم غير مؤكد
 chat-delivery-unconfirmed-retry = تحقق من المحادثة قبل إعادة المحاولة؛ ربما سُلّمت هذه الرسالة بالفعل.
+chat-writing-equation = جارٍ رسم المعادلة…
 chat-answer-pending-delivery = بانتظار التسليم
 input-recommended-by = موصى به من { $agent }
 input-drawer-waiting = { $agent } بانتظارك
@@ -4261,6 +4401,7 @@ palette-footer-branches = الفروع
 palette-section-use-query-with = استخدام «{ $query }» مع
 palette-ask-agent-new-chat = محادثة { $provider } جديدة
 palette-search-conversation-history = البحث في سجل المحادثات
+palette-file-search-jump = البحث في الملفات
 palette-suggest-review-comments = { $count ->
     [one] تعليق مراجعة واحد
     [two] تعليقا مراجعة
@@ -4402,6 +4543,10 @@ palette-action-open-review-request = { $forge ->
 }
 palette-action-create-and-start = إنشاء وبدء { $provider }
 palette-search-projects = اختيار مشروع
+palette-quick-create-current = الحالي
+palette-quick-create-shared-context = السياق المشترك
+palette-quick-create-hint = اضغط { $shortcut } أو اكتب للتصفية
+palette-quick-create-options = خيارات
 palette-mode-projects = المشاريع
 palette-section-branches = الفروع
 palette-section-look-up = بحث عن
@@ -4579,7 +4724,11 @@ browser-dialog-title-page = تقول هذه الصفحة
 section-rule-path = نمط مطابقة المسار
 settings-search-entry-agents-providers-jcode-provider-label = مزوّد jcode
 settings-search-entry-agents-providers-jcode-provider-description = تفعيل jcode وضبط نماذجه وخيارات تشغيله.
+settings-search-entry-agents-providers-devin-provider-label = مزوّد Devin
+settings-search-entry-agents-providers-devin-provider-description = فعّل Devin واضبط نماذجه وخيارات التشغيل.
 settings-ai-provider-jcode-description = تفعيل jcode كمزوّد للمحادثة والطرفية (يتطلب تثبيت واجهة سطر أوامر jcode المسماة ⁨`jcode`⁩). تشغّل المحادثات كل أداة تسمح بها إعدادات jcode؛ ولا يستطيع jcode طلب الموافقة أولًا.
+settings-ai-provider-devin-description = تفعيل دعم Devin في المحادثة والطرفية (يتطلب تثبيت Devin CLI ⁨`devin`⁩). تسجّل حالة الطرفية إضافة خطافات محلية لـ super.engineering لدى Devin.
+workspace-devin-remote-lifecycle-unsupported = لا تُبلغ طرفيات Devin البعيدة عن الحالة المباشرة ولا تستأنف الجلسات بعد.
 settings-keybinding-action-paste-as-secret = لصق كسرّ
 settings-keybinding-action-insert-saved-secret = إدراج سر محفوظ…
 clone-waiting-for-stop = بانتظار توقف عملية الاستنساخ…
@@ -4615,9 +4764,17 @@ secret-request-title = يطلب وكيل سرًّا
 secret-request-asked-by = يطلب «{ $asker }»: { $label }
 secret-request-asked-by-agent = يطلب وكيل: { $label }
 secret-request-placeholder = الصق السر أو اكتبه
+secret-request-detail-held = يحتفظ به super.engineering ويستخدمه نيابةً عن الوكيل، الذي لا يستطيع قراءته. تنتهي صلاحيته خلال 24 ساعة.
+secret-request-detail-unprotectable = لا يستطيع super.engineering استخدام هذا النوع من القيم نيابةً عن الوكيل. لتسليمه على أي حال، اسمح للوكيل بقراءته.
+secret-request-detail-readable = يمكن لأوامر الوكيل قراءته أو طباعته أو إرساله لمدة 24 ساعة.
+secret-request-let-agent-read = السماح للوكيل بقراءته
+secret-request-needs-readable = لا يستطيع super.engineering استخدام هذه القيمة نيابةً عن الوكيل. اسمح للوكيل بقراءتها، أو ارفض.
+secret-request-use = استخدام السر
+secret-request-save-and-use = حفظ واستخدام
 secret-request-show = إظهار السر
 secret-request-hide = إخفاء السر
 secret-request-decline = رفض
+secret-request-use-failed = تعذّر استخدام السر: { $error }
 secret-request-for-project = لـ { $project }
 secret-request-answer-with = الإجابة باستخدام
 secret-request-type-new = اكتب قيمة جديدة
@@ -4632,6 +4789,10 @@ saved-secret-replace-title = استبدال القيمة
 saved-secret-delete-title = حذف السر
 saved-secret-save = حفظ
 saved-secret-replace = استبدال
+saved-secret-save-pill-detail = يبقى في سلسلة مفاتيح النظام حتى تحذفه، لتتمكن من استخدامه في أي محادثة.
+saved-secret-save-typed-detail = يبقى في سلسلة مفاتيح النظام حتى تحذفه. لا يحصل عليه الوكلاء إلا عندما تعطيهم إياه.
+saved-secret-delete-detail = حذف { $name } من سلسلة المفاتيح؟ يحتفظ الوكلاء الذين أعطيتهم إياه بالوصول لبقية ساعاتهم الـ 24.
+saved-secret-replace-detail = يحتفظ الوكلاء الذين أعطيتهم إياه بالقيمة القديمة لبقية ساعاتهم الـ 24.
 saved-secret-name-label = الاسم
 saved-secret-name-placeholder = OPENAI_API_KEY
 saved-secret-name-hint = أحرف وأرقام وشرطات سفلية، مثل متغير البيئة
@@ -4659,6 +4820,7 @@ saved-secret-keyring-failed = تعذّر استخدام سلسلة المفات�
 saved-secret-remember-failed = حصل الوكيل على السر، لكن تعذّر حفظه
 saved-secret-loading = جارٍ قراءة الأسرار المحفوظة…
 saved-secret-picker-title = إدراج سر محفوظ
+saved-secret-picker-detail = يمكن للوكيل استخدام بيانات اعتماد مدعومة لمدة 24 ساعة بينما يُبقي التطبيق قيمتها خاصة.
 saved-secret-picker-insert = إدراج
 saved-secret-picker-empty = لا توجد أسرار محفوظة لهذا المشروع بعد
 saved-secret-picker-empty-detail = احفظ واحدًا من زر «حفظ…» لسرٍّ ملصق، أو عندما يطلب وكيل، أو من الإعدادات ← الأسرار.
@@ -4667,10 +4829,13 @@ saved-secret-picker-add = إضافة سر محفوظ…
 chat-secret-pill-token = رمز { $issuer }
 chat-secret-pill-private-key = مفتاح خاص
 chat-secret-pill-secret = سر
+chat-secret-card-status = لا يظهر في المحادثة
+chat-secret-card-note-held = يحتفظ به super.engineering ويستخدمه نيابةً عن الوكيل، الذي لا يستطيع قراءته، لمدة 24 ساعة.
+chat-secret-card-note-readable = يمكن لأوامر الوكيل قراءته لمدة 24 ساعة.
 chat-secret-card-paste-as-text = لصق كنص
 chat-secret-card-save = حفظ…
 chat-saved-secret-unavailable = تعذّرت قراءة السر المحفوظ من سلسلة المفاتيح، لذا لم يُدرج شيء.
-chat-saved-secret-store-failed = تعذّر إبقاء السر المحفوظ خاصًا، لذا لم يُدرج.
+chat-saved-secret-store-failed = تعذّر إدراج هذا السر المحفوظ بشكل خاص. لمنح الوكيل صلاحية القراءة، استخدم نافذة طلب السر.
 chat-saved-secret-not-inserted = لا يمكن لهذه المسودة قبول سر الآن، لذا لم يُدرج شيء.
 chat-secret-save-unavailable = هذه المحادثة غير متصلة بعد، لذا لا يمكن حفظ سرها. حاول مرة أخرى بعد قليل.
 chat-secret-store-failed = تعذّر إبقاء السر خاصًّا، لذلك لم يُلصق. الصقه مجددًا للصقه كنص عادي.
@@ -4681,6 +4846,29 @@ chat-artifact-annotate = إضافة تعليقات توضيحية
 right-sidebar-filter-files = تصفية الملفات
 right-sidebar-collapse-all-folders = طيّ جميع المجلدات
 right-sidebar-reveal-open-file = إظهار الملف المفتوح
+changes-to-review = للمراجعة
+changes-all-viewed = تم عرض الكل
+changes-conflict-count = { $count ->
+    [zero] لا تعارضات
+    [one] تعارض واحد
+    [two] تعارضان
+    [few] { $count } تعارضات
+    [many] { $count } تعارضًا
+   *[other] { $count } تعارض
+}
+changes-row-renamed-from = من { $name }
+changes-row-now-executable = أصبح قابلًا للتنفيذ
+changes-row-no-longer-executable = لم يعد قابلًا للتنفيذ
+changes-row-now-symlink = أصبح رابطًا رمزيًا
+changes-row-now-file = أصبح ملفًا
+changes-row-now-submodule = أصبح وحدة فرعية
+changes-row-staged = مُجهّز
+changes-row-conflict = تعارض
+changes-row-lockfile = ملف قفل، { $counts }
+changes-row-since-viewed = منذ ذلك الحين { $since }، والإجمالي { $total }
+changes-add-to-chat = إضافة إلى المحادثة
+changes-add-to-chat-no-chat = افتح محادثة لإضافة الملفات إليها
+changes-add-to-chat-subagent-focused = لا يمكن إضافة ملفات أثناء التركيز على سجل وكيل فرعي
 exit-save-failed-title = تعذّر حفظ حالة التطبيق
 exit-save-failed-description = لم تُحفظ أحدث حالة للتطبيق. { $error }. أعد المحاولة بعد إصلاح مشكلة التخزين، أو تابع دون حفظ.
 exit-restart-without-saving = إعادة التشغيل دون حفظ
@@ -4702,7 +4890,11 @@ changes-empty-turns-detail = عندما يغيّر وكيل ملفات، تظه�
 changes-empty-commits = لا التزامات بعد
 changes-empty-commits-detail = تظهر هنا الالتزامات على هذا الفرع.
 changes-empty-all-viewed = تم عرض الكل
-changes-empty-all-viewed-detail = لقد فتحت كل ملف متغيّر.
+changes-empty-all-marked-viewed-detail = لقد حدّدت كل ملف متغيّر كمعروض.
+changes-shared-no-worktrees = لا أشجار عمل بعد
+changes-shared-no-worktrees-detail = تظهر التغييرات هنا بمجرد أن يبدأ وكيل العمل في مستودع.
+changes-no-git = لا يوجد مستودع Git
+changes-no-git-detail = هيّئ Git لترى التغييرات هنا.
 review-delivery-prepared = جُهّز في { $target }
 review-delivery-sent = أُرسل إلى { $target }
 review-delivery-dispatched = أُرسل إلى { $target } في الخلفية
@@ -4836,7 +5028,6 @@ right-sidebar-amend-last-commit = تعديل آخر التزام
 right-sidebar-committing = جارٍ الالتزام
 right-sidebar-committed = تم الالتزام
 right-sidebar-push = دفع
-right-sidebar-unviewed = غير معروض
 changes-file-count =
     { $count ->
         [zero] لا ملفات
@@ -4904,6 +5095,7 @@ resources-exited-hours = انتهى قبل { $hours } س
 resources-cpu-row = CPU { $percent }%
 resources-split-app = التطبيق
 resources-cpu-split = التطبيق نفسه { $app }%، وعملك { $work }%
+resources-cpu-split-extensions = التطبيق نفسه { $app }%، والإضافات { $extensions }%، وعملك { $work }%
 resources-tree-chat = المحادثة
 resources-origin-tab = تبويب طرفية
 resources-origin-launched = بدأه { $tab }
@@ -4987,6 +5179,7 @@ resources-info-agents-hint = وكيل كل محادثة والأدوات الت�
 resources-info-browser = تبويبات المتصفح
 resources-info-browser-hint = تعمل كل صفحة في عمليتها الخاصة
 resources-info-terminals-hint = الأصداف وسكربتات التشغيل وما بدأته
+resources-info-extensions-hint = الإضافات داخل التطبيق، وبيئات تشغيلها، وصفحات الويب، والأوامر التي تشغّلها
 resources-info-remote = لا تُقاس أشجار العمل البعيدة بعد.
 resources-pressure-warning = ذاكرة جهاز Mac تحت الضغط. يستخدم super.engineering { $used } من { $ram }.
 resources-pressure-warning-short = ذاكرة جهاز Mac تحت الضغط.
@@ -5001,10 +5194,12 @@ resources-empty-all = لا شيء قيد التشغيل.
 resources-empty-agents = لا وكلاء قيد التشغيل.
 resources-empty-browser = لا تبويبات متصفح مفتوحة.
 resources-empty-terminals = لا طرفيات قيد التشغيل.
+resources-empty-extensions = لا إضافات محمّلة.
 resources-tab-all = الكل
 resources-tab-agents = الوكلاء
 resources-tab-browser = المتصفح
 resources-tab-terminals = الطرفيات
+resources-tab-extensions = الإضافات
 resources-count-chats =
     { $count ->
         [zero] لا توجد محادثات مفتوحة
@@ -5041,6 +5236,43 @@ resources-count-terminals =
         [many] { $count } طرفية
        *[other] { $count } طرفية
     }
+resources-count-extensions =
+    { $count ->
+        [zero] لا إضافات محمّلة
+        [one] إضافة واحدة محمّلة
+        [two] إضافتان محمّلتان
+        [few] { $count } إضافات محمّلة
+        [many] { $count } إضافة محمّلة
+       *[other] { $count } إضافة محمّلة
+    }
+resources-reload = إعادة تحميل
+resources-ext-throttled = مُقيّد
+resources-ext-throttled-tooltip = { $ms } ms على الخيط الرئيسي في الدقيقة الأخيرة (أوامر مؤجلة: { $delayed })
+resources-ext-views =
+    { $count ->
+        [zero] لا عروض
+        [one] عرض واحد
+        [two] عرضان
+        [few] { $count } عروض
+        [many] { $count } عرضًا
+       *[other] { $count } عرض
+    }
+resources-ext-web = الويب
+resources-ext-main-thread = الخيط الرئيسي
+resources-ext-main-thread-ms = { $ms } ms/دقيقة
+resources-ext-throttled-detail = { $ms } ms/دقيقة · المؤجلة: { $delayed }
+resources-ext-js-runtime = بيئة تشغيل JavaScript
+resources-ext-web-page = صفحة ويب
+resources-ext-stop-consequence =
+    { $count ->
+        [zero] يوقف بيئة تشغيلها.
+        [one] يغلق عرضًا واحدًا ويوقف بيئة تشغيلها.
+        [two] يغلق عرضين ويوقف بيئة تشغيلها.
+        [few] يغلق { $count } عروض ويوقف بيئة تشغيلها.
+        [many] يغلق { $count } عرضًا ويوقف بيئة تشغيلها.
+       *[other] يغلق { $count } عرض ويوقف بيئة تشغيلها.
+    }
+resources-ext-stop-consequence-none = يوقف بيئة تشغيلها.
 resources-on-screen = معروض على الشاشة، لذا يبقى نشطًا
 resources-open = فتح
 resources-close = إغلاق
@@ -5098,6 +5330,7 @@ extension-failed-hint = أصلح الخطأ واحفظ؛ يُعاد تحميل �
 extension-fix-with-ai = الإصلاح بالذكاء الاصطناعي
 extension-html-unsupported = إضافات HTML متاحة على macOS.
 extension-open-failed = تعذّر فتح الإضافة
+extension-delete-failed = تعذّر حذف الإضافة
 extension-command-failed = لم يُنفَّذ أمر الإضافة
 extension-palette-open = الإضافات › { $name }
 extension-palette-open-split = الإضافات › { $name } في عرض مقسّم
@@ -5113,11 +5346,44 @@ extension-open = فتح
 extension-open-split = فتح في عرض مقسّم
 extension-open-sidebar = فتح في الشريط الجانبي
 sidebar-extension-close = إغلاق
-sidebar-extension-keep = الإبقاء في كل الأشرطة الجانبية
+sidebar-extension-header = الإبقاء في الشريط الجانبي
+sidebar-extension-scope-worktree = شجرة العمل هذه فقط
+sidebar-extension-pin = تثبيت في الشريط الجانبي
+sidebar-extension-unpin = إلغاء التثبيت من الشريط الجانبي
+extension-persistent-tab-pin = تثبيت كعلامة تبويب دائمة
+extension-persistent-tab-unpin = إلغاء تثبيت علامة التبويب الدائمة
+extension-persistent-tab-header = الإبقاء دائمًا في
+extension-persistent-tab-scope-worktree = شجرة العمل هذه فقط (علامة تبويب عادية)
+extension-persistent-tab-scope-project = المشروع · { $name }
+extension-persistent-tab-scope-workspace = مساحة العمل · { $name }
+extension-persistent-tab-scope-global = عام (كل مساحات العمل)
+extension-persistent-tab-tooltip-hint = انقر بزر الماوس الأيمن لاختيار النطاق
+extension-persistent-tab-move-sidebar = نقل إلى الشريط الجانبي
+extension-persistent-tab-pop-out = فصل (نافذة عائمة)
+extension-persistent-tab-more = المزيد من علامات التبويب الدائمة
+extension-persistent-tab-section = دائمة
+extension-placement-default = الافتراضي
+extension-placement-persistent-tab = علامة تبويب دائمة
+extension-placement-sidebar = الشريط الجانبي
+extension-persistent-scope-workspaces = مساحات العمل
+extension-persistent-scope-projects = المشاريع
 extension-edit-with-ai = التحرير بالذكاء الاصطناعي
 extension-window-move-to-tab = نقل إلى علامة تبويب
 extension-change-icon = تغيير الأيقونة…
 extension-icon-automatic = تلقائية
+extension-annotate = تعليق توضيحي
+extension-annotate-hint = انقر على ما تريد تغييره
+extension-annotate-count = { $count ->
+    [zero] لا تعليقات
+    [one] تعليق واحد
+    [two] تعليقان
+    [few] { $count } تعليقات
+    [many] { $count } تعليقًا
+   *[other] { $count } تعليق
+}
+extension-annotate-placeholder = ما الذي يجب تغييره؟
+extension-annotate-add = إضافة تعليق
+extension-annotate-remove = إزالة
 extension-show-folder = إظهار المجلد
 extension-revoke = سحب الموافقة
 extension-delete = حذف
@@ -5162,9 +5428,26 @@ settings-search-entry-experimental-feature-flags-prediction-inspector-label = م
 settings-search-entry-experimental-feature-flags-prediction-inspector-description = عرض نافذة مثبتة بمصادر التنبؤ المباشرة وترتيبها وأهليتها للمحادثة النشطة. لا يرسل أي طلبات إلى النموذج.
 prediction-inspector-title = مفتش التنبؤات
 prediction-inspector-copy = نسخ لقطة
+settings-sidebar-group-app = التطبيق
+settings-category-browser = المتصفح
+settings-category-browser-description = توجيه الروابط، وذاكرة علامات التبويب، ووصول الوكلاء إلى المتصفح.
+settings-section-links = الروابط
+settings-search-section-links = الروابط
+settings-section-tabs = علامات التبويب
+settings-search-section-tabs = علامات التبويب
+settings-section-agent-control = تحكم الوكلاء
+settings-search-section-agent-control = تحكم الوكلاء
+settings-section-usage-meter = مقياس الاستخدام
+settings-search-section-usage-meter = مقياس الاستخدام
+settings-browser-agent-control-intro = تعمل معظم أوامر ⁨se browser⁩ للقراءة فقط دون موافقة، باستثناء قراءة ملفات تعريف الارتباط ومحتوى استجابات الشبكة. يمنح تفعيل مساحة عمل الوكلاءَ إذنًا دائمًا بالنقر والكتابة والتنقل وتشغيل النصوص البرمجية وقراءة ملفات تعريف الارتباط في علامات تبويب المتصفح لتلك المساحة حتى يُسحب الإذن.
+settings-browser-agent-control-empty = لا مساحات عمل بعد.
+settings-browser-agent-control-workspace-description = السماح للوكلاء بالتحكم في علامات تبويب المتصفح في { $workspace }.
+settings-search-entry-browser-agent-control-allow-agents-to-control-the-browser-label = السماح للوكلاء بالتحكم في المتصفح
+settings-search-entry-browser-agent-control-allow-agents-to-control-the-browser-description = إدارة مساحات العمل التي تمنح الوكلاء إذنًا دائمًا بالنقر والكتابة والتنقل وتشغيل النصوص البرمجية في علامات تبويب المتصفح.
+settings-search-entry-mobile-mobile-access-mobile-access-description = فعّل الوصول عبر الهاتف لتتمكن هواتفك المقترنة من الاتصال بجهاز Mac هذا.
 settings-mcp-config-loading = جارٍ قراءة إعدادات Codex…
 settings-mcp-config-refresh = تحديث خوادم MCP في Codex
 settings-mcp-quieted-servers = خوادم MCP في Codex
 settings-mcp-quieted-servers-caption = لا تُذكر هذه الخوادم في المحادثة عندما لا تكون قيد التشغيل. تستمر محاولة تشغيلها وتظل أدواتها متاحة.
 
-review-delete-thread-confirm = هل تريد حذف سلسلة التعليقات هذه وكل الردود عليها، بما فيها ردود الآخرين؟
+review-delete-thread-confirm = حذف هذه السلسلة وكل ردودها، بما فيها ردود الآخرين؟
