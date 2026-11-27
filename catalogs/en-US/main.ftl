@@ -763,10 +763,16 @@ browser-annotations-send-short = Send
 browser-open-chat-or-enable-provider = Open a chat tab or enable an AI provider
 browser-annotation-destination-unavailable = That annotation destination is no longer available
 browser-annotation-composer-blocked = Can't add annotations while a subagent transcript is focused
+terminal-selection-destination-unavailable = That chat is no longer available
+terminal-selection-composer-blocked = This chat can't accept terminal selections right now
+terminal-selection-no-destination = Open a chat tab or enable an AI provider to send the selection
+terminal-selection-too-large = Select less terminal output to send it to a chat
+terminal-selection-send-to-chat = Send to chat
+terminal-selection-new-chat = New chat
 browser-consent-title = Let agents control the browser in “{ $workspace_name }”?
 browser-consent-asked-by-agent = An agent
 browser-consent-asked-by-worktree = An agent working in “{ $caller_label }”
-browser-consent-description = { $asked_by } asked to run se browser { $spelling } in this workspace's browser tab. Allowing grants every agent in this workspace standing permission — for this and every future act command, not just this one — to click, type, navigate, and run scripts on whatever page is open, including signed-in sessions. Most read-only commands do not need approval, but reading cookie values does. This persists for the workspace and can be revoked anytime in Settings.
+browser-consent-description = { $asked_by } asked to run se browser { $spelling } in this workspace's browser tab. Allowing grants every agent in this workspace standing permission — for this and every future act command, not just this one — to click, type, navigate, and run scripts on whatever page is open, including signed-in sessions. Most read-only commands do not need approval, but reading cookie values does. This persists for the workspace and can be revoked anytime in Settings › Browser › Agent control.
 browser-back = Back
 browser-forward = Forward
 browser-reload = Reload
@@ -1028,7 +1034,7 @@ project-search-all-projects = Search all projects
 project-search-hand-off-hint = All projects
 project-search-section-worktrees = Worktrees
 project-search-section-filter-hint = Try a section, running, open, or #number
-sidebar-install-ssh-key = Install SSH key
+sidebar-remote-refresh-paused = Refresh paused
 action-update = Update
 workspace-no-ai-background-tasks = No AI background tasks
 workspace-no-matching-branches = No matching branches
@@ -1372,6 +1378,8 @@ workspace-remote-machine-description = Create an empty workspace for an SSH host
 workspace-remove-projects-branches-blocked = Delete from those branches first, then try again.
 workspace-rename-title = Rename Workspace
 workspace-shared-context = Shared Context
+workspace-shared-context-description = Share context across several projects in one workspace.
+workspace-shared-context-detail = Best for cross-repo coordination and shared interface changes.
 workspace-ssh-target = SSH target
 workspace-update-agents-description = Workspace projects changed. Analyze repositories to update AGENTS.md, or skip to keep the current file.
 workspace-update-agents-title = Update workspace guidance?
@@ -1970,8 +1978,6 @@ settings-search-no-results = No settings match “{ $query }”. Press esc to cl
 settings-search-results-summary = Results: { $result_count } · Categories: { $category_count }
 settings-search-hidden-results = Additional matches: { $count } — keep typing to narrow your search.
 settings-experimental-heading = Experimental
-settings-experimental-shared-context-label = Shared context workspaces
-settings-experimental-shared-context-description = Allow selecting parent folders that expand into child repositories for shared context workspaces.
 settings-experimental-remote-workspaces-label = Remote workspaces
 settings-experimental-remote-workspaces-description = Create workspaces that live on a remote machine over SSH. Existing remote workspaces keep working when disabled.
 settings-experimental-non-git-projects-label = Non-Git projects
@@ -1989,8 +1995,8 @@ settings-experimental-resource-monitor-label = Resource monitor
 settings-experimental-resource-monitor-description = Show the Resources button in the titlebar, with memory and CPU for each worktree, tab, and helper process.
 settings-experimental-review-label = Review
 settings-experimental-review-description = Run review dispatches in headless provider terminals and keep an AI task history.
-settings-experimental-focus-mode-label = Focus mode
-settings-experimental-focus-mode-description = Add the focus page to the left sidebar, which shows your queued, running, and open chats as cards, with a titlebar button to switch to it.
+settings-experimental-focus-mode-label = Workbench
+settings-experimental-focus-mode-description = Add a cross-workspace Workbench view to the left sidebar for tracking active worktrees and chats until you mark them done, with a titlebar button to switch to it.
 settings-storage-conversation-label = Conversation storage
 settings-storage-status-label = Status
 settings-storage-analyze = Analyze
@@ -2062,11 +2068,39 @@ settings-extensions-approvals-count = { $count ->
 settings-extensions-forget = Forget approvals
 settings-secrets-heading = Saved secrets
 settings-secrets-intro-label = Saved secrets
-settings-secrets-intro-description = API keys, tokens and passwords kept in your system keyring. Insert one in a chat, or pick one when an agent asks; agents get a private file, never the value.
+settings-secrets-intro-detail = Saved in your system keyring until you delete them. Insert supported keys and tokens in any chat, or pick any saved secret when an agent asks.
 settings-secrets-add = Add secret
 settings-secrets-replace = Replace value
 settings-secrets-empty = Save one from a pasted secret's Save… button, when an agent asks, or with Add secret.
 settings-secrets-empty-title = No saved secrets yet
+settings-secrets-safety-heading = What's protected, and what isn't
+settings-secrets-safety-use-label = Agents can use anything you give them
+settings-secrets-safety-use-description = Even a secret the agent can't read can be used for anything the key allows, for 24 hours. Give keys with limited access that you can revoke.
+settings-secrets-safety-held-label = Secrets super.engineering keeps
+settings-secrets-safety-held-description = For supported SSH keys and API access tokens, the app keeps the value in memory and uses it for the agent — the agent never sees the secret.
+settings-secrets-safety-held-point-ssh = SSH private keys go into the app's own SSH agent: the agent runs ssh or git, and the app signs. Other agents and apps running as you can sign with it too, but can't copy the key. Passphrase-protected keys and unsupported key formats can only be given as a file.
+settings-secrets-safety-held-point-http = Supported GitHub, GitLab, OpenAI, Anthropic, Hugging Face, npm, DigitalOcean, SendGrid, Slack, Stripe and Linear access tokens work through se secret http: requests go only over HTTPS to that service's hosts (no redirects) and the token is hidden in replies. For GitHub and GitLab, you confirm the public service before first use. Tools such as gh, SDKs, self-hosted credentials, webhook URLs, and refresh tokens need a readable file instead.
+settings-secrets-safety-held-point-dig = This stops the agent being handed the value, not a determined agent running as you. super.engineering clears the clipboard after you paste or save a secret, but an agent or clipboard manager could read it before then, or change your shell setup to catch one you type later.
+settings-secrets-safety-held-point-restart = Held secrets stay in memory — never written to disk — and are forgotten when the app quits. Release builds on macOS and Linux block other apps running as you from reading the app's memory.
+settings-secrets-safety-held-point-ssh-hosts = On SSH hosts, held keys and tokens never leave this computer — requests go out from here. While a session runs, other programs on the host can sign with the forwarded agent, but can't copy the key.
+settings-secrets-safety-readable-label = Secrets the agent can read
+settings-secrets-safety-readable-description = Pasted values super.engineering can't keep (or pasted into a ! command), and secrets you explicitly let the agent read, go into a private file for 24 hours. Saved secrets inserted in chat are never given as a readable file.
+settings-secrets-safety-file-point-readable = The agent reads it from a private file. Other apps running as you can read that file too.
+settings-secrets-safety-file-point-expiry = After 24 hours the agent loses access. Give it again if it still needs it. Saved secrets stay saved.
+settings-secrets-safety-file-point-cleanup = If your computer restarts before then, the file can stay longer.
+settings-secrets-safety-file-point-revoke = Taking access away doesn't revoke the key or remove copies the agent made.
+settings-secrets-safety-file-point-unrecognized = Pasted secrets are caught only when they're recognized. Right-click and choose Paste as Secret for anything that isn't.
+settings-secrets-safety-keyring-label = Saved secrets
+settings-secrets-safety-keyring-description = Kept in your system keyring until you delete them, so you can reuse them without pasting again.
+settings-secrets-safety-keyring-point-already-given = Deleting or replacing one doesn't affect agents you already gave it to.
+settings-secrets-safety-keyring-point-mac-prompt = On a Mac, other apps can read a saved secret only if you allow it. If a Keychain prompt asks to let another program use a super.engineering secret, choose Deny.
+settings-secrets-safety-keyring-point-linux = On Linux, any app running as you, agents included, can read every saved secret.
+settings-secrets-safety-output-label = Hiding secrets in command output
+settings-secrets-safety-output-description = For secrets given as a readable file: best effort, in recent Claude Code versions and in local shell output you add to a message. Other agents see printed secrets.
+settings-secrets-safety-output-point-window = It works only during an agent's 24 hours with the secret.
+settings-secrets-safety-output-point-misses = It misses failed commands, encoded or partial copies, and values under 8 characters.
+settings-secrets-safety-output-point-fails-open = If the check fails or times out, the output goes through unchanged.
+settings-secrets-safety-output-point-leftovers = Other hooks, telemetry, shell history, logs and files can still hold the value.
 settings-privacy-share-label = Share anonymous usage data
 settings-privacy-share-description = Helps us understand how super.engineering is used and prioritize improvements. No personal data, project data, or file contents ever leave your machine.
 settings-privacy-what-we-send-description = A random per-install ID, random app-session ID, app version, update channel, operating system name and version, CPU architecture, session start/end timestamps and duration, and a daily-active event on launch or the first later app focus/input per UTC day. Turning this off stops telemetry without a final opt-out event. The install ID stays on your device and is reused if you turn telemetry back on; session state is deleted.
@@ -2109,6 +2143,7 @@ settings-search-section-shortcuts = Shortcuts
 settings-search-section-sources = Sources
 settings-search-section-telemetry = Telemetry
 settings-search-section-saved-secrets = Saved secrets
+settings-search-section-secrets-safety = What's protected, and what isn't
 settings-search-section-feature-flags = Feature flags
 settings-search-section-location = Location
 settings-search-section-cleanup = Cleanup
@@ -2191,6 +2226,8 @@ settings-search-entry-general-behavior-project-header-click-label = Clicking a p
 settings-search-entry-general-behavior-project-header-click-description = Choose what clicking a project name in the sidebar does. The arrow next to the name always expands and collapses.
 settings-search-entry-general-behavior-confirm-before-quitting-label = Confirm before quitting
 settings-search-entry-general-behavior-confirm-before-quitting-description = Show a confirmation prompt when you press Cmd+Q or choose Quit from the menu.
+settings-search-entry-general-behavior-keep-running-when-the-window-closes-label = Keep running when the window closes
+settings-search-entry-general-behavior-keep-running-when-the-window-closes-description = Chats, agents and automations keep going in the background. Click the Dock icon to bring the window back.
 settings-search-entry-general-behavior-confirm-before-closing-a-running-tab-label = Confirm before closing a running tab
 settings-search-entry-general-behavior-confirm-before-closing-a-running-tab-description = Show a confirmation prompt when you close a tab whose agent or terminal is still running.
 settings-search-entry-general-behavior-open-links-in-the-in-app-browser-label = Open links in the in-app browser
@@ -2227,6 +2264,8 @@ settings-search-entry-appearance-theme-theme-label = Theme
 settings-search-entry-appearance-theme-theme-description = Match system appearance or force light/dark mode.
 settings-search-entry-appearance-theme-contrast-label = Contrast
 settings-search-entry-appearance-theme-contrast-description = Raise text and border contrast. System follows your operating system's Increase Contrast setting.
+settings-search-entry-appearance-theme-syntax-colors-label = Syntax colors
+settings-search-entry-appearance-theme-syntax-colors-description = Color palette for code in diffs, files, chat, and the editor. Follows light/dark automatically.
 settings-search-entry-appearance-theme-customize-theme-label = Customize theme
 settings-search-entry-appearance-theme-customize-theme-description = Open the workspace theme customizer.
 settings-search-entry-appearance-theme-default-theme-label = Default theme
@@ -2372,6 +2411,8 @@ settings-search-entry-palette-sources-keyboard-shortcut-label = Keyboard shortcu
 settings-search-entry-palette-sources-keyboard-shortcut-description = Open the Command Palette with the configured shortcut.
 settings-search-entry-palette-sources-show-files-label = Show files
 settings-search-entry-palette-sources-show-files-description = Include workspace files in the palette.
+settings-search-entry-palette-sources-show-files-in-all-label = Show files in All
+settings-search-entry-palette-sources-show-files-in-all-description = List matching workspace files at the bottom of the All list. Files mode is unaffected.
 settings-search-entry-palette-sources-show-worktrees-label = Show worktrees
 settings-search-entry-palette-sources-show-worktrees-description = Include git worktrees so you can switch or focus them from the palette.
 settings-search-entry-palette-sources-show-tabs-label = Show tabs
@@ -2386,10 +2427,10 @@ settings-search-entry-privacy-telemetry-share-anonymous-usage-data-label = Share
 settings-search-entry-privacy-telemetry-share-anonymous-usage-data-description = Helps us understand how super.engineering is used and prioritize improvements.
 settings-search-entry-secrets-saved-secrets-label = Saved secrets
 settings-search-entry-secrets-saved-secrets-description = API keys, tokens and passwords kept in the system keyring for any project or one.
+settings-search-entry-secrets-safety-label = What's protected, and what isn't
+settings-search-entry-secrets-safety-description = What agents get, where secrets are kept, and what can leak.
 settings-search-entry-experimental-feature-flags-workspace-mentions-label = Workspace mentions
 settings-search-entry-experimental-feature-flags-workspace-mentions-description = Mention scripts, terminals, worktrees, chats, and agents with @ in chat.
-settings-search-entry-experimental-feature-flags-shared-context-workspaces-label = Shared context workspaces
-settings-search-entry-experimental-feature-flags-shared-context-workspaces-description = Allow selecting parent folders that expand into child repositories for shared context workspaces.
 settings-search-entry-experimental-feature-flags-remote-workspaces-label = Remote workspaces
 settings-search-entry-experimental-feature-flags-remote-workspaces-description = Create workspaces that live on a remote machine over SSH. Existing remote workspaces keep working when disabled.
 settings-search-entry-experimental-feature-flags-non-git-projects-label = Non-Git projects
@@ -2466,6 +2507,8 @@ settings-search-entry-agents-providers-kimi-code-provider-label = Kimi Code prov
 settings-search-entry-agents-providers-kimi-code-provider-description = Enable Kimi Code and configure its models and launch flags.
 settings-search-entry-agents-providers-jcode-provider-label = jcode provider
 settings-search-entry-agents-providers-jcode-provider-description = Enable jcode and configure its models and launch flags.
+settings-search-entry-agents-providers-devin-provider-label = Devin provider
+settings-search-entry-agents-providers-devin-provider-description = Enable Devin and configure its models and launch flags.
 settings-search-entry-agents-providers-gemini-provider-label = Gemini provider
 settings-search-entry-agents-providers-gemini-provider-description = Enable Gemini and configure its models and launch flags.
 settings-search-entry-agents-providers-kiro-provider-label = Kiro provider
@@ -2905,6 +2948,8 @@ settings-ai-provider-fx-description = Enable fx chat and terminal support (requi
 workspace-fx-remote-history-unsupported = FX remote terminals do not support session history or resume yet.
 settings-ai-provider-kimi-description = Enable Kimi Code as a chat and terminal provider (requires the current Kimi Code CLI `kimi` installed).
 settings-ai-provider-jcode-description = Enable jcode as a chat and terminal provider (requires the jcode CLI `jcode` installed). Chats run every tool jcode's own config allows; jcode cannot ask for approval first.
+settings-ai-provider-devin-description = Enable Devin chat and terminal support (requires Devin CLI `devin` installed). Terminal status registers a local super.engineering hooks plugin with Devin.
+workspace-devin-remote-lifecycle-unsupported = Devin remote terminals do not report live status or resume sessions yet.
 settings-ai-provider-gemini-legacy-description = Enable legacy Gemini CLI as a terminal provider (requires Gemini CLI installed).
 settings-ai-provider-kiro-description = Enable Kiro as a terminal provider (requires kiro-cli installed).
 settings-ai-provider-copilot-description = Enable Copilot as a terminal provider (requires GitHub Copilot CLI installed).
@@ -2978,7 +3023,7 @@ settings-keybinding-action-paste = Paste
 settings-keybinding-action-copy = Copy
 settings-keybinding-action-toggle-right-panel = Toggle Right Panel
 settings-keybinding-action-toggle-left-sidebar = Toggle Left Sidebar
-settings-keybinding-action-toggle-focus-mode = Toggle Focus Mode
+settings-keybinding-action-toggle-focus-mode = Toggle Workbench
 settings-keybinding-action-toggle-both-sidebars = Toggle Both Sidebars
 settings-keybinding-action-new-worktree = New Worktree
 settings-keybinding-action-new-worktree-from = New Worktree From
@@ -3097,6 +3142,7 @@ chat-queued-steer-failed = Couldn't steer this message.
 chat-queued-change-failed = Couldn't change this message.
 chat-delivery-unconfirmed = Delivery unconfirmed
 chat-delivery-unconfirmed-retry = Check the conversation before retrying; this message may already have been delivered.
+chat-writing-equation = Drawing the equation…
 chat-answer-pending-delivery = Pending delivery
 chat-pasted-text = Pasted text
 chat-code-review-count = Code review ({ $count })
@@ -3117,12 +3163,17 @@ changes-empty-turns-detail = When an agent changes files, they show up here unde
 changes-empty-commits = No commits yet
 changes-empty-commits-detail = Commits on this branch show up here.
 changes-empty-all-viewed = All viewed
-changes-empty-all-viewed-detail = You’ve opened every changed file.
+changes-empty-all-marked-viewed-detail = You’ve marked every changed file as viewed.
+changes-shared-no-worktrees = No worktrees yet
+changes-shared-no-worktrees-detail = Changes show up here once an agent starts work in a repository.
+changes-no-git = No Git repository
+changes-no-git-detail = Initialize Git to see changes here.
 changes-commits = Commits
 common-all = All
 review-resolved-count = Resolved ({ $count })
 right-panel-setup = Setup
 action-stop = Stop
+action-resume = Resume
 right-panel-terminal = Terminal
 setup-run = Run setup
 setup-empty-title = Add a setup script
@@ -3343,6 +3394,7 @@ permission-approve-for-me = Approve for me
 permission-full-access = Full access
 permission-auto-review = Auto-review
 permission-always-approve = Always-approve
+permission-smart = Smart
 permission-smart-auto = Smart Auto
 permission-run-everything = Run Everything
 permission-cli-settings = CLI settings
@@ -3389,6 +3441,31 @@ chat-agent-wait-caption = { $count ->
     [one] { $model } continues when it finishes
    *[other] { $model } continues when they finish
 }
+# Under the answer a chat waits after while a launched agent needs the user's input or approval.
+chat-agent-wait-needs-input = { $count ->
+    [one] { $agent } needs you
+   *[other] { $count } agents need you
+}
+# Button label in the waiting tail when stopping launched agents a lead waits on.
+chat-stop-waiting-agents = { $count ->
+    [one] Stop 1 agent
+   *[other] Stop { $count } agents
+}
+# Button label in the waiting tail when one or more stoppable launched agents live in other worktrees.
+chat-stop-waiting-agents-remote = { $count ->
+    [one] Stop 1 agent (in another worktree)
+   *[other] { $remote ->
+        [one] Stop { $count } agents (1 in another worktree)
+       *[other] Stop { $count } agents ({ $remote } in other worktrees)
+    }
+}
+# Status captions shown when the user stopped a lead mid-turn while sparing its launched agents.
+chat-agent-wait-paused = Paused
+chat-agent-wait-paused-both = Paused · { $finished } finished, { $working } working
+chat-agent-wait-paused-finished = Paused · { $finished } finished
+chat-agent-wait-paused-working = Paused · { $working } working
+# Under the answer a chat waits after while provider-owned background work runs without enumerated task rows, e.g. "Antigravity continues when background work finishes".
+chat-background-work-wait-caption = { $model } continues when background work finishes
 chat-worked-for = Worked for { $duration }
 # A centred timestamp where a conversation picks up after a gap.
 chat-time-today = Today { $time }
@@ -3719,7 +3796,6 @@ settings-ai-codex-profile-directory-missing = Codex profile directory not found.
 common-subagent = Subagent
 
 action-initialize-anyway = Initialize Anyway
-action-install-key = Install key
 action-update-cli = Update
 clone-status-cloning = Cloning { $repository }
 clone-status-canceling = Canceling { $repository }
@@ -3833,26 +3909,50 @@ risk-initialize-git-title = Initialize Git?
 risk-initialize-git-message = This will create { $git_path } and make the selected folder a Git repository. { $app_name } will use that Git repository to enable branch tracking and worktree creation.
 sidebar-projects = Projects
 focus-page-all-workspaces = All workspaces
-focus-page-empty = No open chats
-focus-page-active-empty = Nothing needs you
+focus-page-empty = Workbench is empty
+focus-page-empty-filtered = No matching items
 focus-page-new = New feature
-focus-section-active = Active
-focus-section-working = Running
-focus-section-open = Open
-focus-sort-header = Sort features by
-focus-sort-header-chats = Sort chats by
-focus-sort-last-user-message = Last user message
-focus-sort-activity = Activity
-focus-card-dismiss = Dismiss
-focus-card-close = Close chats
-focus-card-no-chats = No open chats
-focus-close-title =
-    { $count ->
-        [one] Close this chat’s tab?
-       *[other] Close { $count } chat tabs?
-    }
-focus-close-description = The conversations stay in history. Running chats are left open.
-focus-mode-show-focus = Show Focus
+focus-section-active = Workbench
+focus-section-pinned = Pinned
+focus-section-settled = Done
+focus-done-empty = Nothing done yet
+focus-status-approval = Needs approval
+focus-status-review = Ready
+focus-action-pin = Pin
+focus-action-unpin = Unpin
+focus-action-settle = Mark as done
+focus-action-settle-below = Mark everything below as done
+focus-action-settle-all = Mark all as done
+focus-action-add-to-workbench = Add to Workbench
+focus-action-mark-done-in-workbench = Mark as done in Workbench
+focus-action-restore = Restore to Workbench
+focus-notice-chat-added = Added chat to Workbench
+focus-notice-chat-marked-done = Marked as done in Workbench
+focus-notice-chat-removed = Removed chat from Workbench
+focus-options-filter = Filter
+focus-options-display = Display
+focus-scope-all = All workspaces & projects
+focus-scope-all-projects = All projects
+focus-scope-search-placeholder = Filter workspaces or projects...
+focus-scope-only = Only
+focus-scope-reset = Reset
+focus-scope-clear = Clear filter
+focus-scope-n-projects = { $count } projects
+focus-scope-n-workspaces = { $count } workspaces
+focus-scope-no-matches = No matching projects
+focus-options-show-header = Show as
+focus-options-worktrees = Worktrees
+focus-options-chats = Individual chats
+focus-options-layout-header = Layout
+focus-options-flat = Flat (by recency)
+focus-options-by-project = Group by project
+focus-options-window-header = Active within
+focus-shared-badge = Shared
+focus-shared-all-repos = All repos
+focus-shared-repos-header = Child repos
+focus-shared-add-repo = Add
+workspace-chrome-more-tools = More tools
+focus-mode-show-focus = Show Workbench
 focus-mode-show-worktrees = Show Worktrees
 sort-recent-activity = Recent activity
 sort-most-activity = Most activity
@@ -3934,7 +4034,6 @@ toast-check-git-identity = Check your Git user name and email, then try again.
 toast-worktree-already-creating = A worktree is already being created.
 toast-primary-worktree-stays-on-top = Primary worktree stays on top
 toast-primary-worktree-cannot-reorder = The primary worktree cannot be reordered. To hide it, right-click it and choose “Hide primary worktree”.
-toast-enable-shared-context-workspaces = Enable Experimental > Shared context workspaces to use Shared Context workspaces.
 toast-workspace-setup-error = Workspace setup error
 toast-create-shared-context-symlinks-failed = Failed to create shared-context symlinks: { $error }
 toast-create-branch-group-failed = Failed to create branch group: { $error }
@@ -3988,13 +4087,7 @@ toast-remote-cli = Remote CLI
 toast-remote-cli-not-configured = The { $app_name } CLI isn't set up on { $target }. Install it in workspace settings to enable live git updates, agent notifications, and branch naming.
 remote-cli-install-succeeded = Installed { $app_name } CLI { $package } (api={ $api }, watch={ $watch }, hooks={ $hooks }) on the remote.
 remote-cli-install-failed = CLI installation failed: { $error }
-toast-remote-ssh = Remote SSH
-toast-remote-ssh-auth-required = Can't connect to { $target } without a password. Install the SSH key to enable background refresh.
 toast-remote-workspace-unavailable = Remote workspace unavailable
-toast-ssh-key = SSH key
-toast-installing-ssh-key = Installing SSH key on { $target }…
-toast-ssh-key-installed = SSH key installed
-toast-ssh-key-install-failed = SSH key installation failed
 
 chat-composer-placeholder-active = Type a message...
 chat-composer-placeholder-focus-fallback = Focus chat to type
@@ -4014,6 +4107,11 @@ shortcut-sequence-then = { $first } then { $second }
 
 chat-attach-files = Attach files
 chat-prompt-suggestion-tab-hint = tab
+chat-add-menu-tooltip = Add files, context and secrets
+chat-add-menu-search-placeholder = Add files, agents, tabs or secrets…
+chat-add-menu-files = Files and images…
+chat-add-menu-browser-tabs = Browser tabs
+chat-add-menu-paste-as-secret = Paste as secret
 chat-change-profile = Change profile
 chat-copy-command = Copy command
 chat-copy-output = Copy output
@@ -4127,6 +4225,8 @@ run-app-scan-hint = Scan with a phone on the same Wi-Fi.
 run-stop-script = Stop run script
 run-rerun-workspace = Re-run workspace
 workspace-close-tab = Close tab
+workspace-expand-tab-rail = Expand tab rail
+workspace-collapse-tab-rail = Collapse tab rail
 workspace-launched-agents-header = Launched agents
 workspace-created-worktrees-header = Created worktrees
 created-worktrees-summary = { $count ->
@@ -4163,6 +4263,13 @@ workspace-add-split-view = Split view
 workspace-choose-app = Choose app
 
 theme-picker-title = Theme
+theme-sync-modes = Sync Light and Dark
+theme-sync-on = Changes apply to both.
+theme-sync-replaces-dark = Turning on replaces Dark with Light's colors.
+theme-sync-replaces-light = Turning on replaces Light with Dark's colors.
+theme-colors-for-both = Colors for Light and Dark
+theme-colors-for-light = Colors for Light
+theme-colors-for-dark = Colors for Dark
 theme-menu-tooltip = Copy or paste a theme, set your default, or reset.
 theme-close-tooltip = Close (Esc)
 theme-link-on-tooltip = Light and Dark match. Click to unlink them.
@@ -4171,12 +4278,14 @@ theme-link-off-dark-tooltip = Light and Dark are separate. Click to make Light m
 theme-status-solid = Solid
 theme-status-custom = Custom
 theme-gradient = Gradient
+theme-direction = Direction
 theme-auto = Auto
 theme-eyedropper-tooltip = Pick a color from anywhere on your screen.
 theme-hex = Hex
 theme-hex-adjusted = Adjusted to keep text readable
 theme-hex-invalid = Not a hex color
 theme-adjust = Adjust
+theme-advanced = Advanced
 theme-slider-reset-hint = Double-click a slider to reset it.
 theme-adjust-summary-background = Color { $color }%   Glass { $glass }%
 theme-adjust-summary-prominence = Prominence { $prominence }%
@@ -4184,6 +4293,21 @@ theme-brightness-sidebar-note = Set by the color above
 theme-chip-current = Current
 theme-chip-pick = Pick
 theme-chip-workspace-tooltip = From your workspace { $name }
+theme-chip-glade = Glade
+theme-chip-white = White
+theme-chip-black = Black
+theme-chip-stone = Stone
+theme-chip-slate = Slate
+theme-chip-mint = Mint
+theme-chip-sky = Sky
+theme-chip-peach = Peach
+theme-chip-lilac = Lilac
+theme-chip-mist = Mist
+theme-chip-aurora = Aurora
+theme-chip-dawn = Dawn
+theme-chip-gild = Gild
+theme-chip-tropic = Tropic
+theme-chip-opal = Opal
 theme-chip-sakura = Sakura
 theme-chip-ember = Ember
 theme-chip-honey = Honey
@@ -4199,7 +4323,7 @@ theme-accent-auto-tooltip = On: the app picks an accent that goes with your back
 theme-highlight-auto-tooltip = On: Highlight follows your Accent. Picking a color turns this off.
 theme-group-sidebar = Sidebar
 theme-group-content = Content
-theme-color-strength = Color
+theme-color-strength = Intensity
 theme-opacity = Glass
 theme-tint = Tint
 theme-brightness = Brightness
@@ -4296,6 +4420,8 @@ git-action-fix-comments = Fix comments
 git-action-fix-changes = Fix changes
 git-action-failing-context = ({ $count } failing)
 git-action-checking = Checking
+git-review-status-unavailable = { $kind } status unavailable
+git-review-next-retry = Next retry at { $time }
 git-action-no-changes = No changes
 git-action-prepared = Prepared
 git-action-creating = Creating
@@ -4311,6 +4437,11 @@ git-action-marking-ready = Marking ready
 git-action-merging = Merging
 git-action-deleting = Deleting
 git-action-preparing-review-request = Preparing { $kind }
+git-issue-closes-on-merge = Create { $kind } will close it on merge
+git-issue-checking-status = Checking status
+git-issue-status-unavailable = Could not check its status
+git-issue-status-connect-linear = Connect Linear to see its status
+git-issue-assignee-you = You
 
 git-status-ready = Ready
 git-status-mergeable = Mergeable
@@ -4456,6 +4587,7 @@ palette-footer-branches = Branches
 palette-section-use-query-with = Use “{ $query }” with
 palette-ask-agent-new-chat = New { $provider } chat
 palette-search-conversation-history = Search conversation history
+palette-file-search-jump = Search files
 palette-suggest-review-comments = { $count ->
     [one] 1 review comment
    *[other] { $count } review comments
@@ -4599,6 +4731,10 @@ palette-action-open-review-request =
     }
 palette-action-create-and-start = Create and start { $provider }
 palette-search-projects = Choose a project
+palette-quick-create-current = Current
+palette-quick-create-shared-context = Shared context
+palette-quick-create-hint = Press { $shortcut } or type to filter
+palette-quick-create-options = Options
 palette-mode-projects = Projects
 palette-navigation-worktrees = { $count ->
     [one] 1 worktree
@@ -4624,16 +4760,24 @@ sidebar-rename-worktree-label = Rename feature label…
 sidebar-rename-feature-label = Rename feature label…
 sidebar-rename-branch = Rename branch…
 group-branch-rename-title = Rename branch
+secret-http-confirm-title = Was this token issued by the public { $issuer } service?
+secret-http-confirm-hosts = The token ends in { $ending }. Allow agents using it to send it to { $hosts } until it expires. Cancel if the token belongs to another installation.
+secret-http-confirm-allow = Allow these hosts
 secret-request-title = An agent is asking for a secret
 secret-request-asked-by = “{ $asker }” asks for: { $label }
 secret-request-asked-by-agent = An agent asks for: { $label }
 secret-request-placeholder = Paste or type the secret
-secret-request-note = Saved to a private file and kept out of chat. The agent's commands can read it for 24 hours.
-secret-request-save = Save privately
+secret-request-detail-held = super.engineering keeps it and uses it for the agent, which can't read it. It expires in 24 hours.
+secret-request-detail-unprotectable = super.engineering can't use this kind of value for the agent. To hand it over anyway, let the agent read it.
+secret-request-detail-readable = The agent's commands can read, print or send it for 24 hours.
+secret-request-let-agent-read = Let the agent read it
+secret-request-needs-readable = super.engineering can't use this value for the agent. Let the agent read it, or decline.
+secret-request-use = Use secret
+secret-request-save-and-use = Save & use
 secret-request-show = Show secret
 secret-request-hide = Hide secret
 secret-request-decline = Decline
-secret-request-save-failed = Couldn't save it privately: { $error }
+secret-request-use-failed = Couldn't use the secret: { $error }
 secret-request-for-project = For { $project }
 secret-request-answer-with = Answer with
 secret-request-type-new = Type a new value
@@ -4648,10 +4792,10 @@ saved-secret-replace-title = Replace value
 saved-secret-delete-title = Delete secret
 saved-secret-save = Save
 saved-secret-replace = Replace
-saved-secret-save-pill-body = Saved secrets stay in your system keyring, so you can hand them to agents in any chat without pasting them again.
-saved-secret-save-typed-body = Saved to your system keyring. Agents get a private file holding it only when you choose it.
-saved-secret-delete-body = Delete { $name } from your keyring? Agents already given it keep their copy until it expires.
-saved-secret-replace-body = Agents get the new value from now on. Copies already handed out keep the old one until they expire.
+saved-secret-save-pill-detail = Stays in your system keyring until you delete it, so you can use it in any chat.
+saved-secret-save-typed-detail = Stays in your system keyring until you delete it. Agents get it only when you give it to them.
+saved-secret-delete-detail = Delete { $name } from your keyring? Agents you already gave it to keep access for the rest of their 24 hours.
+saved-secret-replace-detail = Agents you already gave it to keep the old value for the rest of their 24 hours.
 saved-secret-name-label = Name
 saved-secret-name-placeholder = OPENAI_API_KEY
 saved-secret-name-hint = Letters, digits and underscores, like an environment variable
@@ -4679,7 +4823,7 @@ saved-secret-keyring-failed = Couldn't use the keyring: { $error }
 saved-secret-remember-failed = The agent got the secret, but it couldn't be saved
 saved-secret-loading = Reading saved secrets…
 saved-secret-picker-title = Insert saved secret
-saved-secret-picker-body = The agent gets a private file holding it, never the value.
+saved-secret-picker-detail = The agent can use a supported credential for 24 hours while the app keeps its value private.
 saved-secret-picker-insert = Insert
 saved-secret-picker-empty = No saved secrets for this project yet
 saved-secret-picker-empty-detail = Save one from a pasted secret's Save… button, when an agent asks, or in Settings → Secrets.
@@ -4940,12 +5084,13 @@ chat-pill-card-uncommitted = { $count } uncommitted
 chat-secret-pill-token = { $issuer } token
 chat-secret-pill-private-key = Private key
 chat-secret-pill-secret = Secret
-chat-secret-card-kind = Kept private
-chat-secret-card-detail = Your agent gets the path to a private file instead of the value. Its commands can still read the file, which is deleted after 24 hours.
+chat-secret-card-status = Kept out of chat
+chat-secret-card-note-held = super.engineering keeps it and uses it for the agent, which can't read it, for 24 hours.
+chat-secret-card-note-readable = The agent's commands can read it for 24 hours.
 chat-secret-card-paste-as-text = Paste as text
 chat-secret-card-save = Save…
 chat-saved-secret-unavailable = Couldn't read the saved secret from your keyring, so nothing was inserted.
-chat-saved-secret-store-failed = Couldn't keep the saved secret private, so it wasn't inserted.
+chat-saved-secret-store-failed = Couldn't insert this saved secret privately. To give the agent read access, use the secret request dialog.
 chat-saved-secret-not-inserted = This draft can't take a secret right now, so nothing was inserted.
 chat-secret-save-unavailable = This chat isn't connected yet, so its secret can't be saved. Try again in a moment.
 chat-secret-store-failed = Couldn't keep the secret private, so it wasn't pasted. Paste again to paste it as plain text.
@@ -4996,6 +5141,10 @@ usage-popover-resets-at = Resets { $time }
 usage-popover-window-left = { $window } left
 usage-popover-updating = Updating…
 usage-popover-retry = Try again
+usage-popover-check-usage = Check usage
+usage-meter-manual-refresh = Manual refresh
+usage-popover-manual-prompt = { $provider } usage isn’t fetched automatically. Refresh to check your current limits.
+usage-antigravity-manual-info = Antigravity doesn’t report plan quota over ACP. Refreshing runs `agy -p /usage` and `agy -p /credits` locally to check your current limits and credits.
 usage-popover-accounts = Accounts
 usage-graph-on-pace = On pace
 usage-graph-in-reserve = { $percent }% in reserve
@@ -5186,10 +5335,7 @@ usage-account-empty-body = Readings appear after this profile’s first session.
 usage-account-signed-out-title = { $account } isn’t signed in
 usage-account-signed-out-body = Sign in from a new { $provider } tab that uses this profile.
 usage-account-back = Back to { $account }
-usage-graph-legend-you = You
 usage-graph-legend-even = Even pace
-usage-graph-legend-projection = Projection
-usage-graph-legend-estimated = Estimated
 usage-graph-estimated = Estimated from activity on this Mac
 bookmarks-title = Bookmarks
 bookmarks-search-placeholder = Search bookmarks…
@@ -5305,7 +5451,34 @@ issue-report-action-email = Email it privately
 
 right-sidebar-reveal-open-file = Reveal open file
 
-right-sidebar-unviewed = Unviewed
+changes-to-review = To review
+changes-all-viewed = All viewed
+changes-conflict-count = { $count ->
+    [one] 1 conflict
+   *[other] { $count } conflicts
+}
+# A renamed file's old name, with its folder when it moved ("from app/root.rs");
+# the row's tooltip gives the full old path.
+changes-row-renamed-from = from { $name }
+changes-row-now-executable = now executable
+changes-row-no-longer-executable = no longer executable
+changes-row-now-symlink = now a symlink
+changes-row-now-file = now a file
+changes-row-now-submodule = now a submodule
+changes-row-staged = staged
+# Shown in place of an unmerged file's line counts.
+changes-row-conflict = conflict
+# Tooltip line for a lockfile's row, which shows a lock in place of its line
+# counts; $counts is such as "+4,812 −3,001".
+changes-row-lockfile = lockfile, { $counts }
+# $since and $total are line counts such as "+5 −1".
+changes-row-since-viewed = Since then { $since }, in all { $total }
+# Hover action on a file in the Changes list: adds the file to the chat in front.
+changes-add-to-chat = Add to chat
+# Shown when Add to chat finds no chat open in the workspace.
+changes-add-to-chat-no-chat = Open a chat to add files to it
+# Shown when Add to chat's chat is showing a subagent transcript, which blocks its composer.
+changes-add-to-chat-subagent-focused = Can't add files while a subagent transcript is focused
 changes-file-count = { $count ->
     [one] 1 file
    *[other] { $count } files
@@ -5359,6 +5532,7 @@ resources-exited-hours = Exited { $hours } h ago
 resources-cpu-row = { $percent }% CPU
 resources-split-app = App
 resources-cpu-split = The app itself { $app }%, your work { $work }%
+resources-cpu-split-extensions = The app itself { $app }%, extensions { $extensions }%, your work { $work }%
 resources-tree-chat = Chat
 resources-origin-tab = Terminal tab
 resources-origin-launched = Started by { $tab }
@@ -5428,6 +5602,7 @@ resources-info-agents-hint = Each chat, its agent and the tools it runs, and asl
 resources-info-browser = Browser tabs
 resources-info-browser-hint = Each page runs in its own process
 resources-info-terminals-hint = Shells, run scripts, what they started, and their scrollback
+resources-info-extensions-hint = In-app extensions, their runtimes, web pages, and commands they run
 resources-info-remote = Remote worktrees are not measured yet.
 resources-pressure-warning = Mac memory is under pressure. super.engineering uses { $used } of { $ram }.
 resources-pressure-warning-short = Mac memory is under pressure.
@@ -5442,10 +5617,12 @@ resources-empty-all = Nothing running.
 resources-empty-agents = No agents running.
 resources-empty-browser = No browser tabs open.
 resources-empty-terminals = No terminals running.
+resources-empty-extensions = No extensions loaded.
 resources-tab-all = All
 resources-tab-agents = Agents
 resources-tab-browser = Browser
 resources-tab-terminals = Terminals
+resources-tab-extensions = Extensions
 resources-count-chats =
     { $count ->
         [one] 1 chat open
@@ -5466,6 +5643,31 @@ resources-count-terminals =
         [one] 1 terminal
        *[other] { $count } terminals
     }
+resources-count-extensions =
+    { $count ->
+        [one] 1 extension loaded
+       *[other] { $count } extensions loaded
+    }
+resources-reload = Reload
+resources-ext-throttled = Throttled
+resources-ext-throttled-tooltip = { $ms } ms on the main thread in the last minute ({ $delayed } commands delayed)
+resources-ext-views =
+    { $count ->
+        [one] 1 view
+       *[other] { $count } views
+    }
+resources-ext-web = Web
+resources-ext-main-thread = Main thread
+resources-ext-main-thread-ms = { $ms } ms/min
+resources-ext-throttled-detail = { $ms } ms/min · { $delayed } delayed
+resources-ext-js-runtime = JavaScript runtime
+resources-ext-web-page = Web page
+resources-ext-stop-consequence =
+    { $count ->
+        [one] Closes 1 view and stops its runtime.
+       *[other] Closes { $count } views and stops its runtime.
+    }
+resources-ext-stop-consequence-none = Stops its runtime.
 resources-on-screen = On screen, so it stays awake
 resources-open = Open
 resources-close = Close
@@ -5515,6 +5717,7 @@ extension-failed-hint = Fix the error and save; the view reloads by itself.
 extension-fix-with-ai = Fix with AI
 extension-html-unsupported = HTML extensions are available on macOS.
 extension-open-failed = Couldn't open the extension
+extension-delete-failed = Couldn't delete the extension
 extension-command-failed = The extension's command didn't run
 extension-palette-open = Extensions › { $name }
 extension-palette-open-split = Extensions › { $name } in split
@@ -5530,11 +5733,40 @@ extension-open = Open
 extension-open-split = Open in split
 extension-open-sidebar = Open in the sidebar
 sidebar-extension-close = Close
-sidebar-extension-keep = Keep in every sidebar
+sidebar-extension-header = Keep in sidebar
+sidebar-extension-scope-worktree = This worktree only
+sidebar-extension-pin = Pin to sidebar
+sidebar-extension-unpin = Unpin from sidebar
+extension-persistent-tab-pin = Pin as persistent tab
+extension-persistent-tab-unpin = Unpin persistent tab
+extension-persistent-tab-header = Keep persistent in
+extension-persistent-tab-scope-worktree = This worktree only (Normal tab)
+extension-persistent-tab-scope-project = Project · { $name }
+extension-persistent-tab-scope-workspace = Workspace · { $name }
+extension-persistent-tab-scope-global = Global (All workspaces)
+extension-persistent-tab-tooltip-hint = Right-click for scope
+extension-persistent-tab-move-sidebar = Move to sidebar
+extension-persistent-tab-pop-out = Pop out (Floating window)
+extension-persistent-tab-more = More persistent tabs
+extension-persistent-tab-section = Persistent
+extension-placement-default = Default
+extension-placement-persistent-tab = Persistent tab
+extension-placement-sidebar = Sidebar
+extension-persistent-scope-workspaces = Workspaces
+extension-persistent-scope-projects = Projects
 extension-edit-with-ai = Edit with AI
 extension-window-move-to-tab = Move to tab
 extension-change-icon = Change icon…
 extension-icon-automatic = Automatic
+extension-annotate = Annotate
+extension-annotate-hint = Click what you want changed
+extension-annotate-count = { $count ->
+    [one] 1 comment
+   *[other] { $count } comments
+}
+extension-annotate-placeholder = What should change?
+extension-annotate-add = Add comment
+extension-annotate-remove = Remove
 extension-show-folder = Show folder
 extension-revoke = Revoke approval
 extension-delete = Delete
@@ -5580,3 +5812,22 @@ settings-search-entry-experimental-feature-flags-prediction-inspector-label = Pr
 settings-search-entry-experimental-feature-flags-prediction-inspector-description = Show a pinned window with live prediction sources, ranking, and eligibility for the active chat. Makes no model requests.
 prediction-inspector-title = Prediction inspector
 prediction-inspector-copy = Copy snapshot
+settings-sidebar-group-app = App
+settings-category-browser = Browser
+settings-category-browser-description = Link routing, tab memory, and agent browser access.
+settings-section-links = Links
+settings-search-section-links = Links
+settings-section-tabs = Tabs
+settings-search-section-tabs = Tabs
+settings-section-agent-control = Agent control
+settings-search-section-agent-control = Agent control
+settings-section-usage-meter = Usage meter
+settings-search-section-usage-meter = Usage meter
+settings-browser-agent-control-intro = Most read-only se browser commands work without approval, except reading cookies and network response bodies. Enabling a workspace grants agents standing permission to click, type, navigate, run scripts, and read cookies in that workspace's browser tabs until revoked.
+settings-browser-agent-control-empty = No workspaces yet.
+settings-browser-agent-control-workspace-description = Allow agents to control browser tabs in { $workspace }.
+settings-search-entry-browser-agent-control-allow-agents-to-control-the-browser-label = Allow agents to control the browser
+settings-search-entry-browser-agent-control-allow-agents-to-control-the-browser-description = Manage which workspaces grant agents standing permission to click, type, navigate, and run scripts in browser tabs.
+settings-search-entry-mobile-mobile-access-mobile-access-description = Turn on mobile access so your paired phones can connect to this Mac.
+
+review-delete-thread-confirm = Delete this thread and all its replies, including replies from others?
